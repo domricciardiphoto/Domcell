@@ -1,6 +1,6 @@
 {
-  "name": "domcell",
-  "version": "5.0.1",
+  "name": "DOMCELL 2023",
+  "version": "5.0.2",
   "description": "Universal PCR Web Builder Application",
   "main": "main.js",
   "scripts": {
