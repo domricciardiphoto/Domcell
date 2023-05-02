@@ -1,0 +1,92 @@
+[2023-05-02 17:52:46.299] [info]  Application version 4.0.0
+[2023-05-02 17:52:46.301] [info]  Hello, log
+[2023-05-02 17:52:46.302] [warn]  Some problem appears
+[2023-05-02 17:52:46.382] [info]  checking for update
+[2023-05-02 17:52:46.863] [info]  update available
+[2023-05-02 17:52:47.615] [info]  
+
+download-progress
+[2023-05-02 17:52:47.615] [info]  {
+  total: 2005032,
+  delta: 61150,
+  transferred: 61150,
+  percent: 3.0498266361833624,
+  bytesPerSecond: 335989
+}
+[2023-05-02 17:52:47.616] [info]  download progress
+[2023-05-02 17:52:47.639] [info]  
+
+download-progress
+[2023-05-02 17:52:47.640] [info]  {
+  total: 2005032,
+  delta: 79440,
+  transferred: 79440,
+  percent: 3.9620315286738568,
+  bytesPerSecond: 385631
+}
+[2023-05-02 17:52:47.640] [info]  download progress
+[2023-05-02 17:52:47.774] [info]  
+
+download-progress
+[2023-05-02 17:52:47.775] [info]  {
+  total: 2005032,
+  delta: 1815530,
+  transferred: 1815530,
+  percent: 90.54867952232183,
+  bytesPerSecond: 5324135
+}
+[2023-05-02 17:52:47.775] [info]  download progress
+[2023-05-02 17:52:47.970] [info]  
+
+download-progress
+[2023-05-02 17:52:47.970] [info]  {
+  total: 2005032,
+  delta: 1858886,
+  transferred: 1858886,
+  percent: 92.71103902581106,
+  bytesPerSecond: 3461613
+}
+[2023-05-02 17:52:47.970] [info]  download progress
+[2023-05-02 17:52:48.015] [info]  
+
+download-progress
+[2023-05-02 17:52:48.015] [info]  {
+  total: 2005032,
+  delta: 1886817,
+  transferred: 1886817,
+  percent: 94.10408412434316,
+  bytesPerSecond: 3241954
+}
+[2023-05-02 17:52:48.016] [info]  download progress
+[2023-05-02 17:52:48.040] [info]  
+
+download-progress
+[2023-05-02 17:52:48.041] [info]  {
+  total: 2005032,
+  delta: 2005032,
+  transferred: 2005032,
+  percent: 100,
+  bytesPerSecond: 3303183
+}
+[2023-05-02 17:52:48.041] [info]  download progress
+[2023-05-02 17:52:48.045] [info]  update downloaded
+[2023-05-02 17:53:12.313] [info]  Application version 5.0.0
+[2023-05-02 17:53:12.315] [info]  Hello, log
+[2023-05-02 17:53:12.316] [warn]  Some problem appears
+[2023-05-02 17:53:12.434] [info]  checking for update
+[2023-05-02 17:53:12.758] [info]  update not available
+[2023-05-02 17:54:09.222] [info]  Application version 5.0.0
+[2023-05-02 17:54:09.224] [info]  Hello, log
+[2023-05-02 17:54:09.224] [warn]  Some problem appears
+[2023-05-02 17:54:09.389] [info]  checking for update
+[2023-05-02 17:54:09.757] [info]  update not available
+[2023-05-02 18:10:31.529] [info]  Application version 5.0.0
+[2023-05-02 18:10:31.532] [info]  Hello, log
+[2023-05-02 18:10:31.532] [warn]  Some problem appears
+[2023-05-02 18:10:31.610] [info]  checking for update
+[2023-05-02 18:10:32.180] [info]  update not available
+[2023-05-02 18:10:47.694] [info]  Application version 5.0.0
+[2023-05-02 18:10:47.696] [info]  Hello, log
+[2023-05-02 18:10:47.697] [warn]  Some problem appears
+[2023-05-02 18:10:47.778] [info]  checking for update
+[2023-05-02 18:10:47.940] [info]  update not available
