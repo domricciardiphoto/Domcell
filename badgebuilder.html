@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>Domcell 2023: Badge Builder</title>
+    <meta name="description" content="Badge Builder for P.C. Richard and Son"/>
+    <meta charset=UTF-8>
+    <link rel="icon" href="assets/icons/icon_domcell_Jxp_icon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="badges-beta9-2023.css" />
+    <script src="jquery.js"></script>
+<head>
+<style>
+
+    body {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    }
+
+    .container  {
+        color: #fff;
+        font-size: 6rem;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-family: Helvetica, sans-serif , Arial; 
+        display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+
+    }
+
+
+.intro {
+    width: 100%;
+}
+.smaller {
+    font-size: 1rem;
+    text-align: left;
+}
+
+.container-all {
+    width: 90%;
+    float: left;
+    margin-left: 5%;
+    background-color: #333;
+    min-height: 800px;
+    margin-top: 0%;
+    display: none;
+
+}
+
+.lines {
+    width: 98%;
+    float: left;
+    text-align: left;
+    margin-left: 2%;
+    color: #FFF;
+    margin-top: 1%;
+}
+
+.lines50 {
+    width: 48%;
+    float: left;
+    min-height: 541px;
+    border: 1px solid #fff;
+    float: left;
+    margin-right: 1%;
+
+}
+
+.lines98 {
+    width: 97%;
+    float: left;
+    border: 1px solid #fff;
+    min-height: 300px;
+    margin-bottom: 10px;
+}
+
+select {
+    font-size: 0.9rem;
+    padding: 2px 5px;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+option {
+    margin-bottom: 20px;
+    min-height: 40px;
+    background-color: #f7f7f7;
+    font-size: 1rem;
+}
+
+.prodbox {
+    width: 48%;
+    float: left;
+    background-color: #F7F7F7;
+    height: 450px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.prod-im {
+    width: 100%;
+    float: left;
+}
+.prod-im img  {
+    width: 100%;
+}
+
+.longbanner-spot {
+    width: 100%; margin-left: 0px; background-color: #ccc; min-height: 30px; text-align: center; color: #000;
+}
+
+.square-spot {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: #ccc;
+    right: 5px;
+    bottom: 112px;
+    text-align: center;
+    color: #000;
+}
+
+.dogear-spot {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    right: 5px;
+    top: 9px;
+    text-align: center;
+    color: #000;
+}
+
+.long-banner-color {
+    margin-left: 2%;
+    margin-top: 15px;
+    float: left;
+    width: 100%;
+}
+
+input {
+    width: 60%;
+    min-height: 30px;
+    font-size: 1.5rem;
+}
+
+.submit {
+    width: 50%;
+    text-align: center;
+    max-width: 188px;
+    min-height: 42px;
+    font-size: 1.2rem;
+    background-color: #f7f7f7;
+    color: #333;
+    border-radius: 9px;
+}
+
+.width100 p {
+    font-size: .875rem;
+    font-weight: 700;
+    padding: 0px;
+    margin: 6px;
+}
+
+.black-d p, .blue-d p, .orange-d p, .purple-d p, .red-d p {
+    color: #fff;
+    padding: 0px;
+    margin: 1px;
+    min-height: 15px;
+}
+
+.prodbox {
+    display: none;
+}
+
+#lonngbanner-html , .long-banner-color {
+    display: none;
+}
+.saying {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    color: #333;
+    width: 100%;
+    text-align: center;
+}
+
+.header {
+    width: 99%;
+    position: absolute;
+    min-height: 28px;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 1%;
+    padding-top: 11px;
+    background-color: forestgreen;
+    color: #fff;
+    font-size: 1rem;
+    top: 0px;
+}
+
+.titlefont {
+    width: 99%;
+    float: left;
+    position: absolute;
+    top: 45px;
+    font-size: 0.7rem;
+    padding-left: 5px;
+}
+
+
+.nooptions , #sleepguarantee-code , .freeassembly-code , .DOTD-code , .Assem-req-code , .Assem-optional-code , .dog-banner-color , .dogear-code , .wifi-contr , .custom-code , .mywaterfilter {
+    display: none;
+}
+
+
+/*refactor */
+.fwifi {
+    position: absolute;
+    left: 1px;
+    top: 76px;
+    font-size: 0.8rem;   
+}
+
+.dogear-d {
+    width: 100%;
+    max-width: 80px;
+    max-height: 98px;
+    margin-left: 6px;
+    overflow: hidden;
+    position: relative;
+    margin-top: -9px;
+}
+
+.custombox {
+    margin-top: 15px;
+    width: 100%;
+    margin-left: 15px;
+}
+
+#copyme , .copyme_button , .custombox {
+    display: none;
+}
+
+.menu {
+    width: auto;
+    min-width: 4%;
+    text-align: center;
+    float: left;
+    min-height: 10px;
+    border: 1px solid #ccc;
+    line-height: 20px;
+    padding: 3px;
+    margin-right: 10px;
+    background-color: #fff;
+    color: #666;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: -5px;
+
+}
+.menu:hover {
+background-color: green;
+color: #fff;
+
+}
+
+.customsearch {
+    width: 14.5%; margin-top: -6px; min-height: 24px; font-size: 0.875rem; float: left; padding-left: 5px;
+}
+
+.breaker {
+    background-color: transparent; color: #fff; border: none; pointer-events: none; min-width: auto; width: auto;  
+}
+
+
+
+@media only screen and (max-width:1600px){
+.breaker {
+    display: none;
+}
+}
+
+@media only screen and (max-width:1300px){
+.mysearch , .googlesearch , .titlefont {
+    display: none;
+}
+}
+
+@media only screen and (max-width:900px){
+#PIM , .myprod2{
+    display: none !important;
+}
+
+.prodbox {
+    width: 300px;
+}
+
+}
+
+@media only screen and (max-width:767px){
+body {
+    display: none;
+}
+html {
+    background-color: #000;
+}
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+   <div class="intro">
+    <img src="assets/icons/snoop.png" width="150" height="109"/>
+    
+    LETS BUILD SOME BADGES!<br><span class="smaller">A 2023 Domcell Code Generator</span></div> 
+</div>
+
+
+<style>.sidemenu {float: right;width: 3%; position: fixed; bottom:0px; right: 0px;  height: 100%;margin-top: 5%;}  
+  .gearicon {position:absolute;bottom: 0px; width: 100%; height: 100%;  max-height: 60px; max-width: 50px; cursor: pointer;}.updatetext {font-size: 0.59rem;color: #fff;text-align: center; width: 100%;margin-left: 4px;margin-bottom: 7px;}.gearicon svg {width: 100%; max-height: 35px; margin-left: 5px; cursor: pointer;}
+
+  svg {
+  transition: transform .7s ease-in-out;
+}
+
+  .gearicon svg:hover {
+  transform: rotate(360deg);
+}
+  </style>
+
+
+
+<div class="container-all" style="width: 90%; float: left; margin-left: 5%; ">
+<div class="lines" style="pointer-events:none">PLP ADA BADGES</div>
+<div class="lines">
+<div class="lines50">
+    <div class="lines">Select Type of Banner</div> 
+    <div class="lines">
+
+        <select name="bannertypeslect" id="bannertypeslect">
+            <option value="">--Please choose an Banner Type--</option>
+            <option value="long">Long Banner</option>
+            <option value="FREEAssemby">Free Assembly</option>
+            <option value="SLEEPGu">Sleep Guarantee</option>
+            <option value="DOTD">Deal of the Day</option> 
+
+            <option value="Assemby-required">Assembly Required</option>
+            <option value="WIFIOptional">Wifi Optional</option>
+            <option value="WIFIControllable">Wifi Controlable</option>
+            <option value="DOGEAR">Dog Ear</option>
+            <option value="CUSTOM">Custom Circle</option>
+            <option value="WATERFILTER">Water Filter</option>
+        </select>
+
+
+<div  class="lines" style="margin-left: 0px;">
+<div id="bigproduct" class="prodbox" style="margin-left: 2px;">
+<div class="prod-im">
+    <img src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_STG/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw81cfbc87/images/hires/Z_527521-51Q.jpg?sw=400&sh=400&sm=fit">
+</div>
+<div class="square-spot" >Square Spot</div>
+<div class="longbanner-spot" >Long Banner</div>
+<div class="dogear-spot" >DOG EAR</div>
+</div>
+
+<div id="bigproduct myprod2" class="prodbox" style="margin-left: 10px;">
+    <div class="prod-im">
+        <img src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwac9646f0/images/hires/Z_RF18A5101SR.jpg?sw=400&sh=400&sm=fit">
+    </div>
+    <div class="square-spot" >Square Spot</div>
+    <div class="longbanner-spot" >Long Banner</div>
+    <div class="dogear-spot" >DOG EAR</div>
+    </div>
+
+</div>
+        
+
+    </div>
+
+</div>
+<div class="lines50">
+    <div class="lines">Options for Badge</div> 
+<div class="lines nooptions">No Options just copy code</div>
+
+
+<div class="lotsofoptions" style="width: 100%; float: left; position: absolute; bottom: 0px; right: 0px; color: #fff;">
+    <img src="assets/icons/snooplookingup.png" style="width:100px; float: right; pointer-events: none;">
+</div>
+
+
+
+<div class="dog-banner-color lines">
+    <label for="color-select">Dog Ear Color Options:</label><br>
+    <select name="dogcolor" id="dogcolorchange">
+        <option value="">--Please choose a Banner Color--</option>
+        <option value="redear-d"  data-text="ELECTRIC">RED</option>
+        <option value="blueear-d"  data-text="GAS">BLUE</option>
+    </select>
+    <br>
+    <label >Banner Text Override</label><br>
+    <input type="text" id="fname2" name="fname2"><br><br>
+</div>
+
+
+
+<div class="long-banner-color">
+    <label for="color-select">Long Banner Color Options:</label><br>
+    <select name="longcolor" id="longcolorchange">
+        <option value="">--Pick A Color--</option>
+        <option value="red-d"         data-text="ULTRA FIRM">RED</option>
+        <option value="blue-d"        data-text="PLUSH">BLUE</option>
+        <option value="black-d"       data-text="CUSTOM">BLACK</option>
+        <option value="purple-d"      data-text="ULTRA PLUSH">PURPLE</option>
+        <option value="yellow-d"      data-text="MEDIUM">YELLOW</option>
+        <option value="orange-d"      data-text="FIRM">ORANGE</option>
+        <option value="subandsave-d"  data-text="SUBSCRIBE & SAVE 5%">SUBSCRIPTION WITH ICON</option>
+    </select>
+    <br>
+    <label >Banner Text Override</label><br>
+    <input type="text" id="fname1" name="fname1"><br><br>
+</div>
+
+<div class="custombox"><br><br>
+  <label >Select Background Color</label><br>
+  <select name="customcolor" id="customcolor">
+   <option value="custom-red-d" data-custom="banner-85da">RED</option>
+   <option value="custom-blue-d"data-custom="banner-85da">BLUE</option>
+   <option value="custom-black-d" data-custom="banner-85da">BLACK</option>
+   <option value="custom-purple-d" data-custom="banner-85da">PURPLE</option>
+  <option value="custom-yellow-d" data-custom="banner-85da custom-dark-d">YELLOW</option>
+  <option value="custom-orange-d" data-custom="banner-85da">ORANGE</option>
+  <option value="custom-green-d" data-custom="banner-85da">GREEN</option>
+  </select><br><br>
+  <label >Line One</label><br>
+  <input type="text" id="customtext1" name="customtext1" placeholder="Line 1"><br><br>
+  <label >Line Two</label><br>
+  <input type="text" id="customtext2" name="customtext2" placeholder="Line 2"><br><br>
+
+  <label >Larger Text for Line 1 (For a Short work example:"FREE" to scale )</label><br>
+  <select name="largertextline1" id="largertextline1" style="width:auto">
+    <option selected value="no"data-custom="">No</option>
+    <option value="yes" data-custom="mylargertextd">Yes</option>
+  
+  </select>
+
+</div>
+
+
+
+</div>
+</div>
+
+<div class="lines" style="pointer-events:none; color: yellow;">Copy this Code  Make sure you get it all!</div> 
+
+<div id="copyme" class="lines">&lt;link href="images/badges/badges-beta9-2023.css?$staticlink$" rel="stylesheet" /&gt;<br></div>
+<button class="btn copyme_button" style="margin-top: 40px; width: 100px; margin-left: 25px;" onclick="copyContent()">Copy!</button>
+
+<div class="lines">
+    <div class="lines98" >
+        
+       
+
+        <div class="lines" >
+            &lt;link href="images/badges/badges-beta9-2023.css?$staticlink$" rel="stylesheet" /&gt;<br>
+        </div>
+
+        <div class="custom-code lines" style="margin-top: 0px;">
+            &lt;div class="<span class="darktext-d">banner-85da</span>"&gt; &lt;div class="banner_text"&gt;&lt;span class="<span class="makemebig"></span>"&gt;<span class="custom1">Line 1</span>&lt;/span&gt;&lt;br&gt;<span class="custom2">Line 2</span>&lt;/div&gt;&lt;?xml version="1.0" encoding="utf-8"?&gt; &lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"&gt; &lt;circle class="<span class="custom3">custom-red-d</span>" cx="42.3" cy="42.5" r="42.3"/&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;/svg&gt; &lt;/div&gt;
+         </div>
+
+        <div id="lonngbanner-html" class="lines" style="margin-top: 0px;">
+            &lt;div class="width100 <span class="longcolor"></span>"&gt;&lt;p&gt;<span class="longtextbanner"></span>&lt;/p&gt;	&lt;/div&gt;
+        </div>
+
+        
+        <div id="sleepguarantee-code" class="lines" style="margin-top: 0px;">
+            &lt;div class="nintydaysleep-badge">&lt;img src="images/badges/90day-badge-d.svg?$staticlink$" width="100" height="100%" title="90 Night Sleep Guarantee" alt="90 Night Sleep Guarantee"/&gt; &lt;/div&gt;
+        </div>
+
+
+        <div class="freeassembly-code lines" style="margin-top: 0px;">
+            &lt;div class="freeassem-d"&gt; &lt;div class="freeassem-text freas1"&gt;FREE&lt;/div>&lt;div class="freeassem-text freas2"&gt;ASSEMBLY&lt;/div>&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"&gt;&lt;circle class="freeassemblycircle" cx="42.5" cy="42.9" r="41.5"/&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/div&gt;
+        </div>
+
+        <div class="DOTD-code lines" style="margin-top: 0px;">
+            &lt;div class="dealoftheday-d"&gt; &lt;div class="dotdt textd-1"&gt;DEAL&lt;/div>&lt;div class="dotdt textd-2"&gt;of the&lt;/div&gt;&lt;div class="dotdt textd-3"&gt;DAY&lt;/div>&lt;?xml version="1.0" encoding="utf-8"?&gt; &lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"&gt; &lt;circle class="dealofthedaycircle" cx="42.5" cy="42.9" r="41.5"/&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;/svg&gt;&lt;/div&gt;
+        </div>
+
+
+        <div class="Assem-req-code lines" style="margin-top: 0px;">
+            &lt;div class="banner-85d"&gt; &lt;div class="banner_text"&gt;Assembly&lt;br&gt;Required&lt;/div&gt;&lt;?xml version="1.0" encoding="utf-8"?&gt; &lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"&gt; &lt;circle class="st031" cx="42.3" cy="42.5" r="42.3"/&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;g&gt; &lt;/g&gt; &lt;/svg&gt; &lt;/div&gt;
+        </div>
+
+        <div class="Assem-optional-code lines" style="margin-top: 0px;">
+            &lt;div class="wifibadge"&gt; &lt;div class="wifi-container wifid1"&gt; &lt;span class="fwifi"&gt;WIFI&lt;/span&gt; &lt;/div&gt;&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"&gt; &lt;circle class="wifist0st0" cx="42.7" cy="42.7" r="41.5"/&gt; &lt;circle class="wifist0st1" cx="42" cy="57.7" r="3.4"/&gt; &lt;path class="wifist0st2" d="M21.3,35.6c0,0,21.7-14.6,41.4-0.1"/&gt; &lt;path class="wifist0st2" d="M27.1,41.3c0,0,15.4-10.1,29,0.5"/&gt; &lt;path class="wifist0st2" d="M34,48.3c0,0,7-5.9,15.7-0.1"/&gt; &lt;circle class="wifist0st3" cx="42.3" cy="35.2" r="41.5"/&gt; &lt;text transform="matrix(0.7881 0.6155 -0.6155 0.7881 14.1377 65.826)"&gt;&lt;tspan x="0" y="0" class="wifist0st1 wifist0st4 wifist0st5"&gt;O&lt;/tspan&gt;&lt;tspan x="8.9" y="-0.3" class="wifist0st1 wifist0st4 wifist0st5" rotate="-12"&gt;P&lt;/tspan&gt;&lt;tspan x="17.1" y="-2.3" class="wifist0st1 wifist0st4 wifist0st5" rotate="-23.4"&gt;T&lt;/tspan&gt;&lt;tspan x="24.1" y="-5.6" class="wifist0st1 wifist0st4 wifist0st5" rotate="-32.3"&gt;I&lt;/tspan&gt;&lt;tspan x="28.4" y="-8.3" class="wifist0st1 wifist0st4 wifist0st5" rotate="-41.7"&gt;O&lt;/tspan&gt;&lt;tspan x="35" y="-14.5" class="wifist0st1 wifist0st4 wifist0st5" rotate="-54.2"&gt;N&lt;/tspan&gt;&lt;tspan x="40.1" y="-22.1" class="wifist0st1 wifist0st4 wifist0st5" rotate="-66.9"&gt;A&lt;/tspan&gt;&lt;tspan x="43.4" y="-30.3" class="wifist0st1 wifist0st4 wifist0st5" rotate="-78.3"&gt;L&lt;/tspan&gt;&lt;/text&gt; &lt;/svg&gt; &lt;/div&gt;
+        </div>
+
+        <div class="dogear-code lines" style="margin-top: 0px;">
+            &lt;div class="dogear-d <span class="dog-select-color"></span>"&gt; &lt;div class="banner_text_dog"&gt;<span class="dog-select-text"></span>&lt;/div&gt;&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 99 98" style="enable-background:new 0 0 99 98;" xml:space="preserve"&gt;&lt;polygon class="dogearback" points="98.9,98.2 49.5,49.1 0.2,0.1 98.9,0.1 "/&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/div&gt;
+        </div>
+
+
+        <div class="wifi-contr lines" style="margin-top: 0px;">&lt;div class="wificontrola"&gt; &lt;div class="wifi-containera wifid1a"&gt; &lt;span class="fwifi_cont"&gt;WIFI&lt;/span&gt; &lt;/div&gt;&lt;?xml version="1.0" encoding="utf-8"?&gt; &lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"&gt; &lt;circle class="st0_cont" cx="42.7" cy="42.7" r="41.5"/&gt; &lt;circle class="st1_cont" cx="42" cy="57.7" r="3.4"/&gt; &lt;path class="st2_cont" d="M21.3,35.6c0,0,21.7-14.6,41.4-0.1"/&gt; &lt;path class="st2_cont" d="M27.1,41.3c0,0,15.4-10.1,29,0.5"/&gt; &lt;path class="st2_cont" d="M34,48.3c0,0,7-5.9,15.7-0.1"/&gt; &lt;ellipse class="st3_cont" cx="42.7" cy="35.5" rx="40.1" ry="41.5"/&gt; &lt;text transform="matrix(0.2774 0.9255 -0.9579 0.2871 3.4948 44.7749)" class="st1_cont st4_cont st5_cont"&gt;C&lt;/text&gt; &lt;text transform="matrix(0.478 0.8397 -0.8691 0.4947 6.5231 53.6733)" class="st1_cont st4_cont st5_cont"&gt;O&lt;/text&gt; &lt;text transform="matrix(0.6609 0.7048 -0.7294 0.6841 11.6329 61.9067)" class="st1_cont st4_cont st5_cont"&gt;N&lt;/text&gt; &lt;text transform="matrix(0.8043 0.5354 -0.5542 0.8324 18.6989 68.8149)" class="st1_cont st4_cont st5_cont"&gt;T&lt;/text&gt; &lt;text transform="matrix(0.9064 0.3345 -0.3462 0.9381 26.1779 73.4087)" class="st1_cont st4_cont st5_cont"&gt;R&lt;/text&gt; &lt;text transform="matrix(0.9612 9.783373e-02 -0.1013 0.9949 35.4835 76.395)" class="st1_cont st4_cont st5_cont"&gt;O&lt;/text&gt; &lt;text transform="matrix(0.9577 -0.1276 0.132 0.9912 45.1642 76.9341)" class="st1_cont st4_cont st5_cont"&gt;L&lt;/text&gt; &lt;text transform="matrix(0.907 -0.3331 0.3447 0.9387 53.5411 75.4702)" class="st1_cont st4_cont st5_cont"&gt;L&lt;/text&gt; &lt;text transform="matrix(0.8063 -0.5324 0.551 0.8345 61.4884 72.2163)" class="st1_cont st4_cont st5_cont"&gt;A&lt;/text&gt; &lt;text transform="matrix(0.6573 -0.7082 0.7329 0.6803 69.3654 66.5395)" class="st1_cont st4_cont st5_cont"&gt;B&lt;/text&gt; &lt;text transform="matrix(0.4886 -0.8336 0.8627 0.5057 75.5831 59.2466)" class="st1_cont st4_cont st5_cont"&gt;L&lt;/text&gt; &lt;text transform="matrix(0.3092 -0.9154 0.9474 0.3201 79.5968 51.7886)" class="st1_cont st4_cont st5_cont"&gt;E&lt;/text&gt; &lt;/svg&gt;&lt;/div&gt;</div>
+
+
+
+        <div class="mywaterfilter lines" style="margin-top: 0px;">
+            &lt;div class="waterfilters2023"&gt; &lt;div class="dotdtaa textd-1ad"&gt;Genuine&lt;/div&gt;&lt;div class="dotdtaa textd-2ad"&gt;Water Filter&lt;/div&gt;&lt;?xml version="1.0" encoding="utf-8"?&gt; &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 92.7 92.4" style="enable-background:new 0 0 92.7 92.4;" xml:space="preserve"&gt;&lt;style type="text/css"&gt;.st0{fill:#FFFFFF;stroke:#294D93;stroke-width:3;stroke-miterlimit:10;}.st1adad{fill:#294D93;}&lt;/style&gt;&lt;circle class="st0" cx="46.9" cy="46.1" r="37.8"/&gt;&lt;path class="st1" d="M47.1,15.2c-1.9,0-3.5,4.7-3,6.9c0.3,1.2,1,2.2,1,2.2c0.2,0.3,0.5,0.6,0.8,0.8c0.8,0.5,1.9,0.3,2.6-0.1c1.1-0.6,1.3-1.9,1.5-2.5C50.6,19.4,48.9,15.3,47.1,15.2z"/&gt;&lt;path class="st1" d="M41.2,21.5c-1.2,0-2.2,2.9-1.9,4.3c0.2,0.8,0.6,1.3,0.6,1.3c0.1,0.2,0.3,0.4,0.5,0.5c0.5,0.3,1.2,0.2,1.6-0.1c0.7-0.4,0.8-1.2,0.9-1.5C43.4,24.1,42.3,21.5,41.2,21.5z"/&gt;&lt;path class="st1" d="M53.2,21.3c-1.2,0-2.2,2.9-1.9,4.3c0.2,0.8,0.6,1.3,0.6,1.3c0.1,0.2,0.3,0.4,0.5,0.5c0.5,0.3,1.2,0.2,1.6-0.1c0.7-0.4,0.8-1.2,0.9-1.5C55.3,23.9,54.2,21.3,53.2,21.3z"/&gt;&lt;path class="st1adad" d="M17.8,62.4c0,0-3.6,4.1,39,0c20-0.5,20-0.5,20-0.5S65.9,81,47.6,79.7c-4.9,0.2-23.7-3.6-29.6-15.9"/&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/div&gt;
+        </div>
+        
+    </div>
+
+
+  
+    
+</div>
+
+</div>
+
+
+<div class="saying" >Every journey begins with a single step..... but if you skip a bit, the trip can be alot more fun :)</div>
+</body>
+
+
+
+<script>
+var version = '2023 Ver. Beta 3.1 incl. badge CSS Ver. Beta 6'
+$('.version').text(version)
+$('.emailme').attr('href' , 'mailto:dom.ricciardi@pcrichard.com?Subject=Feature Request For Badge Builder&body=I am Using Badge Builder Version '+version)
+
+let text = $('#copyme').text();
+  const copyContent = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+
+
+
+
+$(document).ready(function() {
+$('.intro').delay(400).fadeOut(function() {
+    $('.saying').delay(1000).fadeOut()
+    $('.container-all').fadeIn()
+})
+
+})
+
+
+$('#bannertypeslect').change(function() {
+    var selectedbannertype = $(this).val()
+$('#lonngbanner-html ,.long-banner-color,.nooptions , #sleepguarantee-code , .wifi-contr , .custom-code , .custombox , .mywaterfilter').hide()
+$('.freeassembly-code , .DOTD-code , .Assem-req-code ,.Assem-optional-code , .dogear-code , .dog-banner-color , .dogear-code').hide()
+    $('.square-spot').empty().text('Square Spot').css('background-color' , '#ccc')
+    $('.dogear-spot').empty().text('DogEar Badge').css('background-color' , '#ccc')
+    $('.nooptions').html('No Options Just Copy Code Below!<br><br><img  src="https://i.etsystatic.com/6315841/r/il/a1bfb7/526316586/il_794xN.526316586_2na4.jpg" width="200px" height="200px">').css('color' , 'yellow').css('font-size' , '1.2rem')
+    $('.longbanner-spot').css('background-color' , '#ccc')
+   if(selectedbannertype === 'long') {
+    $('#lonngbanner-html , .long-banner-color ,.prodbox').fadeIn();
+    $('.longbanner-spot').css('background-color' , '#FFC4C4')
+   }
+
+
+   if(selectedbannertype === 'FREEAssemby') {
+    $('.nooptions').fadeIn()
+    $('.prodbox').fadeIn()
+    $('.freeassembly-code').fadeIn()
+    $('.square-spot').html('<div class="freeassem-d"> <div class="freeassem-text freas1">FREE</div><div class="freeassem-text freas2">ASSEMBLY</div><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"><circle class="freeassemblycircle" cx="42.5" cy="42.9" r="41.5"/><g></g><g></g><g></g><g></g><g></g><g></g></svg> </div>').css('background-color' , 'transparent')
+
+   }
+
+   if(selectedbannertype === 'SLEEPGu') {
+    $('.nooptions').fadeIn()
+    $('.prodbox').fadeIn();
+    $('#sleepguarantee-code').fadeIn();
+    $('.square-spot').html('<div class="nintydaysleep-badge"><img src="https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites/default/dwda71647f/images/badges/90day-badge-d.svg" width="100" height="100%" title="90 Night Sleep Guarantee" alt="90 Night Sleep Guarantee"/> </div>').css('background-color' , 'transparent')
+   }
+
+
+   if(selectedbannertype === 'DOTD') {
+    $('.nooptions').fadeIn();
+    $('.prodbox').fadeIn();
+    $('.DOTD-code').fadeIn()
+    $('.square-spot').html('<div class="dealoftheday-d"> <div class="dotdt textd-1">DEAL</div><div class="dotdt textd-2">of the</div><div class="dotdt textd-3">DAY</div><?xml version="1.0" encoding="utf-8"?> <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"> <circle class="dealofthedaycircle" cx="42.5" cy="42.9" r="41.5"/> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg></div>').css('background-color' , 'transparent')
+   }
+
+
+
+   if(selectedbannertype === 'Assemby-required') {
+    $('.nooptions').fadeIn()
+    $('.prodbox').fadeIn();
+    $('.Assem-req-code').fadeIn()
+    $('.square-spot').html('<div class="banner-85d"> <div class="banner_text">Assembly<br>Required</div><?xml version="1.0" encoding="utf-8"?> <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"> <circle class="st031" cx="42.3" cy="42.5" r="42.3"/> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg> </div>').css('background-color' , 'transparent')
+   }
+
+
+   if(selectedbannertype === 'WIFIOptional') {
+    $('.nooptions').fadeIn()
+    $('.prodbox').fadeIn();
+    $('.Assem-optional-code').fadeIn()
+    $('.square-spot').html('<div class="wifibadge"> <div class="wifi-container wifid1"> <span class="fwifi">WIFI</span> </div><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"> <circle class="wifist0st0" cx="42.7" cy="42.7" r="41.5"/> <circle class="wifist0st1" cx="42" cy="57.7" r="3.4"/> <path class="wifist0st2" d="M21.3,35.6c0,0,21.7-14.6,41.4-0.1"/> <path class="wifist0st2" d="M27.1,41.3c0,0,15.4-10.1,29,0.5"/> <path class="wifist0st2" d="M34,48.3c0,0,7-5.9,15.7-0.1"/> <circle class="wifist0st3" cx="42.3" cy="35.2" r="41.5"/> <text transform="matrix(0.7881 0.6155 -0.6155 0.7881 14.1377 65.826)"><tspan x="0" y="0" class="wifist0st1 wifist0st4 wifist0st5">O</tspan><tspan x="8.9" y="-0.3" class="wifist0st1 wifist0st4 wifist0st5" rotate="-12">P</tspan><tspan x="17.1" y="-2.3" class="wifist0st1 wifist0st4 wifist0st5" rotate="-23.4">T</tspan><tspan x="24.1" y="-5.6" class="wifist0st1 wifist0st4 wifist0st5" rotate="-32.3">I</tspan><tspan x="28.4" y="-8.3" class="wifist0st1 wifist0st4 wifist0st5" rotate="-41.7">O</tspan><tspan x="35" y="-14.5" class="wifist0st1 wifist0st4 wifist0st5" rotate="-54.2">N</tspan><tspan x="40.1" y="-22.1" class="wifist0st1 wifist0st4 wifist0st5" rotate="-66.9">A</tspan><tspan x="43.4" y="-30.3" class="wifist0st1 wifist0st4 wifist0st5" rotate="-78.3">L</tspan></text> </svg> </div>').css('background-color' , 'transparent')
+   }
+
+
+
+   if(selectedbannertype === 'CUSTOM') {
+    $('.prodbox').fadeIn();
+    $('.custombox').fadeIn()
+    $('.custom-code').fadeIn()
+    $('.square-spot').html('<div class="banner-85da"> <div class="banner_text">Line 1<br>Line 2</div><?xml version="1.0" encoding="utf-8"?> <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85 85" style="enable-background:new 0 0 85 85;" xml:space="preserve"> <circle class="custom-red-d" cx="42.3" cy="42.5" r="42.3"/> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg> </div>').css('background-color' , 'transparent')
+
+   }
+
+   if(selectedbannertype === 'WATERFILTER') {
+    $('.prodbox').fadeIn();
+    $('.nooptions').fadeIn();
+    $('.mywaterfilter').fadeIn();
+    $('.square-spot').empty().text('Square Spot').css('background-color' , '#fff')
+    $('.square-spot').html('<div class="waterfilters2023"> <div class="dotdtaa textd-1ad">Genuine</div><div class="dotdtaa textd-2ad">Water Filter</div><?xml version="1.0" encoding="utf-8"?> <?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 92.7 92.4" style="enable-background:new 0 0 92.7 92.4;" xml:space="preserve"><style type="text/css">.st0{fill:#FFFFFF;stroke:#294D93;stroke-width:3;stroke-miterlimit:10;}.st1adad{fill:#294D93;}</style><circle class="st0" cx="46.9" cy="46.1" r="37.8"/><path class="st1" d="M47.1,15.2c-1.9,0-3.5,4.7-3,6.9c0.3,1.2,1,2.2,1,2.2c0.2,0.3,0.5,0.6,0.8,0.8c0.8,0.5,1.9,0.3,2.6-0.1c1.1-0.6,1.3-1.9,1.5-2.5C50.6,19.4,48.9,15.3,47.1,15.2z"/><path class="st1" d="M41.2,21.5c-1.2,0-2.2,2.9-1.9,4.3c0.2,0.8,0.6,1.3,0.6,1.3c0.1,0.2,0.3,0.4,0.5,0.5c0.5,0.3,1.2,0.2,1.6-0.1c0.7-0.4,0.8-1.2,0.9-1.5C43.4,24.1,42.3,21.5,41.2,21.5z"/><path class="st1" d="M53.2,21.3c-1.2,0-2.2,2.9-1.9,4.3c0.2,0.8,0.6,1.3,0.6,1.3c0.1,0.2,0.3,0.4,0.5,0.5c0.5,0.3,1.2,0.2,1.6-0.1c0.7-0.4,0.8-1.2,0.9-1.5C55.3,23.9,54.2,21.3,53.2,21.3z"/><path class="st1adad" d="M17.8,62.4c0,0-3.6,4.1,39,0c20-0.5,20-0.5,20-0.5S65.9,81,47.6,79.7c-4.9,0.2-23.7-3.6-29.6-15.9"/><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>')
+
+   }
+
+ //-----------------------------------------------------------------------------------------
+
+ if(selectedbannertype === 'DOGEAR') {
+    $('.dog-banner-color').fadeIn()
+    $('.prodbox').fadeIn();
+    
+    $('.dogear-code').fadeIn()
+    $('.dogear-spot').html('<div class="dogear-d "> <div class="banner_text_dog"></div><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 99 98" style="enable-background:new 0 0 99 98;" xml:space="preserve"><polygon class="dogearback" points="98.9,98.2 49.5,49.1 0.2,0.1 98.9,0.1 "/><g></g><g></g><g></g><g></g><g></g><g></g></svg></div>').css('background-color' , 'transparent')
+   }
+
+
+
+   if(selectedbannertype === 'WIFIControllable') {
+    $('.nooptions').fadeIn()
+    $('.prodbox').fadeIn();
+    $('.square-spot').html('TBD').css('background-color' , 'transparent');
+    $('.wifi-contr').fadeIn()
+   }
+
+
+})
+
+// Dog Ear change
+$('#fname2').on('input',function(e){
+$('.dog-select-text').html($('#fname2').val())
+$('.dogear-spot').html($('.dogear-code').text())
+})
+
+$( "#dogcolorchange" ).change(function() {
+    $('.dog-select-color').text($(this).val())
+    $('.dog-select-text').text($(this).find(':selected').data('text'))
+if($('#fname2').val() === '') {
+        $('.dog-select-text').text($(this).find(':selected').data('text'))
+        $('.dogear-spot').html($('.dogear-code').text())
+    } else { 
+        $('.dogear-spot').html($('.dogear-code').text())
+    }
+
+})
+
+$('.googlesearch').on('click', function() {
+if($('.mysearch').val() === '') {
+    url = 'https://www.google.com/';
+    window.open(url);
+    return false;
+} else {
+    url = 'https://www.google.com/search?q=' + $('.mysearch').val()
+    window.open(url);
+    return false;
+}
+})
+
+$('.pcrsearch').on('click', function() {
+if ($('.mypcrsearch').val() === '') {
+    url2 = 'https://www.pcrichard.com'
+    window.open(url2);
+    return false
+} else {
+    url2 = 'https://www.pcrichard.com/search?q=' + $('.mypcrsearch').val()
+    window.open(url2);
+    return false
+}
+
+})
+
+
+//Custombox Change
+
+$('#customcolor').change(function() {
+$('.custom3').text($(this).val())
+$('.darktext-d').text($(this).find(':selected').data('custom'))
+$('.square-spot').html($('.custom-code').text())
+})
+
+
+$('#largertextline1').change(function() {
+    if($(this).val() === 'yes') {
+        $('.makemebig').text('lineonelargertext')
+    } else {
+        $('.makemebig').text('')
+    }
+    $('.square-spot').html($('.custom-code').text())
+})
+
+
+
+
+
+
+// long banner change
+$( "#longcolorchange" ).change(function() {
+    $('.longcolor').text($('#longcolorchange').val())
+
+    if($('#fname1').val() === '') {
+        $('.longtextbanner').text($(this).find(':selected').data('text'))
+    } 
+
+    $('.longbanner-spot').html($('#lonngbanner-html').text())
+    
+});
+
+$('#fname1').on('input',function(e){
+$('.longtextbanner').text($(this).val())
+$('.longbanner-spot').html($('#lonngbanner-html').text())
+});
+
+
+$('#customtext1').on('input',function(e){
+    $('.custom1').text($(this).val())
+    $('.square-spot').html($('.custom-code').text())
+});
+
+$('#customtext2').on('input',function(e){
+    $('.custom2').text($(this).val())
+    $('.square-spot').html($('.custom-code').text())
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</html>
+
+<!--
+Look at you intrepid traveler! looking all under the hood! well then here is your riddle! 
+
+   -- When is a raven like a writting desk? --
+
+if you figure it out you get a prize! well, actually no prize, but wouldnt it be fun to know! 
+Everyone enjoys a good easter egg, and tada you found one!
+Best wishes Dom
+-->

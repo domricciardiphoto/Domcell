@@ -1,0 +1,430 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Overview Content Builder</title>
+    <script src="jquery.js"></script>
+
+    <style>
+        .page {
+            width: 100%;
+            max-width: 1600px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+
+        body {
+            background-color: #333;
+        }
+
+        .wrapper-d {
+            width: 40%;
+            float: left;
+
+        }
+
+        .codepreview {
+            width: 60%;
+            float: left;
+            background-color: #fff;
+            min-height: 500px;
+            margin-top: 34px;
+        }
+
+        .codeview {
+            width: 98%;
+            background-color: #f7f7f7;
+            padding: 1%;
+            float: left;
+        }
+
+
+        .width100 {
+            width: 100%;
+            float: left;
+            padding: 5px;
+        }
+
+        input,
+        textarea {
+            font-size: 1.1em;
+            float: left;
+        }
+
+        .feild_name {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .button {
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #ccc;
+            background-color: #000;
+            line-height: 30px;
+            cursor: pointer;
+            float: left;
+            margin-right: 17%;
+            color: #FFF;
+        }
+
+        .insertcodehere {
+            padding: 5px;
+        }
+
+        .insertcodehere img {
+            max-height: 500px;
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<!----menu-->
+
+<style>
+
+
+
+
+
+.lines {
+width: 98%;
+float: left;
+text-align: left;
+margin-left: 2%;
+color: #FFF;
+margin-top: 1%;
+}
+
+.lines50 {
+width: 48%;
+float: left;
+min-height: 541px;
+border: 1px solid #fff;
+float: left;
+margin-right: 1%;
+
+}
+
+.lines98 {
+width: 97%;
+float: left;
+border: 1px solid #fff;
+min-height: 300px;
+margin-bottom: 10px;
+}
+
+
+
+.prod-im {
+width: 100%;
+float: left;
+}
+.prod-im img  {
+width: 100%;
+}
+
+
+
+.saying {
+position: absolute;
+bottom: 3px;
+right: 3px;
+color: #333;
+width: 100%;
+text-align: center;
+}
+
+.header {
+width: 98.5%;
+position: absolute;
+min-height: 28px;
+padding: 0px;
+margin: 0px;
+padding-left: 1%;
+padding-top: 11px;
+background-color: forestgreen;
+color: #fff;
+font-size: 1rem;
+top: 0px;
+}
+
+.titlefont {
+width: 99%;
+float: left;
+position: absolute;
+top: 45px;
+font-size: 0.7rem;
+padding-left: 5px;
+}
+
+
+
+
+/*refactor */
+.fwifi {
+position: absolute;
+left: 1px;
+top: 76px;
+font-size: 0.8rem;   
+}
+
+
+
+
+.menu {
+width: auto;
+min-width: 4%;
+text-align: center;
+float: left;
+min-height: 10px;
+border: 1px solid #ccc;
+line-height: 20px;
+padding: 3px;
+margin-right: 10px;
+background-color: #fff;
+color: #666;
+cursor: pointer;
+font-size: 0.8rem;
+margin-top: -5px;
+
+}
+.menu:hover {
+background-color: green;
+color: #fff;
+
+}
+
+.customsearch {
+width: 14.5%; margin-top: -6px; min-height: 24px; font-size: 0.875rem; float: left; padding-left: 5px;
+}
+
+.breaker {
+background-color: transparent; color: #fff; border: none; pointer-events: none; min-width: auto; width: auto;  
+}
+
+@media only screen and (max-width:767px){
+body {
+    display: none;
+}
+html {
+    background-color: #000;
+}
+}
+
+</style>
+
+
+  
+
+
+<!----menu-->
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page" >
+
+
+<div class="page">
+<div class="wrapper-d">
+
+
+            <form>
+
+                <div class="width100">
+                    <div class="feild_name">Title 1:</div>
+                    <input type="text" id="title1" name="title1" required="" minlength="4" maxlength="50" size="37"
+                        placeholder="Title 1">
+
+                </div>
+                <div class="width100">
+                    <div class="button" id="title1_submit">Submit</div>
+                </div>
+
+                <div class="width100">
+                    <div class="feild_name">First content:<br> With each submission creates a new paragraph</div>
+                    <textarea id="content1"
+                        placeholder="Are you serious about cooking? Whether you're making a delicious meal..."
+                        name="content" cols="45" rows="10"></textarea>
+
+                </div>
+                <div class="width100">
+                    <div class="button" id="content1_submit">Submit</div>
+                </div>
+
+
+                <div class="width100">
+                    <div class="feild_name">Title 2:</div>
+                    <input type="text" id="title2" name="title2" required="" minlength="4" maxlength="50" size="37"
+                        placeholder="Title 2">
+
+                </div>
+
+                <div class="width100">
+                    <div class="button" id="title2_submit">Submit</div>
+                </div>
+
+                <div class="width100">
+                    <div class="feild_name">Second Content:<br> With each submission creates a new paragraph</div>
+                    <textarea id="content2"
+                        placeholder="Are you serious about cooking? Whether you're making a delicious meal..."
+                        name="content" cols="45" rows="10"></textarea>
+
+                </div>
+
+                <div class="width100">
+                    <div class="button" id="content2_submit">Submit</div>
+                </div>
+
+                <div class="width100">
+                    <div class="feild_name">Image Name:</div>
+                    <input type="text" id="imagename" name="title2" required="" minlength="4" maxlength="50" size="37"
+                        placeholder="asdf.jpg">
+                        <div class="feild_name" style="margin-top: 5px;">Image Alt Tag:</div>
+                        <input type="text" id="imagealt_tag" name="alt_tag" required="" minlength="4" maxlength="50" size="37"
+                        placeholder="Im an Image">
+
+                </div>
+                <div class="width100">
+                    <div class="button" id="imagename_submit">Submit</div>
+                </div>
+
+            </form>
+
+
+
+ </div>
+
+<div class="codepreview">
+    <div class="feild_name" style="color:#333;padding:5px;">Preview Code:</div>
+    <div class="insertcodehere">
+
+        <style type="text/css">.promo50 {     width: 50%;     float: left; }  @media (max-width: 767px) {     .promo50 {         width: 100%;         float: left;     }  } </style> <div class="content-d experience-component experience-pcrs_layouts-column1 d-md-block d-lg-block"> <div class="pd-even-columns pd-even-1-cols lvs-1"> <div class="container"> <div class="promo50"> <div class="pd-header-tag"> <h2 class="t-h4-style c-blue">Vornado Compact-Size Whole Room Air Circulator Fan</h2> </div>  <div class="pd-markup-content"> <p>The 533 Vornado Air Circulator uses signature energy efficient Vortex Action to move air up to 70 feet, providing whole room air circulation. Despite being on the smaller side, the 533 is more powerful than an 18 commercial fan! Its compact size makes it ideal for use in an office, dorm room, or cubical.</p>  <p>Available with a 3-speed control to adjust airflow from whisper quiet to a powerful high setting for quick room circulation. Evens out room temperature, eliminating hot and cold spots. Allows you to raise your thermostat up 5 degrees in the summer and maintain the same level of comfort.</p> </div>  <div class="pd-header-tag"> <h2 class="t-h4-style c-blue">Key Product Features:</h2> </div>  <div class="pd-markup-content"> <p>The 533 Vornado Air Circulator uses signature energy efficient Vortex Action to move air up to 70 feet, providing whole room air circulation. Despite being on the smaller side, the 533 is more powerful than an 18 commercial fan! Its compact size makes it ideal for use in an office, dorm room, or cubical.</p>  <p>Available with a 3-speed control to adjust airflow from whisper quiet to a powerful high setting for quick room circulation. Evens out room temperature, eliminating hot and cold spots. Allows you to raise your thermostat up 5 degrees in the summer and maintain the same level of comfort.</p> </div> </div>  <div class="promo50"> <div class="pd-image flex-fit"><picture> <img alt="Vornado Air Circulator" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw4f8436a6/images/hires/Z_EH1-0092-06.jpg?sw=800&sh=800&sm=fit" style="width: 100%;" /> </picture></div> </div> </div> </div> </div><div class="cnet"></div><div class="flix"></div>'
+
+
+    </div>
+</div>
+</div>
+<div class="width100" style="color:#fff; margin-bottom: 10px;">Copy this code and put into pim / staging || Make sure you upload image into pim-content</div>
+        <div class="codeview" style="margin-bottom: 50px;">
+
+            &lt;style type="text/css"&gt;.promo50 { width: 50%; float: left; } @media (max-width: 767px) { .promo50 {
+            width: 100%; float: left; } } &lt;/style&gt; &lt;div class="content-d experience-component
+            experience-pcrs_layouts-column1 d-md-block d-lg-block"&gt; &lt;div class="pd-even-columns pd-even-1-cols
+            lvs-1"&gt; &lt;div class="container"&gt; &lt;div class="promo50"&gt; &lt;div class="pd-header-tag"&gt;
+            &lt;h2 class="t-h4-style c-blue"&gt;<span id="fill_title1"></span> &lt;/h2&gt;&lt;/div&gt; &lt;div class="pd-markup-content"&gt; <span id="fill_paragraph"></span>&lt;/div&gt; &lt;div class="pd-header-tag"&gt; &lt;h2 class="t-h4-style c-blue"&gt;<span id="fill_title2"></span> &lt;/h2&gt; &lt;/div&gt; &lt;div class="pd-markup-content"&gt; <span id="fill_paragraph2"></span> &lt;/div&gt; &lt;/div&gt; &lt;div class="promo50"&gt; &lt;div class="pd-image flex-fit"&gt;&lt;picture&gt; &lt;img alt="<span id="fill_altage"></span>"src="/images/pim-content/<span id="fill_imagename"></span>?$staticlink$" style="width: 100%;" /&gt;
+            &lt;/picture&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;&lt;div class="cnet"&gt;&lt;/div&gt;&lt;div class="flix"&gt;&lt;/div>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+
+<script>
+    var finalcode =
+        '<style type="text/css">.promo50 {     width: 50%;     float: left; }  @media (max-width: 767px) {     .promo50 {         width: 100%;         float: left;     }  } </style> <div class="content-d experience-component experience-pcrs_layouts-column1 d-md-block d-lg-block"> <div class="pd-even-columns pd-even-1-cols lvs-1"> <div class="container"> <div class="promo50"> <div class="pd-header-tag"> <h2 class="t-h4-style c-blue">Vornado Compact-Size Whole Room Air Circulator Fan</h2> </div>  <div class="pd-markup-content"> <p>The 533 Vornado Air Circulator uses signature energy efficient Vortex Action to move air up to 70 feet, providing whole room air circulation. Despite being on the smaller side, the 533 is more powerful than an 18 commercial fan! Its compact size makes it ideal for use in an office, dorm room, or cubical.</p>  <p>Available with a 3-speed control to adjust airflow from whisper quiet to a powerful high setting for quick room circulation. Evens out room temperature, eliminating hot and cold spots. Allows you to raise your thermostat up 5 degrees in the summer and maintain the same level of comfort.</p> </div>  <div class="pd-header-tag"> <h2 class="t-h4-style c-blue">Key Product Features:</h2> </div>  <div class="pd-markup-content"> <ul> <li>Whole Room Vortex Circulation</li> <li>Moves Air 70 ft.</li> <li>Multidirectional Air Flow</li> <li>Easy To Clean</li> <li>Whisper Quiet</li> <li>3 Speed Control</li> <li>Energy Saver</li> <li>5 Year Warranty</li> </ul> </div> </div>  <div class="promo50"> <div class="pd-image flex-fit"><picture> <img alt="Vornado Air Circulator" src="/images/pim-content/Vornado-Whole-Room-Vortex-634x500.png?$staticlink$" style="width: 100%;" /> </picture></div> </div> </div> </div> </div><div class="cnet"></div><div class="flix"></div>'
+
+
+    
+
+
+
+$(document).ready(function() {
+
+
+$('#title1_submit').on('click', function() {
+
+
+if ($('#title1').val() == '') {
+    alert('Swing and a Miss! Fill in Title')
+    return false
+}
+   $('#fill_title1').text($('#title1').val())
+   $('.insertcodehere').html($('.codeview').text())
+
+    return false;
+})
+
+
+$('#title2_submit').on('click', function() {
+
+        if ($('#title2').val() == '') {
+            alert('Almost had it! Fill in Title')
+            return false
+        }
+
+    $('#fill_title2').text($('#title2').val())
+    $('.insertcodehere').html($('.codeview').text())
+})
+
+
+
+$('#content1_submit').on('click', function() {
+
+    if ($('#content1').val() == '') {
+        alert('What no description?... Fill in Content 1')
+        return false
+    }
+    $('#fill_paragraph').append('&lt;p&gt;'+$('#content1').val()+'&lt;/p&gt;')
+    $('.insertcodehere').html($('.codeview').text())
+    $('#content1').val('')
+    return false;
+})
+
+
+$('#content2_submit').on('click', function() {
+
+    if ($('#content2').val() == '') {
+        alert('What no description?... Fill in Content 2')
+        return false
+    }
+
+    $('#fill_paragraph2').append('&lt;p&gt;'+$('#content2').val()+'&lt;/p&gt;')
+    $('.insertcodehere').html($('.codeview').text())
+    $('#content2').val('')
+    return false;
+})
+
+
+
+$('#imagename_submit').on('click', function() {
+
+
+$('#fill_altage').text($('#imagealt_tag').val())
+$('#fill_imagename').text($('#imagename').val())
+$('.insertcodehere').html($('.codeview').text())
+    return false;
+})
+
+
+
+
+})
+
+
+
+
+</script>
+
+
+
