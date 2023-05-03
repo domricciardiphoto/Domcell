@@ -90,7 +90,7 @@ option {
     margin-bottom: 20px;
     min-height: 40px;
     background-color: #f7f7f7;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .prodbox {
@@ -279,6 +279,25 @@ color: #fff;
 }
 
 
+.wificontrola svg {
+    width: 97%;
+    margin-top: 0px;
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+}
+
+.fwifi_cont {
+    transform: translate(20px, -73px);
+    font-size: 0.7rem;
+    display: inline-block;
+    position: absolute;
+    right: 43px;
+    bottom: -24px;
+    color: #fff;
+    z-index: 99999;
+}
+
 
 @media only screen and (max-width:1600px){
 .breaker {
@@ -337,6 +356,8 @@ html {
   .gearicon svg:hover {
   transform: rotate(360deg);
 }
+
+
   </style>
 
 
@@ -348,19 +369,39 @@ html {
     <div class="lines">Select Type of Banner</div> 
     <div class="lines">
 
-        <select name="bannertypeslect" id="bannertypeslect">
-            <option value="">--Please choose an Banner Type--</option>
-            <option value="long">Long Banner</option>
-            <option value="FREEAssemby">Free Assembly</option>
-            <option value="SLEEPGu">Sleep Guarantee</option>
-            <option value="DOTD">Deal of the Day</option> 
+        <select name="bannertypeslect" id="bannertypeslect" >
+         <option selected value="">--Please choose an Banner Type--</option>
 
-            <option value="Assemby-required">Assembly Required</option>
-            <option value="WIFIOptional">Wifi Optional</option>
-            <option value="WIFIControllable">Wifi Controlable</option>
-            <option value="DOGEAR">Dog Ear</option>
-            <option value="CUSTOM">Custom Circle</option>
-            <option value="WATERFILTER">Water Filter</option>
+
+
+<optgroup label="Customizable Badges">
+    <option value="long" >Long Banner</option>
+    <option value="CUSTOM">Custom Circle</option>
+    <option value="DOGEAR">Dog Ear</option>
+</optgroup>
+
+<optgroup label="SVG Logo Badges">
+    <option value="DOTD">Deal of the Day</option> 
+    <option value="FREEAssemby">Free Assembly</option>     
+    <option value="WATERFILTER">Water Filter</option>
+    <option value="Assemby-required">Assembly Required</option>
+    <option value="WIFIOptional">Wifi Optional</option>
+    <option value="WIFIControllable">Wifi Controlable</option>
+</optgroup>
+
+<optgroup label="Image Badges">
+    <option value="SLEEPGu">Sleep Guarantee</option>
+</optgroup>
+
+
+
+            
+        
+           
+            
+            
+
+
         </select>
 
 
@@ -650,7 +691,7 @@ $('.freeassembly-code , .DOTD-code , .Assem-req-code ,.Assem-optional-code , .do
    if(selectedbannertype === 'WIFIControllable') {
     $('.nooptions').fadeIn()
     $('.prodbox').fadeIn();
-    $('.square-spot').html('TBD').css('background-color' , 'transparent');
+    $('.square-spot').html($('.wifi-contr').text()).css('background-color' , 'transparent');
     $('.wifi-contr').fadeIn()
    }
 

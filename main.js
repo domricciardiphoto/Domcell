@@ -1,24 +1,57 @@
-const {app, BrowserWindow, Menu, globalShortcut, shell , Notification} = require('electron')
-const path = require('path')
-const {autoUpdater} = require('electron-updater');
+const {app,BrowserWindow,ipcMain,Menu,globalShortcut,shell,} = require('electron')
+
+
+const {
+  autoUpdater
+} = require('electron-updater');
 const log = require('electron-log');
+const path = require('path')
+const ipc = ipcMain;
 log.transports.file.resolvePath = () => path.join('C:/Users/domin/Desktop/domcell', 'logs/main.log');
-log.log("Application version "+ app.getVersion())
-log.info("When is a raven like a writting desk?");
+let ver = app.getVersion()
+log.log("Application version " + ver)
 let win;
-let aboutWindow
+let aboutWindow;
+let mobileonly;
+let tabletonly;
 
 
-//Send Notification
-function notifyUser(options) {
-  new Notification(options.title , options)
+
+
+function createmobileonly() {
+  mobileonly = new BrowserWindow({
+    title: 'Mobile P.C. Richard & Son',
+    width: 390,
+    height: 844,
+    hasShadow: true,
+    resizable: false,
+    titleBarOverlay: false,
+    autoHideMenuBar: true,
+    roundedCorners: true
+
+  })
+  mobileonly.loadURL('https://www.pcrichard.com')
+}
+
+function createtabletonly() {
+  tabletonly = new BrowserWindow({
+    title: 'Mobile P.C. Richard & Son',
+    width: 768,
+    height: 1024,
+    hasShadow: true,
+    resizable: false,
+    titleBarOverlay: false,
+    autoHideMenuBar: true,
+    roundedCorners: true
+
+  })
+  tabletonly.loadURL('https://www.pcrichard.com')
 }
 
 
 
 function createMainWindow() {
   win = new BrowserWindow({
-    title: 'Domcell Badge Builder',
     title: 'Domcell Badge Builder',
     icon: `${__dirname}assets/icons/app-icon.png`,
     width: 1920,
@@ -28,32 +61,45 @@ function createMainWindow() {
     visualEffectState: 'active',
     titleBarOverlay: true,
     allowRunningInsecureContent: true,
-    navigateOnDragDrop:true,
+    navigateOnDragDrop: true,
+    webPreferences: {
+      nodeIntegration:true,
+      contextIsolation:true,
+      devTools:true,
+      preload: path.join(__dirname, 'preload.js')
+    }
 
   })
-  console.log(path.join(__dirname, 'index.html')) 
   win.loadFile(path.join(__dirname, 'index.html'))
+
+//// Close App
+
+ipc.on('closeApp' , ()=> {
+  log.log("clicked on close")
+})
+
+
 }
 
 function createAboutWindow() {
-    
+
   aboutWindow = new BrowserWindow({
-      title: 'About Domcell Badge Builder',
-      icon: `${__dirname}assets/icons/app-icon.png`,
-      width: 500,
-      height: 500,
-      hasShadow: true,
-      darkTheme: true,
-      visualEffectState: 'active',
-      titleBarOverlay: true,
-      allowRunningInsecureContent: true,
-      titleBarStyle: 'hidden',
-      alwaysOnTop: true,
-   center:true,
-   resizable:false,
-   frame:false,
-   autoHideMenuBar:true,
-   roundedCorners:true
+    title: 'About Domcell Badge Builder',
+    icon: `${__dirname}assets/icons/app-icon.png`,
+    width: 500,
+    height: 500,
+    hasShadow: true,
+    darkTheme: true,
+    visualEffectState: 'active',
+    titleBarOverlay: true,
+    allowRunningInsecureContent: true,
+    titleBarStyle: 'hidden',
+    alwaysOnTop: true,
+    center: true,
+    resizable: false,
+    frame: false,
+    autoHideMenuBar: true,
+    roundedCorners: true
 
   })
   aboutWindow.loadFile('about.html')
@@ -73,40 +119,40 @@ function gotogoogle() {
 
 
 
-autoUpdater.on("update-available" , (info) => {
+autoUpdater.on("update-available", (info) => {
   log.info("update available")
 })
 
-autoUpdater.on("update-not-available" , (info) => {
+autoUpdater.on("update-not-available", (info) => {
   log.info("update not available")
 })
 
-autoUpdater.on('error' , (err) => {
+autoUpdater.on('error', (err) => {
   log.info('Error in auto-updater. ' + err)
 })
 
 
-autoUpdater.on("download-progress" , (progressTrack) => {
-log.info("\n\ndownload-progress")
-log.info(progressTrack)
+autoUpdater.on("download-progress", (progressTrack) => {
+  log.info("\n\ndownload-progress")
+  log.info(progressTrack)
 })
 
-autoUpdater.on("checking-for-update" , () => {
+autoUpdater.on("checking-for-update", () => {
   log.info("checking for update")
 })
 
-autoUpdater.on("download-progress" , () => {
+autoUpdater.on("download-progress", () => {
   log.info("download progress")
 })
 
-autoUpdater.on("update-downloaded" , () => {
+autoUpdater.on("update-downloaded", () => {
   log.info("update downloaded")
 })
 
 
 
 
-app.on('ready' , () => {
+app.on('ready', () => {
   createMainWindow()
   autoUpdater.checkForUpdatesAndNotify()
   const mainMenu = Menu.buildFromTemplate(menu)
@@ -123,79 +169,83 @@ app.on('ready' , () => {
 
 
 const menu = [
-  {
-    role: 'fileMenu'
-},
-
-{
-role: 'separator'
-},
-
 
   {
-      label: 'Tools',
-      submenu: [
-
-       
-
-          {
-              label: 'Open Additonal Window',
-              click: createMainWindow
-          },
+    label: 'Tools >',
+    submenu: [
 
 
-          { 
-              label:"Reload Window",
-              role: 'reload'
-          },
-          
-          {
-              role: 'cut'
-          },
 
-          {
-              role: 'copy'
-          },
-
-          {
-              role: 'paste'
-          },
-          
-          {
-              role: 'toggleDevTools'
-          },
-
-          {
-              label: "Google",
-              click: gotogoogle,
-                  },
-
-          {
-              label: 'Quit',
-              accelerator: 'Ctrl+Q',
-              click: () => app.quit()
-          },
+      {
+        label: 'Open Additonal Window',
+        click: createMainWindow
+      },
 
 
-      ]
+      {
+        label: "Reload Window",
+        role: 'reload'
+      },
+
+
+      {
+        role: 'toggleDevTools'
+      },
+
+      {
+        label: "Google",
+        click: gotogoogle,
+      },
+
+      {
+        label: 'Quit',
+        accelerator: 'Ctrl+Q',
+        click: () => app.quit()
+      },
+
+
+    ]
 
   },
 
   {
     role: 'separator'
-    },
-
-
-  {   
-              label: 'About',
-              click: createAboutWindow,
   },
 
- 
-     
+
+
+
+  {
+    label: "Mobile / Tablet Viewers of PCR >",
+    submenu: [
+   
+      {
+        label: "View Mobile PCR",
+        click: createmobileonly
+      },
+      
+
+      {
+        label: "View Tablet PCR",
+        click: createtabletonly
+      },
+    ]
+  },
+
+
+  {
+    role: 'separator'
+  },
+
+
+  {
+    label: 'About >',
+    click: createAboutWindow,
+  },
+
+
+
+
+
 
 ]
-
-
-
-
