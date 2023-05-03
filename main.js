@@ -1,13 +1,20 @@
-const {app, BrowserWindow, Menu, globalShortcut, shell} = require('electron')
+const {app, BrowserWindow, Menu, globalShortcut, shell , Notification} = require('electron')
 const path = require('path')
 const {autoUpdater} = require('electron-updater');
 const log = require('electron-log');
 log.transports.file.resolvePath = () => path.join('C:/Users/domin/Desktop/domcell', 'logs/main.log');
 log.log("Application version "+ app.getVersion())
-log.info("Hello, log");
-log.warn("Some problem appears");
+log.info("When is a raven like a writting desk?");
 let win;
 let aboutWindow
+
+
+//Send Notification
+function notifyUser(options) {
+  new Notification(options.title , options)
+}
+
+
 
 function createMainWindow() {
   win = new BrowserWindow({
@@ -62,6 +69,10 @@ function gotogoogle() {
 
 
 
+
+
+
+
 autoUpdater.on("update-available" , (info) => {
   log.info("update available")
 })
@@ -92,6 +103,9 @@ autoUpdater.on("update-downloaded" , () => {
   log.info("update downloaded")
 })
 
+
+
+
 app.on('ready' , () => {
   createMainWindow()
   autoUpdater.checkForUpdatesAndNotify()
@@ -99,15 +113,31 @@ app.on('ready' , () => {
   Menu.setApplicationMenu(mainMenu)
   globalShortcut.register('CTRL+R', () => mainWindow.reload())
   globalShortcut.register('CTRL+D', () => mainWindow.toggleDevTools())
+
+
+
 })
 
 
+
+
+
 const menu = [
+  {
+    role: 'fileMenu'
+},
+
+{
+role: 'separator'
+},
 
 
   {
       label: 'Tools',
       submenu: [
+
+       
+
           {
               label: 'Open Additonal Window',
               click: createMainWindow
@@ -151,7 +181,9 @@ const menu = [
 
   },
 
-
+  {
+    role: 'separator'
+    },
 
 
   {   
@@ -163,3 +195,7 @@ const menu = [
      
 
 ]
+
+
+
+
