@@ -143,7 +143,9 @@ function pcrdev() {
   shell.openExternal("https://sfccdev.pcrichard.com/")
 }
 
-
+function gohome() {
+  win.loadFile(path.join(__dirname, 'index.html')) 
+}
 
 
 
@@ -200,9 +202,18 @@ app.on('ready', () => {
 const menu = [
 
   {
+    label: 'Home',
+    click: gohome
+  },
+  {
+    role: 'separator'
+  },
+
+
+  {
     label: 'Tools >',
     submenu: [
-
+     
 
 
       {
@@ -283,6 +294,10 @@ const menu = [
   ]
   },
 
+  {
+    role: 'separator'
+  },
+
 
   {
     label: 'DEV SITES >',
@@ -301,7 +316,9 @@ const menu = [
 
   },
 
-
+  {
+    role: 'separator'
+  },
 
 
   {

@@ -373,3 +373,122 @@ download-progress
 [2023-05-10 12:48:35.826] [info]  enable content isolation before build
 [2023-05-10 12:48:46.945] [info]  Application version 6.1.1
 [2023-05-10 12:48:46.947] [info]  enable content isolation before build
+[2023-05-10 12:53:21.901] [info]  Application version 6.0.9
+[2023-05-10 12:53:21.904] [info]  enable content isolation before build
+[2023-05-10 12:53:21.997] [info]  checking for update
+[2023-05-10 12:53:23.128] [info]  update available
+[2023-05-10 12:53:24.843] [info]  
+
+download-progress
+[2023-05-10 12:53:24.843] [info]  {
+  total: 2188948,
+  delta: 58314,
+  transferred: 58314,
+  percent: 2.6640194285108647,
+  bytesPerSecond: 103762
+}
+[2023-05-10 12:53:24.844] [info]  download progress
+[2023-05-10 12:53:25.113] [info]  
+
+download-progress
+[2023-05-10 12:53:25.114] [info]  {
+  total: 2188948,
+  delta: 76604,
+  transferred: 76604,
+  percent: 3.499580620462432,
+  bytesPerSecond: 92072
+}
+[2023-05-10 12:53:25.114] [info]  download progress
+[2023-05-10 12:53:25.419] [info]  
+
+download-progress
+[2023-05-10 12:53:25.420] [info]  {
+  total: 2188948,
+  delta: 92080,
+  transferred: 92080,
+  percent: 4.206586908414453,
+  bytesPerSecond: 80914
+}
+[2023-05-10 12:53:25.420] [info]  download progress
+[2023-05-10 12:53:25.813] [info]  
+
+download-progress
+[2023-05-10 12:53:25.813] [info]  {
+  total: 2188948,
+  delta: 1774296,
+  transferred: 1866376,
+  percent: 85.26360607926729,
+  bytesPerSecond: 1218261
+}
+[2023-05-10 12:53:25.813] [info]  download progress
+[2023-05-10 12:53:26.464] [info]  
+
+download-progress
+[2023-05-10 12:53:26.464] [info]  {
+  total: 2188948,
+  delta: 1849751,
+  transferred: 1941831,
+  percent: 88.71069573146553,
+  bytesPerSecond: 889524
+}
+[2023-05-10 12:53:26.464] [info]  download progress
+[2023-05-10 12:53:26.466] [info]  
+
+download-progress
+[2023-05-10 12:53:26.466] [info]  {
+  total: 2188948,
+  delta: 71705,
+  transferred: 2013536,
+  percent: 91.98647021308867,
+  bytesPerSecond: 921527
+}
+[2023-05-10 12:53:26.467] [info]  download progress
+[2023-05-10 12:53:26.754] [info]  
+
+download-progress
+[2023-05-10 12:53:26.755] [info]  {
+  total: 2188948,
+  delta: 99634,
+  transferred: 2041465,
+  percent: 93.26237991948643,
+  bytesPerSecond: 825501
+}
+[2023-05-10 12:53:26.755] [info]  download progress
+[2023-05-10 12:53:27.024] [info]  
+
+download-progress
+[2023-05-10 12:53:27.025] [info]  {
+  total: 2188948,
+  delta: 247117,
+  transferred: 2188948,
+  percent: 100,
+  bytesPerSecond: 798012
+}
+[2023-05-10 12:53:27.025] [info]  download progress
+[2023-05-10 12:53:27.028] [info]  update downloaded
+[2023-05-10 12:53:45.548] [info]  Application version 6.1.1
+[2023-05-10 12:53:45.550] [info]  enable content isolation before build
+[2023-05-10 12:53:45.643] [info]  checking for update
+[2023-05-10 12:53:46.649] [info]  update not available
+[2023-05-10 12:55:26.301] [info]  Application version 6.1.1
+[2023-05-10 12:55:26.303] [info]  enable content isolation before build
+[2023-05-10 12:55:26.376] [info]  checking for update
+[2023-05-10 12:55:27.314] [info]  update not available
+[2023-05-10 12:57:11.283] [info]  Application version 6.1.1
+[2023-05-10 12:57:11.285] [info]  enable content isolation before build
+[2023-05-10 12:58:51.612] [info]  Application version 6.1.1
+[2023-05-10 12:58:51.615] [info]  enable content isolation before build
+[2023-05-10 12:58:51.685] [info]  checking for update
+[2023-05-10 12:58:52.670] [info]  update not available
+[2023-05-10 13:02:05.970] [info]  Application version 6.1.1
+[2023-05-10 13:02:05.973] [info]  enable content isolation before build
+[2023-05-10 13:03:10.347] [info]  Application version 6.1.1
+[2023-05-10 13:03:10.349] [info]  enable content isolation before build
+[2023-05-10 13:05:20.927] [info]  Application version 6.1.1
+[2023-05-10 13:05:20.929] [info]  enable content isolation before build
+[2023-05-10 13:05:39.725] [info]  Application version 6.1.1
+[2023-05-10 13:05:39.727] [info]  enable content isolation before build
+[2023-05-10 13:05:59.497] [info]  Application version 6.1.1
+[2023-05-10 13:05:59.500] [info]  enable content isolation before build
+[2023-05-10 13:06:23.073] [info]  Application version 6.1.1
+[2023-05-10 13:06:23.076] [info]  enable content isolation before build
