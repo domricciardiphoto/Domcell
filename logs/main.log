@@ -845,3 +845,126 @@ download-progress
 [2023-05-10 16:08:34.581] [info]  Finish BUILDING MENU BEFORE RELEASE!!!
 [2023-05-10 16:10:20.756] [info]  Application version 6.5.0
 [2023-05-10 16:10:20.758] [info]  Finish BUILDING MENU BEFORE RELEASE!!!
+[2023-05-10 16:15:21.238] [info]  Application version 6.1.2
+[2023-05-10 16:15:21.240] [info]  enable content isolation before build
+[2023-05-10 16:15:21.310] [info]  checking for update
+[2023-05-10 16:15:22.407] [info]  update not available
+[2023-05-10 16:16:18.389] [info]  Application version 6.1.2
+[2023-05-10 16:16:18.392] [info]  enable content isolation before build
+[2023-05-10 16:16:18.459] [info]  checking for update
+[2023-05-10 16:16:19.570] [info]  update available
+[2023-05-10 16:16:21.338] [info]  
+
+download-progress
+[2023-05-10 16:16:21.338] [info]  {
+  total: 2062663,
+  delta: 58311,
+  transferred: 58311,
+  percent: 2.8269765831839715,
+  bytesPerSecond: 95279
+}
+[2023-05-10 16:16:21.339] [info]  download progress
+[2023-05-10 16:16:21.627] [info]  
+
+download-progress
+[2023-05-10 16:16:21.638] [info]  {
+  total: 2062663,
+  delta: 76601,
+  transferred: 76601,
+  percent: 3.7136943843953185,
+  bytesPerSecond: 85018
+}
+[2023-05-10 16:16:21.639] [info]  download progress
+[2023-05-10 16:16:22.071] [info]  
+
+download-progress
+[2023-05-10 16:16:22.072] [info]  {
+  total: 2062663,
+  delta: 92976,
+  transferred: 92976,
+  percent: 4.507571038022207,
+  bytesPerSecond: 69127
+}
+[2023-05-10 16:16:22.072] [info]  download progress
+[2023-05-10 16:16:22.322] [info]  
+
+download-progress
+[2023-05-10 16:16:22.323] [info]  {
+  total: 2062663,
+  delta: 484235,
+  transferred: 577211,
+  percent: 27.983776312465974,
+  bytesPerSecond: 361661
+}
+[2023-05-10 16:16:22.323] [info]  download progress
+[2023-05-10 16:16:22.774] [info]  
+
+download-progress
+[2023-05-10 16:16:22.774] [info]  {
+  total: 2062663,
+  delta: 1691668,
+  transferred: 1784644,
+  percent: 86.52135613040036,
+  bytesPerSecond: 871408
+}
+[2023-05-10 16:16:22.774] [info]  download progress
+[2023-05-10 16:16:23.173] [info]  
+
+download-progress
+[2023-05-10 16:16:23.173] [info]  {
+  total: 2062663,
+  delta: 1714826,
+  transferred: 1807802,
+  percent: 87.64407952244258,
+  bytesPerSecond: 738783
+}
+[2023-05-10 16:16:23.173] [info]  download progress
+[2023-05-10 16:16:23.468] [info]  
+
+download-progress
+[2023-05-10 16:16:23.468] [info]  {
+  total: 2062663,
+  delta: 1780362,
+  transferred: 1873338,
+  percent: 90.8213314535627,
+  bytesPerSecond: 683201
+}
+[2023-05-10 16:16:23.469] [info]  download progress
+[2023-05-10 16:16:23.469] [info]  
+
+download-progress
+[2023-05-10 16:16:23.470] [info]  {
+  total: 2062663,
+  delta: 13916,
+  transferred: 1887254,
+  percent: 91.49599328634876,
+  bytesPerSecond: 688026
+}
+[2023-05-10 16:16:23.470] [info]  download progress
+[2023-05-10 16:16:23.777] [info]  
+
+download-progress
+[2023-05-10 16:16:23.777] [info]  {
+  total: 2062663,
+  delta: 41845,
+  transferred: 1915183,
+  percent: 92.8500196105714,
+  bytesPerSecond: 627723
+}
+[2023-05-10 16:16:23.777] [info]  download progress
+[2023-05-10 16:16:24.072] [info]  
+
+download-progress
+[2023-05-10 16:16:24.072] [info]  {
+  total: 2062663,
+  delta: 189325,
+  transferred: 2062663,
+  percent: 100,
+  bytesPerSecond: 616456
+}
+[2023-05-10 16:16:24.072] [info]  download progress
+[2023-05-10 16:16:24.075] [info]  update downloaded
+[2023-05-10 16:16:45.468] [info]  Application version 6.5.0
+[2023-05-10 16:16:45.471] [info]  Finish BUILDING MENU BEFORE RELEASE!!!
+[2023-05-10 16:16:45.565] [info]  checking for update
+[2023-05-10 16:16:46.468] [info]  update not available
