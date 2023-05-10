@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+    <script src="jquery.js"></script>
+
+    <style>
+        body {
+            background-color: black;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            color: #fff;
+            font-size: 6rem;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-family: Helvetica, sans-serif, Arial;
+            display: flex;
+            position: fixed;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+
+        }
+
+
+        .intro {
+            width: 100%;
+        }
+
+        .smaller {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .container-all {
+            width: 90%;
+            float: left;
+            margin-left: 5%;
+            background-color: #333;
+            min-height: 800px;
+            margin-top: 0%;
+            display: none;
+
+        }
+
+        .lines {
+            width: 98%;
+            float: left;
+            text-align: left;
+            margin-left: 2%;
+            color: #FFF;
+            margin-top: 1%;
+        }
+
+        .lines50 {
+            width: 48%;
+            float: left;
+            min-height: 541px;
+            border: 1px solid #fff;
+            float: left;
+            margin-right: 1%;
+
+        }
+
+        .lines98 {
+            width: 97%;
+            float: left;
+            border: 1px solid #fff;
+            min-height: 300px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            font-size: 0.9rem;
+            padding: 2px 5px;
+            margin-bottom: 10px;
+            width: 50%;
+        }
+
+        option {
+            margin-bottom: 20px;
+            min-height: 40px;
+            background-color: #f7f7f7;
+            font-size: 0.9rem;
+        }
+
+        .prodbox {
+            width: 48%;
+            float: left;
+            background-color: #F7F7F7;
+            height: 450px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .prod-im {
+            width: 100%;
+            float: left;
+        }
+
+        .prod-im img {
+            width: 100%;
+        }
+
+        .longbanner-spot {
+            width: 100%;
+            margin-left: 0px;
+            background-color: #ccc;
+            min-height: 30px;
+            text-align: center;
+            color: #000;
+        }
+
+        .square-spot {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background-color: #ccc;
+            right: 5px;
+            bottom: 112px;
+            text-align: center;
+            color: #000;
+        }
+
+        .dogear-spot {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #ccc;
+            right: 5px;
+            top: 9px;
+            text-align: center;
+            color: #000;
+        }
+
+        .long-banner-color {
+            margin-left: 2%;
+            margin-top: 15px;
+            float: left;
+            width: 100%;
+        }
+
+        input {
+            width: 60%;
+            min-height: 30px;
+            font-size: 1.5rem;
+        }
+
+        .submit {
+            width: 50%;
+            text-align: center;
+            max-width: 188px;
+            min-height: 42px;
+            font-size: 1.2rem;
+            background-color: #f7f7f7;
+            color: #333;
+            border-radius: 9px;
+        }
+
+        .width100 p {
+            font-size: .875rem;
+            font-weight: 700;
+            padding: 0px;
+            margin: 6px;
+        }
+
+        .black-d p,
+        .blue-d p,
+        .orange-d p,
+        .purple-d p,
+        .red-d p {
+            color: #fff;
+            padding: 0px;
+            margin: 1px;
+            min-height: 15px;
+        }
+
+        .prodbox {
+            display: none;
+        }
+
+        #lonngbanner-html,
+        .long-banner-color {
+            display: none;
+        }
+
+        .saying {
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+            color: #333;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header {
+            width: 99%;
+            position: absolute;
+            min-height: 28px;
+            padding: 0px;
+            margin: 0px;
+            padding-left: 1%;
+            padding-top: 11px;
+            background-color: forestgreen;
+            color: #fff;
+            font-size: 1rem;
+            top: 0px;
+        }
+
+        .titlefont {
+            width: 99%;
+            float: left;
+            position: absolute;
+            top: 45px;
+            font-size: 0.7rem;
+            padding-left: 5px;
+        }
+
+
+        .nooptions,
+        #sleepguarantee-code,
+        .freeassembly-code,
+        .DOTD-code,
+        .Assem-req-code,
+        .Assem-optional-code,
+        .dog-banner-color,
+        .dogear-code,
+        .wifi-contr,
+        .custom-code,
+        .mywaterfilter {
+            display: none;
+        }
+
+
+        /*refactor */
+        .fwifi {
+            position: absolute;
+            left: 1px;
+            top: 76px;
+            font-size: 0.8rem;
+        }
+
+        .dogear-d {
+            width: 100%;
+            max-width: 80px;
+            max-height: 98px;
+            margin-left: 6px;
+            overflow: hidden;
+            position: relative;
+            margin-top: -9px;
+        }
+
+        .custombox {
+            margin-top: 15px;
+            width: 100%;
+            margin-left: 15px;
+        }
+
+        #copyme,
+        .copyme_button,
+        .custombox {
+            display: none;
+        }
+
+        .menu {
+            width: auto;
+            min-width: 4%;
+            text-align: center;
+            float: left;
+            min-height: 10px;
+            border: 1px solid #ccc;
+            line-height: 20px;
+            padding: 3px;
+            margin-right: 10px;
+            background-color: #fff;
+            color: #666;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-top: -5px;
+
+        }
+
+        .menu:hover {
+            background-color: green;
+            color: #fff;
+
+        }
+
+        .customsearch {
+            width: 14.5%;
+            margin-top: -6px;
+            min-height: 24px;
+            font-size: 0.875rem;
+            float: left;
+            padding-left: 5px;
+        }
+
+        .breaker {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            pointer-events: none;
+            min-width: auto;
+            width: auto;
+        }
+
+
+        .wificontrola svg {
+            width: 97%;
+            margin-top: 0px;
+            position: absolute;
+            right: 1px;
+            bottom: 1px;
+        }
+
+        .fwifi_cont {
+            transform: translate(20px, -73px);
+            font-size: 0.7rem;
+            display: inline-block;
+            position: absolute;
+            right: 43px;
+            bottom: -24px;
+            color: #fff;
+            z-index: 99999;
+        }
+
+
+        @media only screen and (max-width:1600px) {
+            .breaker {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width:1300px) {
+
+            .mysearch,
+            .googlesearch,
+            .titlefont {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width:900px) {
+
+            #PIM,
+            .myprod2 {
+                display: none !important;
+            }
+
+            .prodbox {
+                width: 300px;
+            }
+
+        }
+
+        @media only screen and (max-width:767px) {
+            body {
+                display: none;
+            }
+
+            html {
+                background-color: #000;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+ 
+
+
+    <style>
+        .sidemenu {
+            float: right;
+            width: 3%;
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+            height: 100%;
+            margin-top: 5%;
+        }
+
+        .gearicon {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 100%;
+            max-height: 60px;
+            max-width: 50px;
+            cursor: pointer;
+        }
+
+        .updatetext {
+            font-size: 0.59rem;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            margin-left: 4px;
+            margin-bottom: 7px;
+        }
+
+        .gearicon svg {
+            width: 100%;
+            max-height: 35px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        svg {
+            transition: transform .7s ease-in-out;
+        }
+
+        .gearicon svg:hover {
+            transform: rotate(360deg);
+        }
+
+        @media only screen and (max-width:1800px) {
+            .square-spot {
+                bottom: 63px !important;
+            }
+
+            .prodbox {
+                height: fit-content;
+                padding-bottom: 20px;
+            }
+
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="intro">
+            <img src="assets/icons/snoop.png" width="150" height="109" />
+
+            LETS BUILD SOME HTML!<br><span class="smaller">A 2023 Domcell Code Generator</span></div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+$(document).ready(function() {
+   $('.intro').delay(400).fadeOut(function () {
+        document.location = 'index.html'
+        })
+})
+</script>

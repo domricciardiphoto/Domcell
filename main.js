@@ -1,15 +1,14 @@
-const {app,BrowserWindow,ipcMain,Menu,globalShortcut,shell,} = require('electron')
+const {app, BrowserWindow, ipcMain, Menu, globalShortcut, shell,} = require('electron')
+const {autoUpdater} = require('electron-updater');
 
-
-const {
-  autoUpdater
-} = require('electron-updater');
 const log = require('electron-log');
 const path = require('path')
 const ipc = ipcMain;
+
 log.transports.file.resolvePath = () => path.join('C:/Users/domin/Desktop/domcell', 'logs/main.log');
 let ver = app.getVersion()
 log.log("Application version " + ver)
+log.log('enable content isolation before build')
 let win;
 let aboutWindow;
 let mobileonly;
@@ -64,22 +63,26 @@ function createMainWindow() {
     navigateOnDragDrop: true,
     webPreferences: {
       nodeIntegration:true,
-      contextIsolation:true,
+      contextIsolation:true, 
       devTools:true,
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'assets/preload.js')
     }
 
   })
-  win.loadFile(path.join(__dirname, 'index.html'))
-
-//// Close App
-
-ipc.on('closeApp' , ()=> {
-  log.log("clicked on close")
-})
-
+  win.loadFile(path.join(__dirname, 'intro.html'))
 
 }
+
+
+function createMainWindow2() {
+ win.loadFile(path.join(__dirname, 'contentbuilder.html'))
+}
+
+function createMainWindow3() {
+  win.loadFile(path.join(__dirname, 'badgebuilder.html'))
+ }
+ 
+
 
 function createAboutWindow() {
 
@@ -102,6 +105,8 @@ function createAboutWindow() {
     roundedCorners: true
 
   })
+
+
   aboutWindow.loadFile('about.html')
 
 }
@@ -113,6 +118,30 @@ function gotogoogle() {
 }
 
 
+
+
+function gotostaging() {
+  shell.openExternal("https://staging-na01-pcrichard.demandware.net/on/demandware.store/Sites-Site/default/ViewApplication-DisplayWelcomePage")
+}
+
+function gotodev() {
+  shell.openExternal("https://development-na01-pcrichard.demandware.net/on/demandware.store/Sites-Site/default/ViewApplication-DisplayWelcomePage")
+}
+
+function gotopim() {
+  shell.openExternal("https://pcr.effectuspartners.com/login")
+}
+
+
+
+
+function pcrstaging() {
+  shell.openExternal("https://storefront:PCRS2021@staging-na01-pcrichard.demandware.net")
+}
+
+function pcrdev() {
+  shell.openExternal("https://sfccdev.pcrichard.com/")
+}
 
 
 
@@ -181,10 +210,35 @@ const menu = [
         click: createMainWindow
       },
 
+      {
+        label: "Reload Application and Clear",
+        role: 'reload'
+      },
 
       {
-        label: "Reload Window",
-        role: 'reload'
+        role: 'separator'
+      },
+
+
+        {
+        label: 'Overview Content Full Screen',
+        click: createMainWindow2
+      },
+
+
+      {
+        label: 'Badge Builder Full Screen',
+        click: createMainWindow3
+      },
+
+
+      {
+        role: 'separator'
+      },
+
+      {
+        label: "Open Google Browser",
+        click: gotogoogle,
       },
 
 
@@ -192,10 +246,7 @@ const menu = [
         role: 'toggleDevTools'
       },
 
-      {
-        label: "Google",
-        click: gotogoogle,
-      },
+      
 
       {
         label: 'Quit',
@@ -210,6 +261,44 @@ const menu = [
 
   {
     role: 'separator'
+  },
+
+  { label: "Links To CMS >",
+  
+  submenu: [
+{ 
+  label: 'SALESFORCE (STAGING)',
+  click:  gotostaging
+},
+{
+  label: 'SALESFORCE (DEV)',
+  click:  gotodev
+},
+{
+  label: 'EFFECTUS PIM',
+  click:  gotopim
+}
+
+
+  ]
+  },
+
+
+  {
+    label: 'DEV SITES >',
+    submenu: [
+{
+  label:"PCR STAGING",
+  click: pcrstaging,
+
+},
+{
+  label:"PCR DEVELOPMENT",
+  click: pcrdev,
+}
+
+    ]
+
   },
 
 
@@ -239,7 +328,7 @@ const menu = [
 
 
   {
-    label: 'About >',
+    label: 'About Domcell',
     click: createAboutWindow,
   },
 

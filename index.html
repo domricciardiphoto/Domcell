@@ -6,7 +6,6 @@
     <link rel="icon" href="./assets/icons/icon-domcell.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="jquery.js"></script>
-<script src="assets/appfunctions.js"></script>
     <link src=".badges-beta6.2023.css" type="css">
     <title>Domcell 2023</title>
 </head>
@@ -177,6 +176,8 @@ input {
     border-radius: 2px;
 }
 
+
+
 @media only screen and (max-width:1000px){
 .tagline , .breaker , .emailme {
     display: none;
@@ -247,6 +248,8 @@ input {
 
     <div class="header">
       
+   
+    
         
         <div class="dropdown" style=" margin-left: 50px;">
 
@@ -263,6 +266,7 @@ input {
             </div>
           </div>
 
+        <!--
           <div class="dropdown" >
             <button class="dropbtn">Links to CMS ></button>
             <div class="dropdown-content">
@@ -275,6 +279,7 @@ input {
                 <a href="https://pcr.effectuspartners.com/login" title="PIM" target="_blank"><div id="PIM" >EFFECTUS PIM</div></a>
             </div>
           </div>
+        
 
           <div class="dropdown" >
             <button class="dropbtn">DEV Sites ></button>
@@ -286,6 +291,10 @@ input {
            
             </div>
           </div>
+
+
+  -->
+
 
          <!-- <a href="https://www.pcrichard.com" target="_blank" title="Future Tool ( in Dev)" style="color: #fff; text-decoration: none;">Mobile PCR (In Dev)</a>-->
 
@@ -334,12 +343,6 @@ input {
 
 
 
-<script>
-
-   
-
-
-</script>
 
 
 
@@ -352,10 +355,13 @@ input {
 $(document).ready(function() {
 
 
+ $('.openshell').on('click', function() {
+    shell.openExternal("http://www.google.com")
+ })
 
     
-    var version = '2023 Ver. 6.0.3 incl. badge CSS Ver. Beta 9'
-    $('.version').text(version)
+    var version = '2023 Ver. 6.1.1 incl. badge CSS Ver. Beta 9'
+    $('span.version').text(version)
     $('.emailme').attr('href' , 'mailto:dom.ricciardi@pcrichard.com?Subject=Feature Request For Badge Builder&body=I am Using Badge Builder Version '+version)
 
 
@@ -420,11 +426,6 @@ input.addEventListener("keypress", function(event) {
    
 
 
-
-<script>
-
-
-</script>
 </body>
 </html>
 

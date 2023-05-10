@@ -1,4 +1,4 @@
-/*PLP Badges* updated 5-3v1/
+/*PLP Badges* updated 5-10/
 
 
 /*Long banner Mutiple colors*/
@@ -38,11 +38,11 @@
 
 /*Dog Ear*/
 
-.dogear-d{width: 100%; max-width: 80px; max-height: 98px; margin-left: 19px; overflow: hidden; position: relative;}.dogear-d .banner_text_dog{width: 100%; position: absolute; left: 11px; color: #fff; top: 25px; text-align: center; font-weight: 600; font-size: 0.8rem; line-height: 14px; pointer-events: none; transform: rotate(45deg);}.redear-d .dogearback{fill:#CD2028;}.blueear-d .dogearback{fill:#174796;}@media only screen and (max-width:767px){.dogear-d{max-width: 40px; max-height: 40px;}.dogear-d .banner_text_dog{left: 5px; top: 16px; font-size: 0.4rem; line-height: 0px; transform: rotate(44deg);}}
+.dogear-d{width: 100%; max-width: 80px; max-height: 98px; margin-left: 19px; overflow: hidden; position: relative;}.dogear-d .banner_text_dog{width: 100%; position: absolute; left: 11px; color: #fff; top: 25px; text-align: center; font-weight: 600; font-size: 0.8rem; line-height: 14px; pointer-events: none; transform: rotate(45deg);}.redear-d .dogearback{fill: #CD2028;}.blueear-d .dogearback{fill: #174796;}.blackear-d .dogearback{fill: #000;}.purpleear-d .dogearback{fill: #a059b7;}.yellowear-d .dogearback{fill: #fff33e;}.yellowear-d .banner_text_dog{color:#353535!important}.orangeear-d .dogearback{fill: #f78932;}.greenear-d .dogearback{fill: #008827;}@media only screen and (max-width:767px){.dogear-d{max-width: 40px; max-height: 40px;}.dogear-d .banner_text_dog{left: 5px; top: 16px; font-size: 0.4rem; line-height: 0px; transform: rotate(44deg);}}
 
 
 /*Custom Circle*/
-.banner-85da{width:70px;height:70px}.custom-red-d{fill:#CD2027}.custom-blue-d{fill:#315cb8}.custom-black-d{fill:#000}.custom-purple-d{fill:#a059b7}.custom-yellow-d{fill:#fff33e}.custom-orange-d{fill:#f78932}.custom-green-d{fill:#008827}.lineonelargertext{font-size:1rem}.banner-85da .banner_text{width:100%;position:absolute;left:0;color:#fff;top:19px;text-align:center;font-weight:600;font-size:.7rem;line-height:15px;pointer-events:none}@media only screen and (max-width:1620px){.width100 p{font-size:.7rem}}@media only screen and (max-width:767px){.banner-85da{max-width:40px!important;width:40px!important;height:40px!important}.banner-85da .banner_text{left:0;color:#fff;top:20px;font-weight:500;font-size:.42rem;line-height:8px}.wide-banner-badge .width100 p{font-size:.5rem!important}.custom-dark-d .banner_text{color:#353535!important}}
+.banner-85da{width:70px;height:70px}.custom-red-d{fill:#CD2027}.custom-blue-d{fill:#315cb8}.custom-black-d{fill:#000}.custom-purple-d{fill:#a059b7}.custom-yellow-d{fill:#fff33e}.custom-orange-d{fill:#f78932}.custom-green-d{fill:#008827}.lineonelargertext{font-size:1rem}.banner-85da .banner_text{width:100%;position:absolute;left:0;color:#fff;top:20px;text-align:center;font-weight:600;font-size:.63rem;line-height:15px;pointer-events:none;letter-spacing:0.5px;}@media only screen and (max-width:1620px){.width100 p{font-size:.7rem}}@media only screen and (max-width:767px){.banner-85da{max-width:40px!important;width:40px!important;height:40px!important}.banner-85da .banner_text{left:0;color:#fff;top:20px;font-weight:500;font-size:.42rem;line-height:8px}.wide-banner-badge .width100 p{font-size:.5rem!important}.custom-dark-d .banner_text{color:#353535!important}}
 
 
 
