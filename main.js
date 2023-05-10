@@ -8,7 +8,7 @@ const ipc = ipcMain;
 log.transports.file.resolvePath = () => path.join('C:/Users/domin/Desktop/domcell', 'logs/main.log');
 let ver = app.getVersion()
 log.log("Application version " + ver)
-log.log('enable content isolation before build')
+log.log('Finish BUILDING MENU BEFORE RELEASE!!!')
 let win;
 let aboutWindow;
 let mobileonly;
@@ -74,14 +74,27 @@ function createMainWindow() {
 }
 
 
-function createMainWindow2() {
- win.loadFile(path.join(__dirname, 'contentbuilder.html'))
+
+ 
+
+function createhtmlminifer() {
+
+  createhtmlminiferpage = new BrowserWindow({
+    title: 'HTML MINIFER',
+    hasShadow: true,
+    darkTheme: true,
+    visualEffectState: 'active',
+    center: true,
+    autoHideMenuBar: true,
+    roundedCorners: true,
+    width: 1200,
+    height: 1000,
+  })
+
+  createhtmlminiferpage.loadURL('https://www.willpeavy.com/tools/minifier/')
+
 }
 
-function createMainWindow3() {
-  win.loadFile(path.join(__dirname, 'badgebuilder.html'))
- }
- 
 
 
 function createAboutWindow() {
@@ -112,6 +125,84 @@ function createAboutWindow() {
 }
 
 
+function whatsnew() {
+  whatsnewpage = new BrowserWindow({
+
+    title: 'About Domcell Badge Builder',
+    icon: `${__dirname}assets/icons/app-icon.png`,
+    width: 700,
+    height: 500,
+    hasShadow: true,
+    darkTheme: true,
+    visualEffectState: 'active',
+    titleBarOverlay: true,
+    allowRunningInsecureContent: true,
+    titleBarStyle: 'hidden',
+    alwaysOnTop: true,
+    center: true,
+    resizable: false,
+    frame: false,
+    autoHideMenuBar: true,
+    roundedCorners: true
+  }),
+  whatsnewpage.loadFile('release-notes.html')
+}
+
+
+
+function howtoos() {
+  howtoospage = new BrowserWindow({
+
+    title: 'About Domcell Badge Builder',
+    icon: `${__dirname}assets/icons/app-icon.png`,
+    width: 1000,
+    height: 500,
+    hasShadow: true,
+    darkTheme: true,
+    visualEffectState: 'active',
+    titleBarOverlay: true,
+    allowRunningInsecureContent: true,
+    titleBarStyle: 'hidden',
+    alwaysOnTop: true,
+    center: true,
+    frame: false,
+    autoHideMenuBar: true,
+    roundedCorners: true
+  }),
+  howtoospage.loadFile('howtoo.html')
+}
+
+
+function fullscreenOverviewcontent() {
+  Overviewcontentpage = new BrowserWindow({
+    title: 'Overview Content',
+    hasShadow: true,
+    darkTheme: true,
+    width: 1820,
+    height: 1080,
+    icon: `${__dirname}assets/icons/app-icon.png`,
+    autoHideMenuBar: true
+  })
+  Overviewcontentpage.loadFile('contentbuilder.html')
+}
+
+
+
+
+function fullscreenBadgeBuilder() {
+ BadgeBuilderpage = new BrowserWindow({
+  title: 'Badge Builder',
+  hasShadow: true,
+  darkTheme: true,
+  width: 1820,
+  height: 1080,
+  icon: `${__dirname}assets/icons/app-icon.png`,
+  autoHideMenuBar: true,
+  })
+  BadgeBuilderpage.loadFile('badgebuilder.html')
+}
+
+
 
 function gotogoogle() {
   shell.openExternal("http://www.google.com")
@@ -133,8 +224,6 @@ function gotopim() {
 }
 
 
-
-
 function pcrstaging() {
   shell.openExternal("https://storefront:PCRS2021@staging-na01-pcrichard.demandware.net")
 }
@@ -145,6 +234,23 @@ function pcrdev() {
 
 function gohome() {
   win.loadFile(path.join(__dirname, 'index.html')) 
+}
+
+function featurerequest() {
+  shell.openExternal("mailto:dom.ricciardi@pcrichard.com?Subject=Feature Request For Badge Builder&body=I am Using Badge Builder Version "+ver)
+}
+
+
+function addminifertoindex() {
+  win.loadFile(path.join(__dirname, 'fullscreen2.html'))
+}
+
+function addbadgebuildertoindex() {
+  win.loadFile(path.join(__dirname, 'index.html'))
+}
+
+function addOverviewcontenttoindex() {
+  win.loadFile(path.join(__dirname, 'fullscreen1.html'))
 }
 
 
@@ -190,7 +296,7 @@ app.on('ready', () => {
   Menu.setApplicationMenu(mainMenu)
   globalShortcut.register('CTRL+R', () => mainWindow.reload())
   globalShortcut.register('CTRL+D', () => mainWindow.toggleDevTools())
-
+  globalShortcut.register('CTRL+H', () => gohome())
 
 
 })
@@ -205,6 +311,63 @@ const menu = [
     label: 'Home',
     click: gohome
   },
+  {
+    role: 'separator'
+  },
+
+  {
+  label:"HTML Builder Tools >",
+  submenu:[
+{
+label:"Product badge Builder",
+click: addbadgebuildertoindex
+},
+{
+  label:"Overview Content",
+  click: addOverviewcontenttoindex
+},
+
+{
+  label:"HTML Minifer",
+  click: addminifertoindex
+},
+
+{
+  label: "Builders in a New Window",
+  submenu: [
+    {
+      label: 'Full Screen: Overview Content',
+      click: fullscreenOverviewcontent
+    },
+  
+  
+    {
+      label: 'Full Screen: Badge Builder',
+      click: fullscreenBadgeBuilder
+    },
+  
+    {
+      label: "Full Screen: HTML Minifier",
+      click: createhtmlminifer
+    }
+  
+    
+  ]
+  },
+
+
+
+  ],
+
+  
+
+  },
+
+  
+
+
+
+
   {
     role: 'separator'
   },
@@ -226,26 +389,11 @@ const menu = [
         role: 'reload'
       },
 
-      {
-        role: 'separator'
-      },
+    
 
 
-        {
-        label: 'Overview Content Full Screen',
-        click: createMainWindow2
-      },
 
 
-      {
-        label: 'Badge Builder Full Screen',
-        click: createMainWindow3
-      },
-
-
-      {
-        role: 'separator'
-      },
 
       {
         label: "Open Google Browser",
@@ -274,47 +422,60 @@ const menu = [
     role: 'separator'
   },
 
-  { label: "Links To CMS >",
-  
-  submenu: [
-{ 
-  label: 'SALESFORCE (STAGING)',
-  click:  gotostaging
-},
-{
-  label: 'SALESFORCE (DEV)',
-  click:  gotodev
-},
-{
-  label: 'EFFECTUS PIM',
-  click:  gotopim
-}
 
+{
+  label: "PCR Staging and CMS >",
+  submenu: [
+    { label: "Links To CMS",
+  
+    submenu: [
+  { 
+    label: 'SALESFORCE (STAGING)',
+    click:  gotostaging
+  },
+  {
+    label: 'SALESFORCE (DEV)',
+    click:  gotodev
+  },
+  {
+    label: 'EFFECTUS PIM',
+    click:  gotopim
+  }
+  
+    ]
+    },
+
+
+    {
+      label: 'Staging Sites',
+      submenu: [
+  {
+    label:"PCR STAGING",
+    click: pcrstaging,
+  
+  },
+  {
+    label:"PCR DEVELOPMENT",
+    click: pcrdev,
+  }
+  
+      ]
+  
+    },
 
   ]
-  },
-
-  {
-    role: 'separator'
-  },
 
 
-  {
-    label: 'DEV SITES >',
-    submenu: [
-{
-  label:"PCR STAGING",
-  click: pcrstaging,
 
 },
-{
-  label:"PCR DEVELOPMENT",
-  click: pcrdev,
-}
 
-    ]
 
-  },
+
+
+
+
+
+
 
   {
     role: 'separator'
@@ -322,17 +483,17 @@ const menu = [
 
 
   {
-    label: "Mobile / Tablet Viewers of PCR >",
+    label: "Viewers of PCR Site >",
     submenu: [
    
       {
-        label: "View Mobile PCR",
+        label: "View: Mobile PCR",
         click: createmobileonly
       },
       
 
       {
-        label: "View Tablet PCR",
+        label: "View: Tablet PCR",
         click: createtabletonly
       },
     ]
@@ -344,12 +505,35 @@ const menu = [
   },
 
 
+ 
+
+{
+label:'Help >',
+submenu: [
+  {
+    label: "Whats New!",
+    click: whatsnew
+  },
+
+  {
+    label: "Domcell Documentation",
+click:howtoos
+  },
+
+  {
+    label: "Feature Request",
+    click: featurerequest
+  },
+  
+ 
   {
     label: 'About Domcell',
     click: createAboutWindow,
   },
 
+]
 
+}
 
 
 
