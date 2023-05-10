@@ -496,3 +496,134 @@ download-progress
 [2023-05-10 13:08:26.769] [info]  enable content isolation before build
 [2023-05-10 13:08:26.842] [info]  checking for update
 [2023-05-10 13:08:28.377] [info]  update not available
+[2023-05-10 13:09:37.273] [info]  Application version 6.1.1
+[2023-05-10 13:09:37.276] [info]  enable content isolation before build
+[2023-05-10 13:09:37.345] [info]  checking for update
+[2023-05-10 13:09:38.353] [info]  update not available
+[2023-05-10 13:09:56.989] [info]  Application version 6.1.1
+[2023-05-10 13:09:56.991] [info]  enable content isolation before build
+[2023-05-10 13:09:57.064] [info]  checking for update
+[2023-05-10 13:09:58.012] [info]  update not available
+[2023-05-10 13:10:17.919] [info]  Application version 6.1.1
+[2023-05-10 13:10:17.921] [info]  enable content isolation before build
+[2023-05-10 13:10:17.989] [info]  checking for update
+[2023-05-10 13:10:18.809] [info]  update not available
+[2023-05-10 13:10:49.490] [info]  Application version 6.1.1
+[2023-05-10 13:10:49.492] [info]  enable content isolation before build
+[2023-05-10 13:10:49.563] [info]  checking for update
+[2023-05-10 13:10:50.620] [info]  update available
+[2023-05-10 13:10:52.532] [info]  
+
+download-progress
+[2023-05-10 13:10:52.533] [info]  {
+  total: 2081115,
+  delta: 58315,
+  transferred: 58315,
+  percent: 2.802103679998462,
+  bytesPerSecond: 71552
+}
+[2023-05-10 13:10:52.534] [info]  download progress
+[2023-05-10 13:10:52.806] [info]  
+
+download-progress
+[2023-05-10 13:10:52.807] [info]  {
+  total: 2081115,
+  delta: 76605,
+  transferred: 76605,
+  percent: 3.680959485660331,
+  bytesPerSecond: 70344
+}
+[2023-05-10 13:10:52.807] [info]  download progress
+[2023-05-10 13:10:53.438] [info]  
+
+download-progress
+[2023-05-10 13:10:53.438] [info]  {
+  total: 2081115,
+  delta: 92980,
+  transferred: 92980,
+  percent: 4.467797310576302,
+  bytesPerSecond: 54027
+}
+[2023-05-10 13:10:53.438] [info]  download progress
+[2023-05-10 13:10:53.623] [info]  
+
+download-progress
+[2023-05-10 13:10:53.623] [info]  {
+  total: 2081115,
+  delta: 482087,
+  transferred: 575067,
+  percent: 27.632639234256633,
+  bytesPerSecond: 301714
+}
+[2023-05-10 13:10:53.623] [info]  download progress
+[2023-05-10 13:10:54.075] [info]  
+
+download-progress
+[2023-05-10 13:10:54.075] [info]  {
+  total: 2081115,
+  delta: 1710111,
+  transferred: 1803091,
+  percent: 86.64062293530151,
+  bytesPerSecond: 764670
+}
+[2023-05-10 13:10:54.075] [info]  download progress
+[2023-05-10 13:10:54.836] [info]  
+
+download-progress
+[2023-05-10 13:10:54.836] [info]  {
+  total: 2081115,
+  delta: 1713234,
+  transferred: 1806214,
+  percent: 86.79068672322289,
+  bytesPerSecond: 579100
+}
+[2023-05-10 13:10:54.836] [info]  download progress
+[2023-05-10 13:10:54.837] [info]  
+
+download-progress
+[2023-05-10 13:10:54.837] [info]  {
+  total: 2081115,
+  delta: 20035,
+  transferred: 1826249,
+  percent: 87.75339181160099,
+  bytesPerSecond: 585336
+}
+[2023-05-10 13:10:54.837] [info]  download progress
+[2023-05-10 13:10:55.130] [info]  
+
+download-progress
+[2023-05-10 13:10:55.131] [info]  {
+  total: 2081115,
+  delta: 99491,
+  transferred: 1905705,
+  percent: 91.57134516833524,
+  bytesPerSecond: 558367
+}
+[2023-05-10 13:10:55.131] [info]  download progress
+[2023-05-10 13:10:55.418] [info]  
+
+download-progress
+[2023-05-10 13:10:55.418] [info]  {
+  total: 2081115,
+  delta: 127420,
+  transferred: 1933634,
+  percent: 92.91336615227894,
+  bytesPerSecond: 522463
+}
+[2023-05-10 13:10:55.418] [info]  download progress
+[2023-05-10 13:10:55.694] [info]  
+
+download-progress
+[2023-05-10 13:10:55.694] [info]  {
+  total: 2081115,
+  delta: 274901,
+  transferred: 2081115,
+  percent: 100,
+  bytesPerSecond: 523288
+}
+[2023-05-10 13:10:55.694] [info]  download progress
+[2023-05-10 13:10:55.696] [info]  update downloaded
+[2023-05-10 13:11:05.594] [info]  Application version 6.1.2
+[2023-05-10 13:11:05.596] [info]  enable content isolation before build
+[2023-05-10 13:11:05.693] [info]  checking for update
+[2023-05-10 13:11:06.545] [info]  update not available
