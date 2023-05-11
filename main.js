@@ -5,14 +5,18 @@ const log = require('electron-log');
 const path = require('path')
 const ipc = ipcMain;
 
-log.transports.file.resolvePath = () => path.join('C:/Users/domin/Desktop/domcell', 'logs/main.log');
+log.transports.file.resolvePath = () => path.join('logs/main.log');
 let ver = app.getVersion()
 log.log("Application version " + ver)
-log.log('Finish BUILDING MENU BEFORE RELEASE!!!')
 let win;
 let aboutWindow;
 let mobileonly;
 let tabletonly;
+let whatsnewpage;
+let howtoospage;
+let createhtmlminiferpage;
+let createbannerpage21;
+let BadgeBuilderpage
 
 
 
