@@ -255,7 +255,7 @@ function gohome() {
 }
 
 function featurerequest() {
-  shell.openExternal("mailto:dom.ricciardi@pcrichard.com?Subject=Feature Request For Badge Builder&body=I am Using Badge Builder Version "+ver)
+  shell.openExternal("mailto:dom.ricciardi@pcrichard.com?Subject=Feature Request For Domcell "+ver+"&body=I am Using App Version "+ver)
 }
 
 

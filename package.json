@@ -1,6 +1,6 @@
 {
   "name": "domcell",
-  "version": "6.5.2",
+  "version": "6.5.3",
   "description": "PCR HTML Builder App",
   "main": "main.js",
   
@@ -10,7 +10,6 @@
   },
   "build": {
     "appId": "com.domcell.myapp",
-    "productName": "DOMCELL",
     "win": {
       "icon": "application-icon.png"
     },
