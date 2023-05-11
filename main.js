@@ -95,6 +95,24 @@ function createhtmlminifer() {
 
 }
 
+function createbannerschedular() {
+
+  createbannerpage21 = new BrowserWindow({
+    title: 'Banner Scheduler',
+    hasShadow: true,
+    darkTheme: true,
+    visualEffectState: 'active',
+    center: true,
+    autoHideMenuBar: true,
+    roundedCorners: true,
+    width: 1200,
+    height: 1000,
+  })
+
+  createbannerpage21.loadFile('bannersheduler.html')
+
+}
+
 
 
 function createAboutWindow() {
@@ -253,6 +271,10 @@ function addOverviewcontenttoindex() {
   win.loadFile(path.join(__dirname, 'fullscreen1.html'))
 }
 
+function addBannerSchedulertoindex() {
+  win.loadFile(path.join(__dirname, 'fullscreen3.html'))
+}
+
 
 
 
@@ -328,6 +350,11 @@ click: addbadgebuildertoindex
 },
 
 {
+  label:"Banner Scheduler",
+  click: addBannerSchedulertoindex
+},
+
+{
   label:"HTML Minifer",
   click: addminifertoindex
 },
@@ -349,6 +376,10 @@ click: addbadgebuildertoindex
     {
       label: "Full Screen: HTML Minifier",
       click: createhtmlminifer
+    },
+    {
+      label: "Full Screen: Banner Scheduler",
+      click: createbannerschedular
     }
   
     
