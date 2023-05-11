@@ -1,3 +1,119 @@
 [2023-05-11 01:33:42.909] [info]  Application version 6.5.3
 [2023-05-11 01:34:08.315] [info]  Application version 6.5.3
 [2023-05-11 01:34:23.979] [info]  Application version 6.5.3
+[2023-05-11 01:39:16.813] [info]  Application version 6.5.3
+[2023-05-11 01:39:16.815] [info]  Finish BUILDING MENU BEFORE RELEASE!!!
+[2023-05-11 01:39:16.881] [info]  checking for update
+[2023-05-11 01:39:18.027] [info]  update available
+[2023-05-11 01:39:19.758] [info]  
+
+download-progress
+[2023-05-11 01:39:19.758] [info]  {
+  total: 2064467,
+  delta: 72011,
+  transferred: 72011,
+  percent: 3.4881158187561248,
+  bytesPerSecond: 120621
+}
+[2023-05-11 01:39:19.759] [info]  download progress
+[2023-05-11 01:39:20.033] [info]  
+
+download-progress
+[2023-05-11 01:39:20.033] [info]  {
+  total: 2064467,
+  delta: 90301,
+  transferred: 90301,
+  percent: 4.374058776429946,
+  bytesPerSecond: 103556
+}
+[2023-05-11 01:39:20.033] [info]  download progress
+[2023-05-11 01:39:20.349] [info]  
+
+download-progress
+[2023-05-11 01:39:20.350] [info]  {
+  total: 2064467,
+  delta: 106676,
+  transferred: 106676,
+  percent: 5.167241714205168,
+  bytesPerSecond: 89795
+}
+[2023-05-11 01:39:20.351] [info]  download progress
+[2023-05-11 01:39:20.537] [info]  
+
+download-progress
+[2023-05-11 01:39:20.538] [info]  {
+  total: 2064467,
+  delta: 481027,
+  transferred: 587703,
+  percent: 28.467541501026655,
+  bytesPerSecond: 427110
+}
+[2023-05-11 01:39:20.538] [info]  download progress
+[2023-05-11 01:39:20.975] [info]  
+
+download-progress
+[2023-05-11 01:39:20.975] [info]  {
+  total: 2064467,
+  delta: 1722168,
+  transferred: 1828844,
+  percent: 88.58673933756268,
+  bytesPerSecond: 1008183
+}
+[2023-05-11 01:39:20.976] [info]  download progress
+[2023-05-11 01:39:21.431] [info]  
+
+download-progress
+[2023-05-11 01:39:21.431] [info]  {
+  total: 2064467,
+  delta: 1745326,
+  transferred: 1852002,
+  percent: 89.70848165652441,
+  bytesPerSecond: 815860
+}
+[2023-05-11 01:39:21.431] [info]  download progress
+[2023-05-11 01:39:21.700] [info]  
+
+download-progress
+[2023-05-11 01:39:21.700] [info]  {
+  total: 2064467,
+  delta: 1810862,
+  transferred: 1917538,
+  percent: 92.8829571991221,
+  bytesPerSecond: 755234
+}
+[2023-05-11 01:39:21.701] [info]  download progress
+[2023-05-11 01:39:21.701] [info]  
+
+download-progress
+[2023-05-11 01:39:21.701] [info]  {
+  total: 2064467,
+  delta: 13907,
+  transferred: 1931445,
+  percent: 93.55659354206195,
+  bytesPerSecond: 760411
+}
+[2023-05-11 01:39:21.702] [info]  download progress
+[2023-05-11 01:39:21.991] [info]  
+
+download-progress
+[2023-05-11 01:39:21.991] [info]  {
+  total: 2064467,
+  delta: 41837,
+  transferred: 1959375,
+  percent: 94.90948511165351,
+  bytesPerSecond: 692359
+}
+[2023-05-11 01:39:21.991] [info]  download progress
+[2023-05-11 01:39:22.265] [info]  
+
+download-progress
+[2023-05-11 01:39:22.265] [info]  {
+  total: 2064467,
+  delta: 146929,
+  transferred: 2064467,
+  percent: 100,
+  bytesPerSecond: 665099
+}
+[2023-05-11 01:39:22.266] [info]  download progress
+[2023-05-11 01:39:22.268] [info]  update downloaded
+[2023-05-11 01:53:31.002] [info]  Application version 6.5.4

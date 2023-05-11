@@ -69,6 +69,7 @@ function createMainWindow() {
       nodeIntegration:true,
       contextIsolation:true, 
       devTools:true,
+      spellcheck: true,
       preload: path.join(__dirname, 'assets/preload.js')
     }
 
