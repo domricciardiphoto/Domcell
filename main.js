@@ -1,4 +1,4 @@
-const {app, BrowserWindow, ipcMain, Menu, globalShortcut, shell,} = require('electron')
+const {app, BrowserWindow, ipcMain,remote, Menu, globalShortcut, shell,} = require('electron')
 const {autoUpdater} = require('electron-updater');
 
 const log = require('electron-log');
@@ -315,7 +315,6 @@ autoUpdater.on("update-downloaded", () => {
 
 
 
-
 app.on('ready', () => {
   createMainWindow()
   autoUpdater.checkForUpdatesAndNotify()
@@ -327,6 +326,8 @@ app.on('ready', () => {
 
 
 })
+
+
 
 
 

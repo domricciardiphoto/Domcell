@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GPT AI Webpage</title>
+  <script src="https://cdn.jsdelivr.net/npm/gpt@2.0.4/lib/gpt.min.js"></script>
+</head>
+<body>
+  <h1>GPT AI Webpage</h1>
+
+  <div>
+    <label for="prompt">Enter a prompt:</label>
+    <input type="text" id="prompt" />
+    <button onclick="generateResponse()">Generate Response</button>
+  </div>
+
+  <div>
+    <label for="response">AI Response:</label>
+    <textarea id="response" rows="4" cols="50"></textarea>
+  </div>
+
+  <script>
+    // Initialize the GPT model
+    const model = new gpt.JSAPI({
+      apiKey: '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',
+      model: 'gpt-3.5-turbo'
+    });
+
+    // Function to generate AI response
+    async function generateResponse() {
+      const promptInput = document.getElementById('prompt').value;
+      const responseTextarea = document.getElementById('response');
+      
+      responseTextarea.value = 'Generating response...';
+
+      try {
+        // Make the API call to generate the response
+        const response = await model.complete({
+          prompt: promptInput,
+          maxTokens: 100
+        });
+
+        responseTextarea.value = response.choices[0].text;
+      } catch (error) {
+        console.error(error);
+        responseTextarea.value = 'Error generating response. Please try again.';
+      }
+    }
+  </script>
+</body>
+</html>
