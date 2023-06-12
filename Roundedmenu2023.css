@@ -1,0 +1,56 @@
+.scrollerdlist-d {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 10px;
+        padding-bottom: 15px;
+        padding-left: 0px;
+}
+
+.itemrounded {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        min-width: 10%;
+        background-color: white;
+        border: 0.8px solid #666;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        transition: all 0.3s ease-in-out;
+        white-space: nowrap;
+        user-select: none
+}
+
+.scrollerdlist-d a:hover {
+        text-decoration: none !important;
+}
+
+.itemrounded:hover {
+        border: 0.8px solid #174796;
+        background-color:
+                #f7f7f7;
+}
+
+.totalMenuItemsd {
+        position: relative;
+        margin-top: 0px;
+}
+
+@media (max-width: 768px) {
+        .itemrounded {
+                min-width: calc(25% - 20px);
+                font-size: 3vw;
+                text-align:
+                        center;
+        }
+
+        .scrollerdlist-d {
+                padding-bottom: 15px;
+        }
+
+        .totalMenuItemsd {
+                position: relative;
+                margin-top: 10px;
+        }
+}

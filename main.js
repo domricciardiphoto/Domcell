@@ -80,6 +80,8 @@ function createMainWindow() {
 
 
 
+
+
  
 
 function createhtmlminifer() {
@@ -280,6 +282,10 @@ function addBannerSchedulertoindex() {
   win.loadFile(path.join(__dirname, 'fullscreen3.html'))
 }
 
+function createMenuWindowtoindex() {
+  win.loadFile(path.join(__dirname, 'roundmenu.html'))
+}
+
 
 
 
@@ -350,6 +356,12 @@ const menu = [
 label:"Product badge Builder",
 click: addbadgebuildertoindex
 },
+
+{
+  label:"Create Rounded Menu (NEW)",
+  click:createMenuWindowtoindex
+  },
+
 {
   label:"Overview Content",
   click: addOverviewcontenttoindex
@@ -364,6 +376,8 @@ click: addbadgebuildertoindex
   label:"HTML Minifer",
   click: addminifertoindex
 },
+
+
 
 {
   label: "Builders in a New Window",
@@ -576,3 +590,19 @@ click:howtoos
 
 
 ]
+
+
+
+const { exec } = require('child_process');
+
+ipcMain.handle('run-command', (event, command) => {
+  return new Promise((resolve, reject) => {
+    exec(command, (err, stdout, stderr) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(stdout);
+      }
+    });
+  });
+});

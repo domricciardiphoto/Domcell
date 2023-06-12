@@ -13,6 +13,7 @@
             max-width: 1600px;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 100px;
 
 
         }
@@ -96,10 +97,10 @@
             width: 100%;
             float: left;
             color: #fff;
-            min-height: 30px;
+            min-height: 10px;
         }
 
-        .scrollerdlist {
+        .scrollerdlist-d {
             display: flex;
             overflow-x: auto;
             gap: 20px;
@@ -123,7 +124,7 @@
             user-select: none
         }
 
-        .scrollerdlist a:hover {
+        .scrollerdlist-d a:hover {
             text-decoration: none !important;
         }
 
@@ -135,6 +136,19 @@
         .totalMenuItemsd {
             position: relative;
             margin-top: 0px;
+            background-color: #fff;
+            padding: 5px;
+        }
+
+       a.pcrRoundedLinkd {
+            color: #333 !important;
+            text-decoration: none !important;
+        }
+
+        .t-h5-style {
+            font-size: 1.5rem;
+            color: #034694;
+            font-weight: 800;
         }
 
 
@@ -146,7 +160,7 @@
                 text-align: center;
             }
 
-            .scrollerdlist {
+            .scrollerdlist-d {
                 padding-bottom: 15px;
             }
 
@@ -163,12 +177,324 @@
     </style>
 
 <body>
-    <div class="page">
 
 
-        <div class="container-all" style="width: 90%; float: left; margin-left: 5%; ">
 
-            <!--
+
+
+
+
+
+    <style>
+        body {
+
+            padding: 0px;
+            margin: 0px;
+            color: #fff;
+        }
+
+        .container {
+            width: 103%;
+            margin-left: 0%;
+            min-height: 500px;
+        }
+
+        .header {
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            min-height: 25px;
+            background-color: forestgreen;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-image: url('./assets/icon-domcell.png');
+            background-repeat: no-repeat;
+            background-position: 7px 8px;
+            background-size: 30px;
+
+            z-index: 3;
+
+        }
+
+        .tagline {
+            width: 100%;
+            position: fixed;
+            font-size: 0.7rem;
+            padding: 5px;
+            margin-bottom: 7px;
+            padding-left: .5%;
+            top: 46px;
+            left: 0px;
+            background-color: #000;
+            z-index: 1;
+
+        }
+
+        .menu {
+            width: auto;
+            float: left;
+            background-color: #fff;
+            color: #000;
+            border-radius: 3px;
+            padding: 5px;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-left: 5px;
+
+        }
+
+        .menu:hover {
+            background-color: forestgreen;
+            color: #fff;
+        }
+
+        .breaker {
+            background-color: transparent;
+            color: #fff;
+            text-align: left;
+            width: auto;
+        }
+
+        .version {
+            color: yellow;
+        }
+
+        .customsearch {
+            width: 95%;
+            margin-top: -6px;
+            min-height: 22px;
+            font-size: 0.875rem;
+            float: left;
+        }
+
+        .pcrsearch,
+        .googlesearch {
+            width: 4%;
+        }
+
+
+        .sidemenu {
+            width: 2.5%;
+            float: left;
+
+            height: 100%;
+            position: fixed;
+            bottom: 5px;
+            right: 5px;
+            z-index: 9;
+        }
+
+        .saying {
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+            color: #333;
+            width: 100%;
+            text-align: center;
+        }
+
+        .gearicon {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 100%;
+            max-height: 60px;
+            max-width: 50px;
+            cursor: pointer;
+        }
+
+        .updatetext {
+            font-size: 0.59rem;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            margin-left: 4px;
+            margin-bottom: 7px;
+        }
+
+        .gearicon svg {
+            width: 100%;
+            max-height: 35px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        svg {
+            transition: transform .7s ease-in-out;
+        }
+
+        .gearicon svg:hover {
+            transform: rotate(360deg);
+        }
+
+        .lines {
+            width: 98%;
+            float: left;
+            text-align: left;
+            margin-left: 2%;
+            color: #FFF;
+            margin-top: 1%;
+        }
+
+        .lines50 {
+            width: 48%;
+            float: left;
+            min-height: 541px;
+            border: 1px solid #fff;
+            float: left;
+            margin-right: 1%;
+
+        }
+
+        .lines98 {
+            width: 97%;
+            float: left;
+            border: 1px solid #fff;
+            min-height: 300px;
+            margin-bottom: 10px;
+        }
+
+        .myloadedtools {
+            width: 100%;
+            border: none;
+            min-height: 1000px;
+            height: 100%;
+            margin-top: 80px;
+        }
+
+        .used {
+            pointer-events: none;
+        }
+
+
+        input {
+            border-radius: 2px;
+        }
+
+
+
+        @media only screen and (max-width:1000px) {
+
+            .tagline,
+            .breaker,
+            .emailme {
+                display: none;
+            }
+
+
+        }
+
+
+        input, textarea {
+            font-size: 0.9rem;
+      
+        }
+    </style>
+
+
+    <body>
+
+        <div class="page">
+
+
+            <style>
+                /* Dropdown Button */
+                .dropbtn {
+                    color: white;
+                    padding: 8px;
+                    font-size: 13px;
+                    cursor: pointer;
+                    border-radius: 0px;
+                    border: none;
+                    margin-top: 5px;
+                    background-color: transparent;
+                }
+
+                /* The container <div> - needed to position the dropdown content */
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+
+                }
+
+                /* Dropdown Content (Hidden by Default) */
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #f1f1f1;
+                    min-width: 240px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    z-index: 5;
+                    border-radius: 5px;
+                }
+
+                /* Links inside the dropdown */
+                .dropdown-content a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+
+                /* Change color of dropdown links on hover */
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+                /* Show the dropdown menu on hover */
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+
+                /* Change the background color of the dropdown button when the dropdown content is shown */
+                .dropdown:hover .dropbtn {
+                    background-color: #3e8e41;
+                }
+            </style>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="header">
+
+
+
+
+                <div class="searchmenuitems" style="float: right;margin-right: 1%; margin-top: 4px;">
+                    <div class="menu breaker">PCR Search:</div>
+
+                    <div class="menu breaker"> <input id="mypcrsearch" class="mypcrsearch customsearch" type="text"
+                            placeholder="PCR Site Search"></div>
+
+                    <div id="pcrsearch" style="display: none;" class="menu pcrsearch">Search</div>
+
+                    <div class="menu breaker">|| &nbsp;&nbsp;Google Search:</div>
+
+                    <div class="menu breaker"> <input id="customsearch" class="mysearch customsearch" type="text"
+                            placeholder="Google Search"></div>
+                    <div id="googlesearch" style="display: none;" class="menu googlesearch">Search</div>
+                </div>
+
+            </div>
+
+
+            <div class="tagline">Domcell <span class="version">2023 Ver 6.7 incl. badge CSS Ver Beta 9</span></div>
+
+
+
+
+
+            <div class="container-all" style="width: 55%; float: left; margin-left: 0%; ">
+
+                <!--
              <label for="color-select">Amount of Items:</label><br>
                     <select name="dogcolor" id="dogcolorchange">
                         <option value="">Amount of Items:</option>
@@ -186,396 +512,450 @@
 
                    </select>
        -->
-            <div class="promo100">
-                Title of Search bar<br> <input type="text" id="tfname1" name="tfname1" placeholder="description Item 1"
-                    style="width: 50%;"><br><br><br><br>
-            </div>
-
-            <div class="promo100">
                 <div class="promo100">
-                    <div class="module1">
-<input type="text" id="fname1" name="fname1" style="width: 30%; margin-right: 10%; float: left"placeholder="description Item 1">
-<input type="text" id="dname1" name="dname1" placeholder="link Item 1" style="width: 50%; float: left;">
-                        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                            <span class="del deleter1">X DELETE THIS ITEM</span>
-                        </div>
-
-                    </div>
-
-
-                    <br><br>
-                    <div class="module2">
-                        <input type="text" id="fname2" name="fname2" style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 2">
-<input type="text" id="dname2" name="dname2" placeholder="link Item 2" style="width: 50%; float: left;">
-                        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                            <span class="del deleter2">X DELETE THIS ITEM</span>
-                        </div>
-
-                    </div>
-                    <br><br>
-                    <div class="module3">
-                        <input type="text" id="fname3" name="fname3" style="width: 30%; margin-right: 10%; float: left"placeholder="description Item 3">
-                        <input type="text" id="dname3" name="dname3" placeholder="link Item 3" style="width: 50%; float: left;">
-                        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                            <span class="del deleter3">X DELETE THIS ITEM</span>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div class="module4">
-                        <input type="text" id="fname4" name="fname4" style="width: 30%; margin-right: 10%; float: left"placeholder="description Item 4">
-                        <input type="text" id="dname4" name="dname4" placeholder="link Item 4" style="width: 50%; float: left;">
-                        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                            <span class="del deleter4">X DELETE THIS ITEM</span>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div class="module5">
-                        <input type="text" id="fname5" name="fname5" style="width: 30%; margin-right: 10%; float: left"placeholder="description Item 5">
-                        <input type="text" id="dname5" name="dname5" placeholder="link Item 5" style="width: 50%; float: left;">
-                        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                            <span class="del deleter5">X DELETE THIS ITEM</span>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div class="module6">
-                        <input type="text" id="fname6" name="fname6" style="width: 30%; margin-right: 10%; float: left"placeholder="description Item 6">
-                        <input type="text" id="dname6" name="dname6" placeholder="link Item 6" style="width: 50%; float: left;">
-                        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                            <span class="del deleter6">X DELETE THIS ITEM</span>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div class="module7">
-                        <input type="text" id="fname7" name="fname7" style="width: 30%; margin-right: 10%; float: left"placeholder="description Item 7">
-                        <input type="text" id="dname7" name="dname7" placeholder="link Item 7" style="width: 50%; float: left;">
-                        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                            <span class="del deleter7">X DELETE THIS ITEM</span>
-                        </div>
-                    </div>
-
-
-
-
-
-
-                    <br><br>
+                    Title of Search bar<br> <input type="text" id="tfname1" name="tfname1"
+                        placeholder="description Item 1" style="width: 50%;"><br><br><br><br>
                 </div>
 
-       
-            </div>
-<hr style="width: 100%; border: 1px solid #fff;">
+                <div class="promo100">
+                    <div class="promo100">
+                        <div class="module1">
+                            <input type="text" id="fname1" name="fname1"
+                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 1">
+
+                            <textarea rows="2" name="dname1" id="dname1" placeholder="link Item 1"
+                                style="width: 50%; float: left;"></textarea>
+                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                <span class="del deleter1">X DELETE THIS ITEM</span>
+                            </div>
+
+                        </div>
+
+
+                        <br><br>
+                        <div class="module2">
+                            <input type="text" id="fname2" name="fname2"
+                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 2">
+                           
+                                <textarea rows="2" id="dname2" name="dname2" placeholder="link Item 2"
+                                style="width: 50%; float: left;"></textarea>
+                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                <span class="del deleter2">X DELETE THIS ITEM</span>
+                            </div>
+
+                        </div>
+                        <br><br>
+                        <div class="module3">
+                            <input type="text" id="fname3" name="fname3"
+                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 3">
+                                <textarea rows="2" id="dname3" name="dname3" placeholder="link Item 3"
+                                style="width: 50%; float: left;"></textarea>
+                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                <span class="del deleter3">X DELETE THIS ITEM</span>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="module4">
+                            <input type="text" id="fname4" name="fname4"
+                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 4">
+                                <textarea rows="2" id="dname4" name="dname4" placeholder="link Item 4"
+                                style="width: 50%; float: left;"></textarea>
+                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                <span class="del deleter4">X DELETE THIS ITEM</span>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="module5">
+                            <input type="text" id="fname5" name="fname5"
+                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 5">
+                                <textarea rows="2" id="dname5" name="dname5" placeholder="link Item 5"
+                                style="width: 50%; float: left;"></textarea>
+                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                <span class="del deleter5">X DELETE THIS ITEM</span>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="module6">
+                            <input type="text" id="fname6" name="fname6"
+                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 6">
+                                <textarea rows="2" id="dname6" name="dname6" placeholder="link Item 6"
+                                style="width: 50%; float: left;"></textarea>
+                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                <span class="del deleter6">X DELETE THIS ITEM</span>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="module7">
+                            <input type="text" id="fname7" name="fname7"
+                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 7">
+                                <textarea rows="2" id="dname7" name="dname7" placeholder="link Item 7"
+                                style="width: 50%; float: left;"></textarea>
+                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                <span class="del deleter7">X DELETE THIS ITEM</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <!--<hr style="width: 100%; border: 1px solid #fff;">
             <div class="module8 promo100">
+
+
+
 <div class="promo100">Add a Menu Item:</div>
+
+
 <div class="promo100">
     <input style="float: left; width: 30%; margin-right: 10%;" type="text" id="fname8" name="fname8" placeholder="description Item (Next)">
     <input style="float: left; width: 50%; " type="text" id="fname8" name="fname8" placeholder="Link Item (Next)">
                             
 </div>
+
+
 <div class="promo100" style="margin-top: 10px;"><button>Submit</button></div>
 
+
+
             </div>
 
 
         </div>
+-->
 
 
-        <div class="page">
-            <div class="wrapper-d" style="width: 100%;">
-                <div class="totalMenuItemsd">
-                    <div class="experience-component experience-pcrs_assets-headerTag">
-                        <div class="pd-header-tag">
-                            <p class="t-h5-style c-blue" style="color: #fff; font-size: 2rem;"> <span
-                                    class="tfname1">Top Searches</span></p>
+
+                <div class="page">
+                    <div class="wrapper-d" style="width: 100%;">
+                        <div class="totalMenuItemsd">
+                            <div style="display: none;" class="experience-component experience-pcrs_assets-headerTag">
+                                <div class="pd-header-tag">
+                                    <p class="t-h5-style c-blue" style="color: #fff; font-size: 2rem;"> <span
+                                            class="tfname1">Top Searches</span></p>
+                                </div>
+                            </div>
+                            <div class="here promo1000"></div>
+
                         </div>
+
                     </div>
-                    <div class="here promo1000"></div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="codeview" style="color: #000; font-size: 0.8rem; width: 40%; margin-top: 90px;">
+                &lt;link href="pim-content/Roundedmenu2023.css?$staticlink$" rel="stylesheet" /&gt;<br>
+
+                &lt;div class="totalMenuItemsd"&gt;<br>
+                &lt;div class="experience-component experience-pcrs_assets-headerTag"&gt;<br>
+                &lt;div class="pd-header-tag"&gt; &lt;p class="t-h5-style c-blue"&gt;<span class="tfname1">Top
+                    Searches</span>
+                &lt;/p&gt;
+                &lt;/div&gt;&lt;/div&gt;<br>
+                &lt;div class="scrollerdlist-d" role="navigation" aria-label="Top Searches"&gt;<br>
+
+                <div class="maincontent1">
+                    &lt;a class="pcrRoundedLinkd" href="<span class="dname1"></span>" title="<span
+                        class="fname1"></span>"&gt;&lt;div
+                    class="itemrounded"
+                    tabindex="0"&gt;<span class="fname1"></span>&lt;/div&gt;&lt;/a&gt;<br>
+                </div>
+                <div class="maincontent2">
+                    &lt;a class="pcrRoundedLinkd" href="<span class="dname2"></span>" title="<span
+                        class="fname2"></span>"&gt;&lt;div
+                    class="itemrounded"
+                    tabindex="0"&gt;<span class="fname2"></span>&lt;/div&gt;&lt;/a&gt;<br>
+                </div>
+
+                <div class="maincontent3">
+                    &lt;a class="pcrRoundedLinkd" href="<span class="dname3"></span>" title="<span
+                        class="fname3"></span>"&gt;&lt;div
+                    class="itemrounded"
+                    tabindex="0"&gt;<span class="fname3"></span>&lt;/div&gt;&lt;/a&gt;<br>
+                </div>
+                <div class="maincontent4">
+                    &lt;a class="pcrRoundedLinkd" href="<span class="dname4"></span>" title="<span
+                        class="fname4"></span>"&gt;&lt;div
+                    class="itemrounded"
+                    tabindex="0"&gt;<span class="fname4"></span>&lt;/div&gt;&lt;/a&gt;<br>
+                </div>
+                <div class="maincontent5">
+                    &lt;a class="pcrRoundedLinkd" href="<span class="dname5"></span>" title="<span
+                        class="fname5"></span>"&gt;&lt;div
+                    class="itemrounded"
+                    tabindex="0"&gt;<span class="fname5"></span>&lt;/div&gt;&lt;/a&gt;<br>
+                </div>
+                <div class="maincontent6">
+                    &lt;a class="pcrRoundedLinkd" href="<span class="dname6"></span>" title="<span
+                        class="fname6"></span>"&gt;&lt;div
+                    class="itemrounded"
+                    tabindex="0"&gt;<span class="fname6"></span>&lt;/div&gt;&lt;/a&gt;<br>
+                </div>
+
+                <div class="maincontent7">
+                    &lt;a class="pcrRoundedLinkd" href="<span class="dname7"></span>" title="<span
+                        class="fname7"></span>"&gt;&lt;div
+                    class="itemrounded"
+                    tabindex="0"&gt;<span class="fname7"></span>&lt;/div&gt;&lt;/a&gt;<br>
+                </div>
+                &lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+
+                &lt;script type="application/ld+json"&gt;<br>
+                {
+                "@context": "https://schema.org",<br>
+                "@type": "ItemList",<br>
+                "name": "<span class="tfname1">Top Searches</span>",<br>
+                "itemListElement": [<br>
+                <div class="maincontent1">
+                    {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "url": "<span class="dname1">/</span>",
+                    "name": "<span class="fname1"></span>"
+                    },
+                </div>
+                <div class="maincontent2">
+                    {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "url": "<span class="dname2">/</span>",
+                    "name": "<span class="fname2"></span>"
+                    },
+                </div>
+                <div class="maincontent3">
+                    {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "url": "<span class="dname3">/</span>",
+                    "name": "<span class="fname3"></span>"
+                    },
 
                 </div>
+                <div class="maincontent4">
+                    {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "url": "<span class="dname4">/</span>",
+                    "name": "<span class="fname4"></span>"
+                    },
+                </div>
+
+                <div class="maincontent5">
+                    {
+                    "@type": "ListItem",
+                    "position": 5,
+                    "url": "<span class="dname5">/</span>",
+                    "name": "<span class="fname5"></span>"
+                    },
+                </div>
+                <div class="maincontent6">
+                    {
+                    "@type": "ListItem",
+                    "position": 6,
+                    "url": "<span class="dname6">/</span>",
+                    "name": "<span class="fname6"></span>"
+                    },
+                </div>
+                <div class="maincontent7">
+                    {
+                    "@type": "ListItem",
+                    "position": 7,
+                    "url": "<span class="dname7">/</span>",
+                    "name": "<span class="fname7"></span>"
+                    }<br>
+                </div>
+
+                ]
+                }<br>
+                &lt;/script&gt;<br><br>
+
             </div>
-        </div>
-    </div>
 
 
-    <div class="codeview">
-        &lt;style&gt;.scrollerdlist{display: flex; overflow-x: auto; gap: 20px; padding: 10px; padding-bottom: 15px;
-        padding-left: 0px;}.itemrounded{display: flex; align-items: center; justify-content: center; padding: 10px;
-        min-width: 10%; background-color: white; border: 0.8px solid #666; border-radius: 10px; font-size: 0.8rem;
-        transition: all 0.3s ease-in-out; white-space: nowrap; user-select: none}.scrollerdlist
-        a:hover{text-decoration: none !important;}.itemrounded:hover{border: 0.8px solid #174796; background-color:
-        #f7f7f7;}.totalMenuItemsd{position: relative; margin-top: 0px;}@media (max-width:
-        768px){.itemrounded{min-width: calc(25% - 20px); font-size: 3vw; text-align:
-        center;}.scrollerdlist{padding-bottom: 15px;}.totalMenuItemsd{position: relative; margin-top: 10px;}
-        }&lt;/style&gt;<br><br>
-
-        &lt;div class="totalMenuItemsd"&gt;<br>
-        &lt;div class="experience-component experience-pcrs_assets-headerTag"&gt;<br>
-        &lt;div class="pd-header-tag"&gt; &lt;p class="t-h5-style c-blue"&gt;<span class="tfname1">Top Searches</span>
-        &lt;/p&gt;
-        &lt;/div&gt;&lt;/div&gt;<br>
-        &lt;div class="scrollerdlist" role="navigation" aria-label="Top Searches"&gt;<br>
-
-        <div class="maincontent1">
-            &lt;a href="<span class="dname1">/</span>" title="<span class="fname1"></span>"&gt;&lt;div
-            class="itemrounded"
-            tabindex="0"&gt;<span class="fname1"></span>&lt;/div&gt;&lt;/a&gt;<br>
-        </div>
-        <div class="maincontent2">
-            &lt;a href="<span class="dname2">/</span>" title="<span class="fname2"></span>"&gt;&lt;div
-            class="itemrounded"
-            tabindex="0"&gt;<span class="fname2"></span>&lt;/div&gt;&lt;/a&gt;<br>
-        </div>
-
-        <div class="maincontent3">
-            &lt;a href="<span class="dname3">/</span>" title="<span class="fname3"></span>"&gt;&lt;div
-            class="itemrounded"
-            tabindex="0"&gt;<span class="fname3"></span>&lt;/div&gt;&lt;/a&gt;<br>
-        </div>
-        <div class="maincontent4">
-            &lt;a href="<span class="dname4">/</span>" title="<span class="fname4"></span>"&gt;&lt;div
-            class="itemrounded"
-            tabindex="0"&gt;<span class="fname4"></span>&lt;/div&gt;&lt;/a&gt;<br>
-        </div>
-        <div class="maincontent5">
-            &lt;a href="<span class="dname5">/</span>" title="<span class="fname5"></span>"&gt;&lt;div
-            class="itemrounded"
-            tabindex="0"&gt;<span class="fname5"></span>&lt;/div&gt;&lt;/a&gt;<br>
-        </div>
-        <div class="maincontent6">
-            &lt;a href="<span class="dname6">/</span>" title="<span class="fname6"></span>"&gt;&lt;div
-            class="itemrounded"
-            tabindex="0"&gt;<span class="fname6"></span>&lt;/div&gt;&lt;/a&gt;<br>
-        </div>
-
-        <div class="maincontent7">
-            &lt;a href="<span class="dname7">/</span>" title="<span class="fname7"></span>"&gt;&lt;div
-            class="itemrounded"
-            tabindex="0"&gt;<span class="fname7"></span>&lt;/div&gt;&lt;/a&gt;<br>
-        </div>
-        &lt;/div&gt;<br>
-        &lt;/div&gt;<br><br>
-
-        &lt;script type="application/ld+json"&gt;<br>
-        {
-        "@context": "https://schema.org",<br>
-        "@type": "ItemList",<br>
-        "name": "<span class="tfname1">Top Searches</span>",<br>
-        "itemListElement": [<br>
-        <div class="maincontent1">
-            {<br>
-            "@type": "ListItem",<br>
-            "position": 1,<br>
-            "url": "<span class="dname1">/</span>",<br>
-            "name": "<span class="fname1"></span>"<br>
-            },<br>
-        </div>
-        <div class="maincontent2">
-            {<br>
-            "@type": "ListItem",<br>
-            "position": 2,<br>
-            "url": "<span class="dname2">/</span>",<br>
-            "name": "<span class="fname2"></span>"<br><br>
-            },<br>
-        </div>
-        <div class="maincontent3">
-            {<br>
-            "@type": "ListItem",<br>
-            "position": 3,<br>
-            "url": "<span class="dname3">/</span>",<br>
-            "name": "<span class="fname3"></span>"<br>
-            },<br>
-
-        </div>
-        <div class="maincontent4">
-            {<br>
-            "@type": "ListItem",<br>
-            "position": 4,<br>
-            "url": "<span class="dname4">/</span>",<br>
-            "name": "<span class="fname4"></span>"<br>
-            },<br>
-        </div>
-
-        <div class="maincontent5">
-            {<br>
-            "@type": "ListItem",<br>
-            "position": 5,<br>
-            "url": "<span class="dname5">/</span>",<br>
-            "name": "<span class="fname5"></span>"<br>
-            },<br>
-        </div>
-        <div class="maincontent6">
-            {<br>
-            "@type": "ListItem",<br>
-            "position": 6,<br>
-            "url": "<span class="dname6">/</span>",<br>
-            "name": "<span class="fname6"></span>"<br>
-            },<br>
-        </div>
-        <div class="maincontent7">
-            {<br><br>
-            "@type": "ListItem",<br>
-            "position": 7,<br>
-            "url": "<span class="dname7">/</span>",<br>
-            "name": "<span class="fname7"></span>"<br>
-            }<br>
-        </div>
-
-        ]
-        }<br>
-        &lt;/script&gt;<br><br>
-
-    </div>
-
-
-</body>
+    </body>
 
 
 
-<script>
-    $(document).ready(function () {
+    <script>
+        $(document).ready(function () {
 
 
-        $('.deleter1').on('click', function () {
-            $('.module1').css('opacity', '.5').css('pointer-events', 'none')
-            $('.maincontent1').empty()
-            $('.here').html($('.codeview').text())
-            $(this).hide()
-            $('#dname1').hide()
-        })
+            function goliveURL() {
+                $('.pcrRoundedLinkd').on('click', function () {
+                    window.open('https://www.pcrichard.com/' + $(this).attr('href'), '_blank');
+                    return false
+                })
+            }
 
 
-        $('.deleter2').on('click', function () {
-            $('.module2').css('opacity', '.5').css('pointer-events', 'none')
-            $('.maincontent2').empty()
-            $('.here').html($('.codeview').text())
-            $(this).hide()
-            $('#dname2').hide()
-        })
+            $('.deleter1').on('click', function () {
+                $('.module1').css('opacity', '.5').css('pointer-events', 'none')
+                $('.maincontent1').empty()
+                $('.here').html($('.codeview').text())
+                $(this).hide()
+                $('#dname1').hide()
+            })
 
 
-        $('.deleter3').on('click', function () {
-            $('.module3').css('opacity', '.5').css('pointer-events', 'none')
-            $('.maincontent3').empty()
-            $('.here').html($('.codeview').text())
-            $(this).hide()
-            $('#dname3').hide()
-        })
+            $('.deleter2').on('click', function () {
+                $('.module2').css('opacity', '.5').css('pointer-events', 'none')
+                $('.maincontent2').empty()
+                $('.here').html($('.codeview').text())
+                $(this).hide()
+                $('#dname2').hide()
+            })
 
 
-        $('.deleter4').on('click', function () {
-            $('.module4').css('opacity', '.5').css('pointer-events', 'none')
-            $('.maincontent4').empty()
-            $('.here').html($('.codeview').text())
-            $(this).hide()
-            $('#dname4').hide()
-        })
+            $('.deleter3').on('click', function () {
+                $('.module3').css('opacity', '.5').css('pointer-events', 'none')
+                $('.maincontent3').empty()
+                $('.here').html($('.codeview').text())
+                $(this).hide()
+                $('#dname3').hide()
+            })
 
 
-        $('.deleter5').on('click', function () {
-            $('.module5').css('opacity', '.5').css('pointer-events', 'none')
-            $('.maincontent5').empty()
-            $('.here').html($('.codeview').text())
-            $(this).hide()
-            $('#dname5').hide()
+            $('.deleter4').on('click', function () {
+                $('.module4').css('opacity', '.5').css('pointer-events', 'none')
+                $('.maincontent4').empty()
+                $('.here').html($('.codeview').text())
+                $(this).hide()
+                $('#dname4').hide()
+            })
+
+
+            $('.deleter5').on('click', function () {
+                $('.module5').css('opacity', '.5').css('pointer-events', 'none')
+                $('.maincontent5').empty()
+                $('.here').html($('.codeview').text())
+                $(this).hide()
+                $('#dname5').hide()
+
+            })
+
+
+            $('.deleter6').on('click', function () {
+                $('.module6').css('opacity', '.5').css('pointer-events', 'none')
+                $('.maincontent6').empty()
+                $('.here').html($('.codeview').text())
+                $(this).hide()
+                $('#dname6').hide()
+
+            })
+
+
+            $('.deleter7').on('click', function () {
+                $('.module7').css('opacity', '.5').css('pointer-events', 'none')
+                $('.maincontent7').empty()
+                $('.here').html($('.codeview').text())
+                $(this).hide()
+                $('#dname7').hide()
+
+            })
+
+
+            $('#tfname1').on('input', function (e) {
+                $('.tfname1').text($(this).val())
+                $('.here').html($('.codeview').text())
+                goliveURL()
+
+            });
+
+            $('#fname1').on('input', function (e) {
+                $('.fname1').text($(this).val())
+                $('.here').html($('.codeview').text())
+            });
+            $('#fname2').on('input', function (e) {
+                $('.fname2').text($(this).val())
+                $('.here').html($('.codeview').text())
+            });
+
+            $('#fname3').on('input', function (e) {
+                $('.fname3').text($(this).val())
+                $('.here').html($('.codeview').text())
+            });
+            $('#fname4').on('input', function (e) {
+                $('.fname4').text($(this).val())
+                $('.here').html($('.codeview').text())
+            });
+            $('#fname5').on('input', function (e) {
+                $('.fname5').text($(this).val())
+                $('.here').html($('.codeview').text())
+            });
+            $('#fname6').on('input', function (e) {
+                $('.fname6').text($(this).val())
+                $('.here').html($('.codeview').text())
+            });
+            $('#fname7').on('input', function (e) {
+                $('.fname7').text($(this).val())
+                $('.here').html($('.codeview').text())
+            });
+
+
+            $('#dname1').on('input', function (e) {
+                $('.dname1').text($(this).val())
+                $('.here').html($('.codeview').text())
+                clicker = $('#dname1').val()
+
+                goliveURL()
+
+
+            });
+
+            $('#dname2').on('input', function (e) {
+                $('.dname2').text($(this).val())
+                $('.here').html($('.codeview').text())
+                goliveURL()
+
+            });
+
+            $('#dname3').on('input', function (e) {
+                $('.dname3').text($(this).val())
+                $('.here').html($('.codeview').text())
+                goliveURL()
+
+            });
+
+            $('#dname4').on('input', function (e) {
+                $('.dname4').text($(this).val())
+                $('.here').html($('.codeview').text())
+                goliveURL()
+
+            });
+
+            $('#dname5').on('input', function (e) {
+                $('.dname5').text($(this).val())
+                $('.here').html($('.codeview').text())
+                goliveURL()
+
+            });
+
+            $('#dname6').on('input', function (e) {
+                $('.dname6').text($(this).val())
+                $('.here').html($('.codeview').text())
+                goliveURL()
+
+            });
+
+            $('#dname7').on('input', function (e) {
+                $('.dname7').text($(this).val())
+                $('.here').html($('.codeview').text())
+                goliveURL()
+            });
+
+
+
+
+
 
         })
-
-
-        $('.deleter6').on('click', function () {
-            $('.module6').css('opacity', '.5').css('pointer-events', 'none')
-            $('.maincontent6').empty()
-            $('.here').html($('.codeview').text())
-            $(this).hide()
-            $('#dname6').hide()
-
-        })
-
-
-        $('.deleter7').on('click', function () {
-            $('.module7').css('opacity', '.5').css('pointer-events', 'none')
-            $('.maincontent7').empty()
-            $('.here').html($('.codeview').text())
-            $(this).hide()
-            $('#dname7').hide()
-
-        })
-
-
-        $('#tfname1').on('input', function (e) {
-            $('.tfname1').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-
-        $('#fname1').on('input', function (e) {
-            $('.fname1').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-        $('#fname2').on('input', function (e) {
-            $('.fname2').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-
-        $('#fname3').on('input', function (e) {
-            $('.fname3').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-        $('#fname4').on('input', function (e) {
-            $('.fname4').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-        $('#fname5').on('input', function (e) {
-            $('.fname5').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-        $('#fname6').on('input', function (e) {
-            $('.fname6').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-        $('#fname7').on('input', function (e) {
-            $('.fname7').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-
-
-        $('#dname1').on('input', function (e) {
-            $('.dname1').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-
-        $('#dname2').on('input', function (e) {
-            $('.dname2').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-
-        $('#dname3').on('input', function (e) {
-            $('.dname3').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-
-        $('#dname4').on('input', function (e) {
-            $('.dname4').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-
-        $('#dname5').on('input', function (e) {
-            $('.dname5').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-
-        $('#dname6').on('input', function (e) {
-            $('.dname6').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-
-        $('#dname7').on('input', function (e) {
-            $('.dname7').text($(this).val())
-            $('.here').html($('.codeview').text())
-        });
-
-
-
-
-    })
-</script>
+    </script>
 
 
 
