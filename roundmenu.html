@@ -868,11 +868,12 @@ class="itemrounded"
     </div>
 
     <div style="width: 99.3%; float: left; margin-top: 10px; padding: 10px; line-height: 25px; color: #333; background-color: #fff; font-weight: bold;">How To`s:<br>
-    1: Menu Items are Sortable UP and Down<br>
-    2: Grab Left Icon to move items, Code will Re-Factor itself when you sort.<br>
-    3: The Preview Menu Items are Clickable to PCR To Check Links<br>
-    4: Deleting a Menu Item -- If you delete it and you want it back you have to reload the tool<br>
-    5: Issues / Problems.. Click Feature Request in the Help Menu to Email me. Cheers!
+       1: You can easily rearrange the menu items by dragging them up or down.<br>
+       2: Use the icon on the left to move items. The code will automatically adjust to reflect your changes.<br>
+       3: Preview menu items can be clicked to perform PCR and verify the links.<br>
+       4: Note on removing a menu item: once deleted, it cannot be retrieved unless you reload the tool.<br>
+       5: For the tool to function as intended, make sure you copy the entire code.<br>
+       6: If you encounter any issues or difficulties, go to the Help Menu and click on "Feature Request" to send me an email. Cheers
     </div>
 
 </div>
@@ -924,7 +925,7 @@ class="itemrounded"
 
             function goliveURL() {
                 $('.pcrRoundedLinkd').on('click', function () {
-                    window.open('https://www.pcrichard.com/' + $(this).attr('href'), '_blank');
+                    window.open('https://www.pcrichard.com' + $(this).attr('href'), '_blank');
                     return false
                 })
             }
