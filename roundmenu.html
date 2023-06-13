@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <title>Round Menu Builder</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <style>
         .page {
             width: 100%;
@@ -451,6 +453,51 @@
                 .dropdown:hover .dropbtn {
                     background-color: #3e8e41;
                 }
+
+
+                .mydrag {
+                    position: relative;
+                    background-color: #333;
+                    float: left;
+                    width: 100%;
+                }
+
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0px;
+                }
+                li {
+                    width: 90%;
+                    float: left;
+                    border: 1px solid #666;
+                    margin-bottom: 5px;
+                    padding: 5px;
+                }
+
+                .nostyle {
+                    border: none;
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                .ui-state-highlight {
+                    width: 90%;
+                    float: left;
+                    min-height: 50px;
+                    
+                }
+
+                .sorthandle {
+                    width: 30px;
+                    height: 30px;
+                    background-color: #333;
+                    position: absolute;
+                    left: -40px;
+                    top: -5px;
+                    cursor: pointer;
+                }
+
             </style>
 
 
@@ -518,264 +565,321 @@
                 </div>
 
                 <div class="promo100">
-                    <div class="promo100">
-                        <div class="module1">
-                            <input type="text" id="fname1" name="fname1"
-                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 1">
+                    <div class="promo100 ">
 
-                            <textarea rows="2" name="dname1" id="dname1" placeholder="link Item 1"
-                                style="width: 50%; float: left;"></textarea>
-                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                                <span class="del deleter1">X DELETE THIS ITEM</span>
-                            </div>
+                        <ul id="sortable1">
+<li data-id="1">
+    <div  class="module1 mydrag" >
+        <div class="sorthandle">
+          
+        </div>
+        <input type="text" id="fname1" name="fname1"
+            style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 1">
 
-                        </div>
+        <textarea rows="2" name="dname1" id="dname1" placeholder="link Item 1"
+            style="width: 50%; float: left;"></textarea>
+        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+            <span class="del deleter1">X DELETE THIS ITEM</span>
+        </div>
+
+    </div></li>
+<li data-id="2">
+    <div class="module2 mydrag">
+        <div class="sorthandle"></div>
+    <input type="text" id="fname2" name="fname2"
+        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 2">
+   
+        <textarea rows="2" id="dname2" name="dname2" placeholder="link Item 2"
+        style="width: 50%; float: left;"></textarea>
+    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+        <span class="del deleter2">X DELETE THIS ITEM</span>
+    </div>
+
+</div></li>
+
+<li  data-id="3">   
+    <div class="module3 mydrag">
+        <div class="sorthandle"></div>
+    <input type="text" id="fname3" name="fname3"
+        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 3">
+        <textarea rows="2" id="dname3" name="dname3" placeholder="link Item 3"
+        style="width: 50%; float: left;"></textarea>
+    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+        <span class="del deleter3">X DELETE THIS ITEM</span>
+    </div>
+</div></li>
+<li data-id="4">
+     <div class="module4 mydrag">
+        <div class="sorthandle"></div>
+    <input type="text" id="fname4" name="fname4"
+        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 4">
+        <textarea rows="2" id="dname4" name="dname4" placeholder="link Item 4"
+        style="width: 50%; float: left;"></textarea>
+    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+        <span class="del deleter4">X DELETE THIS ITEM</span>
+    </div>
+</div></li>
+<li data-id="5">
+     <div class="module4 mydrag">
+        <div class="sorthandle"></div>
+    <div class="module5 ">
+    <input type="text" id="fname5" name="fname5"
+        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 5">
+        <textarea rows="2" id="dname5" name="dname5" placeholder="link Item 5"
+        style="width: 50%; float: left;"></textarea>
+    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+        <span class="del deleter5">X DELETE THIS ITEM</span>
+    </div>
+</div></li>
+<li data-id="6"> 
+      <div class="module4 mydrag">
+        <div class="sorthandle"></div>
+    <div class="module6 ">
+    <input type="text" id="fname6" name="fname6"
+        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 6">
+        <textarea rows="2" id="dname6" name="dname6" placeholder="link Item 6"
+        style="width: 50%; float: left;"></textarea>
+    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+        <span class="del deleter6">X DELETE THIS ITEM</span>
+    </div>
+</div></li>
+<li data-id="7"> 
+     <div class="module4 mydrag">
+        <div class="sorthandle"></div>
+    <div class="module7 ">
+    <input type="text" id="fname7" name="fname7"
+        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 7">
+        <textarea rows="2" id="dname7" name="dname7" placeholder="link Item 7"
+        style="width: 50%; float: left;"></textarea>
+    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+        <span class="del deleter7">X DELETE THIS ITEM</span>
+    </div>
+</div></li>
+</ul>
 
 
-                        <br><br>
-                        <div class="module2">
-                            <input type="text" id="fname2" name="fname2"
-                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 2">
-                           
-                                <textarea rows="2" id="dname2" name="dname2" placeholder="link Item 2"
-                                style="width: 50%; float: left;"></textarea>
-                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                                <span class="del deleter2">X DELETE THIS ITEM</span>
-                            </div>
-
-                        </div>
-                        <br><br>
-                        <div class="module3">
-                            <input type="text" id="fname3" name="fname3"
-                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 3">
-                                <textarea rows="2" id="dname3" name="dname3" placeholder="link Item 3"
-                                style="width: 50%; float: left;"></textarea>
-                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                                <span class="del deleter3">X DELETE THIS ITEM</span>
-                            </div>
-                        </div>
-                        <br><br>
-                        <div class="module4">
-                            <input type="text" id="fname4" name="fname4"
-                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 4">
-                                <textarea rows="2" id="dname4" name="dname4" placeholder="link Item 4"
-                                style="width: 50%; float: left;"></textarea>
-                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                                <span class="del deleter4">X DELETE THIS ITEM</span>
-                            </div>
-                        </div>
-                        <br><br>
-                        <div class="module5">
-                            <input type="text" id="fname5" name="fname5"
-                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 5">
-                                <textarea rows="2" id="dname5" name="dname5" placeholder="link Item 5"
-                                style="width: 50%; float: left;"></textarea>
-                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                                <span class="del deleter5">X DELETE THIS ITEM</span>
-                            </div>
-                        </div>
-                        <br><br>
-                        <div class="module6">
-                            <input type="text" id="fname6" name="fname6"
-                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 6">
-                                <textarea rows="2" id="dname6" name="dname6" placeholder="link Item 6"
-                                style="width: 50%; float: left;"></textarea>
-                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                                <span class="del deleter6">X DELETE THIS ITEM</span>
-                            </div>
-                        </div>
-                        <br><br>
-                        <div class="module7">
-                            <input type="text" id="fname7" name="fname7"
-                                style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 7">
-                                <textarea rows="2" id="dname7" name="dname7" placeholder="link Item 7"
-                                style="width: 50%; float: left;"></textarea>
-                            <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-                                <span class="del deleter7">X DELETE THIS ITEM</span>
-                            </div>
-                        </div>
+                       
+                        
+                      
+                     
+                     
+                       
+                      
+                       
+                       
+                     
+                      
+                      
 
 
                     </div>
 
 
                 </div>
-                <!--<hr style="width: 100%; border: 1px solid #fff;">
-            <div class="module8 promo100">
 
 
 
-<div class="promo100">Add a Menu Item:</div>
+
+             
 
 
-<div class="promo100">
-    <input style="float: left; width: 30%; margin-right: 10%;" type="text" id="fname8" name="fname8" placeholder="description Item (Next)">
-    <input style="float: left; width: 50%; " type="text" id="fname8" name="fname8" placeholder="Link Item (Next)">
-                            
+
+            </div>
+
+
+<div style="width: 45%; float: left ; position: relative; margin-top: -100px;">
+
+
+<div style="width: 100%; float: left;margin-top: 90px; margin-bottom: 10px;">Menu Preview</div>
+
+    <div class="page" style="width: 100%; ">
+        <div class="wrapper-d" style="width: 102%; min-height: 150px;">
+            <div class="totalMenuItemsd" style="min-height: 150px;">
+                <div style="display: none;" class="experience-component experience-pcrs_assets-headerTag">
+                    <div class="pd-header-tag">
+                        <p class="t-h5-style c-blue" style="color: #fff; font-size: 2rem;"> <span
+                                class="tfname1">Top Searches</span></p>
+                    </div>
+                </div>
+                <div class="here promo1000"></div>
+
+            </div>
+
+        </div>
+    </div>
+    <div style="width: 100%; float: left; margin-top: 10px;">Copy Code Here</div>
+
+
+    <div class="codeview" style="color: #000; font-size: 0.8rem; width: 100%; margin-top: 10px;">
+        &lt;link href="pim-content/Roundedmenu2023.css?$staticlink$" rel="stylesheet" /&gt;<br>
+
+        &lt;div class="totalMenuItemsd"&gt;<br>
+        &lt;div class="experience-component experience-pcrs_assets-headerTag"&gt;<br>
+        &lt;div class="pd-header-tag"&gt; &lt;p class="t-h5-style c-blue"&gt;<span class="tfname1">Top
+            Searches</span>
+        &lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;<br>
+        &lt;div class="scrollerdlist-d" role="navigation" aria-label="Top Searches"&gt;<br>
+
+
+<div class="promo100" style="color: #000;">
+<ul id="sortable2">
+<li class="nostyle" data-id="1">    <div class="maincontent1">
+&lt;a class="pcrRoundedLinkd" href="<span class="dname1"></span>" title="<span
+    class="fname1"></span>"&gt;&lt;span
+class="itemrounded"
+&gt;<span class="fname1"></span>&lt;/span&gt;&lt;/a&gt;<br>
+</div></li>
+
+
+
+
+
+<li  class="nostyle" data-id="2">  <div class="maincontent2">
+&lt;a class="pcrRoundedLinkd" href="<span class="dname2"></span>" title="<span
+    class="fname2"></span>"&gt;&lt;span
+class="itemrounded"
+&gt;<span class="fname2"></span>&lt;/span&gt;&lt;/a&gt;<br>
+</div></li>
+
+
+
+
+<li  class="nostyle" data-id="3"><div class="maincontent3">
+&lt;a class="pcrRoundedLinkd" href="<span class="dname3"></span>" title="<span
+    class="fname3"></span>"&gt;&lt;span
+class="itemrounded"
+&gt;<span class="fname3"></span>&lt;/span&gt;&lt;/a&gt;<br>
+</div></li>
+
+
+
+<li  class="nostyle" data-id="4"> <div class="maincontent4">
+&lt;a class="pcrRoundedLinkd" href="<span class="dname4"></span>" title="<span
+    class="fname4"></span>"&gt;&lt;span
+class="itemrounded"
+&gt;<span class="fname4"></span>&lt;/span&gt;&lt;/a&gt;<br>
+</div></li>
+
+
+
+
+<li  class="nostyle" data-id="5"><div class="maincontent5">
+&lt;a class="pcrRoundedLinkd" href="<span class="dname5"></span>" title="<span
+    class="fname5"></span>"&gt;&lt;span
+class="itemrounded"
+&gt;<span class="fname5"></span>&lt;/span&gt;&lt;/a&gt;<br>
+</div></li>
+<li  class="nostyle" data-id="6">   <div class="maincontent6">
+&lt;a class="pcrRoundedLinkd" href="<span class="dname6"></span>" title="<span
+    class="fname6"></span>"&gt;&lt;span
+class="itemrounded"
+&gt;<span class="fname6"></span>&lt;/span&gt;&lt;/a&gt;<br>
+</div>
+</li>
+<li  class="nostyle" data-id="7"> <div class="maincontent7">
+&lt;a class="pcrRoundedLinkd" href="<span class="dname7"></span>" title="<span
+    class="fname7"></span>"&gt;&lt;span
+class="itemrounded"
+&gt;<span class="fname7"></span>&lt;/span&gt;&lt;/a&gt;<br>
+</div></li>
+</ul>
 </div>
 
 
-<div class="promo100" style="margin-top: 10px;"><button>Submit</button></div>
+        &lt;/div&gt;<br>
+        &lt;/div&gt;<br><br>
+
+        &lt;script type="application/ld+json"&gt;<br>
+        {
+        "@context": "https://schema.org",<br>
+        "@type": "ItemList",<br>
+        "name": "<span class="tfname1">Top Searches</span>",<br>
+        "itemListElement": [<br>
+
+<ul  id="sortable3">
+<li data-id="1" class="nostyle" ><div class="maincontent1">
+{
+"@type": "ListItem",
+"position": <span class="positionNumber">1</span>,
+"url": "<span class="dname1">/</span>",
+"name": "<span class="fname1"></span>"
+},
+</div></li>
+<li  data-id="2" class="nostyle" >   <div class="maincontent2">
+{
+"@type": "ListItem",
+"position": <span class="positionNumber">2</span>,
+"url": "<span class="dname2">/</span>",
+"name": "<span class="fname2"></span>"
+},
+</div></li>
+
+<li  data-id="3" class="nostyle" >  <div class="maincontent3">
+{
+"@type": "ListItem",
+"position": <span class="positionNumber">3</span>,
+"url": "<span class="dname3">/</span>",
+"name": "<span class="fname3"></span>"
+},
+
+</div></li>
+<li  data-id="4" class="nostyle" > <div class="maincontent4">
+{
+"@type": "ListItem",
+"position": <span class="positionNumber">4</span>,
+"url": "<span class="dname4">/</span>",
+"name": "<span class="fname4"></span>"
+},
+</div></li>
+<li  data-id="5" class="nostyle" > <div class="maincontent5">
+{
+"@type": "ListItem",
+"position": <span class="positionNumber">5</span>,
+"url": "<span class="dname5">/</span>",
+"name": "<span class="fname5"></span>"
+},
+</div></li>
+<li  data-id="6" class="nostyle" ><div class="maincontent6">
+{
+"@type": "ListItem",
+"position": <span class="positionNumber">6</span>,
+"url": "<span class="dname6">/</span>",
+"name": "<span class="fname6"></span>"
+},
+</div></li>
+<li  data-id="7" class="nostyle" >     <div class="maincontent7">
+{
+"@type": "ListItem",
+"position": <span class="positionNumber">7</span>,
+"url": "<span class="dname7">/</span>",
+"name": "<span class="fname7"></span>"
+}<br>
+</div></li>
+</ul>
+<div class="promo100" style="color: #333;">
+        ]
+        }<br>
+        &lt;/script&gt;
+
+    </div>
 
 
+    </div>
 
-            </div>
+    <div style="width: 99.3%; float: left; margin-top: 10px; padding: 10px; line-height: 25px; color: #333; background-color: #fff; font-weight: bold;">How To`s:<br>
+    1: Menu Items are Sortable UP and Down<br>
+    2: Grab Left Icon to move items, Code will Re-Factor itself when you sort.<br>
+    3: The Preview Menu Items are Clickable to PCR To Check Links<br>
+    4: Deleting a Menu Item -- If you delete it and you want it back you have to reload the tool<br>
+    5: Issues / Problems.. Click Feature Request in the Help Menu to Email me. Cheers!
+    </div>
 
+</div>
 
-        </div>
--->
+           
 
-
-
-                <div class="page">
-                    <div class="wrapper-d" style="width: 100%;">
-                        <div class="totalMenuItemsd">
-                            <div style="display: none;" class="experience-component experience-pcrs_assets-headerTag">
-                                <div class="pd-header-tag">
-                                    <p class="t-h5-style c-blue" style="color: #fff; font-size: 2rem;"> <span
-                                            class="tfname1">Top Searches</span></p>
-                                </div>
-                            </div>
-                            <div class="here promo1000"></div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-
-
-            </div>
-
-
-            <div class="codeview" style="color: #000; font-size: 0.8rem; width: 40%; margin-top: 90px;">
-                &lt;link href="pim-content/Roundedmenu2023.css?$staticlink$" rel="stylesheet" /&gt;<br>
-
-                &lt;div class="totalMenuItemsd"&gt;<br>
-                &lt;div class="experience-component experience-pcrs_assets-headerTag"&gt;<br>
-                &lt;div class="pd-header-tag"&gt; &lt;p class="t-h5-style c-blue"&gt;<span class="tfname1">Top
-                    Searches</span>
-                &lt;/p&gt;
-                &lt;/div&gt;&lt;/div&gt;<br>
-                &lt;div class="scrollerdlist-d" role="navigation" aria-label="Top Searches"&gt;<br>
-
-                <div class="maincontent1">
-                    &lt;a class="pcrRoundedLinkd" href="<span class="dname1"></span>" title="<span
-                        class="fname1"></span>"&gt;&lt;div
-                    class="itemrounded"
-                    tabindex="0"&gt;<span class="fname1"></span>&lt;/div&gt;&lt;/a&gt;<br>
-                </div>
-                <div class="maincontent2">
-                    &lt;a class="pcrRoundedLinkd" href="<span class="dname2"></span>" title="<span
-                        class="fname2"></span>"&gt;&lt;div
-                    class="itemrounded"
-                    tabindex="0"&gt;<span class="fname2"></span>&lt;/div&gt;&lt;/a&gt;<br>
-                </div>
-
-                <div class="maincontent3">
-                    &lt;a class="pcrRoundedLinkd" href="<span class="dname3"></span>" title="<span
-                        class="fname3"></span>"&gt;&lt;div
-                    class="itemrounded"
-                    tabindex="0"&gt;<span class="fname3"></span>&lt;/div&gt;&lt;/a&gt;<br>
-                </div>
-                <div class="maincontent4">
-                    &lt;a class="pcrRoundedLinkd" href="<span class="dname4"></span>" title="<span
-                        class="fname4"></span>"&gt;&lt;div
-                    class="itemrounded"
-                    tabindex="0"&gt;<span class="fname4"></span>&lt;/div&gt;&lt;/a&gt;<br>
-                </div>
-                <div class="maincontent5">
-                    &lt;a class="pcrRoundedLinkd" href="<span class="dname5"></span>" title="<span
-                        class="fname5"></span>"&gt;&lt;div
-                    class="itemrounded"
-                    tabindex="0"&gt;<span class="fname5"></span>&lt;/div&gt;&lt;/a&gt;<br>
-                </div>
-                <div class="maincontent6">
-                    &lt;a class="pcrRoundedLinkd" href="<span class="dname6"></span>" title="<span
-                        class="fname6"></span>"&gt;&lt;div
-                    class="itemrounded"
-                    tabindex="0"&gt;<span class="fname6"></span>&lt;/div&gt;&lt;/a&gt;<br>
-                </div>
-
-                <div class="maincontent7">
-                    &lt;a class="pcrRoundedLinkd" href="<span class="dname7"></span>" title="<span
-                        class="fname7"></span>"&gt;&lt;div
-                    class="itemrounded"
-                    tabindex="0"&gt;<span class="fname7"></span>&lt;/div&gt;&lt;/a&gt;<br>
-                </div>
-                &lt;/div&gt;<br>
-                &lt;/div&gt;<br><br>
-
-                &lt;script type="application/ld+json"&gt;<br>
-                {
-                "@context": "https://schema.org",<br>
-                "@type": "ItemList",<br>
-                "name": "<span class="tfname1">Top Searches</span>",<br>
-                "itemListElement": [<br>
-                <div class="maincontent1">
-                    {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "url": "<span class="dname1">/</span>",
-                    "name": "<span class="fname1"></span>"
-                    },
-                </div>
-                <div class="maincontent2">
-                    {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "url": "<span class="dname2">/</span>",
-                    "name": "<span class="fname2"></span>"
-                    },
-                </div>
-                <div class="maincontent3">
-                    {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "url": "<span class="dname3">/</span>",
-                    "name": "<span class="fname3"></span>"
-                    },
-
-                </div>
-                <div class="maincontent4">
-                    {
-                    "@type": "ListItem",
-                    "position": 4,
-                    "url": "<span class="dname4">/</span>",
-                    "name": "<span class="fname4"></span>"
-                    },
-                </div>
-
-                <div class="maincontent5">
-                    {
-                    "@type": "ListItem",
-                    "position": 5,
-                    "url": "<span class="dname5">/</span>",
-                    "name": "<span class="fname5"></span>"
-                    },
-                </div>
-                <div class="maincontent6">
-                    {
-                    "@type": "ListItem",
-                    "position": 6,
-                    "url": "<span class="dname6">/</span>",
-                    "name": "<span class="fname6"></span>"
-                    },
-                </div>
-                <div class="maincontent7">
-                    {
-                    "@type": "ListItem",
-                    "position": 7,
-                    "url": "<span class="dname7">/</span>",
-                    "name": "<span class="fname7"></span>"
-                    }<br>
-                </div>
-
-                ]
-                }<br>
-                &lt;/script&gt;<br><br>
-
-            </div>
+            
 
 
     </body>
@@ -784,6 +888,38 @@
 
     <script>
         $(document).ready(function () {
+
+            $('.sorthandle').html('<svg width="15" height="30" style="margin-left:25%;" xmlns="http://www.w3.org/2000/svg"><polygon points="7.5,0 15,15 0,15" style="fill:#ffffff;" /><polygon   points="0,15 15,15 7.5,30" style="fill:red;" /></svg>')
+
+            $("#sortable1").sortable({
+                placeholder: "ui-state-highlight",
+                
+    stop: function() {
+        var items2 = $('#sortable1 > li').map(function() {
+            var id = $(this).data('id');
+            return $('#sortable2 > li').filter(function() {
+                return $(this).data('id') == id;
+            });
+        });
+        $('#sortable2').empty().append(items2.get());
+
+        var items3 = $('#sortable1 > li').map(function() {
+            var id = $(this).data('id');
+            return $('#sortable3 > li').filter(function() {
+                return $(this).data('id') == id;
+            });
+        });
+        $('#sortable3').empty().append(items3.get());
+
+        // After sorting, update the text in the span elements to reflect the new positions.
+        $('#sortable3 > li').each(function(index) {
+            $(this).find('.positionNumber').text(index + 1);
+        });
+
+        $('.here').html($('.codeview').text())
+    }
+});
+
 
 
             function goliveURL() {
@@ -870,31 +1006,38 @@
             $('#fname1').on('input', function (e) {
                 $('.fname1').text($(this).val())
                 $('.here').html($('.codeview').text())
+                goliveURL()
             });
             $('#fname2').on('input', function (e) {
                 $('.fname2').text($(this).val())
                 $('.here').html($('.codeview').text())
+                goliveURL()
             });
 
             $('#fname3').on('input', function (e) {
                 $('.fname3').text($(this).val())
                 $('.here').html($('.codeview').text())
+                goliveURL()
             });
             $('#fname4').on('input', function (e) {
                 $('.fname4').text($(this).val())
                 $('.here').html($('.codeview').text())
+                goliveURL()
             });
             $('#fname5').on('input', function (e) {
                 $('.fname5').text($(this).val())
                 $('.here').html($('.codeview').text())
+                goliveURL()
             });
             $('#fname6').on('input', function (e) {
                 $('.fname6').text($(this).val())
                 $('.here').html($('.codeview').text())
+                goliveURL()
             });
             $('#fname7').on('input', function (e) {
                 $('.fname7').text($(this).val())
                 $('.here').html($('.codeview').text())
+                goliveURL()
             });
 
 

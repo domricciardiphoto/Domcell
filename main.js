@@ -16,7 +16,8 @@ let whatsnewpage;
 let howtoospage;
 let createhtmlminiferpage;
 let createbannerpage21;
-let BadgeBuilderpage
+let BadgeBuilderpage;
+let createmenubuilder21
 
 
 
@@ -119,6 +120,24 @@ function createbannerschedular() {
   createbannerpage21.loadFile('bannersheduler.html')
 
 }
+
+function createmenubuilder() {
+
+  createmenubuilder21 = new BrowserWindow({
+    title: 'Round Menu Builder',
+    hasShadow: true,
+    darkTheme: true,
+    visualEffectState: 'active',
+    center: true,
+    autoHideMenuBar: true,
+    roundedCorners: true,
+    width: 1200,
+    height: 1000,
+  })
+
+  createmenubuilder21.loadFile('roundmenu.html')
+}
+
 
 
 
@@ -400,6 +419,11 @@ click: addbadgebuildertoindex
     {
       label: "Full Screen: Banner Scheduler",
       click: createbannerschedular
+    },
+
+    {
+      label: "Full Screen: Menu Builder (-NEW-)",
+      click: createmenubuilder
     }
   
     
