@@ -141,7 +141,7 @@
             padding: 5px;
         }
 
-       a.pcrRoundedLinkd {
+        a.pcrRoundedLinkd {
             color: #333 !important;
             text-decoration: none !important;
         }
@@ -387,9 +387,10 @@
         }
 
 
-        input, textarea {
+        input,
+        textarea {
             font-size: 0.9rem;
-      
+
         }
     </style>
 
@@ -466,6 +467,7 @@
                     padding: 0;
                     margin: 0px;
                 }
+
                 li {
                     width: 90%;
                     float: left;
@@ -484,7 +486,7 @@
                     width: 90%;
                     float: left;
                     min-height: 50px;
-                    
+
                 }
 
                 .sorthandle {
@@ -496,6 +498,20 @@
                     top: -5px;
                     cursor: pointer;
                 }
+
+.codeview , .copycodehere {
+    display: none;
+}
+
+.googlesheetrecordscontent {
+    width: 102%;
+    background-color: #fff;
+    color: #333;
+    min-height: 200px;
+    float: left;
+    margin-top: 10px;
+}
+
 
             </style>
 
@@ -567,304 +583,424 @@
                     <div class="promo100 ">
 
                         <ul id="sortable1">
-<li data-id="1">
-    <div  class="module1 mydrag" >
-        <div class="sorthandle">
+                            <li data-id="1">
+                                <div class="module1 mydrag">
+                                    <div class="sorthandle">
+
+                                    </div>
+                                    <input type="text" id="fname1" name="fname1"
+                                        style="width: 30%; margin-right: 10%; float: left"
+                                        placeholder="description Item 1">
+
+                                    <textarea rows="2" name="dname1" id="dname1" placeholder="link Item 1"
+                                        style="width: 50%; float: left;"></textarea>
+                                    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                        <span class="del deleter1">X DELETE THIS ITEM</span>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li data-id="2">
+                                <div class="module2 mydrag">
+                                    <div class="sorthandle"></div>
+                                    <input type="text" id="fname2" name="fname2"
+                                        style="width: 30%; margin-right: 10%; float: left"
+                                        placeholder="description Item 2">
+
+                                    <textarea rows="2" id="dname2" name="dname2" placeholder="link Item 2"
+                                        style="width: 50%; float: left;"></textarea>
+                                    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                        <span class="del deleter2">X DELETE THIS ITEM</span>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li data-id="3">
+                                <div class="module3 mydrag">
+                                    <div class="sorthandle"></div>
+                                    <input type="text" id="fname3" name="fname3"
+                                        style="width: 30%; margin-right: 10%; float: left"
+                                        placeholder="description Item 3">
+                                    <textarea rows="2" id="dname3" name="dname3" placeholder="link Item 3"
+                                        style="width: 50%; float: left;"></textarea>
+                                    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                        <span class="del deleter3">X DELETE THIS ITEM</span>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li data-id="4">
+
+                                <div class="module4 mydrag">
+                                    <div class="sorthandle"></div>
+                                    <input type="text" id="fname4" name="fname4"
+                                        style="width: 30%; margin-right: 10%; float: left"
+                                        placeholder="description Item 4">
+                                    <textarea rows="2" id="dname4" name="dname4" placeholder="link Item 4"
+                                        style="width: 50%; float: left;"></textarea>
+                                    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                        <span class="del deleter4">X DELETE THIS ITEM</span>
+                                    </div>
+                                </div>
+
+                            </li>
+
+
+                            <li data-id="5">
+                                <div class="module5 mydrag">
+                                    <div class="sorthandle"></div>
+                                    <div class="module5 ">
+                                        <input type="text" id="fname5" name="fname5"
+                                            style="width: 30%; margin-right: 10%; float: left"
+                                            placeholder="description Item 5">
+                                        <textarea rows="2" id="dname5" name="dname5" placeholder="link Item 5"
+                                            style="width: 50%; float: left;"></textarea>
+                                        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                            <span class="del deleter5">X DELETE THIS ITEM</span>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li data-id="6">
+                                <div class="module6 mydrag">
+                                    <div class="sorthandle"></div>
+                                    <div class="module6 ">
+                                        <input type="text" id="fname6" name="fname6"
+                                            style="width: 30%; margin-right: 10%; float: left"
+                                            placeholder="description Item 6">
+                                        <textarea rows="2" id="dname6" name="dname6" placeholder="link Item 6"
+                                            style="width: 50%; float: left;"></textarea>
+                                        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                            <span class="del deleter6">X DELETE THIS ITEM</span>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li data-id="7">
+                                <div class="module7 mydrag">
+                                    <div class="sorthandle"></div>
+                                    <div class="module7 ">
+                                        <input type="text" id="fname7" name="fname7"
+                                            style="width: 30%; margin-right: 10%; float: left"
+                                            placeholder="description Item 7">
+                                        <textarea rows="2" id="dname7" name="dname7" placeholder="link Item 7"
+                                            style="width: 50%; float: left;"></textarea>
+                                        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
+                                            <span class="del deleter7">X DELETE THIS ITEM</span>
+                                        </div>
+                                    </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                <div class="promo100" style="width: 91.5%;">
+                   <hr style="width: 100%; float: left; border:1px solid #ccc; margin-top: 10px;">
+                </div>
+<div style="width: auto; float: left;margin-right:20px;">Tracking Suffix</div>
+<div style="width: 40%; float: left; ">
+<input type="text" id="suffix" name="suffix" placeholder="Tracking Code" style="width: 50%; min-height: 30px;">
+
+
+<div style="width: 30%; float: left; margin-left: 20px;">
+    <div style="width: auto; float: left;margin-right:20px;">Enabled? </div><br>
+<form>
+    <label for="yes">Yes</label>
+    <input type="radio" id="yesd" name="option" checked value="yes">
+    <br>
+    <label for="no">No</label>
+    <input type="radio" id="nod" name="option" value="no">
+  </form>
+
+
+</div>
+
+
+</div>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+            <div style="width: 45%; float: left ; position: relative; margin-top: -100px;">
+
+
+                <div style="width: 100%; float: left;margin-top: 90px; margin-bottom: 10px;">Menu Preview</div>
+
+                <div class="page" style="width: 100%; ">
+                    <div class="wrapper-d" style="width: 102%; min-height: 150px;">
+                        <div class="totalMenuItemsd" style="min-height: 150px;">
+                            <div style="display: none;" class="experience-component experience-pcrs_assets-headerTag">
+                                <div class="pd-header-tag">
+                                    <p class="t-h5-style c-blue" style="color: #fff; font-size: 2rem;"> <span
+                                            class="tfname1">Top Searches</span></p>
+                                </div>
+                            </div>
+                            <div class="here promo1000"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="copycodehere" style="width: 100%; float: left; margin-top: 10px;">Copy Code Here</div>
+
+
+                <div class="codeview" style="color: #000; font-size: 0.8rem; width: 100%; margin-top: 10px;">
+                    &lt;link href="pim-content/Roundedmenu2023.css?$staticlink$" rel="stylesheet" /&gt;<br>
+
+                    &lt;div class="totalMenuItemsd"&gt;<br>
+                    &lt;div class="experience-component experience-pcrs_assets-headerTag"&gt;<br>
+                    &lt;div class="pd-header-tag"&gt; &lt;p class="t-h5-style c-blue"&gt;<span class="tfname1">Top
+                        Searches</span>
+                    &lt;/p&gt;
+                    &lt;/div&gt;&lt;/div&gt;<br>
+                    &lt;div class="scrollerdlist-d" role="navigation" aria-label="Top Searches"&gt;<br>
+
+
+                    <div class="promo100" style="color: #000;">
+                        <ul id="sortable2">
+                            <li class="nostyle" data-id="1">
+                                <div class="maincontent1">
+                                    &lt;a class="pcrRoundedLinkd" href="<span class="dname1"></span><span class="trackelement"></span>" title="<span
+                                        class="fname1"></span>"&gt;&lt;span
+                                    class="itemrounded"
+                                    &gt;<span class="fname1"></span>&lt;/span&gt;&lt;/a&gt;<br>
+                                </div>
+                            </li>
+
+
+
+
+
+                            <li class="nostyle" data-id="2">
+                                <div class="maincontent2">
+                                    &lt;a class="pcrRoundedLinkd" href="<span class="dname2"></span><span class="trackelement"></span>" title="<span
+                                        class="fname2"></span>"&gt;&lt;span
+                                    class="itemrounded"
+                                    &gt;<span class="fname2"></span>&lt;/span&gt;&lt;/a&gt;<br>
+                                </div>
+                            </li>
+
+
+
+
+                            <li class="nostyle" data-id="3">
+                                <div class="maincontent3">
+                                    &lt;a class="pcrRoundedLinkd" href="<span class="dname3"></span><span class="trackelement"></span>" title="<span
+                                        class="fname3"></span>"&gt;&lt;span
+                                    class="itemrounded"
+                                    &gt;<span class="fname3"></span>&lt;/span&gt;&lt;/a&gt;<br>
+                                </div>
+                            </li>
+
+
+
+                            <li class="nostyle" data-id="4">
+                                <div class="maincontent4">
+                                    &lt;a class="pcrRoundedLinkd" href="<span class="dname4"></span><span class="trackelement"></span>" title="<span
+                                        class="fname4"></span>"&gt;&lt;span
+                                    class="itemrounded"
+                                    &gt;<span class="fname4"></span>&lt;/span&gt;&lt;/a&gt;<br>
+                                </div>
+                            </li>
+
+
+
+
+                            <li class="nostyle" data-id="5">
+                                <div class="maincontent5">
+                                    &lt;a class="pcrRoundedLinkd" href="<span class="dname5"></span><span class="trackelement"></span>" title="<span
+                                        class="fname5"></span>"&gt;&lt;span
+                                    class="itemrounded"
+                                    &gt;<span class="fname5"></span>&lt;/span&gt;&lt;/a&gt;<br>
+                                </div>
+                            </li>
+                            <li class="nostyle" data-id="6">
+                                <div class="maincontent6">
+                                    &lt;a class="pcrRoundedLinkd" href="<span class="dname6"></span><span class="trackelement"></span>" title="<span
+                                        class="fname6"></span>"&gt;&lt;span
+                                    class="itemrounded"
+                                    &gt;<span class="fname6"></span>&lt;/span&gt;&lt;/a&gt;<br>
+                                </div>
+                            </li>
+                            <li class="nostyle" data-id="7">
+                                <div class="maincontent7">
+                                    &lt;a class="pcrRoundedLinkd" href="<span class="dname7"></span><span class="trackelement"></span>" title="<span
+                                        class="fname7"></span>"&gt;&lt;span
+                                    class="itemrounded"
+                                    &gt;<span class="fname7"></span>&lt;/span&gt;&lt;/a&gt;<br>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    &lt;/div&gt;<br>
+                    &lt;/div&gt;<br><br>
+
+                    &lt;script type="application/ld+json"&gt;<br>
+                    {
+                    "@context": "https://schema.org",<br>
+                    "@type": "ItemList",<br>
+                    "name": "<span class="tfname1">Top Searches</span>",<br>
+                    "itemListElement": [<br>
+
+                    <ul id="sortable3">
+                        <li data-id="1" class="nostyle">
+                            <div class="maincontent1">
+                                {
+                                "@type": "ListItem",
+                                "position": <span class="positionNumber">1</span>,
+                                "url": "<span class="dname1">/</span>",
+                                "name": "<span class="fname1"></span>"
+                                },
+                            </div>
+                        </li>
+                        <li data-id="2" class="nostyle">
+                            <div class="maincontent2">
+                                {
+                                "@type": "ListItem",
+                                "position": <span class="positionNumber">2</span>,
+                                "url": "<span class="dname2">/</span>",
+                                "name": "<span class="fname2"></span>"
+                                },
+                            </div>
+                        </li>
+
+                        <li data-id="3" class="nostyle">
+                            <div class="maincontent3">
+                                {
+                                "@type": "ListItem",
+                                "position": <span class="positionNumber">3</span>,
+                                "url": "<span class="dname3">/</span>",
+                                "name": "<span class="fname3"></span>"
+                                },
+
+                            </div>
+                        </li>
+                        <li data-id="4" class="nostyle">
+                            <div class="maincontent4">
+                                {
+                                "@type": "ListItem",
+                                "position": <span class="positionNumber">4</span>,
+                                "url": "<span class="dname4">/</span>",
+                                "name": "<span class="fname4"></span>"
+                                },
+                            </div>
+                        </li>
+                        <li data-id="5" class="nostyle">
+                            <div class="maincontent5">
+                                {
+                                "@type": "ListItem",
+                                "position": <span class="positionNumber">5</span>,
+                                "url": "<span class="dname5">/</span>",
+                                "name": "<span class="fname5"></span>"
+                                },
+                            </div>
+                        </li>
+                        <li data-id="6" class="nostyle">
+                            <div class="maincontent6">
+                                {
+                                "@type": "ListItem",
+                                "position": <span class="positionNumber">6</span>,
+                                "url": "<span class="dname6">/</span>",
+                                "name": "<span class="fname6"></span>"
+                                },
+                            </div>
+                        </li>
+                        <li data-id="7" class="nostyle">
+                            <div class="maincontent7">
+                                {
+                                "@type": "ListItem",
+                                "position": <span class="positionNumber">7</span>,
+                                "url": "<span class="dname7">/</span>",
+                                "name": "<span class="fname7"></span>"
+                                }<br>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="promo100" style="color: #333;">
+                        ]
+                        }<br>
+                        &lt;/script&gt;
+
+                    </div>
+
+
+                </div>
+
+                <div class="googlesheetrecords" style="width: 100%; float: left; margin-top: 10px;">For Google Sheet Records</div>
+
+                <div class="googlesheetrecordscontent" style="padding: 10px; width: 99.2%;">
+                   Name of Menu:<span class="sheet0"></span><br>
+                   Tracking Code:<span class="sheet0a"></span><br><br>
+<ul id="sortable4" >
+    
+    <li id="gsheetdel1" data-id="1" style="border: 0px;">
+        Title:<span class="sheet1">TBA</span><br>
+        Link:<span class="googlelink1">TBA</span><br>
+       
+    </li>
+    <li id="gsheetdel2" data-id="2"style="border: 0px;">
+        Title:<span class="sheet2">TBA</span><br>
+         Link:<span class="googlelink2">TBA</span><br>
           
-        </div>
-        <input type="text" id="fname1" name="fname1"
-            style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 1">
-
-        <textarea rows="2" name="dname1" id="dname1" placeholder="link Item 1"
-            style="width: 50%; float: left;"></textarea>
-        <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-            <span class="del deleter1">X DELETE THIS ITEM</span>
-        </div>
-
-    </div></li>
-<li data-id="2">
-    <div class="module2 mydrag">
-        <div class="sorthandle"></div>
-    <input type="text" id="fname2" name="fname2"
-        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 2">
-   
-        <textarea rows="2" id="dname2" name="dname2" placeholder="link Item 2"
-        style="width: 50%; float: left;"></textarea>
-    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-        <span class="del deleter2">X DELETE THIS ITEM</span>
-    </div>
-
-</div></li>
-
-<li  data-id="3">   
-    <div class="module3 mydrag">
-        <div class="sorthandle"></div>
-    <input type="text" id="fname3" name="fname3"
-        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 3">
-        <textarea rows="2" id="dname3" name="dname3" placeholder="link Item 3"
-        style="width: 50%; float: left;"></textarea>
-    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-        <span class="del deleter3">X DELETE THIS ITEM</span>
-    </div>
-</div></li>
-<li data-id="4">
-     <div class="module4 mydrag">
-        <div class="sorthandle"></div>
-    <input type="text" id="fname4" name="fname4"
-        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 4">
-        <textarea rows="2" id="dname4" name="dname4" placeholder="link Item 4"
-        style="width: 50%; float: left;"></textarea>
-    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-        <span class="del deleter4">X DELETE THIS ITEM</span>
-    </div>
-</div></li>
-<li data-id="5">
-     <div class="module4 mydrag">
-        <div class="sorthandle"></div>
-    <div class="module5 ">
-    <input type="text" id="fname5" name="fname5"
-        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 5">
-        <textarea rows="2" id="dname5" name="dname5" placeholder="link Item 5"
-        style="width: 50%; float: left;"></textarea>
-    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-        <span class="del deleter5">X DELETE THIS ITEM</span>
-    </div>
-</div></li>
-<li data-id="6"> 
-      <div class="module4 mydrag">
-        <div class="sorthandle"></div>
-    <div class="module6 ">
-    <input type="text" id="fname6" name="fname6"
-        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 6">
-        <textarea rows="2" id="dname6" name="dname6" placeholder="link Item 6"
-        style="width: 50%; float: left;"></textarea>
-    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-        <span class="del deleter6">X DELETE THIS ITEM</span>
-    </div>
-</div></li>
-<li data-id="7"> 
-     <div class="module4 mydrag">
-        <div class="sorthandle"></div>
-    <div class="module7 ">
-    <input type="text" id="fname7" name="fname7"
-        style="width: 30%; margin-right: 10%; float: left" placeholder="description Item 7">
-        <textarea rows="2" id="dname7" name="dname7" placeholder="link Item 7"
-        style="width: 50%; float: left;"></textarea>
-    <div class="promo100" style="margin-top: 10px; margin-bottom: 20px;">
-        <span class="del deleter7">X DELETE THIS ITEM</span>
-    </div>
-</div></li>
+        </li>
+    <li id="gsheetdel3" data-id="3" style="border: 0px;">
+        Title:<span class="sheet3">TBA</span><br>
+         Link:<span class="googlelink3">TBA</span><br>
+        
+        </li>
+    <li id="gsheetdel4" data-id="4" style="border: 0px;">
+        Title:<span class="sheet4">TBA</span><br>
+        Link:<span class="googlelink4">TBA</span><br>
+        
+    </li>
+    <li id="gsheetdel5" data-id="5" style="border: 0px;">
+        Title:<span class="sheet5">TBA</span><br>
+         Link:<span class="googlelink5">TBA</span><br>
+        
+    </li>
+    <li id="gsheetdel6" data-id="6" style="border: 0px;">
+        Title:<span class="sheet6"> TBA</span><br>
+         Link:<span class="googlelink6">TBA</span><br>
+         
+        </li>
+    <li id="gsheetdel7" data-id="7" style="border: 0px;">
+        Title:<span class="sheet7"> TBA</span><br>
+        Link:<span class="googlelink7">TBA</span><br>
+      
+    </li>
 </ul>
-
-                    </div>
-
 
                 </div>
 
-
-
-
-             
-
-
+                <div
+                    style="width: 99.3%; float: left; margin-top: 10px; padding: 10px; line-height: 25px; color: #333; background-color: #fff; font-weight: bold;">
+                    How To`s:<br>
+                    1: You can easily rearrange the menu items by dragging them up or down.<br>
+                    2: Use the icon on the left to move items. The code will automatically adjust to reflect your
+                    changes.<br>
+                    3: Preview menu items can be clicked to perform PCR and verify the links.<br>
+                    4: Note on removing a menu item: once deleted, it cannot be retrieved unless you reload the
+                    tool.<br>
+                    5: For the tool to function as intended, make sure you copy the entire code.<br>
+                    6: If you encounter any issues or difficulties, go to the Help Menu and click on "Feature Request"
+                    to send me an email. Cheers
+                </div>
 
             </div>
 
 
-<div style="width: 45%; float: left ; position: relative; margin-top: -100px;">
 
 
-<div style="width: 100%; float: left;margin-top: 90px; margin-bottom: 10px;">Menu Preview</div>
-
-    <div class="page" style="width: 100%; ">
-        <div class="wrapper-d" style="width: 102%; min-height: 150px;">
-            <div class="totalMenuItemsd" style="min-height: 150px;">
-                <div style="display: none;" class="experience-component experience-pcrs_assets-headerTag">
-                    <div class="pd-header-tag">
-                        <p class="t-h5-style c-blue" style="color: #fff; font-size: 2rem;"> <span
-                                class="tfname1">Top Searches</span></p>
-                    </div>
-                </div>
-                <div class="here promo1000"></div>
-
-            </div>
-
-        </div>
-    </div>
-    <div style="width: 100%; float: left; margin-top: 10px;">Copy Code Here</div>
-
-
-    <div class="codeview" style="color: #000; font-size: 0.8rem; width: 100%; margin-top: 10px;">
-        &lt;link href="pim-content/Roundedmenu2023.css?$staticlink$" rel="stylesheet" /&gt;<br>
-
-        &lt;div class="totalMenuItemsd"&gt;<br>
-        &lt;div class="experience-component experience-pcrs_assets-headerTag"&gt;<br>
-        &lt;div class="pd-header-tag"&gt; &lt;p class="t-h5-style c-blue"&gt;<span class="tfname1">Top
-            Searches</span>
-        &lt;/p&gt;
-        &lt;/div&gt;&lt;/div&gt;<br>
-        &lt;div class="scrollerdlist-d" role="navigation" aria-label="Top Searches"&gt;<br>
-
-
-<div class="promo100" style="color: #000;">
-<ul id="sortable2">
-<li class="nostyle" data-id="1">    <div class="maincontent1">
-&lt;a class="pcrRoundedLinkd" href="<span class="dname1"></span>" title="<span
-    class="fname1"></span>"&gt;&lt;span
-class="itemrounded"
-&gt;<span class="fname1"></span>&lt;/span&gt;&lt;/a&gt;<br>
-</div></li>
-
-
-
-
-
-<li  class="nostyle" data-id="2">  <div class="maincontent2">
-&lt;a class="pcrRoundedLinkd" href="<span class="dname2"></span>" title="<span
-    class="fname2"></span>"&gt;&lt;span
-class="itemrounded"
-&gt;<span class="fname2"></span>&lt;/span&gt;&lt;/a&gt;<br>
-</div></li>
-
-
-
-
-<li  class="nostyle" data-id="3"><div class="maincontent3">
-&lt;a class="pcrRoundedLinkd" href="<span class="dname3"></span>" title="<span
-    class="fname3"></span>"&gt;&lt;span
-class="itemrounded"
-&gt;<span class="fname3"></span>&lt;/span&gt;&lt;/a&gt;<br>
-</div></li>
-
-
-
-<li  class="nostyle" data-id="4"> <div class="maincontent4">
-&lt;a class="pcrRoundedLinkd" href="<span class="dname4"></span>" title="<span
-    class="fname4"></span>"&gt;&lt;span
-class="itemrounded"
-&gt;<span class="fname4"></span>&lt;/span&gt;&lt;/a&gt;<br>
-</div></li>
-
-
-
-
-<li  class="nostyle" data-id="5"><div class="maincontent5">
-&lt;a class="pcrRoundedLinkd" href="<span class="dname5"></span>" title="<span
-    class="fname5"></span>"&gt;&lt;span
-class="itemrounded"
-&gt;<span class="fname5"></span>&lt;/span&gt;&lt;/a&gt;<br>
-</div></li>
-<li  class="nostyle" data-id="6">   <div class="maincontent6">
-&lt;a class="pcrRoundedLinkd" href="<span class="dname6"></span>" title="<span
-    class="fname6"></span>"&gt;&lt;span
-class="itemrounded"
-&gt;<span class="fname6"></span>&lt;/span&gt;&lt;/a&gt;<br>
-</div>
-</li>
-<li  class="nostyle" data-id="7"> <div class="maincontent7">
-&lt;a class="pcrRoundedLinkd" href="<span class="dname7"></span>" title="<span
-    class="fname7"></span>"&gt;&lt;span
-class="itemrounded"
-&gt;<span class="fname7"></span>&lt;/span&gt;&lt;/a&gt;<br>
-</div></li>
-</ul>
-</div>
-
-
-        &lt;/div&gt;<br>
-        &lt;/div&gt;<br><br>
-
-        &lt;script type="application/ld+json"&gt;<br>
-        {
-        "@context": "https://schema.org",<br>
-        "@type": "ItemList",<br>
-        "name": "<span class="tfname1">Top Searches</span>",<br>
-        "itemListElement": [<br>
-
-<ul  id="sortable3">
-<li data-id="1" class="nostyle" ><div class="maincontent1">
-{
-"@type": "ListItem",
-"position": <span class="positionNumber">1</span>,
-"url": "<span class="dname1">/</span>",
-"name": "<span class="fname1"></span>"
-},
-</div></li>
-<li  data-id="2" class="nostyle" >   <div class="maincontent2">
-{
-"@type": "ListItem",
-"position": <span class="positionNumber">2</span>,
-"url": "<span class="dname2">/</span>",
-"name": "<span class="fname2"></span>"
-},
-</div></li>
-
-<li  data-id="3" class="nostyle" >  <div class="maincontent3">
-{
-"@type": "ListItem",
-"position": <span class="positionNumber">3</span>,
-"url": "<span class="dname3">/</span>",
-"name": "<span class="fname3"></span>"
-},
-
-</div></li>
-<li  data-id="4" class="nostyle" > <div class="maincontent4">
-{
-"@type": "ListItem",
-"position": <span class="positionNumber">4</span>,
-"url": "<span class="dname4">/</span>",
-"name": "<span class="fname4"></span>"
-},
-</div></li>
-<li  data-id="5" class="nostyle" > <div class="maincontent5">
-{
-"@type": "ListItem",
-"position": <span class="positionNumber">5</span>,
-"url": "<span class="dname5">/</span>",
-"name": "<span class="fname5"></span>"
-},
-</div></li>
-<li  data-id="6" class="nostyle" ><div class="maincontent6">
-{
-"@type": "ListItem",
-"position": <span class="positionNumber">6</span>,
-"url": "<span class="dname6">/</span>",
-"name": "<span class="fname6"></span>"
-},
-</div></li>
-<li  data-id="7" class="nostyle" >     <div class="maincontent7">
-{
-"@type": "ListItem",
-"position": <span class="positionNumber">7</span>,
-"url": "<span class="dname7">/</span>",
-"name": "<span class="fname7"></span>"
-}<br>
-</div></li>
-</ul>
-<div class="promo100" style="color: #333;">
-        ]
-        }<br>
-        &lt;/script&gt;
-
-    </div>
-
-
-    </div>
-
-    <div style="width: 99.3%; float: left; margin-top: 10px; padding: 10px; line-height: 25px; color: #333; background-color: #fff; font-weight: bold;">How To`s:<br>
-       1: You can easily rearrange the menu items by dragging them up or down.<br>
-       2: Use the icon on the left to move items. The code will automatically adjust to reflect your changes.<br>
-       3: Preview menu items can be clicked to perform PCR and verify the links.<br>
-       4: Note on removing a menu item: once deleted, it cannot be retrieved unless you reload the tool.<br>
-       5: For the tool to function as intended, make sure you copy the entire code.<br>
-       6: If you encounter any issues or difficulties, go to the Help Menu and click on "Feature Request" to send me an email. Cheers
-    </div>
-
-</div>
-
-           
-
-            
 
 
     </body>
@@ -872,37 +1008,97 @@ class="itemrounded"
 
 
     <script>
+
+function showConfirmationDialog() {
+  var confirmationDialog = document.getElementById("confirmationDialog");
+  confirmationDialog.style.display = "block";
+}
+
+function handleConfirmation(isConfirmed) {
+  var confirmationDialog = document.getElementById("confirmationDialog");
+  confirmationDialog.style.display = "none";
+  
+  if (isConfirmed) {
+    alert("You clicked Yes!");
+  } else {
+    alert("You clicked No!");
+  }
+}
+
         $(document).ready(function () {
 
-            $('.sorthandle').html('<svg width="15" height="30" style="margin-left:25%;" xmlns="http://www.w3.org/2000/svg"><polygon points="7.5,0 15,15 0,15" style="fill:#ffffff;" /><polygon   points="0,15 15,15 7.5,30" style="fill:red;" /></svg>')
 
-            $("#sortable1").sortable({
-                placeholder: "ui-state-highlight",
-                
-    stop: function() {
-        var items2 = $('#sortable1 > li').map(function() {
-            var id = $(this).data('id');
-            return $('#sortable2 > li').filter(function() {
-                return $(this).data('id') == id;
-            });
-        });
-        $('#sortable2').empty().append(items2.get());
+            $('#suffix').on('input' , function() {
+               if($('#yesd').is(':checked')) {
+                if($('#suffix').val() === '') {
+                    alert('Error Add Tracking Code')
+                    $('.codeview').slideUp()
+                }else {
+                $('.codeview').slideDown()
+                $('.trackelement').text('?'+$('#suffix').val())
+                $('.copycodehere').show()
+                $('.sheet0a').text($('#suffix').val())
+               }
+               } else {
+                $('.codeview').slideDown()
+                $('.trackelement').text('')
+                $('.copycodehere').show()
+                $('.sheet0a').text('NONE')
+               }  
+            })
 
-        var items3 = $('#sortable1 > li').map(function() {
-            var id = $(this).data('id');
-            return $('#sortable3 > li').filter(function() {
-                return $(this).data('id') == id;
-            });
-        });
-        $('#sortable3').empty().append(items3.get());
+            $('#yesd').on('click' , function() {
+                $('.trackelement').text('?'+$('#suffix').val())
+                $('.sheet0a').text($('#suffix').val())
+            })
 
-        // After sorting, update the text in the span elements to reflect the new positions.
-        $('#sortable3 > li').each(function(index) {
-            $(this).find('.positionNumber').text(index + 1);
-        });
+            $('#nod').on('click' , function() {
+                $('#suffix').val('')
+                $('.trackelement').text('')
+                $('.codeview').slideDown()
+                $('.copycodehere').show()
+                $('.sheet0a').text('NONE')
+            })
 
-        $('.here').html($('.codeview').text())
-    }
+
+
+            $('.sorthandle').html(
+                '<svg width="15" height="30" style="margin-left:25%;" xmlns="http://www.w3.org/2000/svg"><polygon points="7.5,0 15,15 0,15" style="fill:#ffffff;" /><polygon   points="0,15 15,15 7.5,30" style="fill:red;" /></svg>'
+                )
+
+                $("#sortable1").sortable({
+  placeholder: "ui-state-highlight",
+  stop: function() {
+    var items2 = $('#sortable1 > li').map(function() {
+      var id = $(this).data('id');
+      return $('#sortable2 > li').filter(function() {
+        return $(this).data('id') == id;
+      });
+    });
+    $('#sortable2').empty().append(items2.get());
+
+    var items3 = $('#sortable1 > li').map(function() {
+      var id = $(this).data('id');
+      return $('#sortable3 > li').filter(function() {
+        return $(this).data('id') == id;
+      });
+    });
+    $('#sortable3').empty().append(items3.get());
+
+    var items4 = $('#sortable1 > li').map(function() {
+      var id = $(this).data('id');
+      return $('#sortable4 > li').filter(function() {
+        return $(this).data('id') == id;
+      });
+    });
+    $('#sortable4').empty().append(items4.get());
+
+    $('#sortable3 > li').each(function(index) {
+      $(this).find('.positionNumber').text(index + 1);
+    });
+
+    $('.here').html($('.codeview').text());
+  }
 });
 
 
@@ -921,6 +1117,7 @@ class="itemrounded"
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname1').hide()
+                $('#gsheetdel1').hide()
             })
 
 
@@ -930,6 +1127,7 @@ class="itemrounded"
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname2').hide()
+                $('#gsheetdel2').hide()
             })
 
 
@@ -939,6 +1137,7 @@ class="itemrounded"
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname3').hide()
+                $('#gsheetdel3').hide()
             })
 
 
@@ -948,6 +1147,7 @@ class="itemrounded"
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname4').hide()
+                $('#gsheetdel4').hide()
             })
 
 
@@ -957,6 +1157,7 @@ class="itemrounded"
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname5').hide()
+                $('#gsheetdel5').hide()
 
             })
 
@@ -967,6 +1168,7 @@ class="itemrounded"
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname6').hide()
+                $('#gsheetdel6').hide()
 
             })
 
@@ -977,6 +1179,7 @@ class="itemrounded"
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname7').hide()
+                $('#gsheetdel7').hide()
 
             })
 
@@ -984,6 +1187,7 @@ class="itemrounded"
             $('#tfname1').on('input', function (e) {
                 $('.tfname1').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.sheet0').text($(this).val())
                 goliveURL()
 
             });
@@ -991,37 +1195,44 @@ class="itemrounded"
             $('#fname1').on('input', function (e) {
                 $('.fname1').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.sheet1').text($(this).val())
                 goliveURL()
             });
             $('#fname2').on('input', function (e) {
                 $('.fname2').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.sheet2').text($(this).val())
                 goliveURL()
             });
 
             $('#fname3').on('input', function (e) {
                 $('.fname3').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.sheet3').text($(this).val())
                 goliveURL()
             });
             $('#fname4').on('input', function (e) {
                 $('.fname4').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.sheet4').text($(this).val())
                 goliveURL()
             });
             $('#fname5').on('input', function (e) {
                 $('.fname5').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.sheet5').text($(this).val())
                 goliveURL()
             });
             $('#fname6').on('input', function (e) {
                 $('.fname6').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.sheet6').text($(this).val())
                 goliveURL()
             });
             $('#fname7').on('input', function (e) {
                 $('.fname7').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.sheet7').text($(this).val())
                 goliveURL()
             });
 
@@ -1030,7 +1241,7 @@ class="itemrounded"
                 $('.dname1').text($(this).val())
                 $('.here').html($('.codeview').text())
                 clicker = $('#dname1').val()
-
+                $('.googlelink1').text($(this).val())
                 goliveURL()
 
 
@@ -1039,6 +1250,7 @@ class="itemrounded"
             $('#dname2').on('input', function (e) {
                 $('.dname2').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.googlelink2').text($(this).val())
                 goliveURL()
 
             });
@@ -1046,6 +1258,7 @@ class="itemrounded"
             $('#dname3').on('input', function (e) {
                 $('.dname3').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.googlelink3').text($(this).val())
                 goliveURL()
 
             });
@@ -1053,6 +1266,7 @@ class="itemrounded"
             $('#dname4').on('input', function (e) {
                 $('.dname4').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.googlelink4').text($(this).val())
                 goliveURL()
 
             });
@@ -1060,6 +1274,7 @@ class="itemrounded"
             $('#dname5').on('input', function (e) {
                 $('.dname5').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.googlelink5').text($(this).val())
                 goliveURL()
 
             });
@@ -1067,6 +1282,7 @@ class="itemrounded"
             $('#dname6').on('input', function (e) {
                 $('.dname6').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.googlelink6').text($(this).val())
                 goliveURL()
 
             });
@@ -1074,6 +1290,7 @@ class="itemrounded"
             $('#dname7').on('input', function (e) {
                 $('.dname7').text($(this).val())
                 $('.here').html($('.codeview').text())
+                $('.googlelink7').text($(this).val())
                 goliveURL()
             });
 
