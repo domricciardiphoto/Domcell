@@ -989,10 +989,12 @@
                     2: Use the icon on the left to move items. The code will automatically adjust to reflect your
                     changes.<br>
                     3: Preview menu items can be clicked to perform PCR and verify the links.<br>
-                    4: Note on removing a menu item: once deleted, it cannot be retrieved unless you reload the
+                    4: Note on removing a menu item: once deleted, it CANNOT be reenabled unless you reload the
                     tool.<br>
-                    5: For the tool to function as intended, make sure you copy the entire code.<br>
-                    6: If you encounter any issues or difficulties, go to the Help Menu and click on "Feature Request"
+                    5: For the menu to function as intended, make sure you copy the entire code.<br>
+                    6: Add tracking code or select "NO" to view the menu code.<br>
+                    7: Copy Google Sheets text are for a Record of the Menu<br>
+                    8: If you encounter any issues or difficulties, go to the Help Menu and click on "Feature Request"
                     to send me an email. Cheers
                 </div>
 
@@ -1009,21 +1011,7 @@
 
     <script>
 
-function showConfirmationDialog() {
-  var confirmationDialog = document.getElementById("confirmationDialog");
-  confirmationDialog.style.display = "block";
-}
 
-function handleConfirmation(isConfirmed) {
-  var confirmationDialog = document.getElementById("confirmationDialog");
-  confirmationDialog.style.display = "none";
-  
-  if (isConfirmed) {
-    alert("You clicked Yes!");
-  } else {
-    alert("You clicked No!");
-  }
-}
 
         $(document).ready(function () {
 
