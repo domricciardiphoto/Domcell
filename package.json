@@ -10,7 +10,7 @@
   },
   "build": {
     "appId": "com.domcell.myapp",
- "mac": {
+    "mac": {
       "category": "public.app-category.productivity",
       "icon": "application-icon-apple.png",
       "target": [
@@ -49,9 +49,6 @@
   "author": {
     "name": "Dominick Ricciardi"
   },
-
-
-  
   "license": "MIT",
   "dependencies": {
     "electron-log": "^4.4.8",
