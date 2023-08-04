@@ -511,6 +511,17 @@
 }
 
 
+#refreshpage , .copy-to-clipboard {
+    background-color: darkred;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#refreshpage:hover  , .copy-to-clipboard:hover{
+    background-color:red
+}
+
             </style>
 
 
@@ -535,8 +546,7 @@
 
                   
 
-             
-
+        
                     <div class="menu breaker" style="min-height: 20px;"> </div>
                     <div id="googlesearch" style="display: none;" class="menu googlesearch">Search</div>
                 </div>
@@ -675,6 +685,11 @@
                 <div class="promo100" style="width: 91.5%;">
                    <hr style="width: 100%; float: left; border:1px solid #ccc; margin-top: 10px;">
                 </div>
+
+<div class="promo100" style="margin-top: 30px; margin-bottom:30px">
+   <span id="refreshpage"> Refresh Page</span>
+</div>
+
 <div style="width: auto; float: left;margin-right:20px;">Additional link Suffix</div>
 <div style="width: 40%; float: left; ">
 <input type="text" id="suffix" name="suffix" placeholder="Tracking Code" style="width: 50%; min-height: 30px;">
@@ -890,6 +905,16 @@
 
                 </div>
 
+<div class="promo100" >
+<div class="promo100" style="margin-bottom: 20px;" >
+    <div style="width: auto; float:left; margin-right:2%; margin-top:15px; font-size:0.875rem"> Name Text File</div>
+    <div style="width: auto; float:left; margin-right:2%; margin-top:10px">  <input id="nametextfile" type="text" /></div>
+    <div style="width: auto; float:left; margin-right:2%; margin-top:20px">  <span class="copy-to-clipboard" >Create Text File</span></div>
+</div>
+    
+</div>
+
+
                 <div class="googlesheetrecords" style="width: 100%; float: left; margin-top: 10px;">For Google Sheet Records</div>
 
                 <div class="googlesheetrecordscontent" style="padding: 10px; width: 99.2%;">
@@ -968,6 +993,74 @@
 
 
         $(document).ready(function () {
+
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();    // 4-digit year (e.g., 2023)
+            const month = currentDate.getMonth() + 1;  // Month (0-11, so we add 1)
+            const day = currentDate.getDate();         // Day of the month (1-31)
+        
+        
+      $('#nametextfile').val('Bubble-menu-'+month+"-"+day+'-'+year)
+/*
+            $('.copy-to-clipboard').on('click', function() {
+                var divText = $(".codeview").text(); // get text from div
+                divText = divText.replace(/(\r\n|\n|\r)/gm, ""); // remove all line breaks
+            
+                var $temp = $("<textarea>"); // create temporary textarea element
+                $("body").append($temp); // append textarea to body
+                $temp.val(divText).select(); // set and select divText
+            
+                document.execCommand("copy"); // copy to clipboard
+                $temp.remove(); // remove textarea element
+              });
+
+
+*/
+
+
+$('.copy-to-clipboard').click(function() {
+
+
+    // Get the content from the codeview div
+    var content = $('.codeview').text().trim();
+
+    // Copy the content to the clipboard
+    const el = document.createElement('textarea');
+    el.value = content;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+
+    // Prompt the user to save the content as a text file
+    var blob = new Blob([content], { type: 'text/plain' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'Bubble-menu-'+month+"-"+day+'-'+year+'.txt';
+
+namethatfile = $('#nametextfile').val()
+
+if(namethatfile === '') {
+    $('#nametextfile').val('Bubble-menu-'+month+"-"+day+'-'+year)
+    a.download = 'Bubble-menu-'+month+"-"+day+'-'+year+'.txt';
+} else {
+    a.download = namethatfile+'.txt';
+}
+
+    
+    a.click();
+
+    // Clean up the object URL
+    URL.revokeObjectURL(url);
+});
+
+
+
+
+$('#refreshpage').on('click' , function() {
+    location.reload(true);
+})
 
 
             $('#suffix').on('input' , function() {
