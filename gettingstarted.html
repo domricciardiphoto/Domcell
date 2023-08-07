@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        .promo100 {
+            width: 80%;
+            float: left;
+            color: #fff;
+            margin-top: 5vh;
+            margin-left: 10%;
+            font-size: 1.2rem;
+        }
+
+        .secondtitle {
+            margin-top: 2vh; 
+        }
+
+.micromenu {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #fff;
+
+    position: relative;
+    min-height:fit-content;
+    float: left;
+    padding-bottom: 1%;
+}
+
+
+.toolbox {
+    width: 27.333%;
+    height: 10vh;
+    background-color: green;
+    float: left;
+    margin-right: 1%;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding: 2%;
+    opacity: 1;
+    cursor: pointer;
+
+}
+
+a.toolbox {
+    color: #fff !important;
+}
+
+.toolbox:hover {
+    opacity: 0.8;
+}
+
+.name {
+    color: #fff;
+    font-size: 1rem;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 5px;
+}
+.description {
+    color: #fff;
+    width: 50%;
+    font-size: 0.875rem;
+    float: left;
+}
+
+.image {
+    width: 50%;
+    float: right;
+}
+
+.image img {
+    width: 48%;
+    float: right;
+}
+
+
+.footer {
+    background-image: url('assets/icons/snooplookingup.png');    
+    min-height: 100px;
+    position: fixed;
+    bottom: 0px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+ width: 88%;
+    }
+
+
+    </style>
+</head>
+<body>
+
+<div class="promo100">Getting Started</div>
+    <div class="micromenu">
+
+    <a href="tool-badgebuilder.html" title="Product Badge Builder">
+    <div class="toolbox">
+        <div class="name">Product Badge Builder</div>
+        <div class="image"><img src="" title="" alt=""></div>
+        <div class="description">Tool to Build the HTML for Badges on Products</div>
+    </div>
+</a> 
+
+<a href="tool-bannersheduler.html" title="Banner Schedular">
+    <div class="toolbox">
+        <div class="name">Banner Schedular</div>
+        <div class="image"><img src="" title="" alt=""></div>
+        <div class="description">Tool to Schedule Banners for the Store Locator Pages</div>
+    </div>
+</a>
+<a href="tool-contentbuilder.html" title="Overview Content">
+    <div class="toolbox">
+        <div class="name">Overview Content</div>
+        <div class="image"><img src="" title="" alt=""></div>
+        <div class="description">Overview Content Builder (In Dev)</div>
+    </div>
+</a>
+<a href="tool-roundmenu.html" title="Menu Builder">
+    <div class="toolbox">
+        <div class="name">Menu Builder</div>
+        <div class="image"><img src="" title="" alt=""></div>
+        <div class="description">Rounded Menu Builder (In Dev)</div>
+    </div>
+
+</a>
+<a href="tool-minifer.html" title="HTML Minifer">
+    <div class="toolbox">
+        <div class="name">HTML Minifer</div>
+        <div class="image"><img src="" title="" alt=""></div>
+        <div class="description">Tool to Minify HTML code for speed for the Site<br> (Use Espically for Pim content)</div>
+    </div>
+</a>
+
+</div>
+
+
+<div class="promo100 secondtitle">Outside Services / CMS</div>
+    <div class="micromenu">
+
+
+    <div id="developcms" class="toolbox">
+        <div class="name">Salesforce Staging CMS</div>
+        <div class="image"><img src="icons/salesforce.png" title="P.C. Richard and Son Staging" alt="P.C. Richard and Son Staging"></div>
+        <div class="description">Link to the Salesforce Staging interface</div>
+    </div>
+
+
+    <div id="stagingcms" class="toolbox">
+        <div class="name">Salesforce Dev CMS</div>
+        <div class="image"><img src="icons/salesforce.png" title="P.C. Richard and Son Staging" alt="P.C. Richard and Son Staging"></div>
+        <div class="description">Link to the Salesforce Dev interface</div>
+    </div>
+
+
+    <div id="gotopim" class="toolbox">
+        <div class="name">Effectus Pim CMS</div>
+        <div class="image"><img src="icons/pim.png" title="Effectus Pim" alt="Effectus Pim"></div>
+        <div class="description">Link to the Pim interface</div>
+    </div>
+
+
+    <div id="gs-staging" class="toolbox">
+        <div class="name">PCR Staging Site</div>
+        <div class="description">Link: STAGING VERSION<br>of the P.C. Richard and Son Site</div>
+        <div class="image"><img src="icons/pcr-icon.png" title="P.C. Richard and Son Staging" alt="P.C. Richard and Son Staging"></div>
+       
+    </div>
+
+
+    <div id="gs-dev" class="toolbox">
+        <div class="name">PCR DEV Site</div>
+        <div class="description">Link: DEVELOPMENT VERSION<br>of the P.C. Richard and Son Site</div>
+        <div class="image"><img src="icons/pcr-icon.png" title="P.C. Richard and Son Dev" alt="P.C. Richard and Son Dev"></div>
+       
+    </div>
+
+<a href="release-notes.html" title="Whats New?">
+    <div class="toolbox">
+        <div class="name">Whats New?</div>
+        <div class="image"><img src="icons/application-icon-apple.png" title="P.C. Richard and Son Dev" alt="P.C. Richard and Son Dev"></div>
+        <div class="description">Domcell Verison info and whats new</div>
+    </div>
+</a>
+</div>
+<div class="promo100 footer"></div>
+
+</body>
+</html>
+
+
+<script>
+
+    const { ipcRenderer } = require('electron');
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var element = document.getElementById('gs-dev');    
+        var staging = document.getElementById('gs-staging');    
+        var pim = document.getElementById('gotopim');  
+        
+        var stagingcms = document.getElementById('stagingcms');  
+        var developcms = document.getElementById('developcms');  
+
+
+        if (stagingcms) {
+            stagingcms.addEventListener('click', function() {
+                var url = 'https://staging-na01-pcrichard.demandware.net/on/demandware.store/Sites-Site/default/ViewApplication-DisplayWelcomePage';
+                ipcRenderer.send('open-url', url);
+            });
+        }
+
+        if (developcms) {
+            developcms.addEventListener('click', function() {
+                var url = 'https://development-na01-pcrichard.demandware.net/on/demandware.store/Sites-Site/default/ViewApplication-DisplayWelcomePage';
+                ipcRenderer.send('open-url', url);
+            });
+        }
+
+
+
+        if (pim) {
+            pim.addEventListener('click', function() {
+                var url = 'https://pcr.effectuspartners.com';
+                ipcRenderer.send('open-url', url);
+            });
+        }
+
+
+
+        if (staging) {
+            staging.addEventListener('click', function() {
+                var url = 'https://storefront:PCRS2021@staging-na01-pcrichard.demandware.net';
+                ipcRenderer.send('open-url', url);
+            });
+        }
+
+
+        if (element) {
+            element.addEventListener('click', function() {
+                var url = 'https://sfccdev.pcrichard.com/';
+                ipcRenderer.send('open-url', url);
+            });
+        }
+    });
+
+
+</script>

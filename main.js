@@ -1,4 +1,4 @@
-const {app, BrowserWindow, ipcMain,remote, Menu, globalShortcut, shell,} = require('electron')
+const {app, BrowserWindow, ipcMain, Menu, globalShortcut, shell,} = require('electron')
 const {autoUpdater} = require('electron-updater');
 
 const log = require('electron-log');
@@ -18,6 +18,7 @@ let createhtmlminiferpage;
 let createbannerpage21;
 let BadgeBuilderpage;
 let createmenubuilder21
+let createbeta
 
 
 
@@ -68,15 +69,20 @@ function createMainWindow() {
     navigateOnDragDrop: true,
     webPreferences: {
       nodeIntegration:true,
-      contextIsolation:true, 
+      contextIsolation:false, 
       devTools:true,
       spellcheck: true,
       preload: path.join(__dirname, 'assets/preload.js')
+      
     }
 
   })
   win.loadFile(path.join(__dirname, 'intro.html'))
 
+  ipcMain.on('open-url', (event, url) => {
+    shell.openExternal(url);
+  });
+  
 }
 
 
@@ -135,16 +141,34 @@ function createmenubuilder() {
     height: 1000,
   })
 
-  createmenubuilder21.loadFile('roundmenu.html')
+  createmenubuilder21.loadFile('tool-roundmenu.html')
+  
 }
 
+
+function createbeta21() {
+
+  createbeta = new BrowserWindow({
+    title: 'Round Menu Builder',
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true, 
+      contextIsolation: false,
+    } 
+  })
+    createbeta.loadFile('beta.html')
+    ipcMain.on('open-url', (event, url) => {
+      shell.openExternal(url);
+    });
+}
 
 
 
 function createAboutWindow() {
 
   aboutWindow = new BrowserWindow({
-    title: 'About Domcell Badge Builder',
+    title: 'About Domcell',
     icon: `${__dirname}assets/icons/app-icon.png`,
     width: 500,
     height: 500,
@@ -172,7 +196,7 @@ function createAboutWindow() {
 function whatsnew() {
   whatsnewpage = new BrowserWindow({
 
-    title: 'About Domcell Badge Builder',
+    title: 'Whats New in Domcell',
     icon: `${__dirname}assets/icons/app-icon.png`,
     width: 700,
     height: 500,
@@ -197,7 +221,7 @@ function whatsnew() {
 function howtoos() {
   howtoospage = new BrowserWindow({
 
-    title: 'About Domcell Badge Builder',
+    title: 'Domcell How To..',
     icon: `${__dirname}assets/icons/app-icon.png`,
     width: 1000,
     height: 500,
@@ -277,7 +301,7 @@ function pcrdev() {
 }
 
 function gohome() {
-  win.loadFile(path.join(__dirname, 'index.html')) 
+  win.loadFile(path.join(__dirname, 'gettingstarted.html')) 
 }
 
 function featurerequest() {
@@ -298,11 +322,11 @@ function addOverviewcontenttoindex() {
 }
 
 function addBannerSchedulertoindex() {
-  win.loadFile(path.join(__dirname, 'fullscreen3.html'))
+  win.loadFile(path.join(__dirname, 'tool-bannersheduler.html'))
 }
 
 function createMenuWindowtoindex() {
-  win.loadFile(path.join(__dirname, 'roundmenu.html'))
+  win.loadFile(path.join(__dirname, 'tool-roundmenu.html'))
 }
 
 
@@ -512,6 +536,8 @@ click: addbadgebuildertoindex
         click: gotogoogle,
       },
 
+
+     
 
       {
         role: 'toggleDevTools'

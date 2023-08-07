@@ -1,6 +1,6 @@
 {
-  "name": "domcell",
-  "version": "6.8.0",
+  "name": "DOMCELL",
+  "version": "7.0.1",
   "description": "PCR HTML Builder App",
   "main": "main.js",
   "scripts": {
