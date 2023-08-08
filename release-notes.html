@@ -5,34 +5,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="global-style.css"/>
   <title>Release Notes</title>
 
   <style>
     body {
-      background-color: black;
+      background-color: #121212;
       font-size: 1.2rem;
       padding: 5%;
+      padding-top: 0px;
       color: #fff;
     }
+
+.whatsnew {
+  font-size: 0.875em;
+  line-height: 30px;
+}
+
   </style>
 </head>
 
 <body>
+  <div class="promo100 header">
 
-
+    <div class="rightsearch">
+        <div class="searchblocks"><input id="customsearch" class="mysearch customsearch" type="text"
+                placeholder="Google Search"></div>
+        <div class="searchblocks">Google Search:</div>
+        <div class="searchblocks">||</div>
+        <div class="searchblocks"><input id="mypcrsearch" class="mypcrsearch customsearch" type="text"
+                placeholder="PCR Site Search"></div>
+        <div class="searchblocks">PCR Search:</div>
+    </div>
+    <div class="promo100 version">Domcell 2023 <span class="yellowtext version"></span></div>
+</div>
+<br><br><br><br>
+<div class="whatsnew">
 8/7<br>
-The Big bad monster of an update! version 7 is finally here!
+The Big Bad Monster of an update!<br> Domcell v7 is finally here!
 <ol>
 <li>New Menu system</li>
 <li>Updated search options open in Default Browser Windows</li>
-<li>New Getting Started Menu</li>
+<li>New Getting Started Page</li>
 <li>Updated Tool frame with new Tech for future functions</li>
-<li>Prep for New tools from the unreleased browser only tool to move over to Domcell for everyone (maybe)</li>
-<li>Added Save to txt for Menu builder</li>
+<li>Prep for New tools from the unreleased Developer browser only tools to move over to Domcell for everyone (maybe)</li>
+<li>Added Save to txt file for Menu builder</li>
 <li>Added Refresh to Menu Builder</li>
 <li>Total recode for speed of app</li>
-<li>Slightly more responsive for smaller screens (Still needs work)</li>
-<li>Move towards plain javascript from jquery as IPC has not gotten along very well</li>
+<li>Added IPC functions appwide</li>
+<li>More responsive for smaller screens (Still needs more work)</li>
+<li>Move towards plain javascript from jquery JS as IPC doesnt get along with jquery</li>
 <li>Updated Riddle</li>
 </ol>
 
@@ -120,9 +142,11 @@ The Big bad monster of an update! version 7 is finally here!
   <li>Help document</li>
   <li>More Tools</li>
 </ol>
-
+</div>
 
 
 </body>
+<script src="jquery.js"></script>
+<script src="global.js"></script>
 
 </html>

@@ -137,6 +137,10 @@ function createmenubuilder() {
     center: true,
     autoHideMenuBar: true,
     roundedCorners: true,
+    webPreferences: {
+      nodeIntegration:true,
+      contextIsolation:false, 
+    },
     width: 1200,
     height: 1000,
   })
