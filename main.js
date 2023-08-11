@@ -333,7 +333,13 @@ function createMenuWindowtoindex() {
   win.loadFile(path.join(__dirname, 'tool-roundmenu.html'))
 }
 
+function createbreadcumb() {
+  win.loadFile(path.join(__dirname, 'tool-breadcrumbbuilder.html'))
+}
 
+function gotogithub() {
+  shell.openExternal("https://github.com/domricciardiphoto/Domcell")
+}
 
 
 autoUpdater.on("update-available", (info) => {
@@ -443,7 +449,12 @@ click: addbadgebuildertoindex
 {
   label:"Create Rounded Menu (NEW)",
   click:createMenuWindowtoindex
-  },
+},
+
+{
+  label:"Create Breadcumbs (NEW)",
+  click:createbreadcumb
+},
   
 
 {
@@ -485,6 +496,8 @@ click: addbadgebuildertoindex
       label: "Full Screen: Banner Scheduler",
       click: createbannerschedular
     },
+
+    
 
     {
       label: "Full Screen: Menu Builder (-NEW-)",
@@ -666,12 +679,20 @@ click:howtoos
     label: "Feature Request",
     click: featurerequest
   },
+
+  {
+    label: 'Domcell on Github',
+    click: gotogithub,
+  },
   
  
   {
     label: 'About Domcell',
     click: createAboutWindow,
-  },
+  }
+
+  
+
 
 ]
 
