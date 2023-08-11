@@ -9,15 +9,52 @@
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
+<style>
+    .popup {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        position: fixed;
+        padding: 20px;
+        left: 36%;
+        top: 24%;
+        font-size: 1.3rem;
+        line-height: 34px;
+        border: 7px solid #FFF;
+        cursor: pointer;
+   
+    }
 
+    #popup {
+        display: none;
+    }
+</style>
 
 </head>
 
 <body>
- 
-    <div class="promo100 header">
 
-<div class="rightsearch">
+    <div id="popup" class="popup" >
+
+        Live as the sun shines in the sky.<br>
+        Live as high as the birds can fly.<br>
+        Live as the colors of a rainbow.<br>
+        Live as far as the clouds can go.<br><br>
+        
+        Never waste it with worthless doubts and fears,<br>
+        With insecurities and useless tears.<br>
+        Remember that what couldn't tear you makes you strong.<br>
+        Put away frustrations, sing your own song!<br>
+        
+        Believe in what you can do.<br>
+        The world is round; it's all up to you.<br>
+        Think fast, act now!<br>
+        Time is gold; it couldn't be renewed.<br>
+      </div>
+ 
+    <div id="header" class="promo100 header">
+
+<div   class="rightsearch">
 
 
 <div class="searchblocks"><input id="customsearch" class="mysearch customsearch" type="text"  placeholder="Google Search"></div>
@@ -33,7 +70,7 @@
     <div class="promo100 toolcontent">
         <embed class="myloadedtools" src="badgebuilder.html"></embed>
     </div>
-    <div class="promo100 footer"></div>
+    <div id="footer" class="promo100 footer"></div>
 
 
 </body>
@@ -41,6 +78,86 @@
 </html>
 
 <script src="global.js"></script>
+
+<script>
+
+
+    var input = document.getElementById("mypcrsearch");
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            
+            var inputValue = input.value; // Gets the value of the input using pure JavaScript
+    alert(inputValue)
+            if (inputValue === '') {
+                var url= 'https://www.pcrichard.com';
+                ipcRenderer.send('open-url', url);
+            } else {
+                var url = 'https://www.pcrichard.com/search?q=' + inputValue;
+                ipcRenderer.send('open-url', url);
+            }     
+            return false;  // Although this line is not strictly necessary, it's retained from the original code.
+        }
+    });
+
+
+
+
+    var input = document.getElementById("customsearch");
+input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        
+        var inputValue2 = input.value; // Gets the value of the input using pure JavaScript
+
+        if (inputValue2 === '') {
+             url2 = 'https://www.google.com/';
+            ipcRenderer.send('open-url', url2);
+        } else {
+          url2 = 'https://www.google.com/search?q=' + inputValue2;
+            ipcRenderer.send('open-url', url2);
+        }     
+        return false;  // Although this line is not strictly necessary, it's retained from the original code.
+    }
+});
+
+
+    let hoverTimer;
+    const element = document.querySelector('#footer');
+    const popup = document.querySelector('#popup');
+    
+    element.addEventListener('mouseover', function() {
+        hoverTimer = setTimeout(function() {
+            fadeIn(popup);
+        }, 5000);
+    });
+    
+    element.addEventListener('mouseout', function() {
+        clearTimeout(hoverTimer);
+    });
+    
+    popup.addEventListener('mouseover', function() {
+        this.style.display = "none";
+    });
+    
+    // Function to handle the fadeIn effect
+    function fadeIn(el, display = 'block', duration = 400) {
+        el.style.opacity = 0;
+        el.style.display = display;
+        
+        let last = +new Date();
+        const tick = function() {
+            el.style.opacity = +el.style.opacity + (new Date() - last) / duration;
+            last = +new Date();
+    
+            if (+el.style.opacity < 1) {
+                (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+            }
+        };
+        tick();
+    }
+
+</script>
 
 
 <!--

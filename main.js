@@ -318,7 +318,7 @@ function addminifertoindex() {
 }
 
 function addbadgebuildertoindex() {
-  win.loadFile(path.join(__dirname, 'index.html'))
+  win.loadFile(path.join(__dirname, 'tool-badgebuilder.html'))
 }
 
 function addOverviewcontenttoindex() {

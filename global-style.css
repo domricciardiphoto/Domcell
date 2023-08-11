@@ -23,13 +23,18 @@
         }
 
         .footer {
-        background-image: url('assets/icons/snooplookingup.png');    
-        min-height: 100px;
-        position: fixed;
-        bottom: 0px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: right;
+            background-image: url(assets/icons/snooplookingup.png);
+            min-height: 100px;
+            position: fixed;
+            bottom: 0px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+            width: 5%;
+            float: right;
+            right: 0px;
+            left: auto;
+            cursor: pointer;
         }
         .version {
             color: #fff;

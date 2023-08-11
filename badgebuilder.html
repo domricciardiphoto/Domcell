@@ -143,7 +143,7 @@
             color: #000;
         }
 
-        .long-banner-color {
+        .long-banner-color , .long-banner-color2 {
             margin-left: 2%;
             margin-top: 15px;
             float: left;
@@ -190,7 +190,9 @@
         }
 
         #lonngbanner-html,
-        .long-banner-color {
+        .long-banner-color,
+        .long-banner-color2
+        {
             display: none;
         }
 
@@ -234,9 +236,11 @@
         .Assem-req-code,
         .Assem-optional-code,
         .dog-banner-color,
+        #secondbadge-code,
         .dogear-code,
         .wifi-contr,
         .custom-code,
+        .secondbanner-preview,
         .mywaterfilter {
             display: none;
         }
@@ -443,8 +447,33 @@
         }
 
 
+.secondbanner-preview {
+    width: 100%;
+    min-height: 300px;
+    background-color: #fff;
+    position: relative;
+}
+
+.width100-2 {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 15px;
+    bottom: -91px;
+    position: inherit;
+    zoom: 1.5;
+}
+
+
+
+
     </style>
 
+
+
+    
+        
 
 
     <div class="container-all" style="width: 90%; float: left; margin-left: 5%; ">
@@ -480,7 +509,9 @@
 
 
 
-
+                        <optgroup label="Secondary Long Badge (NEW)">
+                            <option value="secondbadge">Long Badge</option>
+                        </optgroup>
 
 
 
@@ -491,6 +522,13 @@
 
 
                     <div class="lines" style="margin-left: 0px;">
+
+
+<div class="secondbanner-preview">
+   
+</div>
+
+
                         <div id="bigproduct" class="prodbox" style="margin-left: 2px;">
                             <div class="prod-im">
                                 <img
@@ -547,6 +585,32 @@
                     <label>Banner Text Override</label><br>
                     <input type="text" id="fname2" name="fname2"><br><br>
                 </div>
+
+
+          
+               
+
+
+
+                <div class="long-banner-color2" style="position: relative;">
+                    <label for="color-select2">Secondary Long Banner Color Options:</label><br>
+                    <select name="longcolor2" id="longcolorchange2">
+                        <option value="">--Pick A Color--</option>
+                        <option value="red-d" >RED</option>
+                        <option value="lightblue-d" >LIGHT BLUE</option>
+                        <option value="blue-d" >BLUE</option>
+                        <option value="black-d" >BLACK</option>
+                        <option value="purple-d" >PURPLE</option>
+                        <option value="yellow-d" >YELLOW</option>
+                        <option value="orange-d" >ORANGE</option>
+                        <option value="green-d" >GREEN</option>
+                    </select>
+                    <br>
+                    <label>Secondary Banner Text Override</label><br>
+                    <input type="text" id="secondary1" name="secondary1"><br><br>
+                </div>
+
+
 
 
 
@@ -629,6 +693,13 @@
                 <div id="lonngbanner-html" class="lines" style="margin-top: 0px;">
                     &lt;div class="width100 <span class="longcolor"></span>"&gt;&lt;p&gt;<span
                         class="longtextbanner"></span>&lt;/p&gt; &lt;/div&gt;
+                </div>
+
+
+                <div id="secondbadge-code" class="lines" style="margin-top: 0px;">
+                    &lt;div class="width100-2 <span class="longcolor2"></span>"&gt;&lt;p&gt;<span
+                        class="longtextbanner2"></span>&lt;/p&gt; &lt;/div&gt;<br>
+                        &lt;script src="images/badges/message-resize-2023.js" &lt;/script&gt;
                 </div>
 
 
@@ -766,7 +837,21 @@
 
 
 <script>
-    var version = '2023 Ver. Beta 3.1 incl. badge CSS Ver. Beta 6'
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+    var version = '2023 Ver. Beta 7.0.5 incl. badge CSS Ver. Beta 9'
     $('.version').text(version)
     $('.emailme').attr('href',
         'mailto:dom.ricciardi@pcrichard.com?Subject=Feature Request For Badge Builder&body=I am Using Badge Builder Version ' +
@@ -795,7 +880,7 @@
 
     $('#bannertypeslect').change(function () {
         var selectedbannertype = $(this).val()
-        $('#lonngbanner-html ,.long-banner-color,.nooptions , #sleepguarantee-code , .wifi-contr , .custom-code , .custombox , .mywaterfilter')
+        $('#lonngbanner-html ,.long-banner-color, .long-banner-color2,.nooptions , #sleepguarantee-code , .wifi-contr , .custom-code , .custombox , .mywaterfilter , .secondbadge-html ,#secondbadge-code, .secondbanner-preview')
             .hide()
         $('.freeassembly-code , .DOTD-code , .Assem-req-code ,.Assem-optional-code , .dogear-code , .dog-banner-color , .dogear-code')
             .hide()
@@ -808,6 +893,16 @@
         if (selectedbannertype === 'long') {
             $('#lonngbanner-html , .long-banner-color ,.prodbox').fadeIn();
             $('.longbanner-spot').css('background-color', '#FFC4C4')
+        }
+
+
+        if (selectedbannertype === 'secondbadge') {
+        
+         $('#secondbadge-code').fadeIn()
+         $('.long-banner-color2').fadeIn()
+         $('.prodbox').hide()
+         $('.secondbanner-preview').show()
+        
         }
 
 
@@ -971,8 +1066,16 @@
     })
 
 
+//seconday Banner change
+$("#longcolorchange2").change(function () {
+    $('.longcolor2').text($('#longcolorchange2').val())
+    $('.secondbanner-preview').html($('#secondbadge-code').text())
+})
 
-
+$('#secondary1').on('input' , function(e) {
+$('.longtextbanner2').text($(this).val())
+$('.secondbanner-preview').html($('#secondbadge-code').text())
+})
 
 
     // long banner change
