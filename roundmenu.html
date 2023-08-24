@@ -799,7 +799,7 @@
                                 "position": <span class="positionNumber">1</span>,
                                 "url": "<span class="dname1">/</span>",
                                 "name": "<span class="fname1"></span>"
-                                },
+                                }<span class="comma-hide">,</span>
                             </div>
                         </li>
                         <li data-id="2" class="nostyle">
@@ -809,7 +809,7 @@
                                 "position": <span class="positionNumber">2</span>,
                                 "url": "<span class="dname2">/</span>",
                                 "name": "<span class="fname2"></span>"
-                                },
+                                }<span class="comma-hide">,</span>
                             </div>
                         </li>
 
@@ -820,7 +820,7 @@
                                 "position": <span class="positionNumber">3</span>,
                                 "url": "<span class="dname3">/</span>",
                                 "name": "<span class="fname3"></span>"
-                                },
+                                }<span class="comma-hide">,</span>
 
                             </div>
                         </li>
@@ -831,7 +831,7 @@
                                 "position": <span class="positionNumber">4</span>,
                                 "url": "<span class="dname4">/</span>",
                                 "name": "<span class="fname4"></span>"
-                                },
+                                }<span class="comma-hide">,</span>
                             </div>
                         </li>
                         <li data-id="5" class="nostyle">
@@ -841,7 +841,7 @@
                                 "position": <span class="positionNumber">5</span>,
                                 "url": "<span class="dname5">/</span>",
                                 "name": "<span class="fname5"></span>"
-                                },
+                                }<span class="comma-hide">,</span>
                             </div>
                         </li>
                         <li data-id="6" class="nostyle">
@@ -851,7 +851,7 @@
                                 "position": <span class="positionNumber">6</span>,
                                 "url": "<span class="dname6">/</span>",
                                 "name": "<span class="fname6"></span>"
-                                },
+                                }<span class="comma-hide">,</span>
                             </div>
                         </li>
                         <li data-id="7" class="nostyle">
@@ -861,7 +861,7 @@
                                 "position": <span class="positionNumber">7</span>,
                                 "url": "<span class="dname7">/</span>",
                                 "name": "<span class="fname7"></span>"
-                                }<br>
+                                }<span class="comma-hide">,</span><br>
                             </div>
                         </li>
                     </ul>
@@ -1031,6 +1031,11 @@ if(namethatfile === '') {
 });
 
 
+function commafix() {
+    $('.comma-hide').show()
+    $("#sortable3 li:visible:last").children('div').children('.comma-hide').hide()
+}
+
 
 
 $('#refreshpage').on('click' , function() {
@@ -1108,6 +1113,7 @@ $('#refreshpage').on('click' , function() {
     });
 
     $('.here').html($('.codeview').text());
+    commafix()
   }
 });
 
@@ -1121,76 +1127,84 @@ function goliveURL() {
 }
 
 
+
+
+
+
             $('.deleter1').on('click', function () {
                 $('.module1').css('opacity', '.5').css('pointer-events', 'none')
-                $('.maincontent1').empty()
+                $('.maincontent1').parent('li').remove()
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname1').hide()
                 $('#gsheetdel1').hide()
+                commafix()
             })
 
 
             $('.deleter2').on('click', function () {
                 $('.module2').css('opacity', '.5').css('pointer-events', 'none')
-                $('.maincontent2').empty()
+                $('.maincontent2').parent('li').remove()
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname2').hide()
                 $('#gsheetdel2').hide()
+                commafix()
             })
 
 
             $('.deleter3').on('click', function () {
                 $('.module3').css('opacity', '.5').css('pointer-events', 'none')
-                $('.maincontent3').empty()
+                $('.maincontent3').parent('li').remove()
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname3').hide()
                 $('#gsheetdel3').hide()
+                commafix()
             })
 
 
             $('.deleter4').on('click', function () {
                 $('.module4').css('opacity', '.5').css('pointer-events', 'none')
-                $('.maincontent4').empty()
+                $('.maincontent4').parent('li').remove()
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname4').hide()
                 $('#gsheetdel4').hide()
+                commafix()
             })
 
 
             $('.deleter5').on('click', function () {
                 $('.module5').css('opacity', '.5').css('pointer-events', 'none')
-                $('.maincontent5').empty()
+                $('.maincontent5').parent('li').remove()
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname5').hide()
                 $('#gsheetdel5').hide()
-
+                commafix()
             })
 
 
             $('.deleter6').on('click', function () {
                 $('.module6').css('opacity', '.5').css('pointer-events', 'none')
-                $('.maincontent6').empty()
+                $('.maincontent6').parent('li').remove()
                 $('.here').html($('.codeview').text())
                 $(this).hide()
                 $('#dname6').hide()
                 $('#gsheetdel6').hide()
-
+                commafix()
             })
 
 
             $('.deleter7').on('click', function () {
                 $('.module7').css('opacity', '.5').css('pointer-events', 'none')
-                $('.maincontent7').empty()
+                $('.maincontent7').parent('li').remove()
                 $('.here').html($('.codeview').text())
                 $(this).hide()
-                $('#dname7').hide()
-                $('#gsheetdel7').hide()
-
+               $('#dname7').hide()
+               $('#gsheetdel7').hide()
+               commafix()
             })
 
 
@@ -1307,11 +1321,16 @@ function goliveURL() {
 
 
 
-
+            commafix()
 
         })
     </script>
 
+
+
+    
+    
+  
 
 
 </html>

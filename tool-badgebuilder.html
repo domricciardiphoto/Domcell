@@ -96,7 +96,24 @@
     });
     
     popup.addEventListener('mouseover', function() {
-        this.style.display = "none";
+        function fadeOut(el) {
+            let opacity = 1;
+        
+            function reduceOpacity() {
+                opacity -= 0.05;
+                if (opacity <= 0) {
+                    opacity = 0;
+                    el.style.display = 'none';
+                    clearInterval(fading);
+                }
+                el.style.opacity = opacity;
+            }
+        
+            let fading = setInterval(reduceOpacity, 20);
+        }
+        
+        let popup = document.getElementById('popup');
+        fadeOut(popup);
     });
     
     // Function to handle the fadeIn effect

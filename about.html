@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About DOMCELL 2023</title>
-    <script src="jquery.js"></script>
-    <script src="global.js"></script>
+
     <style>
         body {
             background-color: green;
@@ -14,6 +13,7 @@
             text-align: center;
             background-image: url('assets/background-green.png');
             background-size: cover;
+            cursor: pointer;
         }
         .centercontent {
             margin-top: 30%;
@@ -39,10 +39,10 @@
         }
     </style>
 </head>
-<body onclick="window.location.href='gettingstarted.html';">
-    <div class="centercontent">
+<body >
+    <div id="contercontent" class="centercontent">
         <h1>DOMCELL 2023</h1>
-        <span class="version">Domcell Version 7.0.0</span>
+        <span class="version">Domcell Version 7.0.7</span>
     </div>
 
     <div class="boxcontent">
@@ -55,6 +55,26 @@
 </html>
 
 <script>
-    
+   
+    const { ipcRenderer } = require('electron');
+
+
+    document.body.addEventListener('mouseover', () => {
+        document.body.style.opacity = '0.8';
+    });
+
+    document.body.addEventListener('mouseout', () => {
+        document.body.style.opacity = '1';
+    });
+
+    document.body.addEventListener('click', () => {
+        ipcRenderer.send('close-window');
+    });
+
+    setTimeout(function() {
+        const { ipcRenderer } = require('electron');
+        ipcRenderer.send('close-window');
+    }, 7000); 
+
 </script>
 

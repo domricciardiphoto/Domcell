@@ -82,6 +82,8 @@ function createMainWindow() {
   ipcMain.on('open-url', (event, url) => {
     shell.openExternal(url);
   });
+
+ 
   
 }
 
@@ -180,19 +182,25 @@ function createAboutWindow() {
     darkTheme: true,
     visualEffectState: 'active',
     titleBarOverlay: true,
-    allowRunningInsecureContent: true,
+  
     titleBarStyle: 'hidden',
     alwaysOnTop: true,
     center: true,
     resizable: false,
     frame: false,
     autoHideMenuBar: true,
-    roundedCorners: true
-
+    roundedCorners: true,
+    webPreferences: {
+      nodeIntegration:true,
+      contextIsolation:false, 
+  }
   })
 
 
   aboutWindow.loadFile('about.html')
+  ipcMain.on('close-window', () => {
+    aboutWindow.close();
+})
 
 }
 
@@ -215,7 +223,8 @@ function whatsnew() {
     resizable: false,
     frame: false,
     autoHideMenuBar: true,
-    roundedCorners: true
+    roundedCorners: true,
+    
   }),
   whatsnewpage.loadFile('release-notes.html')
 }

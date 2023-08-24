@@ -1,4 +1,4 @@
-/*PLP Badges* updated 5-10/
+/*PLP Badges* updated 7-14a/
 
 
 /*Long banner Mutiple colors*/
@@ -52,3 +52,200 @@
 
 /*Secondary Banner*/
 .width100-2{width:100%;float:left;text-align:center;padding-top:3px;padding-bottom:3px;bottom:-279px;position:absolute}.width100-2 p{padding-bottom:0;margin-bottom:0;font-size:.875rem;font-weight:700}.lightblue-d{background-color:#e6f1fa}.lightblue-d p{color:#294890;padding-left:2%;text-align:left}.image-container:has(.width100-2){overflow:inherit}@media only screen and (width:768px){.width100-2{width:100%;float:left;text-align:center;padding-top:3px;padding-bottom:3px;bottom:-252px;position:absolute;left:180px}}@media only screen and (max-width:767px){.width100-2{width:110%;float:left;text-align:center;padding-top:3px;padding-bottom:4px;position:absolute;bottom:-34px;left:107%}.lightblue-d p{padding-left:0;text-align:center!important;font-weight:bolder!important;font-size:.75rem}}@media only screen and (max-width:400px){.width100-2{bottom:-54px}}@media only screen and (max-width:370px){.width100-2{width:97%}}@media only screen and (max-width:337px){.width100-2{bottom:-81px}}
+
+.width100-2 p {
+  text-align: left !important;
+  padding-left: 2% !important;
+}
+
+
+@media only screen and ( width:280px){
+  .width100-2 {
+    width: 78%;
+    bottom: -148px;
+}
+
+.width100-2 p {
+  font-size: 0.6rem !important;
+}
+}
+
+
+@media only screen and ( min-width:336px){
+  .width100-2 {
+    width: 78%;
+    bottom: -99px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+
+@media only screen and ( min-width:360px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 125%;
+    bottom: -57px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+
+@media only screen and ( min-width:375px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 100%;
+    bottom: -55px;
+}
+
+.width100-2 p {
+  font-size: 0.6rem !important;
+}
+}
+
+
+@media only screen and ( min-width:390px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 125%;
+    bottom: -51px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+
+@media only screen and ( min-width:414px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 125%;
+    bottom: -50px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+
+
+@media only screen and ( min-width:412px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 125%;
+    bottom: -52px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+
+@media only screen and ( min-width:540px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 131%;
+    bottom: -34px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+
+
+@media only screen and ( min-width:768px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 150%;
+    bottom: -42px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+@media only screen and ( min-width:820px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 100%;
+    bottom: -318px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+
+@media only screen and ( min-width:912px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 100%;
+    bottom: -314px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+
+@media only screen and ( min-width:1024px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 100%;
+    bottom: -315px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+
+@media only screen and ( min-width:1200px){
+  .width100-2 {
+    text-align: left;
+    padding-left: 2%;
+    width: 100%;
+    bottom: -313px;
+}
+
+.width100-2 p {
+  font-size: 0.7rem !important;
+}
+}
+
+
+@media only screen and ( min-width:1621px){
+  .width100-2 {
+    bottom: -280px !important;
+}
+
+}
+
+
+
+
+

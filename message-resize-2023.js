@@ -2,7 +2,7 @@
         swidth <= 768 && $(".width100-2").parent("div").parent("div").parent("div").parent("div").children(".tile-body")
             .children(".tile-bottom-container").children(".tile-body-footer").css("margin-top", "20px"), swidth <=
             375 && $(".width100-2").parent("div").parent("div").parent("div").parent("div").children(".tile-body")
-            .children(".tile-bottom-container").children(".tile-body-footer").css("margin-top", "20px"), swidth > 768 &&
+            .children(".tile-bottom-container").children(".tile-body-footer").css("margin-top", "30px"), swidth > 768 &&
             $(".width100-2").parent("div").parent("div").parent("div").parent("div").children(".tile-body").children(
                 ".tile-bottom-container").children(".tile-body-footer").css("margin-top", "0px")
     }
@@ -11,3 +11,7 @@
             resizer(swidth = $(window).width())
         })
     });
+
+
+
+
