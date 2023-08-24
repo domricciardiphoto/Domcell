@@ -50,20 +50,22 @@
     margin-top: 40px;
     color: #000;
     padding: 2%;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 input {
     width: 60%;
     min-height: 30px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 select {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
-
+.idoption {
+    display: none;
+}
 
 </style>
 
@@ -71,13 +73,14 @@ select {
 </head>
 <body>
 <div class="store">
-<div class="message">
+<div class="message" style="margin-bottom: 10px;">
   See <a href="howtoo.html" target="_blank">help</a> For Steps 
 </div>
 
 <div class="builder">
 
-    <div class="info" style=" border-top: 1px solid #f7f7f7;">Start Date:</div>
+    <div class="info" style=" border-top: 1px solid #f7f7f7;"><br>Start Date:</div>
+    
 <div class="info">
 
     <label for="startmonth">Choose Month:</label>
@@ -97,7 +100,7 @@ select {
     </select>
 
 
-    <label for="startday" >Choose Day:</label>
+    <label for="startday" >&nbsp;&nbsp;Choose Day:</label>
     <select name="startday" id="startday">
       <option value="01">1</option>
       <option value="02">2</option>
@@ -155,7 +158,7 @@ select {
     </select>
 
 
-    <label for="endday">Choose Day:</label>
+    <label for="endday">&nbsp;&nbsp;Choose Day:</label>
     <select name="endday" id="endday">
       <option value="01">1</option>
       <option value="02">2</option>
@@ -192,26 +195,31 @@ select {
 
 </div>
 <div class="info" >Element your NEW content will go before  (default is for a store page ) <br><br> </div>
-<div class="info"><input id="element" type="text" placeholder="team-text-banner"></div>
-<div class="info" >Whether your placeing before a class or an ID (defualt is a class) <br><br> </div>
+
 
 <div class="info" >
-<label for="isclass">Is it before an ID?</label>
-    <select name="isclass" id="isclass">
-      <option value="no" selected>no</option>
-      <option value="yes">yes</option>
-    </select>
-</div>
+    <label for="isclass">Is it before an ID?</label>
+        <select name="isclass" id="isclass">
+          <option value="no" selected>no</option>
+          <option value="yes">yes</option>
+        </select>
+    </div>
+
+<div class="info idoption" >Whether your placeing before a class or an ID (defualt is a class)  </div>
+<div class="info idoption"><input id="element" type="text" placeholder="team-text-banner"></div>
 
 
-<div class="info" style=" border-top: 1px solid #f7f7f7; margin-top: 20px;">Upload image into store directory</div>
+
+
+
+<div class="info" style=" border-top: 1px solid #f7f7f7; margin-top: 20px;"><br><br>Upload image into store directory</div>
 
 <div class="info" >Desktop Image --(DONT FORGET EXTENSION!)  (.jpg /.png) <br><br> </div>
 <div class="info"><input id="desktopimage" type="text"  placeholder="fordham_clearance_desktopV1_1600x160.jpg"></div>
 <div class="info" >Mobile Image  -- (DONT FORGET EXTENSION!) (.jpg /.png)  </div>
 <div class="info"><input id="mobileimage" type="text"  placeholder="fordham_clearance_mobileV1_750x430.jpg"></div>
 
-<div class="info" style=" border-top: 1px solid #f7f7f7;">Alt Tag  </div>
+<div class="info">Alt Tag  </div>
 <div class="info"><input id="alttag" type="text"  placeholder="Fordham Road Clearance Sale"></div>
 </div>
 
@@ -267,6 +275,11 @@ $('#endday').on('change' , function() {
 $('#isclass').on('change' , function() {
     isclass = $(this).val()
     $('#isclassval').text(isclass)
+    if(isclass === 'yes') {
+        $('.idoption').slideDown()
+    } else {
+        $('.idoption').slideUp()
+    }
 })
 
 
