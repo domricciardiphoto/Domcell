@@ -1,0 +1,52 @@
+<style>
+    .containerd {
+        width: 100%;
+        position: relative;
+        float: left;
+    }
+
+    .dualcontainer {
+        width: 48%;
+        float: left;
+        padding: 1%;
+        position: relative;
+    }
+
+    .videoplayercontainer {
+        width: 100%;
+        float: left;
+        border: 1px solid #333;
+    }
+    video {
+        width: 100%;
+        
+    }
+</style>
+
+
+<div class="containerd">
+    <div class="dualcontainer">
+        <div class="videoplayercontainer">
+            <h1>ADA Compliant Video Player</h1>
+            <div id="video-container" >
+                <video id="videoPlayer" controls aria-label="Video Player" tabindex="0">
+                    <source src="videos/wayne-appre.mp4?$staticlink$" type="video/mp4">
+                    <track kind="captions" src="videos/wayne-appre.vtt?$staticlink$" srclang="en" label="English">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="dualcontainer">
+        <div class="videoplayercontainer">
+            <h1>ADA Compliant Video Player</h1>
+            <div id="video-container" >
+                <video id="videoPlayer" controls aria-label="Video Player" tabindex="0">
+                    <source src="videos/wayne-appre.mp4?$staticlink$" type="video/mp4">
+                    <track kind="captions" src="videos/wayne-appre.vtt?$staticlink$" srclang="en" label="English">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>

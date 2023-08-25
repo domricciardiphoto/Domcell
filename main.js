@@ -23,6 +23,7 @@ let createbeta
 
 
 
+
 function createmobileonly() {
   mobileonly = new BrowserWindow({
     title: 'Mobile P.C. Richard & Son',
@@ -110,6 +111,13 @@ function createhtmlminifer() {
   createhtmlminiferpage.loadURL('https://www.willpeavy.com/tools/minifier/')
 
 }
+
+
+
+function createseotopcontent() {
+  win.loadFile(path.join(__dirname, 'tool-topcopybuilder.html'))
+}
+
 
 function createbannerschedular() {
 
@@ -338,6 +346,12 @@ function addBannerSchedulertoindex() {
   win.loadFile(path.join(__dirname, 'tool-bannersheduler.html'))
 }
 
+function videoplayerbuilder() {
+
+  win.loadFile(path.join(__dirname, 'tool-videobuilder.html'))
+}
+
+
 function createMenuWindowtoindex() {
   win.loadFile(path.join(__dirname, 'tool-roundmenu.html'))
 }
@@ -456,29 +470,53 @@ click: addbadgebuildertoindex
 
 
 {
-  label:"Create Rounded Menu (NEW)",
+  label:'Bubble Menu Builder',
   click:createMenuWindowtoindex
 },
 
 {
-  label:"Create Breadcumbs (NEW)",
+  label:"Breadcumbs Builder",
   click:createbreadcumb
 },
   
 
 {
-  label:"Overview Content",
-  click: addOverviewcontenttoindex
+  label:"SEO Top Content Builder (NEW)",
+  click: createseotopcontent
 },
+
 
 {
   label:"Banner Scheduler",
   click: addBannerSchedulertoindex
 },
 
+
+{
+  label:"Video Player Builder",
+  click: videoplayerbuilder
+},
+
+
+{
+  role: 'separator'
+},
+
+
 {
   label:"HTML Minifer",
   click: addminifertoindex
+},
+
+
+{
+  label:"Overview Content (In DEV)",
+  click: addOverviewcontenttoindex
+},
+
+
+{
+  role: 'separator'
 },
 
 
@@ -509,7 +547,7 @@ click: addbadgebuildertoindex
     
 
     {
-      label: "Full Screen: Menu Builder (-NEW-)",
+      label: "Full Screen: Menu Builder",
       click: createmenubuilder
     }
   
