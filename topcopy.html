@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top of Fold SEO Content Builder</title>
+    <script src="jquery.js"></script>
+</head>
+
+<style>
+    body {
+        color: #fff;
+
+    }
+
+    .copy100 {
+        width: 90%;
+        margin-left: 5%;
+        background-color: rgb(37, 37, 37);
+        border: 1px solid #ccc;
+        padding: 10px;
+        float: left;
+        position: relative;
+    }
+
+    .copy100internal {
+        width: 90%;
+        margin-left: 4.5%;
+        padding: 10px;
+        float: left;
+        position: relative;
+    }
+
+    .copy100internal2 {
+        width: 100%;
+        float: left;
+        padding-top: 20px;
+        position: relative;
+    }
+
+    .copyblack {
+        width: 88%;
+        margin-left: 5%;
+        background-color: #000;
+        min-height: 150px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .mytextarea {
+        width: 100%;
+        margin-left: 0%;
+        background-color: #000;
+        color: #fff;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        min-height: 250px;
+        font-size: 0.875rem;
+    }
+
+    #content2 {
+        width: 100%;
+    }
+
+    .Tools {
+        width: 100%;
+        float: left;
+        margin-top: 20px;
+    }
+
+    #titleinsertcontent,
+    #content2 {
+        font-size: 1rem;
+      
+   
+    }
+
+    .info {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .previewmycode {
+        width: 98.5%;
+        float: left;
+        min-height: 150px;
+        background-color: #fff;
+        color: #000;
+        padding: 10px;
+    }
+
+    .d30 {
+        width: 30%;
+        float: left;
+        padding-top: 100px;
+    }
+
+    .d70 {
+        width: 70%;
+        float: left;
+    }
+</style>
+
+
+<style>
+    #pcrclamp-d {
+        position: relative
+    }
+
+    .toggle-content {
+        display: none
+    }
+
+    .toggle-label {
+        display: inline-block;
+        color: #034694;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: .8rem;
+    }
+
+    .experience-component {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden
+    }
+
+
+    .toggle-content:checked~.experience-component {
+        -webkit-line-clamp: none;
+        display: block
+    }
+
+    .toggle-content:checked~.toggle-label::before {
+        content: "See Less"
+    }
+
+    .toggle-label::before {
+        content: "See More"
+    }
+
+    .toggle-label{
+        display: block;
+    }
+
+
+
+</style>
+
+
+<body>
+    <div class="copy100">
+
+        <div class="copy100internal">
+            <div class="titleoftool">Top of Fold SEO Content Builder</div>
+
+            <div class="copy100internal2">
+                <div class="d30">
+                    <span class="info">Title:</span> <br> <br>
+                    <input type="text" id="titleinsertcontent" name="titleinsertcontent" required="" minlength="4"
+                    maxlength="50" size="37" placeholder="Related pages you might like:"><br> <br>
+                </div>
+                <div class="d70">
+                    <div class="titleoftool">Preview</div>
+                    <div class="previewmycode"></div>
+                </div>
+
+            </div>
+
+
+
+
+
+          
+            <div class="Tools">
+               
+             
+                <span class="info">Content:</span> <br> <br>
+                <textarea id="content2"
+                    placeholder="Are you serious about cooking? Whether you're making a delicious meal..."
+                    name="content" cols="25" rows="5"></textarea>
+
+            </div>
+        </div>
+        <div  style="margin-left: 5%; width:90%; ">
+
+        <div class="titleoftool" style="margin-left: 0%; margin-bottom:-10px">Make HTML Changes</div>
+        <textarea class="mytextarea" type="text"></textarea>
+    </div>
+
+        <div class="titleoftool" style="margin-left: 5%; margin-bottom:-30px">Copy Code</div>
+        <div class="copyblack">&lt;link href="pim-content/topcontent-clamp-d.css?$staticlink$" rel="stylesheet" /&gt;
+            &lt;div id="content-asset-d2" style="margin-top: 10px; margin-bottom:10px "&gt;
+            &lt;div class="experience-component experience-pcrs_assets-headerTag" role="heading" aria-level="2"&gt;
+            &lt;div class="pd-header-tag"&gt;
+            &lt;h2 class="t-h4-style c-blue"&gt; <span class="inserttitle"></span> &lt;/h2&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div id="pcrclamp-d"&gt;
+            &lt;input type="checkbox" id="toggle-content" class="toggle-content" aria-controls="content-to-toggle"
+            aria-expanded="false"&gt;
+
+            &lt;div class="experience-component experience-pcrs_assets-markup" id="content-to-toggle" role="region"
+            aria-labelledby="toggle-content"&gt;
+            &lt;p&gt; <span class="insertcontent"></span> &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;label for="toggle-content" class="toggle-label" tabindex="0"&gt;&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;</div>
+    </div>
+
+
+</body>
+
+</html>
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#titleinsertcontent').on('input', function (e) {
+            $('.inserttitle').text($(this).val())
+            $('.mytextarea').val($('.copyblack').text())
+            $('.previewmycode').html($('.copyblack').text())
+        })
+
+
+        $('#content2').on('input', function (e) {
+            $('.insertcontent').text($(this).val())
+            $('.mytextarea').val($('.copyblack').text())
+            $('.previewmycode').html($('.copyblack').text())
+        })
+
+
+$('.mytextarea').on('input', function (e) {
+    $('.previewmycode').html($(this).val())
+  
+
+})
+
+    })
+</script>

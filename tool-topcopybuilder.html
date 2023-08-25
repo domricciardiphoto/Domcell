@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global-style.css"/>
+    <title>Domcell 2023</title>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+<style>
+    .popup {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        position: fixed;
+        padding: 20px;
+        left: 36%;
+        top: 24%;
+        font-size: 1.3rem;
+        line-height: 34px;
+        border: 7px solid #FFF;
+        cursor: pointer;
+   
+    }
+
+    #popup {
+        display: none;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <div id="popup" class="popup" >
+
+        Live as the sun shines in the sky.<br>
+        Live as high as the birds can fly.<br>
+        Live as the colors of a rainbow.<br>
+        Live as far as the clouds can go.<br><br>
+        
+        Never waste it with worthless doubts and fears,<br>
+        With insecurities and useless tears.<br>
+        Remember that what couldn't tear you makes you strong.<br>
+        Put away frustrations, sing your own song!<br>
+        
+        Believe in what you can do.<br>
+        The world is round; it's all up to you.<br>
+        Think fast, act now!<br>
+        Time is gold; it couldn't be renewed.<br>
+      </div>
+ 
+    <div id="header" class="promo100 header">
+
+<div   class="rightsearch">
+
+
+<div class="searchblocks"><input id="customsearch" class="mysearch customsearch" type="text"  placeholder="Google Search"></div>
+<div class="searchblocks">Google Search:</div>
+<div class="searchblocks">||</div>
+<div class="searchblocks"><input id="mypcrsearch" class="mypcrsearch customsearch" type="text"  placeholder="PCR Site Search"></div>
+<div class="searchblocks">PCR Search:</div>
+</div>
+
+        <div class="promo100 version">Domcell 2023 <span class="yellowtext version"></span></div>
+    </div>
+   
+    <div class="promo100 toolcontent">
+        <embed class="myloadedtools" src="topcopy.html"></embed>
+    </div>
+    <div id="footer" class="promo100 footer"></div>
+
+
+</body>
+
+</html>
+
+<script src="global.js"></script>
+
+<script>
+
+    let hoverTimer;
+    const element = document.querySelector('#footer');
+    const popup = document.querySelector('#popup');
+    
+    element.addEventListener('mouseover', function() {
+        hoverTimer = setTimeout(function() {
+            fadeIn(popup);
+        }, 5000);
+    });
+    
+    element.addEventListener('mouseout', function() {
+        clearTimeout(hoverTimer);
+    });
+    
+    popup.addEventListener('mouseover', function() {
+        this.style.display = "none";
+    });
+    
+    // Function to handle the fadeIn effect
+    function fadeIn(el, display = 'block', duration = 400) {
+        el.style.opacity = 0;
+        el.style.display = display;
+        
+        let last = +new Date();
+        const tick = function() {
+            el.style.opacity = +el.style.opacity + (new Date() - last) / duration;
+            last = +new Date();
+    
+            if (+el.style.opacity < 1) {
+                (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+            }
+        };
+        tick();
+    }
+
+</script>
+
+
+<!--
+Look at you intrepid traveler! looking all under the hood! well then here is your riddle! 
+
+   -- When is a raven like a writting desk? --
+
+if you figure it out you get a prize! well, actually no prize, but wouldnt it be fun to know! 
+Everyone enjoys a good easter egg, and tada you found one!
+Best wishes Dom
+-->
