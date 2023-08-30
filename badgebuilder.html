@@ -6,7 +6,7 @@
 <meta charset=UTF-8>
 <link rel="icon" href="assets/icons/icon_domcell_Jxp_icon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="badges-beta9-2023.css" />
+<link rel="stylesheet" href="badges-beta12-2023.css" />
 <script src="jquery.js"></script>
 
 <head>
@@ -664,7 +664,7 @@
 
         <div class="lines" style="pointer-events:none; color: yellow;">Copy this Code Make sure you get it all!</div>
 
-        <div id="copyme" class="lines">&lt;link href="images/badges/badges-beta9-2023.css?$staticlink$" rel="stylesheet"
+        <div id="copyme" class="lines">&lt;link href="images/badges/badges-beta12-2023.css?$staticlink$" rel="stylesheet"
             /&gt;<br></div>
         <button class="btn copyme_button" style="margin-top: 40px; width: 100px; margin-left: 25px;"
             onclick="copyContent()">Copy!</button>
@@ -674,8 +674,8 @@
 
 
 
-                <div class="lines">
-                    &lt;link href="images/badges/badges-beta9-2023.css?$staticlink$" rel="stylesheet" /&gt;<br>
+                <div class="lines" id="longbannerhide">
+                    &lt;link href="images/badges/badges-beta12-2023.css?$staticlink$" rel="stylesheet" /&gt;<br>
                 </div>
 
                 <div class="custom-code lines" style="margin-top: 0px;">
@@ -699,7 +699,14 @@
                 <div id="secondbadge-code" class="lines" style="margin-top: 0px;">
                     &lt;div class="width100-2 <span class="longcolor2"></span>"&gt;&lt;p&gt;<span
                         class="longtextbanner2"></span>&lt;/p&gt; &lt;/div&gt;<br>
-                        &lt;script src="images/badges/message-resize-2023.js?$staticlink$"&gt; &lt;/script&gt;
+
+                        &lt;script&gt;  <br>
+                        
+                        (function () {if (window.hasResizerRun) {return;} function resizer() {const windowWidth = $(window).width();let productHeight, productTileHeight;productHeight = '690px';productTileHeight = '460px';if (windowWidth &lt;= 1620) {productHeight = '590px';}if (windowWidth &lt;= 1220) {productHeight = '620px';productTileHeight = '490px';}if (windowWidth &lt;= 768) {productHeight = '300px';productTileHeight = '300px';} if (windowWidth &lt;= 600) {productHeight = '300px';productTileHeight = '300px';}if (windowWidth &lt;= 530) {productHeight = '320px';productTileHeight = '320px'; }if (windowWidth &lt;= 430) { productHeight = '340px';productTileHeight = '340px'; } if (windowWidth &lt;= 342) {productHeight = '350px';productTileHeight = '350px'; }$('.product').css('min-height', productHeight);$('.product-tile').css('min-height', productTileHeight);}window.hasResizerRun = true;document.addEventListener("DOMContentLoaded", function () { $("head").append("&lt;link rel='stylesheet' type='text/css' href='images/badges/badges-beta12-2023.css?$staticlink$'>");resizer(); $(window).on('resize', resizer);});})();  
+                        
+                        
+                        <br>
+                        &lt;/script&gt;
                 </div>
 
 
@@ -879,6 +886,7 @@
 
 
     $('#bannertypeslect').change(function () {
+        $('#longbannerhide').show()
         var selectedbannertype = $(this).val()
         $('#lonngbanner-html ,.long-banner-color, .long-banner-color2,.nooptions , #sleepguarantee-code , .wifi-contr , .custom-code , .custombox , .mywaterfilter , .secondbadge-html ,#secondbadge-code, .secondbanner-preview')
             .hide()
@@ -893,6 +901,7 @@
         if (selectedbannertype === 'long') {
             $('#lonngbanner-html , .long-banner-color ,.prodbox').fadeIn();
             $('.longbanner-spot').css('background-color', '#FFC4C4')
+           
         }
 
 
@@ -902,7 +911,7 @@
          $('.long-banner-color2').fadeIn()
          $('.prodbox').hide()
          $('.secondbanner-preview').show()
-        
+         $('#longbannerhide').hide()
         }
 
 
