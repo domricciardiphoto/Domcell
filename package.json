@@ -1,7 +1,7 @@
 {
   "name": "domcell",
-  "productName":"DOMCELL",
-  "version": "7.2.5",
+  "productName": "DOMCELL",
+  "version": "7.2.54",
   "description": "PCR HTML Builder App",
   "main": "main.js",
   "scripts": {
@@ -52,8 +52,6 @@
   },
   "license": "MIT",
   "dependencies": {
-
-
     "electron-log": "^4.4.8",
     "electron-packager": "^17.1.1",
     "electron-updater": "^5.3.0",
