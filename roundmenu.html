@@ -995,9 +995,12 @@
 
 $('.copy-to-clipboard').click(function() {
 
-
+    $('.comma-hide').last().empty()
     // Get the content from the codeview div
     var content = $('.codeview').text().trim();
+    //var content = $('.codeview:visible').text().trim();
+    
+    
 
     // Copy the content to the clipboard
     const el = document.createElement('textarea');
@@ -1032,8 +1035,10 @@ if(namethatfile === '') {
 
 
 function commafix() {
-    $('.comma-hide').show()
-    $("#sortable3 li:visible:last").children('div').children('.comma-hide').hide()
+    //$('.comma-hide').show()
+  //  $("#sortable3 li:visible:last").children('div').children('.comma-hide').hide()
+    $('.comma-hide').text(',')
+    $('.comma-hide').last().empty()
 }
 
 
@@ -1082,6 +1087,7 @@ $('#refreshpage').on('click' , function() {
                 )
 
                 $("#sortable1").sortable({
+                    
   placeholder: "ui-state-highlight",
   stop: function() {
     var items2 = $('#sortable1 > li').map(function() {
@@ -1091,6 +1097,7 @@ $('#refreshpage').on('click' , function() {
       });
     });
     $('#sortable2').empty().append(items2.get());
+  
 
     var items3 = $('#sortable1 > li').map(function() {
       var id = $(this).data('id');
