@@ -360,6 +360,11 @@ function createbreadcumb() {
   win.loadFile(path.join(__dirname, 'tool-breadcrumbbuilder.html'))
 }
 
+
+function createbreadcumb2() {
+  win.loadFile(path.join(__dirname, 'tool-seo-breadcrumb-builder.html'))
+}
+
 function gotogithub() {
   shell.openExternal("https://github.com/domricciardiphoto/Domcell")
 }
@@ -477,6 +482,11 @@ click: addbadgebuildertoindex
 {
   label:"Breadcumbs Builder",
   click:createbreadcumb
+},
+
+{
+  label:"Special Catagory Breadcumbs",
+  click:createbreadcumb2
 },
   
 
