@@ -158,9 +158,9 @@
     }
 
     .width50 {
-        width: 30%;
+        width: 23%;
         float: left;
-        margin-right: 3%;
+        margin-right: 2%;
     }
 
     input {
@@ -172,6 +172,10 @@
         line-height: 40px;
   
     }
+
+    #show4 {
+        display: none;
+    }
 </style>
 
 
@@ -180,6 +184,12 @@
 
         <div class="copy100internal">
             <div class="titleoftool">SEO Breadcrumb Builder</div>
+<br><br>
+<div class="titleoftool">Select Three or Four Breadcrumbs &nbsp; &nbsp;<select name="numbers" id="number-select" style="font-size: 1.5rem; ">
+    <option selected value="3">3</option>
+    <option value="4">4</option>
+  </select></div>
+            
 
             <div class="copy100internal2">
                 <div class="d30">
@@ -203,6 +213,8 @@
                         <input type="text" class="inp" id="b2link" name="b2link" required="" minlength="4"
                             maxlength="50" size="37" placeholder="/kitchen-appliances/"><br> <br>
                     </div>
+
+
                     <div class="width50">
                         <span class="info">:Breadcumb 3</span> <br> <br>
                         <span class="info">Name</span> <br>
@@ -212,6 +224,18 @@
                         <input type="text" class="inp" id="b3link" name="b3link" required="" minlength="4"
                             maxlength="50" size="37" placeholder="/refrigerators/"><br> <br>
                     </div>
+
+
+                    <div id="show4" class="width50">
+                        <span class="info">:Breadcumb 4</span> <br> <br>
+                        <span class="info">Name</span> <br>
+                        <input type="text" class="inp" id="b4" name="b4" required="" minlength="4" maxlength="50"
+                            size="37" placeholder="Refrigerators"><br> <br>
+                        <span class="info">Link</span> <br>
+                        <input type="text" class="inp" id="b4link" name="b4link" required="" minlength="4"
+                            maxlength="50" size="37" placeholder="/refrigerators/"><br> <br>
+                    </div>
+
 
                 </div>
 
@@ -238,23 +262,58 @@
             var blockmenud =' <span id="ddd">&lt;div class=container style="margin-left:-1%"> &lt;div class=row> &lt;div class=col-12
             aria-label=Breadcrumb role=navigation> &lt;ol class=breadcrumb> &lt;li class=breadcrumb-item> &lt;a
             href=<span class="b1link-c">/</span> title=<span class="b1-c">Home</span>><span class="b1-c">Home</span>
-            &lt;/a> &lt;li class=breadcrumb-item> &lt;a href=<span class="b2link-c">/kitchen-appliances/</span>
-            title="<span class="b2-c">Kitchen Appliances</span>"><span class="b2-c">Kitchen Appliances</span> &lt;/a>
+            &lt;/a> &lt;/li>&lt;li class=breadcrumb-item> &lt;a href=<span class="b2link-c">/kitchen-appliances/</span>
+            title="<span class="b2-c">Kitchen Appliances</span>"><span class="b2-c">Kitchen Appliances</span> &lt;/a>&lt;/li>
             &lt;li class=breadcrumb-item> &lt;a href=<span class="b3link-c">/refrigerators/</span> title= <span
-                class="b3-c">Refrigerators</span>> <span class="b3-c">Refrigerators</span> &lt;/a> &lt;/ol> &lt;/div>
+                class="b3-c">Refrigerators</span>> <span class="b3-c">Refrigerators</span> &lt;/a>&lt;/li>        
+                
+                
+                <span id="appendthefourth" style="color:red"></span>
+                
+                &lt;/ol> &lt;/div>
             &lt;/div> &lt;/div>    </span>';
 
     
 
 
             <br><br>
-            var blockseod =
-            '{"@context":"http://schema.org/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"<span
-                class="b1link-c">/</span>","name":"<span
-                class="b1-c">Home</span>"}},{"@type":"ListItem","position":2,"item":{"@id":"<span
-                class="b2link-c">/kitchen-appliances/</span>","name":"<span class="b2-c">Kitchen
-                Appliances</span>"}},{"@type":"ListItem","position":3,"item":{"@id":"<span
-                class="b3link-c">/refrigerators/</span>","name":" <span class="b3-c">Refrigerators</span>"}}]}'
+            var blockseod =' {
+                "@context": "http://schema.org/",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                      "@id": "<span class="b1link-c" style="color: yellow;">/</span>",
+                      "name": "<span class="b1-c"  style="color: yellow;">Home</span>"
+                    }
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                      "@id": "<span class="b2link-c" style="color:green">/kitchen-appliances/</span>",
+                      "name": "<span class="b2-c" style="color:green">Kitchen Appliances</span>"
+                    }
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                      "@id": "<span class="b3link-c" style="color: blue;">/refrigerators/</span>>",
+                      "name": "<span class="b3-c"  style="color: blue;">Refrigerators</span>"
+                    }
+                  }
+
+<span id="addsomeseo" style="color: red;"></span>
+
+          
+
+
+
+                ]
+              }  '
             <br><br>
 
             var
@@ -282,15 +341,44 @@
     $(document).ready(function () {
 
 
+        $('#number-select').change(function(){
+         var selectedValue = $(this).val();
+       if (selectedValue === '3') {
+        $('#show4').hide()
+        $('#appendthefourth').empty()
+        $('#addsomeseo').empty()
+        $('#b4').val('')
+        $('#b4link').val('')
+       } else {
+        $('#show4').show()
+       }
+  });
+
         $('#b1').on('input', function () {
             $('.b1-c').text($(this).val())
             $('#showmecode').html($('#ddd').text())
+
+            $('a').on('click' , function() {
+    mylink = $(this).attr('href')
+    prelink='https://www.pcrichard.com'
+    url = prelink+mylink
+    window.open(url, '_blank').focus();
+    return false
+})
 
         })
 
         $('#b1link').on('input', function () {
             $('.b1link-c').text($(this).val())
             $('#showmecode').html($('#ddd').text())
+            
+            $('a').on('click' , function() {
+    mylink = $(this).attr('href')
+    prelink='https://www.pcrichard.com'
+    url = prelink+mylink
+    window.open(url, '_blank').focus();
+    return false
+})
 
         })
 
@@ -299,6 +387,14 @@
             $('.b2-c').text($(this).val())
             $('#showmecode').html($('#ddd').text())
 
+            $('a').on('click' , function() {
+    mylink = $(this).attr('href')
+    prelink='https://www.pcrichard.com'
+    url = prelink+mylink
+    window.open(url, '_blank').focus();
+    return false
+})
+
         })
 
 
@@ -306,12 +402,28 @@
             $('.b2link-c').text($(this).val())
             $('#showmecode').html($('#ddd').text())
 
+            $('a').on('click' , function() {
+    mylink = $(this).attr('href')
+    prelink='https://www.pcrichard.com'
+    url = prelink+mylink
+    window.open(url, '_blank').focus();
+    return false
+})
+
         })
 
 
         $('#b3').on('input', function () {
             $('.b3-c').text($(this).val())
             $('#showmecode').html($('#ddd').text())
+
+            $('a').on('click' , function() {
+    mylink = $(this).attr('href')
+    prelink='https://www.pcrichard.com'
+    url = prelink+mylink
+    window.open(url, '_blank').focus();
+    return false
+})
 
         })
 
@@ -321,6 +433,52 @@
             $('.b3link-c').text($(this).val())
             $('#showmecode').html($('#ddd').text())
 
+            $('a').on('click' , function() {
+    mylink = $(this).attr('href')
+    prelink='https://www.pcrichard.com'
+    url = prelink+mylink
+    window.open(url, '_blank').focus();
+    return false
+})
+
+        })
+
+
+
+        $('#b4').on('input', function () {
+       myname = $('#b4').val()
+       mylink = $('#b4link').val()
+            $('#appendthefourth').text('<li class=breadcrumb-item> <a href='+mylink+' title="'+myname+'">'+myname+'</a></li>')
+            $('#addsomeseo').text(',{"@type": "ListItem","position": 4,"item": {"@id": "'+mylink+'","name": "'+myname+'"}}')
+            $('#showmecode').html($('#ddd').text())
+
+            $('a').on('click' , function() {
+    mylink = $(this).attr('href')
+    prelink='https://www.pcrichard.com'
+    url = prelink+mylink
+    window.open(url, '_blank').focus();
+    return false
+})
+          
+        })
+
+    
+
+        $('#b4link').on('input', function () {
+       myname = $('#b4').val()
+       mylink = $('#b4link').val()
+            $('#appendthefourth').text('<li class=breadcrumb-item> <a href='+mylink+' title="'+myname+'">'+myname+'</a></li>')
+            $('#addsomeseo').text(',{"@type": "ListItem","position": 4,"item": {"@id": "'+mylink+'","name": "'+myname+'"}}')
+            $('#showmecode').html($('#ddd').text())
+
+            $('a').on('click' , function() {
+    mylink = $(this).attr('href')
+    prelink='https://www.pcrichard.com'
+    url = prelink+mylink
+    window.open(url, '_blank').focus();
+    return false
+})
+          
         })
 
 
