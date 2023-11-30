@@ -700,12 +700,11 @@
                     &lt;div class="width100-4 width100 <span class="longcolor2"></span>" style="display: none;"&gt;&lt;p&gt;<span
                         class="longtextbanner2"></span>&lt;/p&gt; &lt;/div&gt;<br>
                         &lt;link href="images/badges/badges-beta12-2023.css?$staticlink$" rel="stylesheet"&gt;<br>
-                        &lt;script  src="images/badges/width100-4-2.js?$staticlink$"&gt;   &lt;/script&gt; <br>
-                        &lt;style&gt;.price-wrap-tile .price {margin-bottom: 5px;} &lt;/style&gt;<br>
+                        &lt;script  src="images/badges/bottom-badge-d4.js?$staticlink$"&gt;   &lt;/script&gt; <br>
+                        &lt;style&gt;.price-wrap-tile .price {margin-bottom: 3px;} &lt;/style&gt;<br>
                         &lt;script&gt;  
                         
-                        $(".width100-4").each(function () {mytext = $(this).children("p").text(), myclass = $(this).attr("class"), $(this).parent("div").parent("div").parent("div").parent("div").parent(".product").children(".product-tile").children(".tile-body").children(".tile-bottom-container").children(".price-wrap-tile").not(".filled").append('&lt;div style="margin-bottom:15px;margin-top:10px" class="' + myclass +'">&lt;p style="font-size:0.75rem"&gt;' + mytext + "&lt;/p>&lt;/div&gt;").addClass("filled")
-                    });
+                        var elements=document.querySelectorAll(".width100-4");elements.forEach(function(e){var t=e.querySelector("p").textContent,l=e.getAttribute("class"),r=e.closest(".product");if(r){var a=r.querySelector(".product-tile");if(a){var i=document.createElement("div");i.style.marginBottom="15px",i.className=l;var c=document.createElement("p");c.style.fontSize="0.75rem",c.textContent=t,i.appendChild(c);var n=a.querySelector(".tile-bottom-container .price-wrap-tile");n&&!n.classList.contains("filled")&&(n.appendChild(i),n.classList.add("filled"))}}});
                         
                      
                         &lt;/script&gt;
