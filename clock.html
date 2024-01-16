@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Countdown Clock</title>
+    <style>
+        .width100 {
+            width: 100%;
+            float: left;
+
+            background-color: #e8e6db;
+        }
+
+
+        .width50 {
+            width: 50%;
+            float: left;
+ 
+        }
+        
+        .width50 img {
+            width: 94%;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+
+        .width25 {
+            width: 20%;
+            float: left;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-bottom: 2%;
+            pointer-events: none;
+
+        }
+
+        .width2 {
+            width: 1%;
+            float: left; 
+            text-align: center;
+            line-height: 45px;
+            font-size: 2rem;
+        }
+
+        #timercontainer {
+            background-color: #e8e6db;
+            border: 1px solid #ccc;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .timernum {
+            text-align: center;
+            background-color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+
+        .timernum2 {
+            text-align: center;
+            background-color: #fff;
+            font-size: 0.875rem;
+            font-weight: bold;
+            margin-bottom: 2%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="width100" id="timercontainer">
+        <div class="width100">
+
+<div class="width50">
+<img src="https://www.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dwecd0720a/images/Launch/05-21-23/PreQual_480x350.jpg">
+</div>
+<div class="width50">
+    <img src="https://www.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dwecd0720a/images/Launch/05-21-23/PreQual_480x350.jpg">
+</div>
+        </div>
+
+
+        <div class="width100">
+
+            <div class="width25">
+                <div id="timer1" class="width100 timernum">0</div>
+                <div class="width100 timernum2">DAYS</div>
+            </div>
+
+            <div class="width2">
+                :
+            </div>
+            <div class="width25">
+                <div id="timer2" class="width100 timernum">0</div>
+                <div class="width100 timernum2">HOURS</div>
+            </div>
+            <div class="width2">
+                :
+            </div>
+            <div class="width25">
+                <div id="timer3" class="width100 timernum">0</div>
+                <div class="width100 timernum2">MINUTES</div>
+            </div>
+            <div class="width2">
+                :
+            </div>
+            <div class="width25">
+                <div id="timer4" class="width100 timernum">0</div>
+                <div class="width100 timernum2">SECONDS</div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var countdownDate = new Date("Jan 15, 2024 00:00:00").getTime();
+            var x = setInterval(function () {
+                var now = new Date().getTime();
+                var distance = countdownDate - now;
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("timer1").innerHTML = '0' + days;
+                document.getElementById("timer2").innerHTML = hours;
+                document.getElementById("timer3").innerHTML = minutes;
+                document.getElementById("timer4").innerHTML = seconds;
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("timer").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

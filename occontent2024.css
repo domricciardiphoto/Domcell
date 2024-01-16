@@ -1,0 +1,140 @@
+   .width100 {
+        width: 100%;
+        float: left;
+        text-align: left;
+    }
+
+    .width80c {
+        width: 80%;
+        float: left;
+        text-align: left;
+    }
+
+    .width60c {
+        width: 60%;
+        float: left;
+        text-align: left;
+    }
+
+
+    .width50c {
+        width: 50%;
+        float: left;
+        text-align: left;
+    }
+
+    .width40c {
+        width: 40%;
+        float: left;
+        text-align: left;
+    }
+
+    .width30 {
+        width: 30%;
+        float: left;
+        text-align: left;
+    }
+
+    .width20c {
+        width: 20%;
+        float: left;
+        text-align: left;
+    }
+
+    .width100 p a {
+        color: #034694;
+    }
+
+    .width100 p {
+        line-height: 24px;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .width100 h2 {
+        margin-top: 20px;
+    }
+
+    .width100 .pd-header-tag:first-of-type h2 {
+        margin-top: 0px;
+    }
+
+
+    .width100 img,
+    .width80c img,
+    .width60c img,
+    .width50c img,
+    .width40c img,
+    .width30 img,
+    .width20c img {
+        width: 100%;
+    }
+
+    .width20c img {
+        width: 90% !important;
+        padding: 1%
+    }
+
+
+  .width50c img {
+    width: 54%;
+    padding: 1%;
+    padding-left: 10%;
+    padding-top: 4%;
+    float: right;
+}
+
+    .width80c img {
+        width: 100%;
+    }
+
+  .width60c img {
+    width: 100%;
+    padding: 1%;
+    max-width: 390px;
+    float: right;
+}
+
+    .width40c img {
+        width: 88%;
+        padding: 6%;
+        padding-top: 5%;
+    }
+
+    .width40c h2 {
+    font-size: 18px;
+}
+
+
+    @media only screen and (max-width:767px) {
+        .width80c {
+            width: 70%
+        }
+
+        .width20c {
+            width: 30%
+        }
+
+        .width20c img {
+            width: 98%
+        }
+
+        .width80c h2 {
+            margin-top: 0
+        }
+
+        .width50c {
+            width: 100%;
+            float: left;
+        }
+
+        .width50c img {
+    width: 98%;
+    padding: 1%;
+    padding-left: 0%;
+    padding-top: 0%;
+    float: right;
+}
+
+
+    }
