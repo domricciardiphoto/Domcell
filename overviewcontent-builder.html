@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEO Content Builder</title>
     <script src="jquery.js"></script>
-
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <style>
+
+
+.mymobile .width50c2 {
+    width: 100% !important;
+}
+
+        .dropsection {
+            display: none;
+        }
         body {
             font-family: Arial, Helvetica, sans-serif;
             line-height: 24px;
@@ -141,6 +151,14 @@
      
         }
 
+        .informationcontent {
+            min-height: 300px;
+            background-color: #f7f7f7;
+            position: relative;
+            float: left;
+            width: 100%;
+        }
+
 
 
         #resizable-div {
@@ -159,7 +177,16 @@
 
         .editable {
 
-            border: 1px solid #333;
+           
+        }
+
+        .interedit {
+            background-color: yellow !important;
+            color: #000 !important;
+        }
+
+        .interedit p {
+            color: #000;
         }
 
         #clearandrestart {
@@ -329,6 +356,49 @@
         #resize-handle {
             display: none;
         }
+
+.layoutpale {
+    background-color: #ffc1c1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    float: left;
+  
+    min-height: 50px;
+    width: calc(50% - 3%) !important;
+    margin-left: .5%;
+margin-right: .5%;
+}
+
+.layoutpale100 {
+width: 100% !important
+
+}
+
+.layoutpale50 {
+width: calc(50% - 3%) !important;
+margin-left: .5%;
+margin-right: .5%;   
+}
+
+.layoutpale30 {
+width: calc(30% - 3%) !important;
+margin-left: .5%;
+margin-right: .5%;   
+min-height:58px
+}
+
+.layoutpale20 {
+width: calc(20% - 3%) !important;
+margin-left: .5%;
+margin-right: .5%;   
+min-height:58px
+}
+
+
+
+
+
+
     </style>
 
 
@@ -691,7 +761,7 @@
                 float: left;
             }
 
-            .width50c2 {
+             .width50c2 {
                 width: 100% !important;
                 float: left;
             }
@@ -779,6 +849,34 @@ font-size: 17px !important;
     #showmobile2 {
         display: none;
     }
+
+    .dropsection {
+        height: 40px;
+    background-color: #333;
+    float: left;
+    margin: 2px;
+    text-align: center;
+    z-index: 999999999999999999999999999999999999999999999999999999999999999999;
+    line-height: 42px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #fff;
+    margin-right: 10px;
+    padding: 5px;
+    cursor: grab;
+    }
+
+    .liverow {
+        background-color: #999 !important;
+    }
+    .onblock {
+        background-color: #034694 !important;
+    }
+
+
+
+
 </style>
 
 
@@ -810,22 +908,61 @@ font-size: 17px !important;
             <button id="clearandrestart"
                 style="margin-top: 0px; margin-bottom: 10px; float: right; margin-right: 15px;">Clear and
                 Restart</button>
+
+
+                <div class="prod100 stage2 " style="margin-left: 0px;">
+                    <p style="margin-bottom: 5px;  margin-top: 0px;">Layout Builder: Select and Drag the Layout box to the window</p>
+
+
+
+
+
+
+                    <div class="dropsection draggable ui-widget-content" size="width100c liveelement" pale="100" style="width: 18%;">100%</div>
+                    <div class="dropsection draggable ui-widget-content"  size="width50c liveelement"  pale="50" style="width: 18%;">50% Always</div>
+                    <div class="dropsection draggable ui-widget-content"  size="width30c liveelement"  pale="30" style="width: 18%;">30%</div>
+                    <div class="dropsection draggable ui-widget-content"  size="width20c liveelement"  pale="20" style="width: 18%;">20%</div>
+
+<br>
+                    <div class="dropsection draggable ui-widget-content"  size="width50c width50c2 liveelement"  pale="50" style="width: 18%;">50% D 100% M</div>
+                  
+
+                </div>
+
+
+
             <div id="editcontentbox" class="prod100" style="margin-left: 0px; margin-top:68px; ">
                 Select and replace (p) content -- This is an HTML Editor if you want to include html and links as well
                 <textarea id="fixthecode" type="text"
                     style="width: 100%; min-height: 200px; max-width: 100%;"></textarea>
                 <button id="submitnewcode">Update Section</button> or
-                <button id="deletecode">Delete Section</button>
+                <button class="deletecode">Delete Section</button>
             </div>
 
+
+          
+
+
+            <!--
             <div class="prod100 stage1"
                 style="background-color: #666; margin-top: 20px; margin-left: 0px; margin-top: 5px;  width: 95%;">
                 <p style="margin-bottom: 0px; margin-top: 0px;">Put the Content Main Title Here</p>
                 <input id="cinput2" type="text" placeholder="Product Title" style="margin-right: 10px;">
                 Title Yes or No <input type="checkbox" checked id="myCheckbox" name="myCheckbox"
                     style="width: 10px; zoom: 2; margin-top: 0px;">
-
+ 
             </div>
+
+        -->
+
+        <div class="prod100 stage1"
+        style="background-color: #666; margin-top: 20px; margin-left: 0px;  width: 95%;">
+        <p style="margin-bottom: 5px;  margin-top: 0px;">Put Title text Here and click submit (h2)</p>
+        <input type="text" id="cinput1h2" placeholder="Title Info" style="max-width: 500px;">
+        <button id="cinput1-clickh2" style="margin-left: 5px;">Submit</button>
+
+
+    </div>
 
             <div class="prod100 stage1" id="imagebuilder"
                 style="background-color: #333; margin-top: 20px; margin-left: 0px;  width: 95%;">
@@ -854,9 +991,9 @@ font-size: 17px !important;
                 <br>
                 <input type="text" id="cinput1b" placeholder="Img alt tag" style="margin-top: 10px;">
                 <button id="cinput1-click" style="margin-left: 5px;">Submit</button><br><br>
-                <hr>
-                Click here instead if you want to add additonal images to the content (100% / 50% / 30%) across
-                <select name="myIMGwidth" id="myIMGwidth" style=" margin-top: -25px; margin-right: 10px;">
+                <hr class="stage2a">
+                <span class="stage2a">Click here instead if you want to add additonal images to the content (100% / 50% / 30%) across</span>
+                <select class="stage2a" name="myIMGwidth" id="myIMGwidth" style=" margin-top: -25px; margin-right: 10px;">
 
                     <option value="width100c">&nbsp;&nbsp;Image 100% across</option>
                     <option value="width50c">&nbsp;&nbsp;Image 50% Desktop 50% Mobile</option>
@@ -865,7 +1002,7 @@ font-size: 17px !important;
 
 
                 </select>
-                <button id="cinput1-clickv2" style="margin-left: 5px;">Add Section Image</button>
+                <button id="cinput1-clickv2" style="margin-left: 5px;">Add Image Component</button>
             </div>
             <div class="prod100 imagemessage"
                 style=" margin-top:0px; margin-left: 0px; text-align: center; display: none; margin-bottom: 0px; padding: 0xp;">
@@ -874,17 +1011,10 @@ font-size: 17px !important;
             </div>
 
 
+           
+
             <div class="prod100 stage1"
                 style="background-color: #666; margin-top: 20px; margin-left: 0px;  width: 95%;">
-                <p style="margin-bottom: 5px;  margin-top: 0px;">Put additonal title text Here and click submit (h2)</p>
-                <input type="text" id="cinput1h2" placeholder="Title Info" style="max-width: 500px;">
-                <button id="cinput1-clickh2" style="margin-left: 5px;">Submit</button>
-
-
-            </div>
-
-            <div class="prod100 stage1"
-                style="background-color: #333; margin-top: 20px; margin-left: 0px;  width: 95%;">
 
                 <p style="margin-bottom: 5px; margin-top: 0px;">Put the paragraph text here and click submit -(p)
                 </p>
@@ -906,14 +1036,14 @@ font-size: 17px !important;
 
                 </select>
 
-                <button id="cinput3" type="submit" style="float: right; margin-right: 10px;">Submit</button>
+                <button id="cinput3" type="submit" style="float: right; margin-right: 10px;">Add Copy</button>
 
 
             </div>
 
 
             <div class="prod100 stage1"
-                style="background-color: #666; margin-top: 20px; margin-left: 0px;  width: 95%;">
+                style=" margin-top: 20px; margin-left: 0px;  width: 95%;">
 
 
                 <div class="width100c" style="margin-bottom: 20px;">
@@ -976,7 +1106,7 @@ font-size: 17px !important;
                             <option value="width20c">&nbsp;&nbsp;25% across</option>
     
                         </select>
-                        <span style="float: right; margin-right: 10px;">List width </span>
+                        <span class="stage2a" style="float: right; margin-right: 10px;">List width </span>
                         <br>
                        
 <div class="width100c">
@@ -989,21 +1119,23 @@ font-size: 17px !important;
             </div>
 
 
+    
 
-            <div class="prod100 stage1"
-                style="background-color: #000; margin-top: 20px; margin-left: 0px;  width: 95%;">
-                <p style="margin-bottom: 5px;  margin-top: 0px;">Create Links Here: (Put in link first THEN select text)
-                </p>
-                <input id="whatsthelink" type="text" placeholder="text link" style="width: 80%;">
-                <button id="linkmaker">Convert to Link</button>
-            </div>
 
-            <div class="prod100" id="message2" style="text-align: center; font-weight: bold; margin-left: 0px;">BAD
-                LINK, RELATIVE LINKS ONLY!</div>
+            <div class="width100c" style="background-color: #666; width: 97%; padding-left: 2%; padding-bottom: 2%;">
+                Video Filename (mp4) :<br>
+                <input id="videofilename" placeholder="Video Filename"><br><br>
+                Captions Filename (vtt) :<br>
+                <input id="videocaptions" placeholder="Video Caption Filename"><br><br>
+                <button id="submitvideofile" style="margin-top: 10px; float: right; margin-right: 10px;">Submit Video</button>
+              </div>
+            
+            
 
         </div>
 
 
+        
 
 
         <div class="promo50" id="resizable-div">
@@ -1014,6 +1146,9 @@ font-size: 17px !important;
                 box-shadow:inset 0 0 3px 5px #241E1E;">
                     <div style="float: left;">Edit Mode </div>
                     <input type="checkbox" id="editmode" name="editmode"
+                        style="width: 10px; zoom: 2; margin-top: 0px; float: left;">
+                        <div style="float: left; margin-left: 40px;" class="mysort">Sortable On / Off </div>
+                        <input type="checkbox" id="mysort" name="mysort" class="mysort"
                         style="width: 10px; zoom: 2; margin-top: 0px; float: left;">
 
                     <button class="layoutbuttons" id="layout1reverse"
@@ -1032,9 +1167,8 @@ font-size: 17px !important;
                         style="float: left; margin-right: 5px; font-size: 0.87rem; margin-left: 20px; margin-top: 5px; background-color: antiquewhite;">60%
                         / 40%</button>
 
-                    <button class="layoutbuttons" id="layout2" style="float: right;">layout 2</button>
-                    <button class="layoutbuttons" id="layout1" style="float: right; margin-right: 5px;">layout
-                        1</button>
+                    <button class="layoutbuttons" id="layout2" style="float: right; padding: 5px;">Advanced Layout</button>
+                    <button class="layoutbuttons" id="layout1" style="float: right; padding: 5px; margin-right: 5px;">Simple Layout</button>
                 </div>
             </div>
 
@@ -1048,39 +1182,8 @@ font-size: 17px !important;
                             alt="AirPods Pro">
                     </div>
                     <div class="width80c trev21">
-                        <div class="pd-header-tag width100c">
-                            <h2 class="cinputval2 t-h4-style  c-blue">Apple AirPods Pro with Wireless MagSafe Charging
-                                Case (2nd Generation)</h2>
-                        </div>
-                        <div class="informationcontent layoutop1 experience-component experience-pcrs_assets-markup">
-                            <span class="remove">AirPods Pro (2nd generation) with MagSafe Charging
-                                Case (USB-C) bring you cutting-edge audio
-                                technology small enough to fit in the palm of your hand. Superior audio quality comes
-                                standard
-                                with
-                                the upgraded H2 chip, and adaptive EQ works in real time to automatically adjust audio
-                                to sound
-                                its
-                                best. These earbuds can switch between Noise Cancellation and Transparency Mode,
-                                allowing you to
-                                block unwanted noise or hear the world around you whenever necessary, and touch controls
-                                for the
-                                volume offer easy adjustments.
-
-                                <br><br>
-                                The MagSafe charging case delivers exceptionally fast charging,
-                                with
-                                five minutes in the case providing enough charge for up to an hour of listening or talk
-                                time. On
-                                a
-                                full charge, you'll enjoy up to 6 hours of listening time and up to 4.5 hours of talk
-                                time. If
-                                you've misplaced your MagSafe case, the built-in U1 chip with Precision Finding will
-                                help you
-                                locate
-                                it. These earbuds are dust, sweat and water resistant, and four sizes of silicone ear
-                                tips are
-                                included to ensure anyone can find their perfect fit</span></div>
+                     
+                        <div class="informationcontent la layoutop1 experience-component experience-pcrs_assets-markup "> </div>
                     </div>
 
                 </div>
@@ -1100,78 +1203,103 @@ font-size: 17px !important;
 
 
             <div id="pullthecode2" class="prod100 layout2"
-                style="background-color: #f7f7f7; color: #000; max-width: 99%; width: 97%; margin-left: 0%; margin-top: 0px; margin-bottom: 15px;">
+                style="background-color: #f7f7f7; color: #000; max-width: 99%; width: 97%; margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 710px;
+                position: relative;
+                overflow: auto;">
 
                 <div class="width100c">
-                    <div class="width100c trev21">
-                        <div class="pd-header-tag width100c">
-                            <h2 class="cinputval2 t-h4-style c-blue">Apple AirPods Pro with Wireless MagSafe Charging
-                                Case (2nd Generation)</h2>
-                        </div>
-                        <div class="informationcontent layoutop2 experience-component experience-pcrs_assets-markup">
-                            <span class="remove">AirPods Pro (2nd generation) with MagSafe Charging
-                                Case (USB-C) bring you cutting-edge audio
-                                technology small enough to fit in the palm of your hand. Superior audio quality comes
-                                standard
-                                with
-                                the upgraded H2 chip, and adaptive EQ works in real time to automatically adjust audio
-                                to sound
-                                its
-                                best. These earbuds can switch between Noise Cancellation and Transparency Mode,
-                                allowing you to
-                                block unwanted noise or hear the world around you whenever necessary, and touch controls
-                                for the
-                                volume offer easy adjustments.
-
-                                <br><br>
-                                The MagSafe charging case delivers exceptionally fast charging,
-                                with
-                                five minutes in the case providing enough charge for up to an hour of listening or talk
-                                time. On
-                                a
-                                full charge, you'll enjoy up to 6 hours of listening time and up to 4.5 hours of talk
-                                time. If
-                                you've misplaced your MagSafe case, the built-in U1 chip with Precision Finding will
-                                help you
-                                locate
-                                it. These earbuds are dust, sweat and water resistant, and four sizes of silicone ear
-                                tips are
-                                included to ensure anyone can find their perfect fit</span></div>
+                   
+                        <div class="informationcontent layoutbuilder   sortable layoutop2 experience-component experience-pcrs_assets-markup"></div>
                     </div>
 
                 </div>
+              
+               
+
+<div class="width100c">
+<div class="width50c">
+    <div class="width100c stage2" style="margin-top: 10px;">Component Options</div>
+    <div class="width100c stage2" style="margin-top: 10px; margin-top: 10px;
+    background-color: #666;
+    padding: 10px;
+    padding-right: 0px;
+    width: 97%;
+    margin-right: 3%;">
+        <button id="addrow">Add a Row</button> : 
+        <button id="clearsection">Empty Component</button><br><br>
+        <button class="deletecode"  style="color: #fff; background-color: red;">Delete Component</button> :
+        <button class="deleterow" style="color: #fff; background-color: red;">Delete Row</button>
+    </div>
+</div>
+
+<div class="width50c">
+    <div class="width100c" style="margin-top: 10px;">Text Options</div>
+    <div class="width100c" style="margin-top: 10px; margin-top: 10px;
+    background-color: #666;
+    padding: 10px;
+    padding-right: 10px;
+    width: 97%;
+    margin-right: 3%;">
+        <button class="texttype" value="strong"><strong>Strong</strong></button>  : 
+        <button class="texttype" value="i"><i>italic</i></button>  : 
+       
+        <button class="texttype" value="strong class='strongitalic'"><strong><i>Strong &
+                    Italic</i></strong></button><br><br>
+                    <button class="texttype" value="u"><u>underline</u></button>  : 
+        <button class="texttype" value="sub" style="font-size: 0.8rem;">sub</button> &bull;
+        <button class="texttype" value="sup" style="font-size: 0.8rem;"> sup</button> 
+    </div>
+
+
+</div>
+</div>
+
+
+
+               
+               
+
+             
+
+
+
+
+
+                <div class="prod100 stage1"
+                style="background-color: #000; margin-top: 20px; margin-left: 0px;  width: 97%;">
+                <p style="margin-bottom: 5px;  margin-top: 0px;">Create Links Here: (Put in link first THEN select text)
+                </p>
+                <input id="whatsthelink" type="text" placeholder="text link" style="width: 80%;">
+                <button id="linkmaker" style="padding: 5px; padding-bottom: 3px;">Convert to Link</button>
+            </div>
+
+            <div class="prod100" id="message2" style="text-align: center; font-weight: bold; margin-left: 0px;">BAD
+                LINK, RELATIVE LINKS ONLY!</div>
+
+                <div class="width100c" style="margin-top: 20px; ">
+                    <div class="width100c" style="margin-bottom: 20px;">
+                     
+                        <button id="showmobile" style="float: left; background-color: red; color: #fff; display: none;"> Show Mobile</button>
+                        <button id="showmobile2" style="float: left;  background-color: red; color: #fff;"> Hide Mobile</button>
+                    <p class="mymobile" style="margin-top: 5px; float: left; margin-left: 10px;">Mobile View of Content </p>
+                        
+                    </div>
+                    <div class="promo30 mymobile" id="mobilepreview"  style="max-height: 450px; overflow-y: scroll; overflow-x: hidden;">
+                    </div>
+                    <div class="promo30 mymobile" id="mobilepreview2" style="max-height: 450px; overflow-y: scroll; overflow-x: hidden;">
+                    </div>
+                </div>
+    
 
             </div>
             
    
 
 
-            <div class="width100c" style="margin-top: 10px;">Text Options</div>
-            <div class="width100c">
-                <button class="texttype" value="strong"><strong>Strong</strong></button> &bull;
-                <button class="texttype" value="i"><i>italic</i></button> &bull;
-                <button class="texttype" value="u"><u>underline</u></button> &bull;
-                <button class="texttype" value="strong class='strongitalic'"><strong><i>Strong &
-                            Italic</i></strong></button> &bull;
-                <button class="texttype" value="sub" style="font-size: 0.8rem;">sub</button> &bull;
-                <button class="texttype" value="sup" style="font-size: 0.8rem;"> sup</button> &bull;
-            </div>
+         
 
 
-            <div class="width100c" style="margin-top: 20px; ">
-                <div class="width100c">
-                 
-                    <button id="showmobile" style="float: left; background-color: red; color: #fff;"> Show Mobile</button>
-                    <button id="showmobile2" style="float: left;  background-color: red; color: #fff;"> Hide Mobile</button>
-                <p class="mymobile" style="margin-top: 5px; float: left; margin-left: 10px;">Mobile View of Content </p>
-                    
-                </div>
-                <div class="promo30 mymobile" id="mobilepreview"  style="max-height: 450px; overflow-y: scroll; overflow-x: hidden;">
-                </div>
-                <div class="promo30 mymobile" id="mobilepreview2" style="max-height: 450px; overflow-y: scroll; overflow-x: hidden;">
-                </div>
-            </div>
-
+   
 
             <div class="prod100" style="background-color: #000; margin-left: 0px; margin-top: 20px; width: 97%;">Click
                 on Code To Copy to Clipboard</div>
@@ -1209,7 +1337,7 @@ font-size: 17px !important;
 <script>
     createnewlist = 1
     listaddition = 0
-
+    layoutmode = 0
 
 
     const resizableDiv = document.getElementById('resizable-div');
@@ -1222,7 +1350,25 @@ font-size: 17px !important;
         $('#findthecode').text($('#pullthecode').html());
         $('#findthecode2').text($('#pullthecode2').html());
 
-      
+     
+
+        var element = $('#findthecode2');
+    var content = element.text();
+    
+    // Define the words you want to remove
+ var wordsToRemove = ['liveelement', 'in910', 'layoutpale' , 'layoutpale50' , 'liverow' , 'droppable' , 'ui-droppable' , 'layoutbuilder' , 'sortable' , 'layoutop2' , 'ui-' , 'layoutpale100', ' ui-' , 'layoutpale30' , 'layoutpale20' , 'onblock' , 'interedit' ];
+    
+    // Loop through the words and remove them from the content
+    wordsToRemove.forEach(function (word) {
+        content = content.replace(new RegExp('\\b' + word + '\\b', 'g'), '');
+    });
+    
+    // Set the modified content back to the element
+    element.text(content);
+
+
+
+
 
         $('#pullthecode #cinputval1').attr('src', $('#pullthecode #cinputval1').attr('data-src'))
         $('#pullthecode .promoimg21 , #pullthecode2 .promoimg21').each(function () {
@@ -1263,13 +1409,21 @@ font-size: 17px !important;
     })
 
 
-    $('#deletecode').on('click', function () {
+    $('.deletecode').on('click', function () {
         $('.editable').remove()
+        $('.interedit').remove()
         // $('.editable').parent('ul').remove()
         $('#fixthecode').val('')
         loadnewcontent()
     })
 
+
+    $('.deleterow').on('click' , function() {
+      $('.onblock').remove()
+      loadnewcontent()
+    })
+
+  
 
     $('#mylistamount').on('change', function () {
         $('.lister').hide()
@@ -1290,7 +1444,6 @@ font-size: 17px !important;
     })
 
     $('#listsubmit').on('click', function () {
-        $('.remove').remove()
         $(this).text('Update List').css('background-color', 'red').css('color', '#fff')
         $('#newlist').fadeIn()
         var listwidthselected = $('#mylistwidth').val()
@@ -1349,9 +1502,18 @@ font-size: 17px !important;
         if (createnewlist === 1) {
 
 
-            $('.informationcontent').append('<ul id="listcontent' + listaddition + '" class="in910 ' + $(
+            if(layoutmode === 1) {
+                $('.interedit').append('<ul id="listcontent' + listaddition + '" class="in910 ' + $(
+                    '#mylistwidth').val() + '"> ' + list1 + list2 + list3 + list4 + list5 + list6 + list7 +
+                list8 + list9 + list10 + ' </ul>').removeClass('.interedit')
+                layoutmode = 0
+            } else {
+
+                $('.informationcontent').append('<ul id="listcontent' + listaddition + '" class="in910 ' + $(
                     '#mylistwidth').val() + '"> ' + list1 + list2 + list3 + list4 + list5 + list6 + list7 +
                 list8 + list9 + list10 + ' </ul>')
+
+            }
             listaddition++
             createnewlist = 0
         } else {
@@ -1367,7 +1529,7 @@ font-size: 17px !important;
 
 
     $('#newlist-former').on('click', function () {
-        $('.remove').remove()
+ 
         $('.lister').val('')
         listaddition++
         createnewlist = 1
@@ -1376,7 +1538,7 @@ font-size: 17px !important;
 
     $('#listsubmit-former').on('click', function () {
         $('#newlist').fadeIn()
-        $('.remove').remove()
+        
 
         if (createnewlist === 1) {
             listaddition++
@@ -1506,9 +1668,25 @@ font-size: 17px !important;
 
     })
 
+    document.getElementById('mysort').addEventListener('change', function () {
+if(this.checked) {
+    $( ".sortable" ).sortable();
+    $( ".sortable" ).sortable('enable');
+    $('.informationcontent').children().css('cursor' , 'grab !important')
+
+} else {
+    $( ".sortable" ).sortable();
+            $( ".sortable" ).sortable('disable');
+
+}
+
+
+    })
+
 
     document.getElementById('editmode').addEventListener('change', function () {
         if (this.checked) {
+            
             $('#editcontentbox').slideDown()
             $('.in910').removeClass('editable');
             $('.stage1').slideUp()
@@ -1523,19 +1701,22 @@ font-size: 17px !important;
 
             })
 
-
+           
 
 
         } else {
+            
             $('.stage1').slideDown()
             $('.in910').removeClass('editable');
             $('#editcontentbox').slideUp()
             $('#clearandrestart').slideDown()
+
+            
         }
     });
 
 
-
+/*
     document.getElementById('myCheckbox').addEventListener('change', function () {
         if (this.checked) {
             $('#cinput2').css('opacity', '1')
@@ -1546,13 +1727,65 @@ font-size: 17px !important;
             loadnewcontent()
         }
     });
-
+*/
 
 
     $(document).ready(function () {
+        var mysize
+
+        $('#addrow').on('click' , function() {
+            $('.dropsection').slideDown()
+     
+            $('.layoutbuilder').append('<div class="width100c  layoutpale layoutpale100 liverow droppable"></div>')
+
+            $('.liverow').on('click' , function() {
+                $('.liverow').removeClass('onblock')
+                $(this).addClass('onblock')
+    })
+
+           
+            $( ".draggable" ).draggable( { 
+                revert: "valid"
+             });
+
+        $( ".droppable" ).droppable({
+      drop: function( event, ui ) {
+        var mysize = $(ui.draggable).attr('size'); 
+        var mypale = $(ui.draggable).attr('pale'); 
+        if (mysize !== undefined && mysize !== "") {
+        $(this).append('<div class="'+mysize+' in910 layoutpale layoutpale'+mypale+'"></div>');
+     
+        }
+        $('.liveelement').on('click', function () {
+        $('.liveelement').removeClass('interedit')
+        $(this).addClass('interedit')
+        //$('#fixthecode').val($(this).html())
+        $('#clearsection').on('click' , function() {
+          $('.interedit').html('')
+          loadnewcontent()
+        })
+        layoutmode = 1
+        
+    })
+    loadnewcontent()
+      }
+    });
+
+
+
+        })
+ 
+     
+       
+
+  
+
+
+
+
         var currentAnchor = null;
 
-
+/*
 $('#showmobile').on('click' , function() {
     $('.mymobile').slideDown()
     $(this).hide()
@@ -1566,6 +1799,7 @@ $('#showmobile2').on('click' , function() {
     $('#showmobile').show()
 })
 
+*/
 
         $('.layoutbuttons').on('click', function () {
             $('.layoutbuttons').css('background-color', '#333').css('color', '#fff')
@@ -1578,24 +1812,35 @@ $('#showmobile2').on('click' , function() {
         })
 
         $('#cinput1-clickh2').on('click', function () {
-            $('.remove').remove()
+           
             var min = 1000;
             var max = 9999;
             var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
-            $('.informationcontent').append(
-                '<div class="pd-header-tag width100c"><h2 class="t-h4-style  c-blue in910" id="ocinsertcontent' +
-                randomFourDigit + '">' + $(
-                    '#cinput1h2').val() + '</h2></div>')
+
+if(layoutmode === 1) {
+    $('.interedit').append('<div class="pd-header-tag width100c"><h2 class="t-h4-style  c-blue in910" id="ocinsertcontent' +randomFourDigit + '">' + $('#cinput1h2').val() + '</h2></div>').removeClass('interedit')
+    
+    layoutmode = 0
+} else {
+  
+    $('.informationcontent').append('<div class="pd-header-tag width100c"><h2 class="t-h4-style  c-blue in910" id="ocinsertcontent' +randomFourDigit + '">' + $('#cinput1h2').val() + '</h2></div>')
+}
+
+
             loadnewcontent()
             $('#cinput1h2').val('')
         })
 
 
         $('#layout1').on('click', function () {
+
+            $('.stage2').slideUp()
+$('.informationcontent').html('')
+            $('.mysort').hide()
             $('.layout1').show()
             $('.layout2').hide()
             $('#cinput1-click').show()
-
+$('#myTEXTwidth').show()
             $('#layout1reverse').fadeIn()
             $('#layout150').fadeIn()
             $('#layout120').fadeIn()
@@ -1603,8 +1848,12 @@ $('#showmobile2').on('click' , function() {
             $('.layoutop1').html($('.layoutop2').html())
 $('#mobilepreview').show()
 $('#mobilepreview2').hide()
-$('#showmobile2').show()
-$('#showmobile').hide()
+$('#mylistwidth').show()
+$('.stage2a').show()
+//$('#showmobile2').show()
+//$('#showmobile').hide()
+
+
 
 
             $('a').on('click', function (e) {
@@ -1617,16 +1866,20 @@ $('#showmobile').hide()
         })
 
         $('#layout2').on('click', function () {
+            $('.stage2').slideDown()
+            $('.mysort').show()
             $('.layout2').show()
             $('.layout1').hide()
             $('#cinput1-click').hide()
-
+            $('#myTEXTwidth').hide()
             $('#layout1reverse').hide()
             $('#layout150').hide()
             $('#layout120').hide()
             $('#layout160').hide()
-            $('#showmobile2').show()
-$('#showmobile').hide()
+            $('#mylistwidth').hide()
+            $('.stage2a').hide()
+          //  $('#showmobile2').show()
+//$('#showmobile').hide()
 
 
 
@@ -1683,18 +1936,24 @@ $('#showmobile').hide()
 
 
         $('#cinput3').on('click', function (e) {
-            $('.remove').remove()
+     
             var min = 1000;
             var max = 9999;
             var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
-
-            $('.informationcontent').append('<div class="' + $('#myTEXTwidth').val() +
+if(layoutmode === 0) {
+    $('.informationcontent').append('<div class="' + $('#myTEXTwidth').val() +
                 '"><p class="in910" id="ocinsertcontent' + randomFourDigit +
                 '">' + $(
                     '#cinput3a').val() + '</p></div>')
-            loadnewcontent()
+            
             $('#cinput3a').val('')
+} else {
+$('.interedit').append('<p>'+$('#cinput3a').val()+'</p>').removeClass('interedit');
+layoutmode = 0
+}
 
+
+loadnewcontent()
 
             $('a').on('click', function (e) {
                 e.preventDefault();
@@ -1706,6 +1965,10 @@ $('#showmobile').hide()
         })
 
 
+
+
+
+
         $('#cinput2').on('input', function (e) {
             $('.cinputval2').text($(this).val())
             loadnewcontent()
@@ -1715,12 +1978,20 @@ $('#showmobile').hide()
 
 
         $('#cinput1-clickv2').on('click', function () {
-            $('.remove').remove()
+          
             imageselect = $('#myDropdown').val()
-            $('.informationcontent').append('<div class="' + $('#myIMGwidth').val() +
+imagedata = '<div class="' + $('#myIMGwidth').val() +
                 '"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw4441bf24/images/hires/' +
                 imageselect + $('#cinput1').val() + '.jpg?sw=400&sh=400&sm=fit" alt="' + $(
-                    '#cinput1b').val() + '"></div>')
+                    '#cinput1b').val() + '"></div>'
+
+if(layoutmode === 1) {
+    $('.interedit').append(imagedata).removeClass('interedit')
+    layoutmode = 0
+} else {
+    $('.informationcontent').append(imagedata)
+}
+
             loadnewcontent()
         })
 
@@ -1807,27 +2078,42 @@ $('#showmobile').hide()
 
         $('#linkmaker').click(function () {
 
+
+
+             
             if ($('#whatsthelink').val().includes('pcrichard.com') || $('#whatsthelink').val().includes(
                     'https://') || $('#whatsthelink').val().includes('www') || $('#whatsthelink').val()
                 .includes('staging-na01-pcrichard')) {
                 $('#message2').slideDown().delay(2000).slideUp()
                 return false;
             }
-
-
             var selection = window.getSelection();
             if (!selection.rangeCount) return; // Exit if no selection
-
             var selectedText = selection.toString();
             var whatsthelink = $('#whatsthelink').val();
             var anchor = '<a href="' + whatsthelink + '">' + selectedText + '</a>';
-
             var range = selection.getRangeAt(0);
+            if(layoutmode === 1) {
             var newNode = document.createElement('div');
             newNode.innerHTML = anchor;
-
             range.deleteContents();
             range.insertNode(newNode.firstChild);
+              
+
+            } else {
+            var newNode = document.createElement('div');
+            newNode.innerHTML = anchor;
+            range.deleteContents();
+            range.insertNode(newNode.firstChild);
+       
+            }
+
+
+
+        
+
+
+
             loadnewcontent()
 
 
@@ -1872,7 +2158,9 @@ $('#showmobile').hide()
 
 
         // $('#myCheckbox').click()
-        //$('#layout2').click()
+        $('#layout2').click()
+       $('#addrow').click()
+
 
 
         $('#cinputval1').attr('src',
