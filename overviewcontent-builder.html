@@ -10,14 +10,73 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <style>
 
+        .showthepreviewimage {
+            opacity: 1;
+            cursor: pointer;
+        }
 
-.mymobile .width50c2 {
-    width: 100% !important;
+        .showthepreviewimage:hover {
+            opacity: 0.5;
+        }
+
+        .mybuttonclass {
+            width: 50%;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            line-height: 30px;
+            cursor: pointer;
+            background-color: #333;
+        }
+        
+        .mybuttonclass:hover {
+            background-color: #666;
+        }
+
+        .mymobile .width100c {
+            width: 99% !important;
+        }
+
+        #largeimagepreview {
+            display: none;
+        }
+
+        
+
+.promo16c {
+    width: 5%;
+    float: left;
+    margin-right: 1.25%;
 }
+
+.promo16c img {
+    width: 100%;
+}
+
+.promo16c span {
+    font-size: 0.5rem;
+    text-align: center;
+    line-height: 2px;
+}
+
+
+        .mymobile .width50c2 {
+            width: 100% !important;
+        }
+
+        .mymobile .width50c3 {
+            width: 49% !important;
+        }
+
+        video {
+            width: 100%;
+        }
 
         .dropsection {
             display: none;
         }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             line-height: 24px;
@@ -147,9 +206,8 @@
             z-index: 9999999999999999999999999999999;
         }
 
-        #mobilepreview , #mobilepreview2  {
-     
-        }
+        #mobilepreview,
+        #mobilepreview2 {}
 
         .informationcontent {
             min-height: 300px;
@@ -164,7 +222,7 @@
         #resizable-div {
             z-index: 9999999;
             position: relative;
-            overflow: auto;
+           /* overflow: auto;  */
             min-width: 200px;
             min-height: 200px;
             max-width: 1200px;
@@ -175,10 +233,7 @@
             display: none;
         }
 
-        .editable {
-
-           
-        }
+        .editable {}
 
         .interedit {
             background-color: yellow !important;
@@ -357,48 +412,53 @@
             display: none;
         }
 
-.layoutpale {
-    background-color: #ffc1c1;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    float: left;
-  
-    min-height: 50px;
-    width: calc(50% - 3%) !important;
-    margin-left: .5%;
-margin-right: .5%;
-}
+        .layoutpale {
+            background-color: #ffc1c1;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            float: left;
 
-.layoutpale100 {
-width: 100% !important
+            min-height: 50px;
+            width: calc(50% - 3%) !important;
+            margin-left: .5%;
+            margin-right: .5%;
+        }
 
-}
+        .layoutpale100 {
+            width: 99% !important
+        }
 
-.layoutpale50 {
-width: calc(50% - 3%) !important;
-margin-left: .5%;
-margin-right: .5%;   
-}
-
-.layoutpale30 {
-width: calc(30% - 3%) !important;
-margin-left: .5%;
-margin-right: .5%;   
-min-height:58px
-}
-
-.layoutpale20 {
-width: calc(20% - 3%) !important;
-margin-left: .5%;
-margin-right: .5%;   
-min-height:58px
-}
+        .layoutpale50 {
+            width: calc(50% - 3%) !important;
+            margin-left: .5%;
+            margin-right: .5%;
+        }
 
 
+        .layoutpale33 {
+            width: calc(33% - .7%) !important;
+            margin-left: .5%;
+            margin-right: .5%;
+            min-height: 58px
+        }
 
+
+        .layoutpale30 {
+            width: calc(30% - 3%) !important;
+            margin-left: .5%;
+            margin-right: .5%;
+            min-height: 58px
+        }
 
 
 
+
+        .layoutpale20 {
+            width: calc(20% - 1%) !important;
+            margin-left: .5%;
+            margin-right: .5%;
+            min-height: 58px
+        }
     </style>
 
 
@@ -761,7 +821,7 @@ min-height:58px
                 float: left;
             }
 
-             .width50c2 {
+            .width50c2 {
                 width: 100% !important;
                 float: left;
             }
@@ -813,71 +873,78 @@ min-height:58px
                 margin-right: 1%;
             }
 
-
+.width33c {
+    width: 33%;
+    float: left;
+}
         }
     </style>
 
 
-<!--For Mobile only has to be last-->
+    <!--For Mobile only has to be last-->
 
-<style>
+    <style>
+        .mymobile {
+            display: none;
+        }
 
-    .mymobile {
-        display: none;
-    }
-
-    #mobilepreview2 {
-        display: none;
-    }
-
-
-    
-
-#mobilepreview ,   #mobilepreview2 {
-    color: #000;
-    pointer-events: none;
-}
-    #mobilepreview h2.t-h4-style, #mobilepreview2 h2.t-h4-style {
-font-size: 17px !important;
-
-    }
-
-    #mobilepreview  .width50c2 , #mobilepreview2  .width50c2 {
-        width: 100%;
-    }
-
-    #showmobile2 {
-        display: none;
-    }
-
-    .dropsection {
-        height: 40px;
-    background-color: #333;
-    float: left;
-    margin: 2px;
-    text-align: center;
-    z-index: 999999999999999999999999999999999999999999999999999999999999999999;
-    line-height: 42px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 10px;
-    color: #fff;
-    margin-right: 10px;
-    padding: 5px;
-    cursor: grab;
-    }
-
-    .liverow {
-        background-color: #999 !important;
-    }
-    .onblock {
-        background-color: #034694 !important;
-    }
+        #mobilepreview2 {
+            display: none;
+        }
 
 
 
 
-</style>
+        #mobilepreview,
+        #mobilepreview2 {
+            color: #000;
+            pointer-events: none;
+        }
+
+        #mobilepreview h2.t-h4-style,
+        #mobilepreview2 h2.t-h4-style {
+            font-size: 17px !important;
+
+        }
+
+        #mobilepreview .width50c2,
+        #mobilepreview2 .width50c2 {
+            width: 100%;
+        }
+
+        #showmobile2 {
+            display: none;
+        }
+
+        .dropsection {
+            height: 40px;
+            background-color: #333;
+            float: left;
+            margin: 2px;
+            text-align: center;
+            z-index: 999999999999999999999999999999999999999999999999999999999999999999;
+            line-height: 42px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            color: #fff;
+            margin-right: 10px;
+            padding: 5px;
+            cursor: grab;
+        }
+
+        .liverow {
+            background-color: #999 !important;
+        }
+
+        .onblock {
+            background-color: #034694 !important;
+        }
+
+        .mymobile .width50c2 {
+            width: 97% !important;
+        }
+    </style>
 
 
 
@@ -910,24 +977,53 @@ font-size: 17px !important;
                 Restart</button>
 
 
-                <div class="prod100 stage2 " style="margin-left: 0px;">
-                    <p style="margin-bottom: 5px;  margin-top: 0px;">Layout Builder: Select and Drag the Layout box to the window</p>
+            <div class="prod100 stage2 " style="margin-left: 0px;">
+                <p style="margin-bottom: 5px;  margin-top: 0px;">Layout Builder: Select and Drag the Layout box to the
+                    window</p>
 
 
 
 
+                    <div class="width50c" style="margin-left: -5px;">
 
 
-                    <div class="dropsection draggable ui-widget-content" size="width100c liveelement" pale="100" style="width: 18%;">100%</div>
-                    <div class="dropsection draggable ui-widget-content"  size="width50c liveelement"  pale="50" style="width: 18%;">50% Always</div>
-                    <div class="dropsection draggable ui-widget-content"  size="width30c liveelement"  pale="30" style="width: 18%;">30%</div>
-                    <div class="dropsection draggable ui-widget-content"  size="width20c liveelement"  pale="20" style="width: 18%;">20%</div>
+<div class="width100c">
+                        <div class="dropsection draggable ui-widget-content" size="width100c liveelement" pale="100"
+                        style="width: 44%; margin-left: -5px;">100%</div>
+                    <div class="dropsection draggable ui-widget-content" size="width50c liveelement" pale="50"
+                        style="width: 44%;">50%</div>
+                    </div>
+                    <div class="width100c" style="margin-top: 5px;">
+                    <div class="dropsection draggable ui-widget-content" size="width33c liveelement" pale="33"
+                        style="width: 44%;margin-left: -5px;">33%</div>
+                    <div class="dropsection draggable ui-widget-content" size="width20c liveelement" pale="20"
+                        style="width: 44%;">20%</div>
 
-<br>
-                    <div class="dropsection draggable ui-widget-content"  size="width50c width50c2 liveelement"  pale="50" style="width: 18%;">50% D 100% M</div>
-                  
+</div>
 
-                </div>
+                    </div>
+
+
+                    <div class="width50c">
+
+                        <div class="dropsection draggable ui-widget-content" size="width50c width50c2 liveelement" pale="50"
+                    style="width: 44%; 
+                    font-size: 0.8rem;">50% D 100% M</div>
+
+
+<div class="dropsection draggable ui-widget-content" size="width33c width50c3  liveelement" pale="33"
+style="width: 44%; 
+font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
+                        
+                    </div>
+
+
+              
+          
+                
+
+
+            </div>
 
 
 
@@ -940,7 +1036,7 @@ font-size: 17px !important;
             </div>
 
 
-          
+
 
 
             <!--
@@ -955,18 +1051,19 @@ font-size: 17px !important;
 
         -->
 
-        <div class="prod100 stage1"
-        style="background-color: #666; margin-top: 20px; margin-left: 0px;  width: 95%;">
-        <p style="margin-bottom: 5px;  margin-top: 0px;">Put Title text Here and click submit (h2)</p>
-        <input type="text" id="cinput1h2" placeholder="Title Info" style="max-width: 500px;">
-        <button id="cinput1-clickh2" style="margin-left: 5px;">Submit</button>
+            <div class="prod100 stage1"
+                style="background-color: #666; margin-top: 20px; margin-left: 0px;  width: 95%;">
+                <p style="margin-bottom: 5px;  margin-top: 0px;">Put Title text Here and click submit (h2)</p>
+                <input type="text" id="cinput1h2" placeholder="Title Info" style="max-width: 500px;">
+                <button class="simpleshow" id="cinput1-clickh2" style="margin-left: 5px;">Submit</button>
+                <button class="simplehide" id="cinput1-clickh2-comp" style="margin-left: 5px;">Submit Header Componant</button>
 
 
-    </div>
+            </div>
 
             <div class="prod100 stage1" id="imagebuilder"
                 style="background-color: #333; margin-top: 20px; margin-left: 0px;  width: 95%;">
-                <p style="margin-bottom: 5px; margin-top: 0px;">Put the Product model number here -(no extension)</p>
+                <p style="margin-bottom: 5px; margin-top: 0px;">Enter the Product model number here -(no extension)</p>
                 <input type="text" id="cinput1" placeholder="Product img" style="max-width: 200px;">
 
                 <select name="myDropdown" id="myDropdown">
@@ -992,18 +1089,122 @@ font-size: 17px !important;
                 <input type="text" id="cinput1b" placeholder="Img alt tag" style="margin-top: 10px;">
                 <button id="cinput1-click" style="margin-left: 5px;">Submit</button><br><br>
                 <hr class="stage2a">
-                <span class="stage2a">Click here instead if you want to add additonal images to the content (100% / 50% / 30%) across</span>
-                <select class="stage2a" name="myIMGwidth" id="myIMGwidth" style=" margin-top: -25px; margin-right: 10px;">
 
+<div class="width100c stage2a">
+    <span style="line-height: 38px;">Click here instead if you want to add additonal images to the content (100% / 50%
+        / 30%) across</span>
+</div>
+
+
+           <div class="width50c" style="width: auto; margin-left: -7px;">
+                <select class="stage2a" name="myIMGwidth" id="myIMGwidth"
+                    style=" margin-top: -25px; margin-right: 10px;">
                     <option value="width100c">&nbsp;&nbsp;Image 100% across</option>
                     <option value="width50c">&nbsp;&nbsp;Image 50% Desktop 50% Mobile</option>
                     <option value="width50c width50c2">&nbsp;&nbsp;Image 50% Desktop 100% Mobile</option>
                     <option value="width30c">&nbsp;&nbsp;Image 30% across</option>
-
-
                 </select>
-                <button id="cinput1-clickv2" style="margin-left: 5px;">Add Image Component</button>
             </div>
+            <div class="width50c" style="margin-left: 12px;font-size: 0.875rem;">
+
+<div class="mybuttonclass" id="cinput1-clickv2">Submit Image</div>
+
+                
+</div>
+
+
+            </div>
+
+<div class="prod100 stage 2" id="largeimagepreview" style="margin-left: 0px; width: 96%;">
+    <div class="width100c" style="margin-bottom: 5px;">Select Image for Component</div>
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="0" prefix="Z_">
+    <span>Image 1</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="1" prefix="AZ1_">
+    <span>Image 2</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="2" prefix="AZ2_">
+    <span>Image 3</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="3" prefix="AZ3_">
+    <span>Image 4</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="4" prefix="AZ4_">
+    <span>Image 5</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#"  num="5" prefix="AZ5_">
+    <span>Image 6</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#"  num="6" prefix="AZ6_">
+    <span>Image 7</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="7" prefix="AZ7_">
+    <span>Image 8</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="8" prefix="AZ8_">
+    <span>Image 9</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="9" prefix="AZ9_">
+    <span>Image 10</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="10" prefix="AZ10_">
+    <span>Image 11</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="11" prefix="AZ11_">
+    <span>Image 12</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="12" prefix="AZ12_">
+    <span>Image 13</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#" num="13" prefix="AZ13_">
+    <span>Image 14</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#"  num="14" prefix="AZ14_">
+    <span>Image 15</span>
+   </div>
+
+   <div class="promo16c">
+    <img class="showthepreviewimage" src="#"  num="15" prefix="">
+    <span>Guide</span>
+   </div>
+
+
+
+
+</div>
+
+
+
+
             <div class="prod100 imagemessage"
                 style=" margin-top:0px; margin-left: 0px; text-align: center; display: none; margin-bottom: 0px; padding: 0xp;">
                 <span style="color: #fff; text-align: center; font-weight: bold;">IMAGE MUST HAVE A ALT TAG --- NO ALT
@@ -1011,7 +1212,7 @@ font-size: 17px !important;
             </div>
 
 
-           
+
 
             <div class="prod100 stage1"
                 style="background-color: #666; margin-top: 20px; margin-left: 0px;  width: 95%;">
@@ -1020,13 +1221,13 @@ font-size: 17px !important;
                 </p>
 
 
-                
+
 
                 <textarea id="cinput3a" style="max-width: 98%; min-width: 50%;"
                     placeholder="Are you serious about cooking? Whether you're making a delicious meal..."
                     name="content" cols="25" rows="5"></textarea><br><br>
 
-                    <select name="myTEXTwidth" id="myTEXTwidth"
+                <select name="myTEXTwidth" id="myTEXTwidth"
                     style="float: right; margin-top: -25px; margin-right: 10px;">
 
                     <option value="width100c">100% across</option>
@@ -1036,14 +1237,13 @@ font-size: 17px !important;
 
                 </select>
 
-                <button id="cinput3" type="submit" style="float: right; margin-right: 10px;">Add Copy</button>
-
+                <button class="simpleshow" id="cinput3" type="submit" style="float: right; margin-right: 10px;">Add Copy</button>
+                <button class="simplehide" id="cinput3-comp" type="submit" style="float: right; margin-right: 10px;">Add Copy To Component</button>
 
             </div>
 
 
-            <div class="prod100 stage1"
-                style=" margin-top: 20px; margin-left: 0px;  width: 95%;">
+            <div class="prod100 stage1" style=" margin-top: 20px; margin-left: 0px;  width: 95%;">
 
 
                 <div class="width100c" style="margin-bottom: 20px;">
@@ -1067,7 +1267,7 @@ font-size: 17px !important;
 
 
 
-                 
+
 
 
                 </div>
@@ -1096,22 +1296,23 @@ font-size: 17px !important;
                         style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
                     <input type="text" class="lister" id="list10" placeholder="List Item 10"
                         style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
-                       
-                        <select name="mylistwidth" id="mylistwidth" style="float: right; margin-bottom: 5px;">
 
-                            <option value="width100c">100% across</option>
-                            <option value="width50c">&nbsp;&nbsp;50% Desktop / 50% Mobile</option>
-                            <option value="width50c width50c2">&nbsp;&nbsp;50% Desktop 100% Mobile</option>
-                            <option value="width30c">&nbsp;&nbsp;30% across</option>
-                            <option value="width20c">&nbsp;&nbsp;25% across</option>
-    
-                        </select>
-                        <span class="stage2a" style="float: right; margin-right: 10px;">List width </span>
-                        <br>
-                       
-<div class="width100c">
-                    <button id="listsubmit" type="submit" style="float: right; margin-right: 0px;">Submit List</button>
-                </div>
+                    <select name="mylistwidth" id="mylistwidth" style="float: right; margin-bottom: 5px;">
+
+                        <option value="width100c">100% across</option>
+                        <option value="width50c">&nbsp;&nbsp;50% Desktop / 50% Mobile</option>
+                        <option value="width50c width50c2">&nbsp;&nbsp;50% Desktop 100% Mobile</option>
+                        <option value="width30c">&nbsp;&nbsp;30% across</option>
+                        <option value="width20c">&nbsp;&nbsp;25% across</option>
+
+                    </select>
+                    <span class="stage2a" style="float: right; margin-right: 10px;">List width </span>
+                    <br>
+
+                    <div class="width100c">
+                        <button id="listsubmit" type="submit" style="float: right; margin-right: 0px;">Submit
+                            List</button>
+                    </div>
                 </div>
                 <button id="newlist" type="submit"
                     style="float: left; margin-right: 10px; margin-left: 18.5%; background-color: red; color: #fff;">Create
@@ -1119,23 +1320,40 @@ font-size: 17px !important;
             </div>
 
 
-    
 
 
-            <div class="width100c" style="background-color: #666; width: 97%; padding-left: 2%; padding-bottom: 2%;">
-                Video Filename (mp4) :<br>
-                <input id="videofilename" placeholder="Video Filename"><br><br>
-                Captions Filename (vtt) :<br>
-                <input id="videocaptions" placeholder="Video Caption Filename"><br><br>
-                <button id="submitvideofile" style="margin-top: 10px; float: right; margin-right: 10px;">Submit Video</button>
-              </div>
-            
-            
+
+            <div class="width100c videocomponent"
+                style="background-color: #666; width: 97%; padding-left: 2%; padding-bottom: 2%;">
+
+
+                <div class="promo50">
+                    Video Filename (mp4) : <br>
+                    <input id="videofilename" placeholder="Video Filename" style="width: 90%;">
+                </div>
+                <div class="promo50">
+                    Captions Filename (vtt) :<br>
+                    <input id="videocaptions" placeholder="Video Caption Filename" style="width: 90%;">
+                </div>
+
+                <div class="promo50">
+                    Video Poster (jpg) :<br>
+                    <input id="videoposter" placeholder="Video Poster Filename" style="width: 90%;">
+                </div>
+
+                <div class="promo50">
+                    <button id="submitvideofile" style="margin-top: 15px; float: right; margin-right: 30px; ">Submit Video</button> 
+                </div>
+                
+         
+            </div>
+
+
 
         </div>
 
 
-        
+
 
 
         <div class="promo50" id="resizable-div">
@@ -1147,8 +1365,8 @@ font-size: 17px !important;
                     <div style="float: left;">Edit Mode </div>
                     <input type="checkbox" id="editmode" name="editmode"
                         style="width: 10px; zoom: 2; margin-top: 0px; float: left;">
-                        <div style="float: left; margin-left: 40px;" class="mysort">Sortable On / Off </div>
-                        <input type="checkbox" id="mysort" name="mysort" class="mysort"
+                    <div style="float: left; margin-left: 40px;" class="mysort">Sortable On / Off </div>
+                    <input type="checkbox" id="mysort" name="mysort" class="mysort"
                         style="width: 10px; zoom: 2; margin-top: 0px; float: left;">
 
                     <button class="layoutbuttons" id="layout1reverse"
@@ -1167,8 +1385,10 @@ font-size: 17px !important;
                         style="float: left; margin-right: 5px; font-size: 0.87rem; margin-left: 20px; margin-top: 5px; background-color: antiquewhite;">60%
                         / 40%</button>
 
-                    <button class="layoutbuttons" id="layout2" style="float: right; padding: 5px;">Advanced Layout</button>
-                    <button class="layoutbuttons" id="layout1" style="float: right; padding: 5px; margin-right: 5px;">Simple Layout</button>
+                    <button class="layoutbuttons" id="layout2" style="float: right; padding: 5px;">Advanced
+                        Layout</button>
+                    <button class="layoutbuttons" id="layout1"
+                        style="float: right; padding: 5px; margin-right: 5px;">Simple Layout</button>
                 </div>
             </div>
 
@@ -1182,8 +1402,10 @@ font-size: 17px !important;
                             alt="AirPods Pro">
                     </div>
                     <div class="width80c trev21">
-                     
-                        <div class="informationcontent la layoutop1 experience-component experience-pcrs_assets-markup "> </div>
+
+                        <div
+                            class="informationcontent la layoutop1 experience-component experience-pcrs_assets-markup ">
+                        </div>
                     </div>
 
                 </div>
@@ -1195,130 +1417,166 @@ font-size: 17px !important;
 
 
 
-        
-    
 
 
 
 
 
-            <div id="pullthecode2" class="prod100 layout2"
-                style="background-color: #f7f7f7; color: #000; max-width: 99%; width: 97%; margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 710px;
+<div class="width100c stage2">
+    <div class="width50c" style="width: 60%;">Desktop View (Active)</div>
+    <div class="width50c" style="width: 30%;">Mobile View</div>
+</div>
+
+            <div id="pullthecode2" class="width50c layout2" style="background-color: #f7f7f7; color: #000; max-width: 99%; width: 55%;  margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 710px;
                 position: relative;
                 overflow: auto;">
 
                 <div class="width100c">
-                   
-                        <div class="informationcontent layoutbuilder   sortable layoutop2 experience-component experience-pcrs_assets-markup"></div>
+
+                    <div
+                        class="informationcontent layoutbuilder   sortable layoutop2 experience-component experience-pcrs_assets-markup">
                     </div>
-
                 </div>
-              
-               
 
-<div class="width100c">
-<div class="width50c">
-    <div class="width100c stage2" style="margin-top: 10px;">Component Options</div>
-    <div class="width100c stage2" style="margin-top: 10px; margin-top: 10px;
+            </div>
+
+            <div class="width50c mymobile" id="mobilepreview2"
+                    style="max-height: 450px; width: 35%; margin-left: 5%;  overflow-y: scroll; overflow-x: hidden;">
+                </div>
+
+
+
+            <div class="width100c">
+                <div class="width50c stage2">
+                   
+                    <div class="width100c stage2" style="margin-top: 10px; margin-top: 10px;
     background-color: #666;
     padding: 10px;
     padding-right: 0px;
     width: 97%;
     margin-right: 3%;">
-        <button id="addrow">Add a Row</button> : 
-        <button id="clearsection">Empty Component</button><br><br>
-        <button class="deletecode"  style="color: #fff; background-color: red;">Delete Component</button> :
-        <button class="deleterow" style="color: #fff; background-color: red;">Delete Row</button>
-    </div>
-</div>
+ <div class="width100c" style="margin-bottom: 10px;">Component Options :</div>
 
-<div class="width50c">
-    <div class="width100c" style="margin-top: 10px;">Text Options</div>
-    <div class="width100c" style="margin-top: 10px; margin-top: 10px;
+                        <button id="addrow">Add a Row</button>
+                        <button id="clearsection">Empty Component</button>
+                        <button id="selectionclear">Clear Selection</button>
+                        <br><br>
+                        <button class="deletecode" style="color: #fff; background-color: red;">Delete Component</button>
+                        :
+                        <button class="deleterow" style="color: #fff; background-color: red;">Delete Row</button>
+                    </div>
+                </div>
+
+                <div class="width50c expand">
+                   
+                    <div class="width100c" style="margin-top: 10px; margin-top: 10px;
     background-color: #666;
     padding: 10px;
     padding-right: 10px;
     width: 97%;
     margin-right: 3%;">
-        <button class="texttype" value="strong"><strong>Strong</strong></button>  : 
-        <button class="texttype" value="i"><i>italic</i></button>  : 
-       
-        <button class="texttype" value="strong class='strongitalic'"><strong><i>Strong &
-                    Italic</i></strong></button><br><br>
-                    <button class="texttype" value="u"><u>underline</u></button>  : 
-        <button class="texttype" value="sub" style="font-size: 0.8rem;">sub</button> &bull;
-        <button class="texttype" value="sup" style="font-size: 0.8rem;"> sup</button> 
-    </div>
+
+<div class="width100c" style="margin-bottom: 10px;">Text Options :</div>
+
+                        <button class="texttype" value="strong"><strong>Strong</strong></button> :
+                        <button class="texttype" value="i"><i>italic</i></button> :
+
+                        <button class="texttype" value="strong class='strongitalic'"><strong><i>Strong &
+                                    Italic</i></strong></button><br><br>
+                        <button class="texttype" value="u"><u>underline</u></button> :
+                        <button class="texttype" value="sub" style="font-size: 0.8rem;">sub</button> &bull;
+                        <button class="texttype" value="sup" style="font-size: 0.8rem;"> sup</button>
 
 
+<div class="width100c" style="margin-top: 10px;">
+   <div class="width100c" style="margin-bottom: 5px;">
+   Text Align Options (p) :
+   </div>
+<button class="textaligner" cssadd='left' >Text Align: Left</button>
+<button class="textaligner" cssadd='center'>Text Align: Center</button>
+<button class="textaligner" cssadd='right'>Text Align: Right</button>
 </div>
-</div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
 
 
 
-               
-               
-
-             
 
 
 
 
 
-                <div class="prod100 stage1"
+
+
+
+
+            <div class="prod100 stage1"
                 style="background-color: #000; margin-top: 20px; margin-left: 0px;  width: 97%;">
                 <p style="margin-bottom: 5px;  margin-top: 0px;">Create Links Here: (Put in link first THEN select text)
                 </p>
-                <input id="whatsthelink" type="text" placeholder="text link" style="width: 80%;">
-                <button id="linkmaker" style="padding: 5px; padding-bottom: 3px;">Convert to Link</button>
+
+                <div class="width80c">
+                <input id="whatsthelink" type="text" placeholder="text link" style="width: 100%;">
+            </div>
+            <div class="width20c">
+                <button id="linkmaker" style="padding: 5px; margin-left: 15px; padding-bottom: 3px;">Convert to Link</button>
+            </div>
             </div>
 
             <div class="prod100" id="message2" style="text-align: center; font-weight: bold; margin-left: 0px;">BAD
                 LINK, RELATIVE LINKS ONLY!</div>
 
-                <div class="width100c" style="margin-top: 20px; ">
-                    <div class="width100c" style="margin-bottom: 20px;">
-                     
-                        <button id="showmobile" style="float: left; background-color: red; color: #fff; display: none;"> Show Mobile</button>
-                        <button id="showmobile2" style="float: left;  background-color: red; color: #fff;"> Hide Mobile</button>
-                    <p class="mymobile" style="margin-top: 5px; float: left; margin-left: 10px;">Mobile View of Content </p>
-                        
-                    </div>
-                    <div class="promo30 mymobile" id="mobilepreview"  style="max-height: 450px; overflow-y: scroll; overflow-x: hidden;">
-                    </div>
-                    <div class="promo30 mymobile" id="mobilepreview2" style="max-height: 450px; overflow-y: scroll; overflow-x: hidden;">
-                    </div>
+            <div class="width100c" style="margin-top: 20px; ">
+                <div class="width100c" style="margin-bottom: 20px;">
+
+                    <button id="showmobile" style="float: left; background-color: red; color: #fff; display: none;">
+                        Show Mobile</button>
+                    <button id="showmobile2" style="float: left;  background-color: red; color: #fff;"> Hide
+                        Mobile</button>
+                    <p class="mymobile" style="margin-top: 5px; float: left; margin-left: 10px;">Mobile View of Content
+                    </p>
+
                 </div>
-    
-
-            </div>
-            
-   
-
-
-         
-
-
-   
-
-            <div class="prod100" style="background-color: #000; margin-left: 0px; margin-top: 20px; width: 97%;">Click
-                on Code To Copy to Clipboard</div>
-
-            <div class="prod100 layout1 selectall"
-                style="background-color: #f7f7f7; color: #000;  margin-bottom: 20px; margin-left: 0px; width: 97%;">
-                &lt;link href="images/pim-content/occontent2024-v3.css?$staticlink$" rel="stylesheet" /> <br>
-                <span id="findthecode"></span>
+                <div class="width50c mymobile" id="mobilepreview"
+                    style="max-height: 450px; overflow-y: scroll; overflow-x: hidden;">
+                </div>
+                
             </div>
 
-
-            <div class="prod100 layout2 selectall"
-                style="background-color: #f7f7f7; color: #000; margin-bottom: 20px; margin-left: 0px; width: 97%;">
-             
-                        &lt;link href="images/pim-content/occontent2024-v3.css?$staticlink$" rel="stylesheet" /> <br>
-                        <span id="findthecode2"></span>
-            </div>
 
         </div>
+
+
+
+
+
+
+
+
+
+        <div class="prod100" style="background-color: #000; margin-left: 0px; margin-top: 20px; width: 97%;">Click
+            on Code To Copy to Clipboard</div>
+
+        <div class="prod100 layout1 selectall"
+            style="background-color: #f7f7f7; color: #000;  margin-bottom: 20px; margin-left: 0px; width: 97%;">
+            &lt;link href="images/pim-content/occontent2024-v3.css?$staticlink$" rel="stylesheet" /> <br>
+            <span id="findthecode"></span>
+        </div>
+
+
+        <div class="prod100 layout2 selectall"
+            style="background-color: #f7f7f7; color: #000; margin-bottom: 20px; margin-left: 0px; width: 97%;">
+
+            &lt;link href="images/pim-content/occontent2024-v3.css?$staticlink$" rel="stylesheet" /> <br>
+            <span id="findthecode2"></span>
+        </div>
+
+    </div>
 
 
 
@@ -1350,23 +1608,25 @@ font-size: 17px !important;
         $('#findthecode').text($('#pullthecode').html());
         $('#findthecode2').text($('#pullthecode2').html());
 
-     
+
 
         var element = $('#findthecode2');
-    var content = element.text();
-    
-    // Define the words you want to remove
- var wordsToRemove = ['liveelement', 'in910', 'layoutpale' , 'layoutpale50' , 'liverow' , 'droppable' , 'ui-droppable' , 'layoutbuilder' , 'sortable' , 'layoutop2' , 'ui-' , 'layoutpale100', ' ui-' , 'layoutpale30' , 'layoutpale20' , 'onblock' , 'interedit' ];
-    
-    // Loop through the words and remove them from the content
-    wordsToRemove.forEach(function (word) {
-        content = content.replace(new RegExp('\\b' + word + '\\b', 'g'), '');
-    });
-    
-    // Set the modified content back to the element
-    element.text(content);
+        var content = element.text();
 
+        // Define the words you want to remove
+        var wordsToRemove = ['liveelement', 'in910', 'layoutpale', 'layoutpale50', 'liverow', 'droppable',
+            'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'ui-', 'layoutpale100', ' ui-',
+            'layoutpale30', 'layoutpale20', , 'layoutpale33', 'onblock', 'interedit',
+            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/' , 'promoimg21'
+        ];
 
+        // Loop through the words and remove them from the content
+        wordsToRemove.forEach(function (word) {
+            content = content.replace(new RegExp('\\b' + word + '\\b', 'g'), '');
+        });
+
+        // Set the modified content back to the element
+        element.text(content);
 
 
 
@@ -1376,8 +1636,8 @@ font-size: 17px !important;
             $(this).attr('src', newsrc)
         })
 
-        $('#mobilepreview').html($('#pullthecode').html())
-        $('#mobilepreview2').html($('#pullthecode2').html())
+        $('#mobilepreview').delay(2000).html($('#pullthecode').html())
+        $('#mobilepreview2').delay(2000).html($('#pullthecode2').html())
     }
 
     resizeHandle.addEventListener('mousedown', function (e) {
@@ -1418,12 +1678,31 @@ font-size: 17px !important;
     })
 
 
-    $('.deleterow').on('click' , function() {
-      $('.onblock').remove()
-      loadnewcontent()
+    $('.deleterow').on('click', function () {
+        $('.onblock').remove()
+        loadnewcontent()
     })
 
-  
+
+    $('#submitvideofile').on('click', function () {
+        thevidfilename =
+            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/' +
+            $('#videofilename').val() + '.mp4'
+        thevidcaptionname =
+            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/' +
+            $('#videocaptions').val() + '.vtt'
+        thevidpostername =
+            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/' +
+            $('#videoposter').val() + '.jpg'
+        completevideocode = '<video aria-label="Video Player" class="videoPlayer" controls="" poster="' +
+            thevidpostername + '" tabindex="0"><source src="' + thevidfilename +
+            '" type="video/mp4"><track kind="captions" label="English" src="' + thevidcaptionname +
+            '" srclang="en">Your browser does not support the video tag.</video>'
+        $('.interedit').html(completevideocode);
+        loadnewcontent()
+    })
+
+
 
     $('#mylistamount').on('change', function () {
         $('.lister').hide()
@@ -1502,16 +1781,18 @@ font-size: 17px !important;
         if (createnewlist === 1) {
 
 
-            if(layoutmode === 1) {
+            if (layoutmode === 1) {
                 $('.interedit').append('<ul id="listcontent' + listaddition + '" class="in910 ' + $(
-                    '#mylistwidth').val() + '"> ' + list1 + list2 + list3 + list4 + list5 + list6 + list7 +
-                list8 + list9 + list10 + ' </ul>').removeClass('.interedit')
+                        '#mylistwidth').val() + '"> ' + list1 + list2 + list3 + list4 + list5 + list6 +
+                    list7 +
+                    list8 + list9 + list10 + ' </ul>').removeClass('.interedit')
                 layoutmode = 0
             } else {
 
                 $('.informationcontent').append('<ul id="listcontent' + listaddition + '" class="in910 ' + $(
-                    '#mylistwidth').val() + '"> ' + list1 + list2 + list3 + list4 + list5 + list6 + list7 +
-                list8 + list9 + list10 + ' </ul>')
+                        '#mylistwidth').val() + '"> ' + list1 + list2 + list3 + list4 + list5 + list6 +
+                    list7 +
+                    list8 + list9 + list10 + ' </ul>')
 
             }
             listaddition++
@@ -1529,7 +1810,7 @@ font-size: 17px !important;
 
 
     $('#newlist-former').on('click', function () {
- 
+
         $('.lister').val('')
         listaddition++
         createnewlist = 1
@@ -1538,7 +1819,7 @@ font-size: 17px !important;
 
     $('#listsubmit-former').on('click', function () {
         $('#newlist').fadeIn()
-        
+
 
         if (createnewlist === 1) {
             listaddition++
@@ -1668,17 +1949,31 @@ font-size: 17px !important;
 
     })
 
+
+    document.getElementById('cinput1').addEventListener('change', function () {
+$('#largeimagepreview').slideDown()
+
+$('.showthepreviewimage').each(function() {
+    previewurld = 'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw4441bf24/images/hires/'
+    imageprefix = $(this).attr('prefix');
+    $(this).attr('src' , previewurld+imageprefix+$('#cinput1').val()+'.jpg')
+})
+    })
+
+
+
+
     document.getElementById('mysort').addEventListener('change', function () {
-if(this.checked) {
-    $( ".sortable" ).sortable();
-    $( ".sortable" ).sortable('enable');
-    $('.informationcontent').children().css('cursor' , 'grab !important')
+        if (this.checked) {
+            $(".sortable").sortable();
+            $(".sortable").sortable('enable');
+            $('.informationcontent').children().css('cursor', 'grab !important')
 
-} else {
-    $( ".sortable" ).sortable();
-            $( ".sortable" ).sortable('disable');
+        } else {
+            $(".sortable").sortable();
+            $(".sortable").sortable('disable');
 
-}
+        }
 
 
     })
@@ -1686,7 +1981,7 @@ if(this.checked) {
 
     document.getElementById('editmode').addEventListener('change', function () {
         if (this.checked) {
-            
+
             $('#editcontentbox').slideDown()
             $('.in910').removeClass('editable');
             $('.stage1').slideUp()
@@ -1701,105 +1996,131 @@ if(this.checked) {
 
             })
 
-           
+
 
 
         } else {
-            
+
             $('.stage1').slideDown()
             $('.in910').removeClass('editable');
             $('#editcontentbox').slideUp()
             $('#clearandrestart').slideDown()
 
-            
+
         }
     });
 
 
-/*
-    document.getElementById('myCheckbox').addEventListener('change', function () {
-        if (this.checked) {
-            $('#cinput2').css('opacity', '1')
-            $('.trev21').prepend('<h2 class="cinputval2">' + $('#cinput2').val() + '</h2>')
-        } else {
-            $('#cinput2').css('opacity', '0.5')
-            $('.cinputval2').remove()
-            loadnewcontent()
-        }
-    });
-*/
+    /*
+        document.getElementById('myCheckbox').addEventListener('change', function () {
+            if (this.checked) {
+                $('#cinput2').css('opacity', '1')
+                $('.trev21').prepend('<h2 class="cinputval2">' + $('#cinput2').val() + '</h2>')
+            } else {
+                $('#cinput2').css('opacity', '0.5')
+                $('.cinputval2').remove()
+                loadnewcontent()
+            }
+        });
+    */
 
 
     $(document).ready(function () {
         var mysize
 
-        $('#addrow').on('click' , function() {
+        $('#addrow').on('click', function () {
             $('.dropsection').slideDown()
-     
-            $('.layoutbuilder').append('<div class="width100c  layoutpale layoutpale100 liverow droppable"></div>')
 
-            $('.liverow').on('click' , function() {
+            $('.layoutbuilder').append(
+                '<div class="width100c  layoutpale layoutpale100 liverow droppable"></div>')
+
+            $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
-    })
+            })
 
-           
-            $( ".draggable" ).draggable( { 
+
+            $(".draggable").draggable({
                 revert: "valid"
-             });
+            });
 
-        $( ".droppable" ).droppable({
-      drop: function( event, ui ) {
-        var mysize = $(ui.draggable).attr('size'); 
-        var mypale = $(ui.draggable).attr('pale'); 
-        if (mysize !== undefined && mysize !== "") {
-        $(this).append('<div class="'+mysize+' in910 layoutpale layoutpale'+mypale+'"></div>');
-     
-        }
-        $('.liveelement').on('click', function () {
-        $('.liveelement').removeClass('interedit')
-        $(this).addClass('interedit')
-        //$('#fixthecode').val($(this).html())
-        $('#clearsection').on('click' , function() {
-          $('.interedit').html('')
-          loadnewcontent()
+            $(".droppable").droppable({
+                drop: function (event, ui) {
+                    var mysize = $(ui.draggable).attr('size');
+                    var mypale = $(ui.draggable).attr('pale');
+                    if (mysize !== undefined && mysize !== "") {
+                        $(this).append('<div class="' + mysize +
+                            ' in910 layoutpale layoutpale' + mypale + '"></div>');
+
+                    }
+                    $('.liveelement').on('click', function () {
+                        $('.liveelement').removeClass('interedit')
+                        $(this).addClass('interedit')
+                        //$('#fixthecode').val($(this).html())
+                        $('#clearsection').on('click', function () {
+                            $('.interedit').html('')
+                            loadnewcontent()
+                        })
+
+$('#selectionclear').on('click' , function() {
+    $('.interedit').removeClass('interedit')
+})
+
+
+                        layoutmode = 1
+
+                    })
+                    loadnewcontent()
+                }
+            });
+
+
+
         })
-        layoutmode = 1
-        
-    })
-    loadnewcontent()
-      }
-    });
 
 
 
-        })
- 
-     
-       
 
-  
+
 
 
 
 
         var currentAnchor = null;
 
-/*
-$('#showmobile').on('click' , function() {
-    $('.mymobile').slideDown()
-    $(this).hide()
-    $('#showmobile2').show()
-})
+        /*
+        $('#showmobile').on('click' , function() {
+            $('.mymobile').slideDown()
+            $(this).hide()
+            $('#showmobile2').show()
+        })
 
 
-$('#showmobile2').on('click' , function() {
-    $('.mymobile').slideUp()
-    $(this).hide()
-    $('#showmobile').show()
-})
+        $('#showmobile2').on('click' , function() {
+            $('.mymobile').slideUp()
+            $(this).hide()
+            $('#showmobile').show()
+        })
 
-*/
+        */
+
+
+
+        $('.showthepreviewimage').on('click' , function() {
+            var select = document.getElementById("myDropdown");
+            select.selectedIndex = $(this).attr('num');
+            imageselect = $(this).attr('prefix')
+            imagename00 = $('#cinput1').val()
+            imagedata = '<div class="' + $('#myIMGwidth').val() +
+                '"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw4441bf24/images/hires/' +
+                imageselect+imagename00+'.jpg?sw=400&sh=400&sm=fit" alt="' + $(
+                    '#cinput1b').val() + '"></div>'
+
+
+            $('.interedit').html(imagedata).removeClass('.interedit')
+            loadnewcontent()
+        })
+      
 
         $('.layoutbuttons').on('click', function () {
             $('.layoutbuttons').css('background-color', '#333').css('color', '#fff')
@@ -1811,20 +2132,40 @@ $('#showmobile2').on('click' , function() {
             location.reload()
         })
 
+
+        $('#cinput1-clickh2-comp').on('click' , function() {
+
+            var min = 1000;
+            var max = 9999;
+            var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
+            $('.interedit').append(
+                    '<div class="pd-header-tag width100c"><h2 class="t-h4-style  c-blue in910" id="ocinsertcontent' +
+                    randomFourDigit + '">' + $('#cinput1h2').val() + '</h2></div>').removeClass(
+                    'interedit')
+
+            loadnewcontent()
+            $('#cinput1h2').val('')
+        })
+
         $('#cinput1-clickh2').on('click', function () {
-           
+
             var min = 1000;
             var max = 9999;
             var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
 
-if(layoutmode === 1) {
-    $('.interedit').append('<div class="pd-header-tag width100c"><h2 class="t-h4-style  c-blue in910" id="ocinsertcontent' +randomFourDigit + '">' + $('#cinput1h2').val() + '</h2></div>').removeClass('interedit')
-    
-    layoutmode = 0
-} else {
-  
-    $('.informationcontent').append('<div class="pd-header-tag width100c"><h2 class="t-h4-style  c-blue in910" id="ocinsertcontent' +randomFourDigit + '">' + $('#cinput1h2').val() + '</h2></div>')
-}
+            if (layoutmode === 1) {
+                $('.interedit').append(
+                    '<div class="pd-header-tag width100c"><h2 class="t-h4-style  c-blue in910" id="ocinsertcontent' +
+                    randomFourDigit + '">' + $('#cinput1h2').val() + '</h2></div>').removeClass(
+                    'interedit')
+
+                layoutmode = 0
+            } else {
+
+                $('.informationcontent').append(
+                    '<div class="pd-header-tag width100c"><h2 class="t-h4-style  c-blue in910" id="ocinsertcontent' +
+                    randomFourDigit + '">' + $('#cinput1h2').val() + '</h2></div>')
+            }
 
 
             loadnewcontent()
@@ -1833,25 +2174,31 @@ if(layoutmode === 1) {
 
 
         $('#layout1').on('click', function () {
-
+            $('.videocomponent').hide()
             $('.stage2').slideUp()
-$('.informationcontent').html('')
+            $('.informationcontent').html('')
             $('.mysort').hide()
             $('.layout1').show()
             $('.layout2').hide()
             $('#cinput1-click').show()
-$('#myTEXTwidth').show()
+            $('#myTEXTwidth').show()
             $('#layout1reverse').fadeIn()
             $('#layout150').fadeIn()
             $('#layout120').fadeIn()
             $('#layout160').fadeIn()
             $('.layoutop1').html($('.layoutop2').html())
-$('#mobilepreview').show()
-$('#mobilepreview2').hide()
-$('#mylistwidth').show()
-$('.stage2a').show()
-//$('#showmobile2').show()
-//$('#showmobile').hide()
+            $('#mobilepreview').show()
+            $('#mobilepreview2').hide()
+            $('#mylistwidth').show()
+            $('.stage2a').show()
+            $('.expand').css('width' , '100%')
+$('#cinput1-clickv2').show()
+$('#myDropdown').show()
+$('.simplehide').hide()
+$('.simpleshow').show()
+
+            //$('#showmobile2').show()
+            //$('#showmobile').hide()
 
 
 
@@ -1866,6 +2213,7 @@ $('.stage2a').show()
         })
 
         $('#layout2').on('click', function () {
+            $('.videocomponent').show()
             $('.stage2').slideDown()
             $('.mysort').show()
             $('.layout2').show()
@@ -1878,15 +2226,19 @@ $('.stage2a').show()
             $('#layout160').hide()
             $('#mylistwidth').hide()
             $('.stage2a').hide()
-          //  $('#showmobile2').show()
-//$('#showmobile').hide()
+            $('.expand').css('width' , '48%')
+            $('#cinput1-clickv2').hide()
+            $('#myDropdown').hide()
+            //  $('#showmobile2').show()
+            //$('#showmobile').hide()
 
-
+            $('.simplehide').show()
+            $('.simpleshow').hide()
 
             $('.layoutop2').html($('.layoutop1').html())
 
             $('#mobilepreview2').show()
-           $('#mobilepreview').hide()
+            $('#mobilepreview').hide()
 
             $('a').on('click', function (e) {
                 e.preventDefault();
@@ -1934,26 +2286,47 @@ $('.stage2a').show()
 
 
 
+$('#cinput3-comp').on('click' , function() {
+    var min = 1000;
+            var max = 9999;
+            var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
+            $('.interedit').append('<p>' + $('#cinput3a').val() + '</p>').removeClass('interedit');
+                $('#cinput3a').val('')
+                layoutmode = 0
+                loadnewcontent()
+
+                $('a').on('click', function (e) {
+                e.preventDefault();
+                currentAnchor = this; // Store the current anchor element
+                wheretogo = $(this).attr('href');
+                openModal('https://www.pcrichard.com' + wheretogo);
+            });
+
+
+})
+
+
 
         $('#cinput3').on('click', function (e) {
-     
+
             var min = 1000;
             var max = 9999;
             var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
-if(layoutmode === 0) {
-    $('.informationcontent').append('<div class="' + $('#myTEXTwidth').val() +
-                '"><p class="in910" id="ocinsertcontent' + randomFourDigit +
-                '">' + $(
-                    '#cinput3a').val() + '</p></div>')
-            
-            $('#cinput3a').val('')
-} else {
-$('.interedit').append('<p>'+$('#cinput3a').val()+'</p>').removeClass('interedit');
-layoutmode = 0
-}
+            if (layoutmode === 0) {
+                $('.informationcontent').append('<div class="' + $('#myTEXTwidth').val() +
+                    '"><p class="in910" id="ocinsertcontent' + randomFourDigit +
+                    '">' + $(
+                        '#cinput3a').val() + '</p></div>')
+
+                $('#cinput3a').val('')
+            } else {
+                $('.interedit').append('<p>' + $('#cinput3a').val() + '</p>').removeClass('interedit');
+                $('#cinput3a').val('')
+                layoutmode = 0
+            }
 
 
-loadnewcontent()
+            loadnewcontent()
 
             $('a').on('click', function (e) {
                 e.preventDefault();
@@ -1978,22 +2351,25 @@ loadnewcontent()
 
 
         $('#cinput1-clickv2').on('click', function () {
-          
+
             imageselect = $('#myDropdown').val()
-imagedata = '<div class="' + $('#myIMGwidth').val() +
+            imagedata = '<div class="' + $('#myIMGwidth').val() +
                 '"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw4441bf24/images/hires/' +
                 imageselect + $('#cinput1').val() + '.jpg?sw=400&sh=400&sm=fit" alt="' + $(
                     '#cinput1b').val() + '"></div>'
 
-if(layoutmode === 1) {
-    $('.interedit').append(imagedata).removeClass('interedit')
-    layoutmode = 0
-} else {
-    $('.informationcontent').append(imagedata)
-}
+            if (layoutmode === 1) {
+                $('.interedit').append(imagedata).removeClass('interedit')
+                layoutmode = 0
+            } else {
+                $('.informationcontent').append(imagedata)
+            }
 
             loadnewcontent()
         })
+
+
+
 
 
 
@@ -2080,7 +2456,7 @@ if(layoutmode === 1) {
 
 
 
-             
+
             if ($('#whatsthelink').val().includes('pcrichard.com') || $('#whatsthelink').val().includes(
                     'https://') || $('#whatsthelink').val().includes('www') || $('#whatsthelink').val()
                 .includes('staging-na01-pcrichard')) {
@@ -2093,24 +2469,23 @@ if(layoutmode === 1) {
             var whatsthelink = $('#whatsthelink').val();
             var anchor = '<a href="' + whatsthelink + '">' + selectedText + '</a>';
             var range = selection.getRangeAt(0);
-            if(layoutmode === 1) {
-            var newNode = document.createElement('div');
-            newNode.innerHTML = anchor;
-            range.deleteContents();
-            range.insertNode(newNode.firstChild);
-              
+            if (layoutmode === 1) {
+                var newNode = document.createElement('div');
+                newNode.innerHTML = anchor;
+                range.deleteContents();
+                range.insertNode(newNode.firstChild);
+
 
             } else {
-            var newNode = document.createElement('div');
-            newNode.innerHTML = anchor;
-            range.deleteContents();
-            range.insertNode(newNode.firstChild);
-       
+                var newNode = document.createElement('div');
+                newNode.innerHTML = anchor;
+                range.deleteContents();
+                range.insertNode(newNode.firstChild);
+
             }
 
 
 
-        
 
 
 
@@ -2131,6 +2506,13 @@ if(layoutmode === 1) {
         });
 
         //--------------------
+
+
+        $('.textaligner').on('click' , function() {
+            cssadd = $(this).attr('cssadd')
+    $('.interedit').children('p').attr('style' , 'text-align:'+cssadd+'')
+    loadnewcontent()
+         })
 
 
         $('.selectall').on('click', function () {
@@ -2159,13 +2541,13 @@ if(layoutmode === 1) {
 
         // $('#myCheckbox').click()
         $('#layout2').click()
-       $('#addrow').click()
+        $('#addrow').click()
 
 
 
         $('#cinputval1').attr('src',
             'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwf8295540/images/hires/Z_RF18A5101SR.jpg?sw=300&amp;sh=300&amp;sm=fit'
-            )
+        )
 
     });
 </script>
