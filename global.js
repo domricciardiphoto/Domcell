@@ -3,7 +3,7 @@ var elements = document.getElementsByClassName('version');
 
 
 for (let element of elements) {
-  element.textContent = "Domcell 2023 Ver. 7.5.4 incl. badge CSS Ver. 12";
+  element.textContent = "Domcell 2023 Version. 8.0.1 RC";
 }
 
 

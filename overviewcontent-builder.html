@@ -5,14 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEO Content Builder</title>
-    <script src="jquery.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <style>
+
+
+
+        .mysmalltext {
+            font-size: 0.7em;
+            color: yellow;
+        }
+
+        .unselectable-text {
+            user-select: none;
+        }
+
+        .tools {
+            display: none;
+        }
+
+        h3 {
+        margin-bottom: -8px !important;
+    }
+        .openclose {
+            width: 94.5% !important;
+            margin-left: 2%;
+            color: #fff;
+            padding-left: 1%;
+            cursor: pointer;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #ccc;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+
+        h3 {
+            font-weight: normal;
+        }
 
         .showthepreviewimage {
             opacity: 1;
             cursor: pointer;
+        }
+
+        .myindicator {
+            color: #fff;
+        }
+
+        .simplelayout {
+            width: 95%;
+            float: left;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            border-radius: 10px;
+            background-color: #666;
+            cursor: pointer;
+            display: none !important;
         }
 
         .showthepreviewimage:hover {
@@ -29,7 +82,7 @@
             cursor: pointer;
             background-color: #333;
         }
-        
+
         .mybuttonclass:hover {
             background-color: #666;
         }
@@ -42,23 +95,23 @@
             display: none;
         }
 
-        
 
-.promo16c {
-    width: 5%;
-    float: left;
-    margin-right: 1.25%;
-}
 
-.promo16c img {
-    width: 100%;
-}
+        .promo16c {
+            width: 5%;
+            float: left;
+            margin-right: 1.25%;
+        }
 
-.promo16c span {
-    font-size: 0.5rem;
-    text-align: center;
-    line-height: 2px;
-}
+        .promo16c img {
+            width: 100%;
+        }
+
+        .promo16c span {
+            font-size: 0.5rem;
+            text-align: center;
+            line-height: 2px;
+        }
 
 
         .mymobile .width50c2 {
@@ -96,7 +149,7 @@
 
         input {
             width: 50%;
-            font-size: 1.2rem;
+            font-size: 1rem;
 
         }
 
@@ -206,8 +259,7 @@
             z-index: 9999999999999999999999999999999;
         }
 
-        #mobilepreview,
-        #mobilepreview2 {}
+      
 
         .informationcontent {
             min-height: 300px;
@@ -222,10 +274,10 @@
         #resizable-div {
             z-index: 9999999;
             position: relative;
-           /* overflow: auto;  */
+            /* overflow: auto;  */
             min-width: 200px;
             min-height: 200px;
-            max-width: 1200px;
+        
 
         }
 
@@ -351,7 +403,7 @@
         }
 
         .width80c {
-            width: 80%;
+            width: 79% !important;
             float: left
         }
 
@@ -383,6 +435,11 @@
 
             .width20c {
                 width: 30%
+            }
+
+            .width25c {
+                width: 25% !important;
+                float: left;
             }
 
             .width20c img {
@@ -450,7 +507,12 @@
             min-height: 58px
         }
 
-
+        .layoutpale25 {
+            width: calc(25% - 1%) !important;
+            margin-left: .5%;
+            margin-right: .5%;
+            min-height: 58px
+        }
 
 
         .layoutpale20 {
@@ -478,7 +540,7 @@
         }
 
         .width80c {
-            width: 80%;
+            width: 79% !important;
             float: left;
             text-align: left;
         }
@@ -553,6 +615,7 @@
 
         .width100c ul {
             padding-left: 1.8%;
+            margin-left: 16px;
         }
 
 
@@ -873,11 +936,35 @@
                 margin-right: 1%;
             }
 
-.width33c {
-    width: 33%;
-    float: left;
-}
+            .width33c {
+                width: 33%;
+                float: left;
+            }
         }
+
+
+   .addpadding0 {
+        padding-top: 0px;
+    }
+    .addpadding10 {
+        padding-top: 10px;
+    }
+    .addpadding20 {
+        padding-top: 20px;
+    }
+    .addpadding40 {
+        padding-top: 40px;
+    }
+    .addpadding60 {
+        padding-top: 60px;
+    }
+    .addpadding80 {
+        padding-top: 80px;
+    }
+    .addpadding100 {
+        padding-top: 100px;
+    }
+
     </style>
 
 
@@ -898,7 +985,7 @@
         #mobilepreview,
         #mobilepreview2 {
             color: #000;
-            pointer-events: none;
+            
         }
 
         #mobilepreview h2.t-h4-style,
@@ -917,20 +1004,23 @@
         }
 
         .dropsection {
-            height: 40px;
+            min-height: 30px;
             background-color: #333;
             float: left;
             margin: 2px;
             text-align: center;
             z-index: 999999999999999999999999999999999999999999999999999999999999999999;
-            line-height: 42px;
-            font-size: 1rem;
+            line-height: 30px;
+            font-size: 0.8em !important;
             font-weight: bold;
             border-radius: 10px;
             color: #fff;
             margin-right: 10px;
             padding: 5px;
             cursor: grab;
+            -webkit-box-shadow: 5px 5px 5px 0 #000000;
+            box-shadow: 5px 5px 10px 0 #000000;
+            width: 39% !important;
         }
 
         .liverow {
@@ -944,6 +1034,39 @@
         .mymobile .width50c2 {
             width: 97% !important;
         }
+
+
+
+
+       .mymobile .width100c .addpadding0 {
+            padding-top: 0px;
+        }
+        .mymobile .width100c .addpadding10 {
+            padding-top: 0px;
+        }
+        .mymobile .width100c .addpadding20 {
+            padding-top: 0px;
+        }
+        .mymobile .width100c  .addpadding40 {
+            padding-top: 0px;
+        }
+        .mymobile .width100c  .addpadding60 {
+            padding-top: 0px;
+        }
+        .mymobile .width100c  .addpadding80 {
+            padding-top: 0px;
+        }
+        .mymobile .width100c  .addpadding100 {
+            padding-top: 0px;
+        }
+
+
+
+
+
+
+
+
     </style>
 
 
@@ -969,61 +1092,126 @@
 
 
 
-    <div class="prod100">
+
+
+
+
+    <div class="prod100" style="width: 99%; margin-left: 0%; margin-right: 0.5%;">
+
+
+
 
         <div class="promo50" id="programming">
-            <button id="clearandrestart"
+            <button id="clearandrestart" class="unselectable-text"
                 style="margin-top: 0px; margin-bottom: 10px; float: right; margin-right: 15px;">Clear and
                 Restart</button>
 
 
             <div class="prod100 stage2 " style="margin-left: 0px;">
-                <p style="margin-bottom: 5px;  margin-top: 0px;">Layout Builder: Select and Drag the Layout box to the
-                    window</p>
+                
+                <div class="width100c">
+                    <p class="unselectable-text" style="margin-bottom: 10px;  margin-top: 0px;">Layout Builder:
+                        Drag a Layout box to the desktop
+                        window</p>
+                </div>
 
 
 
 
-                    <div class="width50c" style="margin-left: -5px;">
 
+                <div class="width50c" style="margin-left: -5px;">
 
-<div class="width100c">
-                        <div class="dropsection draggable ui-widget-content" size="width100c liveelement" pale="100"
-                        style="width: 44%; margin-left: -5px;">100%</div>
-                    <div class="dropsection draggable ui-widget-content" size="width50c liveelement" pale="50"
-                        style="width: 44%;">50%</div>
+                    <div class="width100c">
+                        <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width100c liveelement" pale="100"
+                            style="width: 95%; margin-left: -5px; margin-bottom: 5px;">100%</div>
                     </div>
+
+
+                    <div class="width100c">
+
+
+
+                        <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width80c width50c2 liveelement" pale="80" style="width: 44%; margin-left: -5px;">80%
+                        </div>
+
+
+
+
+
+
+                        <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width50c liveelement" pale="50" style="width: 44%;">50%</div>
+
+
+                    </div>
+
+                    
                     <div class="width100c" style="margin-top: 5px;">
-                    <div class="dropsection draggable ui-widget-content" size="width33c liveelement" pale="33"
-                        style="width: 44%;margin-left: -5px;">33%</div>
-                    <div class="dropsection draggable ui-widget-content" size="width20c liveelement" pale="20"
-                        style="width: 44%;">20%</div>
+                        <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width33c liveelement" pale="33" style="width: 44%;margin-left: -5px;">33%</div>
+                        <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width20c liveelement" pale="20" style="width: 44%;">20%</div>
 
-</div>
+
 
                     </div>
 
+                </div>
 
-                    <div class="width50c">
 
-                        <div class="dropsection draggable ui-widget-content" size="width50c width50c2 liveelement" pale="50"
-                    style="width: 44%; 
+                <div class="width50c">
+
+                    <div class="dropsection draggable ui-widget-content unselectable-text"
+                        size="width50c width50c2 liveelement" pale="50" style="width: 44%; 
                     font-size: 0.8rem;">50% D 100% M</div>
 
 
-<div class="dropsection draggable ui-widget-content" size="width33c width50c3  liveelement" pale="33"
-style="width: 44%; 
+                    <div class="dropsection draggable ui-widget-content unselectable-text"
+                        size="width33c width50c3  liveelement" pale="33" style="width: 44%; 
 font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
-                        
+
+                    <div class="width100c">
+                        <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width25c width50c3 liveelement unselectable-text" pale="25"
+                            style="width: 43%; margin-right: 10px; margin-top: 10px;">25% D 50% M</div>
+
+
+                        <div class="dropsection draggable ui-widget-content" size="width25c width50c3 liveelement"
+                            pale="25"
+                            style="width: 43%; margin-right: 10px; margin-top: 10px; opacity: 0; pointer-events: none;">
+                            COMING SOON!</div>
+
                     </div>
 
 
-              
-          
-                
+                    <div class="width100c">
+
+                    <div class="dropsection draggable ui-widget-content unselectable-text"
+                        size="width20c width50c2 liveelement" pale="20"
+                        style="width: 43%; margin-right: 10px; margin-top: 10px;">20% D 100% M</div>
+
+
+                    <div class="dropsection draggable ui-widget-content unselectable-text"
+                        size="width20c width50c3 liveelement" pale="20" style="width: 43%; margin-top: 10px;">20% D 50%
+                        M</div>
+
+                    </div>
+
+                    <div class="simplelayout">Simple Layout</div>
+
+                </div>
 
 
             </div>
+
+
+            <div class="width100c">
+                <div class="addrow unselectable-text" style="height: 30px; border: 1px solid #ccc; text-align: center; width: 96%; margin-left: 1%; cursor: pointer; margin-bottom: 10px; line-height: 30px; border-radius: 5px; background-color: #666;">Click to Add a Row</div>
+     
+            </div>
+
 
 
 
@@ -1031,8 +1219,8 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
                 Select and replace (p) content -- This is an HTML Editor if you want to include html and links as well
                 <textarea id="fixthecode" type="text"
                     style="width: 100%; min-height: 200px; max-width: 100%;"></textarea>
-                <button id="submitnewcode">Update Section</button> or
-                <button class="deletecode">Delete Section</button>
+                <button class="unselectable-text" id="submitnewcode">Update Section</button> or
+                <button class="deletecode unselectable-text">Delete Section</button>
             </div>
 
 
@@ -1051,20 +1239,36 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
         -->
 
-            <div class="prod100 stage1"
-                style="background-color: #666; margin-top: 20px; margin-left: 0px;  width: 95%;">
-                <p style="margin-bottom: 5px;  margin-top: 0px;">Put Title text Here and click submit (h2)</p>
+            <div class="width100c openclose" openclose="titlebuilder-oc">
+                <div class="width100c unselectable-text" style="margin-left: -3%;"><span
+                        class="myindicator">+</span>&nbsp;&nbsp;&nbsp;Title Component <span
+                        class="mysmalltext">(H2)</span></div>
+            </div>
+
+            <div class="prod100 stage1 tools titlebuilder-oc" style="margin-top: 20px; margin-left: 0px;  width: 95%; margin-left: 2%; margin-top: -1%; margin-bottom: 0%;">
+                <p class="unselectable-text" style="margin-bottom: 5px;  margin-top: 0px;">Put Title text Here and click
+                    submit (h2)</p>
                 <input type="text" id="cinput1h2" placeholder="Title Info" style="max-width: 500px;">
                 <button class="simpleshow" id="cinput1-clickh2" style="margin-left: 5px;">Submit</button>
-                <button class="simplehide" id="cinput1-clickh2-comp" style="margin-left: 5px;">Submit Header Componant</button>
+                <button class="simplehide" id="cinput1-clickh2-comp" style="margin-left: 5px;">Submit Header
+                    Componant</button>
 
 
             </div>
 
-            <div class="prod100 stage1" id="imagebuilder"
-                style="background-color: #333; margin-top: 20px; margin-left: 0px;  width: 95%;">
-                <p style="margin-bottom: 5px; margin-top: 0px;">Enter the Product model number here -(no extension)</p>
-                <input type="text" id="cinput1" placeholder="Product img" style="max-width: 200px;">
+            <div class="width100c openclose" openclose="imagebuilder" >
+                <div class="width100c unselectable-text" style="margin-left: -3%;"><span
+                        class="myindicator">+</span>&nbsp;&nbsp;&nbsp;Image Component <span
+                        class="mysmalltext">(IMG)</span></div>
+            </div>
+
+
+            <div class="prod100 stage1 tools imagebuilder" id="imagebuilder"
+                style=" margin-top: 20px; margin-left: 0px;  width: 95%; margin-left: 2%;">
+                <p class="unselectable-text" style="margin-bottom: 5px; margin-top: 0px;">Enter the Product model number
+                    here -(no extension)</p>
+                <input type="text" id="cinput1" placeholder="Product img" style="max-width: 200px;"> -- Hit Enter after
+                typing
 
                 <select name="myDropdown" id="myDropdown">
                     <option value="Z_" selected>Image 1</option>
@@ -1090,117 +1294,119 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
                 <button id="cinput1-click" style="margin-left: 5px;">Submit</button><br><br>
                 <hr class="stage2a">
 
-<div class="width100c stage2a">
-    <span style="line-height: 38px;">Click here instead if you want to add additonal images to the content (100% / 50%
-        / 30%) across</span>
-</div>
+                <div class="width100c stage2a">
+                    <span style="line-height: 38px;">Click here instead if you want to add additonal images to the
+                        content (100% / 50%
+                        / 30%) across</span>
+                </div>
 
 
-           <div class="width50c" style="width: auto; margin-left: -7px;">
-                <select class="stage2a" name="myIMGwidth" id="myIMGwidth"
-                    style=" margin-top: -25px; margin-right: 10px;">
-                    <option value="width100c">&nbsp;&nbsp;Image 100% across</option>
-                    <option value="width50c">&nbsp;&nbsp;Image 50% Desktop 50% Mobile</option>
-                    <option value="width50c width50c2">&nbsp;&nbsp;Image 50% Desktop 100% Mobile</option>
-                    <option value="width30c">&nbsp;&nbsp;Image 30% across</option>
-                </select>
+                <div class="width50c" style="width: auto; margin-left: -7px;">
+                    <select class="stage2a" name="myIMGwidth" id="myIMGwidth"
+                        style=" margin-top: -25px; margin-right: 10px;">
+                        <option value="width100c">&nbsp;&nbsp;Image 100% across</option>
+                        <option value="width50c">&nbsp;&nbsp;Image 50% Desktop 50% Mobile</option>
+                        <option value="width50c width50c2">&nbsp;&nbsp;Image 50% Desktop 100% Mobile</option>
+                        <option value="width30c">&nbsp;&nbsp;Image 30% across</option>
+                    </select>
+                </div>
+                <div class="width50c" style="margin-left: 12px;font-size: 0.875rem;">
+
+                    <div class="mybuttonclass" id="cinput1-clickv2">Submit Image</div>
+
+
+                </div>
+                <div class="prod100 stage 2" id="largeimagepreview" style="margin-left: 0px; width: 96%;">
+                    <div class="width100c unselectable-text" style="margin-bottom: 5px;">Select Image for Component
+                    </div>
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="0" prefix="Z_">
+                        <span>Image 1</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="1" prefix="AZ1_">
+                        <span>Image 2</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="2" prefix="AZ2_">
+                        <span>Image 3</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="3" prefix="AZ3_">
+                        <span>Image 4</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="4" prefix="AZ4_">
+                        <span>Image 5</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="5" prefix="AZ5_">
+                        <span>Image 6</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="6" prefix="AZ6_">
+                        <span>Image 7</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="7" prefix="AZ7_">
+                        <span>Image 8</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="8" prefix="AZ8_">
+                        <span>Image 9</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="9" prefix="AZ9_">
+                        <span>Image 10</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="10" prefix="AZ10_">
+                        <span>Image 11</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="11" prefix="AZ11_">
+                        <span>Image 12</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="12" prefix="AZ12_">
+                        <span>Image 13</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="13" prefix="AZ13_">
+                        <span>Image 14</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="14" prefix="AZ14_">
+                        <span>Image 15</span>
+                    </div>
+
+                    <div class="promo16c">
+                        <img class="showthepreviewimage" src="#" num="15" prefix="">
+                        <span>Guide</span>
+                    </div>
+
+
+
+
+                </div>
+
+
             </div>
-            <div class="width50c" style="margin-left: 12px;font-size: 0.875rem;">
 
-<div class="mybuttonclass" id="cinput1-clickv2">Submit Image</div>
-
-                
-</div>
-
-
-            </div>
-
-<div class="prod100 stage 2" id="largeimagepreview" style="margin-left: 0px; width: 96%;">
-    <div class="width100c" style="margin-bottom: 5px;">Select Image for Component</div>
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="0" prefix="Z_">
-    <span>Image 1</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="1" prefix="AZ1_">
-    <span>Image 2</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="2" prefix="AZ2_">
-    <span>Image 3</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="3" prefix="AZ3_">
-    <span>Image 4</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="4" prefix="AZ4_">
-    <span>Image 5</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#"  num="5" prefix="AZ5_">
-    <span>Image 6</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#"  num="6" prefix="AZ6_">
-    <span>Image 7</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="7" prefix="AZ7_">
-    <span>Image 8</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="8" prefix="AZ8_">
-    <span>Image 9</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="9" prefix="AZ9_">
-    <span>Image 10</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="10" prefix="AZ10_">
-    <span>Image 11</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="11" prefix="AZ11_">
-    <span>Image 12</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="12" prefix="AZ12_">
-    <span>Image 13</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#" num="13" prefix="AZ13_">
-    <span>Image 14</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#"  num="14" prefix="AZ14_">
-    <span>Image 15</span>
-   </div>
-
-   <div class="promo16c">
-    <img class="showthepreviewimage" src="#"  num="15" prefix="">
-    <span>Guide</span>
-   </div>
-
-
-
-
-</div>
 
 
 
@@ -1213,11 +1419,18 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
 
 
+            <div class="width100c openclose" openclose="copybuilder">
+                <div class="width100c unselectable-text" style="margin-left: -3%;"><span
+                        class="myindicator">+</span>&nbsp;&nbsp;&nbsp;Text Component <span
+                        class="mysmalltext">(P)</span></div>
+            </div>
 
-            <div class="prod100 stage1"
-                style="background-color: #666; margin-top: 20px; margin-left: 0px;  width: 95%;">
 
-                <p style="margin-bottom: 5px; margin-top: 0px;">Put the paragraph text here and click submit -(p)
+
+            <div class="prod100 stage1 tools copybuilder" style=" margin-top: 20px; margin-left: 0px;  width: 95%; margin-left: 1%;">
+
+                <p class="unselectable-text" style="margin-bottom: 5px; margin-top: 0px;">Put the paragraph text here
+                    and click submit -(p)
                 </p>
 
 
@@ -1237,65 +1450,75 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
                 </select>
 
-                <button class="simpleshow" id="cinput3" type="submit" style="float: right; margin-right: 10px;">Add Copy</button>
-                <button class="simplehide" id="cinput3-comp" type="submit" style="float: right; margin-right: 10px;">Add Copy To Component</button>
+                <button class="simpleshow" id="cinput3" type="submit" style="float: right; margin-right: 10px;">Add
+                    Copy</button>
+                <button class="simplehide" id="cinput3-comp" type="submit" style="float: right; margin-right: 10px;">Add
+                    Copy To Component</button>
 
             </div>
 
 
-            <div class="prod100 stage1" style=" margin-top: 20px; margin-left: 0px;  width: 95%;">
+            <div class="width100c openclose" openclose="listbuilder">
+                <div class="width100c unselectable-text" style="margin-left: -3%;"><span
+                        class="myindicator">+</span>&nbsp;&nbsp;&nbsp;List Component <span
+                        class="mysmalltext">(LI)</span></div>
+            </div>
+
+
+
+            <div class="prod100 stage1 tools listbuilder" style=" margin-top: 20px; margin-left: 0px;  width: 95%; margin-left: 2%;">
 
 
                 <div class="width100c" style="margin-bottom: 20px;">
-                    <span style=" margin-right: 10px;">
 
-                        List Item Amount:
+                    <div class="width100c">
+                        List Title: &nbsp; <input id="listtitle-d" placeholder="List Title">
+                    </div>
 
-                    </span>
-                    <select name="mylistamount" id="mylistamount">
-                        <option value="1" selected>1 Item</option>
-                        <option value="2">2 Items</option>
-                        <option value="3">3 Items</option>
-                        <option value="4">4 Items</option>
-                        <option value="5">5 Items</option>
-                        <option value="6">6 Items</option>
-                        <option value="7">7 Items</option>
-                        <option value="8">8 Items</option>
-                        <option value="9">9 Items</option>
-                        <option value="10">10 Items</option>
-                    </select>
+                    <div class="width100c" style="margin-top: 15px;">
+                        <span class="unselectable-text" style=" margin-right: 10px;">
 
+                            List Amount:
+                            <select name="mylistamount" id="mylistamount">
+                                <option value="1" selected>1 Item</option>
+                                <option value="2">2 Items</option>
+                                <option value="3">3 Items</option>
+                                <option value="4">4 Items</option>
+                                <option value="5">5 Items</option>
+                                <option value="6">6 Items</option>
+                                <option value="7">7 Items</option>
+                                <option value="8">8 Items</option>
+                                <option value="9">9 Items</option>
+                                <option value="10">10 Items</option>
+                            </select>
 
-
-
-
+                        </span>
+                    </div>
 
                 </div>
 
-
-
                 <div class="width100c" style="margin-bottom: 20px;">
-
+                    List Items
                     <input type="text" class="lister" id="list1" placeholder="List Item 1"
-                        style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
+                        style="width: 80%;  margin-bottom: 5px;">
                     <input type="text" class="lister" id="list2" placeholder="List Item 2"
-                        style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
+                        style="width: 80%;  margin-bottom: 5px;">
                     <input type="text" class="lister" id="list3" placeholder="List Item 3"
-                        style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
+                        style="width: 80%;   margin-bottom: 5px;">
                     <input type="text" class="lister" id="list4" placeholder="List Item 4"
-                        style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
+                        style="width: 80%;   margin-bottom: 5px;">
                     <input type="text" class="lister" id="list5" placeholder="List Item 5"
-                        style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
+                        style="width: 80%;  margin-bottom: 5px;">
                     <input type="text" class="lister" id="list6" placeholder="List Item 6"
-                        style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
+                        style="width: 80%;  margin-bottom: 5px;">
                     <input type="text" class="lister" id="list7" placeholder="List Item 7"
-                        style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
+                        style="width: 80%;   margin-bottom: 5px;">
                     <input type="text" class="lister" id="list8" placeholder="List Item 8"
-                        style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
+                        style="width: 80%; margin-right: 40%;  margin-bottom: 5px;">
                     <input type="text" class="lister" id="list9" placeholder="List Item 9"
-                        style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
+                        style="width: 80%; margin-right: 40%;  margin-bottom: 5px;">
                     <input type="text" class="lister" id="list10" placeholder="List Item 10"
-                        style="max-width: 35%; margin-right: 40%; margin-left: 18.5%; margin-bottom: 5px;">
+                        style="width: 80%; margin-right: 40%; margin-bottom: 5px;">
 
                     <select name="mylistwidth" id="mylistwidth" style="float: right; margin-bottom: 5px;">
 
@@ -1321,10 +1544,13 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
 
 
+            <div class="width100c openclose" openclose="videocomponent">
+                <div class="width100c unselectable-text" style="margin-left: -3%;"><span
+                        class="myindicator">+</span>&nbsp;&nbsp;&nbsp;Video Player Component <span
+                        class="mysmalltext">(MP4)</span></div>
+            </div>
 
-
-            <div class="width100c videocomponent"
-                style="background-color: #666; width: 97%; padding-left: 2%; padding-bottom: 2%;">
+            <div class="width100c tools videocomponent" style=" width: 97%; padding-left: 2%; padding-bottom: 2%; margin-left: 0%;">
 
 
                 <div class="promo50">
@@ -1342,13 +1568,38 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
                 </div>
 
                 <div class="promo50">
-                    <button id="submitvideofile" style="margin-top: 15px; float: right; margin-right: 30px; ">Submit Video</button> 
+                    <button id="submitvideofile" style="margin-top: 15px; float: right; margin-right: 30px; ">Submit
+                        Video</button>
                 </div>
-                
-         
+
+
             </div>
 
+            <div class="width100c"
+                style="margin-top: 30px; background-color: #333; padding: 5px; width: 97%; padding-bottom: 5px;">
+                <div class="width100c unselectable-text" style="margin-bottom: 5px; padding-left: 15px;">Componet Editor
+                    and Copy Correction</div>
+                <textarea style="width: 94%; margin-left: 2%; margin-bottom: 5px;" name="myhtmleditor" id="myhtmleditor"
+                    cols="30" rows="10" placeholder="Click on a Component to Edit the HTML"></textarea>
+                <button id="EditandSubmitAL" class="unselectable-text" style="float: right; margin-right: 3%;"> Submit New Code</button>
+            </div>
 
+            <div class="prod100" style="background-color: #000; margin-left: 0px; margin-top: 20px; width: 97%;">Click
+                on Code To Copy to Clipboard</div>
+    
+            <div class="prod100 layout1 selectall"
+                style="background-color: #f7f7f7; color: #000;  margin-bottom: 20px; margin-left: 0px; width: 97%;">
+                &lt;link href="images/pim-content/occontent2024-v5.css?$staticlink$" rel="stylesheet" /> <br>
+                <span id="findthecode"></span>
+            </div>
+    
+    
+            <div class="prod100 layout2 selectall"
+                style="background-color: #f7f7f7; color: #000; margin-bottom: 20px; margin-left: 0px; width: 97%;">
+    
+                &lt;link href="images/pim-content/occontent2024-v5.css?$staticlink$" rel="stylesheet" /> <br>
+                <span id="findthecode2"></span>
+            </div>
 
         </div>
 
@@ -1362,12 +1613,32 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
                 <div class="prod100" style="margin-left: -20px; background-color: #333; padding-left: 23px; width: 99.5%; margin-top: -10px; -webkit-box-shadow:inset 0 0 3px 5px #241E1E;
                 box-shadow:inset 0 0 3px 5px #241E1E;">
-                    <div style="float: left;">Edit Mode </div>
+                    <div style="float: left; display: none;">Edit Mode </div>
                     <input type="checkbox" id="editmode" name="editmode"
-                        style="width: 10px; zoom: 2; margin-top: 0px; float: left;">
-                    <div style="float: left; margin-left: 40px;" class="mysort">Sortable On / Off </div>
-                    <input type="checkbox" id="mysort" name="mysort" class="mysort"
-                        style="width: 10px; zoom: 2; margin-top: 0px; float: left;">
+                        style="width: 10px; zoom: 2; margin-top: 0px; float: left; display: none;">
+                   
+                        <div style="float: left; margin-left: 10px;" class="mysort unselectable-text">
+                            <input type="checkbox" id="mysort" name="mysort" class="mysort"
+                            style="width: 10px; zoom: 2; margin-top: 0px; float: right;">          
+                            Sort / Reorder Rows On / Off   
+                    
+                      
+                    </div>
+
+
+                    <div style="float: left; margin-left: 10px;" class=" unselectable-text">
+                        <input type="checkbox" id="mytoolsview" name="mytoolsview" class="mytoolsview"
+                        style="width: 10px; zoom: 2; margin-top: 0px; float: right;">          
+                        Tools View On / Off  
+                
+                  
+                </div>
+
+
+
+
+
+                   
 
                     <button class="layoutbuttons" id="layout1reverse"
                         style="float: left; margin-right: 5px; font-size: 0.87rem; margin-left: 20px; margin-top: 5px; background-color: antiquewhite;">(reverse
@@ -1385,10 +1656,12 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
                         style="float: left; margin-right: 5px; font-size: 0.87rem; margin-left: 20px; margin-top: 5px; background-color: antiquewhite;">60%
                         / 40%</button>
 
-                    <button class="layoutbuttons" id="layout2" style="float: right; padding: 5px;">Advanced
+                    <button class="layoutbuttons" id="layout2"
+                        style="float: right; padding: 5px; display: none !important;">Advanced
                         Layout</button>
                     <button class="layoutbuttons" id="layout1"
-                        style="float: right; padding: 5px; margin-right: 5px;">Simple Layout</button>
+                        style="float: right; padding: 5px; margin-right: 5px; display: none !important;">Simple
+                        Layout</button>
                 </div>
             </div>
 
@@ -1422,12 +1695,12 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
 
 
-<div class="width100c stage2">
-    <div class="width50c" style="width: 60%;">Desktop View (Active)</div>
-    <div class="width50c" style="width: 30%;">Mobile View</div>
-</div>
+            <div class="width100c stage2">
+                <div class="width50c unselectable-text" style="width: 59%;">Desktop View (Active)</div>
+                <div class="width50c unselectable-text" style="width: 30%;">Mobile View</div>
+            </div>
 
-            <div id="pullthecode2" class="width50c layout2" style="background-color: #f7f7f7; color: #000; max-width: 99%; width: 55%;  margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 710px;
+            <div id="pullthecode2" class="width50c layout2" style="background-color: #f7f7f7; color: #000; max-width: 99%; width: 57%;  margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 710px;
                 position: relative;
                 overflow: auto;">
 
@@ -1441,23 +1714,23 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
             </div>
 
             <div class="width50c mymobile" id="mobilepreview2"
-                    style="max-height: 450px; width: 35%; margin-left: 5%;  overflow-y: scroll; overflow-x: hidden;">
-                </div>
+                style="max-height: 450px; width: 37%; margin-left: 2%;  overflow-y: auto; ">
+            </div>
 
 
 
             <div class="width100c">
                 <div class="width50c stage2">
-                   
+
                     <div class="width100c stage2" style="margin-top: 10px; margin-top: 10px;
     background-color: #666;
     padding: 10px;
     padding-right: 0px;
     width: 97%;
     margin-right: 3%;">
- <div class="width100c" style="margin-bottom: 10px;">Component Options :</div>
+                        <div class="width100c unselectable-text" style="margin-bottom: 10px;">Component Options :</div>
 
-                        <button id="addrow">Add a Row</button>
+                        <button class="addrow" id="addrow">Add a Row</button>
                         <button id="clearsection">Empty Component</button>
                         <button id="selectionclear">Clear Selection</button>
                         <br><br>
@@ -1468,7 +1741,7 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
                 </div>
 
                 <div class="width50c expand">
-                   
+
                     <div class="width100c" style="margin-top: 10px; margin-top: 10px;
     background-color: #666;
     padding: 10px;
@@ -1476,7 +1749,7 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
     width: 97%;
     margin-right: 3%;">
 
-<div class="width100c" style="margin-bottom: 10px;">Text Options :</div>
+                        <div class="width100c unselectable-text" style="margin-bottom: 10px;">Text Options :</div>
 
                         <button class="texttype" value="strong"><strong>Strong</strong></button> :
                         <button class="texttype" value="i"><i>italic</i></button> :
@@ -1488,14 +1761,32 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
                         <button class="texttype" value="sup" style="font-size: 0.8rem;"> sup</button>
 
 
-<div class="width100c" style="margin-top: 10px;">
-   <div class="width100c" style="margin-bottom: 5px;">
-   Text Align Options (p) :
-   </div>
-<button class="textaligner" cssadd='left' >Text Align: Left</button>
-<button class="textaligner" cssadd='center'>Text Align: Center</button>
-<button class="textaligner" cssadd='right'>Text Align: Right</button>
-</div>
+                        <div class="width100c" style="margin-top: 10px;">
+                            <div class="width100c" style="margin-bottom: 5px;">
+                                Text Align Options (p) :
+                            </div>
+                            <button class="textaligner" style="width: 31%;font-size: 0.85em" cssadd='left'>Left</button>
+                            <button class="textaligner" style="width: 31%;font-size: 0.85em"
+                                cssadd='center'>Center</button>
+                            <button class="textaligner" style="width: 31%;font-size: 0.85em"
+                                cssadd='right'>Right</button>
+
+
+                                <select name="textaligner2" id="textaligner2" style="margin-top: 10px;">
+                                    <option value="addpadding0" >Add Top Margin 0px</option>
+                                    <option value="addpadding10" >Add Top Margin 10px</option>
+                                    <option value="addpadding20" >Add Top Margin 20px</option>
+                                    <option value="addpadding40">Add Top Margin 40px</option>
+                                    <option value="addpadding60">Add Top Margin 60px</option>
+                                    <option value="addpadding80">Add Top Margin 80px</option>
+                                    <option value="addpadding100">Add Top Margin 100px</option>
+                                </select>
+
+                                <button class="textaligner3" style="width: 31%;font-size: 0.85em"
+                                cssadd='<br>'>Line Break</button>
+
+
+                        </div>
 
 
                     </div>
@@ -1517,19 +1808,32 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
             <div class="prod100 stage1"
                 style="background-color: #000; margin-top: 20px; margin-left: 0px;  width: 97%;">
-                <p style="margin-bottom: 5px;  margin-top: 0px;">Create Links Here: (Put in link first THEN select text)
+                <p class="unselectable-text" style="margin-bottom: 5px;  margin-top: 0px;">Create Links Here: (Put in
+                    link first THEN select text)
                 </p>
 
                 <div class="width80c">
-                <input id="whatsthelink" type="text" placeholder="text link" style="width: 100%;">
-            </div>
-            <div class="width20c">
-                <button id="linkmaker" style="padding: 5px; margin-left: 15px; padding-bottom: 3px;">Convert to Link</button>
-            </div>
+                    <input id="whatsthelink" type="text" placeholder="text link" style="width: 100%;">
+                </div>
+                <div class="width20c">
+                    <button id="linkmaker" style="padding: 5px; margin-left: 15px; padding-bottom: 3px;">Convert to
+                        Link</button>
+                </div>
             </div>
 
             <div class="prod100" id="message2" style="text-align: center; font-weight: bold; margin-left: 0px;">BAD
                 LINK, RELATIVE LINKS ONLY!</div>
+
+
+                <div class="width100c" style="margin-left: 10px; margin-top: 10px; margin-left: 0%;  width: 97%; padding-left: 2%; padding-bottom: 10px; padding-top: 5px;">
+                    <div class="width100c" style="margin-left: 0px; margin-top: 0px; margin-bottom: 5px;">Legend:</div>
+                
+                <div class="width20c" style="font-size: 0.8em;"><div style="width: 80%; height: 50px; background-color: #666;"></div> An EMPTY Row</div>
+                <div class="width20c"  style="font-size: 0.8em;"><div style="width: 80%; height: 50px; background-color: #034694"></div>A SELECTED Row</div>
+                <div class="width20c"  style="font-size: 0.8em;"><div style="width: 80%; height: 50px; background-color: #ffc1c1"></div> An Empty Container</div>
+                <div class="width20c"  style="font-size: 0.8em;"><div style="width: 80%; height: 50px; background-color:yellow"></div> Container Ready for a Component</div>
+               
+                </div>
 
             <div class="width100c" style="margin-top: 20px; ">
                 <div class="width100c" style="margin-bottom: 20px;">
@@ -1545,9 +1849,11 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
                 <div class="width50c mymobile" id="mobilepreview"
                     style="max-height: 450px; overflow-y: scroll; overflow-x: hidden;">
                 </div>
-                
+
             </div>
 
+            
+
 
         </div>
 
@@ -1559,22 +1865,7 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
 
 
-        <div class="prod100" style="background-color: #000; margin-left: 0px; margin-top: 20px; width: 97%;">Click
-            on Code To Copy to Clipboard</div>
-
-        <div class="prod100 layout1 selectall"
-            style="background-color: #f7f7f7; color: #000;  margin-bottom: 20px; margin-left: 0px; width: 97%;">
-            &lt;link href="images/pim-content/occontent2024-v3.css?$staticlink$" rel="stylesheet" /> <br>
-            <span id="findthecode"></span>
-        </div>
-
-
-        <div class="prod100 layout2 selectall"
-            style="background-color: #f7f7f7; color: #000; margin-bottom: 20px; margin-left: 0px; width: 97%;">
-
-            &lt;link href="images/pim-content/occontent2024-v3.css?$staticlink$" rel="stylesheet" /> <br>
-            <span id="findthecode2"></span>
-        </div>
+      
 
     </div>
 
@@ -1593,6 +1884,10 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 </body>
 
 <script>
+    
+   
+
+
     createnewlist = 1
     listaddition = 0
     layoutmode = 0
@@ -1607,6 +1902,7 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
         $('#pullthecode #cinputval1').removeAttr('src')
         $('#findthecode').text($('#pullthecode').html());
         $('#findthecode2').text($('#pullthecode2').html());
+        $('#myhtmleditor').val($('.interedit').html())
 
 
 
@@ -1617,7 +1913,8 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
         var wordsToRemove = ['liveelement', 'in910', 'layoutpale', 'layoutpale50', 'liverow', 'droppable',
             'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'ui-', 'layoutpale100', ' ui-',
             'layoutpale30', 'layoutpale20', , 'layoutpale33', 'onblock', 'interedit',
-            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/' , 'promoimg21'
+            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
+            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle'
         ];
 
         // Loop through the words and remove them from the content
@@ -1694,7 +1991,7 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
         thevidpostername =
             'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/' +
             $('#videoposter').val() + '.jpg'
-        completevideocode = '<video aria-label="Video Player" class="videoPlayer" controls="" poster="' +
+        completevideocode = '<video aria-label="Video Player" class="videoPlayer" controls poster="' +
             thevidpostername + '" tabindex="0"><source src="' + thevidfilename +
             '" type="video/mp4"><track kind="captions" label="English" src="' + thevidcaptionname +
             '" srclang="en">Your browser does not support the video tag.</video>'
@@ -1736,6 +2033,7 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
         var list8 = '';
         var list9 = '';
         var list10 = '';
+        var listtitle = $('#listtitle-d').val();
         if ($('#list1').is(':visible')) {
             list1 = '<li>' + $('#list1').val() + '</li>';
         }
@@ -1780,24 +2078,28 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
         if (createnewlist === 1) {
 
-
-            if (layoutmode === 1) {
+            if(listtitle === '') {
                 $('.interedit').append('<ul id="listcontent' + listaddition + '" class="in910 ' + $(
-                        '#mylistwidth').val() + '"> ' + list1 + list2 + list3 + list4 + list5 + list6 +
-                    list7 +
-                    list8 + list9 + list10 + ' </ul>').removeClass('.interedit')
-                layoutmode = 0
+                    '#mylistwidth').val() + '"> ' + list1 + list2 + list3 + list4 + list5 + list6 +
+                list7 +
+                list8 + list9 + list10 + ' </ul>').removeClass('.interedit')
             } else {
-
-                $('.informationcontent').append('<ul id="listcontent' + listaddition + '" class="in910 ' + $(
-                        '#mylistwidth').val() + '"> ' + list1 + list2 + list3 + list4 + list5 + list6 +
-                    list7 +
-                    list8 + list9 + list10 + ' </ul>')
-
+                $('.interedit').append('<h3 style="margin-bottom:5px">'+listtitle+'</h3><ul id="listcontent' + listaddition + '" class="in910 ' + $(
+                    '#mylistwidth').val() + '"> ' + list1 + list2 + list3 + list4 + list5 + list6 +
+                list7 +
+                list8 + list9 + list10 + ' </ul>').removeClass('.interedit')
             }
+
+
+            
+
+            layoutmode = 0
             listaddition++
             createnewlist = 0
+
+
         } else {
+           
             editlistneg = '#listcontent' + (listaddition - 1)
             $(editlistneg).html('' + list1 + list2 + list3 + list4 + list5 + list6 + list7 + list8 + list9 +
                 list10 + '')
@@ -1806,6 +2108,7 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
         loadnewcontent()
     })
+
 
 
 
@@ -1951,13 +2254,14 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
 
     document.getElementById('cinput1').addEventListener('change', function () {
-$('#largeimagepreview').slideDown()
+        $('#largeimagepreview').slideDown()
 
-$('.showthepreviewimage').each(function() {
-    previewurld = 'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw4441bf24/images/hires/'
-    imageprefix = $(this).attr('prefix');
-    $(this).attr('src' , previewurld+imageprefix+$('#cinput1').val()+'.jpg')
-})
+        $('.showthepreviewimage').each(function () {
+            previewurld =
+                'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw4441bf24/images/hires/'
+            imageprefix = $(this).attr('prefix');
+            $(this).attr('src', previewurld + imageprefix + $('#cinput1').val() + '.jpg')
+        })
     })
 
 
@@ -1973,6 +2277,21 @@ $('.showthepreviewimage').each(function() {
             $(".sortable").sortable();
             $(".sortable").sortable('disable');
 
+        }
+
+
+    })
+
+
+
+    document.getElementById('mytoolsview').addEventListener('change', function () {
+        if (this.checked) {
+       $('#programming').fadeOut()
+       $('#resizable-div').delay(500).animate({ width: '100%' }, 500);
+        } else {
+            $('#resizable-div').css('width' , '50%')
+            $('#programming').fadeIn()
+            
         }
 
 
@@ -2028,7 +2347,33 @@ $('.showthepreviewimage').each(function() {
     $(document).ready(function () {
         var mysize
 
-        $('#addrow').on('click', function () {
+        $('.openclose').on('click', function () {
+
+            var openclose = $(this).attr('openclose');
+
+
+            if ($('.' + openclose).is(':visible')) {
+
+                $('.' + openclose).slideUp();
+                $(this).children('div').children('span.myindicator').text('+')
+            } else {
+
+                $('.' + openclose).slideDown();
+                $(this).children('div').children('span.myindicator').text('-')
+            }
+            $('.tools').not('.' + openclose).hide()
+
+
+            $('.openclose').css('background-color', 'transparent');
+            $(this).css('background-color', '#666');
+
+        });
+
+
+
+
+
+        $('.addrow').on('click', function () {
             $('.dropsection').slideDown()
 
             $('.layoutbuilder').append(
@@ -2040,6 +2385,7 @@ $('.showthepreviewimage').each(function() {
             })
 
 
+
             $(".draggable").draggable({
                 revert: "valid"
             });
@@ -2048,12 +2394,21 @@ $('.showthepreviewimage').each(function() {
                 drop: function (event, ui) {
                     var mysize = $(ui.draggable).attr('size');
                     var mypale = $(ui.draggable).attr('pale');
+                    $('.interedit').removeClass('interedit')
                     if (mysize !== undefined && mysize !== "") {
                         $(this).append('<div class="' + mysize +
-                            ' in910 layoutpale layoutpale' + mypale + '"></div>');
+                            ' in910 layoutpale interedit layoutpale' + mypale + '"></div>');
 
                     }
+
+
+
+
+
+
                     $('.liveelement').on('click', function () {
+
+
                         $('.liveelement').removeClass('interedit')
                         $(this).addClass('interedit')
                         //$('#fixthecode').val($(this).html())
@@ -2062,9 +2417,23 @@ $('.showthepreviewimage').each(function() {
                             loadnewcontent()
                         })
 
-$('#selectionclear').on('click' , function() {
-    $('.interedit').removeClass('interedit')
-})
+                        $('#selectionclear').on('click', function () {
+                            $('.interedit').removeClass('interedit')
+                        })
+
+                        $('.interedit').on('click', function () {
+                            editorcopy = $(this).html()
+
+                            $('#myhtmleditor').val(editorcopy)
+                            $('#EditandSubmitAL').show()
+
+                        })
+
+                        $('#EditandSubmitAL').on('click', function () {
+                            $('.interedit').html($('#myhtmleditor').val())
+                            loadnewcontent()
+                        })
+
 
 
                         layoutmode = 1
@@ -2106,21 +2475,33 @@ $('#selectionclear').on('click' , function() {
 
 
 
-        $('.showthepreviewimage').on('click' , function() {
+        $('.showthepreviewimage').on('click', function () {
             var select = document.getElementById("myDropdown");
             select.selectedIndex = $(this).attr('num');
             imageselect = $(this).attr('prefix')
             imagename00 = $('#cinput1').val()
-            imagedata = '<div class="' + $('#myIMGwidth').val() +
-                '"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw4441bf24/images/hires/' +
-                imageselect+imagename00+'.jpg?sw=400&sh=400&sm=fit" alt="' + $(
-                    '#cinput1b').val() + '"></div>'
+
+            if ($('#cinput1b').val() == '') {
+
+                $('.imagemessage').slideDown().delay(2000).slideUp()
+                return false
+            } else {
+
+                imagedata = '<div class="' + $('#myIMGwidth').val() +
+                    '"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw4441bf24/images/hires/' +
+                    imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + $(
+                        '#cinput1b').val() + '"></div>'
 
 
-            $('.interedit').html(imagedata).removeClass('.interedit')
-            loadnewcontent()
+                $('.interedit').html(imagedata).removeClass('.interedit')
+                loadnewcontent()
+
+            }
+
+
+
         })
-      
+
 
         $('.layoutbuttons').on('click', function () {
             $('.layoutbuttons').css('background-color', '#333').css('color', '#fff')
@@ -2133,15 +2514,15 @@ $('#selectionclear').on('click' , function() {
         })
 
 
-        $('#cinput1-clickh2-comp').on('click' , function() {
+        $('#cinput1-clickh2-comp').on('click', function () {
 
             var min = 1000;
             var max = 9999;
             var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
             $('.interedit').append(
-                    '<div class="pd-header-tag width100c"><h2 class="t-h4-style  c-blue in910" id="ocinsertcontent' +
-                    randomFourDigit + '">' + $('#cinput1h2').val() + '</h2></div>').removeClass(
-                    'interedit')
+                '<div class="pd-header-tag width100c"><h2 class="t-h4-style  c-blue in910" id="ocinsertcontent' +
+                randomFourDigit + '">' + $('#cinput1h2').val() + '</h2></div>').removeClass(
+                'interedit')
 
             loadnewcontent()
             $('#cinput1h2').val('')
@@ -2191,11 +2572,11 @@ $('#selectionclear').on('click' , function() {
             $('#mobilepreview2').hide()
             $('#mylistwidth').show()
             $('.stage2a').show()
-            $('.expand').css('width' , '100%')
-$('#cinput1-clickv2').show()
-$('#myDropdown').show()
-$('.simplehide').hide()
-$('.simpleshow').show()
+            $('.expand').css('width', '100%')
+            $('#cinput1-clickv2').show()
+            $('#myDropdown').show()
+            $('.simplehide').hide()
+            $('.simpleshow').show()
 
             //$('#showmobile2').show()
             //$('#showmobile').hide()
@@ -2203,7 +2584,7 @@ $('.simpleshow').show()
 
 
 
-            $('a').on('click', function (e) {
+            $('a').not('.outsidelink').on('click', function (e) {
                 e.preventDefault();
                 currentAnchor = this; // Store the current anchor element
                 wheretogo = $(this).attr('href');
@@ -2213,7 +2594,7 @@ $('.simpleshow').show()
         })
 
         $('#layout2').on('click', function () {
-            $('.videocomponent').show()
+
             $('.stage2').slideDown()
             $('.mysort').show()
             $('.layout2').show()
@@ -2226,7 +2607,7 @@ $('.simpleshow').show()
             $('#layout160').hide()
             $('#mylistwidth').hide()
             $('.stage2a').hide()
-            $('.expand').css('width' , '48%')
+            $('.expand').css('width', '48%')
             $('#cinput1-clickv2').hide()
             $('#myDropdown').hide()
             //  $('#showmobile2').show()
@@ -2240,7 +2621,7 @@ $('.simpleshow').show()
             $('#mobilepreview2').show()
             $('#mobilepreview').hide()
 
-            $('a').on('click', function (e) {
+            $('a').not('.outsidelink').on('click', function (e) {
                 e.preventDefault();
                 currentAnchor = this; // Store the current anchor element
                 wheretogo = $(this).attr('href');
@@ -2286,16 +2667,16 @@ $('.simpleshow').show()
 
 
 
-$('#cinput3-comp').on('click' , function() {
-    var min = 1000;
+        $('#cinput3-comp').on('click', function () {
+            var min = 1000;
             var max = 9999;
             var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
             $('.interedit').append('<p>' + $('#cinput3a').val() + '</p>').removeClass('interedit');
-                $('#cinput3a').val('')
-                layoutmode = 0
-                loadnewcontent()
+            $('#cinput3a').val('')
+            layoutmode = 0
+            loadnewcontent()
 
-                $('a').on('click', function (e) {
+            $('a').not('outsidelink').on('click', function (e) {
                 e.preventDefault();
                 currentAnchor = this; // Store the current anchor element
                 wheretogo = $(this).attr('href');
@@ -2303,7 +2684,7 @@ $('#cinput3-comp').on('click' , function() {
             });
 
 
-})
+        })
 
 
 
@@ -2328,7 +2709,7 @@ $('#cinput3-comp').on('click' , function() {
 
             loadnewcontent()
 
-            $('a').on('click', function (e) {
+            $('a').not('.outsidelink').on('click', function (e) {
                 e.preventDefault();
                 currentAnchor = this; // Store the current anchor element
                 wheretogo = $(this).attr('href');
@@ -2492,12 +2873,15 @@ $('#cinput3-comp').on('click' , function() {
             loadnewcontent()
 
 
-            $('a').on('click', function (e) {
+           
+            $('a').not('.outsidelink').on('click', function (e) {
                 e.preventDefault();
                 currentAnchor = this; // Store the current anchor element
                 wheretogo = $(this).attr('href');
                 openModal('https://www.pcrichard.com' + wheretogo);
             });
+
+
         });
 
         $('#closediag').on('click', function () {
@@ -2508,11 +2892,55 @@ $('#cinput3-comp').on('click' , function() {
         //--------------------
 
 
-        $('.textaligner').on('click' , function() {
+        $('.textaligner').on('click', function () {
             cssadd = $(this).attr('cssadd')
-    $('.interedit').children('p').attr('style' , 'text-align:'+cssadd+'')
-    loadnewcontent()
-         })
+            $('.interedit').children('p').attr('style', 'text-align:' + cssadd + '')
+            $('.interedit').children('.pd-header-tag').children('h2').attr('style', 'text-align:' +
+                cssadd + '')
+            editorcopy = $('.interedit').html()
+            $('#myhtmleditor').val(editorcopy)
+            loadnewcontent()
+        })
+
+        $('#textaligner2').on('change', function () {
+         
+            cssadd = $(this).val()
+            $('.interedit').children('p').removeClass('addpadding0').removeClass('addpadding10').removeClass('addpadding20').removeClass('addpadding40').removeClass('addpadding60').removeClass('addpadding80').removeClass('addpadding100').addClass(cssadd)
+            $('.interedit').children('.pd-header-tag').children('h2').removeClass('addpadding0').removeClass('addpadding10').removeClass('addpadding20').removeClass('addpadding40').removeClass('addpadding60').removeClass('addpadding80').removeClass('addpadding100').addClass(cssadd)
+            editorcopy = $('.interedit').html()
+            $('#myhtmleditor').val(editorcopy)
+            loadnewcontent()
+        })
+
+
+        $('.textaligner3').on('click', function() {
+        // Get the selection object
+        var selection = window.getSelection();
+
+        if (selection.rangeCount > 0) {
+            // Get the selected range
+            var range = selection.getRangeAt(0);
+
+            // Create a <br> element
+            var brElement = document.createElement('br');
+
+            // Insert the <br> element after the selected text
+            range.insertNode(brElement);
+
+            // Normalize the content to ensure proper structure
+            $('.interedit').contents().filter(function() {
+                return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
+            }).wrap('<p></p>');
+        }
+
+        $('#myhtmleditor').val($('.interedit').html());
+        loadnewcontent();
+    });
+
+
+
+
+
 
 
         $('.selectall').on('click', function () {
@@ -2550,4 +2978,6 @@ $('#cinput3-comp').on('click' , function() {
         )
 
     });
+
+   
 </script>
