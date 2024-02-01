@@ -1084,6 +1084,30 @@ ul , ol {
 
 
 
+<style>
+
+.fullscreend {
+    position: absolute;
+    background-color: #333;
+    z-index: 999999999999999;
+    width: 24%;
+    max-height: 669px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: 400px;
+    top: 60px;
+}
+
+.mymobile .informationcontent {
+    min-height: 310px;
+}
+
+
+</style>
+
+
+
+
 </head>
 
 <body>
@@ -1120,7 +1144,7 @@ ul , ol {
                 Restart</button>
 
 
-            <div class="prod100 stage2 " style="margin-left: 0px;">
+            <div class="prod100 stage2 hideinfullscreen" style="margin-left: 0px;">
 
                 <div class="width100c">
                     <p class="unselectable-text" style="margin-bottom: 10px;  margin-top: 0px;">Layout Builder:
@@ -1146,7 +1170,7 @@ ul , ol {
 
 
                         <div class="dropsection draggable ui-widget-content unselectable-text"
-                            size="width80c width50c2 liveelement" pale="80" style="width: 44%; margin-left: -5px;">80%
+                            size="width80c  liveelement" pale="80" style="width: 44%; margin-left: -5px;">80%
                         </div>
 
 
@@ -1185,26 +1209,30 @@ ul , ol {
                         size="width33c width50c3  liveelement" pale="33" style="width: 44%; 
 font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
-                    <div class="width100c">
-                        <div class="dropsection draggable ui-widget-content unselectable-text"
-                            size="width25c width50c3 liveelement unselectable-text" pale="25"
-                            style="width: 43%; margin-right: 10px; margin-top: 10px;">25% D 50% M</div>
+                    <div class="width100c" style="background-color: #ccc; padding-top: 10px; padding-bottom: 10px;margin-top: 10px;">
+                    <div class="width100c" style="padding-bottom: 10px; color: #000; margin-bottom: -15px; padding-left: 5px;"> 20/80 Desktop 100% Mobile</div>
 
 
-                        <div class="dropsection draggable ui-widget-content" size="width25c width50c3 liveelement"
+                        <div class="dropsection draggable ui-widget-content" size="width80c width50c2 liveelement"
                             pale="25"
-                            style="width: 43%; margin-right: 10px; margin-top: 10px; opacity: 0; pointer-events: none;">
-                            COMING SOON!</div>
+                            style="width: 80%; margin-right: 10px; margin-top: 10px; ">
+                           80% D 100% M</div>
+
+                           <div class="dropsection draggable ui-widget-content unselectable-text"
+                           size="width20c width50c2 liveelement" pale="20"
+                           style="width: 43%; margin-right: 10px; margin-top: 10px;">20% D 100% M</div>
+
+                          
 
                     </div>
 
 
                     <div class="width100c">
 
+                       
                         <div class="dropsection draggable ui-widget-content unselectable-text"
-                            size="width20c width50c2 liveelement" pale="20"
-                            style="width: 43%; margin-right: 10px; margin-top: 10px;">20% D 100% M</div>
-
+                        size="width25c width50c3 liveelement unselectable-text" pale="25"
+                        style="width: 43%; margin-right: 10px; margin-top: 10px;">25% D 50% M</div>
 
                         <div class="dropsection draggable ui-widget-content unselectable-text"
                             size="width20c width50c3 liveelement" pale="20" style="width: 43%; margin-top: 10px;">20% D
@@ -1716,11 +1744,12 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
             <div class="prod100" style="margin: 0px; width: 97%;">
 
-                <div class="prod100" style="margin-left: -20px; background-color: #333; padding-left: 23px; width: 99.5%; margin-top: -10px; -webkit-box-shadow:inset 0 0 3px 5px #241E1E;
-                box-shadow:inset 0 0 3px 5px #241E1E;">
+                <div class="prod100" style="padding-left: 23px; margin-left: 0px; width: 100%; margin-top: -10px; border-bottom: 1px solid #ccc;">
                     <div style="float: left; display: none;">Edit Mode </div>
                     <input type="checkbox" id="editmode" name="editmode"
                         style="width: 10px; zoom: 2; margin-top: 0px; float: left; display: none;">
+
+                        <div class="hamburger" style="width: 30px; height: 30px; background-color: #fff; float: left; cursor: pointer; display: none;">fff</div>
 
                     <div style="float: left; margin-left: 10px;" class="mysort unselectable-text">
                         <input type="checkbox" id="mysort" name="mysort" class="mysort"
@@ -1734,7 +1763,7 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
                     <div style="float: left; margin-left: 10px;" class=" unselectable-text">
                         <input type="checkbox" id="mytoolsview" name="mytoolsview" class="mytoolsview"
                             style="width: 10px; zoom: 2; margin-top: 0px; float: right;">
-                        Tools View On / Off
+                        Fullsreeen On / Off
 
 
                     </div>
@@ -1825,9 +1854,9 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
 
             <div class="width100c">
-                <div class="width50c stage2">
+                <div class="width50c stage2 fullscreenmode">
 
-                    <div class="width100c stage2" style="margin-top: 10px; margin-top: 10px;
+                    <div class="width100c stage2 " style="margin-top: 10px; margin-top: 10px;
     background-color: #666;
     padding: 10px;
     padding-right: 0px;
@@ -1884,7 +1913,7 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
                 </div>
 
 
-                <div class="width100c" style="margin-top: 10px; margin-left: 1%; background-color: #666; padding: 1%; width: 97%;">
+                <div class="width100c fullscreenmode" style="margin-top: 10px; margin-left: 1%; background-color: #666; padding: 1%; width: 97%;">
                     <div class="width100c" style="margin-bottom: 5px;">
                         Text Align Options (p) :
                     </div>
@@ -1926,9 +1955,9 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
             
 
 
-            <div class="width100c"
+            <div id="legend" class="width100c"
                 style="margin-left: 10px; margin-top: 10px; margin-left: 0%;  width: 97%; padding-left: 2%; padding-bottom: 10px; padding-top: 5px;">
-                <div class="width100c" style="margin-left: 0px; margin-top: 0px; margin-bottom: 5px;">Legend:</div>
+                <div class="width100c" style="margin-left: 0px; margin-top: 0px; margin-bottom: 5px;">Element Color Legend:</div>
 
                 <div class="width20c" style="font-size: 0.8em;">
                     <div style="width: 80%; height: 50px; background-color: #666;"></div> An EMPTY Row
@@ -2272,14 +2301,27 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
     document.getElementById('mytoolsview').addEventListener('change', function () {
         if (this.checked) {
-            $('#programming').fadeOut()
+            $('#programming').addClass('fullscreend').hide()
+            $(' #pullthecode2').hide()
+$('.fullscreenmode').css('padding' , '0px ').css('margin-left' , '0px')
+
             $('#resizable-div').delay(500).animate({
                 width: '100%'
             }, 500);
+$('#legend').hide()
+$('.hamburger').show()
+$('.hideinfullscreen').hide()
+$('.mymobile , #pullthecode2').css('float' , 'right')
+$(' #pullthecode2').css('width' , '70%').show()
         } else {
+            $('.hamburger').hide()
+            $('.fullscreenmode').css('padding' , '1% ')
             $('#resizable-div').css('width', '50%')
-            $('#programming').fadeIn()
-
+            $('#programming').removeClass('fullscreend').fadeIn()
+            $('#legend').show()
+            $('.hideinfullscreen').show()
+            $('.mymobile , #pullthecode2').css('float' , 'left')
+            $(' #pullthecode2').css('width' , '57%')
         }
 
 
@@ -2376,6 +2418,10 @@ font-size: 0.8rem; margin-left: -5px;">33% D 50% M</div>
 
 
 
+
+        $('.hamburger').on('click', function() {
+            $('#programming').slideToggle()
+        })
 
 
         $('.addrow').on('click', function () {
