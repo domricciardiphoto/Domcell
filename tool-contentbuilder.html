@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="global-style.css"/>
     <title>Domcell 2023</title>
    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    
 
 <style>
     .popup {
@@ -34,14 +34,106 @@
     border: none;
     min-height: 1000px;
     height: 92vh;
-    padding-top: 42px;
+    padding-top: 0px;
 }
 
+
+
+
+.tab {
+    float: left;
+    width: auto;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #f7f7f7;
+    margin-right: .5%;
+    font-size: 0.875rem;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    opacity: 1;
+}
+
+.tab:hover {
+opacity: 0.7;
+
+}
+
+.tabselected {
+    
+}
+
+
+.width100c {
+    width: 100%;
+    float: left;
+}
+
+.myclostab {
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.myclostab:hover {
+    color: #fff;
+    background-color: red;
+    padding: 1px;
+}
+
+/* Style the modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 15%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 </style>
 
 </head>
 
 <body>
+
+    <div id="confirmDialog" class="modal" style="display:none;">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Are You Sure You want to Delete?</p>
+          <button id="yesBtn">Yes</button>
+          <button id="noBtn">No</button>
+        </div>
+      </div>
    
 
     <div id="popup" class="popup" >
@@ -76,10 +168,26 @@
 
       
     </div>
+
+<div class="width100c" style="border-bottom: 2px solid #f7f7f7; margin-left: .5%; width: 98%; margin-top: 53px;padding-top:0px; float: left;">
+    <div id="tabinterface"  >
+        <div class="tab unselectable-text" interface="0"><span class="changetext" style="margin-right:10px">Untitled</span> <span class="myclostab">X</span></div>
+    </div>
+    <div id="addwindow" class="tab unselectable-text" style="background-color: transparent; color: #fff; float: left;">+</div>
+</div>
+  
    
     <div class="promo100 toolcontent">
-        <embed class="myloadedtools" src="overviewcontent-builder.html"></embed>
+        
+        <embed  id="interface0"  class="myloadedtools" src="overviewcontent-builder.html"></embed>
+    
     </div>
+
+
+  
+
+
+
     <div id="footer" class="promo100 footer"></div>
 
 
@@ -90,7 +198,7 @@
 <script src="global.js"></script>
 
 <script>
-
+var interface = 0
     let hoverTimer;
     const element = document.querySelector('#footer');
     const popup = document.querySelector('#popup');
@@ -143,7 +251,197 @@
         tick();
     }
 
+
+
+    document.querySelectorAll('.tab:not(#addwindow)').forEach(tab => {
+  tab.addEventListener('click', function() {
+    // Hide all elements with the class 'myloadedtools'
+    document.querySelectorAll('.myloadedtools').forEach(el => {
+      el.style.display = 'none';
+    });
+
+    // Show the specific element with id 'interface' concatenated with the 'interface' attribute of the clicked tab
+    const interfaceId = this.getAttribute('interface');
+    const interfaceElement = document.getElementById('interface' + interfaceId);
+    if (interfaceElement) {
+      interfaceElement.style.display = 'block';
+    }
+  });
+}); 
+
+
+
+
+
+// Assuming 'interface' is a global variable initialized somewhere in your script
+let interfaceCount = 0; // Replace this with the correct initial value if different
+
+document.getElementById('addwindow').addEventListener('click', function() {
+  interfaceCount++;
+
+  // Hide all elements with the class 'myloadedtools'
+  document.querySelectorAll('.myloadedtools').forEach(el => {
+    el.style.display = 'none';
+  });
+
+  // Prepend a new div to the 'tabinterface'
+  const tabInterface = document.getElementById('tabinterface');
+  const newTab = document.createElement('div');
+  newTab.className = 'tab unselectable-text';
+  newTab.setAttribute('interface', interfaceCount);
+  newTab.innerHTML = '<span class="changetext" style="margin-right:10px">Untitled</span> <span class="myclostab">X</span>';
+  tabInterface.append(newTab);
+
+  // Append a new embed element to the 'toolcontent'
+  const toolContent = document.querySelector('.toolcontent');
+  const embed = document.createElement('embed');
+  embed.id = 'interface' + interfaceCount;
+  embed.className = 'myloadedtools';
+  embed.src = 'overviewcontent-builder.html';
+  toolContent.appendChild(embed);
+  
+
+  // Add click event to all tabs except 'addwindow'
+  document.querySelectorAll('.tab:not(#addwindow)').forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Reset styles for all tabs
+      document.querySelectorAll('.tab').forEach(el => {
+        el.style.backgroundColor = '#f7f7f7';
+        el.style.color = '#000';
+      });
+
+      // Hide all '.myloadedtools' elements
+      document.querySelectorAll('.myloadedtools').forEach(el => {
+        el.style.display = 'none';
+      });
+
+      // Show the clicked tab's associated interface
+      const interfaceId = this.getAttribute('interface');
+      const interfaceElement = document.getElementById('interface' + interfaceId);
+      if (interfaceElement) {
+        interfaceElement.style.display = 'block';
+      }
+
+  
+    });
+  });
+
+
+  document.querySelectorAll('.changetext').forEach(tab => {
+  tab.addEventListener('dblclick', function() {
+    // Make the element editable
+    this.setAttribute('contenteditable', 'true');
+    this.focus(); // Focus the element to start editing
+
+    // Add a one-time event listener for the 'keydown' event
+    this.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault(); // Prevent the default 'Enter' key action (line break)
+        this.setAttribute('contenteditable', 'false'); // Make the element non-editable again
+        // Optionally, remove focus from the element
+        this.blur();
+      }
+    }, { once: true });
+  });
+});
+
+
+});
+
+
+
+
+
+
+
+document.querySelectorAll('.changetext').forEach(tab => {
+  tab.addEventListener('dblclick', function() {
+    // Make the element editable
+    this.setAttribute('contenteditable', 'true');
+    this.focus(); // Focus the element to start editing
+
+    // Add a one-time event listener for the 'keydown' event
+    this.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault(); // Prevent the default 'Enter' key action (line break)
+        this.setAttribute('contenteditable', 'false'); // Make the element non-editable again
+        // Optionally, remove focus from the element
+        this.blur();
+      }
+    }, { once: true });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var confirmDialog = document.getElementById('confirmDialog');
+  var yesBtn = document.getElementById('yesBtn');
+  var noBtn = document.getElementById('noBtn');
+  var closeSpan = document.querySelector('.close');
+
+
+  var whattheclose;
+
+  // Function to open the modal
+  function openModal() {
+    confirmDialog.style.display = 'block';
+  }
+
+  // Function to close the modal
+  function closeModal() {
+    confirmDialog.style.display = 'none';
+  }
+
+  // Attach event listeners to all elements with the class 'myclosetab'
+  var closeTabs = document.querySelectorAll('.myclostab');
+  closeTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      openModal();
+       whattheclose = this.closest('div').getAttribute('interface');
+     
+    });
+  });
+
+  // When the user clicks on "Yes" button
+  yesBtn.addEventListener('click', function() {
+    console.log('User clicked Yes');
+    closeModal();
+
+    var elementToRemove = document.getElementById('interface' + whattheclose);
+if (elementToRemove) {
+    elementToRemove.remove();
+}
+
+    // Place your 'Yes' logic here
+  });
+
+  // When the user clicks on "No" button
+  noBtn.addEventListener('click', function() {
+    console.log('User clicked No');
+    closeModal();
+    // Place your 'No' logic here
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  closeSpan.addEventListener('click', function() {
+    closeModal();
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.addEventListener('click', function(event) {
+    if (event.target === confirmDialog) {
+      closeModal();
+    }
+  });
+});
+
+
+
 </script>
+
+
+
+
 
 
 <!--
@@ -155,3 +453,4 @@ if you figure it out you get a prize! well, actually no prize, but wouldnt it be
 Everyone enjoys a good easter egg, and tada you found one!
 Best wishes Dom
 -->
+

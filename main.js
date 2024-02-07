@@ -5,6 +5,11 @@ const log = require('electron-log');
 const path = require('path')
 const ipc = ipcMain;
 
+
+const fs = require('fs');
+const appDataPath = app.getPath('userData');
+const windowStateFile = path.join(appDataPath, 'windowState.json');
+
 log.transports.file.resolvePath = () => path.join('logs/main.log');
 let ver = app.getVersion()
 log.log("Application version " + ver)
@@ -57,6 +62,16 @@ function createtabletonly() {
 
 
 function createMainWindow() {
+  let initialState = {};
+
+  if (fs.existsSync(windowStateFile)) {
+    try {
+      initialState = JSON.parse(fs.readFileSync(windowStateFile));
+    } catch (err) {
+      console.error('Failed to read window state file:', err);
+    }
+  }
+
   win = new BrowserWindow({
     title: 'Domcell Badge Builder',
     icon: `${__dirname}assets/icons/app-icon.png`,
@@ -79,6 +94,20 @@ function createMainWindow() {
 
   })
   win.loadFile(path.join(__dirname, 'intro.html'))
+
+  // Save window state on close
+  win.on('close', () => {
+    const windowState = {
+      width: win.getBounds().width,
+      height: win.getBounds().height,
+      x: win.getBounds().x,
+      y: win.getBounds().y
+    };
+    fs.writeFileSync(windowStateFile, JSON.stringify(windowState));
+  });
+
+
+
 
   ipcMain.on('open-url', (event, url) => {
     shell.openExternal(url);

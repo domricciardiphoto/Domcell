@@ -95,7 +95,7 @@
 
 
         .promo16c {
-            width: 14%;
+            width: 10%;
             float: left;
             margin-right: 1.25%;
             text-align: center;
@@ -959,6 +959,10 @@
             padding-top: 20px;
         }
 
+        .addpadding30 {
+            padding-top: 30px;
+        }
+
         .addpadding40 {
             padding-top: 40px;
         }
@@ -1131,20 +1135,41 @@
             min-height: 310px;
         }
 
-.internalscroller {
-    width: 94.5%;
+        .internalscroller {
+            width: 94.5%;
             margin-left: 0%;
             margin-right: 0.5%;
-            max-height: 725px;
+            max-height: 700px;
             position: relative;
             overflow-y: scroll;
             overflow-x: hidden;
-}
+        }
 
-.secondlauyout {
-    background-color: blue; color: #fff;padding: 5px; width: 18.5%; float: left;margin-right: 1%; font-size: 84%; 
-}
+        .secondlauyout {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid yellow;
+            color: #fff;
+            padding: 5px;
+            width: 18.5%;
+            float: left;
+            margin-right: 1%;
+            font-size: 84%;
+        }
 
+
+        .whattypeofimage {
+            width: 31%;
+            margin-right: 1%;
+            background-color: #334;
+            color: #fff;
+            padding: 5px;
+        }
+
+        .whattypeofimage:hover {
+            color: #fff;
+            background-color: #333;
+        }
     </style>
 
 
@@ -1175,138 +1200,143 @@
 
 
 
-
-    <div class="prod100" style="width: 99%; margin-left: 0%; margin-right: 0.5%;">
+    <div id="fullinterface" class="prod100 interface" style="width: 99%; margin-left: 0%; margin-right: 0.5%;">
 
 
 
 
         <div class="promo50" id="programming">
 
-            <div class="prod100" style="width: 97%; margin-left: 0%; margin-right: 0.5%;">
+            <button id="clearandrestart" class="unselectable-text"
+                style="margin-top: 0px; margin-bottom: 10px; float: right; margin-right: 15px;">Clear and
+                Restart</button>
 
-                <button id="clearandrestart" class="unselectable-text"
-                    style="margin-top: 0px; margin-bottom: 10px; float: right; margin-right: 15px;">Clear and
-                    Restart</button>
+            <div class="width100c openclose" openclose="layoutbuilder-oc"
+                style="margin-left: 3.3%; width: 87% !important; margin-bottom: 0px;">
+                <div class="width100c unselectable-text" style="margin-left: -3%;">
+                    <span class="myindicator">+</span>
+                    <span style="font-size: 1rem;">&nbsp;&nbsp;Layout Builder</span>
+                    <span class="mysmalltext">(div)</span>
+                </div>
+            </div>
 
-                    <div class="width100c">
-                        <p class="unselectable-text" style="margin-bottom: 10px;  margin-top: 0px;">Layout Builder:
-                            Drag a Layout box to the desktop
-                            window</p>
-                    </div>
 
-                    <div class="prod100 stage2 hideinfullscreen" style="margin-left: 0px;">
- 
+            <div class="prod100 layoutbuilder-oc"
+                style="width: 94%; margin-left: 1%; margin-right: 0.5%; display: none;">
 
-                        <div class="width50c" style="margin-left: -5px;">
-    
-                            <div class="width100c">
-                                <div class="dropsection draggable ui-widget-content unselectable-text"
-                                    size="width100c liveelement" pale="100">100%
-                                </div>
-                                <div class="dropsection draggable ui-widget-content unselectable-text"
-                                    size="width80c  liveelement" pale="80">80%
-                                </div>
-    
-    
-                            </div>
-    
-    
-                            <div class="width100c">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                                <div class="dropsection draggable ui-widget-content unselectable-text"
-                                    size="width50c liveelement" pale="50">50%</div>
-    
-                                <div class="dropsection draggable ui-widget-content unselectable-text"
-                                    size="width33c liveelement" pale="33">33%</div>
-    
-    
-                            </div>
-    
-    
-                            <div class="width100c" style="margin-top: 5px;">
-    
-    
-                                <div class="dropsection draggable ui-widget-content unselectable-text"
-                                    size="width20c liveelement" pale="25">25%</div>
-    
-    
-                                <div class="dropsection draggable ui-widget-content unselectable-text"
-                                    size="width20c liveelement" pale="20">20%</div>
-    
-    
-    
-    
-                            </div>
-    
-                        </div>
-    
-    
-                        <div class="width50c">
-    
+
+
+
+
+                <div class="width100c">
+                    <p class="unselectable-text" style="margin-bottom: 10px;  margin-top: 0px; text-align: center; color: yellow;">
+                        Drag a Layout box to the Active Workspace Row</p>
+                </div>
+
+                <div class="prod100 stage2 hideinfullscreen" style="margin-left: 5%">
+
+
+                    <div class="width50c" style="margin-left: -5px;">
+
+                        <div class="width100c">
                             <div class="dropsection draggable ui-widget-content unselectable-text"
-                                size="width50c width50c2 liveelement" pale="50">50% D 100% M</div>
-    
-    
+                                size="width100c liveelement" pale="100">100%
+                            </div>
                             <div class="dropsection draggable ui-widget-content unselectable-text"
-                                size="width33c width50c3  liveelement" pale="33">33% D 50% M</div>
-    
-                            <div class="width100c">
-    
-                                <div class="dropsection draggable ui-widget-content" size="width80c width50c2 liveelement"
-                                    pale="25">
-                                    80% D 100% M</div>
-    
-                                <div class="dropsection draggable ui-widget-content unselectable-text"
-                                    size="width20c width50c2 liveelement" pale="20">20% D 100% M</div>
-    
-    
-    
+                                size="width80c  liveelement" pale="80">80%
                             </div>
-    
-    
-                            <div class="width100c">
-    
-    
-                                <div class="dropsection draggable ui-widget-content unselectable-text"
-                                    size="width25c width50c3 liveelement unselectable-text" pale="25">25% D 50% M</div>
-    
-                                <div class="dropsection draggable ui-widget-content unselectable-text"
-                                    size="width20c width50c3 liveelement" pale="20">20% D
-                                    50%
-                                    M</div>
-    
-                            </div>
-    
-                            <div class="simplelayout">Simple Layout</div>
-    
+
+
                         </div>
-    
-    
+
+
+                        <div class="width100c">
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width50c liveelement" pale="50">50%</div>
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width33c liveelement" pale="33">33%</div>
+
+
+                        </div>
+
+
+                        <div class="width100c" style="margin-top: 5px;">
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width20c liveelement" pale="25">25%</div>
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width20c liveelement" pale="20">20%</div>
+
+
+
+
+                        </div>
+
                     </div>
 
-                    <div class="width100c">
-                        <div class="addrow unselectable-text"
-                            style="height: 30px; border: 1px solid #ccc; text-align: center; width: 85%; margin-left: 1%; cursor: pointer; margin-bottom: 10px; line-height: 30px; border-radius: 5px; background-color: blue;">
-                            Click to Add a Row</div>
-    
+
+                    <div class="width50c">
+
+                        <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width50c width50c2 liveelement" pale="50">50% D 100% M</div>
+
+
+                        <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width33c width50c3  liveelement" pale="33">33% D 50% M</div>
+
+                        <div class="width100c">
+
+                            <div class="dropsection draggable ui-widget-content" size="width80c width50c2 liveelement"
+                                pale="25">
+                                80% D 100% M</div>
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width20c width50c2 liveelement" pale="20">20% D 100% M</div>
+
+
+
+                        </div>
+
+
+                        <div class="width100c">
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width25c width50c3 liveelement unselectable-text" pale="25">25% D 50% M</div>
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width20c width50c3 liveelement" pale="20">20% D
+                                50%
+                                M</div>
+
+                        </div>
+
+                        <div class="simplelayout">Simple Layout</div>
+
                     </div>
+
+
+                </div>
+
+                <div class="width100c">
+                    <div class="addrow unselectable-text"
+                        style="height: 30px; border: 1px solid #ccc; text-align: center; width: 80%; margin-left: 9%; cursor: pointer; margin-bottom: 10px; line-height: 30px; border-radius: 5px; background-color: blue;">
+                        Click to Add a Row</div>
+
+                </div>
 
             </div>
 
-            <div class="prod100 internalscroller" >
+            <div class="prod100 internalscroller">
 
-              
 
-              
+
+
 
                 <div id="editcontentbox" class="prod100" style="margin-left: 0px; margin-top:68px; ">
                     Select and replace (p) content -- This is an HTML Editor if you want to include html and links as
@@ -1356,8 +1386,53 @@
                             Componant</button>
                     </div>
 
+                    <div class="width100c" style="margin-top: 10px; ">
+                        Text Options:
+                    </div>
+
+                    <div class="width100c" >
+                        <button class="texttype" style="width: 9%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;" value="strong"><strong>B</strong></button>
+                        <button class="texttype" style="width: 9%; color: #fff; background-color: transparent;" value="i"><i>I</i></button>
+                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                            value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
+                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;" value="u"><u>U</u></button>
+                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;" value="sub"
+                            style="font-size: 0.8rem;">X<sub>2</sub></button>
+                        <button class="texttype" style="width: 9%; color: #fff; border-right: 1px solid #ccc; background-color: transparent;" value="sup" style="font-size: 0.8rem;">
+                            X<sup>2</sup></button>
+
+                            <button class="textaligner" style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                            cssadd='left'><?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%"version=1.1 viewBox="0 0 50 50"x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st1a{stroke:#fff;stroke-width:6;stroke-miterlimit:10}</style><line class=st1a x1=6 x2=43.6 y1=6.8 y2=6.6 /><line class=st1a x1=6 x2=43.5 y1=30.1 y2=30 /><line class=st1a x1=6 x2=35.6 y1=41.5 y2=41.4 /><line class=st1a x1=5.9 x2=35.5 y1=17.4 y2=17.3 /><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+                            <button class="textaligner" style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                            cssadd='center'><?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%"version=1.1 viewBox="0 0 50 50"x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st0dd{fill:#333}.st1dd{stroke:#fff;stroke-width:6;stroke-miterlimit:10}</style><rect class=st0 height=51 width=50.2 x=-0.2 y=-0.3 /><line class=st1dd x1=6 x2=43.6 y1=6.8 y2=6.6 /><line class=st1dd x1=6 x2=43.5 y1=30.1 y2=30 /><line class=st1dd x1=6.3 x2=43.6 y1=41.5 y2=41.4 /><line class=st1dd x1=6.2 x2=43.5 y1=17.6 y2=17.5 /><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+
+                            <button class="textaligner" style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
+                            cssadd='right'><?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%"version=1.1 viewBox="0 0 50 50"x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st0c{fill:#333}.st1c{stroke:#fff;stroke-width:6;stroke-miterlimit:10}</style><rect class=st0c height=51 width=50.2 x=-0.2 y=-0.3 /><line class=st1c x1=6 x2=43.6 y1=6.8 y2=6.6 /><line class=st1c x1=6 x2=43.5 y1=30.1 y2=30 /><line class=st1c x1=14 x2=43.6 y1=41.5 y2=41.4 /><line class=st1 x1=13.9 x2=43.5 y1=17.4 y2=17.3 /><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+
+                            <button class="textaligner3" style="width: 10%;font-size: 0.85em;max-width: none; color: #fff;  background-color: transparent;border-right: 1px solid #ccc; "
+                            cssadd='<br>'>br</button>
+
+                    </div>
 
 
+                    <div class="width100c" style="margin-top: 10px;">
+
+                        <select name="textaligner2" id="textaligner2" style="    margin-top: 6px;
+                                width: 24%;
+                                font-size: 74%;
+                                max-width: none;
+                                min-height: 30px;
+                                text-align: center; background-color: #333; color: #fff; ">
+                            <option value="addpadding0">Add Top Margin 0px</option>
+                            <option value="addpadding10">Add Top Margin 10px</option>
+                            <option value="addpadding20">Add Top Margin 20px</option>
+                            <option value="addpadding30">Add Top Margin 30px</option>
+                            <option value="addpadding40">Add Top Margin 40px</option>
+                            <option value="addpadding60">Add Top Margin 60px</option>
+                            <option value="addpadding80">Add Top Margin 80px</option>
+                            <option value="addpadding100">Add Top Margin 100px</option>
+                        </select>
+                    </div>
 
 
 
@@ -1396,12 +1471,67 @@
                         <option value="width20c">&nbsp;&nbsp;20% across</option>
 
                     </select>
-                    <button class="clearsection" style="color: red; background-color: #fff;width: 30%; float: left; margin-right: 1%;font-size: 80%;padding-bottom: 5px; padding-top: 6px; ">Empty Component</button>
-<button style="width: 32%; float: left; margin-right: 1%; font-size: 80%; padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; background-color: transparent; color: #fff;" class="ipsom">Ipsom Lorem Copy</button>
+                    <button class="clearsection"
+                        style="color: red; background-color: #fff;width: 30%; float: left; margin-right: 1%;font-size: 80%;padding-bottom: 5px; padding-top: 6px; ">Empty
+                        Component</button>
+                    <button
+                        style="width: 32%; float: left; margin-right: 1%; font-size: 80%; padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; background-color: transparent; color: #fff;"
+                        class="ipsom">Ipsom Lorem Copy</button>
 
-<button class="simplehide" id="cinput3-comp" type="submit" style="float: right; margin-right: 10px;width: 34%; float: left; margin-right: 1%;font-size: 80%;padding-bottom: 5px;background-color: transparent; color: #fff; border: 1px solid #ccc; padding-top: 6px;">Add Copy To Component</button>
+                    <button class="simplehide" id="cinput3-comp" type="submit"
+                        style="float: right; margin-right: 10px;width: 34%; float: left; margin-right: 1%;font-size: 80%;padding-bottom: 5px;background-color: transparent; color: #fff; border: 1px solid #ccc; padding-top: 6px;">Add
+                        Copy To Component</button>
 
-
+                        <div class="width100c" style="margin-top: 10px; ">
+                            Text Options:
+                        </div>
+    
+                        <div class="width100c" >
+                            <button class="texttype" style="width: 9%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;" value="strong"><strong>B</strong></button>
+                            <button class="texttype" style="width: 9%; color: #fff; background-color: transparent;" value="i"><i>I</i></button>
+                            <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                                value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
+                            <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;" value="u"><u>U</u></button>
+                            <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;" value="sub"
+                                style="font-size: 0.8rem;">X<sub>2</sub></button>
+                            <button class="texttype" style="width: 9%; color: #fff; border-right: 1px solid #ccc; background-color: transparent;" value="sup" style="font-size: 0.8rem;">
+                                X<sup>2</sup></button>
+    
+                                <button class="textaligner" style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                                cssadd='left'><?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%"version=1.1 viewBox="0 0 50 50"x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st1a{stroke:#fff;stroke-width:6;stroke-miterlimit:10}</style><line class=st1a x1=6 x2=43.6 y1=6.8 y2=6.6 /><line class=st1a x1=6 x2=43.5 y1=30.1 y2=30 /><line class=st1a x1=6 x2=35.6 y1=41.5 y2=41.4 /><line class=st1a x1=5.9 x2=35.5 y1=17.4 y2=17.3 /><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+                                <button class="textaligner" style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                                cssadd='center'><?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%"version=1.1 viewBox="0 0 50 50"x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st0dd{fill:#333}.st1dd{stroke:#fff;stroke-width:6;stroke-miterlimit:10}</style><rect class=st0 height=51 width=50.2 x=-0.2 y=-0.3 /><line class=st1dd x1=6 x2=43.6 y1=6.8 y2=6.6 /><line class=st1dd x1=6 x2=43.5 y1=30.1 y2=30 /><line class=st1dd x1=6.3 x2=43.6 y1=41.5 y2=41.4 /><line class=st1dd x1=6.2 x2=43.5 y1=17.6 y2=17.5 /><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+    
+                                <button class="textaligner" style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
+                                cssadd='right'><?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%"version=1.1 viewBox="0 0 50 50"x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st0c{fill:#333}.st1c{stroke:#fff;stroke-width:6;stroke-miterlimit:10}</style><rect class=st0c height=51 width=50.2 x=-0.2 y=-0.3 /><line class=st1c x1=6 x2=43.6 y1=6.8 y2=6.6 /><line class=st1c x1=6 x2=43.5 y1=30.1 y2=30 /><line class=st1c x1=14 x2=43.6 y1=41.5 y2=41.4 /><line class=st1 x1=13.9 x2=43.5 y1=17.4 y2=17.3 /><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+    
+                                <button class="textaligner3" style="width: 10%;font-size: 0.85em;max-width: none; color: #fff;  background-color: transparent;border-right: 1px solid #ccc; "
+                                cssadd='<br>'>br</button>
+    
+                        </div>
+    
+    
+                        <div class="width100c" style="margin-top: 10px;">
+    
+                            <select name="textaligner2" id="textaligner2" style="    margin-top: 6px;
+                                    width: 24%;
+                                    font-size: 74%;
+                                    max-width: none;
+                                    min-height: 30px;
+                                    text-align: center; background-color: #333; color: #fff; ">
+                                <option value="addpadding0">Add Top Margin 0px</option>
+                                <option value="addpadding10">Add Top Margin 10px</option>
+                                <option value="addpadding20">Add Top Margin 20px</option>
+                                <option value="addpadding30">Add Top Margin 30px</option>
+                                <option value="addpadding40">Add Top Margin 40px</option>
+                                <option value="addpadding60">Add Top Margin 60px</option>
+                                <option value="addpadding80">Add Top Margin 80px</option>
+                                <option value="addpadding100">Add Top Margin 100px</option>
+                            </select>
+                        </div>
+    
+    
+    
 
                 </div>
 
@@ -1418,35 +1548,34 @@
 
 
                     <div class="prod100 imagemessage"
-                        style=" margin-top:0px; margin-left: 0px; text-align: center; display: none; margin-bottom: 0px; padding: 0px; background-color: #fff;">
+                        style=" margin-top:-10px; margin-left: 0px; text-align: center; display: none; margin-bottom: 20px; padding: 0px; background-color: #fff;">
                         <span style="color: red; text-align: center; font-weight: bold;">IMAGE MUST HAVE A ALT TAG! ---
                             NO ALT
                             NO IMAGE</span>
                     </div>
 
+                    <duv class="width100c" style="margin-top: -10px; margin-bottom: 10px;">
+                        <button class="whattypeofimage" openimagebuilder="productimage">Product Image</button>
+                        <button class="whattypeofimage" openimagebuilder="promoimage">Promo Image</button>
+                        <button class="whattypeofimage" openimagebuilder="wrapimage">Wrao Around Image</button>
+                    </duv>
 
-                    <div class="width100c"
-                        style="color: yellow; margin-top: -20px; margin-bottom: 10px; margin-left: 10px;text-align: center;">
-                       Click the Image you want to add to the Layout
-                    </div>
+                    <div class="width100c imgbuild typeofim productimage"
+                        style="width: 99%; margin-right: 1%; display: none;">
 
-                    <div class="width50c imgbuild" style="width: 47%; margin-right: 1%;">
-                     
 
-                            <div class="width100c" style="border-bottom: 1px solid #ccc;margin-bottom: 10px;  text-align: center;">
-                                <p class="unselectable-text" style="margin-bottom: 5px; margin-top: 0px; font-size: 0.85rem; ; ">Product
-                                    Model Number
-                                    Here</p>
-                            </div>
 
-                        <input type="text" id="cinput1" placeholder="Product img" style=" width: 100%;">
+                        <input type="text" id="cinput1" placeholder="Product Filename" style=" width: 100%;">
                         <input type="text" id="cinput1b" placeholder="Product Img alt tag"
+                            style="width: 100%; margin-top: 20px;">
+
+                        <input type="text" id="cinput1c" placeholder="Optional Header for Image"
                             style="width: 100%; margin-top: 20px;">
 
                         <div class="prod100 stage 2" id="largeimagepreview"
                             style="margin-left: 0px; width: 100%; margin-left: 0px; padding-left: 0px;">
                             <div class="width100c unselectable-text" style="margin-bottom: 5px;"><span
-                                    style="color: yellow;">Select Image for Component</span>
+                                    style="color: yellow;">Click to Select Image for Component</span>
                             </div>
 
                             <div style="width: 100%; float: left; overflow: auto;">
@@ -1576,14 +1705,9 @@
                         </div>
 
                     </div>
-                    <div class="width50c imgbuild">
-                        <div class="width100c" style="border-bottom: 1px solid #ccc;margin-bottom: 10px;  text-align: center;">
-                            <p class="unselectable-text" style="margin-bottom: 5px; margin-top: 0px; font-size: 0.85rem; ; ">Promotional
-                                Image Filename
-                                Here</p>
+                    <div class="width100c imgbuild typeofim promoimage"
+                        style="width: 99%; margin-right: 1%; display: none;">
 
-                                
-                        </div>
 
                         <div class="width100c" style="margin-bottom: 10px;">
                             Catalog Selector <select id="catalogselector">
@@ -1599,65 +1723,47 @@
                         <div class="width100c" style="margin-top: 10px;">
                             <img id="showthepromotionalimage" style="padding: 0px;
     margin: 0px;
-    width: 100% !important; cursor: pointer;"
+    width: 70% !important; cursor: pointer;"
                                 src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/tv-monitor-feat.jpg">
                         </div>
 
-                    </div>
 
 
-
-
-
-
-                    <select name="myDropdown" id="myDropdown">
-                        <option value="Z_" selected>Image 1</option>
-                        <option value="AZ1_">Image 2</option>
-                        <option value="AZ2_">Image 3</option>
-                        <option value="AZ3_">Image 4</option>
-                        <option value="AZ4_">Image 5</option>
-                        <option value="AZ5_">Image 6</option>
-                        <option value="AZ6_">Image 7</option>
-                        <option value="AZ7_">Image 8</option>
-                        <option value="AZ8_">Image 9</option>
-                        <option value="AZ9_">Image 10</option>
-                        <option value="AZ10_">Image 11</option>
-                        <option value="AZ11_">Image 12</option>
-                        <option value="AZ12_">Image 13</option>
-                        <option value="AZ13_">Image 14</option>
-                        <option value="AZ14_">Image 15</option>
-                        <option value="">Energy Guide</option>
-
-                    </select>
-                    <br>
-
-                    <button id="cinput1-click" style="margin-left: 5px;">Submit</button><br><br>
-                    <hr class="stage2a">
-
-                    <div class="width100c stage2a">
-                        <span style="line-height: 38px;">Click here instead if you want to add additonal images to the
-                            content (100% / 50%
-                            / 30%) across</span>
-                    </div>
-
-
-                    <div class="width50c" style="width: auto; margin-left: -7px;">
-                        <select class="stage2a" name="myIMGwidth" id="myIMGwidth"
-                            style=" margin-top: -25px; margin-right: 10px;">
-                            <option value="width100c">&nbsp;&nbsp;Image 100% across</option>
-                            <option value="width50c">&nbsp;&nbsp;Image 50% Desktop 50% Mobile</option>
-                            <option value="width50c width50c2">&nbsp;&nbsp;Image 50% Desktop 100% Mobile</option>
-                            <option value="width30c">&nbsp;&nbsp;Image 30% across</option>
-                        </select>
-                    </div>
-                    <div class="width50c" style="margin-left: 12px;font-size: 0.875rem;">
-
-                        <div class="mybuttonclass" id="cinput1-clickv2">Submit Image</div>
 
 
                     </div>
+                    <div class="width100c imgbuild typeofim wrapimage"
+                        style="width: 99%; margin-right: 1%; display: none;">
+                        <div class="width100c imgbuild" style="border-bottom: 1px solid #ccc;margin-bottom: 10px;  ">
+                            <p class="unselectable-text"
+                                style="margin-bottom: 5px; margin-top: 0px; font-size: 0.85rem; ; ">In Development:
+                                Coming Soon!</p>
+
+                            <textarea style="width: 94%; margin-bottom: 5px;" name="wraparoundimage"
+                                id="wraparoundimage" cols="30" rows="8"
+                                placeholder="Click on a Component to Edit the HTML"></textarea>
 
 
+                            <div class="width100c" style="margin-bottom: 10px;">
+                                Catalog Selector <select name="wraparoundselect" id="wraparoundselect">
+                                    <option value="product">Product</option>
+                                    <option value="promo">Promo</option>
+                                    <option value="blog">Blog</option>
+                                </select>
+                            </div>
+
+                            <div class="width100c" style="margin-bottom: 10px;">
+                                <input type="text" id="wraparoundfilename" placeholder="Image Filename"
+                                    style=" width: 50%; margin-bottom: 10px;">
+                                <input type="text" id="wraparoundalt" placeholder="Image Alt Tag" style=" width: 95%; ">
+                                <button id="wraparoundsubmit" type="submit" style="margin-top: 10px;">Submit</button>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
 
                 </div>
 
@@ -1750,7 +1856,7 @@
                         <br>
 
                         <div class="width100c">
-                            <button id="listsubmit" type="submit" style="float: right; margin-right: 0px;">Submit
+                            <button id="listsubmit" type="submit" style="float: right; margin-right: 0px; background-color: #334; color: #fff; padding: 10px;">Submit
                                 List</button>
                         </div>
                     </div>
@@ -1789,7 +1895,7 @@
                     </div>
 
                     <div class="promo50">
-                        <button id="submitvideofile" style="margin-top: 15px; float: right; margin-right: 30px; ">Submit
+                        <button id="submitvideofile" style="margin-top: 15px; float: right; margin-right: 30px; color: #fff; background-color: #334; padding: 10px; ">Submit
                             Video</button>
                     </div>
 
@@ -1815,7 +1921,8 @@
                         <input id="whatsthelink" type="text" placeholder="text link" style="width: 100%;">
                     </div>
                     <div class="width20c">
-                        <button id="linkmaker" style="padding: 5px; margin-left: 15px; padding-bottom: 3px;">Convert to
+                        <button id="linkmaker"
+                            style="padding: 5px; margin-left: 15px; padding-bottom: 3px; font-size: 86%;">Convert to
                             Link</button>
                     </div>
 
@@ -1845,52 +1952,55 @@
 
                 <div openclose="mytextbuilder" class="width100c stage1 tools mytextbuilder"
                     style="width: 97%; margin-left: 2%;">
-                    <div class="width100c">
-                        <div class="width100c" style="margin-top: 10px;">
-                            Text Styles
-                        </div>
-                        <button class="texttype" style="width: 15%;" value="strong"><strong>style</strong></button>
-                        <button class="texttype" style="width: 15%;" value="i"><i>style</i></button>
-                        <button class="texttype" style="width: 15%;"
-                            value="strong class='strongitalic'"><strong><i>style</i></strong></button>
-                        <button class="texttype" style="width: 15%;" value="u"><u>style</u></button>
-                        <button class="texttype" style="width: 15%;" value="sub"
-                            style="font-size: 0.8rem;"><sub>style</sub></button>
-                        <button class="texttype" style="width: 15%;" value="sup" style="font-size: 0.8rem;">
-                            <sup>style</sup></button>
 
+                    
+                    <div class="width100c" >
+                        <button class="texttype" style="width: 9%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;" value="strong"><strong>B</strong></button>
+                        <button class="texttype" style="width: 9%; color: #fff; background-color: transparent;" value="i"><i>I</i></button>
+                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                            value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
+                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;" value="u"><u>U</u></button>
+                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;" value="sub"
+                            style="font-size: 0.8rem;">X<sub>2</sub></button>
+                        <button class="texttype" style="width: 9%; color: #fff; border-right: 1px solid #ccc; background-color: transparent;" value="sup" style="font-size: 0.8rem;">
+                            X<sup>2</sup></button>
+
+                            <button class="textaligner" style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                            cssadd='left'><?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%"version=1.1 viewBox="0 0 50 50"x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st1a{stroke:#fff;stroke-width:6;stroke-miterlimit:10}</style><line class=st1a x1=6 x2=43.6 y1=6.8 y2=6.6 /><line class=st1a x1=6 x2=43.5 y1=30.1 y2=30 /><line class=st1a x1=6 x2=35.6 y1=41.5 y2=41.4 /><line class=st1a x1=5.9 x2=35.5 y1=17.4 y2=17.3 /><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+                            <button class="textaligner" style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                            cssadd='center'><?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%"version=1.1 viewBox="0 0 50 50"x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st0dd{fill:#333}.st1dd{stroke:#fff;stroke-width:6;stroke-miterlimit:10}</style><rect class=st0 height=51 width=50.2 x=-0.2 y=-0.3 /><line class=st1dd x1=6 x2=43.6 y1=6.8 y2=6.6 /><line class=st1dd x1=6 x2=43.5 y1=30.1 y2=30 /><line class=st1dd x1=6.3 x2=43.6 y1=41.5 y2=41.4 /><line class=st1dd x1=6.2 x2=43.5 y1=17.6 y2=17.5 /><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+
+                            <button class="textaligner" style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
+                            cssadd='right'><?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%"version=1.1 viewBox="0 0 50 50"x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st0c{fill:#333}.st1c{stroke:#fff;stroke-width:6;stroke-miterlimit:10}</style><rect class=st0c height=51 width=50.2 x=-0.2 y=-0.3 /><line class=st1c x1=6 x2=43.6 y1=6.8 y2=6.6 /><line class=st1c x1=6 x2=43.5 y1=30.1 y2=30 /><line class=st1c x1=14 x2=43.6 y1=41.5 y2=41.4 /><line class=st1 x1=13.9 x2=43.5 y1=17.4 y2=17.3 /><g></g><g></g><g></g><g></g><g></g><g></g></svg></button>
+
+                            <button class="textaligner3" style="width: 10%;font-size: 0.85em;max-width: none; color: #fff;  background-color: transparent;border-right: 1px solid #ccc; "
+                            cssadd='<br>'>br</button>
 
                     </div>
-                    <div class="width100c">
-                        <div class="width100c" style="margin-top: 10px;">
-                            Text Alignment
-                        </div>
-                        <button class="textaligner" style="width: 20%;font-size: 0.85em;max-width: none;"
-                            cssadd='left'>Left</button>
-                        <button class="textaligner" style="width: 20%;font-size: 0.85em;max-width: none;"
-                            cssadd='center'>Center</button>
-                        <button class="textaligner" style="width: 20%;font-size: 0.85em;max-width: none;"
-                            cssadd='right'>Right</button>
 
-                        <button class="textaligner3" style="width: 18%;font-size: 0.85em;max-width: none;"
-                            cssadd='<br>'>Line
-                            Break</button>
+
+                    <div class="width100c" style="margin-top: 10px;">
 
                         <select name="textaligner2" id="textaligner2" style="    margin-top: 6px;
-                                width: 18%;
+                                width: 24%;
                                 font-size: 74%;
                                 max-width: none;
                                 min-height: 30px;
-                                text-align: center;">
+                                text-align: center; background-color: #333; color: #fff; ">
                             <option value="addpadding0">Add Top Margin 0px</option>
                             <option value="addpadding10">Add Top Margin 10px</option>
                             <option value="addpadding20">Add Top Margin 20px</option>
+                            <option value="addpadding30">Add Top Margin 30px</option>
                             <option value="addpadding40">Add Top Margin 40px</option>
                             <option value="addpadding60">Add Top Margin 60px</option>
                             <option value="addpadding80">Add Top Margin 80px</option>
                             <option value="addpadding100">Add Top Margin 100px</option>
                         </select>
                     </div>
+
+
+                 
+                  
 
                 </div>
 
@@ -1910,7 +2020,8 @@
                         New Code</button>
                 </div>
 
-                <div class="prod100 unselectable-text" style="background-color: #000; margin-left: 0px; margin-top: 20px; width: 96%;">
+                <div class="prod100 unselectable-text"
+                    style="background-color: #000; margin-left: 0px; margin-top: 20px; width: 96%;">
                     Click on Code To Copy to Clipboard</div>
 
                 <div class="prod100 layout1 selectall"
@@ -1958,64 +2069,88 @@
                     <input type="checkbox" id="editmode" name="editmode"
                         style="width: 10px; zoom: 2; margin-top: 0px; float: left; display: none;">
 
-                    <div class="hamburger"
-                        style="width: 30px; height: 30px; float: left; cursor: pointer; display: none;">
 
-                        <?xml version="1.0" encoding="utf-8"?>
-                        <!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
-                            style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                            <style type="text/css">
-                                .st0 {
-                                    display: none;
-                                }
 
-                                .st1 {
-                                    stroke: #FFFFFF;
-                                    stroke-width: 6;
-                                    stroke-miterlimit: 10;
-                                }
-                            </style>
-                            <rect x="-0.2" y="-0.3" class="st0" width="50.2" height="51" />
-                            <line class="st1" x1="6" y1="11.8" x2="43.6" y2="11.6" />
-                            <line class="st1" x1="6.2" y1="25.3" x2="43.8" y2="25.2" />
-                            <line class="st1" x1="6" y1="39.6" x2="43.6" y2="39.5" />
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                        </svg>
+
+                    <div class="width50c">
+                        <div class="hamburger"
+                            style="width: 30px; height: 30px; float: left; cursor: pointer; display: none;">
+
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
+                                style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                <style type="text/css">
+                                    .st0 {
+                                        display: none;
+                                    }
+
+                                    .st1 {
+                                        stroke: #FFFFFF;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10;
+                                    }
+                                </style>
+                                <rect x="-0.2" y="-0.3" class="st0" width="50.2" height="51" />
+                                <line class="st1" x1="6" y1="11.8" x2="43.6" y2="11.6" />
+                                <line class="st1" x1="6.2" y1="25.3" x2="43.8" y2="25.2" />
+                                <line class="st1" x1="6" y1="39.6" x2="43.6" y2="39.5" />
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                            </svg>
+
+
+                        </div>
+
+
+                        <div class="width100c">
+
+                            <div style="float: left; margin-left: 10px; width: auto; float: left;"
+                                class="mysort unselectable-text">
+                                <input type="checkbox" id="mysort" name="mysort" class="mysort"
+                                    style="width: 10px; zoom: 2; margin-top: 0px; float: right;">
+                                Sort / Reorder Rows
+                            </div>
+
+
+                            <div style="float: left; margin-left: 10px; width: auto; float: left;"
+                                class=" unselectable-text">
+                                <input type="checkbox" id="mytoolsview" name="mytoolsview" class="mytoolsview"
+                                    style="width: 10px; zoom: 2; margin-top: 0px; float: right;">
+                                Fullsreeen
+
+
+                            </div>
+                        </div>
 
 
                     </div>
 
-                    <div style="float: left; margin-left: 10px;" class="mysort unselectable-text">
-                        <input type="checkbox" id="mysort" name="mysort" class="mysort"
-                            style="width: 10px; zoom: 2; margin-top: 0px; float: right;">
-                        Sort / Reorder Rows On / Off
+                    <div class="width50c">
 
-
-                    </div>
-
-
-                    <div style="float: left; margin-left: 10px;" class=" unselectable-text">
-                        <input type="checkbox" id="mytoolsview" name="mytoolsview" class="mytoolsview"
-                            style="width: 10px; zoom: 2; margin-top: 0px; float: right;">
-                        Fullsreeen On / Off
-
+                        <input id="nametextfile" type="text" placeholder="filename"
+                            style="float: right; max-width: 200px; display: none;">
+                        <button id="export"
+                            style="float: right; margin-right: 1%; background-color: transparent; color: #fff;">Save
+                            Layout &uarr;</button>
+                        <button id="import" accept=".txt"
+                            style="float: right; margin-right: 1%; background-color: transparent; color: #fff;">Import Layout
+                            File &darr;</button>
+                        <input type="file" id="fileInput" accept=".txt" placeholder="Imported file"
+                            style="display: none;">
 
                     </div>
-
-
 
 
 
@@ -2077,7 +2212,7 @@
 
 
             <div class="width100c stage2">
-                <div class="width50c unselectable-text hideinfullscreen" style="width: 59%;">Desktop View (Active)</div>
+                <div class="width50c unselectable-text hideinfullscreen" style="width: 62%;">Desktop View <span style="color: yellow;">(Active Workspace)</span></div>
                 <div class="width50c unselectable-text hideinfullscreen" style="width: 30%;">Mobile View</div>
             </div>
 
@@ -2100,6 +2235,8 @@
 
 
 
+
+
             <div class="width100c">
                 <div class="width50c stage2 fullscreenmode">
 
@@ -2113,19 +2250,22 @@
 
 
                         <div class="width100c" style="margin-bottom: 10px;">
-                           <div class="width50c"> <button class="addrow unselectable-text" id="addrow" style="background-color: blue;
+                            <div class="width50c"> <button class="addrow unselectable-text" id="addrow" style="background-color: blue;
                             color: #fff;
                             width: 98%;
                             line-height: 25px;
                             margin-bottom: 8px;">Add a Row</button></div>
 
-                                <div class="width50c"> 
-                                    <button class="deleterow unselectable-text" style="color: #fff; background-color: red; width: 98%; padding-top: 3px; padding-bottom: 3px;">Delete Row</button>
-                                </div>
+                            <div class="width50c">
+                                <button class="deleterow unselectable-text"
+                                    style="color: #fff; background-color: red; width: 98%; padding-top: 3px; padding-bottom: 3px;">Delete
+                                    Row</button>
+                            </div>
 
                             <div class="width100c">
-                                <div class="width100c findthecode2" style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
-                                    Row Layouts</div>
+                                <div class="width100c findthecode2"
+                                    style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
+                                    Offset Layouts</div>
                                 <button class="secondlauyout unselectable-text" id="addrow1x1">100% Layout</button>
                                 <button class="secondlauyout unselectable-text" id="addrow2x2">50/50 Layout</button>
                                 <button class="secondlauyout unselectable-text" id="addrow2x8">20/80 Layout</button>
@@ -2133,16 +2273,24 @@
                                 <button class="secondlauyout unselectable-text" id="addrow4x4">25% Layout</button>
                             </div>
                             <div class="width100c">
-                                <div class="width100c"style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
-                                100% Width Layouts
+                                <div class="width100c" style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
+                                    100% Width Layouts
                                 </div>
 
-<div class="width100c">
-    <button class="secondlauyout layoutloader unselectable-text" style="background-color: yellow; color: #000;" id="wid100code1" layout="wid100code1">Width 100 x1</button>
-    <button class="secondlauyout layoutloader unselectable-text" style="background-color: yellow; color: #000;"id="wid100code2" layout="wid100code2">Width 100 x2</button>
-    <button class="secondlauyout layoutloader unselectable-text" style="background-color: yellow; color: #000;"id="wid100code3" layout="wid100code3">Width 100 x3</button>
-    <button class="secondlauyout layoutloader unselectable-text" style="background-color: yellow; color: #000;"id="wid100code4" layout="wid100code4">Width 100 x4</button>
-</div>
+                                <div class="width100c">
+                                    <button class="secondlauyout layoutloader unselectable-text"
+                                        style="background-color: transparent; color: #fff;border: 1px solid yellow;" id="wid100code1"
+                                        layout="wid100code1">Width 100 x1</button>
+                                    <button class="secondlauyout layoutloader unselectable-text"
+                                        style="background-color: transparent; color: #fff;border: 1px solid yellow;" id="wid100code2"
+                                        layout="wid100code2">Width 100 x2</button>
+                                    <button class="secondlauyout layoutloader unselectable-text"
+                                        style="background-color: transparent; color: #fff;border: 1px solid yellow;" id="wid100code3"
+                                        layout="wid100code3">Width 100 x3</button>
+                                    <button class="secondlauyout layoutloader unselectable-text"
+                                        style="background-color: transparent; color: #fff;border: 1px solid yellow;" id="wid100code4"
+                                        layout="wid100code4">Width 100 x4</button>
+                                </div>
 
 
 
@@ -2154,14 +2302,23 @@
                                 <div class="width100c findthecode2 findthecode2"
                                     style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -5px; margin-top: 10px;">
                                     Multi Row Layouts</div>
-                                <button class="secondlauyout unselectable-text" id="addrowcxc"
-                                    style="background-color: yellow; color: #333;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;">
-                                    50/50 Criss Cross Layout</button>
+
+
+                                <div class="width100c" style="margin-bottom: 5px;">
+                                    <button class="secondlauyout unselectable-text" id="addrowc1xc1"
+                                        style="background-color: transparent; color: #fff;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px; border: 1px solid yellow;">
+                                        50/50 Criss Cross Layout (X2)</button>
+
+
+                                    <button class="secondlauyout unselectable-text" id="addrowcxc"
+                                        style="background-color: transparent; color: #fff;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid yellow;">
+                                        50/50 Criss Cross Layout (X4)</button>
+                                </div>
 
 
                                 <button class="secondlauyout unselectable-text" id="addrowc2xc8"
-                                    style="background-color: yellow; color: #333;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px; margin-left: 1%;">
-                                    80/20 Criss Cross Layout</button>
+                                    style="background-color: transparent; color: #fff;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid yellow; ">
+                                    80/20 Criss Cross Layout (X3)</button>
                             </div>
 
                         </div>
@@ -2183,9 +2340,11 @@
 
                         <div class="width100c" style="margin-bottom: 10px;">
 
-                            <button id="selectionclear" style="color: red; background-color: #fff;  padding: 5px; width: 20%; font-size: 80%;">Clear
+                            <button id="selectionclear"
+                                style="color: red; background-color: #fff;  padding: 5px; width: 20%; font-size: 80%;">Clear
                                 Selection</button>
-                            <button class="clearsection" style="color: red; background-color: #fff;  padding: 5px; width: 25%; font-size: 80%;">Empty
+                            <button class="clearsection"
+                                style="color: red; background-color: #fff;  padding: 5px; width: 25%; font-size: 80%;">Empty
                                 Component</button>
                         </div>
 
@@ -2310,10 +2469,14 @@
     choosehtag = '0'
     mylisttype = 0;
 
-    var wid100code1 = '<div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div>'
-    var wid100code2 = '<div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div>'
-    var wid100code3 = '<div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div>'
-    var wid100code4 = '<div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div>'
+    var wid100code1 =
+        '<div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div>'
+    var wid100code2 =
+        '<div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div>'
+    var wid100code3 =
+        '<div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div>'
+    var wid100code4 =
+        '<div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div>'
 
 
     function clickanddeleterows() {
@@ -2335,6 +2498,65 @@
         $('#findthecode2').text($('#pullthecode2').html());
         $('#myhtmleditor').val($('.interedit').html())
 
+
+        $(".droppable").droppable({
+            drop: function (event, ui) {
+                var mysize = $(ui.draggable).attr('size');
+                var mypale = $(ui.draggable).attr('pale');
+                $('.interedit').removeClass('interedit')
+                if (mysize !== undefined && mysize !== "") {
+                    $(this).append('<div class="' + mysize +
+                        ' in910 layoutpale interedit layoutpale' + mypale +
+                        '"></div>');
+
+                }
+
+
+
+
+                $('.liveelement').on('click', function () {
+
+
+                    $('.liveelement').removeClass('interedit')
+                    $(this).addClass('interedit')
+                    //$('#fixthecode').val($(this).html())
+                    $('.clearsection').on('click', function () {
+                        $('.interedit').html('')
+                        loadnewcontent()
+                    })
+
+                    $('#selectionclear').on('click', function () {
+                        $('.interedit').removeClass('interedit')
+                    })
+
+
+
+                    $('#EditandSubmitAL').on('click', function () {
+                        $('.interedit').html($('#myhtmleditor').val())
+                        loadnewcontent()
+                    })
+
+
+
+                    layoutmode = 1
+
+                })
+                loadnewcontent()
+            }
+        });
+
+
+        $(".interedit").mousedown(function () {
+            // When mouse button is pressed down, start a timer
+            timeout = setTimeout(function () {
+                // Code to execute when the item has been held for 2 seconds
+                console.log("Item held for 2 seconds or more");
+                // Add your desired actions here
+            }, 2000); // 2000 milliseconds = 2 seconds
+        }).mouseup(function () {
+            // When mouse button is released, clear the timer
+            clearTimeout(timeout);
+        });
 
 
         var element = $('#findthecode2');
@@ -2371,6 +2593,12 @@
         $('#findthecode2').text(function (index, oldText) {
             return oldText.replace(/https:\/\/www\.pcrichard\.com/g, '');
         });
+
+        $('#EditandSubmitAL').on('click', function () {
+            $('.interedit').html($('#myhtmleditor').val())
+            loadnewcontent()
+        })
+
 
 
     }
@@ -2424,25 +2652,44 @@
     })
 
 
-    $('#submitvideofile').on('click', function () {
-        thevidfilename =
-            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/' +
-            $('#videofilename').val() + '.mp4'
-        thevidcaptionname =
-            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/' +
-            $('#videocaptions').val() + '.vtt'
-        thevidpostername =
-            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/' +
-            $('#videoposter').val() + '.jpg'
-        completevideocode = '<video aria-label="Video Player" class="videoPlayer" controls poster="' +
-            thevidpostername + '" tabindex="0"><source src="' + thevidfilename +
-            '" type="video/mp4"><track kind="captions" label="English" src="' + thevidcaptionname +
-            '" srclang="en">Your browser does not support the video tag.</video>'
-        $('.interedit').html(completevideocode);
-        loadnewcontent()
+
+
+
+
+    function createVideoElement(videoFilename, videoCaptions, videoPoster) {
+        const basePath =
+            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/';
+        const videoSrc = `${basePath}${videoFilename}.mp4`;
+        const captionsSrc = `${basePath}${videoCaptions}.vtt`;
+        const posterSrc = `${basePath}${videoPoster}.jpg`;
+
+        return `<video aria-label="Video Player" class="videoPlayer" controls poster="${posterSrc}" tabindex="0">
+        <source src="${videoSrc}" type="video/mp4">
+        <track kind="captions" label="English" src="${captionsSrc}" srclang="en">
+        Your browser does not support the video tag.
+    </video>`;
+    }
+
+    // Use event delegation to handle dynamically added elements and to avoid repeated jQuery selectors
+    $(document).on('click', '#submitvideofile', function () {
+        const videoFilename = $('#videofilename').val();
+        const videoCaptions = $('#videocaptions').val();
+        const videoPoster = $('#videoposter').val();
+        const videoElement = createVideoElement(videoFilename, videoCaptions, videoPoster);
+        $('.interedit').html(videoElement);
+    });
+
+
+
+
+
+    $('.whattypeofimage').on('click', function () {
+        $('.typeofim').hide()
+        openimagebuilder = '.' + $(this).attr('openimagebuilder');
+        $(openimagebuilder).slideDown()
+        $('.whattypeofimage').css('background-color', '#334')
+        $(this).css('background-color', '#333')
     })
-
-
 
     $('#mylistamount').on('change', function () {
         $('.lister').hide()
@@ -2459,7 +2706,7 @@
         createnewlist = 1
         $('.lister').val('')
         $('#newlist').fadeOut()
-        $('#listsubmit').text('Submit List').css('background-color', 'white').css('color', '#000')
+        $('#listsubmit').text('Submit List').css('background-color', '#334').css('color', '#fff')
     })
 
     $('#listsubmit').on('click', function () {
@@ -2622,7 +2869,7 @@
     document.getElementById('mytoolsview').addEventListener('change', function () {
         if (this.checked) {
             $('#programming').addClass('fullscreend').hide()
-            $('.internalscroller').css('max-height' ,'none').css('overflow-y' , 'unset')
+            $('.internalscroller').css('max-height', 'none').css('overflow-y', 'unset')
             $(' #pullthecode2').hide()
             $('.fullscreenmode').css('padding', '0px ').css('margin-left', '0px')
 
@@ -2641,12 +2888,12 @@
             $('.fullscreenmode').css('padding', '1% ')
             $('#resizable-div').css('width', '62%')
             $('#programming').removeClass('fullscreend').fadeIn()
-            $('.internalscroller').css('max-height' ,'725px').css('overflow-y' , 'auto')
+            $('.internalscroller').css('max-height', '725px').css('overflow-y', 'auto')
             $('#legend').show()
             $('.hideinfullscreen').show()
             $('.mymobile , #pullthecode2').css('float', 'left')
             $(' #pullthecode2').css('width', '62%')
-            $('.imgbuild').css('width', '47%')
+            $('.imgbuild').css('width', '98%')
         }
 
 
@@ -2722,6 +2969,11 @@
 
     $(document).ready(function () {
         var mysize
+        let timeout;
+
+
+
+
 
         $('.openclose').on('click', function () {
 
@@ -2753,14 +3005,14 @@
         })
 
 
-        $('.layoutloader').on('click' , function() {
+        $('.layoutloader').on('click', function () {
             my100layout = eval($(this).attr('layout'));
             $('.informationcontent').append(my100layout)
             $('.in910').on('click', function () {
                 $('.in910').removeClass('interedit')
                 $(this).addClass('interedit')
+                
             })
-
 
 
 
@@ -2773,12 +3025,13 @@
         $('#addrow1x1').on('click', function () {
             $('.onblock').html(
                 '<div class="width100c liveelement in910 layoutpale  layoutpale100"></div>'
-                );
+            );
 
 
             $('.liveelement').on('click', function () {
                 $('.interedit').removeClass('interedit')
                 $(this).addClass('interedit')
+         
             })
             clickanddeleterows()
             loadnewcontent()
@@ -2787,13 +3040,130 @@
 
 
 
+        $('#export').on('click', function () {
+            // Get the content from the codeview div
+            var content = $('#pullthecode2').children('div').children('.informationcontent').html();
+
+            // Copy the content to the clipboard
+            const el = document.createElement('textarea');
+            el.value = content;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            var blob = new Blob([content], {
+                type: 'text/plain'
+            });
+            var url = URL.createObjectURL(blob);
+
+            // Create a download link
+            var a = document.createElement('a');
+            a.href = url;
+            a.target = '_blank';
+
+            namethatfile = $('#nametextfile').val();
+
+            if (namethatfile === '') {
+                a.download = 'Domcell-Pagebuilder.txt';
+            } else {
+                a.download = namethatfile + '.txt';
+            }
+
+            a.click();
+
+            // Clean up the object URL
+            URL.revokeObjectURL(url);
+        });
+
+        $('#import').on('click', function () {
+            $('#pullthecode2').children('div').children('.informationcontent').html('')
+            $('#fileInput').click();
+
+
+
+
+
+
+        })
+
+
+
+
+
+        $('#fileInput').change(function (event) {
+            $('.informationcontent').css('opacity', '0.3')
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const fileContents = e.target.result;
+                    $('#pullthecode2').children('div').children('.informationcontent').html(
+                        fileContents);
+                };
+
+                reader.readAsText(file);
+
+
+
+                $('.interedit').on('click', function () {
+                    alert('hi')
+                    editorcopy = $(this).html()
+
+                    $('#myhtmleditor').val(editorcopy)
+                    $('#EditandSubmitAL').show()
+
+                })
+
+
+            } else {
+                // Handle the case where no file was selected or an error occurred.
+                alert("No file selected or an error occurred.");
+            }
+
+            setTimeout(function () {
+
+                $('.in910').on('click', function () {
+                    $('.in910').removeClass('interedit')
+                    $(this).addClass('interedit')
+                    $('#myhtmleditor').val($(this).html())
+                })
+
+                $('.liverow').on('click', function () {
+                    $('.liverow').removeClass('onblock')
+                    $(this).addClass('onblock')
+                })
+
+                $(".draggable").draggable({
+                    revert: "valid"
+                })
+
+                $('#selectionclear').on('click', function () {
+                    $('.interedit').removeClass('interedit')
+                })
+
+
+              
+
+
+                loadnewcontent()
+                $('.informationcontent').css('opacity', '1')
+            }, 2000);
+
+
+
+        });
+
+
 
 
 
         $('#addrow2x2').on('click', function () {
             $('.onblock').html(
                 '<div class="width50c  width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c  width50c2 liveelement in910 layoutpale  layoutpale50"></div>'
-                );
+            );
 
 
             $('.liveelement').on('click', function () {
@@ -2807,7 +3177,7 @@
         $('#addrow3x3').on('click', function () {
             $('.onblock').html(
                 '<div class="width33c liveelement in910 layoutpale layoutpale33"></div><div class="width33c liveelement in910 layoutpale layoutpale33"></div><div class="width33c liveelement in910 layoutpale layoutpale33"></div>'
-                );
+            );
 
 
             $('.liveelement').on('click', function () {
@@ -2822,7 +3192,7 @@
         $('#addrow4x4').on('click', function () {
             $('.onblock').html(
                 '<div class="width20c liveelement in910 layoutpale layoutpale25"></div><div class="width20c liveelement in910 layoutpale layoutpale25"></div><div class="width20c liveelement in910 layoutpale layoutpale25"></div><div class="width20c liveelement in910 layoutpale layoutpale25"></div>'
-                );
+            );
 
 
             $('.liveelement').on('click', function () {
@@ -2839,7 +3209,23 @@
         $('#addrow2x8').on('click', function () {
             $('.onblock').html(
                 '<div class="width20c width50c2 liveelement in910 layoutpale layoutpale20"></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"></div>'
-                );
+            );
+
+
+            $('.liveelement').on('click', function () {
+                $('.interedit').removeClass('interedit')
+                $(this).addClass('interedit')
+            })
+            clickanddeleterows()
+            loadnewcontent()
+        })
+
+
+
+        $('#addrowc1xc1').on('click', function () {
+            $('.informationcontent').append(
+                '<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100 interedit"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div></div>'
+            );
 
 
             $('.liveelement').on('click', function () {
@@ -2855,7 +3241,7 @@
         $('#addrowcxc').on('click', function () {
             $('.informationcontent').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable onblock"><div class="width100c liveelement in910 layoutpale layoutpale100 "></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div></div>'
-                );
+            );
 
 
             $('.liveelement').on('click', function () {
@@ -2869,7 +3255,7 @@
         $('#addrowc2xc8').on('click', function () {
             $('.informationcontent').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable onblock"><div class="width100c liveelement in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width20c width50c2 liveelement in910 layoutpale layoutpale20"></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"></div><div class="width20c width50c2 liveelement in910 layoutpale layoutpale20"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width20c width50c2 liveelement in910 layoutpale layoutpale20"></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"></div></div>'
-                );
+            );
 
 
             $('.liveelement').on('click', function () {
@@ -3003,10 +3389,14 @@
 
 
         $('.showthepreviewimage').on('click', function () {
-            var select = document.getElementById("myDropdown");
-            select.selectedIndex = $(this).attr('num');
+            //var select = document.getElementById("myDropdown");
+            //select.selectedIndex = $(this).attr('num');
             imageselect = $(this).attr('prefix')
             imagename00 = $('#cinput1').val()
+
+            imageheader =
+                '<div class="pd-header-tag width100c" style="margin-bottom:10px"><h3 class="t-h4-style in910" id="ocinsertcontent2369">' +
+                $('#cinput1c').val() + '</h3></div>'
 
             if ($('#cinput1b').val() == '') {
 
@@ -3014,10 +3404,21 @@
                 return false
             } else {
 
-                imagedata = '<div class="' + $('#myIMGwidth').val() +
-                    '"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
-                    imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + $(
-                        '#cinput1b').val() + '"></div>'
+
+                if ($('#cinput1c').val() == '') {
+                    imagedata =
+                        '<div class="width100c"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
+                        imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + $(
+                            '#cinput1b').val() + '"></div>'
+                } else {
+                    imagedata = imageheader +
+                        '<div class="width100c"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
+                        imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + $(
+                            '#cinput1b').val() + '"></div>'
+                }
+
+
+
 
 
                 $('.interedit').html(imagedata).removeClass('.interedit')
@@ -3199,6 +3600,11 @@
             loadnewcontent()
         })
 
+
+
+
+
+
         $('#layout120').on('click', function () {
             var parent = $('#reversmodify');
             $('#reversmodify').children('div:first').removeClass().addClass('width20c')
@@ -3276,6 +3682,17 @@
 
 
 
+        $('#wraparoundsubmit').on('click', function () {
+            wraptext = '<p >' + $('#wraparoundimage').val() + '</p>'
+            wrapcatalogselect = $('#wraparoundselect').val()
+            wrapimagefilename = $('#wraparoundfilename').val()
+            wrapimagealt = $('#wraparoundalt').val()
+            wrapfullimage =
+                '<img class="loading-lazy promoimg21 in910" style="width:45% !important" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_RF18A5101SR.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="sdfsdf" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_RF18A5101SR.jpg?sw=400&amp;sh=400&amp;sm=fit">'
+            $('.interedit').html('<div class="width100c">' + wrapfullimage + wraptext + '</div>')
+
+            loadnewcontent()
+        })
 
 
 
