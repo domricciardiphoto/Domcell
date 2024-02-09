@@ -301,7 +301,7 @@ function fullscreenOverviewcontent() {
     icon: `${__dirname}assets/icons/app-icon.png`,
     autoHideMenuBar: true
   })
-  Overviewcontentpage.loadFile('contentbuilder.html')
+  Overviewcontentpage.loadFile('tool-contentbuilder.html')
 }
 
 
@@ -368,7 +368,7 @@ function addbadgebuildertoindex() {
 }
 
 function addOverviewcontenttoindex() {
-  win.loadFile(path.join(__dirname, 'fullscreen1.html'))
+  win.loadFile(path.join(__dirname, 'tool-contentbuilder.html'))
 }
 
 function addBannerSchedulertoindex() {
@@ -520,7 +520,7 @@ click: addbadgebuildertoindex
   
 
 {
-  label:"SEO Top Content Builder (NEW)",
+  label:"SEO Top Content Builder",
   click: createseotopcontent
 },
 
@@ -549,7 +549,7 @@ click: addbadgebuildertoindex
 
 
 {
-  label:"Overview Content (In DEV)",
+  label:"Webpage Builder (New)",
   click: addOverviewcontenttoindex
 },
 

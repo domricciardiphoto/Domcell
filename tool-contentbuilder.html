@@ -256,17 +256,32 @@ var interface = 0
     document.querySelectorAll('.tab:not(#addwindow)').forEach(tab => {
   tab.addEventListener('click', function() {
     // Hide all elements with the class 'myloadedtools'
+    this.style.backgroundColor = '#333'; // Correct way to set background color
+    this.style.color = '#fff'; // Correct way to set text color
     document.querySelectorAll('.myloadedtools').forEach(el => {
       el.style.display = 'none';
     });
 
     // Show the specific element with id 'interface' concatenated with the 'interface' attribute of the clicked tab
     const interfaceId = this.getAttribute('interface');
+    
     const interfaceElement = document.getElementById('interface' + interfaceId);
     if (interfaceElement) {
       interfaceElement.style.display = 'block';
     }
   });
+
+
+
+
+
+
+
+
+
+
+
+  
 }); 
 
 
@@ -299,16 +314,42 @@ document.getElementById('addwindow').addEventListener('click', function() {
   embed.className = 'myloadedtools';
   embed.src = 'overviewcontent-builder.html';
   toolContent.appendChild(embed);
+
+
+  var closeTabs = document.querySelectorAll('.myclostab');
+  closeTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      //openModal();
+    
+       whattheclose = this.closest('div').getAttribute('interface');
+       var elementToRemove = document.getElementById('interface' + whattheclose);
+       if (elementToRemove) {
+    elementToRemove.remove();
+    var whattheclose2 = whattheclose-1
+  
+ 
+    
+}
+
+       if (this.parentNode.matches('div')) {
+    this.parentNode.remove();
+}
+    });
+  });
   
 
   // Add click event to all tabs except 'addwindow'
   document.querySelectorAll('.tab:not(#addwindow)').forEach(tab => {
     tab.addEventListener('click', function() {
       // Reset styles for all tabs
+      
       document.querySelectorAll('.tab').forEach(el => {
         el.style.backgroundColor = '#f7f7f7';
         el.style.color = '#000';
       });
+
+      this.style.backgroundColor = '#333'; // Correct way to set background color
+    this.style.color = 'white'; // Correct way to set text color
 
       // Hide all '.myloadedtools' elements
       document.querySelectorAll('.myloadedtools').forEach(el => {
@@ -332,7 +373,6 @@ document.getElementById('addwindow').addEventListener('click', function() {
     // Make the element editable
     this.setAttribute('contenteditable', 'true');
     this.focus(); // Focus the element to start editing
-
     // Add a one-time event listener for the 'keydown' event
     this.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
@@ -343,6 +383,9 @@ document.getElementById('addwindow').addEventListener('click', function() {
       }
     }, { once: true });
   });
+
+
+  
 });
 
 
@@ -392,13 +435,22 @@ document.addEventListener('DOMContentLoaded', function() {
     confirmDialog.style.display = 'none';
   }
 
+
   // Attach event listeners to all elements with the class 'myclosetab'
   var closeTabs = document.querySelectorAll('.myclostab');
   closeTabs.forEach(function(tab) {
     tab.addEventListener('click', function() {
-      openModal();
+      //openModal();
+    
        whattheclose = this.closest('div').getAttribute('interface');
-     
+       var elementToRemove = document.getElementById('interface' + whattheclose);
+       if (elementToRemove) {
+    elementToRemove.remove();
+}
+
+       if (this.parentNode.matches('div')) {
+    this.parentNode.remove();
+}
     });
   });
 
