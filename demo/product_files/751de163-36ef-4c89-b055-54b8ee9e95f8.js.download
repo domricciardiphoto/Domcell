@@ -1,0 +1,5 @@
+(function (window) {
+    if (window) {
+        window.content_scalpel_client_data = {"descriptors":[],"scenarios":[],"schemaVersion":4,"config":{"delayMs":0}};
+    }
+})(window);

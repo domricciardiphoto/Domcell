@@ -44,7 +44,7 @@
             font-weight: normal;
         }
 
-        .showthepreviewimage {
+        .showthepreviewimage , .showthepreviewimage2 {
             opacity: 0.3;
             cursor: pointer;
             pointer-events: none;
@@ -1214,6 +1214,31 @@
             overflow-wrap: break-word;
             display: none;
         }
+
+        #blogproductlist {
+            display: none;
+            width: 56%;
+        }
+
+#wraparoundproductnumber {
+    display: none;
+}
+
+#reverseimage {
+    display: none;
+}
+
+
+
+svg {
+    width: 60%;
+    max-height: 17px;
+}
+
+#mymatrix4 {
+    display: none;
+}
+
     </style>
 
 
@@ -1492,7 +1517,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
                             cssadd='left'>
-                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%" version=1.1
+                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
                                 viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
                                 xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
                                 <style>
@@ -1516,7 +1541,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
                             cssadd='center'>
-                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%" version=1.1
+                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
                                 viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
                                 xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
                                 <style>
@@ -1546,7 +1571,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
                             cssadd='right'>
-                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%" version=1.1
+                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
                                 viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
                                 xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
                                 <style>
@@ -1690,7 +1715,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
                             cssadd='left'>
-                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%" version=1.1
+                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
                                 viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
                                 xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
                                 <style>
@@ -1714,7 +1739,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
                             cssadd='center'>
-                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%" version=1.1
+                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
                                 viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
                                 xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
                                 <style>
@@ -1744,7 +1769,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
                             cssadd='right'>
-                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%" version=1.1
+                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
                                 viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
                                 xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
                                 <style>
@@ -1779,7 +1804,6 @@
 
 
                     <div class="width100c" style="margin-top: 10px;">
-
                         <select name="textaligner2" id="textaligner2" style="    margin-top: 6px;
                                     width: 24%;
                                     font-size: 74%;
@@ -2040,17 +2064,117 @@
 
                             <div class="width100c" style="margin-bottom: 10px;">
                                 Catalog Selector <select name="wraparoundselect" id="wraparoundselect">
-                                    <option value="product">Product</option>
+                                    <option value="blog" selected>Blog</option>
                                     <option value="promo">Promo</option>
-                                    <option value="blog">Blog</option>
+                                    <option value="product">Product</option>
                                 </select>
                             </div>
 
                             <div class="width100c" style="margin-bottom: 10px;">
                                 <input type="text" id="wraparoundfilename" placeholder="Image Filename"
                                     style=" width: 50%; margin-bottom: 10px;">
+
+                                    <input type="text" id="wraparoundproductnumber" placeholder="Enter Product Number"
+                                    style=" width: 50%; margin-bottom: 10px;">
+                                    <select title="Reverse Layout" name="reverseimage" id="reverseimage">
+                                      
+                                        <option selected value="no">Image First</option>
+                                        <option value="yes">Image Second</option>
+                                    </select>
+
+
                                 <input type="text" id="wraparoundalt" placeholder="Image Alt Tag" style=" width: 95%; ">
                                 <button id="wraparoundsubmit" type="submit" style="margin-top: 10px; border: 1px solid #ccc; background-color: transparent;float: right; color: #fff; padding: 5px; margin-right: 2%;">Submit Component</button>
+
+<div id="blogproductlist" class="width100c">
+    <div class="width100c unselectable-text" style="margin-bottom: 5px;"><span style="color: yellow;">Click to Select Image for Component</span>
+    </div>
+    <div style="width: 200%; float: left;">
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_RF18A5101SR.jpg" num="0" prefix="Z_">
+            <span>Image 1</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ1_75U8H.jpg" num="1" prefix="AZ1_">
+            <span>Image 2</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw852e6d8a/images/hires/AZ1_527521-51Q.jpg?sw=300&amp;sh=300&amp;sm=fit" num="2" prefix="AZ2_">
+            <span>Image 3</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwd629ed5a/images/hires/Z_TO1950SBD.jpg?sw=300&amp;sh=300&amp;sm=fit" num="3" prefix="AZ3_">
+            <span>Image 4</span>
+        </div>
+
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwbba38b6f/images/hires/Z_DMH-W4660NEX.jpg?sw=300&amp;sh=300&amp;sm=fit" num="4" prefix="AZ4_">
+            <span>Image 5</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw80f22513/images/hires/Z_KATNA1512445.jpg?sw=300&amp;sh=300&amp;sm=fit" num="5" prefix="AZ5_">
+            <span>Image 6</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw8ad4e935/images/hires/Z_MPQ03LL-A.jpg?sw=300&amp;sh=300&amp;sm=fit" num="6" prefix="AZ6_">
+            <span>Image 7</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwd523bb01/images/hires/AZ10_OJPRO9015E.jpg?sw=300&amp;sh=300&amp;sm=fit" num="7" prefix="AZ7_">
+            <span>Image 8</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dweef45a4d/images/hires/Z_427120.jpg?sw=300&amp;sh=300&amp;sm=fit" num="8" prefix="AZ8_">
+            <span>Image 9</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw1a25013a/images/hires/Z_936.jpg?sw=300&amp;sh=300&amp;sm=fit" num="9" prefix="AZ9_">
+            <span>Image 10</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw95998783/images/hires/AZ2_KATNA1512445.jpg?sw=300&amp;sh=300&amp;sm=fit" num="10" prefix="AZ10_">
+            <span>Image 11</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw3d4c40be/images/hires/Remote2.jpg?sw=300&amp;sh=300&amp;sm=fit" num="11" prefix="AZ11_">
+            <span>Image 12</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwee5b3664/images/hires/Z_35034.jpg?sw=300&amp;sh=300&amp;sm=fit" num="12" prefix="AZ12_">
+            <span>Image 13</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwb5130fe8/images/hires/Z_527521-51Q.jpg?sw=300&amp;sh=300&amp;sm=fit" num="13" prefix="AZ13_">
+            <span>Image 14</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ8_RF18A5101SR.jpg" num="14" prefix="AZ14_">
+            <span>Image 15</span>
+        </div>
+
+        <div class="promo16c">
+            <img class="showthepreviewimage2" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/RF18A5101SR.jpg" num="15" prefix="">
+            <span>Guide</span>
+        </div>
+
+
+    </div>
+</div>
+
                             </div>
 
 
@@ -2219,8 +2343,8 @@
                 <div class="width100c openclose" openclose="mylinkbuilder">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator" style="font-size: 1rem;">+</span>
-                        <span style="font-size: 1rem;">&nbsp;&nbsp;Link Builder </span>
-                        <span class="mysmalltext">(a)</span>
+                        <span style="font-size: 1rem;">&nbsp;&nbsp;Text Options </span>
+                  
                     </div>
                 </div>
 
@@ -2255,9 +2379,139 @@
                         BAD
                         LINK, RELATIVE LINKS ONLY!</div>
 
+
+                        <div class="width100c">
+                            <button class="texttype"
+                                style="width: 9%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;"
+                                value="strong"><strong>B</strong></button>
+                            <button class="texttype" style="width: 9%; color: #fff; background-color: transparent;"
+                                value="i"><i>I</i></button>
+                            <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                                value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
+                            <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                                value="u"><u>U</u></button>
+                            <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                                value="sub" style="font-size: 0.8rem;">X<sub>2</sub></button>
+                            <button class="texttype"
+                                style="width: 9%; color: #fff; border-right: 1px solid #ccc; background-color: transparent;"
+                                value="sup" style="font-size: 0.8rem;">
+                                X<sup>2</sup></button>
+    
+                            <button class="textaligner"
+                                style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                                cssadd='left'>
+                                <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
+                                    viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                    xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                    <style>
+                                        .st1a {
+                                            stroke: #fff;
+                                            stroke-width: 6;
+                                            stroke-miterlimit: 10
+                                        }
+                                    </style>
+                                    <line class=st1a x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                    <line class=st1a x1=6 x2=43.5 y1=30.1 y2=30 />
+                                    <line class=st1a x1=6 x2=35.6 y1=41.5 y2=41.4 />
+                                    <line class=st1a x1=5.9 x2=35.5 y1=17.4 y2=17.3 />
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                </svg></button>
+                            <button class="textaligner"
+                                style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                                cssadd='center'>
+                                <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
+                                    viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                    xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                    <style>
+                                        .st0dd {
+                                            fill: #333
+                                        }
+    
+                                        .st1dd {
+                                            stroke: #fff;
+                                            stroke-width: 6;
+                                            stroke-miterlimit: 10
+                                        }
+                                    </style>
+                                    <rect class=st0 height=51 width=50.2 x=-0.2 y=-0.3 />
+                                    <line class=st1dd x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                    <line class=st1dd x1=6 x2=43.5 y1=30.1 y2=30 />
+                                    <line class=st1dd x1=6.3 x2=43.6 y1=41.5 y2=41.4 />
+                                    <line class=st1dd x1=6.2 x2=43.5 y1=17.6 y2=17.5 />
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                </svg></button>
+    
+                            <button class="textaligner"
+                                style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
+                                cssadd='right'>
+                                <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
+                                    viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                    xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                    <style>
+                                        .st0c {
+                                            fill: #333
+                                        }
+    
+                                        .st1c {
+                                            stroke: #fff;
+                                            stroke-width: 6;
+                                            stroke-miterlimit: 10
+                                        }
+                                    </style>
+                                    <rect class=st0c height=51 width=50.2 x=-0.2 y=-0.3 />
+                                    <line class=st1c x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                    <line class=st1c x1=6 x2=43.5 y1=30.1 y2=30 />
+                                    <line class=st1c x1=14 x2=43.6 y1=41.5 y2=41.4 />
+                                    <line class=st1 x1=13.9 x2=43.5 y1=17.4 y2=17.3 />
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                </svg></button>
+    
+                            <button class="textaligner3"
+                                style="width: 10%;font-size: 0.85em;max-width: none; color: #fff;  background-color: transparent;border-right: 1px solid #ccc; "
+                                cssadd='<br>'>br</button>
+    
+                        </div>
+    
+    <!--
+                        <div class="width100c" style="margin-top: 10px;">
+    
+                            <select name="textaligner2" id="textaligner2" style="    margin-top: 6px;
+                                    width: 24%;
+                                    font-size: 74%;
+                                    max-width: none;
+                                    min-height: 30px;
+                                    text-align: center; background-color: #333; color: #fff; ">
+                                <option value="addpadding0">Add Top Margin 0pxfgfgfgfgfgfgfg</option>
+                                <option value="addpadding10">Add Top Margin 10px</option>
+                                <option value="addpadding20">Add Top Margin 20px</option>
+                                <option value="addpadding30">Add Top Margin 30px</option>
+                                <option value="addpadding40">Add Top Margin 40px</option>
+                                <option value="addpadding60">Add Top Margin 60px</option>
+                                <option value="addpadding80">Add Top Margin 80px</option>
+                                <option value="addpadding100">Add Top Margin 100px</option>
+                            </select>
+                        </div>
+
+                        -->
+
                 </div>
 
-                <div class="width100c openclose" openclose="mytextbuilder">
+                <div class="width100c openclose" openclose="mytextbuilder" style="display: none;">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator" style="font-size: 1rem;">+</span>
                         <span style="font-size: 1rem;">&nbsp;&nbsp;Text Options</span>
@@ -2288,7 +2542,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
                             cssadd='left'>
-                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%" version=1.1
+                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 version=1.1
                                 viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
                                 xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
                                 <style>
@@ -2312,7 +2566,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
                             cssadd='center'>
-                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%" version=1.1
+                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
                                 viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
                                 xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
                                 <style>
@@ -2342,7 +2596,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
                             cssadd='right'>
-                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1 style="width:40%" version=1.1
+                            <?xml version="1.0" encoding="utf-8"?><svg id=Layer_1  version=1.1
                                 viewBox="0 0 50 50" x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg
                                 xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
                                 <style>
@@ -2529,10 +2783,10 @@
                             style="float: right; max-width: 200px; display: none;">
                         <button id="export"
                             style="float: right; margin-right: 1%; background-color: transparent; color: #fff;">Save
-                            Design <span style="color: yellow;">&uarr;</span></button>
+                            Workspace <span style="color: yellow;">&uarr;</span></button>
                         <button id="import" accept=".txt"
-                            style="float: right; margin-right: 1%; background-color: transparent; color: #fff;">Import
-                            Design
+                            style="float: right; margin-right: 1%; background-color: transparent; color: #fff;">Load
+                            Workspace
                             <span style="color: yellow;"> &darr;</span></button>
                         <input type="file" id="fileInput" accept=".txt" placeholder="Imported file"
                             style="display: none;">
@@ -2643,7 +2897,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
                             cssadd="left">
-                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1" style="width:40%" version="1.1"
+                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1"  version="1.1"
                                 viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
                                 <style>
@@ -2667,7 +2921,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
                             cssadd="center">
-                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1" style="width:40%" version="1.1"
+                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1"  version="1.1"
                                 viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
                                 <style>
@@ -2697,7 +2951,7 @@
                         <button class="textaligner"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
                             cssadd="right">
-                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1" style="width:40%" version="1.1"
+                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1"  version="1.1"
                                 viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
                                 <style>
@@ -2736,8 +2990,9 @@
 
 
             <div class="width100c" style="border-bottom: 3px solid #ccc; margin-bottom: 5px;">
-                <div class="openthematrix openthematrixopen" mymatrix="mymatrix2"style="border-radius: 5px 5px 0px 0px">Layout Editor</div>
+                <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2"style="border-radius: 5px 5px 0px 0px">Layout Editor</div>
                 <div class="openthematrix" mymatrix="mymatrix3" style="border-radius: 5px 5px 0px 0px">Advanced Code Editor</div>
+                <div class="openthematrix" mymatrix="mymatrix4" style="border-radius: 5px 5px 0px 0px">Check on PCR Site</div>
                 <div class="openthematrix" mymatrix="mymatrix1" style="border-radius: 5px 5px 0px 0px;"><strong>Final Code For PCR Site</strong></div>
             </div>
 
@@ -2881,29 +3136,31 @@
                         <div class="width100c unselectable-text" style="margin-bottom: 10px;">Destructive Options :
                         </div>
 
-                        <div class="width100c" style="margin-bottom: 10px;">
+                        <div class="width50c" style="margin-bottom: 10px;">
 
                             <button id="selectionclear"
-                                style="color: red; background-color: #fff;  padding: 5px; width: 20%; font-size: 80%;">Clear
+                                style="color: red; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Clear
                                 Selection</button>
                             <button class="clearsection"
-                                style="color: red; background-color: #fff;  padding: 5px; width: 25%; font-size: 80%;">Empty
+                                style="color: red; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Empty
                                 Component</button>
                         </div>
 
-                        <div class="width100c" style="margin-bottom: 10px;">
-                            <button class="deletecode" style="color: #fff; background-color: red;">Delete
+                        <div class="width50c" style="margin-bottom: 10px;">
+                            <button class="deletecode" style="color: #fff; width: 48%; background-color: red; font-size: 80%; padding-top: 4px; padding-bottom: 4px;">Delete
                                 Component</button>
 
-                            <button class="deleterow" style="color: #fff; background-color: red;">Delete Row</button>
+                            <button class="deleterow" style="color: #fff; width: 48%;  background-color: red; font-size: 80%; padding-top: 4px; padding-bottom: 4px;">Delete Row</button>
 
-                            <button class="deleterowfull"
-                                style="color: #fff; background-color: red; float: right; margin-right: 1%;">Clear
-                                Workspace</button>
+                       
                         </div>
 
 
-
+<div class="width100c">
+    <button class="deleterowfull"
+    style="color: #fff; background-color: red;  margin-right: 1%; width: 98%; padding-top: 3px; padding-bottom: 3px;">Clear
+    Workspace</button>
+</div>
 
 
                     </div>
@@ -2947,8 +3204,11 @@
 
 <textarea name="beautycode" id="beautycode" cols="30" rows="10" style="width: 99.5%; min-height: 533px; background-color: #000; color: #fff;"></textarea>
 
-            </div>
 
+
+
+
+            </div>
 
 
 
@@ -3001,7 +3261,40 @@
     </div>
 
 
+  
+    <div id="mymatrix4" class="width100c closethematrix">
+        <div class="width100c  unselectable-text" id="closeembed" style="margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px; background-color: blue; text-align: center; color: #fff; cursor: pointer;">Close This Window</div>
 
+
+
+     <div id="fullembedcodeddd" style="width: 100%; min-height: 500px; background-color: #fff; position: relative; float: left;">
+    
+    <div style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left;">
+
+        <div style="width: 90%; margin-left: 5%;  margin-top: 40px; font-size: 1.6rem; padding-bottom: 20px; padding-top: 40px;">About This Item</div>   
+
+
+<style>
+#codeloaderpcrview .interedit {
+    background-color: transparent !important;
+}
+
+#codeloaderpcrview div {
+    background-color: transparent !important;
+}
+
+</style>
+
+    
+    <div id="codeloaderpcrview" style="width: 90%; margin-left: 5%; min-height: 300px; background-color: #fff; float: left;"></div>
+    
+    </div>
+    
+    
+    </div>
+        
+    </div>
+    
 
 
 
@@ -3084,12 +3377,72 @@
 
 
     function loadnewcontent() {
+$('.interedit').on('click' , function() {
+    $('#myhtmleditor').val($(this).html())
+})
+
+        $(".draggable").draggable({
+                revert: "valid"
+            });
+
+            $(".droppable").droppable({
+                drop: function (event, ui) {
+                    var mysize = $(ui.draggable).attr('size');
+                    var mypale = $(ui.draggable).attr('pale');
+                    $('.interedit').removeClass('interedit')
+                    if (mysize !== undefined && mysize !== "") {
+                        $(this).append('<div class="' + mysize +
+                            ' in910 layoutpale interedit layoutpale' + mypale +
+                            '"></div>');
+
+                    }
+
+                    $('.liveelement').on('click', function () {
+
+
+                        $('.liveelement').removeClass('interedit')
+                        $(this).addClass('interedit')
+                        //$('#fixthecode').val($(this).html())
+                        $('.clearsection').on('click', function () {
+                            $('.interedit').html('')
+                            loadnewcontent()
+                        })
+
+                        $('#selectionclear').on('click', function () {
+                            $('.interedit').removeClass('interedit')
+                        })
+
+                        $('.interedit').on('click', function () {
+                            editorcopy = $(this).html()
+
+                            $('#myhtmleditor').val(editorcopy)
+                            $('#EditandSubmitAL').show()
+
+                        })
+
+                        $('#EditandSubmitAL').on('click', function () {
+                            $('.interedit').html($('#myhtmleditor').val())
+                            loadnewcontent()
+                        })
+                        $('#myhtmleditor').val($(this).html())
+
+
+                        layoutmode = 1
+
+                    })
+                    loadnewcontent()
+                }
+            });
+
+
+       
         $('#pullthecode .promoimg21 , #pullthecode2 .promoimg21').removeAttr('src')
         $('#pullthecode #cinputval1').removeAttr('src')
         $('#findthecode').text($('#pullthecode').html());
         $('#findthecode2').text($('#pullthecode2').html());
         $('#myhtmleditor').val($('.interedit').html())
-
+     
+    
         var html = $('#pullthecode2').html()
         var beautifiedHtml = beautifyHtml(html);
         $('#beautycode').val(beautifiedHtml)
@@ -3195,7 +3548,7 @@
             loadnewcontent()
         })
 
-
+        $('#codeloaderpcrview').html($('#pullthecode2').html())
 
     }
 
@@ -3273,6 +3626,8 @@
         const videoPoster = $('#videoposter').val();
         const videoElement = createVideoElement(videoFilename, videoCaptions, videoPoster);
         $('.interedit').html(videoElement);
+
+        loadnewcontent()
     });
 
 
@@ -3603,6 +3958,25 @@
             imageprefix = $(this).attr('prefix');
             $(this).attr('src', previewurld + imageprefix + $('#cinput1').val() + '.jpg')
         })
+
+
+        var imgs = document.getElementsByTagName('img');
+for (var i = 0, j = imgs.length; i < j; i++) {
+    if (imgs[i].classList.contains('showthepreviewimage')) { // Check if the image has the specific class
+        // Hide parent <div> initially until image is confirmed to load
+        imgs[i].parentNode.style.display = 'none';
+
+        imgs[i].onload = function() {
+            this.parentNode.style.display = ''; // Show the parent <div> of the image
+        };
+
+        imgs[i].onerror = function(e) {
+            this.parentNode.style.display = 'none'; // Hide the parent <div> of the image
+        };
+    }
+}
+
+
     })
 
 
@@ -3841,26 +4215,39 @@
         })
 
 
-
+$('#closeembed').on('click' , function() {
+    $('#mymatrix4').hide()
+    $('#programming').show()
+$('#resizable-div').show()
+$('#firstmatrix').click()
+})
 
     
 
 
-        $('.openthematrix').on('click', function () {
-            whatmatrix = '#' + $(this).attr('mymatrix')
-            $('.closethematrix').hide()
-            $(whatmatrix).toggle()
-            $('.openthematrixopen').removeClass('openthematrixopen')
-            $('.openthematrixopen2').removeClass('openthematrixopen')
-            $(this).addClass('openthematrixopen')
-            if(whatmatrix === '#mymatrix3') {
-              loadnewcontent()
-                $('.stage2 , #pullthecode2 , #mobilepreview2').hide()
-            } else {
-                $('.stage2 , #pullthecode2 , #mobilepreview2').show()
-            }
-        })
+$('.openthematrix').on('click', function () {
+    var whatmatrix = '#' + $(this).attr('mymatrix');
+    $('.closethematrix').hide(); 
+    $(whatmatrix).toggle();
+    $('.openthematrixopen').removeClass('openthematrixopen'); 
+    $(this).addClass('openthematrixopen');
 
+    switch(whatmatrix) {
+        case '#mymatrix1':
+        case '#mymatrix2':
+            loadnewcontent();
+            $('.stage2 , #pullthecode2 , #mobilepreview2').show();
+            break;
+        case '#mymatrix3':
+            loadnewcontent();
+            $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
+            break;
+        case '#mymatrix4':
+            loadnewcontent();
+            $('#programming, #resizable-div').hide();
+            break;
+    }
+});
         
 
 
@@ -4222,11 +4609,6 @@
                             '"></div>');
 
                     }
-
-
-
-
-
 
                     $('.liveelement').on('click', function () {
 
@@ -4607,6 +4989,74 @@
         })
 
 
+$('#wraparoundselect').on('change' , function() {
+   shouldishowproductimages = $(this).val()
+   if (shouldishowproductimages === 'product') {
+   $('#blogproductlist').show()
+   $('#wraparoundfilename').hide()
+   $('#wraparoundproductnumber').show()
+   $('#wraparoundsubmit').hide()
+   $('#reverseimage').show()
+   } else {
+
+    $('#blogproductlist').hide()
+    $('#wraparoundfilename').show()
+    $('#wraparoundproductnumber').hide()
+    $('#wraparoundsubmit').show()
+    $('#reverseimage').hide()
+   }
+})
+
+
+$('#wraparoundproductnumber').on('input' , function() {
+    getthewraparoundnumber = $(this).val()
+    $('.showthepreviewimage2').css('opacity', '1').css('pointer-events', 'all')
+        $('.showthepreviewimage2').each(function () {
+            previewurld2 =
+                'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/'
+            imageprefix2 = $(this).attr('prefix');
+            $(this).attr('src', previewurld2 + imageprefix2 + $('#wraparoundproductnumber').val() + '.jpg?sw=300&sh=300&sm=fit')
+
+
+            var imgs = document.getElementsByTagName('img');
+for (var i = 0, j = imgs.length; i < j; i++) {
+    if (imgs[i].classList.contains('showthepreviewimage2')) { // Check if the image has the specific class
+        // Hide parent <div> initially until image is confirmed to load
+        imgs[i].parentNode.style.display = 'none';
+
+        imgs[i].onload = function() {
+            this.parentNode.style.display = ''; // Show the parent <div> of the image
+        };
+
+        imgs[i].onerror = function(e) {
+            this.parentNode.style.display = 'none'; // Hide the parent <div> of the image
+        };
+    }
+}
+
+        })
+
+        $('.showthepreviewimage2').on('click' , function() {
+
+if ($('#wraparoundalt').val() === '') {
+    $('.imagemessage').slideDown().delay(2000).slideUp()
+    return false
+} 
+
+
+if($('#reverseimage').val() === 'yes') {
+    $('.interedit').html('<img style="width:45% !important" alt="'+$('#wraparoundalt').val()+'"'+'src="'+$(this).attr('src')+'"'+'/>'+'<p>'+$('#wraparoundimage').val()+'</p>')
+} else {
+    $('.interedit').html(' <div style="flex: 0 1 auto; max-width:45%;float: left;"><img  alt="'+$('#wraparoundalt').val()+'"'+'src="'+$(this).attr('src')+'"'+'/> </div></div>'+'<div style="align-items: flex-start;"><div style="flex: 1 1 auto" ><p>'+$('#wraparoundimage').val()+'</p></div>')
+}
+
+
+
+})
+
+})
+
+
 
         $('#wraparoundsubmit').on('click', function () {
            
@@ -4617,17 +5067,20 @@
         
 
             if(wrapcatalogselect === 'product') {
+               
                 wrapfullimage =
                 '<img class="loading-lazy promoimg21 in910" style="width:45% !important" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_'+wrapimagefilename+'.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="'+wrapimagealt+'" src="#">'
                 $('.interedit').html('<div class="width100c">' + wrapfullimage + wraptext + '</div>')
             }
             if(wrapcatalogselect === 'promo') {
+              
                 wrapfullimage =
                 '<img class="loading-lazy promoimg21 in910" style="width:45% !important" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/promo/'+ wrapimagefilename+'?sw=400&amp;sh=400&amp;sm=fit" alt="'+wrapimagealt+'" src="#">'
                 $('.interedit').html('<div class="width100c">' + wrapfullimage + wraptext + '</div>')
             }
             
             if(wrapcatalogselect === 'blog') {
+              
                 wrapfullimage =
                 '<img class="loading-lazy promoimg21 in910" style="width:45% !important" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/'+ wrapimagefilename+'?sw=400&amp;sh=400&amp;sm=fit" alt="'+wrapimagealt+'" src="#">'
                 $('.interedit').html('<div class="width100c">' + wrapfullimage + wraptext + '</div>')
