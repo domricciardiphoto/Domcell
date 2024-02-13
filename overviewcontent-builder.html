@@ -90,7 +90,7 @@
             width: 99% !important;
         }
 
-        #largeimagepreview {}
+   
 
 
 
@@ -1239,6 +1239,32 @@ svg {
     display: none;
 }
 
+#loadedimagemessage {
+    display: none;
+}
+
+.morebutt {
+    border: 1px solid #f7f7f7;
+    background-color: #f7f7f7;
+    padding: 4px;
+    padding-left: 5px;
+    color: #000;
+}
+
+.morebutt {
+    border: 1px solid #f7f7f7;
+    background-color: #fff;
+    padding: 4px;
+    padding-left: 5px;
+    color: #000;
+}
+
+.makeit100now {
+    width: 100% !important;
+}
+
+
+
     </style>
 
 
@@ -2028,8 +2054,9 @@ svg {
 
                         <div class="width100c" style="margin-bottom: 10px;">
                             Catalog Selector <select id="catalogselector">
-                                <option value="/promo/" selected>Promo</option>
-                                <option value="/blog/">Blog</option>
+                                <option value="/blog/" selected>Blog</option>
+                                <option value="/promo/">Promo</option>
+                                
                             </select>
                         </div>
                         <input type="text" id="cinput1promotional" placeholder="tv-monitor-feat.jpg"
@@ -2040,7 +2067,7 @@ svg {
                         <div class="width100c" style="margin-top: 10px;">
                             <img id="showthepromotionalimage" style="padding: 0px;
     margin: 0px;
-    width: 70% !important; cursor: pointer;"
+    width: 30% !important; cursor: pointer;"
                                 src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/tv-monitor-feat.jpg">
                         </div>
 
@@ -2185,7 +2212,8 @@ svg {
 
 
                     <div class="width100c"
-                    style="margin-top: 10px;background-color: #333;border: 1px solid #ccc; width: 97%; ">
+                    style="margin-top: 10px; width: 97%; ">
+                   <span id="loadedimagemessage" style="font-size: 0.7rem;"> Loaded Images: Select Image to Preview </span>
                     <input type="file" id="imgfileInput" webkitdirectory directory multiple
                         style="display: none;">
 
@@ -3265,13 +3293,15 @@ svg {
     <div id="mymatrix4" class="width100c closethematrix">
         <div class="width100c  unselectable-text" id="closeembed" style="margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px; background-color: blue; text-align: center; color: #fff; cursor: pointer;">Close This Window</div>
 
-
+<div class="width100c">
+   <div class="width100c" style="margin-left: 10%; max-width: 1560px;"> <button class="morebutt" id="pcrdesktopview">Desktop View</button> <button class="morebutt" id="pcrmobileview">Mobile View</button></div>
+</div>
 
      <div id="fullembedcodeddd" style="width: 100%; min-height: 500px; background-color: #fff; position: relative; float: left;">
     
-    <div style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left;">
+    <div style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left; max-width: 1560px;">
 
-        <div style="width: 90%; margin-left: 5%;  margin-top: 40px; font-size: 1.6rem; padding-bottom: 20px; padding-top: 40px;">About This Item</div>   
+        <div style="width: 90%; margin-left: 5%;  margin-top: 15px; font-size: 1.6rem; padding-bottom: 20px; padding-top: 15px; background-color: #fff; float: left;"><span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Overview</span></div>   
 
 
 <style>
@@ -3287,11 +3317,24 @@ svg {
 
     
     <div id="codeloaderpcrview" style="width: 90%; margin-left: 5%; min-height: 300px; background-color: #fff; float: left;"></div>
+    <div style="    width: 90%;
+    margin-left: 5%;
+    margin-top: 3px;
+    font-size: 1.6rem;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #fff;
+    float: left;"><span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Specifications</span></div>
+
+    <div style="width: 90%; margin-left: 5%;  margin-top: 3px; font-size: 1.6rem; padding-bottom: 20px; padding-top: 15px; background-color: #fff; float: left;"><span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Reviews</span></div>
+
+    <div style="width: 90%; margin-left: 5%;  margin-top: 3px; font-size: 1.6rem; padding-bottom: 20px; padding-top: 15px; background-color: #fff; float: left;"><span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Q&A</span></div>
+    </div>
+  
     
     </div>
-    
-    
-    </div>
+
+
         
     </div>
     
@@ -3446,6 +3489,26 @@ $('.interedit').on('click' , function() {
         var html = $('#pullthecode2').html()
         var beautifiedHtml = beautifyHtml(html);
         $('#beautycode').val(beautifiedHtml)
+
+
+        $('#pcrdesktopview').on('click' , function() {
+    $('#fullembedcodeddd').css('max-width' , 'none')
+    $('#pcrmobileview').css('background-color' , '#333').css('color' , '#fff')
+    $(this).css('background-color' , '#f7f7f7').css('color' , '#000')
+    $('#codeloaderpcrview').find('.makeit100now').each(function() {
+    $(this).removeClass('makeit100now')
+});
+})
+
+
+$('#pcrmobileview').on('click' , function() {
+    $('#fullembedcodeddd').css('max-width' , '400px')
+    $('#pcrdesktopview').css('background-color' , '#333').css('color' , '#fff')
+    $(this).css('background-color' , '#f7f7f7').css('color' , '#000')
+    $('#codeloaderpcrview').find('.width50c2').each(function() {
+    $(this).addClass('makeit100now');
+});
+})
 
 
         $(".droppable").droppable({
@@ -4249,6 +4312,8 @@ $('.openthematrix').on('click', function () {
     }
 });
         
+
+
 
 
         $('#addrow1x1').on('click', function () {
@@ -5372,6 +5437,7 @@ $('#beautycode').on('input' , function() {
 
     document.getElementById('clicktoloadlocalfiles').addEventListener('click', function () {
         document.getElementById('imgfileInput').click(); // Simulate file input click
+        $('#loadedimagemessage').show()
     });
 
     document.getElementById('imgfileInput').addEventListener('change', function (event) {
