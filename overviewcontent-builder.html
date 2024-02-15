@@ -1312,6 +1312,21 @@
         .pcrtitleclass:hover {
             background-color: #f7f7f7;
         }
+
+
+.texttype , .textaligner3 {
+  width: 9%; color: #fff;  background-color: transparent;
+}
+
+.texttype:hover , .textaligner3:hover {
+  background-color:#241E1E;
+  color: #f7f7f7;
+}
+
+#mymatrix5 {
+    display: none;
+}
+
     </style>
 
 
@@ -1361,6 +1376,9 @@
                     <span class="mysmalltext">(div)</span>
                 </div>
             </div>
+
+
+            
 
 
             <div class="prod100 tools layoutbuilder-oc"
@@ -1582,19 +1600,19 @@
 
                     <div class="width100c">
                         <button class="texttype"
-                            style="width: 9%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;"
+                            style=" border-left: 1px solid #ccc; margin-top: 10px;"
                             value="strong"><strong class="unselectable-text">B</strong></button>
-                        <button class="texttype" style="width: 9%; color: #fff; background-color: transparent;"
+                        <button class="texttype" 
                             value="i"><i lass="unselectable-text">I</i></button>
-                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                        <button class="texttype" 
                             value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
-                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                        <button class="texttype" 
                             value="u"><u lass="unselectable-text">U</u></button>
                         <button class="texttype unselectable-text"
-                            style="width: 9%; color: #fff;  background-color: transparent;" value="sub"
+                            value="sub"
                             style="font-size: 0.8rem;">X<sub>2</sub></button>
                         <button class="texttype unselectable-text"
-                            style="width: 9%; color: #fff; border-right: 1px solid #ccc; background-color: transparent;"
+                            style=" border-right: 1px solid #ccc; "
                             value="sup" style="font-size: 0.8rem;">
                             X<sup>2</sup></button>
 
@@ -1683,7 +1701,7 @@
                             </svg></button>
 
                         <button class="textaligner3"
-                            style="width: 10%;font-size: 0.85em;max-width: none; color: #fff;  background-color: transparent;border-right: 1px solid #ccc; "
+                            style="font-size: 0.85em;max-width: none; border-right: 1px solid #ccc; "
                             cssadd='<br>'>br</button>
 
                     </div>
@@ -2970,6 +2988,12 @@
 
 
 
+            <div id="mymatrix5" class="width100c closethematrix">
+                <div id="closetutorial" class="width100c" style="background-color: blue; text-align: center; color: #fff; cursor: pointer;">Close Tutorial</div>
+                <div id="vidtutorial" class="width100c">
+                    <iframe width="100%" height="768px"  src="https://www.youtube.com/embed/arfmvD-spxk?si=UiPIUF7P1qVWqqjv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
 
 
 
@@ -3121,6 +3145,8 @@
                 </div>
                 <div class="openthematrix" mymatrix="mymatrix1" style="border-radius: 5px 5px 0px 0px;"><strong>Final
                         Code For PCR Site</strong></div>
+
+                        <div class="openthematrix" mymatrix="mymatrix5" style="border-radius: 5px 5px 0px 0px; float: right;"><strong>Video Tutorial</strong></div>
             </div>
 
 
@@ -3134,14 +3160,14 @@
 
                 <div class="prod100 layout1 selectall"
                     style="background-color: #f7f7f7; color: #000;  margin-bottom: 20px; margin-left: 0px; width: 96%;">
-                    &lt;link href="images/pim-content/occontent2024-v7.css?$staticlink$" rel="stylesheet" /> <br>
+                    &lt;link href="images/pim-content/occontent2024-v7a.css?$staticlink$" rel="stylesheet" /> <br>
                     <span id="findthecode"></span>
                 </div>
 
                 <div class="prod100 layout2 selectall"
                     style="background-color: #f7f7f7; color: #000; margin-bottom: 20px; margin-left: 0px; width: 96%;">
 
-                    &lt;link href="images/pim-content/occontent2024-v7.css?$staticlink$" rel="stylesheet" /> <br>
+                    &lt;link href="images/pim-content/occontent2024-v7a.css?$staticlink$" rel="stylesheet" /> <br>
                     &lt;div class="totalinternalcontent">
                     <span id="findthecode2"></span>
                     &lt;/div>
@@ -3382,6 +3408,11 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
 
             </div>
 
+
+       
+
+
+
             <div id="mymatrix3" class="width100c closethematrix">
 
                 <textarea name="beautycode" id="beautycode" cols="30" rows="10"
@@ -3392,16 +3423,6 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
 
 
             </div>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3422,7 +3443,7 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
 
             </div>
 
-
+            
 
 
         </div>
@@ -3432,7 +3453,7 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
 
 
 
-
+      
 
 
 
@@ -3440,8 +3461,10 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
     </div>
 
 
+   
 
     </div>
+
 
 
 
@@ -3459,6 +3482,9 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
             </div>
         </div>
     </div>
+
+
+
 
     <div id="fullembedcodeddd"
         style="width: 100%; min-height: 500px; background-color: #fff; position: relative; float: left;">
@@ -3682,6 +3708,10 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
             });
         })
 
+
+        $('#closetutorial').on('click' , function() {
+            $('#firstmatrix').click()
+        })
 
         $(".droppable").droppable({
             drop: function (event, ui) {
