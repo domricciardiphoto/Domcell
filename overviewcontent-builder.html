@@ -1231,9 +1231,6 @@
             display: none;
         }
 
-        #reverseimage {
-            display: none;
-        }
 
 
 
@@ -1269,6 +1266,11 @@
         .makeit100now {
             width: 100% !important;
         }
+
+        .makeit50now {
+            width: 100% !important;
+        }
+
 
         #showthepromotionalimage:hover {
             opacity: 0.8;
@@ -1327,7 +1329,11 @@
     display: none;
 }
 
+
+
+
     </style>
+
 
 
 
@@ -1335,7 +1341,7 @@
 </head>
 
 <body>
-
+  
 
 
 
@@ -1495,6 +1501,9 @@
                         Click to Add a 50/50 Row</div>
 
                 </div>
+
+
+            
 
 
             </div>
@@ -3201,7 +3210,13 @@
 color: #fff;
 width: 31%; margin-right: 2%;
 line-height: 25px; float: left;
-margin-bottom: 8px;">Add a 50/50 Row</button>
+margin-bottom: 8px;">Add a 50 x2 Row</button>
+
+<button class="unselectable-text addrow25" style="background-color: blue;
+color: #fff;
+width: 31%; margin-right: 2%;
+line-height: 25px; float: left;
+margin-bottom: 8px;">Add a 25 x4 Row</button>
 
 
                             </div>
@@ -3213,13 +3228,13 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
                             width: 31%; margin-right: 2%;
                             line-height: 25px;float: left; border:2px solid yellow; line-height: 19px; margin-top: 1px;
                             margin-bottom: 8px;">Add an Active Row</button></div>
-
+<div class="width100c" style="min-height: auto;">
                             <div class="width33c">
                                 <button class="deleterow unselectable-text"
                                     style="color: #fff; background-color: red; border:4px solid blue;   width: 31%;  float: left;padding-top: 1px; padding-bottom: 1px;">Delete
                                     Row</button>
                             </div>
-
+                        </div>
                             <div class="width100c">
                                 <div class="width100c findthecode2"
                                     style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
@@ -3694,6 +3709,10 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
             $('#codeloaderpcrview').find('.makeit100now').each(function () {
                 $(this).removeClass('makeit100now')
             });
+            $('#codeloaderpcrview').find('.makeit50now').each(function() {
+           $(this).removeClass('makeit50now')
+    })
+
         })
 
 
@@ -3706,6 +3725,12 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
             $('#codeloaderpcrview').find('.width50c2').each(function () {
                 $(this).addClass('makeit100now');
             });
+
+            $('#codeloaderpcrview').find('.width50c3').each(function() {
+        $(this).addClass('makeit50now')
+    })
+
+
         })
 
 
@@ -4489,6 +4514,13 @@ margin-bottom: 8px;">Add a 50/50 Row</button>
             $('#fullembedcodeddd').hide()
             $('#fullinterface').show()
             $('body').css('background-color' , '#333')
+            $('#codeloaderpcrview').find('.width50c2').each(function () {
+                $(this).addClass('makeit100now');
+            });
+
+            $('#codeloaderpcrview').find('.width50c3').each(function() {
+        $(this).addClass('makeit50now')
+    })
         })
 
 
@@ -4876,6 +4908,31 @@ $('.pcrcloseicon').on('click' , function() {
             loadnewcontent()
 
         })
+
+
+        $('.addrow25').on('click', function () {
+
+$('.layoutbuilder-oc').slideDown()
+$('.onblock').removeClass('onblock')
+$('.layoutbuilder').append(
+    '<div class="width100c" ><div class="width25c width50c3  layoutpale layoutpale25 liverow droppable onblock"></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div></div>'
+    )
+
+$('.liverow').on('click', function () {
+    $('.liverow').removeClass('onblock')
+    $(this).addClass('onblock')
+})
+
+$('#EditandSubmitAL').on('click', function () {
+                            $('.interedit').html($('#myhtmleditor').val())
+                            loadnewcontent()
+                        })
+                        $('#myhtmleditor').val($(this).html())
+
+loadnewcontent()
+
+})
+
 
 
 
@@ -5306,7 +5363,7 @@ $('.pcrcloseicon').on('click' , function() {
                 $('#wraparoundfilename').show()
                 $('#wraparoundproductnumber').hide()
                 $('#wraparoundsubmit').show()
-                $('#reverseimage').hide()
+                
             }
         })
 
@@ -5351,18 +5408,16 @@ $('.pcrcloseicon').on('click' , function() {
                 }
 
 
-                if ($('#reverseimage').val() === 'yes') {
-                    $('.interedit').html('<img style="width:45% !important" alt="' + $(
-                            '#wraparoundalt').val() + '"' + 'src="' + $(this).attr('src') +
-                        '"' + '/>' + '<p>' + $('#wraparoundimage').val() + '</p>')
-                } else {
+                if ($('#reverseimage').val() === 'yes') 
+                {imagefloat = 'right'  } else {imagefloat = 'left'}
+ 
                     $('.interedit').html(
-                        ' <div style="flex: 0 1 auto; max-width:45%;float: left;"><img  alt="' +
+                        ' <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:'+imagefloat+';"><img  alt="' +
                         $('#wraparoundalt').val() + '"' + 'src="' + $(this).attr('src') +
                         '"' + '/> </div></div>' +
                         '<div style="align-items: flex-start;"><div style="flex: 1 1 auto" ><p>' +
                         $('#wraparoundimage').val() + '</p></div>')
-                }
+                
 
 
 
@@ -5379,31 +5434,32 @@ $('.pcrcloseicon').on('click' , function() {
             wrapimagefilename = $('#wraparoundfilename').val()
             wrapimagealt = $('#wraparoundalt').val()
 
+            if ($('#reverseimage').val() === 'yes') 
+                {imagefloat = 'right'  } else {imagefloat = 'left'}
+
 
             if (wrapcatalogselect === 'product') {
 
                 wrapfullimage =
-                    '<img class="loading-lazy promoimg21 in910" style="width:45% !important" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_' +
+                    '<img class="loading-lazy promoimg21 in910" style="width:45% !important; padding:0.5%" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_' +
                     wrapimagefilename + '.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="' + wrapimagealt +
                     '" src="#">'
                 $('.interedit').html('<div class="width100c">' + wrapfullimage + wraptext + '</div>')
             }
             if (wrapcatalogselect === 'promo') {
 
-                wrapfullimage =
-                    '<img class="loading-lazy promoimg21 in910" style="width:45% !important" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/promo/' +
-                    wrapimagefilename + '?sw=400&amp;sh=400&amp;sm=fit" alt="' + wrapimagealt +
-                    '" src="#">'
-                $('.interedit').html('<div class="width100c">' + wrapfullimage + wraptext + '</div>')
+                wrapimagefilename2 = 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/promo/'+wrapimagefilename+'?sw=400&amp;sh=400&amp;sm=fit'
+               wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:'+imagefloat+';'
+ $('.interedit').html('<div style="'+wrapimagestyle+'"><img class="loading-lazy promoimg21 in910" alt="'+ wrapimagealt +'" src="'+wrapimagefilename2+'" data-src="'+wrapimagefilename2+'"/></div></div><div style="align-items: flex-start;"><div style="flex: 1 1 auto" >'+wraptext+'</div>')
             }
 
             if (wrapcatalogselect === 'blog') {
+                
+               wrapimagefilename2 = 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/'+wrapimagefilename+'?sw=400&amp;sh=400&amp;sm=fit'
+               wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:'+imagefloat+';'
+ $('.interedit').html('<div style="'+wrapimagestyle+'"><img class="loading-lazy promoimg21 in910" alt="'+ wrapimagealt +'" src="'+wrapimagefilename2+'" data-src="'+wrapimagefilename2+'"/></div></div><div style="align-items: flex-start;"><div style="flex: 1 1 auto" >'+wraptext+'</div>')
 
-                wrapfullimage =
-                    '<img class="loading-lazy promoimg21 in910" style="width:45% !important" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/' +
-                    wrapimagefilename + '?sw=400&amp;sh=400&amp;sm=fit" alt="' + wrapimagealt +
-                    '" src="#">'
-                $('.interedit').html('<div class="width100c">' + wrapfullimage + wraptext + '</div>')
+
             }
 
 
