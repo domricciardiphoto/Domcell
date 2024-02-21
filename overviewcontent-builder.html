@@ -330,10 +330,6 @@
             float: left;
         }
 
-        .width40c {
-            width: 40%;
-            float: left;
-        }
 
         .width30 {
             width: 30%;
@@ -346,9 +342,7 @@
         }
 
 
-        .width40c h2 {
-            font-size: 18px;
-        }
+
 
 
         .width50c img {
@@ -367,11 +361,7 @@
             padding: 1%;
         }
 
-        .width40c img {
-            width: 88%;
-            padding: 6%;
-            padding-top: 5%;
-        }
+
 
 
         .lister {
@@ -492,6 +482,31 @@
             margin-right: .5%;
         }
 
+        .layoutpale40 {
+            width: calc(40% - 1%) !important;
+            margin-left: .5%;
+            margin-right: .5%;
+        }
+
+        .layoutpale60 {
+            width: calc(60% - 1%) !important;
+            margin-left: .5%;
+            margin-right: .5%;
+        }
+
+        .layoutpale75 {
+            width: calc(75% - 1.5%) !important;
+            margin-left: .5%;
+            margin-right: .5%;
+        }
+
+
+        .layoutpale80 {
+            width: calc(80% - 3%) !important;
+            margin-left: .5%;
+            margin-right: .5%;
+        }
+
 
         .layoutpale33 {
             width: calc(33% - .7%) !important;
@@ -544,7 +559,7 @@
             width: 79% !important;
             float: left;
             text-align: left;
-            min-height: 56px;
+            min-height: 30px;
         }
 
         .width60c {
@@ -560,11 +575,7 @@
             min-height: 53px;
         }
 
-        .width40c {
-            width: 40%;
-            float: left;
-            text-align: left;
-        }
+
 
         .width30c {
             width: 30%;
@@ -576,7 +587,7 @@
             width: 20%;
             float: left;
             text-align: left;
-            min-height: 56px;
+            min-height: 30px;
         }
 
         .width100c p a {
@@ -648,15 +659,8 @@
             float: right;
         }
 
-        .width40c img {
-            width: 88%;
-            padding: 6%;
-            padding-top: 5%;
-        }
 
-        .width40c h2 {
-            font-size: 18px;
-        }
+
 
         .width100c h2 {
             font-size: 24px !important;
@@ -752,11 +756,27 @@
         }
 
 
+        .width75c {
+            width: 73%;
+            float: left;
+
+            padding-top: 0;
+        }
+
+        .width60c {
+            width: 58%;
+            float: left;
+
+            padding-top: 0;
+        }
+
 
         .width40c {
-            width: 40%;
+            width: 38%;
             float: left;
             text-align: left;
+
+            padding-top: 0;
         }
 
         .width30c {
@@ -804,6 +824,7 @@
 
         .width100c img,
         .width80c img,
+        .width75c img,
         .width60c img,
         .width50c img,
         .width40c img,
@@ -841,15 +862,9 @@
             float: right;
         }
 
-        .width40c img {
-            width: 88%;
-            padding: 6%;
-            padding-top: 5%;
-        }
 
-        .width40c h2 {
-            font-size: 18px;
-        }
+
+
 
         .width100c h2 {
             font-size: 24px !important;
@@ -1308,29 +1323,81 @@
         }
 
         .pcrtitleclass {
-            width: 90%; margin-left: 5%;  margin-top: 15px; font-size: 1.6rem; padding-bottom: 20px; padding-top: 15px; background-color: #fff; float: left;
-               
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 15px;
+            font-size: 1.6rem;
+            padding-bottom: 20px;
+            padding-top: 15px;
+            background-color: #fff;
+            float: left;
+
         }
+
         .pcrtitleclass:hover {
             background-color: #f7f7f7;
         }
 
 
-.texttype , .textaligner3 {
-  width: 9%; color: #fff;  background-color: transparent;
+        .texttype,
+        .textaligner3 {
+            width: 9%;
+            color: #fff;
+            background-color: transparent;
+        }
+
+        .texttype:hover,
+        .textaligner3:hover {
+            background-color: #241E1E;
+            color: #f7f7f7;
+        }
+
+        #mymatrix5 {
+            display: none;
+        }
+
+        .width40c {
+            width: 38%;
+            min-height: 28px;
+        }
+
+        .layoutpale,
+        .width100,
+        .width80c,
+        .width75c,
+        .width60c,
+        .width50c,
+        .width40c,
+        .width30c,
+        .width33c,
+        .width25c,
+        .width20c,
+        .width50c2 {
+            min-height: 30px;
+
+        }
+
+        .width50c {
+            min-height: 22px;
+        }
+
+        .addrow:hover,
+        .addrow50:hover,
+        .addrow25:hover,
+        .dropsection:hover {
+            opacity: 0.8;
+        }
+
+        #customModal , #urlModal {
+            z-index: 99999999999999;
+            position: absolute;
+        }
+
+.secondmodal {
+    width: 32%;
+    border: 1px solid #333;
+    font-size: 100%;
 }
-
-.texttype:hover , .textaligner3:hover {
-  background-color:#241E1E;
-  color: #f7f7f7;
-}
-
-#mymatrix5 {
-    display: none;
-}
-
-
-
 
     </style>
 
@@ -1341,8 +1408,44 @@
 </head>
 
 <body>
-  
 
+
+
+    <div id="urlModal" style="display: none;">
+        <div style="    background: #333;
+        padding: 20px;
+        color: #fff;
+        border-radius: 5px;
+        width: 430px;
+        position: fixed;
+        top: 44%;
+        left: 54%;
+        transform: translate(-50%, -50%);">
+            <p>Enter the URL:</p>
+            <input type="text" id="imageUrl" value="" style="width: 100%;">
+            <button id="submitUrl">Submit</button>
+            <button id="cancelUrl">Cancel</button>
+        </div>
+    </div>
+
+
+
+    <div id="customModal" style="display: none;">
+        <div style="    background: #333;
+        color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        width: 36%;
+        position: fixed;
+        top: 45%;
+        left: 53.7%;
+        transform: translate(-50%, -50%);">
+            <p>Select an action:</p>
+            <button class="secondmodal" id="wrapImage">Wrap Image with URL</button>
+            <button class="secondmodal" id="deleteImage">Delete Image</button>
+            <button class="secondmodal" id="closeModal">Cancel</button>
+        </div>
+    </div>
 
 
 
@@ -1384,14 +1487,13 @@
             </div>
 
 
-            
+
 
 
             <div class="prod100 tools layoutbuilder-oc"
                 style="width: 94%; margin-left: 1%; margin-right: 0.5%; display: none;">
                 <div class="width100c">
-                    <p class="unselectable-text"
-                        style="margin-bottom: 10px;  margin-top: 0px; text-align: center; ">
+                    <p class="unselectable-text" style="margin-bottom: 10px;  margin-top: 0px; text-align: center; ">
                         Drag a Layout Box to an Active Workspace Row</p>
                 </div>
 
@@ -1421,6 +1523,8 @@
                                 size="width33c liveelement" pale="33">33%</div>
 
 
+
+
                         </div>
 
 
@@ -1448,22 +1552,53 @@
                             pale="25">
                             80% D 100% M</div>
 
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width75c width50c2  liveelement" pale="75">75% D 100% M</div>
+
+                      
+
+
+                 
+                            <div class="width100c" style="margin-top: 10px;  padding-top: 3px;">
+                                <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width60c width50c2  liveelement" pale="60">60% D 100% M</div>
+
                         <div class="dropsection draggable ui-widget-content unselectable-text"
                             size="width50c width50c2 liveelement" pale="50">50% D 100% M</div>
+                            
+                            </div>
+
+
+                            <div class="width100c" style="margin-top: 10px;  padding-top: 3px;">
+                            
+                                <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width40c width50c2  liveelement" pale="40">40% D 100% M</div>
+    
+                      
+                                <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width33c width50c2  liveelement" pale="33">33% D 100% M</div>
+                            </div> 
+
+
+                        <div class="width100c" style="margin-top: 10px;  padding-top: 3px;">
+
+                     
 
 
                         <div class="dropsection draggable ui-widget-content unselectable-text"
-                            size="width33c width50c2  liveelement" pale="33">33% D 100% M</div>
+                            size="width25c width50c2  liveelement" pale="25">25% D 100% M</div>
 
 
                         <div class="dropsection draggable ui-widget-content unselectable-text"
                             size="width20c width50c2 liveelement" pale="20">20% D 100% M</div>
+                           
 
 
 
+                        </div>
 
+                        <div class="width100c" style="margin-top: 10px;  padding-top: 3px;">
 
-                        <div class="width100c" style="margin-top: 10px;">
 
                             <div class="dropsection draggable ui-widget-content unselectable-text"
                                 size="width33c width50c3  liveelement" pale="33">33% D 50% M</div>
@@ -1472,11 +1607,15 @@
                             <div class="dropsection draggable ui-widget-content unselectable-text"
                                 size="width25c width50c3 liveelement unselectable-text" pale="25">25% D 50% M</div>
 
+                        
+
                             <div class="dropsection draggable ui-widget-content unselectable-text"
                                 size="width20c width50c3 liveelement" pale="20">20% D
                                 50%
                                 M</div>
 
+
+                         
                         </div>
 
                         <div class="simplelayout">Simple Layout</div>
@@ -1486,24 +1625,31 @@
 
                 </div>
 
-                <div class="width50c">
+                <div class="width30c">
                     <div class="addrow unselectable-text"
-                        style="height: 30px;  text-align: center; width: 90%;  cursor: pointer; margin-bottom: 10px; line-height: 30px; border-radius: 3px; background-color: blue;">
-                        Click to Add a 100% Row</div>
+                        style="height: 30px;  text-align: center; width: 97%; font-size: 90%;  cursor: pointer; margin-bottom: 10px; line-height: 30px; border-radius: 3px; background-color: blue;">
+                        100% Row</div>
 
 
 
                 </div>
 
-                <div class="width50c">
+                <div class="width30c">
                     <div class="addrow50 unselectable-text"
-                        style="height: 30px;  text-align: center; width: 90%;  cursor: pointer; margin-bottom: 10px; line-height: 30px; border-radius: 3px; background-color: blue;">
-                        Click to Add a 50/50 Row</div>
+                        style="height: 30px;  text-align: center; width: 97%; font-size: 90%;  cursor: pointer; margin-bottom: 10px; line-height: 30px; border-radius: 3px; background-color: blue;">
+                        50% x2 Row</div>
+
+                </div>
+
+                <div class="width30c">
+                    <div class="addrow25 unselectable-text"
+                        style="height: 30px;  text-align: center; width: 97%; font-size: 90%;   cursor: pointer; margin-bottom: 10px; line-height: 30px; border-radius: 3px; background-color: blue;">
+                        25% x4 Row</div>
 
                 </div>
 
 
-            
+
 
 
             </div>
@@ -1527,8 +1673,8 @@
                 <div class="width100c openclose" openclose="titlebuilder-oc">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator">+</span>
-                        <span style="font-size: 1rem;">&nbsp;&nbsp;Text Component</span>
-                        <span class="mysmalltext">(H2,&nbsp;&nbsp;H3,&nbsp;&nbsp;P )</span>
+                        <span style="font-size: 1rem;">&nbsp;&nbsp;Text / HTML Component</span>
+                        <span class="mysmalltext">(H2,&nbsp;&nbsp;H3,&nbsp;&nbsp;P&nbsp;&nbsp;.HTML )</span>
                     </div>
                 </div>
 
@@ -1568,9 +1714,9 @@
 
                     <div class="width100c"
                         style="border-top: 3px solid #ccc; padding-top: 8px; margin-top: 10px; background-color: #333;">
-                        <p class="unselectable-text" style="margin-bottom: 5px; margin-top: 0px;">Put the paragraph text
-                            here
-                            and click submit -(p)
+                        <p class="unselectable-text" style="margin-bottom: 5px; margin-top: 0px;">&bull; Paragraph text
+                            here -(p) &nbsp;&nbsp;&nbsp; &bull; HTML code (.html)&nbsp;&nbsp;&nbsp; &bull; Javascript
+                            (.js)
                         </p>
 
 
@@ -1608,21 +1754,16 @@
                     </div>
 
                     <div class="width100c">
-                        <button class="texttype"
-                            style=" border-left: 1px solid #ccc; margin-top: 10px;"
+                        <button class="texttype" style=" border-left: 1px solid #ccc; margin-top: 10px;"
                             value="strong"><strong class="unselectable-text">B</strong></button>
-                        <button class="texttype" 
-                            value="i"><i lass="unselectable-text">I</i></button>
-                        <button class="texttype" 
+                        <button class="texttype" value="i"><i lass="unselectable-text">I</i></button>
+                        <button class="texttype"
                             value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
-                        <button class="texttype" 
-                            value="u"><u lass="unselectable-text">U</u></button>
-                        <button class="texttype unselectable-text"
-                            value="sub"
+                        <button class="texttype" value="u"><u lass="unselectable-text">U</u></button>
+                        <button class="texttype unselectable-text" value="sub"
                             style="font-size: 0.8rem;">X<sub>2</sub></button>
-                        <button class="texttype unselectable-text"
-                            style=" border-right: 1px solid #ccc; "
-                            value="sup" style="font-size: 0.8rem;">
+                        <button class="texttype unselectable-text" style=" border-right: 1px solid #ccc; " value="sup"
+                            style="font-size: 0.8rem;">
                             X<sup>2</sup></button>
 
                         <button class="textaligner"
@@ -2155,6 +2296,8 @@
     margin: 0px;
     width: 30% !important; cursor: pointer;"
                                 src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/tv-monitor-feat.jpg">
+                            <div class="width100c" style="font-size: 0.7rem; color: yellow;"> Click this image to add it
+                                to the Workspace</div>
                         </div>
 
 
@@ -2481,7 +2624,7 @@
 
                     <div class="promo50">
                         <button id="submitvideofile"
-                            style="margin-top: 15px; float: right; margin-right: 30px; color: #fff; background-color: #334; padding: 10px; ">Submit
+                            style="margin-top: 15px; float: right; margin-right: 30px; color: #fff; border: 1px solid #ccc; background-color: transparent; padding: 10px; ">Submit
                             Video</button>
                     </div>
 
@@ -2998,9 +3141,15 @@
 
 
             <div id="mymatrix5" class="width100c closethematrix">
-                <div id="closetutorial" class="width100c" style="background-color: blue; text-align: center; color: #fff; cursor: pointer;">Close Tutorial</div>
+                <div id="closetutorial" class="width100c"
+                    style="background-color: blue; text-align: center; color: #fff; cursor: pointer;">Close Tutorial
+                </div>
                 <div id="vidtutorial" class="width100c">
-                    <iframe width="100%" height="768px"  src="https://www.youtube.com/embed/arfmvD-spxk?si=UiPIUF7P1qVWqqjv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="100%" height="768px"
+                        src="https://www.youtube.com/embed/arfmvD-spxk?si=UiPIUF7P1qVWqqjv" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
             </div>
 
@@ -3010,8 +3159,12 @@
             <div class="width100c stage2" style="min-height: auto;">
                 <div class="width50c unselectable-text hideinfullscreen" style="width: 62%; min-height: auto;">Desktop
                     View <span style="color: yellow;">(Active Workspace)</span></div>
-                <div class="width50c unselectable-text hideinfullscreen" style="width: 30%; min-height: auto;">Mobile
-                    View</div>
+                <div class="width50c unselectable-text hideinfullscreen" style="width: 34%; min-height: auto;">Mobile
+                    View
+                
+                <div id="hidemainmobile" myhide="0" style="float: right; color: yellow; border: 1px solid #ccc; font-size: 0.7rem; cursor: pointer; padding: 3px;">Hide Mobile</div>
+                
+                </div>
             </div>
 
             <div id="pullthecode2" class="width50c layout2" style="background-color: #f7f7f7; color: #000; max-width: 99%; width: 62%;  margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 710px;
@@ -3032,7 +3185,9 @@
             </div>
 
             <div class="width100c stage2">
+             
                 <div class="width50c" style="width: 40%; min-height: auto; margin-bottom: 15px;">
+                  
                     <div class="width100c" style="margin-left: 61%; margin-top: -17px;">
                         <button class="texttype"
                             style="width: 9%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;"
@@ -3155,7 +3310,8 @@
                 <div class="openthematrix" mymatrix="mymatrix1" style="border-radius: 5px 5px 0px 0px;"><strong>Final
                         Code For PCR Site</strong></div>
 
-                        <div class="openthematrix" mymatrix="mymatrix5" style="border-radius: 5px 5px 0px 0px; float: right;"><strong>Video Tutorial</strong></div>
+                <div class="openthematrix" mymatrix="mymatrix5" style="border-radius: 5px 5px 0px 0px; float: right;">
+                    <strong>Video Tutorial</strong></div>
             </div>
 
 
@@ -3194,9 +3350,12 @@
     width: 97%;
     margin-right: 3%;  margin-left: -2%;">
 
-                        <div class="width100c unselectable-text" style="margin-bottom: 10px;">Layout Options :</div>
+                        <div class="width100c unselectable-text"
+                            style="margin-bottom: 10px; border-bottom: 1px solid #ccc; width: 96%;">Layout Options :
+                        </div>
 
-
+                        <div class="width100c"><span class="unselectable-text" style="font-size: 0.7rem;">To Create
+                                Rows</span></div>
                         <div class="width100c" style="margin-bottom: 10px;">
                             <div class="width33c">
 
@@ -3210,13 +3369,13 @@
 color: #fff;
 width: 31%; margin-right: 2%;
 line-height: 25px; float: left;
-margin-bottom: 8px;">Add a 50 x2 Row</button>
+margin-bottom: 8px;">Add a 50% x2 Row</button>
 
-<button class="unselectable-text addrow25" style="background-color: blue;
+                                <button class="unselectable-text addrow25" style="background-color: blue;
 color: #fff;
 width: 31%; margin-right: 2%;
 line-height: 25px; float: left;
-margin-bottom: 8px;">Add a 25 x4 Row</button>
+margin-bottom: 8px;">Add a 25% x4 Row</button>
 
 
                             </div>
@@ -3228,22 +3387,28 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
                             width: 31%; margin-right: 2%;
                             line-height: 25px;float: left; border:2px solid yellow; line-height: 19px; margin-top: 1px;
                             margin-bottom: 8px;">Add an Active Row</button></div>
-<div class="width100c" style="min-height: auto;">
-                            <div class="width33c">
-                                <button class="deleterow unselectable-text"
-                                    style="color: #fff; background-color: red; border:4px solid blue;   width: 31%;  float: left;padding-top: 1px; padding-bottom: 1px;">Delete
-                                    Row</button>
+                            <div class="width100c" style="min-height: auto;">
+                                <div class="width33c">
+                                    <button class="deleterow unselectable-text"
+                                        style="color: #fff; background-color: red; border:4px solid blue;   width: 31%;  float: left;padding-top: 1px; padding-bottom: 1px;">Delete
+                                        Row</button>
+                                </div>
                             </div>
-                        </div>
                             <div class="width100c">
                                 <div class="width100c findthecode2"
                                     style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
                                     <span class="unselectable-text">Layouts For an Existing Row</span></div>
-                                <button class="secondlauyout unselectable-text" id="addrow1x1">100% Layout</button>
-                                <button class="secondlauyout unselectable-text" id="addrow2x2">50/50 Layout</button>
-                                <button class="secondlauyout unselectable-text" id="addrow2x8">20/80 Layout</button>
-                                <button class="secondlauyout unselectable-text" id="addrow3x3">33% Layout</button>
-                                <button class="secondlauyout unselectable-text" id="addrow4x4">25% Layout</button>
+                                <div class="width100c">
+                                    <button class="secondlauyout unselectable-text" id="addrow1x1">100% Layout</button>
+                                    <button class="secondlauyout unselectable-text" id="addrow2x2">50/50 Layout</button>
+                                    <button class="secondlauyout unselectable-text" id="addrow2x8">20/80 Layout</button>
+                                    <button class="secondlauyout unselectable-text" id="addrow4x6">40/60 Layout</button>
+                                    <button class="secondlauyout unselectable-text" id="addrow2x7">25/75 Layout</button>
+                                </div>
+                                <div class="width100c" style="margin-top: 10px;">
+                                    <button class="secondlauyout unselectable-text" id="addrow3x3">33% Layout</button>
+                                    <button class="secondlauyout unselectable-text" id="addrow4x4">25% Layout</button>
+                                </div>
                             </div>
                             <div class="width100c">
                                 <div class="width100c" style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
@@ -3296,6 +3461,11 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
                                 <button class="secondlauyout unselectable-text" id="addrowc2xc8"
                                     style="background-color: transparent; color: #fff;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange; ">
                                     80/20 Criss Cross Layout (X3)</button>
+
+
+                                    <button class="secondlauyout unselectable-text" id="addrowc4xc6"
+                                    style="background-color: transparent; color: #fff;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange; ">
+                                    40/60 Left List Layout (X3)</button>
                             </div>
 
                         </div>
@@ -3353,30 +3523,31 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
                         style="margin-left: 10px; margin-top: 10px; margin-left: 0%;  width: 98%; padding-left: 2%; padding-bottom: 10px; padding-top: 5px; ">
                         <div class="width100c unselectable-text"
                             style="margin-left: 0px; margin-top: 0px; margin-bottom: 5px; ">
-                         
+
                             <div style="text-align: center;">Element Color Legend:</div>
-                            <hr style="width: 60%; margin-left: 20%; background-color: #fff; min-height: 1px; padding-top: 0px;">
+                            <hr
+                                style="width: 60%; margin-left: 20%; background-color: #fff; min-height: 1px; padding-top: 0px;">
                         </div>
-                            <div class="width100c">
-                        <div class="width25c" style="font-size: 0.8em; width: 25%; float: left;">
-                            <div style="width: 80%; height: 50px; background-color: #666;"></div> <span
-                                class="unselectable-text">EMPTY Row</span>
+                        <div class="width100c">
+                            <div class="width25c" style="font-size: 0.8em; width: 25%; float: left;">
+                                <div style="width: 80%; height: 50px; background-color: #666;"></div> <span
+                                    class="unselectable-text">EMPTY Row</span>
+                            </div>
+                            <div class="width25c" style="font-size: 0.8em; width: 25%; float: left;">
+                                <div style="width: 80%; height: 50px; background-color: #034694"></div> <span
+                                    class="unselectable-text">A SELECTED Row</span>
+                            </div>
+                            <div class="width20c" style="font-size: 0.8em;width: 25%; float: left;">
+                                <div style="width: 80%; height: 50px; background-color: #ffc1c1"></div> <span
+                                    class="unselectable-text">An Empty Container</span>
+                            </div>
+                            <div class="width20c" style="font-size: 0.8em;width: 25%; float: left;  line-height: 15px;">
+                                <div style="width: 80%; height: 50px; background-color:yellow"></div> <span
+                                    class="unselectable-text">Container Ready<br>
+                                    for a
+                                    Component</span>
+                            </div>
                         </div>
-                        <div class="width25c" style="font-size: 0.8em; width: 25%; float: left;">
-                            <div style="width: 80%; height: 50px; background-color: #034694"></div> <span
-                                class="unselectable-text">A SELECTED Row</span>
-                        </div>
-                        <div class="width20c" style="font-size: 0.8em;width: 25%; float: left;">
-                            <div style="width: 80%; height: 50px; background-color: #ffc1c1"></div> <span
-                                class="unselectable-text">An Empty Container</span>
-                        </div>
-                        <div class="width20c" style="font-size: 0.8em;width: 25%; float: left;  line-height: 15px;">
-                            <div style="width: 80%; height: 50px; background-color:yellow"></div> <span
-                                class="unselectable-text">Container Ready<br>
-                                for a
-                                Component</span>
-                        </div>
-</div>
 
 
                         <div class="width100c" style="margin-top: 10px;">
@@ -3384,14 +3555,16 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
                             <div class="width20c" style="font-size: 0.8em;width: 25%; float: left;  line-height: 15px;">
                                 <div
                                     style="width: 80%; height: 28px; background-color:transparent; border: 1px solid yellow; text-align: center; line-height: 30px; margin-bottom: 7px;">
-                                    Button</div> <span class="unselectable-text" style="font-size: 0.7rem;">Add a Component<br>
+                                    Button</div> <span class="unselectable-text" style="font-size: 0.7rem;">Add a
+                                    Component<br>
                                     To a Row</span>
                             </div>
 
                             <div class="width20c" style="font-size: 0.8em;width: 25%; float: left;  line-height: 15px;">
                                 <div
                                     style="width: 80%; height: 28px; background-color:transparent; border: 1px solid orange; text-align: center; line-height: 30px;margin-bottom: 7px;">
-                                    Button</div> <span class="unselectable-text"style="font-size: 0.7rem;">Layouts ith Rows<br>
+                                    Button</div> <span class="unselectable-text" style="font-size: 0.7rem;">Layouts ith
+                                    Rows<br>
                                     and Components</span>
                             </div>
 
@@ -3399,7 +3572,8 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
                             <div class="width20c" style="font-size: 0.8em;width: 25%; float: left;  line-height: 15px;">
                                 <div
                                     style="width: 80%; height: 30px; background-color:blue;  text-align: center; line-height: 30px;margin-bottom: 7px;">
-                                    Button</div> <span class="unselectable-text"style="font-size: 0.7rem;">Creates a New Row
+                                    Button</div> <span class="unselectable-text" style="font-size: 0.7rem;">Creates a
+                                    New Row
                                 </span>
                             </div>
 
@@ -3407,7 +3581,8 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
                             <div class="width20c" style="font-size: 0.8em;width: 25%; float: left;  line-height: 15px;">
                                 <div
                                     style="width: 80%; height: 30px; background-color:RED;  text-align: center; line-height: 30px;margin-bottom: 7px;">
-                                    Button</div> <span class="unselectable-text"style="font-size: 0.7rem;">Deletes Elements
+                                    Button</div> <span class="unselectable-text" style="font-size: 0.7rem;">Deletes
+                                    Elements
                                 </span>
                             </div>
 
@@ -3424,7 +3599,7 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
             </div>
 
 
-       
+
 
 
 
@@ -3458,7 +3633,7 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
 
             </div>
 
-            
+
 
 
         </div>
@@ -3468,7 +3643,7 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
 
 
 
-      
+
 
 
 
@@ -3476,7 +3651,7 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
     </div>
 
 
-   
+
 
     </div>
 
@@ -3507,7 +3682,9 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
         <div
             style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left; max-width: 1560px;">
 
-            <div class="pcrtitleclass" ><span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px; color: #034694;">Overview</span><span class="pcrcloseicon">-</span></div>
+            <div class="pcrtitleclass"><span
+                    style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px; color: #034694;">Overview</span><span
+                    class="pcrcloseicon">-</span></div>
 
 
             <style>
@@ -3523,19 +3700,23 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
 
             <div id="codeloaderpcrview"
                 style="width: 90%; margin-left: 5%; min-height: 300px; background-color: #fff; float: left;"></div>
-            <div class="pcrtitleclass"><span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Specifications</span><span class="pcrcloseicon">+</span><br>
-    <span style="font-size: 1rem; margin-left: 1.3%;">Dimensions, Range Details, Oven Details... </span>
-</div>
-
-<div class="pcrtitleclass">
-                <span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Reviews</span><span class="pcrcloseicon">+</span>
-            
-            
-            
+            <div class="pcrtitleclass"><span
+                    style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Specifications</span><span
+                    class="pcrcloseicon">+</span><br>
+                <span style="font-size: 1rem; margin-left: 1.3%;">Dimensions, Range Details, Oven Details... </span>
             </div>
 
             <div class="pcrtitleclass">
-                <span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Q&A</span><span class="pcrcloseicon">+</span><br>
+                <span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Reviews</span><span
+                    class="pcrcloseicon">+</span>
+
+
+
+            </div>
+
+            <div class="pcrtitleclass">
+                <span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Q&A</span><span
+                    class="pcrcloseicon">+</span><br>
                 <span style="font-size: 1rem; margin-left: 1.3%;">0 Questions </span>
             </div>
         </div>
@@ -3565,6 +3746,35 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
     choosehtag = '0'
     mylisttype = 0;
     var html = $('#pullthecode2').html()
+    var currentImage; // To keep track of the current right-clicked image
+    var selectedText = ''; // To keep track of the highlighted text
+    var savedSelection; // To keep track of the highlighted text selection
+
+function saveSelection() {
+    if (window.getSelection) {
+        var sel = window.getSelection();
+        if (sel.rangeCount > 0) {
+            savedSelection = sel.getRangeAt(0);
+        }
+    }
+}
+
+function restoreSelection() {
+    var selection = window.getSelection();
+    if (savedSelection) {
+        try {
+            selection.removeAllRanges();
+        } catch (ex) {
+            document.body.createTextRange().select();
+            document.selection.empty();
+        }
+
+        selection.addRange(savedSelection);
+    }
+}
+
+
+
     var beautifiedHtml
 
     var wid100code1 =
@@ -3628,6 +3838,16 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
     }
 
 
+
+
+
+
+
+
+
+
+
+
     function loadnewcontent() {
         $('.interedit').on('click', function () {
             $('#myhtmleditor').val($(this).html())
@@ -3679,12 +3899,27 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
                     $('#myhtmleditor').val($(this).html())
 
 
+
+
                     layoutmode = 1
 
                 })
                 loadnewcontent()
+         
             }
+
+
+
+
+            
         });
+
+
+ 
+
+       
+    
+     
 
 
 
@@ -3701,40 +3936,42 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
 
 
         $('#pcrdesktopview').on('click', function () {
-          
-            $('#fullembedcodeddd').css('max-width', 'none').css('margin-left' , '0%')
+
+            $('#fullembedcodeddd').css('max-width', 'none').css('margin-left', '0%')
             $('#pcrmobileview').css('background-color', '#333').css('color', '#fff')
             $(this).css('background-color', '#f7f7f7').css('color', '#000')
-            $('body').css('background-color' , '#fff')
+            $('body').css('background-color', '#fff')
             $('#codeloaderpcrview').find('.makeit100now').each(function () {
                 $(this).removeClass('makeit100now')
             });
-            $('#codeloaderpcrview').find('.makeit50now').each(function() {
-           $(this).removeClass('makeit50now')
-    })
+            $('#codeloaderpcrview').find('.makeit50now').each(function () {
+                $(this).removeClass('makeit50now')
+            })
 
         })
 
 
+
+
         $('#pcrmobileview').on('click', function () {
-          
-            $('#fullembedcodeddd').css('max-width', '400px').css('margin-left' , '10%')
+
+            $('#fullembedcodeddd').css('max-width', '400px').css('margin-left', '10%')
             $('#pcrdesktopview').css('background-color', '#333').css('color', '#fff')
-            $('body').css('background-color' , '#333')
+            $('body').css('background-color', '#333')
             $(this).css('background-color', '#f7f7f7').css('color', '#000')
             $('#codeloaderpcrview').find('.width50c2').each(function () {
                 $(this).addClass('makeit100now');
             });
 
-            $('#codeloaderpcrview').find('.width50c3').each(function() {
-        $(this).addClass('makeit50now')
-    })
+            $('#codeloaderpcrview').find('.width50c3').each(function () {
+                $(this).addClass('makeit50now')
+            })
 
 
         })
 
 
-        $('#closetutorial').on('click' , function() {
+        $('#closetutorial').on('click', function () {
             $('#firstmatrix').click()
         })
 
@@ -3806,7 +4043,8 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
             'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'ui-', 'layoutpale100', ' ui-',
             'layoutpale30', 'layoutpale20', , 'layoutpale33', 'onblock', 'interedit',
             'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
-            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle'
+            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle',
+            'https://staging-na01-pcrichard.demandware.net'
         ];
 
         // Loop through the words and remove them from the content
@@ -4253,7 +4491,7 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
         var imgs = document.getElementsByTagName('img');
         for (var i = 0, j = imgs.length; i < j; i++) {
             if (imgs[i].classList.contains(
-                'showthepreviewimage')) { // Check if the image has the specific class
+                    'showthepreviewimage')) { // Check if the image has the specific class
                 // Hide parent <div> initially until image is confirmed to load
                 imgs[i].parentNode.style.display = 'none';
 
@@ -4320,7 +4558,7 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
             $('#legend').hide()
             $('.hamburger').show()
             $('.textaligner svg').css('width', '100%')
-              $('.hideinfullscreen').hide()
+            $('.hideinfullscreen').hide()
             //  $('.mymobile , #pullthecode2').css('float', 'right')
             //  $(' #pullthecode2').css('width', '70%').show()
             $('.imgbuild').css('width', '96%')
@@ -4447,7 +4685,29 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
 
 
 
+        $('#hidemainmobile').on('click', function () {
+    var $mobilePreview = $('#mobilepreview2');
+    var $pullTheCode = $('#pullthecode2');
+    var isVisible = $mobilePreview.is(':visible');
+    myhide = $(this).attr('myhide')
 
+    if (myhide === '0') {
+        // If mobile preview is currently visible, hide it, change width of pullthecode2, and update the button text
+        $mobilePreview.hide();
+        $pullTheCode.delay(200).animate({'width': '98%' , 'max-width' : '1600px'});
+        $(this).text('Show Mobile');
+       $('#hidemainmobile').attr('myhide' , '1')
+    } else {
+        // If mobile preview is currently hidden, show it, reset width of pullthecode2, and update the button text
+        $pullTheCode.delay(200).animate({'width': '62%' , 'max-width' : 'auto'} , function() {
+            $mobilePreview.show();
+            $('#hidemainmobile').attr('myhide' , '0')
+        });
+        
+
+        $(this).text('Hide Mobile');
+    }
+});
 
 
 
@@ -4513,14 +4773,14 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
             $('#firstmatrix').click()
             $('#fullembedcodeddd').hide()
             $('#fullinterface').show()
-            $('body').css('background-color' , '#333')
+            $('body').css('background-color', '#333')
             $('#codeloaderpcrview').find('.width50c2').each(function () {
                 $(this).addClass('makeit100now');
             });
 
-            $('#codeloaderpcrview').find('.width50c3').each(function() {
-        $(this).addClass('makeit50now')
-    })
+            $('#codeloaderpcrview').find('.width50c3').each(function () {
+                $(this).addClass('makeit50now')
+            })
         })
 
 
@@ -4550,9 +4810,9 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
                     $('#programming, #resizable-div').hide();
                     $('#fullembedcodeddd').show()
                     $('#fullinterface').hide()
-                    $('body').css('background-color' , '#fff')
-                    $('#pcrmobileview').css('background-color' , '#333').css('color' , '#fff')
-                    $('#pcrdesktopview').css('background-color' , '#fff').css('color' , '#333')
+                    $('body').css('background-color', '#fff')
+                    $('#pcrmobileview').css('background-color', '#333').css('color', '#fff')
+                    $('#pcrdesktopview').css('background-color', '#fff').css('color', '#333')
                     break;
             }
         });
@@ -4632,10 +4892,10 @@ margin-bottom: 8px;">Add a 25 x4 Row</button>
         })
 
 
-$('.pcrcloseicon').on('click' , function() {
-    $('#codeloaderpcrview').toggle()
- 
-})
+        $('.pcrcloseicon').on('click', function () {
+            $('#codeloaderpcrview').toggle()
+
+        })
 
 
         $('#fileInput').change(function (event) {
@@ -4778,6 +5038,39 @@ $('.pcrcloseicon').on('click' , function() {
             loadnewcontent()
         })
 
+        $('#addrow4x6').on('click', function () {
+            $('.interedit').removeClass('interedit')
+            $('.onblock').html(
+                '<div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div><div class="width60c width50c2  liveelement in910 layoutpale interedit layoutpale60"></div>'
+            );
+
+
+            $('.liveelement').on('click', function () {
+                $('.interedit').removeClass('interedit')
+                $(this).addClass('interedit')
+            })
+            destructiveoptions()
+            clickanddeleterows()
+            loadnewcontent()
+        })
+
+
+        $('#addrow2x7').on('click', function () {
+            $('.interedit').removeClass('interedit')
+            $('.onblock').html(
+                '<div class="width25c width50c2 liveelement in910 layoutpale layoutpale25 interedit"></div><div class="width75c width50c2 liveelement in910 layoutpale layoutpale75"></div>'
+            );
+
+
+            $('.liveelement').on('click', function () {
+                $('.interedit').removeClass('interedit')
+                $(this).addClass('interedit')
+            })
+            destructiveoptions()
+            clickanddeleterows()
+            loadnewcontent()
+        })
+
 
 
         $('#addrowc1xc1').on('click', function () {
@@ -4841,6 +5134,27 @@ $('.pcrcloseicon').on('click' , function() {
         })
 
 
+
+        $('#addrowc4xc6').on('click', function () {
+            $('.informationcontent').append(
+                '<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable onblock"><div class="width100c liveelement in910 layoutpale layoutpale100 interedit"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60"></div></div>'
+            );
+
+
+            $('.liveelement').on('click', function () {
+                $('.interedit').removeClass('interedit')
+                $(this).addClass('interedit')
+                $('#myhtmleditor').val($(this).html())
+            })
+            destructiveoptions()
+            clickanddeleterows()
+            loadnewcontent()
+        })
+
+
+
+
+
         $('#addactiverow').on('click', function () {
             $('.layoutbuilder').append(
                 '<div class="width100c  layoutpale layoutpale100 liverow droppable onblock"><div class="width100c in910 layoutpale layoutpale100 interedit"></div></div>'
@@ -4898,7 +5212,7 @@ $('.pcrcloseicon').on('click' , function() {
             $('.onblock').removeClass('onblock')
             $('.layoutbuilder').append(
                 '<div class="width100c" ><div class="width50c width50c2  layoutpale layoutpale50 liverow droppable onblock"></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable "></div></div>'
-                )
+            )
 
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
@@ -4912,26 +5226,26 @@ $('.pcrcloseicon').on('click' , function() {
 
         $('.addrow25').on('click', function () {
 
-$('.layoutbuilder-oc').slideDown()
-$('.onblock').removeClass('onblock')
-$('.layoutbuilder').append(
-    '<div class="width100c" ><div class="width25c width50c3  layoutpale layoutpale25 liverow droppable onblock"></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div></div>'
-    )
+            $('.layoutbuilder-oc').slideDown()
+            $('.onblock').removeClass('onblock')
+            $('.layoutbuilder').append(
+                '<div class="width100c" ><div class="width25c width50c3  layoutpale layoutpale25 liverow droppable onblock"></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div></div>'
+            )
 
-$('.liverow').on('click', function () {
-    $('.liverow').removeClass('onblock')
-    $(this).addClass('onblock')
-})
+            $('.liverow').on('click', function () {
+                $('.liverow').removeClass('onblock')
+                $(this).addClass('onblock')
+            })
 
-$('#EditandSubmitAL').on('click', function () {
-                            $('.interedit').html($('#myhtmleditor').val())
-                            loadnewcontent()
-                        })
-                        $('#myhtmleditor').val($(this).html())
+            $('#EditandSubmitAL').on('click', function () {
+                $('.interedit').html($('#myhtmleditor').val())
+                loadnewcontent()
+            })
+            $('#myhtmleditor').val($(this).html())
 
-loadnewcontent()
+            loadnewcontent()
 
-})
+        })
 
 
 
@@ -5050,8 +5364,62 @@ loadnewcontent()
                 imagedata2 = '<img class="loading-lazy promoimg21 in910" data-src="' + imagename01 +
                     '" alt="' + $('#cinput1bpromotional').val() + '">'
                 $('.interedit').append(imagedata2).removeClass('.interedit')
+           
             }
-            loadnewcontent()
+          
+
+            $('img.promoimg21').on("contextmenu", function(e){
+    e.preventDefault(); // Prevent the default context menu
+    currentImage = $(this); // Set the current image
+    $('#customModal').show(); // Show the custom modal
+});
+
+$('#wrapImage').click(function(){
+    $('#customModal').hide(); // Hide the custom modal
+    $('#urlModal').show(); // Show the URL modal
+});
+
+$('#submitUrl').click(function(){
+    var url = $('#imageUrl').val(); // Get URL from input field
+    if(url && url !== "http://") {
+        if(currentImage.parent('a').length === 0) {
+            currentImage.wrap('<a class="" href="' + url + '"></a>');
+        } else {
+            currentImage.parent('a').attr('href', url);
+        }
+    }
+    $('#urlModal').hide(); // Hide the URL modal
+    loadnewcontent()
+    $('a').not('.outsidelink').on('click', function (e) {
+                e.preventDefault();
+                currentAnchor = this; // Store the current anchor element
+                wheretogo = $(this).attr('href');
+                openModal('https://www.pcrichard.com' + wheretogo);
+            });
+});
+
+$('#cancelUrl').click(function(){
+    $('#urlModal').hide(); // Hide the URL modal
+    loadnewcontent()
+});
+
+$('#deleteImage').click(function(){
+    currentImage.parent('a').remove();
+    currentImage.remove(); // Remove the image
+    $('#customModal').hide(); 
+     // Hide the custom modal
+    loadnewcontent()
+});
+
+$('#closeModal').click(function(){
+    $('#customModal').hide(); // Hide the custom modal without any action
+});
+
+
+
+
+    loadnewcontent()
+
         })
 
 
@@ -5091,7 +5459,61 @@ loadnewcontent()
 
                 $('.interedit').append(imagedata).removeClass('.interedit')
                 loadnewcontent()
+//---------------------------------------------------------
 
+
+$('img.promoimg21').on("contextmenu", function(e){
+    e.preventDefault(); // Prevent the default context menu
+    currentImage = $(this); // Set the current image
+    $('#customModal').show(); // Show the custom modal
+});
+
+$('#wrapImage').click(function(){
+    $('#customModal').hide(); // Hide the custom modal
+    $('#urlModal').show(); // Show the URL modal
+});
+
+$('#submitUrl').click(function(){
+    var url = $('#imageUrl').val(); // Get URL from input field
+    if(url && url !== "http://") {
+        if(currentImage.parent('a').length === 0) {
+            currentImage.wrap('<a class="" href="' + url + '"></a>');
+        } else {
+            currentImage.parent('a').attr('href', url);
+        }
+    }
+    $('#urlModal').hide(); // Hide the URL modal
+    loadnewcontent()
+    $('a').not('.outsidelink').on('click', function (e) {
+                e.preventDefault();
+                currentAnchor = this; // Store the current anchor element
+                wheretogo = $(this).attr('href');
+                openModal('https://www.pcrichard.com' + wheretogo);
+            });
+});
+
+$('#cancelUrl').click(function(){
+    $('#urlModal').hide(); // Hide the URL modal
+    loadnewcontent()
+});
+
+$('#deleteImage').click(function(){
+    currentImage.parent('a').remove();
+    currentImage.remove(); // Remove the image
+    $('#customModal').hide(); 
+     // Hide the custom modal
+    loadnewcontent()
+});
+
+$('#closeModal').click(function(){
+    $('#customModal').hide(); // Hide the custom modal without any action
+});
+
+
+
+  
+//--------------------------------------------------------
+    
             }
 
 
@@ -5299,6 +5721,16 @@ loadnewcontent()
             $('.interedit').append('<p>' + $('#cinput3a').val() + '</p>')
             $('#cinput3a').val('')
             layoutmode = 0
+
+
+//---------------------------------------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------------------------------------
+
+
+
             loadnewcontent()
 
             $('a').not('outsidelink').on('click', function (e) {
@@ -5363,7 +5795,7 @@ loadnewcontent()
                 $('#wraparoundfilename').show()
                 $('#wraparoundproductnumber').hide()
                 $('#wraparoundsubmit').show()
-                
+
             }
         })
 
@@ -5382,18 +5814,19 @@ loadnewcontent()
                 var imgs = document.getElementsByTagName('img');
                 for (var i = 0, j = imgs.length; i < j; i++) {
                     if (imgs[i].classList.contains(
-                        'showthepreviewimage2')) { // Check if the image has the specific class
+                            'showthepreviewimage2'
+                            )) { // Check if the image has the specific class
                         // Hide parent <div> initially until image is confirmed to load
                         imgs[i].parentNode.style.display = 'none';
 
                         imgs[i].onload = function () {
                             this.parentNode.style.display =
-                            ''; // Show the parent <div> of the image
+                                ''; // Show the parent <div> of the image
                         };
 
                         imgs[i].onerror = function (e) {
                             this.parentNode.style.display =
-                            'none'; // Hide the parent <div> of the image
+                                'none'; // Hide the parent <div> of the image
                         };
                     }
                 }
@@ -5408,16 +5841,20 @@ loadnewcontent()
                 }
 
 
-                if ($('#reverseimage').val() === 'yes') 
-                {imagefloat = 'right'  } else {imagefloat = 'left'}
- 
-                    $('.interedit').html(
-                        ' <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:'+imagefloat+';"><img  alt="' +
-                        $('#wraparoundalt').val() + '"' + 'src="' + $(this).attr('src') +
-                        '"' + '/> </div></div>' +
-                        '<div style="align-items: flex-start;"><div style="flex: 1 1 auto" ><p>' +
-                        $('#wraparoundimage').val() + '</p></div>')
-                
+                if ($('#reverseimage').val() === 'yes') {
+                    imagefloat = 'right'
+                } else {
+                    imagefloat = 'left'
+                }
+
+                $('.interedit').html(
+                    ' <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' +
+                    imagefloat + ';"><img  alt="' +
+                    $('#wraparoundalt').val() + '"' + 'src="' + $(this).attr('src') +
+                    '"' + '/> </div></div>' +
+                    '<div style="align-items: flex-start;"><div style="flex: 1 1 auto" ><p>' +
+                    $('#wraparoundimage').val() + '</p></div>')
+
 
 
 
@@ -5429,13 +5866,21 @@ loadnewcontent()
 
         $('#wraparoundsubmit').on('click', function () {
 
+            if ($('#wraparoundalt').val() === '') {
+                $('.imagemessage').slideDown().delay(2000).slideUp()
+                return false
+            }
+
             wraptext = '<p >' + $('#wraparoundimage').val() + '</p>'
             wrapcatalogselect = $('#wraparoundselect').val()
             wrapimagefilename = $('#wraparoundfilename').val()
             wrapimagealt = $('#wraparoundalt').val()
 
-            if ($('#reverseimage').val() === 'yes') 
-                {imagefloat = 'right'  } else {imagefloat = 'left'}
+            if ($('#reverseimage').val() === 'yes') {
+                imagefloat = 'right'
+            } else {
+                imagefloat = 'left'
+            }
 
 
             if (wrapcatalogselect === 'product') {
@@ -5448,19 +5893,78 @@ loadnewcontent()
             }
             if (wrapcatalogselect === 'promo') {
 
-                wrapimagefilename2 = 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/promo/'+wrapimagefilename+'?sw=400&amp;sh=400&amp;sm=fit'
-               wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:'+imagefloat+';'
- $('.interedit').html('<div style="'+wrapimagestyle+'"><img class="loading-lazy promoimg21 in910" alt="'+ wrapimagealt +'" src="'+wrapimagefilename2+'" data-src="'+wrapimagefilename2+'"/></div></div><div style="align-items: flex-start;"><div style="flex: 1 1 auto" >'+wraptext+'</div>')
+                wrapimagefilename2 =
+                    'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/promo/' +
+                    wrapimagefilename + '?sw=400&amp;sh=400&amp;sm=fit'
+                wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' + imagefloat + ';'
+                $('.interedit').html('<div style="' + wrapimagestyle +
+                    '"><img class="loading-lazy promoimg21 in910" alt="' + wrapimagealt +
+                    '" src="' + wrapimagefilename2 + '" data-src="' + wrapimagefilename2 +
+                    '"/></div></div><div style="align-items: flex-start;"><div style="flex: 1 1 auto" >' +
+                    wraptext + '</div>')
             }
 
             if (wrapcatalogselect === 'blog') {
-                
-               wrapimagefilename2 = 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/'+wrapimagefilename+'?sw=400&amp;sh=400&amp;sm=fit'
-               wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:'+imagefloat+';'
- $('.interedit').html('<div style="'+wrapimagestyle+'"><img class="loading-lazy promoimg21 in910" alt="'+ wrapimagealt +'" src="'+wrapimagefilename2+'" data-src="'+wrapimagefilename2+'"/></div></div><div style="align-items: flex-start;"><div style="flex: 1 1 auto" >'+wraptext+'</div>')
+
+                wrapimagefilename2 =
+                    'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/' +
+                    wrapimagefilename + '?sw=400&amp;sh=400&amp;sm=fit'
+                wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' + imagefloat + ';'
+                $('.interedit').html('<div style="' + wrapimagestyle +
+                    '"><img class="loading-lazy promoimg21 in910" alt="' + wrapimagealt +
+                    '" src="' + wrapimagefilename2 + '" data-src="' + wrapimagefilename2 +
+                    '"/></div></div><div style="align-items: flex-start;"><div style="flex: 1 1 auto" >' +
+                    wraptext + '</div>')
 
 
             }
+
+            $('img.promoimg21').on("contextmenu", function(e){
+    e.preventDefault(); // Prevent the default context menu
+    currentImage = $(this); // Set the current image
+    $('#customModal').show(); // Show the custom modal
+});
+
+$('#wrapImage').click(function(){
+    $('#customModal').hide(); // Hide the custom modal
+    $('#urlModal').show(); // Show the URL modal
+});
+
+$('#submitUrl').click(function(){
+    var url = $('#imageUrl').val(); // Get URL from input field
+    if(url && url !== "http://") {
+        if(currentImage.parent('a').length === 0) {
+            currentImage.wrap('<a class="" href="' + url + '"></a>');
+        } else {
+            currentImage.parent('a').attr('href', url);
+        }
+    }
+    $('#urlModal').hide(); // Hide the URL modal
+    loadnewcontent()
+    $('a').not('.outsidelink').on('click', function (e) {
+                e.preventDefault();
+                currentAnchor = this; // Store the current anchor element
+                wheretogo = $(this).attr('href');
+                openModal('https://www.pcrichard.com' + wheretogo);
+            });
+});
+
+$('#cancelUrl').click(function(){
+    $('#urlModal').hide(); // Hide the URL modal
+    loadnewcontent()
+});
+
+$('#deleteImage').click(function(){
+    currentImage.parent('a').remove();
+    currentImage.remove(); // Remove the image
+    $('#customModal').hide(); 
+     // Hide the custom modal
+    loadnewcontent()
+});
+
+$('#closeModal').click(function(){
+    $('#customModal').hide(); // Hide the custom modal without any action
+});
 
 
             loadnewcontent()
@@ -5660,9 +6164,11 @@ loadnewcontent()
 
         $('#textaligner2').on('change', function () {
             var cssadd = $(this).val();
-            $('.interedit').removeClass('addpadding0 addpadding10 addpadding20 addpadding40 addpadding60 addpadding80 addpadding100').addClass(cssadd);
+            $('.interedit').removeClass(
+                'addpadding0 addpadding10 addpadding20 addpadding40 addpadding60 addpadding80 addpadding100'
+                ).addClass(cssadd);
 
-             editorcopy = $('.interedit').html();
+            editorcopy = $('.interedit').html();
             $('#myhtmleditor').val(editorcopy);
             loadnewcontent();
         });
