@@ -1283,7 +1283,7 @@
         }
 
         .makeit50now {
-            width: 100% !important;
+            width: 49% !important;
         }
 
 
@@ -3395,6 +3395,37 @@ margin-bottom: 8px;">Add a 25% x4 Row</button>
                                 </div>
                             </div>
                             <div class="width100c">
+
+                                <div class="width100c">
+                                    <div class="width100c" style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
+                                        <span class="unselectable-text"> 100% Width Layouts</span>
+                                    </div>
+    
+                                    <div class="width100c">
+                                        <button class="secondlauyout layoutloader unselectable-text"
+                                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                                            id="wid100code1" layout="wid100code1">Width 100 x1</button>
+                                        <button class="secondlauyout layoutloader unselectable-text"
+                                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                                            id="wid100code2" layout="wid100code2">Width 100 x2</button>
+                                        <button class="secondlauyout layoutloader unselectable-text"
+                                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                                            id="wid100code3" layout="wid100code3">Width 100 x3</button>
+                                        <button class="secondlauyout layoutloader unselectable-text"
+                                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                                            id="wid100code4" layout="wid100code4">Width 100 x4</button>
+    
+                                        <button class="secondlauyout layoutloader unselectable-text"
+                                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                                            id="wid100code5" layout="wid100code5">Width 100 x5</button>
+                                    </div>
+    
+    
+    
+    
+                                </div>
+
+
                                 <div class="width100c findthecode2"
                                     style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
                                     <span class="unselectable-text">Layouts For an Existing Row</span></div>
@@ -3410,34 +3441,7 @@ margin-bottom: 8px;">Add a 25% x4 Row</button>
                                     <button class="secondlauyout unselectable-text" id="addrow4x4">25% Layout</button>
                                 </div>
                             </div>
-                            <div class="width100c">
-                                <div class="width100c" style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
-                                    <span class="unselectable-text"> 100% Width Layouts</span>
-                                </div>
-
-                                <div class="width100c">
-                                    <button class="secondlauyout layoutloader unselectable-text"
-                                        style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                                        id="wid100code1" layout="wid100code1">Width 100 x1</button>
-                                    <button class="secondlauyout layoutloader unselectable-text"
-                                        style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                                        id="wid100code2" layout="wid100code2">Width 100 x2</button>
-                                    <button class="secondlauyout layoutloader unselectable-text"
-                                        style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                                        id="wid100code3" layout="wid100code3">Width 100 x3</button>
-                                    <button class="secondlauyout layoutloader unselectable-text"
-                                        style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                                        id="wid100code4" layout="wid100code4">Width 100 x4</button>
-
-                                    <button class="secondlauyout layoutloader unselectable-text"
-                                        style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                                        id="wid100code5" layout="wid100code5">Width 100 x5</button>
-                                </div>
-
-
-
-
-                            </div>
+                         
 
 
                             <div class="width100c">
@@ -4956,6 +4960,53 @@ function restoreSelection() {
 
                 loadnewcontent()
                 $('.informationcontent').css('opacity', '1')
+                $('img.promoimg21').on("contextmenu", function(e){
+    e.preventDefault(); // Prevent the default context menu
+    currentImage = $(this); // Set the current image
+    $('#customModal').show(); // Show the custom modal
+});
+
+$('#wrapImage').click(function(){
+    $('#customModal').hide(); // Hide the custom modal
+    $('#urlModal').show(); // Show the URL modal
+});
+
+$('#submitUrl').click(function(){
+    var url = $('#imageUrl').val(); // Get URL from input field
+    if(url && url !== "http://") {
+        if(currentImage.parent('a').length === 0) {
+            currentImage.wrap('<a class="" href="' + url + '"></a>');
+        } else {
+            currentImage.parent('a').attr('href', url);
+        }
+    }
+    $('#urlModal').hide(); // Hide the URL modal
+    loadnewcontent()
+    $('a').not('.outsidelink').on('click', function (e) {
+                e.preventDefault();
+                currentAnchor = this; // Store the current anchor element
+                wheretogo = $(this).attr('href');
+                openModal('https://www.pcrichard.com' + wheretogo);
+            });
+});
+
+$('#cancelUrl').click(function(){
+    $('#urlModal').hide(); // Hide the URL modal
+    loadnewcontent()
+});
+
+$('#deleteImage').click(function(){
+    currentImage.parent('a').remove();
+    currentImage.remove(); // Remove the image
+    $('#customModal').hide(); 
+     // Hide the custom modal
+    loadnewcontent()
+});
+
+$('#closeModal').click(function(){
+    $('#customModal').hide(); // Hide the custom modal without any action
+});
+
             }, 2000);
 
 
