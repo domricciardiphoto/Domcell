@@ -1051,7 +1051,7 @@
             border: 1px solid yellow;
             cursor: pointer;
             z-index: 9999999999999999999999;
-            border-radius: 5px;
+            border-radius: 3px;
         }
 
         .liverow {
@@ -1148,7 +1148,7 @@
             border: 1px solid #f0cd97;
             color: #fff;
             padding: 5px;
-            width: 18.5%;
+            width: 24%;
             float: left;
             margin-right: 1%;
             font-size: 84%;
@@ -1466,6 +1466,7 @@ p , textarea {
 .promo50 {
     width: 100%;
     float: left;
+    font-size: 0.8rem;
 }
 
 #selectionclear , .clearsection , .deletecode , .deleterow {
@@ -1474,6 +1475,29 @@ p , textarea {
 .secondlauyout{
     width: 31.5%;
     margin-top: 5px;
+}
+
+.spanbutton {
+    width: 99% !important;
+    margin-top: 12px;
+    margin-left: 2%;
+}
+
+.span50small {
+    width: 50% !important;
+}
+
+.span50small button {
+    line-height: 25px;
+}
+
+#mylistamount {
+    width: 90% !important;
+}
+
+#listsubmit {
+    width: 84%;
+    float: left !important;
 }
 
 
@@ -1733,18 +1757,18 @@ p , textarea {
 
 <div class="width100c">
 
-<div class="width30c" style="width: 33%;">
+<div class="width30c span50small" style="width: 33%;">
     <button id="colorswatch2"
     style="float: left; width: auto; height: 27px; background-color: #034694; text-align: center; color: rgb(255, 255, 255); font-size: 67%; border: 2px solid rgb(255, 255, 255); margin-right: 10px;">
    Select Header Color
 </button>
 </div>
-<div class="width30c" style="width: 33%;">
+<div class="width30c span50small" style="width: 33%;">
     <input type="checkbox" id="faqyes" name="faqyes" class="faqyes" style="width: 10px; zoom: 2; margin-top: 0px; float: left; ">
     <span style="font-size: 80%;"> &nbsp;&nbsp;FAQ <span style="color:yellow">Yes?</span></span>
                        
 </div>
-<div class="width30c" style="width: 33%;">
+<div class="width30c spanbutton" style="width: 33%;">
     <button class="simplehide" id="cinput1-clickh2-comp"
     style="float: right; margin-right: 10px;width: 100%; font-size: 80%;padding-bottom: 5px;background-color: transparent; color: #fff; border: 1px solid #ccc; padding-top: 6px;">Add
     Header to
@@ -1786,7 +1810,7 @@ p , textarea {
                                 style="font-size: 80%;">HTML / JS Code <span style="color:yellow">Yes?</span></span>
                         </div>
 
-                        <button class="simplehide" id="cinput3-comp" type="submit"
+                        <button class="simplehide spanbutton" id="cinput3-comp" type="submit"
                             style="float: right; margin-right: 10px;width: 37%; float: right; margin-right: 1%;font-size: 80%;padding-bottom: 5px;background-color: transparent; color: #fff; border: 1px solid #ccc; padding-top: 6px;">Add
                             Copy To Component</button>
                     </div>
@@ -3511,7 +3535,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
 
-                            <div class="width100c">
+                            <div class="width100c" style="width: 97%;">
 
                                 <div class="width100c">
                                     <div class="width100c"
@@ -3529,16 +3553,26 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                                         <button class="secondlauyout layoutloader unselectable-text"
                                             style="background-color: transparent; color: #fff;border: 1px solid orange;"
                                             id="wid100code3" layout="wid100code3">Width 100 x3</button>
-                                        <button class="secondlauyout layoutloader unselectable-text"
+                                    
+                                            <button class="secondlauyout layoutloader unselectable-text"
                                             style="background-color: transparent; color: #fff;border: 1px solid orange;"
                                             id="wid100code4" layout="wid100code4">Width 100 x4</button>
-
-                                        <button class="secondlauyout layoutloader unselectable-text"
-                                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                                            id="wid100code5" layout="wid100code5">Width 100 x5</button>
+                                     
                                     </div>
 
+                                    <div class="width100c" style="margin-top: 5px;">
 
+                                   
+
+                                        <button class="secondlauyout layoutloader unselectable-text"
+                                        style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                                        id="wid100code5" layout="wid100code5">Width 100 x5</button>
+
+                                        <button class="secondlauyout layoutloader unselectable-text"
+                                        style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                                        id="wid100code6" layout="wid100code6">Width 100 x6</button>
+
+                                    </div>
 
 
                                 </div>
@@ -3547,8 +3581,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                                     <span class="unselectable-text">Layouts For an Existing Row</span>
                                 </div>
 
-                                <div class="width100c internalbuttons" style="border: 1px solid #ccc; width: 95%; margin-top: 5px; padding-left: 1%; padding-right: 1%; padding-bottom: 1%; padding-top: 10px; -webkit-box-shadow:inset 0 0 10px 3px #141414;
-box-shadow:inset 0 0 10px 3px #141414;">
+                                <div class="width100c internalbuttons" style="width: 100%; margin-top: 5px;  padding-bottom: 1%; padding-top: 10px;">
 
 
 
@@ -3561,13 +3594,15 @@ box-shadow:inset 0 0 10px 3px #141414;">
                                             Layout</button>
                                         <button class="secondlauyout unselectable-text" id="addrow4x6">40/60
                                             Layout</button>
-                                        <button class="secondlauyout unselectable-text" id="addrow4x6a">60/40
-                                            Layout</button>
-
+                                      
                                     </div>
 
 
                                     <div class="width100c internalbuttons" style="margin-top: 10px;">
+
+                                        <button class="secondlauyout unselectable-text" id="addrow4x6a">60/40
+                                            Layout</button>
+
                                         <button class="secondlauyout unselectable-text" id="addrow2x7">25/75
                                             Layout</button>
                                         <button class="secondlauyout unselectable-text" id="addrow3x3">33% Layout
@@ -4008,6 +4043,10 @@ box-shadow:inset 0 0 10px 3px #141414;">
 
     var wid100code5 =
         '<div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100 interedit"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div>'
+
+
+        var wid100code6 =
+        '<div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100 interedit"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div><div class="width100c layoutpale layoutpale100 liverow droppable  ui-droppable"><div class="width100c  in910 layoutpale layoutpale100"></div></div>'    
 
 
     function beautifyHtml(html) {
