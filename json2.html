@@ -1,4 +1,16 @@
-{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JSON to HTML List</title>
+</head>
+<body>
+
+<ul id="jsonList"></ul>
+
+<script>
+// Sample JSON data
+const jsonData = {
     "results": [{
         "filters": {
             "Color": {
@@ -1494,4 +1506,30 @@
             }
         }
     }]
+
+
+};
+
+function populateList(jsonData) {
+  const list = document.getElementById('jsonList');
+  
+  // Assuming jsonData.results is the array you want to iterate over
+  // Adjust the path according to the actual data structure
+  jsonData.results.forEach((item) => {
+    // Example of accessing a nested property
+    // Adjust the property names based on actual data structure
+    const li = document.createElement('li');
+    li.textContent = `Property Name: ${item.lastRecNum}`; // Change propertyName to the actual key you want to display
+    list.appendChild(li);
+    
+    // If the item itself is an object and you want to list its properties, you would iterate through it here
+    // For deeper nesting, you can call populateList recursively or create more specific functions
+  });
 }
+
+// Call the function with your JSON data
+populateList(jsonData);
+</script>
+
+</body>
+</html>
