@@ -1375,7 +1375,7 @@
         }
 
         #customModal,
-        #urlModal {
+        #urlModal , #myModalcontent {
             z-index: 99999999999999;
             position: absolute;
         }
@@ -1511,6 +1511,8 @@ p , textarea {
 
 <body>
 
+    <a target="_blank" href="json.html">json</a>
+
     <div id="urlModal" style="display: none;">
         <div style="    background: #333;
         padding: 20px;
@@ -1556,6 +1558,18 @@ p , textarea {
             <button id="closediag">Close</button>
         </div>
     </div>
+
+
+    <div id="myModalcontent" class="modal">
+        <div class="modal-content">
+            <p>What Do you Want to Do?</p>
+            <button id="yesBtn99">Clear Componant</button>
+            <button id="yescopyBtn99">Copy to Clipboard</button>
+            <button id="closediag99">Close</button>
+        </div>
+    </div>
+
+
 
 
 
@@ -4110,6 +4124,99 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
     function loadnewcontent() {
 
 
+$('p').off().on('contextmenu' , function(e) {
+  e.preventDefault()
+  $('.interedit').removeClass('interedit')
+  $(this).parent('.in910').addClass('interedit')
+ document.getElementById("myModalcontent").style.display = "block";
+
+ $('#yesBtn99').on('click' , function() {
+    $('.interedit').empty()
+    document.getElementById("myModalcontent").style.display = "none";
+    $('#findthecode2').text($('#pullthecode2').html());
+ })
+
+ $('#yescopyBtn99').on('click' , function() {
+    var textToCopy = $('.interedit').children('p').text();
+    navigator.clipboard.writeText(textToCopy).then(function() {
+            console.log('Text copied to clipboard');
+        }).catch(function(error) {
+            console.error('Error copying text: ', error);
+        });
+        document.getElementById("myModalcontent").style.display = "none";
+ })
+
+ $('#closediag99').on('click' , function() {
+    document.getElementById("myModalcontent").style.display = "none";
+ })
+})
+
+
+
+
+$('h2').off().on('contextmenu' , function(e) {
+  e.preventDefault()
+  $('.interedit').removeClass('interedit')
+  $(this).parent('div').parent('.in910').addClass('interedit')
+ document.getElementById("myModalcontent").style.display = "block";
+
+ $('#yesBtn99').on('click' , function() {
+    $('.interedit').empty()
+    document.getElementById("myModalcontent").style.display = "none";
+    $('#findthecode2').text($('#pullthecode2').html());
+ })
+
+ $('#yescopyBtn99').on('click' , function() {
+    var textToCopy = $('.interedit').children('div').children('h2').text();
+    navigator.clipboard.writeText(textToCopy).then(function() {
+            console.log('Text copied to clipboard');
+        }).catch(function(error) {
+            console.error('Error copying text: ', error);
+        });
+        document.getElementById("myModalcontent").style.display = "none";
+ })
+
+ $('#closediag99').on('click' , function() {
+    document.getElementById("myModalcontent").style.display = "none";
+ })
+})
+
+
+$('h3').off().on('contextmenu' , function(e) {
+  e.preventDefault()
+  $('.interedit').removeClass('interedit')
+  $(this).parent('div').parent('.in910').addClass('interedit')
+ document.getElementById("myModalcontent").style.display = "block";
+
+ $('#yesBtn99').on('click' , function() {
+    $('.interedit').empty()
+    document.getElementById("myModalcontent").style.display = "none";
+    $('#findthecode2').text($('#pullthecode2').html());
+ })
+
+ $('#yescopyBtn99').on('click' , function() {
+    var textToCopy = $('.interedit').children('div').children('h3').text();
+    navigator.clipboard.writeText(textToCopy).then(function() {
+            console.log('Text copied to clipboard');
+        }).catch(function(error) {
+            console.error('Error copying text: ', error);
+        });
+        document.getElementById("myModalcontent").style.display = "none";
+ })
+
+ $('#closediag99').on('click' , function() {
+    document.getElementById("myModalcontent").style.display = "none";
+ })
+})
+
+
+
+
+
+
+
+
+
 
 
         $('.interedit').on('click', function () {
@@ -4295,7 +4402,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             'layoutpale30', 'layoutpale20', , 'layoutpale33', 'onblock', 'interedit',
             'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
             'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle',
-            'https://staging-na01-pcrichard.demandware.net'
+            'https://staging-na01-pcrichard.demandware.net' , '&times;' , '&alpha;'
         ];
 
         // Loop through the words and remove them from the content
@@ -6121,10 +6228,14 @@ $('#showmylegend').on('click' , function() {
             var max = 9999;
             var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
 
+      
+          newval =  $('#cinput3a').val().replaceAll('&times;', 'x').replaceAll('&alpha;', 'a');
+
+
             if (htmlcodeyesno === 0) {
-                $('.interedit').append('<p>' + $('#cinput3a').val() + '</p>')
+                $('.interedit').append('<p>' +  newval + '</p>')
             } else {
-                $('.interedit').append($('#cinput3a').val())
+                $('.interedit').append( newval)
             }
 
             $('#cinput3a').val('')

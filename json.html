@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Information Display</title>
+</head>
+<body>
+    <h1>Product Information</h1>
+    <div id="products"></div>
+
+    <script >
+
+fetch('feed.json')
+.then(response => response.json())
+.then(data => {
+    const productsContainer = document.getElementById('products');
+    // Assuming 'products' is a key within your JSON data structure
+    const products = data.results[0].records.products; // Adjust the path according to the actual JSON structure
+    let content = '<ul>';
+
+    // Loop through products and append details to content string
+    Object.keys(products).forEach(key => {
+        const product = products[key];
+        const name = key; // Example, use the key as the product name
+        const description = product.Description; // Adjust according to your JSON structure
+        content += `<li><strong>${name}</strong>: ${description}</li>`;
+    });
+
+    content += '</ul>';
+    productsContainer.innerHTML = content;
+})
+.catch(error => console.error('Error loading the JSON file:', error));
+
+
+
+
+    </script>
+</body>
+</html>
