@@ -24,11 +24,10 @@
         if (Array.isArray(productArray) && productArray.length > 0) {
             const product = productArray[0]; // Assuming we take the first product variant for description
             const description = product.Description;
-            const Searchable =  product.Searchable; // Accessing the Description directly from the product
+            const Searchable =  product.Description; // Accessing the Description directly from the product
             content += `<li><strong>${productId}</strong>:<br>Desscription: ${description} <br> searchable:${Searchable}</li></li> <br>`;
         }
     }
-
     content += '</ul>';
     productsContainer.innerHTML = content;
 })
