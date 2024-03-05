@@ -1129,7 +1129,7 @@
         }
 
         .mymobile .informationcontent {
-            min-height: 310px;
+            min-height: 450px;
         }
 
         .internalscroller {
@@ -1407,6 +1407,18 @@
     display: none;
 }
 
+.mytoolsboxtop {
+    text-align: center; cursor: pointer; border: 1px solid #ccc; max-width: 20%; border-bottom: 0px; width: 47.3%; margin-right: 1%; border-radius: 5px 5px 0px 0px;font-size: 0.8rem; background-color: #f7f7f7; color: #333;
+}
+
+.mytoolsboxtop2 {
+    text-align: center; cursor: pointer; border: 1px solid #ccc; max-width: 20%; border-bottom: 0px; width: 47.3%; margin-right: 1%; border-radius: 5px 5px 0px 0px;font-size: 0.8rem; background-color: #333; color: #fff;
+}
+
+
+.toolboxlayoutoptions {
+    display: none;
+}
 
     </style>
 
@@ -1582,8 +1594,14 @@ p , textarea {
                 and
                 Restart</button>
 
+<div class="width100c" style="border-bottom: 2px solid #ccc; width: 94.5%; margin-bottom: 10px;">
+<div class="width50c unselectable-text thetopbox mytoolsboxtop" whatbox="Tools" >Components</div>
+<div class="width50c unselectable-text thetopbox mytoolsboxtop2" whatbox="Layout" >Layout Options</div>
+</div>
+
+
             <div class="width100c openclose" openclose="layoutbuilder-oc"
-                style="margin-left: 3.3%; width: 87% !important; margin-bottom: 0px;">
+                style="margin-left: 3.3%; width: 90% !important; margin-bottom: 0px;">
                 <div class="width100c unselectable-text" style="margin-left: -3%;">
                     <span class="myindicator">+</span>
                     <span style="font-size: 0.8rem;">&nbsp;&nbsp;Layout Builder</span>
@@ -1644,7 +1662,7 @@ p , textarea {
 
                     <div class="width50c">
 
-                        <div class="dropsection draggable ui-widget-content" size="width80c width50c2 liveelement"
+                        <div class="dropsection draggable ui-widget-content unselectable-text" size="width80c width50c2 liveelement"
                             pale="25">
                             80% D 100% M</div>
 
@@ -2743,7 +2761,7 @@ p , textarea {
                     </div>
 
                     <div class="width100c">
-                        <div style="float: left; padding-top: 10px;"> <span style="line-height: 20px;">Open Link in a
+                        <div style="float: left; padding-top: 10px;"> <span style="line-height: 20px;" class="unselectable-text">Open Link in a
                                 New
                                 Window?</span></div>
                         <div style="margin-top: 10px; float: left;"> <input type="checkbox" id="linktooutside3"
@@ -3053,24 +3071,229 @@ p , textarea {
 
 
 
-            <div class="width100c"
+            <div class="width100c toolboxhide"
                 style="margin-top: 30px; background-color: #333; padding: 5px; width: 97%; padding-bottom: 5px;">
-                <div class="width100c unselectable-text" style="margin-bottom: 5px; padding-left: 15px;">HTML
-                    Componet
-                    Editor
-                    and Copy Correction</div>
-                <textarea
-                    style="width: 94%; background-color: #000; color: #fff; margin-left: 2%; margin-bottom: 5px; min-height: 446px;"
-                    name="myhtmleditor" id="myhtmleditor" cols="30" rows="8"
-                    placeholder="Click on a Component to Edit the HTML"></textarea>
-                <button id="EditandSubmitAL" class="unselectable-text" style="float: right; margin-right: 3%;">
+                <div class="width100c unselectable-text" style="margin-bottom: 5px; padding-left: 15px;">
+                    
+              <div class="width60c " style="font-size: 90% !important;">
+                HTML
+                Componet
+                Editor
+                and Copy Correction
+              </div>
+              <div class="width40c">
+
+                <button id="EditandSubmitAL" class="unselectable-text" style="float: right; margin-right: 8%; margin-top: 3px;">
                     Submit
                     New Code</button>
+
+              </div>
+                
+                   
+                
+                </div>
+               
+
+
+                <textarea
+                    style="width: 94%; background-color: #000; color: #fff; margin-left: 2%; margin-bottom: 5px; min-height: 400px;"
+                    name="myhtmleditor" id="myhtmleditor" cols="30" rows="8"
+                    placeholder="Click on a Component to Edit the HTML"></textarea>
+               
             </div>
 
 
 
+<div class="width100c toolboxlayoutoptions">
+    <span class="unselectable-text" style="font-size: 0.7rem;">To Create Rows</span>
+    <div class="width33c">
 
+        <button class="addrow unselectable-text" id="addrow" style="background-color: #001ca7;
+        color: #fff;
+        width: 31%; margin-right: 2%;
+        line-height: 25px; float: left;
+        margin-bottom: 8px;">Add a 100% Row</button>
+
+        <button class="unselectable-text addrow50" style="background-color: #001ca7;
+color: #fff;
+width: 31%; margin-right: 2%;
+line-height: 25px; float: left;
+margin-bottom: 8px;">Add a 50% x2 Row</button>
+
+        <button class="unselectable-text addrow25" style="background-color: #001ca7;
+color: #fff;
+width: 31%; margin-right: 2%;
+line-height: 25px; float: left;
+margin-bottom: 8px;">Add a 25% x4 Row</button>
+
+        <div class="width100c">
+
+
+            <button class="unselectable-text addrow6040" style="background-color: #001ca7;
+color: #fff;
+width: 31%; margin-right: 2%;
+line-height: 25px; float: left;
+margin-bottom: 8px;">Add a 60 / 40 Row</button>
+
+            <button class="unselectable-text addrow4060" style="background-color: #001ca7;
+color: #fff;
+width: 31%; margin-right: 2%;
+line-height: 25px; float: left;
+margin-bottom: 8px;">Add a 40 / 60 Row</button>
+
+
+            <div class="width33c">
+                <button class="deleterow unselectable-text" style="color: #fff; background-color: #730000; border:4px solid #001ca7;   width: 31%;  float: left;padding-top: 1px; padding-bottom: 1px;">Delete
+                    Row</button>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+  
+
+
+
+    <div class="width100c" style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
+        <span class="unselectable-text"> 100% Width Layouts</span>
+    </div>
+
+    <div class="width100c">
+        <button class="secondlauyout layoutloader unselectable-text" style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code1" layout="wid100code1">Width 100 x1</button>
+        <button class="secondlauyout layoutloader unselectable-text" style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code2" layout="wid100code2">Width 100 x2</button>
+        <button class="secondlauyout layoutloader unselectable-text" style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code3" layout="wid100code3">Width 100 x3</button>
+    
+            <button class="secondlauyout layoutloader unselectable-text" style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code4" layout="wid100code4">Width 100 x4</button>
+     
+    </div>
+
+
+
+
+
+    
+
+    <div class="width100c" style="margin-top: 5px;">
+
+                                   
+
+        <button class="secondlauyout layoutloader unselectable-text" style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code5" layout="wid100code5">Width 100 x5</button>
+
+        <button class="secondlauyout layoutloader unselectable-text" style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code6" layout="wid100code6">Width 100 x6</button>
+
+    </div>
+
+
+
+    <div class="width100c findthecode2 internalbuttons" style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px; display: block;">
+        <span class="unselectable-text">Layouts For an Existing Row</span>
+    </div>
+
+    <div class="width100c internalbuttons" style="width: 100%; margin-top: 5px; padding-bottom: 1%; padding-top: 10px; display: block;">
+
+
+
+        <div class="width100c internalbuttons" style="display: block;">
+            <button class="secondlauyout unselectable-text" id="addrow1x1">100%
+                Layout</button>
+            <button class="secondlauyout unselectable-text" id="addrow2x2">50/50
+                Layout</button>
+            <button class="secondlauyout unselectable-text" id="addrow2x8">20/80
+                Layout</button>
+            <button class="secondlauyout unselectable-text" id="addrow4x6">40/60
+                Layout</button>
+          
+        </div>
+
+
+        <div class="width100c internalbuttons" style="margin-top: 10px; display: block;">
+
+            <button class="secondlauyout unselectable-text" id="addrow4x6a">60/40
+                Layout</button>
+
+            <button class="secondlauyout unselectable-text" id="addrow2x7">25/75
+                Layout</button>
+            <button class="secondlauyout unselectable-text" id="addrow3x3">33% Layout
+                -(3)</button>
+            <button class="secondlauyout unselectable-text" id="addrow4x4">25% Layout
+                -(4)</button>
+        </div>
+
+    </div>
+
+    <div class="width100c">
+        <div class="width100c findthecode2 findthecode2" style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -5px; margin-top: 10px;">
+            <span class="unselectable-text"> Multi Row Layouts</span></div>
+
+
+        <div class="width100c" style="margin-bottom: 5px;">
+            <button class="secondlauyout unselectable-text" id="addrowc1xc1" style="background-color: transparent; color: #fff;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px; border: 1px solid orange;">
+                50/50 Criss Cross Layout (X2)</button>
+
+
+            <button class="secondlauyout unselectable-text" id="addrowcxc" style="background-color: transparent; color: #fff;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange;">
+                50/50 Criss Cross Layout (X4)</button>
+        </div>
+
+
+        <button class="secondlauyout unselectable-text" id="addrowc2xc8" style="background-color: transparent; color: #fff;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange; ">
+            80/20 Criss Cross Layout (X3)</button>
+
+
+        <button class="secondlauyout unselectable-text" id="addrowc4xc6" style="background-color: transparent; color: #fff;padding: 5px; width: 48%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange; ">
+            40/60 Left List Layout (X3)</button>
+    </div>
+
+
+    <div class="width100c" style="margin-top: 10px; margin-top: 10px;
+    padding: 10px;
+    padding-right: 10px;
+    width: 97%;
+    margin-right: 2%;  ">
+
+                        <div class="width100c unselectable-text" style="margin-bottom: 10px; font-size: 0.8rem;padding-bottom: 0px;
+                        margin-bottom: 0px;
+                        margin-top: -6px;">Destructive Options :
+                        </div>
+
+                        <div class="width50c" style="margin-bottom: 10px;">
+
+                            <button id="selectionclear" style="color: #730000; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Clear<br>
+                                Selection</button>
+                            <button class="clearsection" style="color: #730000; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Empty<br>
+                                Component</button>
+                        </div>
+
+                        <div class="width50c" style="margin-bottom: 10px;">
+                            <button class="deletecode" style="color: #fff; width: 48%; background-color: #730000; font-size: 80%; border: 4px solid yellow; padding-top: 2px; padding-bottom: 2px;">Delete<br>
+                                Component</button>
+
+                            <button class="deleterow" style="color: #fff; width: 48%;  background-color: #730000; font-size: 80%;border: 4px solid #001ca7; padding-top: 3px; padding-bottom: 3px;">Delete<br>
+                                Row</button>
+
+
+                        </div>
+
+
+                        <div class="width100c">
+                            <button class="deleterowfull" style="color: #fff; background-color: #730000;  margin-right: 1%; width: 98%; padding-top: 3px; padding-bottom: 3px;">
+                                <span class="unselectable-text">Clear Workspace</span></button>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+
+</div>
 
 
 
@@ -3085,9 +3308,9 @@ p , textarea {
 
 
         <div class="promo50" id="resizable-div">
-
+          
             <div class="prod100" style="margin: 0px; width: 97%;">
-
+            
                 <div class="prod100"
                     style="padding-left: 0px; margin-left: -10px; width: 100%; margin-top: -10px; border-bottom: 1px solid #ccc; min-height: auto;">
                     <div style="float: left; display: none;">Edit Mode </div>
@@ -3138,9 +3361,11 @@ p , textarea {
 
                         </div>
 
+                    
+
 
                         <div class="width100c" id="fullscreenresort">
-
+                         
                             <div style="float: left; margin-left: -7px; width: auto; float: left;"
                                 class="mysort unselectable-text">
                                 <input type="checkbox" id="mysort" name="mysort" class="mysort"
@@ -3156,11 +3381,11 @@ p , textarea {
                         </div>
 
 
-                            <div style="float: left; margin-left: 10px; width: auto; float: right"
+                            <div style="float: left; margin-left: 10px; width: auto; float: left"
                                 class=" unselectable-text">
                                 <input type="checkbox" id="mytoolsview" name="mytoolsview" class="mytoolsview"
                                     style="width: 10px; zoom: 2; margin-top: 0px; float: right;">
-                                Fullsreeen
+                                    &nbsp; || &nbsp;&nbsp;  Fullsreeen
 
 
                             </div>
@@ -3168,13 +3393,13 @@ p , textarea {
 
 
                     </div>
-
+                   
                     <div class="width50c" style="min-height: auto; padding-bottom: 0px; width: 30%; float: right;">
 
                         <input id="nametextfile" type="text" placeholder="filename"
                             style="float: right; max-width: 200px; display: none;">
                         <button id="export" class="unselectable-text"
-                            style="float: right; margin-right: 1%; background-color: transparent; color: #fff;">Save
+                            style="float: right; margin-right: -8%; background-color: transparent; color: #fff;">Save
                             Workspace <span style="color: #f0cd97;">&uarr;</span></button>
                         <button id="import" class="unselectable-text" accept=".txt"
                             style="float: right; margin-right: 1%; background-color: transparent; color: #fff;">Load
@@ -3214,6 +3439,8 @@ p , textarea {
                 </div>
             </div>
 
+       
+
             <div id="resize-handle"></div>
             <div id="pullthecode" class="prod100 layout1"
                 style="background-color: #f7f7f7; color: #000; max-width: 100%; margin: 0px; width: 97%; ">
@@ -3223,6 +3450,9 @@ p , textarea {
                             src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwf8295540/images/hires/Z_MQD83AM-A.jpg"
                             alt="AirPods Pro">
                     </div>
+
+
+                    
                     <div class="width80c trev21">
 
                         <div
@@ -3281,10 +3511,137 @@ p , textarea {
 
                 </div>
             </div>
+            <div id="sidetoolset" style="float: left;
+            width: 3%;
+            margin-right: .5%;
+            margin-left: .5%;
+            height: auto;
 
-            <div id="pullthecode2" class="width50c layout2" style="background-color: #f7f7f7; color: #000; max-width: 99%; width: 70%;  margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 710px;
+            margin-top: 0px;
+            left: 28%;">
+            
+            <!--put tools in here-->
+            
+            <button class="texttype"
+            style="width: 100%; color: #fff;  background-color: transparent; margin-top: 10px; margin-bottom: 10px;"
+            value="strong"><strong class="unselectable-text">B</strong></button>
+
+
+        <button class="texttype" style="width: 100%; color: #fff; background-color: transparent; margin-bottom: 10px;"
+            value="i"><i class="unselectable-text">I</i></button>
+
+
+        <button class="texttype unselectable-text" style="width: 100%; color: #fff;  background-color: transparent; margin-bottom: 10px;"
+            value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
+        <button class="texttype" style="width: 100%; color: #fff;  background-color: transparent; margin-bottom: 10px;"
+            value="u"><u class="unselectable-text">U</u></button>
+        <button class="texttype unselectable-text" style="width: 100%; color: #fff;  background-color: transparent;margin-bottom: 10px;"
+            value="sub">X<sub>2</sub></button>
+        <button class="texttype unselectable-text"
+            style="width: 100%; color: #fff;  background-color: transparent;margin-bottom: 10px;"
+            value="sup">
+            X<sup>2</sup></button>
+
+
+            <button class="textaligner"
+            style="width: 100%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;margin-bottom: 10px;"
+            cssadd="left">
+            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1" version="1.1"
+                viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                <style>
+                    .st1a {
+                        stroke: #fff;
+                        stroke-width: 6;
+                        stroke-miterlimit: 10
+                    }
+                </style>
+                <line class="st1a" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+                <line class="st1a" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+                <line class="st1a" x1="6" x2="35.6" y1="41.5" y2="41.4"></line>
+                <line class="st1a" x1="5.9" x2="35.5" y1="17.4" y2="17.3"></line>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+            </svg></button>
+        <button class="textaligner"
+            style="width: 100%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;margin-bottom: 10px;"
+            cssadd="center">
+            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1" version="1.1"
+                viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                <style>
+                    .st0dd {
+                        fill: #333
+                    }
+
+                    .st1dd {
+                        stroke: #fff;
+                        stroke-width: 6;
+                        stroke-miterlimit: 10
+                    }
+                </style>
+                <rect class="st0" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
+                <line class="st1dd" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+                <line class="st1dd" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+                <line class="st1dd" x1="6.3" x2="43.6" y1="41.5" y2="41.4"></line>
+                <line class="st1dd" x1="6.2" x2="43.5" y1="17.6" y2="17.5"></line>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+            </svg></button>
+
+        <button class="textaligner"
+            style="width: 100%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent; margin-bottom: 10px;"
+            cssadd="right">
+            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1" version="1.1"
+                viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                <style>
+                    .st0c {
+                        fill: #333
+                    }
+
+                    .st1c {
+                        stroke: #fff;
+                        stroke-width: 6;
+                        stroke-miterlimit: 10
+                    }
+                </style>
+                <rect class="st0c" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
+                <line class="st1c" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+                <line class="st1c" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+                <line class="st1c" x1="14" x2="43.6" y1="41.5" y2="41.4"></line>
+                <line class="st1" x1="13.9" x2="43.5" y1="17.4" y2="17.3"></line>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+            </svg></button>
+
+        <button class="textaligner3 unselectable-text"
+            style="width: 100%;font-size: 1em;max-width: none; color: #fff;  background-color: transparent;margin-bottom: 10px; "
+            cssadd="<br>">br</button>
+
+        <button class="texttype unselectable-text" style="font-size: 0.85em;max-width: none; border-left: 1px;width:100%;margin-bottom: 10px; "
+            value='h2'>H2</button>
+
+        <button class="texttype unselectable-text"
+            style="font-size: 0.85em;max-width: none;  width:100%;margin-bottom: 10px; "
+            value='h3'>H3</button>
+            
+            </div>
+            <div id="pullthecode2" class="width50c layout2" style="background-color: #f7f7f7; color: #000; max-width: 96%; min-height: 439px; width: 66%;  margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 800px;
                 position: relative;
-                overflow: auto;">
+                overflow: auto; ">
 
                 <div class="width100c">
 
@@ -3296,7 +3653,7 @@ p , textarea {
             </div>
 
             <div class="width50c mymobile" id="mobilepreview2"
-                style="max-height: 450px; width: 25%; margin-left: 0%;  overflow-y: auto;  margin-right: 0px; padding-right: 0px; ">
+                style="max-height: 460px; width: 25%; margin-left: 0%;  overflow-y: auto;  margin-right: 0px; padding-right: 0px; ">
             </div>
 
             <div class="width100c stage2">
@@ -3304,116 +3661,9 @@ p , textarea {
                 <div class="width50c" style="width: 69%; min-height: auto; ">
 
                     <div class="width100c" style="margin-left: -1.5%; margin-top: -17px;">
-                        <button class="texttype"
-                            style="width: 6%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;"
-                            value="strong"><strong class="unselectable-text">B</strong></button>
-                        <button class="texttype" style="width: 6%; color: #fff; background-color: transparent;"
-                            value="i"><i class="unselectable-text">I</i></button>
-                        <button class="texttype" style="width: 6%; color: #fff;  background-color: transparent;"
-                            value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
-                        <button class="texttype" style="width: 7%; color: #fff;  background-color: transparent;"
-                            value="u"><u class="unselectable-text">U</u></button>
-                        <button class="texttype" style="width: 7%; color: #fff;  background-color: transparent;"
-                            value="sub">X<sub>2</sub></button>
-                        <button class="texttype"
-                            style="width: 8%; color: #fff; border-right: 1px solid #ccc; background-color: transparent;"
-                            value="sup">
-                            X<sup>2</sup></button>
-
-                        <button class="textaligner"
-                            style="width: 7%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
-                            cssadd="left">
-                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1" version="1.1"
-                                viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                                <style>
-                                    .st1a {
-                                        stroke: #fff;
-                                        stroke-width: 6;
-                                        stroke-miterlimit: 10
-                                    }
-                                </style>
-                                <line class="st1a" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
-                                <line class="st1a" x1="6" x2="43.5" y1="30.1" y2="30"></line>
-                                <line class="st1a" x1="6" x2="35.6" y1="41.5" y2="41.4"></line>
-                                <line class="st1a" x1="5.9" x2="35.5" y1="17.4" y2="17.3"></line>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                            </svg></button>
-                        <button class="textaligner"
-                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
-                            cssadd="center">
-                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1" version="1.1"
-                                viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                                <style>
-                                    .st0dd {
-                                        fill: #333
-                                    }
-
-                                    .st1dd {
-                                        stroke: #fff;
-                                        stroke-width: 6;
-                                        stroke-miterlimit: 10
-                                    }
-                                </style>
-                                <rect class="st0" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
-                                <line class="st1dd" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
-                                <line class="st1dd" x1="6" x2="43.5" y1="30.1" y2="30"></line>
-                                <line class="st1dd" x1="6.3" x2="43.6" y1="41.5" y2="41.4"></line>
-                                <line class="st1dd" x1="6.2" x2="43.5" y1="17.6" y2="17.5"></line>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                            </svg></button>
-
-                        <button class="textaligner"
-                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
-                            cssadd="right">
-                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="Layer_1" version="1.1"
-                                viewBox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                                <style>
-                                    .st0c {
-                                        fill: #333
-                                    }
-
-                                    .st1c {
-                                        stroke: #fff;
-                                        stroke-width: 6;
-                                        stroke-miterlimit: 10
-                                    }
-                                </style>
-                                <rect class="st0c" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
-                                <line class="st1c" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
-                                <line class="st1c" x1="6" x2="43.5" y1="30.1" y2="30"></line>
-                                <line class="st1c" x1="14" x2="43.6" y1="41.5" y2="41.4"></line>
-                                <line class="st1" x1="13.9" x2="43.5" y1="17.4" y2="17.3"></line>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                            </svg></button>
-
-                        <button class="textaligner3"
-                            style="width: 10%;font-size: 0.85em;max-width: none; color: #fff;  background-color: transparent;border-right: 1px solid #ccc; "
-                            cssadd="<br>">br</button>
-
-                        <button class="texttype" style="font-size: 0.85em;max-width: none; border-left: 1px;width:7% "
-                            value='h2'>H2</button>
-
-                        <button class="texttype"
-                            style="font-size: 0.85em;max-width: none; border-right: 1px solid #ccc; width:7% "
-                            value='h3'>H3</button>
+                   
+<!--removed buttons-->
+                       
 
                     </div>
 
@@ -3434,9 +3684,9 @@ p , textarea {
 
 
 
-            <div class="width100c" style="border-bottom: 3px solid #ccc; margin-bottom: 5px;">
+            <div class="width100c" style="border-bottom: 3px solid #ccc; margin-bottom: 5px; width: 100%; ;">
                 <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2"
-                    style="border-radius: 5px 5px 0px 0px">Layout Options</div>
+                    style="border-radius: 5px 5px 0px 0px">Active Workspace</div>
                 <div class="openthematrix" mymatrix="mymatrix3" style="border-radius: 5px 5px 0px 0px">Advanced Code
                     Editor</div>
                 <div class="openthematrix" mymatrix="mymatrix4" style="border-radius: 5px 5px 0px 0px">Check on PCR Site
@@ -3444,14 +3694,19 @@ p , textarea {
 
 
                 <div class="openthematrix" mymatrix="mymatrix6" style="border-radius: 5px 5px 0px 0px; float: left;">
-                    <strong>Word Bad Character Cleaner</strong></div>
+                    <strong>Bad Character Clean</strong></div>
 
                 <div class="openthematrix" mymatrix="mymatrix1" style="border-radius: 5px 5px 0px 0px;"><strong>Final
-                        Code For PCR Site</strong></div>
+                        Code For PCR</strong></div>
+
+                        <div class="openthematrix" mymatrix="mymatrix5" style="border-radius: 5px 5px 0px 0px; float: right;">
+                            <strong>Video Tutorial</strong></div>
+
+                        <div class="openthematrix" mymatrix="mymatrix7" style="border-radius: 5px 5px 0px 0px; float: right;"><strong>Help & Key Commands
+                           </strong></div>
 
 
-                <div class="openthematrix" mymatrix="mymatrix5" style="border-radius: 5px 5px 0px 0px; float: right;">
-                    <strong>Video Tutorial</strong></div>
+              
             </div>
 
 
@@ -3482,6 +3737,8 @@ p , textarea {
 
 
             <div id="mymatrix2" class="width100c closethematrix">
+
+<!--
                 <div class="width50c stage2 fullscreenmode" style="width: 64%; margin-right: 0px; padding-right:0px">
 
                     <div class="width100c stage2 " style=" margin-top: 5px;
@@ -3494,6 +3751,9 @@ p , textarea {
 
                         <div class="width100c"><span class="unselectable-text" style="font-size: 0.7rem;">To Create
                                 Rows</span></div>
+
+
+                              
                         <div class="width100c" style="margin-bottom: 10px;">
                             <div class="width33c">
 
@@ -3544,7 +3804,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                             </div>
 
-                            <!--Active Row button needs to be fixed-->
+                       
                             <div class="width33c" style="display: none;"> <button class="unselectable-text"
                                     id="addactiverow" style="background-color: transparent;
                             color: #fff;
@@ -3666,73 +3926,15 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                         </div>
 
+                        
 
                     </div>
-                </div>
-
-                <div class="width50c " style="width: 34%; padding: 0px;">
-
-                    <div class="width100c" style="margin-top: 10px; margin-top: 10px;
-    padding: 10px;
-    padding-right: 10px;
-    width: 97%;
-    margin-right: 2%;  ">
-
-                        <div class="width100c unselectable-text" style="margin-bottom: 10px; font-size: 0.8rem;padding-bottom: 0px;
-                        margin-bottom: 0px;
-                        margin-top: -6px;">Destructive Options :
-                        </div>
-
-                        <div class="width50c" style="margin-bottom: 10px;">
-
-                            <button id="selectionclear"
-                                style="color: #730000; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Clear<br>
-                                Selection</button>
-                            <button class="clearsection"
-                                style="color: #730000; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Empty<br>
-                                Component</button>
-                        </div>
-
-                        <div class="width50c" style="margin-bottom: 10px;">
-                            <button class="deletecode"
-                                style="color: #fff; width: 48%; background-color: #730000; font-size: 80%; border: 4px solid yellow; padding-top: 2px; padding-bottom: 2px;">Delete<br>
-                                Component</button>
-
-                            <button class="deleterow"
-                                style="color: #fff; width: 48%;  background-color: #730000; font-size: 80%;border: 4px solid #001ca7; padding-top: 3px; padding-bottom: 3px;">Delete<br>
-                                Row</button>
-
-
-                        </div>
-
-
-                        <div class="width100c">
-                            <button class="deleterowfull"
-                                style="color: #fff; background-color: #730000;  margin-right: 1%; width: 98%; padding-top: 3px; padding-bottom: 3px;">
-                                <span class="unselectable-text">Clear Workspace</span></button>
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div id="legend" class="width100c"
-                        style="margin-left: 10px; margin-top: 10px; margin-left: 0%;  width: 98%; padding-left: 2%; padding-bottom: 10px; padding-top: 5px; ">
-                        <div class="width100c unselectable-text"
-                            style="margin-left: 0px; margin-top: 0px; margin-bottom: 5px; ">
-
-                          
-                        </div>
-                       
-
-
-                       
-                    </div>
-
-
+  
 
                 </div>
+                 --> 
+
+             
 
 
 
@@ -3779,8 +3981,15 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
             <div class="width100c">
             
-            <div id="showmylegend" class="width100c" style="margin-bottom: 3px; cursor: pointer;">Element Color Legend &nbsp; ↓</div>
-            <hr style="width: 100%;  background-color: #fff; min-height: 1px; padding-top: 0px;">
+         <!--   <div id="showmylegend" class="width100c unselectable-text" style="margin-bottom: 3px; cursor: pointer;">Help and Key Commands &nbsp; ↓</div>-->
+
+            <div class="width100c colorlegend unselectable-text" style="margin-bottom: 10px;">
+                Shift + Enter = Text Break<br>
+                Control + B = Bold Text <br>
+                Right Click on Text To Clear text / Copy to Clipboard<br>
+                Right Click on Image to Add link to image or delete image<br>
+                Left Click on Links to Preview Links
+            </div>
 
             <div class="width100c colorlegend">
                 <div class="width25c" style="font-size: 0.8em; width: 25%; float: left;">
@@ -4293,6 +4502,20 @@ $('h3').off().on('contextmenu' , function(e) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
 
 
@@ -5089,7 +5312,7 @@ $('#showmylegend').on('click' , function() {
                 // If mobile preview is currently visible, hide it, change width of pullthecode2, and update the button text
                 $mobilePreview.hide();
                 $pullTheCode.delay(200).animate({
-                    'width': '98%',
+                    'width': '94%',
                     'max-width': '1600px'
                 });
                 $(this).text('Show Mobile');
@@ -5097,7 +5320,7 @@ $('#showmylegend').on('click' , function() {
             } else {
                 // If mobile preview is currently hidden, show it, reset width of pullthecode2, and update the button text
                 $pullTheCode.delay(200).animate({
-                    'width': '64%',
+                    'width': '68%',
                     'max-width': 'auto'
                 }, function () {
                     $mobilePreview.show();
@@ -5108,6 +5331,23 @@ $('#showmylegend').on('click' , function() {
                 $(this).text('Hide Mobile');
             }
         });
+
+
+        $('.thetopbox').on('click' , function() {
+           whichboxtoopen = $(this).attr('whatbox')
+           $('.thetopbox').css('background-color' , '#333').css('color' , '#fff')
+          $(this).css('background-color' , '#fff').css('color' , '#333')
+          
+           if(whichboxtoopen === 'Tools') {
+            $('.internalscroller , #myhtmleditor ,.toolboxhide').show()
+            $('.toolboxlayoutoptions').hide()
+     
+           } else {
+           $('.internalscroller , #myhtmleditor ,.toolboxhide').hide()
+           $('.toolboxlayoutoptions').show()
+     
+           }
+        })
 
 
 
@@ -5185,9 +5425,67 @@ $('#showmylegend').on('click' , function() {
         })
 
 
+        document.addEventListener('keydown', function(event) {
+    // Check if 'Control' is pressed along with 'B'
+    if (event.ctrlKey && event.key === 'b') {
+        event.preventDefault(); // Prevent the default action to avoid triggering browser shortcuts
+
+
+        var selection = window.getSelection();
+            if (!selection.rangeCount) return;
+            var selectedText = selection.toString();
+            var textwrapper = $(this).val();
+
+            // Create a new HTML element with the selected text wrapped in the specified tag
+            var contentwrapped = '<strong>' + selectedText + '</strong>';
+
+            // Get the selected range
+            var range = selection.getRangeAt(0);
+
+            // Create a new document fragment with the wrapped content
+            var fragment = range.createContextualFragment(contentwrapped);
+
+            // Replace the selected text with the new HTML
+            range.deleteContents();
+            range.insertNode(fragment);
+
+            // Update any elements you want with the modified HTML
+            loadnewcontent()
+      
+    }
+});
+
+
+document.addEventListener('keydown', function(event) {
+    // Check if 'Shift' is pressed along with 'Enter'
+    if (event.shiftKey && event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default action to avoid any unwanted behavior
+        // Your custom code goes here
+        var selection = window.getSelection();
+
+if (selection.rangeCount > 0) {
+    var range = selection.getRangeAt(0);
+    var brElement = document.createElement('br');
+    range.insertNode(brElement);
+    $('.interedit').contents().filter(function () {
+        return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
+    }).wrap('<p></p>');
+}
+
+$('#myhtmleditor').val($('.interedit').html());
+loadnewcontent();
+        
+    }
+});
+
+
+
 
 
         $('.openthematrix').on('click', function () {
+
+$('#sidetoolset').hide()
+
             var whatmatrix = '#' + $(this).attr('mymatrix');
             $('.closethematrix').hide();
             $(whatmatrix).toggle();
@@ -5197,14 +5495,18 @@ $('#showmylegend').on('click' , function() {
             switch (whatmatrix) {
                 case '#mymatrix1':
                     $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
+                    $('.colorlegend').hide()
                     break;
                 case '#mymatrix2':
                     loadnewcontent();
+                    $('#sidetoolset').show()
                     $('.stage2 , #pullthecode2 , #mobilepreview2').show();
+                    $('.colorlegend').hide()
                     break;
                 case '#mymatrix3':
                     loadnewcontent();
                     $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
+                    $('.colorlegend').hide()
                     break;
                 case '#mymatrix4':
                     loadnewcontent();
@@ -5214,10 +5516,26 @@ $('#showmylegend').on('click' , function() {
                     $('body').css('background-color', '#fff')
                     $('#pcrmobileview').css('background-color', '#333').css('color', '#fff')
                     $('#pcrdesktopview').css('background-color', '#fff').css('color', '#333')
+                    $('.colorlegend').hide()
+                    break;
+
+            case '#mymatrix7':
+                    loadnewcontent();
+                    $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
+                    $('.colorlegend').show()
                     break;
             }
+
+
+
+
+
+
+
         });
 
+
+ 
 
 
 
@@ -5943,6 +6261,8 @@ $('#showmylegend').on('click' , function() {
 
 
 
+
+
         $('.showthepreviewimage').on('click', function () {
             //var select = document.getElementById("myDropdown");
             //select.selectedIndex = $(this).attr('num');
@@ -6115,6 +6435,13 @@ $('#showmylegend').on('click' , function() {
     });
 
         
+
+
+
+
+
+
+
         
         //--- end function
         $('#cinput1-clickh2').on('click', function () {
@@ -6584,8 +6911,6 @@ $('#showmylegend').on('click' , function() {
 
 
         $('.texttype').click(function (colorswatch) {
-
-        
 
             var selection = window.getSelection();
             if (!selection.rangeCount) return;
