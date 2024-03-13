@@ -996,6 +996,18 @@
         .addpadding100 {
             padding-top: 100px;
         }
+
+          .width33ca {
+                        width: 33%;
+                        float: left;
+                    }
+
+                     .width33ca a {
+                        text-decoration: none;
+                        
+                     }
+
+                 
     </style>
 
 
@@ -1554,6 +1566,29 @@
 
 
         }
+
+
+.myregd::after {
+    content: "\00AE";
+}
+
+.mytraded::after {
+    content: "\2122";
+}
+
+#driveContents ul {
+    margin-bottom: 30px;
+    font-size:88%
+}
+
+#sidetoolset {
+    opacity: 0;
+}
+
+#driveContents .width33ca ul li {
+    margin-bottom: 0px;
+}
+
     </style>
 
 
@@ -3551,6 +3586,55 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                         <input type="file" id="fileInput" accept=".txt" placeholder="Imported file"
                             style="display: none;">
 
+
+<script>
+async function uploadFile() {
+            const fileInput = document.getElementById('fileInput-gd');
+            const file = fileInput.files[0]; // Get the file from the input
+
+            if (!file) {
+                alert('Please select a file first!');
+                return;
+            }
+
+            const folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91';
+            const accessToken = 'AIzaSyBCShnlpcHZxF7WKYbNQ_0waMjVh9Q-kgc'; // Replace with your access token
+            const url = 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart';
+
+            const metadata = {
+                'name': file.name, // Filename at Google Drive
+                'parents': [folderId], // Folder ID at Google Drive
+            };
+
+            const formData = new FormData();
+            formData.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
+            formData.append('file', file);
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: new Headers({'Authorization': 'Bearer ' + accessToken}),
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    throw new Error('Upload failed');
+                }
+
+                const result = await response.json();
+                console.log(result);
+                alert('Upload successful');
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error during file upload: ' + error.message);
+            }
+        }
+</script>
+
+
+                        
+
+
                     </div>
 
 
@@ -3669,15 +3753,14 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
             <div id="mymatrix6" class="width100c closethematrix" style="width: 94%; margin-left: 4%;">
                 <div id="closetutorial" class="width100c"
-                    style="background-color: #001ca7; text-align: center; color: #fff; cursor: pointer;">Close Templetes List
+                    style="background-color: #fff; text-align: center; color: #333; cursor: pointer;">Close Templetes List
                  
                 </div>
-                <div class="width100c">
-
-                    <div id="driveContents"></div>
-                    <!--
-                    <iframe width="100%" height="768px" src="https://drive.google.com/drive/folders/10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91&resourcekey=RESOURCE-KEY#grid"
-                        title="Google Documents" allowfullscreen></iframe>-->
+                <div  class="width100c">
+<div id="driveContents" style="background-color: #334; width: 100%;float: left; position: relative;"></div>
+                 <div class="width100c" style="text-align: left; border-top: 1px solid #ccc; padding-top: 10px; margin-bottom: 10px;">Click Templete Files to Download to Your Computer</div>
+                 <div  class="width100c"> <input type="file" id="fileInput-gd" style="float: left; width: auto; margin-bottom: 10px;"></div>
+                <div class="width100c"> <button onclick="uploadFile()" style="float: left;">Upload to Drive</button>  </div>
                 </div>
             </div>
            
@@ -3685,17 +3768,44 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
             <script>
 async function listDriveFiles() {
-
   let folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91';
-
   let response = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${a231+a2312+'jVh9Q-kgc'}`);
   let data = await response.json();
   let files = data.files;
-  let output = '<ul>';
+
+  // Sort files alphabetically by name
+  files.sort((a, b) => a.name.localeCompare(b.name));
+
+  let output = '<div class="width33ca">'; // Start the first div container
+  let ulCount = 0; // Initialize ul counter
+  let previousFirstLetter = '';
+
   for (let file of files) {
-    output += `<li><a style="color:#fff" href="https://drive.google.com/uc?export=download&id=${file.id}" download="${file.name}">${file.name}</a></li>`;
+    let currentFirstLetter = file.name.charAt(0).toLowerCase();
+    let displayName = file.name.replace('.txt', ''); // Remove .txt extension from the display name
+
+    // Start a new list if the first letter changes
+    if (currentFirstLetter !== previousFirstLetter) {
+      // After every 5 <ul>, close the current div and start a new div
+      if (ulCount % 5 === 0 && ulCount !== 0) {
+        output += '</div><div class="width33ca">';
+      }
+      if (output.endsWith('</ol>')) { // Check if it's not the first list to avoid appending ul prematurely
+        output += '<ul>';
+      } else {
+        output += '</ul><ul>'; // Properly close the previous list and start a new one
+      }
+      ulCount++; // Increment ul counter whenever a new list is started
+    }
+
+    output += `<li><a title="Download the file of - ${displayName} -" style="color:#fff" href="https://drive.google.com/uc?export=download&id=${file.id}" download="${file.name}">${displayName} &#8595;</a></li>`;
+
+    previousFirstLetter = currentFirstLetter;
   }
-  output += '</ul>';
+
+  // Close the last list and div
+  output += '</ul></div>';
+
   document.getElementById('driveContents').innerHTML = output;
 }
 
@@ -3747,7 +3857,7 @@ listDriveFiles();
             margin-left: .5%;
             height: auto;
 
-            margin-top: 0px;
+            margin-top: -30px;
             left: 28%;">
 
                 <!--put tools in here-->
@@ -3870,7 +3980,7 @@ listDriveFiles();
 
                 <button class="texttype unselectable-text" title="Make Selected Text an H3"
                     style="font-size: 0.85em;max-width: none;  width:100%;margin-bottom: 10px; " value='h3'>H3</button>
-                <div style="width: 100%; border: 1px solid #ccc;"></div>
+                <div style="width: 94%; border: 2px solid #ccc;"></div>
 
                 <button class="deleterow unselectable-text" title="Delete Row"
                     style="text-align: center; background-color: #730000; color: white; width: 100%; margin-top: 10px; margin-bottom: 5px;">R</button>
@@ -3882,8 +3992,13 @@ listDriveFiles();
                     <button class="clearsection unselectable-text addrow" title="Add 100% Row"
                     style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 5px;">100</button>
 
+                    <button id="addrow1x1a" class="clearsection unselectable-text" title="Add 100% Column"
+                                        style="text-align: center;  background-color: yellow; color:#333; width: 100%; margin-top: 5px; margin-bottom: 5px;">100</button>
 
-                <div style="width: 100%; border: 1px solid #ccc; margin-top: 2px;"></div>
+                    
+
+
+                
 
             </div>
             <div id="pullthecode2" class="width50c layout2" style="background-color: #f7f7f7; color: #000; max-width: 96%; min-height: 439px; width: 66%;  margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 800px;
@@ -3938,7 +4053,7 @@ listDriveFiles();
             <div id="mymatrix1" class="width100c closethematrix" style="width: 96%; margin-left: 4%;">
 
                 <div class="prod100 unselectable-text"
-                    style="background-color: #000; margin-left: 0px; margin-top: 20px; width: 96%;">
+                    style="background-color: #334; margin-left: 0px; width: 96.4%;">
                     Click on Code To Copy to Clipboard <button id="exportfinalcodetofile"
                         style="float: right; font-size: 80%;">Export to File</button></div>
 
@@ -3949,7 +4064,7 @@ listDriveFiles();
                 </div>
 
                 <div id="thisisthefinalcode" class="prod100 layout2 selectall"
-                    style="background-color: #f7f7f7; color: #000; margin-bottom: 20px; margin-left: 0px; width: 96%;">
+                    style="background-color: #f7f7f7; color: #000; margin-bottom: 20px; margin-left: 0px; width: 96.4%; padding-top: 20px; padding-bottom: 20px;">
 
                     &lt;link href="images/pim-content/occontent2024-v7a.css?$staticlink$" rel="stylesheet" /> <br>
                     &lt;div class="totalinternalcontent">
@@ -4207,8 +4322,10 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                 <!--   <div id="showmylegend" class="width100c unselectable-text" style="margin-bottom: 3px; cursor: pointer;">Help and Key Commands &nbsp; ↓</div>-->
 
-                <div class="width100c colorlegend unselectable-text" style="margin-bottom: 10px;">
-
+                <div class="width100c colorlegend unselectable-text" style="margin-bottom: 10px; background-color: #334;">
+                    <div id="closetutorial3" class="width100c" style="background-color: #fff; text-align: center; color: #333; cursor: pointer;">Close Help Center
+                 
+                    </div>
                     <ul style="margin-bottom: 35px;">
                         <li>Shift + Enter = Text Break</li>
                         <li>ctrl + B = Bold Text</li>
@@ -4220,7 +4337,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                 </div>
 
-                <div class="width100c colorlegend">
+                <div class="width100c colorlegend" style="background-color: #334;">
                     <div class="width25c" style="font-size: 0.8em; width: 25%; float: left;">
                         <div style="width: 80%; height: 30px; background-color: #666;"></div> <span
                             class="unselectable-text">EMPTY Row</span>
@@ -4242,7 +4359,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 </div>
 
 
-                <div class="width100c colorlegend" style="margin-top: 0px; padding-top: 20px;">
+                <div class="width100c colorlegend" style="margin-top: 0px; padding-top: 20px; background-color: #334;">
 
                     <div class="width20c" style="font-size: 0.8em;width: 25%; float: left;  line-height: 15px;">
                         <div
@@ -4339,7 +4456,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
     <div id="fullembedcodeddd"
-        style="width: 100%; min-height: 500px; background-color: #fff; position: relative; float: left;">
+        style="width: 100%; min-height: 500px; background-color: #333; position: relative; float: left;">
 
         <div
             style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left; max-width: 1560px;">
@@ -4796,10 +4913,10 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
         $('#pcrdesktopview').on('click', function () {
 
-            $('#fullembedcodeddd').css('max-width', 'none').css('margin-left', '0%')
+            $('#fullembedcodeddd').css('max-width', 'none').css('margin-left', '0%').css('background-color' , '#333')
             $('#pcrmobileview').css('background-color', '#333').css('color', '#fff')
             $(this).css('background-color', '#f7f7f7').css('color', '#000')
-            $('body').css('background-color', '#fff')
+            $('body').css('background-color', '#333')
             $('#codeloaderpcrview').find('.makeit100now').each(function () {
                 $(this).removeClass('makeit100now')
             });
@@ -4814,7 +4931,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
         $('#pcrmobileview').on('click', function () {
 
-            $('#fullembedcodeddd').css('max-width', '400px').css('margin-left', '10%')
+            $('#fullembedcodeddd').css('max-width', '400px').css('margin-left', '10%').css('background-color' , '#333')
             $('#pcrdesktopview').css('background-color', '#333').css('color', '#fff')
             $('body').css('background-color', '#333')
             $(this).css('background-color', '#f7f7f7').css('color', '#000')
@@ -4834,7 +4951,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
 
-        $('#closetutorial , #closetutorial2 ').on('click', function () {
+        $('#closetutorial , #closetutorial2  ,#closetutorial3 ').on('click', function () {
             $('#firstmatrix').click()
         })
 
@@ -4933,31 +5050,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
     }
 
 
-
-
-
-    /*
-     resizeHandle.addEventListener('mousedown', function (e) {
-         e.preventDefault();
-         window.addEventListener('mousemove', resize);
-         window.addEventListener('mouseup', stopResize);
-     });
-
-     function resize(e) {
-         $('#resizable-div').width('62%').css('background-color', '#fff').css('float', 'right').css('max-width', '62%')
-         resizableDiv.style.width = e.clientX - resizableDiv.getBoundingClientRect().left + 'px';
-         resizableDiv.style.height = e.clientY - resizableDiv.getBoundingClientRect().top + 'px';
-         $('#clearandrestart').hide()
-     }
-
-     function stopResize() {
-         $('#programming').show()
-         $('#resizable-div').width('62%').css('background-color', 'rgb(37, 37, 37)').css('float', 'left')
-         window.removeEventListener('mousemove', resize);
-         $('#clearandrestart').show()
-     }
-
-     */
 
     $('#submitnewcode').on('click', function () {
         newsubmit = $('#fixthecode').val()
@@ -5300,31 +5392,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     document.getElementById('htmlcodeyesno').addEventListener('input', function () {
         if (this.checked) {
             htmlcodeyesno = 1
@@ -5420,10 +5487,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
         if (this.checked) {
             $('#programming').addClass('fullscreend').hide()
             $('#fullscreenresort').css('width', '80%').css('margin-left', '2%')
-            //  $('.internalscroller').css('max-height', 'none').css('overflow-y', 'unset')
-            //  $(' #pullthecode2').hide()
-            //   $('.fullscreenmode').css('padding', '0px ').css('margin-left', '0px')
-
             $('#resizable-div').delay(500).animate({
                 width: '100%'
             }, 500);
@@ -5431,8 +5494,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             $('.hamburger').show()
             $('.textaligner svg').css('width', '100%')
             $('.hideinfullscreen').hide()
-            //  $('.mymobile , #pullthecode2').css('float', 'right')
-            //  $(' #pullthecode2').css('width', '70%').show()
             $('.imgbuild').css('width', '96%')
 
         } else {
@@ -5490,11 +5551,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
     })
 
-
-
-
-
-
     $('.ipsom').on('click', function () {
         ipsom =
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit dom is great esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -5517,12 +5573,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                 $('#fixthecode').val($('#' + editthisbox).html())
 
-
             })
-
-
-
-
         } else {
 
             $('.stage1').slideDown()
@@ -5533,20 +5584,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
         }
     });
-
-
-    /*
-        document.getElementById('myCheckbox').addEventListener('change', function () {
-            if (this.checked) {
-                $('#cinput2').css('opacity', '1')
-                $('.trev21').prepend('<h2 class="cinputval2">' + $('#cinput2').val() + '</h2>')
-            } else {
-                $('#cinput2').css('opacity', '0.5')
-                $('.cinputval2').remove()
-                loadnewcontent()
-            }
-        });
-    */
 
 
 
@@ -5720,10 +5757,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             }
         });
 
-
-
-
-
         document.addEventListener('keydown', function (event) {
             // Check if 'Shift' is pressed along with 'Enter'
             if (event.shiftKey && event.key === 'Enter') {
@@ -5745,9 +5778,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
             }
         });
-
-
-
 
 
         $('.openthematrix').on('click', function () {
@@ -5785,7 +5815,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                     $('#programming, #resizable-div').hide();
                     $('#fullembedcodeddd').show()
                     $('#fullinterface').hide()
-                    $('body').css('background-color', '#fff')
+                    $('body').css('background-color', '#333')
                     $('#pcrmobileview').css('background-color', '#333').css('color', '#fff')
                     $('#pcrdesktopview').css('background-color', '#fff').css('color', '#333')
                     $('.colorlegend').hide()
@@ -5822,21 +5852,10 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
             }
 
-
-
-
-
-
-
         });
 
 
-
-
-
-
-
-        $('#addrow1x1').on('click', function () {
+        $('#addrow1x1 , #addrow1x1a').on('click', function () {
             $('.interedit').removeClass('interedit')
             $('.onblock').html(
                 '<div class="width100c liveelement in910 layoutpale  layoutpale100 interedit"></div>'
@@ -5933,9 +5952,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                 })
 
-
-
-
             } else {
                 // Handle the case where no file was selected or an error occurred.
                 // $('#pullthecode2').append('No file was imported')
@@ -5990,19 +6006,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                 $('#wrapImage').click(function () {
                     $('#customModal').hide(); // Hide the custom modal
                     $('#urlModal').show(); // Show the URL modal
@@ -6047,10 +6050,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
         });
-
-
-
-
 
         $('#addrow2x2').on('click', function () {
             $('.interedit').removeClass('interedit')
@@ -6105,9 +6104,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             loadnewcontent()
         })
 
-
-
-
         $('#addrow2x8').on('click', function () {
             $('.interedit').removeClass('interedit')
             $('.onblock').html(
@@ -6130,9 +6126,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 '<div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div><div class="width60c width50c2  liveelement in910 layoutpale interedit layoutpale60"></div>'
             );
 
-
-
-
             $('.liveelement').on('click', function () {
                 $('.interedit').removeClass('interedit')
                 $(this).addClass('interedit')
@@ -6149,9 +6142,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 '<div class="width60c width50c2  liveelement in910 layoutpale interedit layoutpale60"></div><div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div>'
             );
 
-
-
-
             $('.liveelement').on('click', function () {
                 $('.interedit').removeClass('interedit')
                 $(this).addClass('interedit')
@@ -6161,15 +6151,11 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             loadnewcontent()
         })
 
-
-
-
         $('#addrow2x7').on('click', function () {
             $('.interedit').removeClass('interedit')
             $('.onblock').html(
                 '<div class="width25c width50c2 liveelement in910 layoutpale layoutpale25 interedit"></div><div class="width75c width50c2 liveelement in910 layoutpale layoutpale75"></div>'
             );
-
 
             $('.liveelement').on('click', function () {
                 $('.interedit').removeClass('interedit')
@@ -6195,17 +6181,10 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 $('#myhtmleditor').val($(this).html())
             })
 
-
-
-
             destructiveoptions()
             clickanddeleterows()
             loadnewcontent()
         })
-
-
-
-
 
         $('#addrowcxc').on('click', function () {
             $('.informationcontent').append(
@@ -6222,9 +6201,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             clickanddeleterows()
             loadnewcontent()
         })
-
-
-
 
         $('#addrowc2xc8').on('click', function () {
             $('.informationcontent').append(
@@ -6259,10 +6235,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             clickanddeleterows()
             loadnewcontent()
         })
-
-
-
-
 
         $('#addactiverow').on('click', function () {
             $('.layoutbuilder').append(
@@ -6304,16 +6276,12 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                     loadnewcontent()
                 })
 
-
-
                 layoutmode = 1
 
             })
 
             loadnewcontent()
         })
-
-
 
         $('.addrow50').on('click', function () {
             $('.internalbuttons').slideDown()
@@ -6403,10 +6371,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
         })
 
-
-
-
-
         $('.addrow').on('click', function () {
            
             $('.onblock').removeClass('onblock');
@@ -6418,11 +6382,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
             })
-
-
-
-
-
 
 
             $(".draggable").draggable({
@@ -6494,7 +6453,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 return false
             } else {
                 newval3 = $('#cinput1bpromotional').val().replaceAll('&times;', 'x').replaceAll(
-                    '&alpha;', 'a').replaceAll('"', '&quot;');
+                    '&alpha;', 'a').replaceAll('"', '&quot;').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;' , '-').replaceAll('™' , '<span class="mytraded"></span>').replaceAll('®' , '<span class="myregd"></span>');
                 imagedata2 = '<img class="loading-lazy promoimg21 in910" data-src="' + imagename01 +
                     '" alt="' + newval3 + '">'
                 $('.interedit').append(imagedata2).removeClass('.interedit')
@@ -6557,9 +6516,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
         })
 
 
-
-
-
         $('.showthepreviewimage').on('click', function () {
             //var select = document.getElementById("myDropdown");
             //select.selectedIndex = $(this).attr('num');
@@ -6567,7 +6523,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             imagename00 = $('#cinput1').val()
 
             imageheader =
-                '<div class="pd-header-tag width100c" style="margin-bottom:10px"><h3 class="t-h5-style in910" id="ocinsertcontent2369">' +
+                '<div class="pd-header-tag width100c" style="margin-bottom:10px"><h3 class="t-h6-style in910" id="ocinsertcontent2369">' +
                 $('#cinput1c').val() + '</h3></div>'
 
             if ($('#cinput1b').val() == '') {
@@ -6577,7 +6533,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             } else {
 
                 newval2 = $('#cinput1b').val().replaceAll('&times;', 'x').replaceAll('&alpha;', 'a')
-                    .replaceAll('"', '&quot;');
+                    .replaceAll('"', '&quot;').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;' , '-').replaceAll('&ndash;' , '-').replaceAll('™' , '<span class="mytraded"></span>').replaceAll('®' , '<span class="myregd"></span>');
 
                 if ($('#cinput1c').val() == '') {
                     imagedata =
@@ -6590,9 +6546,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                         imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + newval2 +
                         '"></div>'
                 }
-
-
-
 
 
                 $('.interedit').append(imagedata).removeClass('.interedit')
@@ -6741,7 +6694,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 }
             } else {
                 $('.interedit').append(
-                    '<div class="pd-header-tag width100c"><h3 class="t-h4-style in910" ' +
+                    '<div class="pd-header-tag width100c"><h3 class="t-h6-style in910" ' +
                     headernewcolor2 + ' id="ocinsertcontent' +
                     randomFourDigit + '">' + $('#cinput1h2').val() + '</h3></div>'
                 ).removeClass('interedit');
@@ -6750,14 +6703,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             loadnewcontent(); // Ensure this function is defined elsewhere
             $('#cinput1h2').val(''); // Clear the input field
         });
-
-
-
-
-
-
-
-
 
 
         //--- end function
@@ -6812,9 +6757,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             $('#myDropdown').show()
             $('.simplehide').hide()
             $('.simpleshow').show()
-
-
-
         })
 
         $('#layout2').on('click', function () {
@@ -6844,9 +6786,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
             $('#mobilepreview2').show()
             $('#mobilepreview').hide()
-
-
-
 
         })
 
@@ -6891,9 +6830,10 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             var max = 9999;
             var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
 
+            
 
             newval = $('#cinput3a').val().replaceAll('&times;', 'x').replaceAll('&alpha;', 'a')
-                .replaceAll('"', '&quot;');
+                .replaceAll('"', '&quot;').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&ndash;' , '-').replaceAll('™' , '<span class="mytraded"></span>').replaceAll('®' , '<span class="myregd"></span>');
 
 
             if (htmlcodeyesno === 0) {
@@ -6906,32 +6846,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             layoutmode = 0
 
             loadnewcontent()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             $('.clearsection').on('click', function () {
                 $('.interedit').html('')
@@ -6962,10 +6876,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 layoutmode = 0
             }
 
-
             loadnewcontent()
-
-
 
         })
 
@@ -7059,7 +6970,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             wrapcatalogselect = $('#wraparoundselect').val()
             wrapimagefilename = $('#wraparoundfilename').val()
             wrapimagealt = $('#wraparoundalt').val().replaceAll('&times;', 'x').replaceAll('&alpha;',
-                'a').replaceAll('"', '&quot;');
+                'a').replaceAll('"', '&quot;').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&ndash;' , '-').replaceAll('™' , '<span class="mytraded"></span>').replaceAll('®' , '<span class="myregd"></span>');
 
             if ($('#reverseimage').val() === 'yes') {
                 imagefloat = 'right'
@@ -7259,7 +7170,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             range.deleteContents();
             range.insertNode(fragment);
 
-            // Update any elements you want with the modified HTML
+
             loadnewcontent()
 
         });
@@ -7387,26 +7298,17 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 console.log('Oops, unable to copy');
             }
 
-            // Clear the selection
-            // window.getSelection().removeAllRanges();
+         
         });
 
 
-
-
-        // $('#myCheckbox').click()
         $('#layout2').click()
-        //  $('#addrow').click()
-
-
 
         $('#cinputval1').attr('src',
             'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwf8295540/images/hires/Z_RF18A5101SR.jpg?sw=300&amp;sh=300&amp;sm=fit'
         )
 
     });
-
-
 
 
     $('#beautycode').on('input', function () {
@@ -7421,15 +7323,14 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
         loadnewcontent();
     })
 
-
-
-
-
-
     document.getElementById('clicktoloadlocalfiles').addEventListener('click', function () {
         document.getElementById('imgfileInput').click(); // Simulate file input click
         $('#loadedimagemessage').show()
     });
+
+       $("#sidetoolset").delay(600).animate({
+                opacity: 1
+            }, 1000); // 1000 milliseconds = 1 second
 
     document.getElementById('imgfileInput').addEventListener('change', function (event) {
         const files = event.target.files; // Get selected files
@@ -7463,8 +7364,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
         }
 
 
-
-
         $('.myloadedimages').on('click', function () {
             var desktoppictures = $(this).children('.myloadedfilenames').text()
             $('#cinput1promotional , #wraparoundfilename').val(desktoppictures)
@@ -7472,10 +7371,8 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images' +
                 $('#catalogselector').val() + desktoppictures)
         })
-
-
-
-
+        
+     
 
     });
 </script>
