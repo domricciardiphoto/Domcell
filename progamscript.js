@@ -2301,7 +2301,7 @@ return false;
 
             
 
-            newval = $('#cinput3a').val().replaceAll('fo' , 'mydog')
+            newval = $('#cinput3a').val()
 
 
             if (htmlcodeyesno === 0) {
