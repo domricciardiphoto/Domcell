@@ -9,1592 +9,7 @@
     <script src="jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="231.js"></script>
-    <style>
-        .mysmalltext {
-            font-size: 0.7em;
-            color: #f0cd97;
-        }
-
-        .unselectable-text {
-            user-select: none;
-        }
-
-        .tools {
-            display: none;
-        }
-
-        h3 {
-            margin: 0px;
-            margin-top: 4px;
-            /* margin-bottom: -8px !important; */
-        }
-
-        .openclose {
-            width: 94.5% !important;
-            margin-left: 2%;
-            color: #fff;
-            padding-left: 1%;
-            cursor: pointer;
-            margin-bottom: 6px;
-            margin-top: 6px;
-            font-size: 1.2rem;
-            border-bottom: 1px solid #ccc;
-            padding-top: 0px;
-            padding-bottom: 2px;
-        }
-
-        h3 {
-            font-weight: normal;
-        }
-
-        .showthepreviewimage,
-        .showthepreviewimage2 {
-            opacity: 0.5;
-            cursor: pointer;
-            pointer-events: none;
-        }
-
-        .myindicator {
-            color: #fff;
-        }
-
-        .simplelayout {
-            width: 95%;
-            float: left;
-            line-height: 40px;
-            text-align: center;
-            border: 1px solid #ccc;
-            margin-top: 10px;
-            border-radius: 10px;
-            background-color: #666;
-            cursor: pointer;
-            display: none !important;
-        }
-
-        .showthepreviewimage:hover {
-            opacity: 0.5;
-        }
-
-        .mybuttonclass {
-            width: 50%;
-            text-align: center;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-            line-height: 30px;
-            cursor: pointer;
-            background-color: #333;
-        }
-
-        .mybuttonclass:hover {
-            background-color: #666;
-        }
-
-        .mymobile .width100c {
-            width: 99% !important;
-        }
-
-
-
-
-
-        .promo16c {
-            width: 10%;
-            float: left;
-            margin-right: 1.25%;
-            text-align: center;
-            line-height: 0;
-            padding-bottom: 14px;
-            color: #f0cd97;
-        }
-
-        .promo16c img {
-            width: 100%;
-        }
-
-        .promo16c span {
-            font-size: 0.5rem;
-            text-align: center;
-            line-height: 2px;
-        }
-
-
-        .mymobile .width50c2 {
-            width: 100% !important;
-        }
-
-        .mymobile .width50c3 {
-            width: 49% !important;
-        }
-
-        video {
-            width: 100%;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 24px;
-
-        }
-
-        .prod100 {
-            width: 90%;
-            margin-left: 5%;
-            background-color: rgb(37, 37, 37);
-
-            padding: 10px;
-            float: left;
-            position: relative;
-            color: #fff;
-
-        }
-
-        input {
-            width: 50%;
-            font-size: 1rem;
-
-        }
-
-        .promo20 {
-            width: 18%;
-            float: left;
-            background-color: #fff;
-            min-height: 500px;
-
-        }
-
-        #content2 {
-            width: 70%;
-        }
-
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999;
-        }
-
-        .modal-content {
-            background-color: #000;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 350px;
-            text-align: center;
-            color: #fff;
-        }
-
-
-        #cinput3a {
-            width: 98%;
-            min-height: 130px;
-            font-size: 1rem;
-        }
-
-        .layout2 {
-            display: none;
-        }
-
-        button,
-        select {
-            font-size: 1rem;
-        }
-
-
-
-
-        .selectall {
-            cursor: pointer;
-            font-size: 0.8rem;
-            line-height: normal;
-            font-weight: 100;
-        }
-
-        body {
-            background-color: #333;
-        }
-
-        #myCheckbox {
-            zoom: 2;
-            padding-top: 10px;
-
-        }
-
-        .promo50 {
-            width: 50%;
-            float: left;
-        }
-
-        button {
-            background-color: #fff;
-            color: #000;
-            border-radius: 0px;
-            border: 0px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #f7f7f7;
-            color: #000;
-            border: 1px solid #000;
-            zoom: 0.95;
-        }
-
-        #resize-handle {
-            width: 20px;
-            height: 20px;
-            background-color: #001ca7;
-            position: absolute;
-            bottom: 0;
-            right: 0px;
-            cursor: nwse-resize;
-            /* Diagonal resize cursor */
-            z-index: 9999999999999999999999999999999;
-        }
-
-
-
-        .informationcontent {
-            min-height: 300px;
-            background-color: #f7f7f7;
-            position: relative;
-            float: left;
-            width: 100%;
-        }
-
-
-
-        #resizable-div {
-            z-index: 9999999;
-            position: relative;
-            /* overflow: auto;  */
-            min-width: 200px;
-            min-height: 200px;
-            width: 70%;
-
-
-        }
-
-        #editcontentbox {
-            display: none;
-        }
-
-
-
-        .interedit {
-            background-color: yellow !important;
-            color: #000 !important;
-        }
-
-        .interedit p {
-            color: #000;
-        }
-
-        #clearandrestart {
-            background-color: #730000;
-            color: #fff;
-        }
-
-        #message2 {
-            display: none;
-            color: #730000;
-            background-color: #fff;
-        }
-
-        #programming {
-            border-right: 1px solid #666;
-            width: 28%;
-            margin-right: .5%;
-            padding-bottom: 1%;
-            padding-left: .5%;
-            position: relative;
-            padding-top: 5px;
-
-        }
-
-        .width50c {
-            width: 50%;
-            float: left;
-        }
-
-
-        .width60c {
-            width: 60%;
-            float: left;
-        }
-
-
-        .width30 {
-            width: 30%;
-            float: left;
-        }
-
-        .width30c {
-            width: 30%;
-            float: left;
-        }
-
-
-
-
-
-        .width50c img {
-            width: 75%;
-            padding: 1%;
-            padding-left: 10%;
-            padding-top: 4%;
-        }
-
-        .width80c img {
-            width: 100%;
-        }
-
-        .width60c img {
-            width: 100%;
-            padding: 1%;
-        }
-
-
-
-
-        .lister {
-            display: none;
-        }
-
-        #list1 {
-            display: block;
-        }
-
-        .promo30 {
-            width: 35%;
-            float: left;
-            background-color: #fff;
-            margin-right: 30px;
-        }
-    </style>
-
-
-
-    <style>
-        .width100c {
-            width: 100%;
-            float: left
-        }
-
-        .width20c {
-            width: 20%;
-            float: left
-        }
-
-        .width80c {
-            width: 79% !important;
-            float: left
-        }
-
-        .width20c img {
-            width: 90% !important;
-            padding: 1%
-        }
-
-        h2 {
-            font-size: 26px !important;
-            color: rgb(3, 70, 148) !important;
-            margin-top: 20px;
-            margin-bottom: 10px !important
-        }
-
-
-        #newlist {
-            display: none;
-        }
-
-
-
-
-
-        @media only screen and (max-width:767px) {
-            .width80c {
-                width: 70%
-            }
-
-            .width20c {
-                width: 30%
-            }
-
-            .width25c {
-                width: 25% !important;
-                float: left;
-            }
-
-            .width20c img {
-                width: 98%
-            }
-
-            .width80c h2 {
-                margin-top: 0
-            }
-
-            .width50c {
-                width: 100%;
-                float: left;
-            }
-
-
-            .width30c {
-                width: 50%;
-                float: left;
-            }
-
-
-        }
-
-
-        #resize-handle {
-            display: none;
-        }
-
-        .layoutpale {
-            background-color: #ffc1c1;
-            margin-top: 2px;
-            margin-bottom: 2px;
-            float: left;
-
-            min-height: 50px;
-            width: calc(50% - 3%) !important;
-            margin-left: .5%;
-            margin-right: .5%;
-        }
-
-        .layoutpale100 {
-            width: 99% !important
-        }
-
-        .layoutpale50 {
-            width: calc(50% - 3%) !important;
-            margin-left: .5%;
-            margin-right: .5%;
-        }
-
-        .layoutpale40 {
-            width: calc(40% - 1%) !important;
-            margin-left: .5%;
-            margin-right: .5%;
-        }
-
-        .layoutpale60 {
-            width: calc(60% - 1%) !important;
-            margin-left: .5%;
-            margin-right: .5%;
-        }
-
-        .layoutpale75 {
-            width: calc(75% - 1.5%) !important;
-            margin-left: .5%;
-            margin-right: .5%;
-        }
-
-
-        .layoutpale80 {
-            width: calc(80% - 3%) !important;
-            margin-left: .5%;
-            margin-right: .5%;
-        }
-
-
-        .layoutpale33 {
-            width: calc(33% - .7%) !important;
-            margin-left: .5%;
-            margin-right: .5%;
-            min-height: 56px
-        }
-
-
-        .layoutpale30 {
-            width: calc(30% - 3%) !important;
-            margin-left: .5%;
-            margin-right: .5%;
-            min-height: 58px
-        }
-
-        .layoutpale25 {
-            width: calc(25% - 1%) !important;
-            margin-left: .5%;
-            margin-right: .5%;
-            min-height: 58px
-        }
-
-
-        .layoutpale20 {
-            width: calc(20% - 1%) !important;
-            margin-left: .5%;
-            margin-right: .5%;
-            min-height: 56px
-        }
-    </style>
-
-
-
-    <!--v1-->
-    <style>
-        .width100 {
-            width: 100%;
-            float: left;
-            text-align: left;
-        }
-
-        .width100c {
-            width: 100%;
-            float: left;
-            text-align: left;
-        }
-
-        .width80c {
-            width: 79% !important;
-            float: left;
-            text-align: left;
-            min-height: 30px;
-        }
-
-        .width60c {
-            width: 60%;
-            float: left;
-            text-align: left;
-        }
-
-
-        .width50c {
-            width: 50%;
-            float: left;
-            min-height: 53px;
-        }
-
-
-
-        .width30c {
-            width: 30%;
-            float: left;
-            text-align: left;
-        }
-
-        .width20c {
-            width: 20%;
-            float: left;
-            text-align: left;
-            min-height: 30px;
-        }
-
-        .width100c p a {
-            color: #034694;
-        }
-
-        .width100c p {
-            line-height: 24px;
-            font-size: 1rem;
-            font-weight: 400;
-        }
-
-        .width100c h2 {
-            margin-top: 20px;
-        }
-
-        .width100c .pd-header-tag:first-of-type h2 {
-            margin-top: 0px;
-        }
-
-        .width100c h2 {
-            font-size: 1.5rem;
-        }
-
-        .width100c ul li {
-            text-align: left;
-            line-height: 28px;
-
-        }
-
-        .width100c img,
-        .width80c img,
-        .width60c img,
-        .width50c img,
-        .width40c img,
-        .width30 img,
-        .width20c img {
-            width: 100%;
-        }
-
-        .width100c ul {
-            padding-left: 1.8%;
-            margin-left: 16px;
-        }
-
-
-        .width20c img {
-            width: 90% !important;
-            padding: 1%
-        }
-
-
-        .width50c img {
-            width: 98%;
-            padding: 1%;
-            padding-left: 10%;
-            padding-top: 4%;
-            float: right;
-        }
-
-        .width80c img {
-            width: 100%;
-        }
-
-        .width60c img {
-            width: 100%;
-            padding: 1%;
-            max-width: 390px;
-            float: right;
-        }
-
-
-
-
-        .width100c h2 {
-            font-size: 24px !important;
-        }
-
-        strong.strongitalic {
-            font-style: italic;
-        }
-
-        ul.width50c {
-            padding: 0px;
-            margin: 0px;
-            width: 48%;
-            padding-left: 2%;
-        }
-
-
-        @media only screen and (max-width:767px) {
-            .width80c {
-                width: 70%
-            }
-
-            .width20c {
-                width: 30%
-            }
-
-            .width20c img {
-                width: 98%
-            }
-
-            .width80c h2 {
-                margin-top: 0
-            }
-
-            .width50c {
-                width: 100%;
-                float: left;
-                min-height: 53px;
-            }
-
-            .width30c {
-                width: 50%;
-                float: left;
-                text-align: left;
-            }
-
-            .width50c img {
-                width: 98%;
-                padding: 1%;
-                padding-left: 0%;
-                padding-top: 0%;
-                float: right;
-            }
-
-
-        }
-    </style>
-
-    <!--v2-->
-
-
-    <style>
-        .width100 {
-            width: 100%;
-            float: left;
-            text-align: left;
-        }
-
-        .width100c {
-            width: 100%;
-            float: left;
-            text-align: left;
-        }
-
-        .width80c {
-            width: 80%;
-            float: left;
-            text-align: left;
-        }
-
-        .width60c {
-            width: 60%;
-            float: left;
-            text-align: left;
-        }
-
-
-        .width50c {
-            width: 48%;
-            float: left;
-            padding: 1%;
-            padding-top: 0;
-        }
-
-
-        .width75c {
-            width: 73%;
-            float: left;
-
-            padding-top: 0;
-        }
-
-        .width60c {
-            width: 58%;
-            float: left;
-
-            padding-top: 0;
-        }
-
-
-        .width40c {
-            width: 38%;
-            float: left;
-            text-align: left;
-
-            padding-top: 0;
-        }
-
-        .width30c {
-            width: 30%;
-            float: left;
-            text-align: left;
-        }
-
-        .width20c {
-            width: 20%;
-            float: left;
-            text-align: left;
-        }
-
-        .width100c p a {
-            color: #034694;
-        }
-
-        .width100c p {
-            line-height: 24px;
-            font-size: 1rem;
-            font-weight: 400;
-        }
-
-        .width100c h2 {
-            margin-top: 20px;
-        }
-
-        .width100c .pd-header-tag:first-of-type h2 {
-            margin-top: 0px;
-            margin-bottom: 15px;
-        }
-
-        .width100c h2 {
-            font-size: 1.5rem;
-        }
-
-        .width100c ul li {
-            text-align: left;
-            line-height: 28px;
-            margin-bottom: 10px;
-            width: 94%;
-
-        }
-
-        .width100c img,
-        .width80c img,
-        .width75c img,
-        .width60c img,
-        .width50c img,
-        .width40c img,
-        .width30 img,
-        .width20c img {
-            width: 100%;
-        }
-
-        .width100c ul {
-            padding-left: 1.8%;
-        }
-
-
-        .width20c img {
-            width: 90% !important;
-            padding: 1%
-        }
-
-
-        .width50c img {
-            width: 90% !important;
-            padding: 5%;
-            padding-left: 5%;
-            padding-top: 1%;
-        }
-
-        .width80c img {
-            width: 100%;
-        }
-
-        .width60c img {
-            width: 100%;
-            padding: 1%;
-            max-width: 390px;
-            float: right;
-        }
-
-
-
-
-
-        .width100c h2 {
-            font-size: 24px !important;
-        }
-
-        strong.strongitalic {
-            font-style: italic;
-        }
-
-        ul.width50c {
-            padding: 0px;
-            margin: 0px;
-            width: 48%;
-            padding-left: 2%;
-        }
-
-
-        @media only screen and (max-width:767px) {
-            .width80c {
-                width: 70%
-            }
-
-            .width20c {
-                width: 30%
-            }
-
-            .width20c img {
-                width: 98%
-            }
-
-            .width80c h2 {
-                margin-top: 0
-            }
-
-            .width50c {
-                width: 50%;
-                float: left;
-            }
-
-            .width50c2 {
-                width: 100% !important;
-                float: left;
-            }
-
-            .width30c {
-                width: 50%;
-                float: left;
-                text-align: left;
-            }
-
-            .width50c img {
-                width: 98%;
-                padding: 1%;
-                padding-left: 0%;
-                padding-top: 0%;
-                float: right;
-            }
-
-
-
-            ul.width30c,
-            ul.width20c,
-            ul.width50c {
-                padding: 0px;
-                margin: 0px;
-                width: 48%;
-                padding-left: 2%;
-                margin-top: 0px;
-                margin-bottom: 15px;
-            }
-
-            .width100c ul li {
-                text-align: left;
-                line-height: 28px;
-                font-size: 0.87rem;
-                margin-bottom: 16px;
-            }
-
-            .width100c h2 {
-                font-size: 17px !important;
-                margin-bottom: 15px;
-            }
-
-            ul.width50c {
-                margin: 0px;
-                padding: 1%;
-                width: 49%;
-                padding-left: 5%;
-                margin-right: 1%;
-            }
-
-            .width33c {
-                width: 33%;
-                float: left;
-            }
-        }
-
-
-        .addpadding0 {
-            padding-top: 0px;
-        }
-
-        .addpadding10 {
-            padding-top: 10px;
-        }
-
-        .addpadding20 {
-            padding-top: 20px;
-        }
-
-        .addpadding30 {
-            padding-top: 30px;
-        }
-
-        .addpadding40 {
-            padding-top: 40px;
-        }
-
-        .addpadding60 {
-            padding-top: 60px;
-        }
-
-        .addpadding80 {
-            padding-top: 80px;
-        }
-
-        .addpadding100 {
-            padding-top: 100px;
-        }
-
-          .width33ca {
-                        width: 33%;
-                        float: left;
-                    }
-
-                     .width33ca a {
-                        text-decoration: none;
-                        
-                     }
-
-                 
-    </style>
-
-
-    <!--For Mobile only has to be last-->
-
-    <style>
-        .mymobile {
-            display: none;
-        }
-
-        #mobilepreview2 {
-            display: none;
-        }
-
-
-
-
-        #mobilepreview,
-        #mobilepreview2 {
-            color: #000;
-
-        }
-
-        #mobilepreview h2.t-h4-style,
-        #mobilepreview2 h2.t-h4-style {
-            font-size: 17px !important;
-
-        }
-
-        #mobilepreview .width50c2,
-        #mobilepreview2 .width50c2 {
-            width: 100%;
-        }
-
-        #showmobile2 {
-            display: none;
-        }
-
-
-
-        .dropsection {
-            width: 43%;
-            float: left;
-            margin-left: 1%;
-            margin-right: 1%;
-            margin-top: 1%;
-            text-align: center;
-            background-color: #333;
-            color: #fff;
-            padding: 1%;
-            padding-left: 0px;
-            padding-right: 0px;
-            font-size: 68%;
-            border: 1px solid yellow;
-            cursor: pointer;
-            z-index: 9999999999999999999999;
-            border-radius: 3px;
-        }
-
-        .liverow {
-            background-color: #999 !important;
-        }
-
-        .onblock {
-            background-color: #034694 !important;
-        }
-
-        .mymobile .width50c2 {
-            width: 98% !important;
-        }
-
-
-
-
-        .mymobile .width100c .addpadding0 {
-            padding-top: 0px;
-        }
-
-        .mymobile .width100c .addpadding10 {
-            padding-top: 0px;
-        }
-
-        .mymobile .width100c .addpadding20 {
-            padding-top: 0px;
-        }
-
-        .mymobile .width100c .addpadding40 {
-            padding-top: 0px;
-        }
-
-        .mymobile .width100c .addpadding60 {
-            padding-top: 0px;
-        }
-
-        .mymobile .width100c .addpadding80 {
-            padding-top: 0px;
-        }
-
-        .mymobile .width100c .addpadding100 {
-            padding-top: 0px;
-        }
-
-
-        ul,
-        ol {
-            width: 98% !important;
-        }
-
-        .textaligner,
-        .textaligner3,
-        .textaligner2,
-        .textaligner5 {
-            max-width: 100px;
-            height: 30px;
-            line-height: 30px;
-        }
-    </style>
-
-
-
-    <style>
-        .fullscreend {
-            position: absolute !important;
-            background-color: #333;
-            z-index: 999999999999999;
-            width: 24%;
-            max-height: 669px;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            max-width: 400px;
-            top: 60px;
-        }
-
-        .mymobile .informationcontent {
-            min-height: 450px;
-        }
-
-        .internalscroller {
-            width: 94.5%;
-            margin-left: 0%;
-            margin-right: 0.5%;
-            max-height: 700px;
-            position: relative;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        .secondlauyout {
-            background-color: transparent;
-            color: #fff;
-            border: 1px solid #f0cd97;
-            color: #fff;
-            padding: 5px;
-            width: 45%;
-            float: left;
-            margin-right: 1%;
-            font-size: 80%;
-            margin-bottom: 5px;
-        }
-
-
-        .whattypeofimage {
-            width: 31%;
-            margin-right: 1%;
-            background-color: transparent;
-            border: 1px solid #fff;
-            color: #fff;
-            padding: 5px;
-            border-radius: 10px 0px 10px 0px;
-            font-size: 90%;
-        }
-
-        .whattypeofimage:hover {
-            color: #fff;
-            background-color: #333;
-        }
-
-        #mymatrix1,
-        #mymatrix3 {
-            display: none;
-        }
-
-        .openthematrix,
-        .openthematrix2 {
-            float: left;
-            padding: 3px;
-            padding-left: 7px;
-            padding-right: 7px;
-            background-color: #333;
-            width: auto;
-            color: #fff;
-            margin-left: 10px;
-            cursor: pointer;
-            user-select: none;
-            font-size: 0.7rem;
-        }
-
-        .openthematrix:first-of-type {
-            margin-left: 0px;
-        }
-
-        .openthematrixopen {
-            background-color: #f7f7f7;
-            color: #333;
-
-        }
-
-        .myloadedimages {
-            float: left;
-            width: 14%;
-            padding: 5px;
-            min-height: 150px;
-            position: relative;
-            cursor: pointer;
-
-        }
-
-        .myloadedimages img {
-            width: 100% !important;
-        }
-
-        .myloadedfilenames {
-            font-size: 80%;
-            overflow-wrap: break-word;
-            display: none;
-        }
-
-        #blogproductlist {
-            display: none;
-            width: 56%;
-        }
-
-        #wraparoundproductnumber {
-            display: none;
-        }
-
-
-
-
-        svg {
-            width: 60%;
-            max-height: 17px;
-        }
-
-        #mymatrix4 {
-            display: none;
-        }
-
-        #loadedimagemessage {
-            display: none;
-        }
-
-        .morebutt {
-            border: 1px solid #f7f7f7;
-            background-color: #f7f7f7;
-            padding: 4px;
-            padding-left: 5px;
-            color: #000;
-        }
-
-        .morebutt {
-            border: 1px solid #f7f7f7;
-            background-color: #fff;
-            padding: 4px;
-            padding-left: 5px;
-            color: #000;
-        }
-
-        .makeit100now {
-            width: 100% !important;
-        }
-
-        .makeit50now {
-            width: 49% !important;
-        }
-
-
-        #showthepromotionalimage:hover {
-            opacity: 0.8;
-        }
-
-        .showthepreviewimage:hover {
-            opacity: 0.8;
-        }
-
-        .showthepreviewimage2:hover {
-            opacity: 0.8;
-        }
-
-
-        #fullembedcodeddd {
-            display: none;
-        }
-
-
-        #closeembed {
-            border-left: none;
-            font-size: 0.8rem;
-            border-radius: 5px 0px 0px 0px;
-            background-color: #ccc !important;
-            color: #000 !important;
-            -webkit-box-shadow: inset 0 0 10px 3px #191516;
-            box-shadow: inset 0 0 3px 1px #191516;
-            font-size: 69%;
-
-        }
-
-        .pcrcloseicon {
-            float: right;
-            margin-right: 1%;
-            color: #00377b;
-            cursor: pointer;
-        }
-
-        .pcrtitleclass {
-            width: 90%;
-            margin-left: 5%;
-            margin-top: 15px;
-            font-size: 1.6rem;
-            padding-bottom: 20px;
-            padding-top: 15px;
-            background-color: #fff;
-            float: left;
-
-        }
-
-        .pcrtitleclass:hover {
-            background-color: #f7f7f7;
-        }
-
-
-        .texttype,
-        .textaligner3,
-        .textaligner5 {
-            width: 9%;
-            color: #fff;
-            background-color: transparent;
-        }
-
-        .texttype:hover,
-        .textaligner3:hover {
-            background-color: #241E1E;
-            color: #f7f7f7;
-        }
-
-        #mymatrix5,
-        #mymatrix6 , #mymatrix9 {
-            display: none;
-        }
-
-        .width40c {
-            width: 38%;
-            min-height: 28px;
-        }
-
-        .layoutpale,
-        .width100,
-        .width80c,
-        .width75c,
-        .width60c,
-        .width50c,
-        .width40c,
-        .width30c,
-        .width33c,
-        .width25c,
-        .width20c,
-        .width50c2 {
-            min-height: 30px;
-
-        }
-
-        .width50c {
-            min-height: 22px;
-        }
-
-        .addrow:hover,
-        .addrow50:hover,
-        .addrow25:hover,
-        .dropsection:hover {
-            opacity: 0.8;
-        }
-
-        #customModal,
-        #urlModal,
-        #myModalcontent {
-            z-index: 99999999999999;
-            position: absolute;
-        }
-
-        .secondmodal {
-            width: 32%;
-            border: 1px solid #333;
-            font-size: 100%;
-        }
-
-        .internalbuttons {
-            display: none;
-        }
-
-
-        .icon_box {
-            width: 30px;
-            height: 30px;
-            float: left;
-            margin-right: 5px;
-            background-image: url(pim-content/faq_Icon.svg?$staticlink$);
-            background-repeat: no-repeat;
-            background-size: contain;
-            margin-top: 0px;
-            background-image: url(https://www.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw21bf9b9d/pim-content/faq_Icon.svg);
-        }
-
-        .colorlegend {
-            display: none;
-            background-color: #333;
-            color: #fff;
-            font-weight: bold;
-            margin-top: -21px;
-        }
-
-        .mytoolsboxtop {
-            text-align: center;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            border-bottom: 0px;
-            margin-right: 1%;
-            border-radius: 5px 5px 0px 0px;
-            background-color: #fff;
-            color: #333;
-            width: auto !important;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-
-        .mytoolsboxtop2 {
-            text-align: center;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            border-bottom: 0px;
-            margin-right: 1%;
-            border-radius: 5px 5px 0px 0px;
-            background-color: #333;
-            color: #fff;
-            width: auto !important;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-
-
-        .internalscroller,
-        #myhtmleditor,
-        .toolboxhide,
-        #layoutbuilder-oc,
-        .layoutbuilder-oc,
-        .layoutbuilder-oc2 {
-            display: none;
-        }
-
-        .toolboxhide,
-        #myhtmleditor {
-            display: block;
-        }
-    </style>
-
-
-
-
-    <style>
-        @media only screen and (max-width:1500px) {
-            button {
-                font-size: 0.7rem !important;
-            }
-
-            .dropsection {
-                font-size: 77%;
-                width: 92%;
-            }
-
-            .width25c span {
-                font-size: 0.6rem;
-            }
-
-            input {
-                font-size: 0.7rem;
-            }
-
-            .textaligner2 {
-                width: 50%;
-            }
-
-            .clearsection {
-                width: 40%;
-            }
-
-            p,
-            textarea {
-                font-size: 0.7rem;
-            }
-
-            #colorswatch2 {
-                width: 20%;
-            }
-
-            #colorswatch2 {
-                width: 97% !important;
-                padding-bottom: 29px;
-                padding-top: 5px;
-            }
-
-            #cinput1-clickh2-comp {
-                width: 100% !important;
-            }
-
-            .ipsom {
-                width: 47% !important
-            }
-
-            .promo50 {
-                width: 100%;
-                float: left;
-                font-size: 0.8rem;
-            }
-
-            #selectionclear,
-            .clearsection,
-            .deletecode,
-            .deleterow {
-                width: 94% !important;
-            }
-
-            .secondlauyout {
-                width: 47.5% !important;
-                margin-top: 5px;
-            }
-
-            .spanbutton {
-                width: 99% !important;
-                margin-top: 12px;
-                margin-left: 2%;
-            }
-
-            .span50small {
-                width: 50% !important;
-            }
-
-            .span50small button {
-                line-height: 25px;
-            }
-
-            #mylistamount {
-                width: 90% !important;
-            }
-
-            #listsubmit {
-                width: 84%;
-                float: left !important;
-            }
-
-
-        }
-
-
-.myregd::after {
-    content: "\00AE";
-}
-
-.mytraded::after {
-    content: "\2122";
-}
-
-#driveContents ul {
-    margin-bottom: 30px;
-    font-size:88%
-}
-
-#sidetoolset {
-    opacity: 0;
-}
-
-#driveContents .width33ca ul li {
-    margin-bottom: 0px;
-}
-
-    </style>
-
-
-
+    <link rel="stylesheet" href="application.css">
 </head>
 
 <body>
@@ -1692,143 +107,144 @@ float: right; font-size: 80%;">Clear &amp; Restart</div>
                 <div class="width100c unselectable-text" style="margin-left: -3%;">
                     <span class="myindicator">+</span>
                     <span style="font-size: 0.8rem;">&nbsp;&nbsp;Row Builder</span>
-                    <span class="mysmalltext" style="color: blue;">(div)</span><span style="font-size: 0.8rem;"> - Step 1</span>
+                    <span class="mysmalltext" style="color: blue;">(div)</span><span style="font-size: 0.8rem;"> - Step
+                        1</span>
                 </div>
             </div>
 
 
             <div class="width100c toolboxlayoutoptions unselectable-text layoutbuilder-oc2"
-            style="width: 98%; margin-left:4%; margin-top:10px">
+                style="width: 98%; margin-left:4%; margin-top:10px">
 
 
-            <span class="unselectable-text " style="font-size: 0.7rem;">To Create Rows</span>
-            <div class="width100c">
+                <span class="unselectable-text " style="font-size: 0.7rem;">To Create Rows</span>
+                <div class="width100c">
 
 
 
-                <div class="width100c ">
-                    <button class="addrow unselectable-text" id="addrow" style="background-color: #001ca7;
+                    <div class="width100c ">
+                        <button class="addrow unselectable-text" id="addrow" style="background-color: #001ca7;
 color: #fff;
 width: 92%; margin-right: 2%;
 line-height: 25px; float: left;
 margin-bottom: 8px;">Add a 100% Row</button>
-                </div>
+                    </div>
 
 
-                <div class="width100c ">
+                    <div class="width100c ">
 
 
-                    <button class="unselectable-text addrow50" style="background-color: #001ca7;
+                        <button class="unselectable-text addrow50" style="background-color: #001ca7;
 color: #fff;
 width: 45%; margin-right: 2%;
 line-height: 25px; float: left;
 margin-bottom: 8px;">Add a 50% x2 Row</button>
 
-                    <button class="unselectable-text addrow25" style="background-color: #001ca7;
+                        <button class="unselectable-text addrow25" style="background-color: #001ca7;
 color: #fff;
 width: 45%; margin-right: 2%;
 line-height: 25px; float: left;
 margin-bottom: 8px;">Add a 25% x4 Row</button>
 
-                </div>
+                    </div>
 
 
-                <div class="width100c  ">
+                    <div class="width100c  ">
 
 
 
-                    <button class="unselectable-text addrow6040" style="background-color: #001ca7;
+                        <button class="unselectable-text addrow6040" style="background-color: #001ca7;
 color: #fff;
 width: 45%; margin-right: 2%;
 line-height: 25px; float: left;
 margin-bottom: 8px;">Add a 60 / 40 Row</button>
 
 
-                    <button class="unselectable-text addrow4060" style="background-color: #001ca7;
+                        <button class="unselectable-text addrow4060" style="background-color: #001ca7;
 color: #fff;
 width: 45%; margin-right: 2%;
 line-height: 25px; float: left;
 margin-bottom: 8px;">Add a 40 / 60 Row</button>
+                    </div>
+
+
+                </div>
+
+                <div class="width100c  layoutbuilder-oc2"
+                    style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
+                    <span class="unselectable-text"> 100% Width Layouts</span>
+                </div>
+                <div class="width100c  ">
+
+                    <div class="width100c">
+                        <button class="secondlauyout layoutloader unselectable-text"
+                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                            id="wid100code1" layout="wid100code1">Width 100 x1</button>
+                        <button class="secondlauyout layoutloader unselectable-text"
+                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                            id="wid100code2" layout="wid100code2">Width 100 x2</button>
+                    </div>
+                    <div class="width100c">
+                        <button class="secondlauyout layoutloader unselectable-text"
+                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                            id="wid100code3" layout="wid100code3">Width 100 x3</button>
+                        <button class="secondlauyout layoutloader unselectable-text"
+                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
+                            id="wid100code4" layout="wid100code4">Width 100 x4</button>
+                    </div>
                 </div>
 
 
-            </div>
-
-            <div class="width100c  layoutbuilder-oc2"
-            style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -2px;">
-            <span class="unselectable-text"> 100% Width Layouts</span>
-        </div>
-        <div class="width100c  ">
-
-            <div class="width100c">
-                <button class="secondlauyout layoutloader unselectable-text"
-                    style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                    id="wid100code1" layout="wid100code1">Width 100 x1</button>
-                <button class="secondlauyout layoutloader unselectable-text"
-                    style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                    id="wid100code2" layout="wid100code2">Width 100 x2</button>
-            </div>
-            <div class="width100c">
-                <button class="secondlauyout layoutloader unselectable-text"
-                    style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                    id="wid100code3" layout="wid100code3">Width 100 x3</button>
-                <button class="secondlauyout layoutloader unselectable-text"
-                    style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                    id="wid100code4" layout="wid100code4">Width 100 x4</button>
-            </div>
-        </div>
-
-
-        <div class="width100c  " style="margin-top: 5px;">
+                <div class="width100c  " style="margin-top: 5px;">
 
 
 
-            <button class="secondlauyout layoutloader unselectable-text"
-                style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code5"
-                layout="wid100code5">Width 100 x5</button>
+                    <button class="secondlauyout layoutloader unselectable-text"
+                        style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code5"
+                        layout="wid100code5">Width 100 x5</button>
 
-            <button class="secondlauyout layoutloader unselectable-text"
-                style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code6"
-                layout="wid100code6">Width 100 x6</button>
+                    <button class="secondlauyout layoutloader unselectable-text"
+                        style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code6"
+                        layout="wid100code6">Width 100 x6</button>
 
-        </div>
+                </div>
 
-        <div class="width100c ">
-            <div class="width100c findthecode2 findthecode2"
-                style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -5px; margin-top: 10px;">
-                <span class="unselectable-text"> Multi Row Layouts</span></div>
-
-
-            <div class="width100c  " style="margin-bottom: 5px;">
-                <button class="secondlauyout unselectable-text" id="addrowc1xc1"
-                    style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px; border: 1px solid orange;">
-                    50/50 Criss Cross Layout (X2)</button>
+                <div class="width100c ">
+                    <div class="width100c findthecode2 findthecode2"
+                        style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -5px; margin-top: 10px;">
+                        <span class="unselectable-text"> Multi Row Layouts</span></div>
 
 
-                <button class="secondlauyout unselectable-text" id="addrowcxc"
-                    style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange;">
-                    50/50 Criss Cross Layout (X4)</button>
-            </div>
+                    <div class="width100c  " style="margin-bottom: 5px;">
+                        <button class="secondlauyout unselectable-text" id="addrowc1xc1"
+                            style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px; border: 1px solid orange;">
+                            50/50 Criss Cross Layout (X2)</button>
 
 
-            <button class="secondlauyout unselectable-text" id="addrowc2xc8"
-                style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange; ">
-                80/20 Criss Cross Layout (X3)</button>
+                        <button class="secondlauyout unselectable-text" id="addrowcxc"
+                            style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange;">
+                            50/50 Criss Cross Layout (X4)</button>
+                    </div>
 
 
-            <button class="secondlauyout unselectable-text" id="addrowc4xc6"
-                style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange; ">
-                40/60 Left List Layout (X3)</button>
-        </div>
+                    <button class="secondlauyout unselectable-text" id="addrowc2xc8"
+                        style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange; ">
+                        80/20 Criss Cross Layout (X3)</button>
 
 
-            
-<!--get this content-->
+                    <button class="secondlauyout unselectable-text" id="addrowc4xc6"
+                        style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange; ">
+                        40/60 Left List Layout (X3)</button>
+                </div>
+
+
+
+                <!--get this content-->
 
 
 
 
-            <div class="width100c" style="
+                <div class="width100c" style="
     margin-top: 10px;
     padding: 10px;
     padding-right: 10px;
@@ -1836,53 +252,54 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
     padding-left: 0px;
     width: 92%; display: none;  ">
 
-                <div class="width100c unselectable-text" style="margin-bottom: 10px; font-size: 0.8rem;padding-bottom: 0px;
+                    <div class="width100c unselectable-text" style="margin-bottom: 10px; font-size: 0.8rem;padding-bottom: 0px;
                     margin-bottom: 0px;
                     margin-top: -6px; ">Destructive Options :
+                    </div>
+
+                    <div class="width50c" style="margin-bottom: 10px; ">
+
+                        <button id="selectionclear"
+                            style="color: #730000; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Clear<br>
+                            Selection</button>
+                        <button class="clearsection"
+                            style="color: #730000; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Empty<br>
+                            Component</button>
+                    </div>
+
+                    <div class="width50c" style="margin-bottom: 10px;">
+                        <button class="deletecode"
+                            style="color: #fff; width: 98%; background-color: #730000; font-size: 100%; border: 4px solid yellow; padding-top:6px; padding-bottom: 6px;">Delete
+                            Component</button>
+
+
+                    </div>
+
+
+                    <div class="width100c">
+                        <button class="deleterowfull"
+                            style="color: #fff; background-color: #730000;  margin-right: 1%; width: 98%; padding-top: 3px; padding-bottom: 3px;">
+                            <span class="unselectable-text">Clear Workspace</span></button>
+                    </div>
+
+
                 </div>
 
-                <div class="width50c" style="margin-bottom: 10px; ">
-
-                    <button id="selectionclear"
-                        style="color: #730000; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Clear<br>
-                        Selection</button>
-                    <button class="clearsection"
-                        style="color: #730000; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Empty<br>
-                        Component</button>
-                </div>
-
-                <div class="width50c" style="margin-bottom: 10px;">
-                    <button class="deletecode"
-                        style="color: #fff; width: 98%; background-color: #730000; font-size: 100%; border: 4px solid yellow; padding-top:6px; padding-bottom: 6px;">Delete
-                        Component</button>
 
 
-                </div>
 
 
-                <div class="width100c">
-                    <button class="deleterowfull"
-                        style="color: #fff; background-color: #730000;  margin-right: 1%; width: 98%; padding-top: 3px; padding-bottom: 3px;">
-                        <span class="unselectable-text">Clear Workspace</span></button>
-                </div>
 
 
             </div>
-
-
-
-
-
-
-
-        </div>
 
             <div id="layoutbuilder-oc" class="width100c openclose" openclose="layoutbuilder-oc"
                 style="margin-left: 3.3%; width: 90% !important; margin-bottom: 0px; display: block;">
                 <div class="width100c unselectable-text" style="margin-left: -3%;">
                     <span class="myindicator">+</span>
                     <span style="font-size: 0.8rem;">&nbsp;&nbsp;Layout Builder</span>
-                    <span class="mysmalltext" style="color: yellow;">(div)</span><span style="font-size: 0.8rem;"> - Step 2</span>
+                    <span class="mysmalltext" style="color: yellow;">(div)</span><span style="font-size: 0.8rem;"> -
+                        Step 2</span>
                 </div>
             </div>
 
@@ -2192,7 +609,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                         style="border-bottom: 3px solid #ccc; padding-bottom: 21px; margin-bottom: 5px; background-color: #333;">
                         <button
                             style="width: 20%; float: left; margin-right: 1%;  font-size: 65%; padding-top: 5px; padding-bottom: 5px; border: 1px solid #f0cd97; background-color: transparent; color: #fff; "
-                            class="ipsom unselectable-text">Ipsom Lorem Copy</button>
+                            class="ipsom unselectable-text">Ipsom Lorem</button>
 
                         <div style="width: auto; float: left; margin-left: 10px; padding-left: 10px;">
                             <input type="checkbox" id="htmlcodeyesno" name="htmlcodeyesno" class="htmlcodeyesno"
@@ -2222,11 +639,12 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                         <button class="texttype" value="i"><i lass="unselectable-text">I</i></button>
                         <button class="texttype" title="Bold and Italic text"
                             value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
-                        <button title="Underline Text" class="texttype" value="u"><u lass="unselectable-text">U</u></button>
+                        <button title="Underline Text" class="texttype" value="u"><u
+                                lass="unselectable-text">U</u></button>
                         <button title="Subscript Text" class="texttype unselectable-text" value="sub"
                             style="font-size: 0.8rem;">X<sub>2</sub></button>
-                        <button title="Superscript Text" class="texttype unselectable-text" style=" border-right: 1px solid #ccc; " value="sup"
-                            style="font-size: 0.8rem;">
+                        <button title="Superscript Text" class="texttype unselectable-text"
+                            style=" border-right: 1px solid #ccc; " value="sup" style="font-size: 0.8rem;">
                             X<sup>2</sup></button>
 
                         <button class="textaligner" title="Left Justify Text"
@@ -2781,7 +1199,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                         style="width: 99%; margin-right: 1%; display: none;">
                         <div class="width100c imgbuild" style="border-bottom: 1px solid #ccc;margin-bottom: 10px;  ">
 
-                            <textarea style="width: 94%; margin-bottom: 5px;" name="wraparoundimage"
+                            <textarea style="width: 94%; margin-bottom: 5px; max-width: 94%;" name="wraparoundimage"
                                 id="wraparoundimage" cols="30" rows="8"
                                 placeholder="Click on a Component to Edit the HTML"></textarea>
 
@@ -3250,27 +1668,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                     </div>
 
-                    <!--
-                        <div class="width100c" style="margin-top: 10px;">
-    
-                            <select name="textaligner2" id="textaligner2" style="    margin-top: 6px;
-                                    width: 24%;
-                                    font-size: 74%;
-                                    max-width: none;
-                                    min-height: 30px;
-                                    text-align: center; background-color: #333; color: #fff; ">
-                                <option value="addpadding0">Add Top Margin 0pxfgfgfgfgfgfgfg</option>
-                                <option value="addpadding10">Add Top Margin 10px</option>
-                                <option value="addpadding20">Add Top Margin 20px</option>
-                                <option value="addpadding30">Add Top Margin 30px</option>
-                                <option value="addpadding40">Add Top Margin 40px</option>
-                                <option value="addpadding60">Add Top Margin 60px</option>
-                                <option value="addpadding80">Add Top Margin 80px</option>
-                                <option value="addpadding100">Add Top Margin 100px</option>
-                            </select>
-                        </div>
 
-                        -->
 
                 </div>
 
@@ -3422,26 +1820,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 </div>
 
 
-
-
-
-
-
-
-
-
-                <!--the end-->
             </div>
-
-
-
-
-
-
-
-           
-
-
 
 
             <div class="width100c toolboxhide"
@@ -3470,7 +1849,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
                 <textarea
-                    style="width: 94%; background-color: #000; color: #fff; margin-left: 2%; margin-bottom: 5px; min-height: 400px;"
+                    style="width: 94%; min-width: 94%; background-color: #000; color: #fff; margin-left: 2%; margin-bottom: 5px; min-height: 300px; max-width: 94%; max-height: 400px;"
                     name="myhtmleditor" id="myhtmleditor" cols="30" rows="8"
                     placeholder="Click on a Component to Edit the HTML"></textarea>
 
@@ -3589,52 +1968,57 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                             style="display: none;">
 
 
-<script>
-async function uploadFile() {
-            const fileInput = document.getElementById('fileInput-gd');
-            const file = fileInput.files[0]; // Get the file from the input
+                        <script>
+                            async function uploadFile() {
+                                const fileInput = document.getElementById('fileInput-gd');
+                                const file = fileInput.files[0]; // Get the file from the input
 
-            if (!file) {
-                alert('Please select a file first!');
-                return;
-            }
+                                if (!file) {
+                                    alert('Please select a file first!');
+                                    return;
+                                }
 
-            const folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91';
-            const accessToken = 'AIzaSyBCShnlpcHZxF7WKYbNQ_0waMjVh9Q-kgc'; // Replace with your access token
-            const url = 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart';
+                                const folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91';
+                                const accessToken =
+                                    'AIzaSyBCShnlpcHZxF7WKYbNQ_0waMjVh9Q-kgc'; // Replace with your access token
+                                const url = 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart';
 
-            const metadata = {
-                'name': file.name, // Filename at Google Drive
-                'parents': [folderId], // Folder ID at Google Drive
-            };
+                                const metadata = {
+                                    'name': file.name, // Filename at Google Drive
+                                    'parents': [folderId], // Folder ID at Google Drive
+                                };
 
-            const formData = new FormData();
-            formData.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
-            formData.append('file', file);
+                                const formData = new FormData();
+                                formData.append('metadata', new Blob([JSON.stringify(metadata)], {
+                                    type: 'application/json'
+                                }));
+                                formData.append('file', file);
 
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: new Headers({'Authorization': 'Bearer ' + accessToken}),
-                    body: formData,
-                });
+                                try {
+                                    const response = await fetch(url, {
+                                        method: 'POST',
+                                        headers: new Headers({
+                                            'Authorization': 'Bearer ' + accessToken
+                                        }),
+                                        body: formData,
+                                    });
 
-                if (!response.ok) {
-                    throw new Error('Upload failed');
-                }
+                                    if (!response.ok) {
+                                        throw new Error('Upload failed');
+                                    }
 
-                const result = await response.json();
-                console.log(result);
-                alert('Upload successful');
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Error during file upload: ' + error.message);
-            }
-        }
-</script>
+                                    const result = await response.json();
+                                    console.log(result);
+                                    alert('Upload successful');
+                                } catch (error) {
+                                    console.error('Error:', error);
+                                    alert('Error during file upload: ' + error.message);
+                                }
+                            }
+                        </script>
 
 
-                        
+
 
 
                     </div>
@@ -3729,7 +2113,8 @@ async function uploadFile() {
                 <div class="openthematrix" mymatrix="mymatrix1" style="border-radius: 5px 5px 0px 0px; "><strong>Final
                         Code For PCR</strong></div>
 
-                <div class="openthematrix" mymatrix="mymatrix5" style="border-radius: 5px 5px 0px 0px; float: right; display: none;">
+                <div class="openthematrix" mymatrix="mymatrix5"
+                    style="border-radius: 5px 5px 0px 0px; float: right; display: none;">
                     <strong>Video Tutorial</strong></div>
 
                 <div class="openthematrix" mymatrix="mymatrix7" style="border-radius: 5px 5px 0px 0px; float: right;">
@@ -3737,8 +2122,8 @@ async function uploadFile() {
                     </strong></div>
 
 
-                    <div class="openthematrix" mymatrix="mymatrix6" style="border-radius: 5px 5px 0px 0px; float: right;">
-                        <strong>Templete Documents</strong></div>
+                <div class="openthematrix" mymatrix="mymatrix6" style="border-radius: 5px 5px 0px 0px; float: right;">
+                    <strong>Templete Documents</strong></div>
 
                 <div id="hidemainmobile" myhide="0" class="unselectable-text"
                     style="float: right; color: #fff; margin-left: 10px; background-color: #333; padding-left: 3px; padding-right: 3px;  font-size: 0.7rem; cursor: pointer; padding: 3px;">
@@ -3753,72 +2138,88 @@ async function uploadFile() {
 
 
 
-            <div id="mymatrix6" class="width100c closethematrix" style="width: 94%; margin-left: 4%;">
-                <div id="closetutorial" class="width100c"
-                    style="background-color: #fff; text-align: center; color: #333; cursor: pointer;">Close Templetes List
-                 
-                </div>
-                <div  class="width100c">
-<div id="driveContents" style="background-color: #334; width: 100%;float: left; position: relative;"></div>
-                 <div class="width100c" style="text-align: left; border-top: 1px solid #ccc; padding-top: 10px; margin-bottom: 10px;">Click Templete Files to Download to Your Computer</div>
-                 <div  class="width100c"> <input type="file" id="fileInput-gd" style="float: left; width: auto; margin-bottom: 10px;"></div>
-                <div class="width100c"> <button onclick="uploadFile()" style="float: left;">Upload to Drive</button>  </div>
+            <div id="mymatrix6" class="width100c closethematrix"
+                style="width: 94%; margin-left: 4%; border-top: 4px solid #fff;">
+                <div class="width100c unselectable-text"
+                style="text-align: left; padding-top: 10px; margin-bottom: 10px; background-color: #334; margin-bottom: 0px; border-bottom: 1px solid #ccc;  width: 100%; padding-bottom: 5px; text-align: center;">
+                Click Templete Files to Download to Your Computer</div>
+                <div class="width100c" style="margin-top: 0px;">
+                    <div id="driveContents"
+                        style="background-color: #334; width: 100%;float: left; position: relative;"></div>
+                    <div class="width100c"><button onclick="listDriveFiles()" style="float: right; margin-top: 5px;">Refresh
+                            List</button></div>
+
+
+
+                    
+
+
+
+                    <div class="width100c" style="display: none;"> <input type="file" id="fileInput-gd"
+                            style="float: left; width: auto; margin-bottom: 10px;"></div>
+                    <div class="width100c" style="display: none;"> <button onclick="uploadFile()" style="float: left;">Upload to Drive</button>
+
+
+
+                    </div>
                 </div>
             </div>
-           
+
 
 
             <script>
-async function listDriveFiles() {
-  let folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91';
-  let response = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${a231+a2312+'jVh9Q-kgc'}`);
-  let data = await response.json();
-  let files = data.files;
+                async function listDriveFiles() {
+                    let folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91';
+                    let response = await fetch(
+                        `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${a231+a2312+'jVh9Q-kgc'}`
+                    );
+                    let data = await response.json();
+                    let files = data.files;
 
-  // Sort files alphabetically by name
-  files.sort((a, b) => a.name.localeCompare(b.name));
+                    // Sort files alphabetically by name
+                    files.sort((a, b) => a.name.localeCompare(b.name));
 
-  let output = '<div class="width33ca">'; // Start the first div container
-  let ulCount = 0; // Initialize ul counter
-  let previousFirstLetter = '';
+                    let output = '<div class="width33ca">'; // Start the first div container
+                    let ulCount = 0; // Initialize ul counter
+                    let previousFirstLetter = '';
 
-  for (let file of files) {
-    let currentFirstLetter = file.name.charAt(0).toLowerCase();
-    let displayName = file.name.replace('.txt', ''); // Remove .txt extension from the display name
+                    for (let file of files) {
+                        let currentFirstLetter = file.name.charAt(0).toLowerCase();
+                        let displayName = file.name.replace('.txt',
+                            ''); // Remove .txt extension from the display name
 
-    // Start a new list if the first letter changes
-    if (currentFirstLetter !== previousFirstLetter) {
-      // After every 5 <ul>, close the current div and start a new div
-      if (ulCount % 5 === 0 && ulCount !== 0) {
-        output += '</div><div class="width33ca">';
-      }
-      if (output.endsWith('</ol>')) { // Check if it's not the first list to avoid appending ul prematurely
-        output += '<ul>';
-      } else {
-        output += '</ul><ul>'; // Properly close the previous list and start a new one
-      }
-      ulCount++; // Increment ul counter whenever a new list is started
-    }
+                        // Start a new list if the first letter changes
+                        if (currentFirstLetter !== previousFirstLetter) {
+                            // After every 5 <ul>, close the current div and start a new div
+                            if (ulCount % 5 === 0 && ulCount !== 0) {
+                                output += '</div><div class="width33ca">';
+                            }
+                            if (output.endsWith(
+                                    '</ol>'
+                                    )) { // Check if it's not the first list to avoid appending ul prematurely
+                                output += '<ul>';
+                            } else {
+                                output += '</ul><ul>'; // Properly close the previous list and start a new one
+                            }
+                            ulCount++; // Increment ul counter whenever a new list is started
+                        }
 
-    output += `<li><a title="Download the file of - ${displayName} -" style="color:#fff" href="https://drive.google.com/uc?export=download&id=${file.id}" download="${file.name}">${displayName} &#8595;</a></li>`;
+                        output +=
+                            `<li><a title="Download the file of - ${displayName} -" style="color:#fff" href="https://drive.google.com/uc?export=download&id=${file.id}" download="${file.name}">${displayName} &#8595;</a></li>`;
 
-    previousFirstLetter = currentFirstLetter;
-  }
+                        previousFirstLetter = currentFirstLetter;
+                    }
 
-  // Close the last list and div
-  output += '</ul></div>';
+                    // Close the last list and div
+                    output += '</ul></div>';
 
-  document.getElementById('driveContents').innerHTML = output;
-}
+                    document.getElementById('driveContents').innerHTML = output;
+                }
 
-listDriveFiles();
-              </script>
+                listDriveFiles();
+            </script>
 
             <div id="mymatrix9" class="width100c closethematrix" style="width: 94%; margin-left: 4%;">
-                <div id="closetutorial" class="width100c"
-                    style="background-color: #001ca7; text-align: center; color: #fff; cursor: pointer;">Close Docuemnt
-                    Cleaner
-                </div>
                 <div class="width100c">
                     <embed width="100%" height="768px" src="https://phrasefix.com/tools/remove-special-characters/"
                         title="Google Documents" allowfullscreen></embed>
@@ -3841,16 +2242,6 @@ listDriveFiles();
                         allowfullscreen></iframe>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
 
 
             <div id="sidetoolset" style="float: left;
@@ -3977,7 +2368,7 @@ listDriveFiles();
                     cssadd="<br>">br</button>
 
 
-                    <div style="width: 94%; border: 2px solid #ccc;"></div>
+                <div style="width: 94%; border: 2px solid #ccc;"></div>
 
                 <button class="texttype unselectable-text" title="Make Selected Text an H2"
                     style="font-size: 0.85em;max-width: none; border-left: 1px;width:100%;margin-bottom: 10px; margin-top:10px "
@@ -3985,38 +2376,38 @@ listDriveFiles();
 
                 <button class="texttype unselectable-text" title="Make Selected Text an H3"
                     style="font-size: 0.85em;max-width: none;  width:100%;margin-bottom: 5px; " value='h3'>H3</button>
-                
-
-              
-
-                    
 
 
 
-     <button class="texttype unselectable-text" value="span style='color:#034694'"  title="Make Color Blue"
-                                                            style="text-align: center;  background-color: #034694; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 5px;">C</button>
 
-                                                            
- <button class="texttype unselectable-text" value="span style='color:#d71920'" title="Make Color Red"
-                                                            style="text-align: center;  background-color: #d71920; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 10px;">C</button>
 
-<div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
 
-<button class="unselectable-text addrow-click" title="Add 100% Row"
+
+
+                <button class="texttype unselectable-text" value="span style='color:#034694'" title="Make Color Blue"
+                    style="text-align: center;  background-color: #034694; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 5px;">C</button>
+
+
+                <button class="texttype unselectable-text" value="span style='color:#d71920'" title="Make Color Red"
+                    style="text-align: center;  background-color: #d71920; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 10px;">C</button>
+
+                <div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
+
+                <button class="unselectable-text addrow-click" title="Add 100% Row"
                     style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 100%; margin-top: 10px; margin-bottom: 5px;">100</button>
 
-                    <button id="addrow1x1a" class="unselectable-text" title="Add 100% Column"
-                                        style="text-align: center;  background-color: yellow; color:#333; width: 100%; margin-top: 5px; margin-bottom: 5px;">100</button>
+                <button id="addrow1x1a" class="unselectable-text" title="Add 100% Column"
+                    style="text-align: center;  background-color: yellow; color:#333; width: 100%; margin-top: 5px; margin-bottom: 5px;">100</button>
 
-<div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
-                                                              <button class="deleterow unselectable-text" title="Delete Row"
-                                                                                style="text-align: center; background-color: #730000; color: white; width: 100%; margin-top: 10px; margin-bottom: 5px;">R</button>
-                                                                            <button class="deletecode  unselectable-text" title="Delete Component"
-                                                                                style="text-align: center; background-color: #730000; color: white; width: 100%; border: 2px solid yellow;margin-top: 5px; margin-bottom: 5px;">C</button>
-                                                                            <button class="clearsection unselectable-text" title="Empty Component"
-                                                                                style="text-align: center; background-color: #fff; color: #730000; width: 100%; margin-top: 5px; margin-bottom: 5px; border: 2px solid #730000;">E</button>
+                <div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
+                <button class="deleterow unselectable-text" title="Delete Row"
+                    style="text-align: center; background-color: #730000; color: white; width: 100%; margin-top: 10px; margin-bottom: 5px;">R</button>
+                <button class="deletecode  unselectable-text" title="Delete Component"
+                    style="text-align: center; background-color: #730000; color: white; width: 100%; border: 2px solid yellow;margin-top: 5px; margin-bottom: 5px;">C</button>
+                <button class="clearsection unselectable-text" title="Empty Component"
+                    style="text-align: center; background-color: #fff; color: #730000; width: 100%; margin-top: 5px; margin-bottom: 5px; border: 2px solid #730000;">E</button>
 
-                
+
 
             </div>
             <div id="pullthecode2" class="width50c layout2" style="background-color: #f7f7f7; color: #000; max-width: 96%; min-height: 439px; width: 66%;  margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 800px;
@@ -4036,30 +2427,7 @@ listDriveFiles();
                 style="max-height: 460px; width: 25%; margin-left: 0%;  overflow-y: auto;  margin-right: 0px; padding-right: 0px; ">
             </div>
 
-            <div class="width100c stage2">
 
-                <div class="width50c" style="width: 69%; min-height: auto; ">
-
-                    <div class="width100c" style="margin-left: -1.5%; margin-top: -17px;">
-
-                        <!--removed buttons-->
-
-
-                    </div>
-
-                    <div class="width100c" style="width: 91%;">
-                        <button id="colorswatch" style="float: right;
-    width: auto;
-    height: 25px;
-    background-color: rgb(3, 70, 148);
-    text-align: center;
-    color: rgb(255, 255, 255); font-size: 67%; border: 2px solid #fff; display: none;">
-                            Click For Header Color
-                        </button>
-                    </div>
-
-                </div>
-            </div>
 
 
 
@@ -4071,18 +2439,19 @@ listDriveFiles();
             <div id="mymatrix1" class="width100c closethematrix" style="width: 96%; margin-left: 4%;">
 
                 <div class="prod100 unselectable-text"
-                    style="background-color: #334; margin-left: 0px; width: 96.4%;">
+                    style="background-color: #fff; margin-left: 0px; width: 96.4%; color: #333;">
                     Click on Code To Copy to Clipboard <button id="exportfinalcodetofile"
-                        style="float: right; font-size: 80%;">Export to File</button></div>
+                        style="float: right; font-size: 80%; border: 1px solid #333;">Export Final Code to File</button>
+                </div>
 
                 <div class="prod100 layout1 selectall"
-                    style="background-color: #f7f7f7; color: #000;  margin-bottom: 20px; margin-left: 0px; width: 96%;">
+                    style="background-color: #333; color: #fff;  margin-bottom: 20px; margin-left: 0px; width: 96%;">
                     &lt;link href="images/pim-content/occontent2024-v7a.css?$staticlink$" rel="stylesheet" /> <br>
                     <span id="findthecode"></span>
                 </div>
 
                 <div id="thisisthefinalcode" class="prod100 layout2 selectall"
-                    style="background-color: #f7f7f7; color: #000; margin-bottom: 20px; margin-left: 0px; width: 96.4%; padding-top: 20px; padding-bottom: 20px;">
+                    style="background-color: #000; color: #fff; margin-bottom: 20px; margin-left: 0px; width: 96.4%; padding-top: 20px; padding-bottom: 20px;">
 
                     &lt;link href="images/pim-content/occontent2024-v7a.css?$staticlink$" rel="stylesheet" /> <br>
                     &lt;div class="totalinternalcontent">
@@ -4103,29 +2472,15 @@ listDriveFiles();
             <div id="mymatrix3" class="width100c closethematrix">
 
                 <textarea name="beautycode" id="beautycode" cols="30" rows="10"
-                    style="width: 93.5%; margin-left:4%; min-height: 533px; background-color: #000; color: #fff;"></textarea>
+                    style="width: 93.5%; margin-left:4%; min-height: 533px; background-color: #000; color: #fff; border-top: 4px solid #fff;"></textarea>
 
 
             </div>
 
 
 
-            <div class="width100c">
-                <div class="width100c" style="margin-bottom: 20px;">
 
-                    <button id="showmobile" class="unselectable-text" style="float: left; background-color: #730000; color: #fff; display: none;">
-                        Show Mobile</button>
-                    <button id="showmobile2" class="unselectable-text" style="float: left;  background-color: #730000; color: #fff;"> Hide
-                        Mobile</button>
-                    <p class="mymobile unselectable-text" style="margin-top: 5px; float: left; margin-left: 10px;">Mobile View of Content
-                    </p>
 
-                </div>
-                <div class="width50c mymobile" id="mobilepreview"
-                    style="max-height: 450px; overflow-y: scroll; overflow-x: hidden;">
-                </div>
-
-            </div>
 
 
 
@@ -4134,10 +2489,8 @@ listDriveFiles();
 
                 <!--   <div id="showmylegend" class="width100c unselectable-text" style="margin-bottom: 3px; cursor: pointer;">Help and Key Commands &nbsp; ↓</div>-->
 
-                <div class="width100c colorlegend unselectable-text" style="margin-bottom: 10px; background-color: #334;">
-                    <div id="closetutorial3" class="width100c" style="background-color: #fff; text-align: center; color: #333; cursor: pointer;">Close Help Center
-                 
-                    </div>
+                <div class="width100c colorlegend unselectable-text"
+                    style="margin-bottom: 10px; background-color: #334; margin-top: 0px; border-top: 4px solid #fff;">
                     <ul style="margin-bottom: 35px;">
                         <li>Shift + Enter = Text Break</li>
                         <li>ctrl + B = Bold Text</li>
@@ -4290,7 +2643,6 @@ listDriveFiles();
 
 
     </div>
-
 
 
 </body>
