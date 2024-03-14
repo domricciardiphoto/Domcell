@@ -3740,7 +3740,7 @@ async function uploadFile() {
                     <div class="openthematrix" mymatrix="mymatrix6" style="border-radius: 5px 5px 0px 0px; float: right;">
                         <strong>Templete Documents</strong></div>
 
-                <div id="hidemainmobile" myhide="0"
+                <div id="hidemainmobile" myhide="0" class="unselectable-text"
                     style="float: right; color: #fff; margin-left: 10px; background-color: #333; padding-left: 3px; padding-right: 3px;  font-size: 0.7rem; cursor: pointer; padding: 3px;">
                     Hide Mobile</div>
 
@@ -3976,29 +3976,45 @@ listDriveFiles();
                     style="width: 100%;font-size: 1em;max-width: none; color: #fff;  background-color: transparent;margin-bottom: 10px; "
                     cssadd="<br>">br</button>
 
+
+                    <div style="width: 94%; border: 2px solid #ccc;"></div>
+
                 <button class="texttype unselectable-text" title="Make Selected Text an H2"
-                    style="font-size: 0.85em;max-width: none; border-left: 1px;width:100%;margin-bottom: 10px; "
+                    style="font-size: 0.85em;max-width: none; border-left: 1px;width:100%;margin-bottom: 10px; margin-top:10px "
                     value='h2'>H2</button>
 
                 <button class="texttype unselectable-text" title="Make Selected Text an H3"
-                    style="font-size: 0.85em;max-width: none;  width:100%;margin-bottom: 10px; " value='h3'>H3</button>
-                <div style="width: 94%; border: 2px solid #ccc;"></div>
+                    style="font-size: 0.85em;max-width: none;  width:100%;margin-bottom: 5px; " value='h3'>H3</button>
+                
 
-                <button class="deleterow unselectable-text" title="Delete Row"
-                    style="text-align: center; background-color: #730000; color: white; width: 100%; margin-top: 10px; margin-bottom: 5px;">R</button>
-                <button class="deletecode  unselectable-text" title="Delete Component"
-                    style="text-align: center; background-color: #730000; color: white; width: 100%; border: 2px solid yellow;margin-top: 5px; margin-bottom: 5px;">C</button>
-                <button class="clearsection unselectable-text" title="Empty Component"
-                    style="text-align: center; background-color: #fff; color: #730000; width: 100%; margin-top: 5px; margin-bottom: 5px; border: 2px solid #730000;">E</button>
-
-                    <button class="clearsection unselectable-text addrow-click" title="Add 100% Row"
-                    style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 5px;">100</button>
-
-                    <button id="addrow1x1a" class="clearsection unselectable-text" title="Add 100% Column"
-                                        style="text-align: center;  background-color: yellow; color:#333; width: 100%; margin-top: 5px; margin-bottom: 5px;">100</button>
+              
 
                     
 
+
+
+     <button class="texttype unselectable-text" value="span style='color:#034694'"  title="Make Color Blue"
+                                                            style="text-align: center;  background-color: #034694; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 5px;">C</button>
+
+                                                            
+ <button class="texttype unselectable-text" value="span style='color:#d71920'" title="Make Color Red"
+                                                            style="text-align: center;  background-color: #d71920; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 10px;">C</button>
+
+<div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
+
+<button class="unselectable-text addrow-click" title="Add 100% Row"
+                    style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 100%; margin-top: 10px; margin-bottom: 5px;">100</button>
+
+                    <button id="addrow1x1a" class="unselectable-text" title="Add 100% Column"
+                                        style="text-align: center;  background-color: yellow; color:#333; width: 100%; margin-top: 5px; margin-bottom: 5px;">100</button>
+
+<div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
+                                                              <button class="deleterow unselectable-text" title="Delete Row"
+                                                                                style="text-align: center; background-color: #730000; color: white; width: 100%; margin-top: 10px; margin-bottom: 5px;">R</button>
+                                                                            <button class="deletecode  unselectable-text" title="Delete Component"
+                                                                                style="text-align: center; background-color: #730000; color: white; width: 100%; border: 2px solid yellow;margin-top: 5px; margin-bottom: 5px;">C</button>
+                                                                            <button class="clearsection unselectable-text" title="Empty Component"
+                                                                                style="text-align: center; background-color: #fff; color: #730000; width: 100%; margin-top: 5px; margin-bottom: 5px; border: 2px solid #730000;">E</button>
 
                 
 
@@ -4097,11 +4113,11 @@ listDriveFiles();
             <div class="width100c">
                 <div class="width100c" style="margin-bottom: 20px;">
 
-                    <button id="showmobile" style="float: left; background-color: #730000; color: #fff; display: none;">
+                    <button id="showmobile" class="unselectable-text" style="float: left; background-color: #730000; color: #fff; display: none;">
                         Show Mobile</button>
-                    <button id="showmobile2" style="float: left;  background-color: #730000; color: #fff;"> Hide
+                    <button id="showmobile2" class="unselectable-text" style="float: left;  background-color: #730000; color: #fff;"> Hide
                         Mobile</button>
-                    <p class="mymobile" style="margin-top: 5px; float: left; margin-left: 10px;">Mobile View of Content
+                    <p class="mymobile unselectable-text" style="margin-top: 5px; float: left; margin-left: 10px;">Mobile View of Content
                     </p>
 
                 </div>
