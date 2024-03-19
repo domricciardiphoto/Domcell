@@ -291,6 +291,13 @@
         #clearandrestart {
             background-color: #730000;
             color: #fff;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-bottom: 0px;
+            width: auto;
+            border-radius: 5px 5px 0px 0px;
+            float: right; font-size: 80%;
         }
 
         #message2 {
@@ -1549,4 +1556,182 @@
 
         #driveContents .width33ca ul li {
             margin-bottom: 0px;
+        }
+
+
+        #urlmodel-internal {
+            background: #333;
+                padding: 20px;
+                color: #fff;
+                border-radius: 5px;
+                width: 430px;
+                position: fixed;
+                top: 44%;
+                left: 54%;
+                transform: translate(-50%, -50%); 
+        }
+        
+        #customModal-internal {
+            background: #333;
+                color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                width: 36%;
+                position: fixed;
+                top: 45%;
+                left: 53.7%;
+                transform: translate(-50%, -50%);  
+        }
+        
+        #fullinterface {
+            width: 100%; margin-left: 0%; margin: 0%; padding: 0px;
+        }
+        
+        #programming {
+            padding-top: 20px; 
+        }
+        
+        #selectionclear {
+            color: #730000; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;
+        }
+        
+        #addrow2x8 ,  #addrow1x1 , #addrow2x2 , #addrow4x6 , #addrow4x6a , #addrow2x7 , #addrow3x3 , #addrow4x4 {
+            padding-top: 8px;padding-bottom: 8px;width: 46.5%;   
+        }
+        
+        #colorswatch2 {
+            float: left; width: auto; height: 27px; background-color: #034694; text-align: center; color: rgb(255, 255, 255); font-size: 67%; border: 2px solid rgb(255, 255, 255); margin-right: 10px;
+        }
+        
+        #cinput1-clickh2-comp {
+            float: right; margin-right: 10px;width: 100%; font-size: 67%;padding-bottom: 5px;background-color: transparent; color: #fff; border: 1px solid #ccc; padding-top: 6px; 
+        }
+        
+        #cinput3a {
+            max-width: 98%; min-width: 50%;    
+        }
+        
+        .ipsom {
+            width: 20%; float: left; margin-right: 1%;  font-size: 65%; padding-top: 5px; padding-bottom: 5px; border: 1px solid #f0cd97; background-color: transparent; color: #fff; 
+        }
+        
+        #cinput3-comp {
+            float: right; margin-right: 10px;width: 37%; float: right; margin-right: 1%;font-size: 80%;padding-bottom: 5px;background-color: transparent; color: #fff; border: 1px solid #ccc; padding-top: 6px; 
+        }
+        
+        #wraparoundsubmit {
+            margin-top: 10px; border: 1px solid #ccc; background-color: transparent;float: right; color: #fff; padding: 5px; margin-right: 2%; 
+        }
+        
+        #clicktoloadlocalfiles {
+            float: right;   background-color: transparent; padding: 5px; color: #fff; margin-right: 3%; border: 1px solid #ccc; margin-top: 10px; font-size: 80%; padding-left: 10px; padding-right: 10px;
+        }
+        
+        #listsubmit {
+            float: right; margin-right: 0px; background-color: #334; color: #fff; padding: 10px;
+        }
+        
+        #newlist {
+            float: left; margin-right: 10px; margin-left: 18.5%; background-color: #730000; color: #fff;  
+        }
+        
+        #submitvideofile {
+            margin-top: 15px; float: right; margin-right: 30px; color: #fff; border: 1px solid #ccc; background-color: transparent; padding: 10px; 
+        }
+        
+        #message2 {
+            text-align: center; font-weight: bold; margin-left: 0px;
+        }
+        
+        #myhtmleditor {
+            width: 94%; min-width: 94%; background-color: #000; color: #fff; margin-left: 2%; margin-bottom: 5px; min-height: 300px; max-width: 94%; max-height: 400px;  
+        }
+        
+        #editmode {
+            width: 10px; zoom: 2; margin-top: 0px; float: left; display: none;
+        }
+        
+        #hamburger {
+            width: 30px; height: 30px; float: left; cursor: pointer; display: none;
+        }
+        
+        #mymatrix6 {
+            width: 94%; margin-left: 4%; border-top: 4px solid #fff;  
+        }
+        
+        #mes1 {
+            text-align: left; padding-top: 10px; margin-bottom: 10px; background-color: #334; margin-bottom: 0px; border-bottom: 1px solid #ccc;  width: 100%; padding-bottom: 5px; text-align: center;  
+        }
+
+
+        #mes2 {
+            margin-top: 10px;
+            padding: 10px;
+            padding-right: 10px;
+            margin-right: 0%;
+            padding-left: 0px;
+            width: 92%; display: none;
+        }
+
+        #mes3 {
+            width: 100%;  padding-bottom: 1%;  display: block;margin-left: 3%;
+        }
+        
+        #driveContents {
+            background-color: #334; width: 100%;float: left; position: relative; 
+        }
+        
+        
+        #closetutorial2 {
+            background-color: #001ca7; text-align: center; color: #fff; cursor: pointer;  
+        }
+        
+        #pullthecode2 {
+            background-color: #f7f7f7; color: #000; max-width: 96%; min-height: 439px; width: 66%;  margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 800px;
+                        position: relative;
+                        overflow: auto; padding-top: 10px;     
+        }
+        
+        #beautycode {
+            width: 90.2%; padding: 1.5%; margin-left:4%; min-height: 533px; background-color: #000; color: #fff; border-top: 4px solid #fff;    
+        }
+        
+        
+        #fullembedcodeddd {
+            width: 100%; min-height: 500px; background-color: #333; position: relative; float: left;   
+        }
+
+
+        #layoutbuilder-oc2 {
+            margin-left: 3.3%; width: 90% !important; margin-bottom: 0px; display: block ;
+        }
+
+        #addrow {
+            background-color: #001ca7;
+            color: #fff;
+            width: 92%; margin-right: 2%;
+            line-height: 25px; float: left;
+            margin-bottom: 8px;
+        }
+
+        #linkmaker {
+            padding: 6px; margin-left: 15px; padding-bottom: 3px; font-size: 80%; border: 1px solid #ccc; background-color: transparent; color: #fff; 
+        }
+
+        #textaligner2 {
+            margin-top: 6px;
+            width: 24%;
+            font-size: 74%;
+            max-width: none;
+            min-height: 30px;
+            text-align: center; background-color: #333; color: #fff;
+        }
+
+        #linkmaker2 {
+            padding: 6px; margin-left: 15px; padding-bottom: 3px; font-size: 80%; border: 1px solid #ccc; background-color: transparent; color: #fff;
+        }
+
+        #layoutbuilder-oc {
+            width: 90% !important;
+            margin-left: 3%;
         }

@@ -1078,7 +1078,7 @@ setupContextMenu('h3');
             } else {
                 // If mobile preview is currently hidden, show it, reset width of pullthecode2, and update the button text
                 $pullTheCode.delay(200).animate({
-                    'width': '68%',
+                    'width': '66%',
                     'max-width': 'auto'
                 }, function () {
                     $mobilePreview.show();
@@ -1097,15 +1097,20 @@ setupContextMenu('h3');
             $(this).css('background-color', '#fff').css('color', '#333')
 
             if (whichboxtoopen === 'Tools') {
-                $('.internalscroller , #myhtmleditor ,.toolboxhide').show()
-                $('.toolboxlayoutoptions').hide()
-                $('#layoutbuilder-oc2').hide()
-            } else {
-                $('.internalscroller , #myhtmleditor ,.toolboxhide ').hide()
-                $('.toolboxlayoutoptions').show()
-                $('#layoutbuilder-oc2').show()
-                $('.toolboxhide , #myhtmleditor').show()
+               $('#layoutbuilder-oc2').css('display' , 'none')
+               $('#myhtmleditor').show()
+               $('.internalscroller').show()
+               $('.toolboxhide').show()
+               $('.toolboxlayoutoptions').hide()
+               $('.layoutbuilder-oc').hide()
 
+            } else {
+             $('#layoutbuilder-oc2').css('display' , 'block')
+             $('#myhtmleditor').hide()
+             $('.internalscroller').hide()
+             $('.toolboxhide').hide()
+             $('.toolboxlayoutoptions').show()
+             $('.layoutbuilder-oc').show()
             }
         })
 
@@ -1168,6 +1173,7 @@ setupContextMenu('h3');
 
 
         $('#closeembed').on('click', function () {
+            $('#pcrdesktopview').click()
             $('#mymatrix4').hide()
             $('#programming').show()
             $('#resizable-div').show()
@@ -1189,8 +1195,7 @@ setupContextMenu('h3');
             // Check if 'Control' is pressed along with 'B'
             if (event.ctrlKey && event.key === 'b') {
                 event
-                    .preventDefault(); // Prevent the default action to avoid triggering browser shortcuts
-
+                    .preventDefault();
 
                 var selection = window.getSelection();
                 if (!selection.rangeCount) return;
@@ -1219,7 +1224,7 @@ setupContextMenu('h3');
         document.addEventListener('keydown', function (event) {
             // Check if 'Shift' is pressed along with 'Enter'
             if (event.shiftKey && event.key === 'Enter') {
-                event.preventDefault(); // Prevent the default action to avoid any unwanted behavior
+                event.preventDefault(); 
                 // Your custom code goes here
                 var selection = window.getSelection();
 
@@ -1254,7 +1259,8 @@ setupContextMenu('h3');
                     $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
                     $('.colorlegend').hide()
                     $('#hidemainmobile').hide()
-
+                    finalcheck = $('#findthecode2').html()
+                    $('#findthecode2').html(finalcheck.replaceAll('α' , 'a').replaceAll('×' , 'x').replaceAll('–' , '-').replaceAll('’' , "'").replaceAll('class="width100c     ui-' ,'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;' , '--').replaceAll('&ndash;' , '-').replaceAll('™' , '<span class="mytraded"></span>').replaceAll('®' , '<span class="myregd"></span>'))
                     break;
                 case '#mymatrix2':
                     loadnewcontent();
@@ -1326,12 +1332,13 @@ setupContextMenu('h3');
                 $(this).addClass('interedit')
 
             })
-            destructiveoptions()
-            clickanddeleterows()
-            loadnewcontent()
+        
             var html = $('#pullthecode2').html()
             var beautifiedHtml = beautifyHtml(html);
             $('#beautycode').val(beautifiedHtml)
+            destructiveoptions()
+            clickanddeleterows()
+            loadnewcontent()
         })
 
 
@@ -1978,8 +1985,7 @@ setupContextMenu('h3');
 
 
         $('.showthepreviewimage').on('click', function () {
-            //var select = document.getElementById("myDropdown");
-            //select.selectedIndex = $(this).attr('num');
+   
             imageselect = $(this).attr('prefix')
             imagename00 = $('#cinput1').val()
 
@@ -2483,7 +2489,7 @@ return false;
             }
 
             $('img.promoimg21').on("contextmenu", function (e) {
-                e.preventDefault(); // Prevent the default context menu
+                e.preventDefault(); 
                 currentImage = $(this); // Set the current image
                 $('#customModal').show(); // Show the custom modal
             });
@@ -2615,7 +2621,7 @@ return false;
 
         loadnewcontent()
 
-
+/*
         $('.texttype').click(function (colorswatch) {
 
             var selection = window.getSelection();
@@ -2641,6 +2647,47 @@ return false;
             loadnewcontent()
 
         });
+
+        */
+
+
+        $('.texttype').click(function () {
+            var selection = window.getSelection();
+            if (!selection.rangeCount) return;      
+            var selectedText = selection.toString();
+            var textWrapper = $(this).val();
+            var headerNewColor = ''; // Assuming this variable is declared elsewhere
+            
+            // Create a new HTML element with the selected text wrapped in the specified tag
+            var contentWrapped = '<' + textWrapper + ' ' + headerNewColor + '>' + selectedText + '</' + textWrapper + '>';
+        
+            // Get the selected range
+            var range = selection.getRangeAt(0);
+        
+            // Create a new document fragment with the wrapped content
+            var fragment = range.createContextualFragment(contentWrapped);
+        
+            // If the selection contains a text node, move the range to the text node
+            if (range.startContainer.nodeType === Node.TEXT_NODE) {
+                range.setStart(range.startContainer, 0);
+                range.setEnd(range.endContainer, range.endOffset);
+            }
+        
+            // Replace the selected text with the new HTML
+            range.deleteContents();
+            range.insertNode(fragment);
+        
+            // Ensure the selection is collapsed after insertion
+            range.collapse(false);
+        
+            // Clear the selection
+            selection.removeAllRanges();
+        
+            // Load new content after updating the DOM
+            loadNewContent();
+        });
+
+
 
 
         $('#linkmaker').click(function () {
@@ -2719,7 +2766,7 @@ return false;
             loadnewcontent()
         })
 
-        $('#textaligner2').on('change', function () {
+        $('#textaligner2 , #textaligner2a , #textaligner2b').on('change', function () {
             var cssadd = $(this).val();
             $('.interedit').removeClass(
                 'addpadding0 addpadding10 addpadding20 addpadding40 addpadding60 addpadding80 addpadding100'
@@ -2729,6 +2776,8 @@ return false;
             $('#myhtmleditor').val(editorcopy);
             loadnewcontent();
         });
+
+
 
 
         $('.textaligner3').on('click', function () {
@@ -2742,7 +2791,6 @@ return false;
                     return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
                 }).wrap('<p></p>');
             }
-
             $('#myhtmleditor').val($('.interedit').html());
             loadnewcontent();
         });
