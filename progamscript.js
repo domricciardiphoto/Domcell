@@ -2652,6 +2652,7 @@ return false;
 
 
         $('.texttype').click(function () {
+          
             var selection = window.getSelection();
             if (!selection.rangeCount) return;      
             var selectedText = selection.toString();
@@ -2682,9 +2683,33 @@ return false;
         
             // Clear the selection
             selection.removeAllRanges();
-        
+
+            $('#findthecode2').text($('#pullthecode2').html());
+
+            var element = $('#findthecode2');
+            var content = element.text();
+            
+
+            var wordsToRemove = ['liveelement', 'in910', 'layoutpale', 'layoutpale50', 'liverow', 'droppable',
+            'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'ui-', 'layoutpale100', ' ui-',
+            'layoutpale30', 'layoutpale20', , 'layoutpale33', 'onblock', 'interedit',
+            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
+            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle',
+            'https://staging-na01-pcrichard.demandware.net'
+        ];
+
+
+            wordsToRemove.forEach(function (word) {
+                content = content.replace(new RegExp('\\b' + word + '\\b', 'g'), '')
+               
+            });
+
+            element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;' , '-').replaceAll('&ndash;' , '-').replaceAll('™' , '<span class="mytraded"></span>').replaceAll('®' , '<span class="myregd"></span>'));
+
+    
             // Load new content after updating the DOM
             loadNewContent();
+      
         });
 
 
@@ -2754,6 +2779,8 @@ return false;
         });
 
         //--------------------
+
+        $('#layoutbuilder-oc2').click()
 
 
         $('.textaligner').on('click', function () {
@@ -2890,3 +2917,5 @@ return false;
      
 
     });
+
+    

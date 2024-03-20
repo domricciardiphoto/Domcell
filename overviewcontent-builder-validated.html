@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="application.css">
 
     <style>
+
+        body {
+            user-select: none;
+        }
         #EditandSubmitAL {
             background-color: transparent;
             border: 1px solid #fff;
@@ -45,12 +49,23 @@
                     background-color: transparent !important;
                 }
 
-.informationcontent .layoutpale100 {
-    padding-left: 9px;
-    padding-right: 3px;
-    width: calc(98% - 12px) !important;
+
+
+.liverow {
+    user-select: none;
+}
+.interedit p , .interedit h3 , .interedit h2 , .interedit h4  , .interedit li {
+    user-select:text
 }
 
+.width33cg {
+    width: 25%;
+    float: left;
+}
+
+.width33cg  ul li a {
+    text-decoration: none;
+}
     </style>
 </head>
 
@@ -2111,7 +2126,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                     Click Templete Files to Download to Your Computer</div>
                 <div class="width100c" style="margin-top: 0px;">
                     <div id="driveContents"></div>
-                    <div class="width100c"><button onclick="listDriveFiles()"
+                    <div class="width100c"><button onclick="listAllDriveFiles()"
                             style="float: right; margin-top: 5px;">Refresh
                             List</button></div>
 
@@ -2135,65 +2150,70 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
             <script>
-                async function listDriveFiles() {
-                    let folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91';
-                    let response = await fetch(
-                        `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${a231+a2312+'jVh9Q-kgc'}`
-                    );
-                    let data = await response.json();
-                    let files = data.files;
+async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91') {
+    async function fetchFiles(folderId, filesList = []) {
+        let apiKey = a231 + a2312 + 'jVh9Q-kgc'; // Example API key
+        let response = await fetch(
+            `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}`
+        );
+        let data = await response.json();
+        let files = data.files || [];
 
-                    // Sort files alphabetically by name
-                    files.sort((a, b) => a.name.localeCompare(b.name));
+        for (let file of files) {
+            // If the file is a folder, recursively fetch its files
+            if (file.mimeType === 'application/vnd.google-apps.folder') {
+                await fetchFiles(file.id, filesList);
+            } else {
+                filesList.push(file); // Add non-folder files to the list
+            }
+        }
+    }
 
-                    let output = '<div class="width33ca">'; // Start the first div container
-                    let ulCount = 0; // Initialize ul counter
-                    let previousFirstLetter = '';
-                    let currentFirstLetter = ''; // Declare the variable outside the loop
+    let allFiles = [];
+    await fetchFiles(folderId, allFiles);
 
-                    for (let file of files) {
-                        // Check if the file is a folder
-                        if (file.mimeType === 'application/vnd.google-apps.folder') {
-                            // Handle folder differently
-                            output +=
-                                `<li style="list-style: none;list-style: none;
-    border: 1px solid #fff;
-    margin-top: 10px;text-align:center"><a style="color:#fff;text-align:center" href="https://drive.google.com/drive/folders/${file.id}" target="_blank">${file.name} Folder</a></li>`;
-                        } else {
-                            currentFirstLetter = file.name.charAt(0).toLowerCase(); // Initialize the variable
-                            let displayName = file.name.replace('.txt',
-                                ''); // Remove .txt extension from the display name
+    // Sort all files alphabetically by name
+    allFiles.sort((a, b) => a.name.localeCompare(b.name));
 
-                            // Start a new list if the first letter changes
-                            if (currentFirstLetter !== previousFirstLetter) {
-                                // After every 5 <ul>, close the current div and start a new div
-                                if (ulCount % 5 === 0 && ulCount !== 0) {
-                                    output += '</div><div class="width33ca">';
-                                }
-                                if (output.endsWith(
-                                        '</ol>'
-                                        )) { // Check if it's not the first list to avoid appending ul prematurely
-                                    output += '<ul>';
-                                } else {
-                                    output += '</ul><ul>'; // Properly close the previous list and start a new one
-                                }
-                                ulCount++; // Increment ul counter whenever a new list is started
-                            }
+    let output = ''; // Initialize output HTML
+    let ulCounter = 0; // Counter for <ul> elements
+    let currentFirstLetter = '';
+    let previousFirstLetter = '';
 
-                            output +=
-                                `<li><a title="Download the file of - ${displayName} -" style="color:#fff" href="https://drive.google.com/uc?export=download&id=${file.id}" download="${file.name}">${displayName} &#8595;</a></li>`;
-                        }
-
-                        previousFirstLetter = currentFirstLetter;
-                    }
-
-                    // Close the last list and div
-                    output += '</ul></div>';
-
-                    document.getElementById('driveContents').innerHTML = output;
+    for (let file of allFiles) {
+        currentFirstLetter = file.name.charAt(0).toLowerCase();
+        if (currentFirstLetter !== previousFirstLetter) {
+            // Whenever the first letter changes, check if we need to wrap previous <ul>s in a <div>
+            if (ulCounter % 3 === 0) {
+                if (ulCounter !== 0) { // Close the previous div if it's not the first group
+                    output += '</div>';
                 }
+                output += '<div class="width33cg">'; // Start a new div for every group of three <ul>s
+            }
+            if (previousFirstLetter !== '') {
+                output += '</ul>'; // Close the previous list if it's not the first iteration
+            }
+            output += '<ul>'; // Start a new list for the new first letter
+            ulCounter++; // Increment <ul> counter
+        }
 
-                listDriveFiles();
+        let displayName = file.name.replace('.txt', ''); // Example display name modification
+        // Append each file link to the output HTML
+        output += `<li><a title="Download the file of - ${displayName} -" style="color:#fff" href="https://drive.google.com/uc?export=download&id=${file.id}" download="${file.name}">${displayName} &#8595;</a></li>`;
+
+        previousFirstLetter = currentFirstLetter; // Update the letter tracker for the next iteration
+    }
+
+    output += '</ul>'; // Close the last list
+    if (ulCounter % 3 !== 0 || ulCounter === 0) {
+        output += '</div>'; // Ensure the closing div is added for the last group if it's not a full group of three
+    }
+
+    // Display the output HTML
+    document.getElementById('driveContents').innerHTML = output;
+}
+
+ listAllDriveFiles(); // Initial call to list files
             </script>
 
             <div id="mymatrix9" class="width100c closethematrix" style="width: 94%; margin-left: 4%;">
