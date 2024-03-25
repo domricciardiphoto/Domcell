@@ -54,9 +54,18 @@
 .liverow {
     user-select: none;
 }
-.interedit p , .interedit h3 , .interedit h2 , .interedit h4  , .interedit li {
+.interedit p , .interedit h3 , .interedit h2 , .interedit h4  , .interedit li , #findthecode2 , #thisisthefinalcode {
     user-select:text
 }
+
+.interedit {
+ caret-color: red;
+ caret-color: #ff0000;
+ caret-color: rgb(255, 0, 0);
+ caret-color: hsl(0, 97%, 50%);
+}
+
+
 
 .width33cg {
     width: 25%;
@@ -106,6 +115,7 @@
             <p>What Do you Want to Do?</p>
             <button id="yesBtn99">Clear Componant</button>
             <button id="yescopyBtn99">Copy to Clipboard</button>
+            <label for="optionb4"> Clamp Text</label><input  id="optionb4" class="back-blue"  type="checkbox" style="width: auto;"> 
             <button id="closediag99">Close</button>
         </div>
     </div>
@@ -121,9 +131,15 @@
                 style="border-bottom: 2px solid #ccc; width: 91%; margin-bottom: 10px; margin-left:4%">
                 <div class="width50c unselectable-text thetopbox mytoolsboxtop"
                     style="margin-right: 4px; font-size: 80%;" whatbox="Layout">Layout Options</div>
+                    
                 <div class="width50c unselectable-text thetopbox mytoolsboxtop2" style="font-size: 80%;"
                     whatbox="Tools">Components</div>
-
+                    <div style="float: left; margin-left: 5px;">||</div>
+                    <div class="openthematrix" mymatrix="mymatrix3" style="font-size: 60%; "
+                    whatbox="Tools"> A.C.E</div>
+                    <div class="openthematrix" mymatrix="mymatrix7" style="font-size: 60%; "
+                    whatbox="Tools">Help</div>
+                    
                 <div id="clearandrestart" class="width50c unselectable-text">Clear &amp; Restart</div>
             </div>
 
@@ -1809,6 +1825,8 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
             </div>
 
+        
+
 
             <div class="width100c toolboxhide"
                 style="margin-top: 30px; background-color: #333; padding: 5px; width: 97%; padding-bottom: 5px;">
@@ -2081,32 +2099,41 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
             <div class="width100c" style="margin-bottom: 0px; width: 100%;  width: 94%; margin-left: 4%;">
                 <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2"
-                    style="border-radius: 5px 5px 0px 0px">Active Workspace</div>
-                <div class="openthematrix" mymatrix="mymatrix3" style="border-radius: 5px 5px 0px 0px">Advanced Code
-                    Editor</div>
-                <div class="openthematrix" mymatrix="mymatrix4" style="border-radius: 5px 5px 0px 0px">Check on PCR Site
+                    style="border-radius: 5px 5px 0px 0px">Workspace</div>
+                
+                <div class="openthematrix" mymatrix="mymatrix4" style="border-radius: 5px 5px 0px 0px">Check on PCR
                 </div>
 
 
 
 
                 <div class="openthematrix" mymatrix="mymatrix9" style="border-radius: 5px 5px 0px 0px; float: left;">
-                    <strong>Bad Character Clean</strong></div>
+                    <strong>Bad Char. Clean</strong></div>
 
                 <div class="openthematrix" mymatrix="mymatrix1" style="border-radius: 5px 5px 0px 0px; "><strong>Final
-                        Code For PCR</strong></div>
+                        Code</strong></div>
+
+
+                        <div class="width100c" style="margin-left: 15px; width: auto;  padding-top: 2px;  margin-top: 5px; color: #fff; padding-left: 5px; font-size: 0.85rem; height: 15px; color: yellow;">
+                            <div style="width: auto; float: left;">Row Background Color: &nbsp;&nbsp;&nbsp;</div>
+                            <form style="float: left;">
+                           <label for="optionb1">Cleer</label> <input id="optionb1" class="back-clear" name="backgroundcolor" rowbackgroundcolor="selectedcleard" type="radio" style="width: auto;">  &nbsp;&nbsp;
+                           <label for="optionb2">Highlighted</label> <input id="optionb2" class="back-tan"    name="backgroundcolor" rowbackgroundcolor="selectedtand" type="radio" style="width: auto;">  &nbsp;&nbsp;
+                           <label for="optionb3"style="display:none">Blue</label > <input  id="optionb3" class="back-blue"  name="backgroundcolor" rowbackgroundcolor="selectedblued" type="radio" style="width: auto; display: none;"> 
+                            </form>
+                            
+                            </div>
+
 
                 <div class="openthematrix" mymatrix="mymatrix5"
                     style="border-radius: 5px 5px 0px 0px; float: right; display: none;">
                     <strong>Video Tutorial</strong></div>
 
-                <div class="openthematrix" mymatrix="mymatrix7" style="border-radius: 5px 5px 0px 0px; float: right;">
-                    <strong>Help & Key Commands
-                    </strong></div>
+                
 
 
                 <div class="openthematrix" mymatrix="mymatrix6" style="border-radius: 5px 5px 0px 0px; float: right;">
-                    <strong>Templete Documents</strong></div>
+                    <strong>Templetes</strong></div>
 
                 <div id="hidemainmobile" myhide="0" class="unselectable-text"
                     style="float: right; color: #fff; margin-left: 10px; background-color: #333; padding-left: 3px; padding-right: 3px;  font-size: 0.7rem; cursor: pointer; padding: 3px;">
@@ -2440,11 +2467,18 @@ async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91')
                 <div id="thisisthefinalcode" class="prod100 layout2 selectall"
                     style="background-color: #000; color: #fff; margin-bottom: 20px; margin-left: 0px; width: 96.4%; padding-top: 20px; padding-bottom: 20px;">
 
-                    &lt;link href="images/pim-content/occontent2024-v7a.css?$staticlink$" rel="stylesheet" /> <br>
+                    &lt;link href="images/pim-content/occontent2024-v7c.css?$staticlink$" rel="stylesheet" /> <br>
                     &lt;div class="totalinternalcontent">
                     <span id="findthecode2"></span>
                     &lt;/div>
+                    <br>
+                <span class="hidescripts">
+                    &lt;script src="images/pim-content/occontentclamp2024b.js?$staticlink$">&lt;/script>
+                </span>
                 </div>
+
+
+                
 
             </div>
 
@@ -2478,6 +2512,8 @@ async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91')
                 <div class="width100c colorlegend unselectable-text"
                     style="margin-bottom: 10px; background-color: #334; margin-top: 0px; border-top: 4px solid #fff;">
                     <ul style="margin-bottom: 35px;">
+                        <li>Control + Y = Redo</li>
+                        <li>Control + Z = Undo</li>
                         <li>Shift + Enter = Text Break</li>
                         <li>ctrl + B = Bold Text</li>
                         <li>Mouse Right Click on Text To Clear text / Copy to Clipboard</li>
@@ -2566,10 +2602,10 @@ async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91')
         <div class="width100c">
             <div class="width100c" style="margin-left: 10%; max-width: 1560px;">
                 <button class="morebutt" id="pcrdesktopview">Desktop View</button>
+                <button class="morebutt" id="pcrtabletview">Tablet View</button>
                 <button class="morebutt" id="pcrmobileview">Mobile View</button>
                 <button class="morebutt" id="closeembed"
-                    style="background-color: #001ca7; color: #fff; padding-left: 5px; padding-right: 5px; background-color: #333;">Close
-                    This Window</button>
+                    style="background-color: red !important;  padding-left: 5px; padding-right: 5px; margin-left: 5px; color:#fff !important">X</button>
             </div>
         </div>
     </div>

@@ -75,6 +75,51 @@
 
     }
 
+    function toggleReadMore(ptagid) {
+      
+        $('.readmoreclampdbutton').on('click' , function() {
+            var currentText = $(this).text();
+            $('#' + ptagid).toggleClass("expanded");
+            if(currentText === "Read More") {
+                $(this).text('Read Less');
+                return false
+            } else {
+                $(this).text('Read More');
+                return false
+            }
+
+        })
+     
+    }
+
+
+    function highlightedbackground() {
+     
+        var $element = $('.onblock'); // Assuming 'this' refers to the element you want to check
+
+        if ($element.hasClass('selectedtand')) {
+            $('#optionb1').prop('checked', false);
+            $('#optionb2').prop('checked', true);
+            $('#optionb3').prop('checked', false);
+        } else if ($element.hasClass('selectedblued')) {
+            $('#optionb1').prop('checked', false);
+            $('#optionb2').prop('checked', false);
+            $('#optionb3').prop('checked', true);
+        } else {
+            $('#optionb1').prop('checked', true);
+            $('#optionb2').prop('checked', false);
+            $('#optionb3').prop('checked', false);
+        }
+
+
+        $('input[type=radio][name=backgroundcolor]').change(function() {
+            // Get the 'rowbackgroundcolor' attribute of the selected radio button
+            var bgColor = $(this).attr('rowbackgroundcolor');
+           $('.onblock').removeClass('selectedcleard').removeClass('selectedtand').removeClass('selectedblued')
+            $('.onblock').addClass(bgColor)
+        });
+    }
+
 
     var beautifiedHtml
 
@@ -119,6 +164,7 @@
         $('.liverow').on('click', function () {
             $('.onblock').removeClass('onblock')
             $(this).addClass('onblock')
+            
         })
     }
 
@@ -170,6 +216,7 @@
 
             $('#closediag99').on('click', function () {
                 document.getElementById("myModalcontent").style.display = "none";
+                $('#optionb4').prop('checked', false);
             })
         })
 
@@ -353,6 +400,7 @@ setupContextMenu('h3');
                     })
 
                     $('#EditandSubmitAL').on('click', function () {
+
                         $('.interedit').html($('#myhtmleditor').val())
                         loadnewcontent()
                     })
@@ -386,8 +434,24 @@ setupContextMenu('h3');
         $('#pcrdesktopview').on('click', function () {
 
             $('#fullembedcodeddd').css('max-width', 'none').css('margin-left', '0%').css('background-color' , '#333')
-            $('#pcrmobileview').css('background-color', '#333').css('color', '#fff')
-            $(this).css('background-color', '#f7f7f7').css('color', '#000')
+            $('.morebutt').not('#closeembed').css('background-color' , '#fff').css('color' , '#333')
+            $(this).css('background-color', '#333').css('color', '#fff')
+            $('body').css('background-color', '#333')
+            $('#codeloaderpcrview').find('.makeit100now').each(function () {
+                $(this).removeClass('makeit100now')
+            });
+            $('#codeloaderpcrview').find('.makeit50now').each(function () {
+                $(this).removeClass('makeit50now')
+            })
+
+        })
+
+
+        $('#pcrtabletview').on('click', function () {
+
+            $('#fullembedcodeddd').css('max-width', '769px').css('margin-left', '6%').css('background-color' , '#333')
+            $('.morebutt').not('#closeembed').css('background-color' , '#fff').css('color' , '#333')
+            $(this).css('background-color', '#333').css('color', '#fff')
             $('body').css('background-color', '#333')
             $('#codeloaderpcrview').find('.makeit100now').each(function () {
                 $(this).removeClass('makeit100now')
@@ -404,9 +468,10 @@ setupContextMenu('h3');
         $('#pcrmobileview').on('click', function () {
 
             $('#fullembedcodeddd').css('max-width', '400px').css('margin-left', '7.85%').css('background-color' , '#333')
-            $('#pcrdesktopview').css('background-color', '#333').css('color', '#fff')
+            $('.morebutt').not('#closeembed').css('background-color' , '#fff').css('color' , '#333')
+            $(this).css('background-color', '#333').css('color', '#fff')
             $('body').css('background-color', '#333')
-            $(this).css('background-color', '#f7f7f7').css('color', '#000')
+            
             $('#codeloaderpcrview').find('.width50c2').each(function () {
                 $(this).addClass('makeit100now');
             });
@@ -417,6 +482,10 @@ setupContextMenu('h3');
 
 
         })
+
+
+
+
 
 
         $('#closetutorial , #closetutorial2  ,#closetutorial3 ').on('click', function () {
@@ -454,6 +523,7 @@ setupContextMenu('h3');
 
 
                     $('#EditandSubmitAL').on('click', function () {
+                  
                         $('.interedit').html($('#myhtmleditor').val())
                         loadnewcontent()
                     })
@@ -1173,7 +1243,7 @@ setupContextMenu('h3');
 
 
         $('#closeembed').on('click', function () {
-            $('#pcrdesktopview').click()
+           // $('#pcrdesktopview').click()
             $('#mymatrix4').hide()
             $('#programming').show()
             $('#resizable-div').show()
@@ -1281,8 +1351,25 @@ setupContextMenu('h3');
                     $('#fullembedcodeddd').show()
                     $('#fullinterface').hide()
                     $('body').css('background-color', '#333')
-                    $('#pcrmobileview').css('background-color', '#333').css('color', '#fff')
-                    $('#pcrdesktopview').css('background-color', '#fff').css('color', '#333')
+
+                    $('#codeloaderpcrview .readmoreclampdbutton').on('click' , function() {
+                        $(this).prev('p.clampclassd').toggleClass('expanded');
+                    })
+
+
+
+$('.readmoreclampdbutton').on('click' , function() {
+    var currentText = $(this).text();
+     $('#' + ptagid).toggleClass("expanded");
+    if(currentText === "Read More") {
+        $(this).text('Read Less');
+        return false
+    } else {
+        $(this).text('Read More');
+        return false
+    }
+})
+                  
                     $('.colorlegend').hide()
                     break;
 
@@ -1435,6 +1522,7 @@ setupContextMenu('h3');
                 $('.liverow').on('click', function () {
                     $('.liverow').removeClass('onblock')
                     $(this).addClass('onblock')
+              
                 })
 
                 $(".draggable").draggable({
@@ -1710,6 +1798,7 @@ setupContextMenu('h3');
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
+          
             })
 
 
@@ -1760,8 +1849,9 @@ setupContextMenu('h3');
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
+           
             })
-
+            highlightedbackground()
             loadnewcontent()
 
         })
@@ -1778,6 +1868,7 @@ setupContextMenu('h3');
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
+              
             })
 
             $('#EditandSubmitAL').on('click', function () {
@@ -1785,7 +1876,7 @@ setupContextMenu('h3');
                 loadnewcontent()
             })
             $('#myhtmleditor').val($(this).html())
-
+            highlightedbackground()
             loadnewcontent()
 
         })
@@ -1802,6 +1893,7 @@ setupContextMenu('h3');
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
+          
             })
 
             $('#EditandSubmitAL').on('click', function () {
@@ -1825,6 +1917,7 @@ setupContextMenu('h3');
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
+             
             })
 
             $('#EditandSubmitAL').on('click', function () {
@@ -1832,7 +1925,7 @@ setupContextMenu('h3');
                 loadnewcontent()
             })
             $('#myhtmleditor').val($(this).html())
-
+            highlightedbackground()
             loadnewcontent()
 
         })
@@ -1847,10 +1940,17 @@ setupContextMenu('h3');
             $('.layoutbuilder').append(
                 '<div class="width100c  layoutpale layoutpale100 liverow droppable onblock"></div>')
 
-            $('.liverow').on('click', function () {
-                $('.liverow').removeClass('onblock')
-                $(this).addClass('onblock')
-            })
+                $('.liverow').on('click', function () {
+                    $('.liverow').removeClass('onblock');
+                    $(this).addClass('onblock');
+
+
+
+                    highlightedbackground()
+
+                });
+
+
 
 
             $(".draggable").draggable({
@@ -2295,7 +2395,7 @@ setupContextMenu('h3');
 
         $('#cinput3-comp').on('click', function () {
 
-            
+            captureState()
 
 if($('#cinput3a').val() === '') {
 return false;
@@ -2311,7 +2411,7 @@ return false;
 
 
             if (htmlcodeyesno === 0) {
-                $('.interedit').append('<p>' + newval + '</p>')
+                $('.interedit').append('<p id="ptag'+randomFourDigit+'">' + newval + '</p>')
             } else {
                 $('.interedit').append(newval)
             }
@@ -2327,6 +2427,22 @@ return false;
 
 
         })
+
+
+$('#optionb4').on('change' , function() {
+    if (this.checked) {
+    $('.interedit p').addClass('clampclassd')
+    ptagid = $('.interedit p').attr('id')
+    $('.interedit').append('<span class="readmoreclampdbutton" onclick="toggleReadMore('+ptagid+')">Read More</span>')
+    toggleReadMore(ptagid)
+    $('.hidescripts').show()
+    } else {
+        $('.interedit p').removeClass('clampclassd')
+        $('.interedit').find('span.readmoreclampdbutton').remove();
+    }
+    loadnewcontent()
+})
+
 
         function adjustHeight() {
             $('#pullthecode2').height($(document).height() - 350);
@@ -2650,15 +2766,65 @@ return false;
 
         */
 
+        let undoStack = [];
+        let redoStack = []; // Stack for redo functionality
+        
+        // Function to capture the current state before making changes
+        function captureState() {
+            const currentState = $('.interedit').html(); // Adjust selector as needed
+            undoStack.push(currentState);
+            redoStack = []; // Clear redo stack since new action resets the future path
+        }
+        
+        // Function to undo to the last state
+        function undoChange() {
+            if (undoStack.length > 0) {
+                const lastState = undoStack.pop();
+                redoStack.push($('.interedit').html()); // Push current state to redoStack before undoing
+                $('.interedit').html(lastState); // Adjust selector as needed
+            }
+        }
+        
+        // Function to redo to the next state
+        function redoChange() {
+            if (redoStack.length > 0) {
+                const nextState = redoStack.pop();
+                undoStack.push($('.interedit').html()); // Push current state to undoStack before redoing
+                $('.interedit').html(nextState); // Adjust selector as needed
+            }
+        }
+        
+        // Function to delete highlighted text
+        function deleteHighlightedText() {
+            captureState(); // Capture the current state before deletion for undo functionality
+            document.execCommand('delete', false, ''); // Use execCommand for simplicity
+            redoStack = []; // Clear redoStack as the future path is reset
+        }
+        
+        // Listen for Ctrl+Z/Cmd+Z for undo, Ctrl+Y/Cmd+Y for redo, and Ctrl+Delete for deleting selected text
+        $(document).keydown(function(e) {
+            if (e.key === 'z' && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
+                e.preventDefault(); // Prevent default undo behavior
+                undoChange();
+            } else if (e.key === 'y' && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault(); // Prevent default redo behavior
+                redoChange();
+            } else if (e.key === 'Delete' && e.ctrlKey) {
+                e.preventDefault(); // Prevent default delete behavior
+                deleteHighlightedText();
+            }
+        });
+
+
 
         $('.texttype').click(function () {
-          
+            captureState(); // Assuming this function captures the current state for undo functionality
             var selection = window.getSelection();
-            if (!selection.rangeCount) return;      
+            if (!selection.rangeCount) return;
             var selectedText = selection.toString();
             var textWrapper = $(this).val();
-            var headerNewColor = ''; // Assuming this variable is declared elsewhere
-            
+            var headerNewColor = ''; // Assuming this variable is declared elsewhere or will be used later
+        
             // Create a new HTML element with the selected text wrapped in the specified tag
             var contentWrapped = '<' + textWrapper + ' ' + headerNewColor + '>' + selectedText + '</' + textWrapper + '>';
         
@@ -2668,48 +2834,35 @@ return false;
             // Create a new document fragment with the wrapped content
             var fragment = range.createContextualFragment(contentWrapped);
         
-            // If the selection contains a text node, move the range to the text node
-            if (range.startContainer.nodeType === Node.TEXT_NODE) {
-                range.setStart(range.startContainer, 0);
-                range.setEnd(range.endContainer, range.endOffset);
-            }
-        
             // Replace the selected text with the new HTML
             range.deleteContents();
             range.insertNode(fragment);
         
-            // Ensure the selection is collapsed after insertion
-            range.collapse(false);
+            // Collapsing the range after insertion is optional and depends on the desired UX
+            // range.collapse(false);
         
-            // Clear the selection
+            // Clear the selection to prevent confusion
             selection.removeAllRanges();
-
-            $('#findthecode2').text($('#pullthecode2').html());
-
+        
+            // Assuming you're doing some post-processing on another element's content
             var element = $('#findthecode2');
-            var content = element.text();
-            
-
-            var wordsToRemove = ['liveelement', 'in910', 'layoutpale', 'layoutpale50', 'liverow', 'droppable',
-            'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'ui-', 'layoutpale100', ' ui-',
-            'layoutpale30', 'layoutpale20', , 'layoutpale33', 'onblock', 'interedit',
-            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
-            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle',
-            'https://staging-na01-pcrichard.demandware.net'
-        ];
-
-
-            wordsToRemove.forEach(function (word) {
-                content = content.replace(new RegExp('\\b' + word + '\\b', 'g'), '')
-               
-            });
-
-            element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;' , '-').replaceAll('&ndash;' , '-').replaceAll('™' , '<span class="mytraded"></span>').replaceAll('®' , '<span class="myregd"></span>'));
-
-    
+            var content = $('#pullthecode2').html(); // Use .html() instead of .text() if you're working with HTML content
+        
+            // Your content replacement logic seems to be cleaning up specific HTML entities and classes
+            // Ensure this logic is correctly applied to the content you're manipulating
+            content = content.replaceAll('&times;', 'x')
+                             .replaceAll('&alpha;', 'a')
+                             .replaceAll('&reg;', '<span class="myregd"></span>')
+                             .replaceAll('&trade;', '<span class="mytraded"></span>')
+                             .replaceAll('&mdash;', '-')
+                             .replaceAll('&ndash;', '-')
+                             .replaceAll('™', '<span class="mytraded"></span>')
+                             .replaceAll('®', '<span class="myregd"></span>');
+        
+            element.html(content); // Use .html() if the content includes HTML tags
+        
             // Load new content after updating the DOM
-            loadNewContent();
-      
+            
         });
 
 
@@ -2808,6 +2961,7 @@ return false;
 
 
         $('.textaligner3').on('click', function () {
+            captureState();
             var selection = window.getSelection();
 
             if (selection.rangeCount > 0) {
