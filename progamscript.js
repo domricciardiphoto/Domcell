@@ -803,8 +803,6 @@ setupContextMenu('h3');
         var selectedText3 = selection.toString();
         var whatsthelink3 = $('#whatsthelink3').val();
 
-
-
         if (outsidelink3 === 0) {
             var anchor3 = '<a href="' + whatsthelink3 + '">' + selectedText3 + '</a>';
         } else {
