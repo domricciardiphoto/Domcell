@@ -2810,7 +2810,7 @@ $('#optionb4').on('change' , function() {
             redoStack = []; // Clear redoStack as the future path is reset
         }
         
-        // Listen for Ctrl+Z/Cmd+Z for undo, Ctrl+Y/Cmd+Y for redo, and Ctrl+Delete for deleting selected text
+        // Key Commands
         $(document).keydown(function(e) {
             if (e.key === 'z' && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
                 e.preventDefault(); // Prevent default undo behavior
