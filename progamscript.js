@@ -221,65 +221,6 @@
         })
 
 
-
-       
-/*
-        $('h2').off().on('contextmenu', function (e) {
-            e.preventDefault()
-            $('.interedit').removeClass('interedit')
-            $(this).parent('div').parent('.in910').addClass('interedit')
-            document.getElementById("myModalcontent").style.display = "block";
-
-            $('#yesBtn99').on('click', function () {
-                $('.interedit').empty()
-                document.getElementById("myModalcontent").style.display = "none";
-                $('#findthecode2').text($('#pullthecode2').html());
-            })
-
-            $('#yescopyBtn99').on('click', function () {
-                var textToCopy = $('.interedit').children('div').children('h2').text();
-                navigator.clipboard.writeText(textToCopy).then(function () {
-                    console.log('Text copied to clipboard');
-                }).catch(function (error) {
-                    console.error('Error copying text: ', error);
-                });
-                document.getElementById("myModalcontent").style.display = "none";
-            })
-
-            $('#closediag99').on('click', function () {
-                document.getElementById("myModalcontent").style.display = "none";
-            })
-        })
-
-        $('h3').off().on('contextmenu', function (e) {
-            e.preventDefault()
-            $('.interedit').removeClass('interedit')
-            $(this).parent('div').parent('.in910').addClass('interedit')
-            document.getElementById("myModalcontent").style.display = "block";
-
-            $('#yesBtn99').on('click', function () {
-                $('.interedit').empty()
-                document.getElementById("myModalcontent").style.display = "none";
-                $('#findthecode2').text($('#pullthecode2').html());
-            })
-
-            $('#yescopyBtn99').on('click', function () {
-                var textToCopy = $('.interedit').children('div').children('h3').text();
-                navigator.clipboard.writeText(textToCopy).then(function () {
-                    console.log('Text copied to clipboard');
-                }).catch(function (error) {
-                    console.error('Error copying text: ', error);
-                });
-                document.getElementById("myModalcontent").style.display = "none";
-            })
-
-            $('#closediag99').on('click', function () {
-                document.getElementById("myModalcontent").style.display = "none";
-            })
-        })
-
-*/   
-
       
  function setupContextMenu(selector89) {
             $(selector89).off().on('contextmenu', function(e) {
@@ -312,13 +253,6 @@
 
 setupContextMenu('h2');
 setupContextMenu('h3');
-
-
-
-
-
-
-
 
 
         $('#exportfinalcodetofile').off('click').on('click', function () {
@@ -2746,34 +2680,6 @@ $('#optionb4').on('change' , function() {
 
         loadnewcontent()
 
-/*
-        $('.texttype').click(function (colorswatch) {
-
-            var selection = window.getSelection();
-            if (!selection.rangeCount) return;
-            var selectedText = selection.toString();
-            var textwrapper = $(this).val();
-
-            // Create a new HTML element with the selected text wrapped in the specified tag
-            var contentwrapped = '<' + textwrapper + ' ' + headernewcolor + '>' + selectedText + '</' +
-                textwrapper + '>';
-
-            // Get the selected range
-            var range = selection.getRangeAt(0);
-
-            // Create a new document fragment with the wrapped content
-            var fragment = range.createContextualFragment(contentwrapped);
-
-            // Replace the selected text with the new HTML
-            range.deleteContents();
-            range.insertNode(fragment);
-
-
-            loadnewcontent()
-
-        });
-
-        */
 
         let undoStack = [];
         let redoStack = []; // Stack for redo functionality
@@ -2821,10 +2727,10 @@ $('#optionb4').on('change' , function() {
             } else if (e.key === 'Delete' && e.ctrlKey) {
                 e.preventDefault(); // Prevent default delete behavior
                 deleteHighlightedText();
-            }  else if (e.key === 'S' && e.shiftKey) { 
+            }  else if (e.key === 'e' && e.ctrlKey) { 
                 e.preventDefault(); 
                 $('#superscriptbutton').click()
-            }  else if (e.key === 'B' && e.shiftKey) { 
+            }  else if (e.key === 'd' && e.ctrlKey) { 
                 e.preventDefault(); 
                 $('#subscriptbutton').click()
             }
@@ -2946,7 +2852,7 @@ $('#optionb4').on('change' , function() {
             currentAnchor = null;
         });
 
-        //--------------------
+       
 
         $('#layoutbuilder-oc2').click()
 
