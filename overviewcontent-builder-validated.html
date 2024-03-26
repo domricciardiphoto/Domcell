@@ -1688,7 +1688,45 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 </div>
 
 
+                <div class="width100c openclose" openclose="myrowbuilder">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Row Options -- !! Coming Soon !!</span>
+
+                    </div>
+                </div>
+
+
+                <div openclose="myrowbuilder" class="width100c stage1 tools myrowbuilder" style="padding-left: 2.5%; padding-top:10px" >
+
               
+
+
+
+                   <div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem">Size Visible:</div>
+                    <div class="width30c">Hide on mobile <input id="mobilehidev2d" type="checkbox" style="width: auto;"></div>
+                    <div class="width30c">Hide on Tablet <input id="tablethidev2d" type="checkbox"  style="width: auto;"></div>
+                    <div class="width30c">Hide on Desktop<input id="desktophidev2d" type="checkbox" style="width: auto;"></div>
+
+
+<div class="width100c" style="border-bottom:1px solid #ccc; width:88%;margin-top:5px;margin-bottom:5px"></div>
+
+
+<div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem;">Row Background Color:</div>
+<select name="Row Background Color" id="RowBackgroundColorlist" style="width: 88%; margin-top:10px">
+    <option value="" disabled selected>Row Background Color</option>
+    <option value="">Red</option>
+    <option value="">Blue</option>
+    <option value="">Green</option>
+    <option value="">Dark Gray</option>
+    <option value="">Gray</option>
+    <option value="">Light Gray</option>
+    <option value="">White</option>
+    <option value="">Black</option>
+</select>
+
+
+                </div>
 
 
 
@@ -2313,10 +2351,10 @@ async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91')
                 <button class="texttype" title="Underline Selected Text"
                     style="width: 100%; color: #fff;  background-color: transparent; margin-bottom: 10px;" value="u"><u
                         class="unselectable-text">U</u></button>
-                <button class="texttype unselectable-text" title="Subscript Selected Text"
+                <button id="subscriptbutton" class="texttype unselectable-text" title="Subscript Selected Text"
                     style="width: 100%; color: #fff;  background-color: transparent;margin-bottom: 10px;"
                     value="sub">X<sub>2</sub></button>
-                <button class="texttype unselectable-text" title="Superscript Selected Text"
+                <button id="superscriptbutton" class="texttype unselectable-text" title="Superscript Selected Text"
                     style="width: 100%; color: #fff;  background-color: transparent;margin-bottom: 10px;" value="sup">
                     X<sup>2</sup></button>
 

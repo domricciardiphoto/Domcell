@@ -2821,6 +2821,12 @@ $('#optionb4').on('change' , function() {
             } else if (e.key === 'Delete' && e.ctrlKey) {
                 e.preventDefault(); // Prevent default delete behavior
                 deleteHighlightedText();
+            }  else if (e.key === 'S' && e.shiftKey) { 
+                e.preventDefault(); 
+                $('#superscriptbutton').click()
+            }  else if (e.key === 'B' && e.shiftKey) { 
+                e.preventDefault(); 
+                $('#subscriptbutton').click()
             }
         });
 
