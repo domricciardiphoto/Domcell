@@ -538,8 +538,6 @@ setupContextMenu('h3');
         });
 
 
-
-
         var element = $('#findthecode2');
         var content = element.text();
 
@@ -1357,6 +1355,8 @@ setupContextMenu('h3');
                     })
 
 
+                   
+
 
 $('.readmoreclampdbutton').on('click' , function() {
     var currentText = $(this).text();
@@ -1429,6 +1429,15 @@ $('.readmoreclampdbutton').on('click' , function() {
         })
 
 
+        $('#myhelp2').on('click' , function() {
+
+            $('#myhelp').click()
+
+        })
+
+        $('#ace').on('click' , function() {
+            $('#myace').click()
+        })
 
 
         $('#export').on('click', function () {

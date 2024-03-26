@@ -134,10 +134,10 @@
                     
                 <div class="width50c unselectable-text thetopbox mytoolsboxtop2" style="font-size: 80%;"
                     whatbox="Tools">Components</div>
-                    <div style="float: left; margin-left: 5px;">||</div>
-                    <div class="openthematrix" mymatrix="mymatrix3" style="font-size: 60%; "
+                 
+                    <div id="myace" class="openthematrix" mymatrix="mymatrix3" style="font-size: 60%; display:none "
                     whatbox="Tools"> A.C.E</div>
-                    <div class="openthematrix" mymatrix="mymatrix7" style="font-size: 60%; "
+                    <div id="myhelp" class="openthematrix" mymatrix="mymatrix7" style="font-size: 60%; display:none "
                     whatbox="Tools">Help</div>
                     
                 <div id="clearandrestart" class="width50c unselectable-text">Clear &amp; Restart</div>
@@ -640,9 +640,19 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                             Copy To Component</button>
                     </div>
 
+                    <div class="width100c" style="margin-top: 10px; ">
+                        Text Colors:
+                    </div>
 
-
-
+                    <div class="width100c">
+                        
+                       <div class="width50c">
+                        <button class="texttype unselectable-text" value="span style='color:#034694'" title="Make Color Blue" style="text-align: center;  background-color: #034694; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 5px;">Text Blue</button>
+                       </div>
+                       <div class="width50c">
+                        <button class="texttype unselectable-text" value="span style='color:#d71920'" title="Make Color Red" style="text-align: center;  background-color: #d71920; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 10px;">Text Red</button>
+                       </div>
+                    </div>
 
 
                     <div class="width100c" style="margin-top: 10px; ">
@@ -754,6 +764,8 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
                     </div>
+
+
 
 
                     <div class="width100c" style="margin-top: 10px;">
@@ -1675,6 +1687,11 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                 </div>
 
+
+              
+
+
+
                 <div class="width100c openclose" openclose="mytextbuilder" style="display: none;">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator" style="font-size: 0.8rem;">+</span>
@@ -1855,6 +1872,15 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                 <textarea name="myhtmleditor" id="myhtmleditor" cols="30" rows="8"
                     placeholder="Click on a Component to Edit the HTML"></textarea>
+
+
+
+                    <div class="width100c">
+                        <div class="width50c advanced-Buttons" id="myhelp2">Help</div>
+                        <div class="width50c advanced-Buttons" id="ace">Advanced Code Editor</div>
+                    </div>
+
+
 
             </div>
 
@@ -2108,7 +2134,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
                 <div class="openthematrix" mymatrix="mymatrix9" style="border-radius: 5px 5px 0px 0px; float: left;">
-                    <strong>Bad Char. Clean</strong></div>
+                    <strong>Bad Char. Cleaner</strong></div>
 
                 <div class="openthematrix" mymatrix="mymatrix1" style="border-radius: 5px 5px 0px 0px; "><strong>Final
                         Code</strong></div>
