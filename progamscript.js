@@ -1044,8 +1044,11 @@ setupContextMenu('h3');
         }
     });
 
-
-
+    $('#RowBackgroundColorlist').on('change', function() {
+        var whatshouldthebackbe = $(this).val();
+        $('.onblock').removeAttr('style') // Remove any existing inline styles
+                    .attr('style', 'background-color: ' + whatshouldthebackbe + ' !important;'); // Set new background color
+    });
 
     $(document).ready(function () {
         var mysize
