@@ -38,6 +38,7 @@
     margin-left: 0%;
     height: auto;
     margin-top: -30px;
+    min-width: 36px
         
         }
 
@@ -546,7 +547,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 <div class="width100c openclose" openclose="titlebuilder-oc">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator">+</span>
-                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Title / Text / HTML Component</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Title / Text / HTML Comp.</span>
                         <span class="mysmalltext">(h2,&nbsp;&nbsp;h3,&nbsp;&nbsp;h4,&nbsp;&nbsp;p&nbsp;&nbsp; 	&lt; /	&gt; )</span>
                     </div>
                 </div>
@@ -646,12 +647,17 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                     <div class="width100c">
                         
-                       <div class="width50c">
+                       <div class="width30c" style="margin-right: 2%;">
                         <button class="texttype unselectable-text" value="span style='color:#034694'" title="Make Color Blue" style="text-align: center;  background-color: #034694; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 5px;">Text Blue</button>
                        </div>
-                       <div class="width50c">
+                       <div class="width30c" style="margin-right: 2%;">
                         <button class="texttype unselectable-text" value="span style='color:#d71920'" title="Make Color Red" style="text-align: center;  background-color: #d71920; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 10px;">Text Red</button>
                        </div>
+
+                       <div class="width30c">
+                        <button class="texttype unselectable-text" value="span style='color:#fff'" title="Make Color White" style="text-align: center;  background-color: #000; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 10px;">Text White</button>
+                       </div>
+                       
                     </div>
 
 
@@ -1686,40 +1692,91 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 <div class="width100c openclose" openclose="myrowbuilder">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator" style="font-size: 0.8rem;">+</span>
-                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Row Options -- <span style="color: yellow;">!! Coming Soon !!</span></span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Row Options</span>
 
                     </div>
                 </div>
 
 
-                <div openclose="myrowbuilder" class="width100c stage1 tools myrowbuilder" style="padding-left: 2.5%; padding-top:10px;opacity:0.2" >
+                <div openclose="myrowbuilder" class="width100c stage1 tools myrowbuilder" style="padding-left: 2.5%; padding-top:10px" >
 
               
 
 
-
-                   <div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem">Size Visible:</div>
+<div class="width100c" >
+                   <div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem">Device Visability:</div>
                     <div class="width30c">Hide on mobile <input id="mobilehidev2d" type="checkbox" style="width: auto;"></div>
-                    <div class="width30c">Hide on Tablet <input id="tablethidev2d" type="checkbox"  style="width: auto;"></div>
-                    <div class="width30c">Hide on Desktop<input id="desktophidev2d" type="checkbox" style="width: auto;"></div>
+               
+                    <div class="width30c" >Hide on Desktop<input id="desktophidev2d" type="checkbox" style="width: auto;"></div>
 
-
+                </div>
 <div class="width100c" style="border-bottom:1px solid #ccc; width:88%;margin-top:5px;margin-bottom:5px"></div>
 
 
-<div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem;">Row Background Color:</div>
-<select name="Row-Background-Color" id="RowBackgroundColorlist" style="width: 88%; margin-top:10px">
-    <option value="" disabled selected>Row Background Color</option>
-    <option value="none">None</option>
-    <option value="#f7f7f7 ">Highlighted</option>
-    <option value="#666 ">Dark Gray</option>
-    <option value="#999  ">Gray</option>
-    <option value="#f9f9f9 ">Light Gray</option>
-    <option value="#c00">Red</option>
-    <option value="#02304A">Blue</option>
-    <option value="#008827">Green</option>
-    <option value="#000">Black</option>
-</select>
+
+
+
+
+<div class="width100c">
+<div class="width50c">
+    <div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem;font-size: 90%;">Row Background Color:</div>
+    <select name="Row-Background-Color" id="RowBackgroundColorlist" style="width: auto; margin-top:10px; ">
+        <option value="" disabled >Row Background Color</option>
+        <option value="none" value1="#333">None</option>
+        <option value="rgb(247, 247, 247)" value1="#333">Highlighted</option>
+        <option value="rgb(102, 102, 102)" value1="#fff">Dark Gray</option>
+        <option value="rgb(153, 153, 153)" value1="#333">Gray</option>
+        <option value="rgb(249, 249, 249)" value1="#333">Light Gray</option>
+        <option value="rgb(204, 0, 0)" value1="#fff">Red</option>
+        <option value="rgb(2, 48, 74)" value1="#fff">Blue</option>
+        <option value="rgb(0, 136, 39)" value1="#fff">Green</option>
+        <option value="rgb(0, 0, 0)" value1="#fff">Black</option>
+    </select>
+    
+</div>
+<div class="width50c">
+    <div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem;">Row Margin Top:</div>
+    <select name="Row-Margin-Top" id="Row-Margin-Top" style="width: auto; margin-top:10px">
+        <option value="" disabled >Row Margin Top</option>
+        <option value="none">Select Height</option>
+        <option value="0"> Level 0</option>
+        <option value="10">Level 1</option>
+        <option value="20">Level 2</option>
+        <option value="30">Level 3</option>
+        <option value="40">Level 4</option>
+        <option value="50">Level 5</option>
+        <option value="60">Level 6</option>
+        <option value="70">Level 7</option>
+        <option value="80">Level 8</option>
+        <option value="90">Level 9</option>
+        <option value="100">Level 10</option>
+        <option value="150">Level 11</option>
+        <option value="200">Level 12</option>
+    </select>
+</div>
+
+
+<div class="width100c">
+    <div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px;">Row Border Radius</div>
+
+    <select name="Row-Border-Radius" id="Row-Border-Radius" style="width: auto; margin-top:10px; margin-left: 5px;">
+        <option value="0"> Square</option>
+        <option value="10px">10px</option>
+        <option value="20px">0px</option>
+        <option value="30px">30px</option>
+        <option value="40px">40px</option>
+        <option value="50px">Roundest</option>
+    </select>
+
+
+</div>
+
+
+</div>
+
+
+
+
 
 
                 </div>
@@ -2168,13 +2225,13 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
                 <div class="openthematrix" mymatrix="mymatrix9" style="border-radius: 5px 5px 0px 0px; float: left;">
-                    <strong>Bad Char. Cleaner</strong></div>
+                    <strong>Bad Charater Cleaner</strong></div>
 
                 <div class="openthematrix" mymatrix="mymatrix1" style="border-radius: 5px 5px 0px 0px; "><strong>Final
                         Code</strong></div>
 
 
-                        <div class="width100c" style="margin-left: 15px; width: auto;  padding-top: 2px;  margin-top: 5px; color: #fff; padding-left: 5px; font-size: 0.85rem; height: 15px; color: yellow;">
+                        <div class="width100c" style="margin-left: 15px; width: auto;  padding-top: 2px;  margin-top: 5px; color: #fff; padding-left: 5px; font-size: 0.85rem; height: 15px; color: yellow; display: none;">
                             <div style="width: auto; float: left;">Row Background Color: &nbsp;&nbsp;&nbsp;</div>
                             <form style="float: left;">
                            <label for="optionb1">Cleer</label> <input id="optionb1" class="back-clear" name="backgroundcolor" rowbackgroundcolor="selectedcleard" type="radio" style="width: auto;">  &nbsp;&nbsp;
@@ -2331,147 +2388,259 @@ async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91')
 
 
 
-                <button class="texttype" title="Bold Selected Text"
-                    style="width: 100%; color: #fff;  background-color: transparent; margin-top: 10px; margin-bottom: 10px;"
-                    value="strong"><strong class="unselectable-text">B</strong></button>
+               
 
 
-                <button class="texttype" title="Italic Selected Text"
-                    style="width: 100%; color: #fff; background-color: transparent; margin-bottom: 10px;" value="i"><i
-                        class="unselectable-text">I</i></button>
+
+            <div class="hover-item" style="margin-left: -5px; margin-top: 22px;">
+B&bull;I&bull;U
+  <div class="popup hidden" style="margin-left: 0px; margin-top: 10px;">
+
+    <button class="texttype" title="Bold Selected Text"
+    style="width: 23%; color: #fff;  background-color: transparent; margin-top: 10px; margin-bottom: 10px;"
+    value="strong"><strong class="unselectable-text">B</strong></button>
 
 
-                <button class="texttype unselectable-text" title="Bold and Italic Selected Text"
-                    style="width: 100%; color: #fff;  background-color: transparent; margin-bottom: 10px;"
-                    value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
-                <button class="texttype" title="Underline Selected Text"
-                    style="width: 100%; color: #fff;  background-color: transparent; margin-bottom: 10px;" value="u"><u
-                        class="unselectable-text">U</u></button>
-                <button id="subscriptbutton" class="texttype unselectable-text" title="Subscript Selected Text"
-                    style="width: 100%; color: #fff;  background-color: transparent;margin-bottom: 10px;"
-                    value="sub">X<sub>2</sub></button>
-                <button id="superscriptbutton" class="texttype unselectable-text" title="Superscript Selected Text"
-                    style="width: 100%; color: #fff;  background-color: transparent;margin-bottom: 10px;" value="sup">
-                    X<sup>2</sup></button>
+<button class="texttype" title="Italic Selected Text"
+    style="width: 23%; color: #fff; background-color: transparent; margin-bottom: 10px;" value="i"><i
+        class="unselectable-text">I</i></button>
 
 
-                <button class="textaligner" title="Align Text Left"
-                    style="width: 100%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;margin-bottom: 10px;"
-                    cssadd="left">
-                    <!--?xml version="1.0" encoding="utf-8"?--><svg id="asdf1" version="1.1" viewBox="0 0 50 50"
-                        x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                        <style>
-                            .st1a {
-                                stroke: #fff;
-                                stroke-width: 6;
-                                stroke-miterlimit: 10
-                            }
-                        </style>
-                        <line class="st1a" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
-                        <line class="st1a" x1="6" x2="43.5" y1="30.1" y2="30"></line>
-                        <line class="st1a" x1="6" x2="35.6" y1="41.5" y2="41.4"></line>
-                        <line class="st1a" x1="5.9" x2="35.5" y1="17.4" y2="17.3"></line>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                    </svg></button>
-                <button class="textaligner" title="Align Text Center"
-                    style="width: 100%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;margin-bottom: 10px;"
-                    cssadd="center">
-                    <!--?xml version="1.0" encoding="utf-8"?--><svg id="asdf2" version="1.1" viewBox="0 0 50 50"
-                        x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                        <style>
-                            .st0dd {
-                                fill: #333
-                            }
-
-                            .st1dd {
-                                stroke: #fff;
-                                stroke-width: 6;
-                                stroke-miterlimit: 10
-                            }
-                        </style>
-                        <rect class="st0" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
-                        <line class="st1dd" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
-                        <line class="st1dd" x1="6" x2="43.5" y1="30.1" y2="30"></line>
-                        <line class="st1dd" x1="6.3" x2="43.6" y1="41.5" y2="41.4"></line>
-                        <line class="st1dd" x1="6.2" x2="43.5" y1="17.6" y2="17.5"></line>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                    </svg></button>
-
-                <button class="textaligner" title="Align Text Right"
-                    style="width: 100%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent; margin-bottom: 10px;"
-                    cssadd="right">
-                    <!--?xml version="1.0" encoding="utf-8"?--><svg  version="1.1" viewBox="0 0 50 50"
-                        x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                        <style>
-                            .st0c {
-                                fill: #333
-                            }
-
-                            .st1c {
-                                stroke: #fff;
-                                stroke-width: 6;
-                                stroke-miterlimit: 10
-                            }
-                        </style>
-                        <rect class="st0c" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
-                        <line class="st1c" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
-                        <line class="st1c" x1="6" x2="43.5" y1="30.1" y2="30"></line>
-                        <line class="st1c" x1="14" x2="43.6" y1="41.5" y2="41.4"></line>
-                        <line class="st1" x1="13.9" x2="43.5" y1="17.4" y2="17.3"></line>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                        <g></g>
-                    </svg></button>
-
-                <button class="textaligner3 unselectable-text" title="Create a Line Break in the Text"
-                    style="width: 100%;font-size: 1em;max-width: none; color: #fff;  background-color: transparent;margin-bottom: 10px; "
-                    cssadd="<br>">br</button>
+<button class="texttype unselectable-text" title="Bold and Italic Selected Text"
+    style="width: 23%; color: #fff;  background-color: transparent; margin-bottom: 10px;"
+    value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
 
 
-                <div style="width: 94%; border: 2px solid #ccc;"></div>
+<button class="texttype" title="Underline Selected Text"
+    style="width: 23%; color: #fff;  background-color: transparent; margin-bottom: 10px;" value="u"><u
+        class="unselectable-text">U</u></button>
 
-                <button class="texttype unselectable-text" title="Make Selected Text an H2"
-                    style="font-size: 0.85em;max-width: none; border-left: 1px;width:100%;margin-bottom: 10px; margin-top:10px "
-                    value='h2'>H2</button>
 
-                <button class="texttype unselectable-text" title="Make Selected Text an H3"
-                    style="font-size: 0.85em;max-width: none;  width:100%;margin-bottom: 5px; " value='h3'>H3</button>
+  </div>
+</div>   
+
+
+
+<div class="hover-item" style="margin-left: 2px;">
+    <!--?xml version="1.0" encoding="utf-8"?-->
+    <svg id="asdf2" version="1.1" viewBox="0 0 50 50"
+        x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" y="0px" style="width: 300%; margin-left: -5px;">
+        <style>
+            .st0dd {
+                fill: #333
+            }
+
+            .st1dd {
+                stroke: #fff;
+                stroke-width: 6;
+                stroke-miterlimit: 10
+            }
+        </style>
+        <rect class="st0" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
+        <line class="st1dd" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+        <line class="st1dd" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+        <line class="st1dd" x1="6.3" x2="43.6" y1="41.5" y2="41.4"></line>
+        <line class="st1dd" x1="6.2" x2="43.5" y1="17.6" y2="17.5"></line>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+        <g></g>
+    </svg>
+    <div class="popup hidden" style="padding-top: 10px;">
+
+        <button class="textaligner" title="Align Text Left"
+        style="width: 31%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;margin-bottom: 10px;"
+        cssadd="left">
+        <!--?xml version="1.0" encoding="utf-8"?--><svg id="asdf1" version="1.1" viewBox="0 0 50 50"
+            x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" y="0px" style="width: 100%;">
+            <style>
+                .st1a {
+                    stroke: #fff;
+                    stroke-width: 6;
+                    stroke-miterlimit: 10
+                }
+            </style>
+            <line class="st1a" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+            <line class="st1a" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+            <line class="st1a" x1="6" x2="35.6" y1="41.5" y2="41.4"></line>
+            <line class="st1a" x1="5.9" x2="35.5" y1="17.4" y2="17.3"></line>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+        </svg></button>
+    <button class="textaligner" title="Align Text Center"
+        style="width: 31%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;margin-bottom: 10px;"
+        cssadd="center">
+        <!--?xml version="1.0" encoding="utf-8"?--><svg id="asdf2" version="1.1" viewBox="0 0 50 50"
+            x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+            <style>
+                .st0dd {
+                    fill: #333
+                }
+
+                .st1dd {
+                    stroke: #fff;
+                    stroke-width: 6;
+                    stroke-miterlimit: 10
+                }
+            </style>
+            <rect class="st0" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
+            <line class="st1dd" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+            <line class="st1dd" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+            <line class="st1dd" x1="6.3" x2="43.6" y1="41.5" y2="41.4"></line>
+            <line class="st1dd" x1="6.2" x2="43.5" y1="17.6" y2="17.5"></line>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+        </svg></button>
+
+    <button class="textaligner" title="Align Text Right"
+        style="width: 31%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent; margin-bottom: 10px;"
+        cssadd="right">
+        <!--?xml version="1.0" encoding="utf-8"?--><svg  version="1.1" viewBox="0 0 50 50"
+            x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+            <style>
+                .st0c {
+                    fill: #333
+                }
+
+                .st1c {
+                    stroke: #fff;
+                    stroke-width: 6;
+                    stroke-miterlimit: 10
+                }
+            </style>
+            <rect class="st0c" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
+            <line class="st1c" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+            <line class="st1c" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+            <line class="st1c" x1="14" x2="43.6" y1="41.5" y2="41.4"></line>
+            <line class="st1" x1="13.9" x2="43.5" y1="17.4" y2="17.3"></line>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+            <g></g>
+        </svg></button>
+
+    </div>
+  </div>
+
+
+  <div class="hover-item">
+    <sup>2</sup>X<sub>2</sub>
+    <div class="popup hidden" style="width: 75px; margin-left: 8px; padding-top: 10px;">
+        <button id="subscriptbutton" class="texttype unselectable-text" title="Subscript Selected Text"
+        style="width: auto; color: #fff;  background-color: transparent;margin-bottom: 10px;"
+        value="sub">X<sub>2</sub></button>
+    <button id="superscriptbutton" class="texttype unselectable-text" title="Superscript Selected Text"
+        style="width: auto; color: #fff;  background-color: transparent;margin-bottom: 10px;" value="sup">
+        X<sup>2</sup></button>
+
+
+    </div>
+</div>
+
+<button class="textaligner3 unselectable-text" title="Create a Line Break in the Text"
+style="width: 100%;font-size: 1em;max-width: none; color: #fff;  background-color: transparent;margin-bottom: 10px; "
+cssadd="<br>">br</button>
+
+<div class="hover-item"  style="margin-left: -5px; width: 36px;">
+    H2-4
+    <div class="popup hidden" style="width: 120px; margin-left: -1px;">
+
+        <button class="texttype unselectable-text" title="Make Selected Text an H2"
+        style="font-size: 0.85em;max-width: none; border-left: 1px;width:100%;margin-bottom: 10px; margin-top:5px; margin-right: 10px; width: auto; padding: 5px; "
+        value='h2'>H2</button>
+
+    <button class="texttype unselectable-text" title="Make Selected Text an H3"
+        style="font-size: 0.85em;max-width: none;  width:100%;margin-bottom: 5px; width: auto; padding: 5px;" value='h3'>H3</button>
+
+        <button class="texttype unselectable-text" title="Make Selected Text an H3"
+        style="font-size: 0.85em;max-width: none;  width:100%;margin-bottom: 5px; width: auto; padding: 5px;" value='h4'>H4</button>
+
+    </div>
+  </div>
+
 
                     <div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
 
-                    <button class="unselectable-text addrow-click" title="Add 100% Row"
-                    style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 100%; margin-top: 10px; margin-bottom: 5px;">100</button>
 
+                    <div class="hover-item" style="margin-left: -10px; margin-top: -7px;">
+                        <button class="unselectable-text " title="Add 100% Row"
+                        style="    text-align: center;
+                        background-color: blue;
+                        color: #fff;
+                        width: 100%;
+                        margin-top: 10px;
+                        margin-bottom: 0px;
+                        min-width: 36px;
+                        padding-top: 5px;
+                        padding-bottom: 5px;">100</button>
+
+                        <div class="popup hidden" style="margin-left: 0px; margin-top: 10px; width: 250px; padding-bottom: 5px;">
+                            <button class="unselectable-text addrow-click" title="Add 100% Row"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 30%; margin-top: 10px; margin-bottom: 5px;">100</button>
+                            <button class="unselectable-text addrow50" title="Add 2 50% Rows"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 30%; margin-top: 10px; margin-bottom: 5px;">50% x2</button>
+
+                            <button class="unselectable-text addrow25" title="Add 4 25% Rows"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 30%; margin-top: 10px; margin-bottom: 5px;">25% x 4</button>
+
+                        </div>
+                      </div>
+
+
+
+                   
                 <button id="addrow1x1a" class="unselectable-text" title="Add 100% Column"
-                    style="text-align: center;  background-color: yellow; color:#333; width: 100%; margin-top: 5px; margin-bottom: 5px;">100</button>
+                    style="text-align: center;  background-color: yellow; color:#333; padding-top: 4px; padding-bottom: 4px; width: 100%;  margin-bottom: 5px;">100</button>
 
                     <div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
 
 
-                <button class="texttype unselectable-text" value="span style='color:#034694'" title="Make Color Blue"
-                    style="text-align: center;  background-color: #034694; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 5px;">C</button>
+                    <div class="hover-item">
+                        <div class="texttype unselectable-text" value="span style='color:#034694'" title="Make Color Blue"
+                    style="text-align: center;  background-color: #034694; color:#fff; margin-left: -10px; width: 100%; min-width: 40px; margin-top: 5px; margin-bottom: 5px;">C</div>
+                        <div class="popup hidden" style="padding-top: 5px; padding-bottom: 5px; margin-top: 5px;">
+
+                            <button class="texttype unselectable-text" value="span style='color:#034694'" title="Make Color Blue"
+                            style="text-align: center;  background-color: #034694; color:#fff; width: 31%; margin-top: 5px; margin-bottom: 5px;">C</button>
+        
+        
+                        <button class="texttype unselectable-text" value="span style='color:#d71920'" title="Make Color Red"
+                            style="text-align: center;  background-color: #d71920; color:#fff; width: 31%; margin-top: 5px; margin-bottom: 5px;">C</button>
+        
+        
+                            <button class="texttype unselectable-text" value="span style='color:#fff'" title="Make Color White"
+                            style="text-align: center;  background-color: #000; color:#fff; width: 31%; margin-top: 5px; margin-bottom: 5px;">C</button>
 
 
-                <button class="texttype unselectable-text" value="span style='color:#d71920'" title="Make Color Red"
-                    style="text-align: center;  background-color: #d71920; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 5px;">C</button>
+                        </div>
+                      </div>
 
-            
+
+
+
+               
+
+
+
+
+
+                    <div style="width: 94%; border: 2px solid #ccc; margin-bottom: 10px; "></div>
                 
                 <button class="deleterow unselectable-text" title="Delete Row"
                     style="text-align: center; background-color: #730000; color: white; width: 100%; margin-top: 5px; margin-bottom: 5px;">R</button>

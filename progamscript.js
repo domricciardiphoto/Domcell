@@ -92,11 +92,43 @@
      
     }
 
+  
+
+
+
+   
+
+
+
+
+
+
+
 
     function highlightedbackground() {
      
-        var $element = $('.onblock'); // Assuming 'this' refers to the element you want to check
+        var onblockElement = document.querySelector('.onblock');
+        var selectElement = document.getElementById('RowBackgroundColorlist');
+    
+        if (onblockElement && selectElement) {
+            var style = getComputedStyle(onblockElement);
+            var onblockBackgroundColor = style.backgroundColor;
+    
+            // Normalize the color string to ensure consistent spacing
+            var normalizedColor = onblockBackgroundColor.replace(/\s+/g, '');
+    
+            // Iterate through each option in the select element
+            Array.from(selectElement.options).forEach(function(option) {
+                var optionValue = option.value.replace(/\s+/g, '');
+                if (optionValue === normalizedColor) {
+                    // Set the matching option as selected
+                    option.selected = true;
+                }
+            });
+        }
 
+    /*    
+        var $element = $('.onblock'); // Assuming 'this' refers to the element you want to check
         if ($element.hasClass('selectedtand')) {
             $('#optionb1').prop('checked', false);
             $('#optionb2').prop('checked', true);
@@ -110,14 +142,15 @@
             $('#optionb2').prop('checked', false);
             $('#optionb3').prop('checked', false);
         }
-
-
         $('input[type=radio][name=backgroundcolor]').change(function() {
             // Get the 'rowbackgroundcolor' attribute of the selected radio button
             var bgColor = $(this).attr('rowbackgroundcolor');
            $('.onblock').removeClass('selectedcleard').removeClass('selectedtand').removeClass('selectedblued')
             $('.onblock').addClass(bgColor)
         });
+
+*/
+
     }
 
 
@@ -164,6 +197,21 @@
         $('.liverow').on('click', function () {
             $('.onblock').removeClass('onblock')
             $(this).addClass('onblock')
+
+
+            if ($(this).hasClass('hideonlyondesktop')) {
+                $('#desktophidev2d').prop('checked', true);
+            } else {
+                $('#desktophidev2d').prop('checked', false);
+            }
+
+            if ($(this).hasClass('hideonlyonmobile')) {
+                $('#mobilehidev2d').prop('checked', true);
+            } else {
+                $('#mobilehidev2d').prop('checked', false);
+            }
+
+
             
         })
     }
@@ -191,6 +239,72 @@
 
 
     function loadnewcontent() {
+
+        function enableEditing(paragraph) {
+            // Store original paragraph's attributes
+            const originalAttributes = {
+                id: paragraph.id,
+                class: paragraph.className
+            };
+        
+            // Create a contenteditable div and set its HTML to the paragraph's inner HTML
+            const editableDiv = document.createElement('div');
+            editableDiv.setAttribute('contenteditable', 'true');
+            editableDiv.innerHTML = paragraph.innerHTML; // Use innerHTML to capture and set the current content
+        
+            // Apply the original paragraph's ID and class to the editable div
+            editableDiv.id = originalAttributes.id;
+            editableDiv.className = originalAttributes.class;
+        
+            // Swap out the paragraph with the editable div
+            paragraph.replaceWith(editableDiv);
+            editableDiv.focus();
+        
+            // Function to save changes
+            const saveChanges = () => {
+                // Create a new paragraph to replace the editable div
+                const newParagraph = document.createElement('p');
+                newParagraph.innerHTML = editableDiv.innerHTML; // Transfer the edited content
+        
+                // Reapply the original attributes
+                newParagraph.id = originalAttributes.id;
+                newParagraph.className = originalAttributes.class;
+        
+                editableDiv.replaceWith(newParagraph); // Replace the editable div with the new paragraph
+                attachDoubleClickHandler(newParagraph); // Re-attach the double-click handler to the new paragraph
+                updateDynamicContent();
+            };
+        
+            // Save changes on Enter key press (consider disabling if multi-line editing is needed)
+            editableDiv.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault(); // Prevent default Enter behavior in contenteditable
+                    saveChanges();
+                }
+            });
+        
+            // Save changes on blur (losing focus)
+            editableDiv.addEventListener('blur', saveChanges);
+        }
+        
+        function attachDoubleClickHandler(paragraph) {
+            paragraph.addEventListener('dblclick', function() {
+                enableEditing(paragraph);
+            });
+        }
+        
+        // Initial attachment of the double-click handler to all paragraphs
+        document.querySelectorAll('.interedit p').forEach(attachDoubleClickHandler);
+        
+        function updateDynamicContent() {
+            $('#findthecode').text($('#pullthecode').html());
+            $('#findthecode2').text($('#pullthecode2').html());
+            $('#myhtmleditor').val($('.interedit').html());
+            $('#mobilepreview').delay(2000).html($('#pullthecode').html());
+            $('#mobilepreview2').delay(2000).html($('#pullthecode2').html());
+        }
+     
+
 
         $('p').off().on('contextmenu', function (e) {
             e.preventDefault()
@@ -854,6 +968,31 @@ setupContextMenu('h3');
 
 
 
+    document.getElementById('mobilehidev2d').addEventListener('input', function () {
+        if (this.checked) {
+           $('.onblock').addClass('hideonlyonmobile')
+           loadnewcontent()
+        } else {
+            $('.onblock').removeClass('hideonlyonmobile')
+            loadnewcontent()
+        }
+
+    })
+
+
+    document.getElementById('desktophidev2d').addEventListener('input', function () {
+        if (this.checked) {
+           $('.onblock').addClass('hideonlyondesktop')
+           loadnewcontent()
+        } else {
+            $('.onblock').removeClass('hideonlyondesktop')
+            loadnewcontent()
+        }
+
+    })
+
+
+
 
     document.getElementById('htmlcodeyesno').addEventListener('input', function () {
         if (this.checked) {
@@ -1044,11 +1183,69 @@ setupContextMenu('h3');
         }
     });
 
+    let isProgrammaticChangeRowMarginTop2 = false; // Flag to control the execution
+
     $('#RowBackgroundColorlist').on('change', function() {
-        var whatshouldthebackbe = $(this).val();
-        $('.onblock').removeAttr('style') // Remove any existing inline styles
-                    .attr('style', 'background-color: ' + whatshouldthebackbe + ' !important;'); // Set new background color
+        // Skip this handler if the change event was triggered programmatically
+        if (isProgrammaticChangeRowMarginTop2) {
+            return;
+        }
+    
+        var selectedOption = $(this).find('option:selected');
+        var backgroundColor = selectedOption.val();
+        var textColor = selectedOption.attr('value1');
+    
+        $('.onblock').each(function() {
+            var style = $(this).attr('style');
+            if (typeof style !== 'undefined' && style !== false) {
+                var newStyle = style.replace(/background-color\s*:\s*[^;]+;?/gi, '');
+                newStyle += 'background-color: ' + backgroundColor + ' !important;';
+                $(this).attr('style', newStyle);
+            } else {
+                $(this).attr('style', 'background-color: ' + backgroundColor + ' !important;');
+            }
+        });
+    
+        $('.onblock p').each(function() {
+            this.style.setProperty('color', textColor, 'important');
+        });
+    
+        // Indicate that the next change event will be triggered programmatically
+        isProgrammaticChangeRowMarginTop2 = true;
+       $(this).val('none').change(); // This will not cause the handler to execute its logic again
+       isProgrammaticChangeRowMarginTop2 = false; // Reset the flag immediately
+    
+        loadnewcontent();
     });
+
+
+    $('#Row-Border-Radius').on('change' , function() {
+        var selectedOption = $(this).find('option:selected');
+        var boxmargin = selectedOption.attr('value')
+       $('.onblock').css('border-radius' , boxmargin)
+       $('#Row-Border-Radius').prop('selectedIndex', 0);
+    })
+
+
+
+    let isProgrammaticChangeRowMarginTop = false; // Flag to control the execution
+
+    $('#Row-Margin-Top').on('change', function() {
+        if (!isProgrammaticChangeRowMarginTop) {
+            var selectedOption = $(this).find('option:selected');
+            var boxmargin = selectedOption.attr('value');
+            $('.onblock').css('margin-top', boxmargin + 'px').addClass('nomar');
+    
+            // Set the flag to true before the programmatic change
+            isProgrammaticChangeRowMarginTop = true;
+            $(this).val('none').change();
+    
+            // Reset the flag after the change
+            isProgrammaticChangeRowMarginTop = false;
+        }
+        loadnewcontent();
+    });
+
 
     $(document).ready(function () {
         var mysize
@@ -1781,6 +1978,12 @@ $('.readmoreclampdbutton').on('click' , function() {
 
             loadnewcontent()
         })
+
+
+
+
+
+
 
         $('.addrow50').on('click', function () {
             $('.internalbuttons').slideDown()
@@ -2789,6 +2992,9 @@ $('#optionb4').on('change' , function() {
 
 
 
+      
+
+
 
         $('#linkmaker').click(function () {
 
@@ -2995,3 +3201,27 @@ $('#optionb4').on('change' , function() {
     });
 
     /* Mac Version March 24th */
+
+
+    $(document).ready(function() {
+        $('.hover-item').each(function() { // Iterate over each .hover-item
+          var timeoutId; // Variable to hold the timeout, unique to each .hover-item
+      
+          $(this).hover(
+            function() {
+              // Clear any timeout to prevent it from hiding prematurely
+              clearTimeout(timeoutId);
+              // Show this popup
+              $(this).find('.popup').removeClass('hidden').addClass('visible');
+            }, 
+            function() {
+              // Reference to the popup that needs to be hidden
+              var $popup = $(this).find('.popup');
+              // Set a timeout to hide this popup
+              timeoutId = setTimeout(function() {
+                $popup.removeClass('visible').addClass('hidden');
+              }, 300); // Adjust delay here
+            }
+          );
+        });
+      });

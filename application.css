@@ -308,12 +308,11 @@
 
         #programming {
             border-right: 1px solid #666;
-            width: 28%;
+            width: 27%;
             margin-right: .5%;
             padding-bottom: 1%;
-            padding-left: .5%;
+            padding-left: 0.5%;
             position: relative;
-            padding-top: 5px;
 
         }
 
@@ -1049,7 +1048,7 @@
         }
 
         .onblock {
-            background-color: #034694 !important;
+            background-color: rgba(3, 70, 148, 0.4) !important;
         }
 
         .mymobile .width50c2 {
@@ -1179,7 +1178,7 @@
         }
 
         .openthematrix:first-of-type {
-            margin-left: 0px;
+            margin-left: 2.2%;
         }
 
         .openthematrixopen {
@@ -1690,9 +1689,18 @@
         }
         
         #pullthecode2 {
-            background-color: #fff; color: #000; max-width: 96%; min-height: 439px; width: 66%;  margin-left: 0%; margin-top: 0px; margin-bottom: 15px;     max-height: 800px;
-                        position: relative;
-                        overflow: auto; padding-top: 10px;     
+            background-color: #fff;
+            color: #000;
+            max-width: 96%;
+            min-height: 439px;
+            width: 65%;
+            margin-left: 1%;
+            margin-top: 0px;
+            margin-bottom: 15px;
+            max-height: 800px;
+            position: relative;
+            overflow: auto;
+            padding-top: 10px;   
         }
         
         #beautycode {
@@ -1823,4 +1831,81 @@
             margin-top: 5px;
         }
 
+
+/* Style for the item that triggers the popup */
+.hover-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Style for the popup itself */
+  .popup {
+    position: absolute;
+    left: 100%; /* Adjust as needed */
+    top: 0;
+    margin-left: 12px; /* Space between the item and the popup */
+    width: 200px; /* Adjust as needed */
+    padding: 10px;
+    padding-bottom: 0px;
+    background-color: #333;
+    z-index: 1; /* Ensure it's on top of other elements */
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for the opacity */
+    visibility: hidden;
+    border-radius: 0px 15px 15px 0px;
+    padding-top: 0px;
+  }
+  
+  /* Hidden class */
+  .hidden {
+    display: none;
+  }
+  
+  /* Visible class */
+  .visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .mymobile .nomar {
+    margin-top:2px !important
+  }
+
+  .mymobile .hideonlyonmobile {
+    display: none;
+  }
+  
+  #pullthecode2 .hideonlyondesktop {
+    opacity: .3;
+  }
+
+  #codeloaderpcrview .hideonlyondesktop  {
+    display: none;
+  }
+
+  .interedit {
+    background-color: rgba(255, 255, 0, 0.1) !important;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  #RowBackgroundColorlist {
+    width: 97% !important;
+    margin-right: 2%;
+  }
+
+  @media only screen and (max-width:500px) {
+  .nomar {
+    margin-top:0px !important
+}
+  }
+
         /* Mac Version March 24th */
+
+
+        
