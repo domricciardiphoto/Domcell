@@ -1416,7 +1416,7 @@
             padding-right: 5px;
         }
 
-        .mytoolsboxtop2 {
+        .mytoolsboxtop2 ,.mytoolsboxtop3 {
             text-align: center;
             cursor: pointer;
             border: 1px solid #ccc;
@@ -1769,13 +1769,13 @@
 
                  
         #codeloaderpcrview div.selectedtand {
-            background-color: #f7f7f7 !important;
+          /*  background-color: #f7f7f7 !important; */
             border: none;
         }
 
 
         .mymobile div.selectedtand {
-            background-color: #f7f7f7 !important;
+        /*   background-color: #f7f7f7 !important; */
            
         }
 
@@ -1886,7 +1886,7 @@
   }
 
   .interedit {
-    background-color: rgba(255, 255, 0, 0.1) !important;
+    background-color: rgba(255, 255, 0, 0.3) !important;
   }
 
   textarea {

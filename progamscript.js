@@ -76,11 +76,11 @@
     }
 
     function toggleReadMore(ptagid) {
-      
-        $('.readmoreclampdbutton').on('click' , function() {
+
+        $('.readmoreclampdbutton').on('click', function () {
             var currentText = $(this).text();
             $('#' + ptagid).toggleClass("expanded");
-            if(currentText === "Read More") {
+            if (currentText === "Read More") {
                 $(this).text('Read Less');
                 return false
             } else {
@@ -89,36 +89,25 @@
             }
 
         })
-     
+
     }
-
-  
-
-
-
-   
-
-
-
-
-
 
 
 
     function highlightedbackground() {
-     
+
         var onblockElement = document.querySelector('.onblock');
         var selectElement = document.getElementById('RowBackgroundColorlist');
-    
+
         if (onblockElement && selectElement) {
             var style = getComputedStyle(onblockElement);
             var onblockBackgroundColor = style.backgroundColor;
-    
+
             // Normalize the color string to ensure consistent spacing
             var normalizedColor = onblockBackgroundColor.replace(/\s+/g, '');
-    
+
             // Iterate through each option in the select element
-            Array.from(selectElement.options).forEach(function(option) {
+            Array.from(selectElement.options).forEach(function (option) {
                 var optionValue = option.value.replace(/\s+/g, '');
                 if (optionValue === normalizedColor) {
                     // Set the matching option as selected
@@ -127,7 +116,7 @@
             });
         }
 
-    /*    
+        /*    
         var $element = $('.onblock'); // Assuming 'this' refers to the element you want to check
         if ($element.hasClass('selectedtand')) {
             $('#optionb1').prop('checked', false);
@@ -212,7 +201,7 @@
             }
 
 
-            
+
         })
     }
 
@@ -246,56 +235,87 @@
                 id: paragraph.id,
                 class: paragraph.className
             };
-        
+
             // Create a contenteditable div and set its HTML to the paragraph's inner HTML
             const editableDiv = document.createElement('div');
             editableDiv.setAttribute('contenteditable', 'true');
             editableDiv.innerHTML = paragraph.innerHTML; // Use innerHTML to capture and set the current content
-        
+
             // Apply the original paragraph's ID and class to the editable div
             editableDiv.id = originalAttributes.id;
             editableDiv.className = originalAttributes.class;
-        
+
             // Swap out the paragraph with the editable div
             paragraph.replaceWith(editableDiv);
             editableDiv.focus();
-        
+
             // Function to save changes
             const saveChanges = () => {
                 // Create a new paragraph to replace the editable div
                 const newParagraph = document.createElement('p');
                 newParagraph.innerHTML = editableDiv.innerHTML; // Transfer the edited content
-        
+
                 // Reapply the original attributes
                 newParagraph.id = originalAttributes.id;
                 newParagraph.className = originalAttributes.class;
-        
+
                 editableDiv.replaceWith(newParagraph); // Replace the editable div with the new paragraph
                 attachDoubleClickHandler(newParagraph); // Re-attach the double-click handler to the new paragraph
                 updateDynamicContent();
+
+                $('p').off().on('contextmenu', function (e) {
+                    e.preventDefault()
+                    $('.interedit').removeClass('interedit')
+                    $(this).parent('.in910').addClass('interedit')
+                    document.getElementById("myModalcontent").style.display = "block";
+
+                    $('#yesBtn99').on('click', function () {
+                        $('.interedit').empty()
+                        document.getElementById("myModalcontent").style.display = "none";
+                        $('#findthecode2').text($('#pullthecode2').html());
+                    })
+
+                    $('#yescopyBtn99').on('click', function () {
+                        var textToCopy = $('.interedit').children('p').text();
+                        navigator.clipboard.writeText(textToCopy).then(function () {
+                            console.log('Text copied to clipboard');
+                        }).catch(function (error) {
+                            console.error('Error copying text: ', error);
+                        });
+                        document.getElementById("myModalcontent").style.display = "none";
+                    })
+
+                    $('#closediag99').on('click', function () {
+                        document.getElementById("myModalcontent").style.display = "none";
+                        $('#optionb4').prop('checked', false);
+                    })
+                })
+
             };
-        
+
             // Save changes on Enter key press (consider disabling if multi-line editing is needed)
-            editableDiv.addEventListener('keypress', function(e) {
+            editableDiv.addEventListener('keypress', function (e) {
                 if (e.key === 'Enter') {
                     e.preventDefault(); // Prevent default Enter behavior in contenteditable
                     saveChanges();
+
+                    loadnewcontent()
                 }
             });
-        
+
             // Save changes on blur (losing focus)
             editableDiv.addEventListener('blur', saveChanges);
         }
-        
+
         function attachDoubleClickHandler(paragraph) {
-            paragraph.addEventListener('dblclick', function() {
+            paragraph.addEventListener('dblclick', function () {
                 enableEditing(paragraph);
             });
         }
-        
+
         // Initial attachment of the double-click handler to all paragraphs
         document.querySelectorAll('.interedit p').forEach(attachDoubleClickHandler);
-        
+
         function updateDynamicContent() {
             $('#findthecode').text($('#pullthecode').html());
             $('#findthecode2').text($('#pullthecode2').html());
@@ -303,7 +323,7 @@
             $('#mobilepreview').delay(2000).html($('#pullthecode').html());
             $('#mobilepreview2').delay(2000).html($('#pullthecode2').html());
         }
-     
+
 
 
         $('p').off().on('contextmenu', function (e) {
@@ -335,38 +355,38 @@
         })
 
 
-      
- function setupContextMenu(selector89) {
-            $(selector89).off().on('contextmenu', function(e) {
+
+        function setupContextMenu(selector89) {
+            $(selector89).off().on('contextmenu', function (e) {
                 e.preventDefault();
                 $('.interedit').removeClass('interedit');
                 $(this).parent('div').parent('.in910').addClass('interedit');
                 document.getElementById("myModalcontent").style.display = "block";
-        
-                $('#yesBtn99').off('click').on('click', function() {
+
+                $('#yesBtn99').off('click').on('click', function () {
                     $('.interedit').empty();
                     document.getElementById("myModalcontent").style.display = "none";
                     $('#findthecode2').text($('#pullthecode2').html());
                 });
-        
-                $('#yescopyBtn99').off('click').on('click', function() {
+
+                $('#yescopyBtn99').off('click').on('click', function () {
                     var textToCopy89 = $('.interedit').children('div').children(selector89).text();
-                    navigator.clipboard.writeText(textToCopy89).then(function() {
+                    navigator.clipboard.writeText(textToCopy89).then(function () {
                         console.log('Text copied to clipboard');
-                    }).catch(function(error) {
+                    }).catch(function (error) {
                         console.error('Error copying text: ', error);
                     });
                     document.getElementById("myModalcontent").style.display = "none";
                 });
-        
-                $('#closediag99').off('click').on('click', function() {
+
+                $('#closediag99').off('click').on('click', function () {
                     document.getElementById("myModalcontent").style.display = "none";
                 });
             });
         }
 
-setupContextMenu('h2');
-setupContextMenu('h3');
+        setupContextMenu('h2');
+        setupContextMenu('h3');
 
 
         $('#exportfinalcodetofile').off('click').on('click', function () {
@@ -481,8 +501,8 @@ setupContextMenu('h3');
 
         $('#pcrdesktopview').on('click', function () {
 
-            $('#fullembedcodeddd').css('max-width', 'none').css('margin-left', '0%').css('background-color' , '#333')
-            $('.morebutt').not('#closeembed').css('background-color' , '#fff').css('color' , '#333')
+            $('#fullembedcodeddd').css('max-width', 'none').css('margin-left', '0%').css('background-color', '#333')
+            $('.morebutt').not('#closeembed').css('background-color', '#fff').css('color', '#333')
             $(this).css('background-color', '#333').css('color', '#fff')
             $('body').css('background-color', '#333')
             $('#codeloaderpcrview').find('.makeit100now').each(function () {
@@ -497,8 +517,8 @@ setupContextMenu('h3');
 
         $('#pcrtabletview').on('click', function () {
 
-            $('#fullembedcodeddd').css('max-width', '769px').css('margin-left', '6%').css('background-color' , '#333')
-            $('.morebutt').not('#closeembed').css('background-color' , '#fff').css('color' , '#333')
+            $('#fullembedcodeddd').css('max-width', '769px').css('margin-left', '6%').css('background-color', '#333')
+            $('.morebutt').not('#closeembed').css('background-color', '#fff').css('color', '#333')
             $(this).css('background-color', '#333').css('color', '#fff')
             $('body').css('background-color', '#333')
             $('#codeloaderpcrview').find('.makeit100now').each(function () {
@@ -515,11 +535,11 @@ setupContextMenu('h3');
 
         $('#pcrmobileview').on('click', function () {
 
-            $('#fullembedcodeddd').css('max-width', '400px').css('margin-left', '7.85%').css('background-color' , '#333')
-            $('.morebutt').not('#closeembed').css('background-color' , '#fff').css('color' , '#333')
+            $('#fullembedcodeddd').css('max-width', '400px').css('margin-left', '7.85%').css('background-color', '#333')
+            $('.morebutt').not('#closeembed').css('background-color', '#fff').css('color', '#333')
             $(this).css('background-color', '#333').css('color', '#fff')
             $('body').css('background-color', '#333')
-            
+
             $('#codeloaderpcrview').find('.width50c2').each(function () {
                 $(this).addClass('makeit100now');
             });
@@ -571,7 +591,7 @@ setupContextMenu('h3');
 
 
                     $('#EditandSubmitAL').on('click', function () {
-                  
+
                         $('.interedit').html($('#myhtmleditor').val())
                         loadnewcontent()
                     })
@@ -601,11 +621,11 @@ setupContextMenu('h3');
         // Loop through the words and remove them from the content
         wordsToRemove.forEach(function (word) {
             content = content.replace(new RegExp('\\b' + word + '\\b', 'g'), '')
-           
+
         });
 
         // Set the modified content back to the element
-        element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;' , '-').replaceAll('&ndash;' , '-').replaceAll('™' , '<span class="mytraded"></span>').replaceAll('®' , '<span class="myregd"></span>'));
+        element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '-').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>'));
 
 
 
@@ -970,8 +990,8 @@ setupContextMenu('h3');
 
     document.getElementById('mobilehidev2d').addEventListener('input', function () {
         if (this.checked) {
-           $('.onblock').addClass('hideonlyonmobile')
-           loadnewcontent()
+            $('.onblock').addClass('hideonlyonmobile')
+            loadnewcontent()
         } else {
             $('.onblock').removeClass('hideonlyonmobile')
             loadnewcontent()
@@ -982,8 +1002,8 @@ setupContextMenu('h3');
 
     document.getElementById('desktophidev2d').addEventListener('input', function () {
         if (this.checked) {
-           $('.onblock').addClass('hideonlyondesktop')
-           loadnewcontent()
+            $('.onblock').addClass('hideonlyondesktop')
+            loadnewcontent()
         } else {
             $('.onblock').removeClass('hideonlyondesktop')
             loadnewcontent()
@@ -1185,17 +1205,17 @@ setupContextMenu('h3');
 
     let isProgrammaticChangeRowMarginTop2 = false; // Flag to control the execution
 
-    $('#RowBackgroundColorlist').on('change', function() {
+    $('#RowBackgroundColorlist').on('change', function () {
         // Skip this handler if the change event was triggered programmatically
         if (isProgrammaticChangeRowMarginTop2) {
             return;
         }
-    
+
         var selectedOption = $(this).find('option:selected');
         var backgroundColor = selectedOption.val();
         var textColor = selectedOption.attr('value1');
-    
-        $('.onblock').each(function() {
+
+        $('.onblock').each(function () {
             var style = $(this).attr('style');
             if (typeof style !== 'undefined' && style !== false) {
                 var newStyle = style.replace(/background-color\s*:\s*[^;]+;?/gi, '');
@@ -1205,41 +1225,77 @@ setupContextMenu('h3');
                 $(this).attr('style', 'background-color: ' + backgroundColor + ' !important;');
             }
         });
-    
-        $('.onblock p').each(function() {
+
+        $('.onblock p').each(function () {
             this.style.setProperty('color', textColor, 'important');
         });
-    
+
         // Indicate that the next change event will be triggered programmatically
         isProgrammaticChangeRowMarginTop2 = true;
-       $(this).val('none').change(); // This will not cause the handler to execute its logic again
-       isProgrammaticChangeRowMarginTop2 = false; // Reset the flag immediately
-    
+        $(this).val('none').change(); // This will not cause the handler to execute its logic again
+        isProgrammaticChangeRowMarginTop2 = false; // Reset the flag immediately
+
         loadnewcontent();
     });
 
 
-    $('#Row-Border-Radius').on('change' , function() {
+    $('#Row-Border-Radius').on('change', function () {
         var selectedOption = $(this).find('option:selected');
         var boxmargin = selectedOption.attr('value')
-       $('.onblock').css('border-radius' , boxmargin)
-       $('#Row-Border-Radius').prop('selectedIndex', 0);
+        $('.onblock').css('border-radius', boxmargin)
+        $('#Row-Border-Radius').prop('selectedIndex', 0);
+        loadnewcontent();
     })
 
 
+    $('#Row-Padding-Radius').on('change', function () {
+        var selectedOption = $(this).find('option:selected');
+        var boxpadding = selectedOption.attr('value')
+        var maxtakin = 0; // Default value
+        var $onblock = $('.onblock'); // Cache the jQuery selector
+    
+        // Check for each class and update maxtakin accordingly
+        if ($onblock.hasClass('width100c')) {
+            maxtakin = 101;
+        }
+        if ($onblock.hasClass('width50c')) {
+            maxtakin = 50;
+        }
+        if ($onblock.hasClass('width33c')) {
+            maxtakin = 33;
+        }
+        if ($onblock.hasClass('width25c')) {
+            maxtakin = 25;
+        }
+        if ($onblock.hasClass('width20c')) {
+            maxtakin = 20;
+        }
+        var boxmaxwidth = ((maxtakin -1) - parseFloat(selectedOption.attr('value')*2)) + '%'
+
+        $('.onblock').css('padding', boxpadding+'%').css('margin-left' , '0px').css('max-width' , boxmaxwidth )
+        $('#Row-Padding-Radius').prop('selectedIndex', 0);
+        loadnewcontent();
+    })
+
+    $('#body-color').on('change', function () {
+        var selectedOption = $(this).find('option:selected');
+        var bodycolor = selectedOption.attr('value');
+        $('.informationcontent').attr('style', 'background-color: ' + bodycolor + ' !important;');
+        loadnewcontent();
+    });
 
     let isProgrammaticChangeRowMarginTop = false; // Flag to control the execution
 
-    $('#Row-Margin-Top').on('change', function() {
+    $('#Row-Margin-Top').on('change', function () {
         if (!isProgrammaticChangeRowMarginTop) {
             var selectedOption = $(this).find('option:selected');
             var boxmargin = selectedOption.attr('value');
             $('.onblock').css('margin-top', boxmargin + 'px').addClass('nomar');
-    
+
             // Set the flag to true before the programmatic change
             isProgrammaticChangeRowMarginTop = true;
             $(this).val('none').change();
-    
+
             // Reset the flag after the change
             isProgrammaticChangeRowMarginTop = false;
         }
@@ -1270,7 +1326,7 @@ setupContextMenu('h3');
                 // If mobile preview is currently visible, hide it, change width of pullthecode2, and update the button text
                 $mobilePreview.hide();
                 $pullTheCode.delay(200).animate({
-                    'width': '94%',
+                    'width': '91%',
                     'max-width': '1600px'
                 });
                 $(this).text('Show Mobile');
@@ -1297,21 +1353,38 @@ setupContextMenu('h3');
             $(this).css('background-color', '#fff').css('color', '#333')
 
             if (whichboxtoopen === 'Tools') {
-               $('#layoutbuilder-oc2').css('display' , 'none')
-               $('#myhtmleditor').show()
-               $('.internalscroller').show()
-               $('.toolboxhide').show()
-               $('.toolboxlayoutoptions').hide()
-               $('.layoutbuilder-oc').hide()
-
-            } else {
-             $('#layoutbuilder-oc2').css('display' , 'block')
-             $('#myhtmleditor').hide()
-             $('.internalscroller').hide()
-             $('.toolboxhide').hide()
-             $('.toolboxlayoutoptions').show()
-             $('.layoutbuilder-oc').show()
+                $('#layoutbuilder-oc2').css('display', 'none')
+                $('#myhtmleditor').show()
+                $('.internalscroller').show()
+                $('.toolboxhide').show()
+                $('.toolboxlayoutoptions').hide()
+                $('.layoutbuilder-oc').hide()
+                $('.openclose').show()
+            } if (whichboxtoopen == 'Rows') {
+                $('#layoutbuilder-oc2').css('display', 'none')
+                $('#myhtmleditor').show()
+                $('.internalscroller').show()
+                $('.titlebuilder-oc').hide()
+                $('.imagebuilder').hide()
+                $('.videocomponent').hide()
+                $('.mylinkbuilder').hide()
+$('.openclose').hide()
+                $('.toolboxhide').show()
+                $('.toolboxlayoutoptions').hide()
+                $('.layoutbuilder-oc').hide()
+                $('.myrowbuilder').slideDown()
             }
+             if (whichboxtoopen == 'Layout') {
+                $('#layoutbuilder-oc2').css('display', 'block')
+                $('#myhtmleditor').hide()
+                $('.internalscroller').hide()
+                $('.toolboxhide').hide()
+                $('.toolboxlayoutoptions').show()
+                $('.layoutbuilder-oc').show()
+            }  
+
+
+            
         })
 
 
@@ -1373,7 +1446,7 @@ setupContextMenu('h3');
 
 
         $('#closeembed').on('click', function () {
-           // $('#pcrdesktopview').click()
+            // $('#pcrdesktopview').click()
             $('#mymatrix4').hide()
             $('#programming').show()
             $('#resizable-div').show()
@@ -1424,7 +1497,7 @@ setupContextMenu('h3');
         document.addEventListener('keydown', function (event) {
             // Check if 'Shift' is pressed along with 'Enter'
             if (event.shiftKey && event.key === 'Enter') {
-                event.preventDefault(); 
+                event.preventDefault();
                 // Your custom code goes here
                 var selection = window.getSelection();
 
@@ -1460,7 +1533,7 @@ setupContextMenu('h3');
                     $('.colorlegend').hide()
                     $('#hidemainmobile').hide()
                     finalcheck = $('#findthecode2').html()
-                    $('#findthecode2').html(finalcheck.replaceAll('α' , 'a').replaceAll('×' , 'x').replaceAll('–' , '-').replaceAll('’' , "'").replaceAll('class="width100c     ui-' ,'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;' , '--').replaceAll('&ndash;' , '-').replaceAll('™' , '<span class="mytraded"></span>').replaceAll('®' , '<span class="myregd"></span>'))
+                    $('#findthecode2').html(finalcheck.replaceAll('α', 'a').replaceAll('×', 'x').replaceAll('–', '-').replaceAll('’', "'").replaceAll('class="width100c     ui-', 'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '--').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>'))
                     break;
                 case '#mymatrix2':
                     loadnewcontent();
@@ -1482,26 +1555,26 @@ setupContextMenu('h3');
                     $('#fullinterface').hide()
                     $('body').css('background-color', '#333')
 
-                    $('#codeloaderpcrview .readmoreclampdbutton').on('click' , function() {
+                    $('#codeloaderpcrview .readmoreclampdbutton').on('click', function () {
                         $(this).prev('p.clampclassd').toggleClass('expanded');
                     })
 
 
-                   
 
 
-$('.readmoreclampdbutton').on('click' , function() {
-    var currentText = $(this).text();
-     $('#' + ptagid).toggleClass("expanded");
-    if(currentText === "Read More") {
-        $(this).text('Read Less');
-        return false
-    } else {
-        $(this).text('Read More');
-        return false
-    }
-})
-                  
+
+                    $('.readmoreclampdbutton').on('click', function () {
+                        var currentText = $(this).text();
+                        $('#' + ptagid).toggleClass("expanded");
+                        if (currentText === "Read More") {
+                            $(this).text('Read Less');
+                            return false
+                        } else {
+                            $(this).text('Read More');
+                            return false
+                        }
+                    })
+
                     $('.colorlegend').hide()
                     break;
 
@@ -1551,7 +1624,7 @@ $('.readmoreclampdbutton').on('click' , function() {
                 $(this).addClass('interedit')
 
             })
-        
+
             var html = $('#pullthecode2').html()
             var beautifiedHtml = beautifyHtml(html);
             $('#beautycode').val(beautifiedHtml)
@@ -1561,13 +1634,13 @@ $('.readmoreclampdbutton').on('click' , function() {
         })
 
 
-        $('#myhelp2').on('click' , function() {
+        $('#myhelp2').on('click', function () {
 
             $('#myhelp').click()
 
         })
 
-        $('#ace').on('click' , function() {
+        $('#ace').on('click', function () {
             $('#myace').click()
         })
 
@@ -1663,7 +1736,7 @@ $('.readmoreclampdbutton').on('click' , function() {
                 $('.liverow').on('click', function () {
                     $('.liverow').removeClass('onblock')
                     $(this).addClass('onblock')
-              
+
                 })
 
                 $(".draggable").draggable({
@@ -1939,7 +2012,7 @@ $('.readmoreclampdbutton').on('click' , function() {
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
-          
+
             })
 
 
@@ -1987,7 +2060,7 @@ $('.readmoreclampdbutton').on('click' , function() {
 
         $('.addrow50').on('click', function () {
             $('.internalbuttons').slideDown()
-           
+
             $('.onblock').removeClass('onblock')
             $('.layoutbuilder').append(
                 '<div class="width100c" ><div class="width50c width50c2  layoutpale layoutpale50 liverow droppable onblock"></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable "></div></div>'
@@ -1996,7 +2069,7 @@ $('.readmoreclampdbutton').on('click' , function() {
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
-           
+
             })
             highlightedbackground()
             loadnewcontent()
@@ -2006,7 +2079,7 @@ $('.readmoreclampdbutton').on('click' , function() {
 
         $('.addrow25').on('click', function () {
             $('.internalbuttons').slideDown()
-           
+
             $('.onblock').removeClass('onblock')
             $('.layoutbuilder').append(
                 '<div class="width100c" ><div class="width25c width50c3  layoutpale layoutpale25 liverow droppable onblock"></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div></div>'
@@ -2015,7 +2088,7 @@ $('.readmoreclampdbutton').on('click' , function() {
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
-              
+
             })
 
             $('#EditandSubmitAL').on('click', function () {
@@ -2031,7 +2104,7 @@ $('.readmoreclampdbutton').on('click' , function() {
 
         $('.addrow4060').on('click', function () {
             $('.internalbuttons').slideDown()
-           
+
             $('.onblock').removeClass('onblock')
             $('.layoutbuilder').append(
                 '<div class="width100c" ><div class="width40c width50c3  layoutpale layoutpale40 liverow droppable onblock"></div><div class="width60c width50c3 layoutpale layoutpale60 liverow droppable "></div></div>'
@@ -2040,7 +2113,7 @@ $('.readmoreclampdbutton').on('click' , function() {
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
-          
+
             })
 
             $('#EditandSubmitAL').on('click', function () {
@@ -2055,7 +2128,7 @@ $('.readmoreclampdbutton').on('click' , function() {
 
         $('.addrow6040').on('click', function () {
             $('.internalbuttons').slideDown()
-           
+
             $('.onblock').removeClass('onblock')
             $('.layoutbuilder').append(
                 '<div class="width100c" ><div class="width60c width50c3 layoutpale layoutpale60 liverow droppable "></div><div class="width40c width50c3  layoutpale layoutpale40 liverow droppable onblock"></div></div>'
@@ -2064,7 +2137,7 @@ $('.readmoreclampdbutton').on('click' , function() {
             $('.liverow').on('click', function () {
                 $('.liverow').removeClass('onblock')
                 $(this).addClass('onblock')
-             
+
             })
 
             $('#EditandSubmitAL').on('click', function () {
@@ -2077,7 +2150,7 @@ $('.readmoreclampdbutton').on('click' , function() {
 
         })
 
-        $('.addrow-click').on('click' , function() {
+        $('.addrow-click').on('click', function () {
             $('.addrow').click()
         })
 
@@ -2087,15 +2160,15 @@ $('.readmoreclampdbutton').on('click' , function() {
             $('.layoutbuilder').append(
                 '<div class="width100c  layoutpale layoutpale100 liverow droppable onblock"></div>')
 
-                $('.liverow').on('click', function () {
-                    $('.liverow').removeClass('onblock');
-                    $(this).addClass('onblock');
+            $('.liverow').on('click', function () {
+                $('.liverow').removeClass('onblock');
+                $(this).addClass('onblock');
 
 
 
-                    highlightedbackground()
+                highlightedbackground()
 
-                });
+            });
 
 
 
@@ -2232,7 +2305,7 @@ $('.readmoreclampdbutton').on('click' , function() {
 
 
         $('.showthepreviewimage').on('click', function () {
-   
+
             imageselect = $(this).attr('prefix')
             imagename00 = $('#cinput1').val()
 
@@ -2368,8 +2441,8 @@ $('.readmoreclampdbutton').on('click' , function() {
         // Bind click handler to the button or element
         $('#cinput1-clickh2-comp').on('click', function () {
 
-            if($('#cinput1h2').val() === '') {
-               return false;
+            if ($('#cinput1h2').val() === '') {
+                return false;
             }
 
 
@@ -2544,21 +2617,21 @@ $('.readmoreclampdbutton').on('click' , function() {
 
             captureState()
 
-if($('#cinput3a').val() === '') {
-return false;
-}
+            if ($('#cinput3a').val() === '') {
+                return false;
+            }
 
             var min = 1000;
             var max = 9999;
             var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
 
-            
+
 
             newval = $('#cinput3a').val()
 
 
             if (htmlcodeyesno === 0) {
-                $('.interedit').append('<p id="ptag'+randomFourDigit+'">' + newval + '</p>')
+                $('.interedit').append('<p id="ptag' + randomFourDigit + '">' + newval + '</p>')
             } else {
                 $('.interedit').append(newval)
             }
@@ -2576,19 +2649,19 @@ return false;
         })
 
 
-$('#optionb4').on('change' , function() {
-    if (this.checked) {
-    $('.interedit p').addClass('clampclassd')
-    ptagid = $('.interedit p').attr('id')
-    $('.interedit').append('<span class="readmoreclampdbutton" onclick="toggleReadMore('+ptagid+')">Read More</span>')
-    toggleReadMore(ptagid)
-    $('.hidescripts').show()
-    } else {
-        $('.interedit p').removeClass('clampclassd')
-        $('.interedit').find('span.readmoreclampdbutton').remove();
-    }
-    loadnewcontent()
-})
+        $('#optionb4').on('change', function () {
+            if (this.checked) {
+                $('.interedit p').addClass('clampclassd')
+                ptagid = $('.interedit p').attr('id')
+                $('.interedit').append('<span class="readmoreclampdbutton" onclick="toggleReadMore(' + ptagid + ')">Read More</span>')
+                toggleReadMore(ptagid)
+                $('.hidescripts').show()
+            } else {
+                $('.interedit p').removeClass('clampclassd')
+                $('.interedit').find('span.readmoreclampdbutton').remove();
+            }
+            loadnewcontent()
+        })
 
 
         function adjustHeight() {
@@ -2752,7 +2825,7 @@ $('#optionb4').on('change' , function() {
             }
 
             $('img.promoimg21').on("contextmenu", function (e) {
-                e.preventDefault(); 
+                e.preventDefault();
                 currentImage = $(this); // Set the current image
                 $('#customModal').show(); // Show the custom modal
             });
@@ -2887,14 +2960,14 @@ $('#optionb4').on('change' , function() {
 
         let undoStack = [];
         let redoStack = []; // Stack for redo functionality
-        
+
         // Function to capture the current state before making changes
         function captureState() {
             const currentState = $('.interedit').html(); // Adjust selector as needed
             undoStack.push(currentState);
             redoStack = []; // Clear redo stack since new action resets the future path
         }
-        
+
         // Function to undo to the last state
         function undoChange() {
             if (undoStack.length > 0) {
@@ -2903,7 +2976,7 @@ $('#optionb4').on('change' , function() {
                 $('.interedit').html(lastState); // Adjust selector as needed
             }
         }
-        
+
         // Function to redo to the next state
         function redoChange() {
             if (redoStack.length > 0) {
@@ -2912,16 +2985,16 @@ $('#optionb4').on('change' , function() {
                 $('.interedit').html(nextState); // Adjust selector as needed
             }
         }
-        
+
         // Function to delete highlighted text
         function deleteHighlightedText() {
             captureState(); // Capture the current state before deletion for undo functionality
             document.execCommand('delete', false, ''); // Use execCommand for simplicity
             redoStack = []; // Clear redoStack as the future path is reset
         }
-        
+
         // Key Commands
-        $(document).keydown(function(e) {
+        $(document).keydown(function (e) {
             if (e.key === 'z' && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
                 e.preventDefault(); // Prevent default undo behavior
                 undoChange();
@@ -2931,11 +3004,11 @@ $('#optionb4').on('change' , function() {
             } else if (e.key === 'Delete' && e.ctrlKey) {
                 e.preventDefault(); // Prevent default delete behavior
                 deleteHighlightedText();
-            }  else if (e.key === 'e' && e.ctrlKey) { 
-                e.preventDefault(); 
+            } else if (e.key === 'e' && e.ctrlKey) {
+                e.preventDefault();
                 $('#superscriptbutton').click()
-            }  else if (e.key === 'd' && e.ctrlKey) { 
-                e.preventDefault(); 
+            } else if (e.key === 'd' && e.ctrlKey) {
+                e.preventDefault();
                 $('#subscriptbutton').click()
             }
         });
@@ -2949,50 +3022,50 @@ $('#optionb4').on('change' , function() {
             var selectedText = selection.toString();
             var textWrapper = $(this).val();
             var headerNewColor = ''; // Assuming this variable is declared elsewhere or will be used later
-        
+
             // Create a new HTML element with the selected text wrapped in the specified tag
             var contentWrapped = '<' + textWrapper + ' ' + headerNewColor + '>' + selectedText + '</' + textWrapper + '>';
-        
+
             // Get the selected range
             var range = selection.getRangeAt(0);
-        
+
             // Create a new document fragment with the wrapped content
             var fragment = range.createContextualFragment(contentWrapped);
-        
+
             // Replace the selected text with the new HTML
             range.deleteContents();
             range.insertNode(fragment);
-        
+
             // Collapsing the range after insertion is optional and depends on the desired UX
             // range.collapse(false);
-        
+
             // Clear the selection to prevent confusion
             selection.removeAllRanges();
-        
+
             // Assuming you're doing some post-processing on another element's content
             var element = $('#findthecode2');
             var content = $('#pullthecode2').html(); // Use .html() instead of .text() if you're working with HTML content
-        
+
             // Your content replacement logic seems to be cleaning up specific HTML entities and classes
             // Ensure this logic is correctly applied to the content you're manipulating
             content = content.replaceAll('&times;', 'x')
-                             .replaceAll('&alpha;', 'a')
-                             .replaceAll('&reg;', '<span class="myregd"></span>')
-                             .replaceAll('&trade;', '<span class="mytraded"></span>')
-                             .replaceAll('&mdash;', '-')
-                             .replaceAll('&ndash;', '-')
-                             .replaceAll('™', '<span class="mytraded"></span>')
-                             .replaceAll('®', '<span class="myregd"></span>');
-        
+                .replaceAll('&alpha;', 'a')
+                .replaceAll('&reg;', '<span class="myregd"></span>')
+                .replaceAll('&trade;', '<span class="mytraded"></span>')
+                .replaceAll('&mdash;', '-')
+                .replaceAll('&ndash;', '-')
+                .replaceAll('™', '<span class="mytraded"></span>')
+                .replaceAll('®', '<span class="myregd"></span>');
+
             element.html(content); // Use .html() if the content includes HTML tags
-        
+
             // Load new content after updating the DOM
-            
+
         });
 
 
 
-      
+
 
 
 
@@ -3059,16 +3132,20 @@ $('#optionb4').on('change' , function() {
             currentAnchor = null;
         });
 
-       
+
 
         $('#layoutbuilder-oc2').click()
 
 
         $('.textaligner').on('click', function () {
             cssadd = $(this).attr('cssadd')
-            $('.interedit p').css('text-align', cssadd);
-            $('.interedit .pd-header-tag h2').css('text-align', cssadd);
-            $('.interedit .pd-header-tag h3').css('text-align', cssadd);
+            $('.interedit').css('text-align', cssadd);
+            $('.interedit p').css('text-align', cssadd)
+            $('.interedit .pd-header-tag').css('text-align', cssadd).css('line-height' , '116%');
+            $('.interedit .pd-header-tag h2 ,.interedit .pd-header-tag h3').attr('style', function(i, style) {
+                return style + ';margin-bottom: 0px !important;';
+            });
+           // $('.interedit .pd-header-tag h3').css('text-align', cssadd);
             editorcopy = $('.interedit').html()
             $('#myhtmleditor').val(editorcopy)
             loadnewcontent()
@@ -3122,7 +3199,7 @@ $('#optionb4').on('change' , function() {
                 console.log('Oops, unable to copy');
             }
 
-         
+
         });
 
 
@@ -3152,9 +3229,9 @@ $('#optionb4').on('change' , function() {
         $('#loadedimagemessage').show()
     });
 
-       $("#sidetoolset").delay(600).animate({
-                opacity: 1
-            }, 1000); // 1000 milliseconds = 1 second
+    $("#sidetoolset").delay(600).animate({
+        opacity: 1
+    }, 1000); // 1000 milliseconds = 1 second
 
     document.getElementById('imgfileInput').addEventListener('change', function (event) {
         const files = event.target.files; // Get selected files
@@ -3195,33 +3272,33 @@ $('#optionb4').on('change' , function() {
                 'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images' +
                 $('#catalogselector').val() + desktoppictures)
         })
-        
-     
+
+
 
     });
 
     /* Mac Version March 24th */
 
 
-    $(document).ready(function() {
-        $('.hover-item').each(function() { // Iterate over each .hover-item
-          var timeoutId; // Variable to hold the timeout, unique to each .hover-item
-      
-          $(this).hover(
-            function() {
-              // Clear any timeout to prevent it from hiding prematurely
-              clearTimeout(timeoutId);
-              // Show this popup
-              $(this).find('.popup').removeClass('hidden').addClass('visible');
-            }, 
-            function() {
-              // Reference to the popup that needs to be hidden
-              var $popup = $(this).find('.popup');
-              // Set a timeout to hide this popup
-              timeoutId = setTimeout(function() {
-                $popup.removeClass('visible').addClass('hidden');
-              }, 300); // Adjust delay here
-            }
-          );
+    $(document).ready(function () {
+        $('.hover-item').each(function () { // Iterate over each .hover-item
+            var timeoutId; // Variable to hold the timeout, unique to each .hover-item
+
+            $(this).hover(
+                function () {
+                    // Clear any timeout to prevent it from hiding prematurely
+                    clearTimeout(timeoutId);
+                    // Show this popup
+                    $(this).find('.popup').removeClass('hidden').addClass('visible');
+                },
+                function () {
+                    // Reference to the popup that needs to be hidden
+                    var $popup = $(this).find('.popup');
+                    // Set a timeout to hide this popup
+                    timeoutId = setTimeout(function () {
+                        $popup.removeClass('visible').addClass('hidden');
+                    }, 300); // Adjust delay here
+                }
+            );
         });
-      });
+    });

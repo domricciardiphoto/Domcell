@@ -12,6 +12,8 @@
             background-color: black;
             margin: 0px;
             padding: 0px;
+            background-size: cover;
+            background-color: #004eae;
         }
 
         .container {
@@ -434,7 +436,13 @@
                 padding-bottom: 20px;
             }
 
+
+          
         }
+
+        #aprilfools {
+                display: none;
+            }
     </style>
 
 
@@ -443,10 +451,11 @@
 
     <div class="container">
         <div class="intro">
-            <img src="assets/icons/snoop.png" width="150" height="109" />
+            <div id="aprilfools2" style="width: 100%; float: left;"> <img src="assets/snoppyconfused.gif" width="30%" /></div>
+           <div id="aprilfools" style="width: 100%; float: left; font-size: 1.5rem;"> <img src="assets/aprilefools.jpg" width="30%" /><br>Just kidding! Its Loading lol</div>
 
-           <span>DOMCELL</span> <span style="text-shadow: 10px 10px 10px #023020;">8.7</span><span class="smaller" style="line-height: 10px;">&nbsp;&nbsp;&nbsp;Linus Edition v8.7.31</span><br>
-            <div class="smaller" style="width: 100%; text-align:center;">Do what you love and you`ll never work a day in your life!</div></div>
+            <span id="aprilfools3">Wait... No Domcell?</span> <span style="text-shadow: 10px 10px 10px #023020;"></span><span class="smaller" style="line-height: 10px;">
+            </div>
     </div>
     
 </body>
@@ -461,6 +470,14 @@
 
 $(document).ready(function() {
 
+
+    $('#aprilfools').delay(2600).fadeIn(function() {
+        setTimeout($('#aprilfools2').hide() , '2600')
+        setTimeout($('#aprilfools3').hide() , '2600')
+        $('.intro').delay(3600).fadeOut(function () {
+      document.location = 'gettingstarted.html'
+     })
+    });
   //$('.intro').delay(1800).fadeOut(function () {
     //  document.location = 'gettingstarted.html'
       // })

@@ -93,7 +93,7 @@ function createMainWindow() {
     }
 
   })
-  win.loadFile(path.join(__dirname, 'intro.html'))
+  win.loadFile(path.join(__dirname, 'intro2.html'))
 
   // Save window state on close
   win.on('close', () => {
