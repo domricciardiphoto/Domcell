@@ -1407,13 +1407,13 @@
             cursor: pointer;
             border: 1px solid #ccc;
             border-bottom: 0px;
-            margin-right: 1%;
+            margin-right: 2% !important;
             border-radius: 5px 5px 0px 0px;
             background-color: #fff;
             color: #333;
             width: auto !important;
-            padding-left: 5px;
-            padding-right: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         .mytoolsboxtop2 ,.mytoolsboxtop3 {

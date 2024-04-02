@@ -15,6 +15,7 @@
     var headernewcolor = ''
     var headernewcolor2 = 'style="color:#034694 !important"'
     var htmlcodeyesno = 0;
+    var htmlcodeyesno2 = 0;
     var faqyes = 0;
 
     function saveSelection() {
@@ -1023,6 +1024,15 @@
 
     })
 
+    document.getElementById('htmlcodeyesno2').addEventListener('input', function () {
+        if (this.checked) {
+            htmlcodeyesno2 = 1
+        } else {
+            htmlcodeyesno2 = 0
+        }
+
+    })
+
 
     document.getElementById('cinput1').addEventListener('input', function () {
 
@@ -1284,8 +1294,36 @@
         loadnewcontent();
     });
 
+    function updateSliderValue(value) {
+        document.getElementById('sliderValue').textContent = value;
+        $('.interedit p').css('line-height', value + 'px')
+        $('.interedit h2').css('line-height', value + 'px')
+        $('.interedit h3').css('line-height', value + 'px')
+        $('.interedit h4').css('line-height', value + 'px')
+        loadnewcontent();
+    }
+
+    function updateSliderValue2(value) {
+        document.getElementById('sliderValue2').textContent = value;
+        $('.onblock').css('margin-top', value + 'px')
+        loadnewcontent();
+    }
+
+    function updateSliderValue3(value) {
+        document.getElementById('sliderValue3').textContent = value;
+        $('.onblock').css('padding', value + 'px').css('max-width' , '-webkit-fill-available')
+        loadnewcontent();
+    }
+
+    function updateSliderValue4(value) {
+        document.getElementById('sliderValue4').textContent = value;
+        $('.onblock').css('border-radius', value + 'px')
+        loadnewcontent();
+    }
+
     let isProgrammaticChangeRowMarginTop = false; // Flag to control the execution
 
+    /*
     $('#Row-Margin-Top').on('change', function () {
         if (!isProgrammaticChangeRowMarginTop) {
             var selectedOption = $(this).find('option:selected');
@@ -1301,7 +1339,7 @@
         }
         loadnewcontent();
     });
-
+*/
 
     $(document).ready(function () {
         var mysize
@@ -1420,6 +1458,7 @@ $('.openclose').hide()
 
 
         $('.layoutloader').on('click', function () {
+            $('.hidecss').show()
             $('.interedit').removeClass('interedit')
             my100layout = eval($(this).attr('layout'));
             $('.informationcontent').append(my100layout);
@@ -1820,6 +1859,7 @@ $('.openclose').hide()
         });
 
         $('#addrow2x2').on('click', function () {
+            $('.hidecss').show()
             $('.interedit').removeClass('interedit')
             $('.onblock').html(
                 '<div class="width50c  width50c2 liveelement in910 layoutpale layoutpale50 interedit"></div><div class="width50c  width50c2 liveelement in910 layoutpale  layoutpale50"></div>'
@@ -1840,6 +1880,7 @@ $('.openclose').hide()
         })
 
         $('#addrow3x3').on('click', function () {
+            $('.hidecss').show()
             $('.interedit').removeClass('interedit')
             $('.onblock').html(
                 '<div class="width33c width50c2 liveelement in910 layoutpale layoutpale33 interedit"></div><div class="width33c width50c2 liveelement in910 layoutpale layoutpale33"></div><div class="width33c width50c2 liveelement in910 layoutpale layoutpale33"></div>'
@@ -1857,6 +1898,7 @@ $('.openclose').hide()
 
 
         $('#addrow4x4').on('click', function () {
+            $('.hidecss').show()
             $('.interedit').removeClass('interedit')
             $('.onblock').html(
                 '<div class="width20c width50c3 liveelement in910 layoutpale layoutpale25  interedit"></div><div class="width20c width50c3 liveelement in910 layoutpale layoutpale25"></div><div class="width20c width50c3 liveelement in910 layoutpale layoutpale25"></div><div class="width20c width50c3 liveelement in910 layoutpale layoutpale25"></div>'
@@ -1873,6 +1915,7 @@ $('.openclose').hide()
         })
 
         $('#addrow2x8').on('click', function () {
+            $('.hidecss').show()
             $('.interedit').removeClass('interedit')
             $('.onblock').html(
                 '<div class="width20c width50c2 liveelement in910 layoutpale layoutpale20 interedit"></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"></div>'
@@ -1889,6 +1932,7 @@ $('.openclose').hide()
         })
 
         $('#addrow4x6').on('click', function () {
+            $('.hidecss').show() 
             $('.interedit').removeClass('interedit')
             $('.onblock').html(
                 '<div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div><div class="width60c width50c2  liveelement in910 layoutpale interedit layoutpale60"></div>'
@@ -1905,6 +1949,7 @@ $('.openclose').hide()
 
 
         $('#addrow4x6a').on('click', function () {
+            $('.hidecss').show()
             $('.interedit').removeClass('interedit')
             $('.onblock').html(
                 '<div class="width60c width50c2  liveelement in910 layoutpale interedit layoutpale60"></div><div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div>'
@@ -1920,6 +1965,7 @@ $('.openclose').hide()
         })
 
         $('#addrow2x7').on('click', function () {
+            $('.hidecss').show()
             $('.interedit').removeClass('interedit')
             $('.onblock').html(
                 '<div class="width25c width50c2 liveelement in910 layoutpale layoutpale25 interedit"></div><div class="width75c width50c2 liveelement in910 layoutpale layoutpale75"></div>'
@@ -1932,11 +1978,13 @@ $('.openclose').hide()
             destructiveoptions()
             clickanddeleterows()
             loadnewcontent()
+
         })
 
 
 
         $('#addrowc1xc1').on('click', function () {
+            $('.hidecss').show()
             $('.interedit').removeClass('interedit')
             $('.informationcontent').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100 interedit"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div></div>'
@@ -1955,6 +2003,7 @@ $('.openclose').hide()
         })
 
         $('#addrowcxc').on('click', function () {
+            $('.hidecss').show()
             $('.informationcontent').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable onblock"><div class="width100c liveelement in910 layoutpale layoutpale100 "></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"></div></div>'
             );
@@ -1971,6 +2020,7 @@ $('.openclose').hide()
         })
 
         $('#addrowc2xc8').on('click', function () {
+            $('.hidecss').show()
             $('.informationcontent').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable onblock"><div class="width100c liveelement in910 layoutpale layoutpale100"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width20c width50c2 liveelement in910 layoutpale layoutpale20"></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"></div><div class="width20c width50c2 liveelement in910 layoutpale layoutpale20"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width20c width50c2 liveelement in910 layoutpale layoutpale20"></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"></div></div>'
             );
@@ -1989,6 +2039,7 @@ $('.openclose').hide()
 
 
         $('#addrowc4xc6').on('click', function () {
+            $('.hidecss').show()
             $('.informationcontent').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable onblock"><div class="width100c liveelement in910 layoutpale layoutpale100 interedit"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width40c width50c2 liveelement in910 layoutpale layoutpale40"></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60"></div></div>'
             );
@@ -2005,6 +2056,7 @@ $('.openclose').hide()
         })
 
         $('#addactiverow').on('click', function () {
+            $('.hidecss').show()
             $('.layoutbuilder').append(
                 '<div class="width100c  layoutpale layoutpale100 liverow droppable onblock"><div class="width100c in910 layoutpale layoutpale100 interedit"></div></div>'
             )
@@ -2019,7 +2071,7 @@ $('.openclose').hide()
 
             $('.liveelement').on('click', function () {
                 $('#myhtmleditor').val($(this).html())
-
+                $('.hidecss').show()
                 $('.liveelement').removeClass('interedit')
                 $(this).addClass('interedit')
                 //$('#fixthecode').val($(this).html())
@@ -2060,7 +2112,7 @@ $('.openclose').hide()
 
         $('.addrow50').on('click', function () {
             $('.internalbuttons').slideDown()
-
+            $('.hidecss').show()
             $('.onblock').removeClass('onblock')
             $('.layoutbuilder').append(
                 '<div class="width100c" ><div class="width50c width50c2  layoutpale layoutpale50 liverow droppable onblock"></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable "></div></div>'
@@ -2079,7 +2131,7 @@ $('.openclose').hide()
 
         $('.addrow25').on('click', function () {
             $('.internalbuttons').slideDown()
-
+            $('.hidecss').show()
             $('.onblock').removeClass('onblock')
             $('.layoutbuilder').append(
                 '<div class="width100c" ><div class="width25c width50c3  layoutpale layoutpale25 liverow droppable onblock"></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div><div class="width25c width50c3 layoutpale layoutpale25 liverow droppable "></div></div>'
@@ -2104,7 +2156,7 @@ $('.openclose').hide()
 
         $('.addrow4060').on('click', function () {
             $('.internalbuttons').slideDown()
-
+            $('.hidecss').show()
             $('.onblock').removeClass('onblock')
             $('.layoutbuilder').append(
                 '<div class="width100c" ><div class="width40c width50c3  layoutpale layoutpale40 liverow droppable onblock"></div><div class="width60c width50c3 layoutpale layoutpale60 liverow droppable "></div></div>'
@@ -2128,7 +2180,7 @@ $('.openclose').hide()
 
         $('.addrow6040').on('click', function () {
             $('.internalbuttons').slideDown()
-
+            $('.hidecss').show()
             $('.onblock').removeClass('onblock')
             $('.layoutbuilder').append(
                 '<div class="width100c" ><div class="width60c width50c3 layoutpale layoutpale60 liverow droppable "></div><div class="width40c width50c3  layoutpale layoutpale40 liverow droppable onblock"></div></div>'
@@ -2151,10 +2203,12 @@ $('.openclose').hide()
         })
 
         $('.addrow-click').on('click', function () {
+            $('.hidecss').show()
             $('.addrow').click()
         })
 
         $('.addrow').on('click', function () {
+            $('.hidecss').show()
             $('.onblock').removeClass('onblock');
             $('.internalbuttons').slideDown()
             $('.layoutbuilder').append(
@@ -2182,6 +2236,7 @@ $('.openclose').hide()
                     var mysize = $(ui.draggable).attr('size');
                     var mypale = $(ui.draggable).attr('pale');
                     $('.interedit').removeClass('interedit')
+                    $('.hidecss').show()
                     if (mysize !== undefined && mysize !== "") {
                         $(this).append('<div class="' + mysize +
                             ' in910 layoutpale interedit layoutpale' + mypale +
@@ -2626,24 +2681,42 @@ $('.openclose').hide()
             var randomFourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
 
 
-
             newval = $('#cinput3a').val()
 
 
-            if (htmlcodeyesno === 0) {
-                $('.interedit').append('<p id="ptag' + randomFourDigit + '">' + newval + '</p>')
+            if (htmlcodeyesno === 0 & htmlcodeyesno2 === 0) {
+                $('.interedit').append('<p id="ptag' + randomFourDigit + '">' + newval + '</p>');
+                loadnewcontent()
+                $('#cinput3a').val('')
+                   layoutmode = 0
+                   $('.clearsection').on('click', function () {
+                    $('.interedit').html('')
+                })
+                return false;
+            } if (htmlcodeyesno2 === 1) {
+                $('.informationcontent').parent('div').parent('div').prepend(newval)
+                loadnewcontent()
+                $('#cinput3a').val('')
+                $('.clearsection').on('click', function () {
+                    $('.interedit').html('')
+                })
+            layoutmode = 0
+                return false;
             } else {
                 $('.interedit').append(newval)
+                loadnewcontent()
+                $('#cinput3a').val('')
+                $('.clearsection').on('click', function () {
+                    $('.interedit').html('')
+                })
+            layoutmode = 0
             }
 
-            $('#cinput3a').val('')
-            layoutmode = 0
+            
 
-            loadnewcontent()
+           
 
-            $('.clearsection').on('click', function () {
-                $('.interedit').html('')
-            })
+            
 
 
         })
