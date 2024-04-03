@@ -14,6 +14,7 @@
     <style>
         body {
             user-select: none;
+            
         }
 
         #EditandSubmitAL {
@@ -93,6 +94,19 @@
         .hidecss {
             display: none;
         }
+
+        .outsideplugins {
+            border: 1px solid #ccc;
+            background-color: #666;
+            padding: 5px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 0.7rem;
+            color: yellow;
+        }
+
+
+        
     </style>
 </head>
 
@@ -241,6 +255,13 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                     <span class="unselectable-text"> 100% Width Layouts</span>
                 </div>
                 <div class="width100c  ">
+               
+                    <label for="rangeSliderow">Add Rows: <span id="sliderValuerow">2</span></label>
+                    <input type="range" id="rangeSliderow" name="rangeSliderow" min="1" max="20" value="2" oninput="updateSliderValuerow(this.value)">
+
+                   
+                    <button class="createlayoutslider" style="width: 92%; color: #fff; background-color: transparent; border: 1px solid #ccc; padding-top: 7px; padding-bottom: 7px; margin-top: 10px;">Create Multiple Rows</button>
+                    <!--
 
                     <div class="width100c">
                         <button class="secondlauyout layoutloader unselectable-text"
@@ -250,6 +271,8 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                             style="background-color: transparent; color: #fff;border: 1px solid orange;"
                             id="wid100code2" layout="wid100code2">Width 100 x2</button>
                     </div>
+
+                    
                     <div class="width100c">
                         <button class="secondlauyout layoutloader unselectable-text"
                             style="background-color: transparent; color: #fff;border: 1px solid orange;"
@@ -258,9 +281,11 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                             style="background-color: transparent; color: #fff;border: 1px solid orange;"
                             id="wid100code4" layout="wid100code4">Width 100 x4</button>
                     </div>
+
+-->
                 </div>
 
-
+<!--
                 <div class="width100c  " style="margin-top: 5px;">
 
                     <button class="secondlauyout layoutloader unselectable-text"
@@ -273,6 +298,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                 </div>
 
+-->
                 <div class="width100c ">
                     <div class="width100c findthecode2 findthecode2"
                         style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -5px; margin-top: 10px;">
@@ -2098,7 +2124,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                     <div class="width60c " style="font-size: 90% !important;">
                         HTML
-                        Componet
+                      
                         Editor
                         and Copy Correction
                     </div>
@@ -2381,7 +2407,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
                 <div class="openthematrix" mymatrix="mymatrix9" style="border-radius: 5px 5px 0px 0px; float: left;">
-                    <strong>Bad Charater Cleaner</strong></div>
+                    <strong>Plugins & Tools</strong></div>
 
                 <div class="openthematrix" mymatrix="mymatrix1" style="border-radius: 5px 5px 0px 0px; "><strong>Final
                         Code</strong></div>
@@ -2528,8 +2554,19 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
             </script>
 
             <div id="mymatrix9" class="width100c closethematrix" style="width: 94%; margin-left: 4%;">
-                <div class="width100c">
-                    <iframe width="100%" height="768" src="https://phrasefix.com/tools/remove-special-characters/"
+                <div class="width100c" style="margin-top: 10px;">
+                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button  class="outsideplugins"  whaturl="bannersheduler.html" >Domcell Banner Schedular ></button></div>
+
+               <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"  whaturl="https://phrasefix.com/tools/remove-special-characters/">Remove Special Characters Tool ></button></div>
+               <div class="width33cg" style="width: auto; margin-right: 10px;"><button  class="outsideplugins"  whaturl="https://kangax.github.io/html-minifier/" >HTML Minifer ></button></div>
+
+               <div class="width33cg" style="width: auto; margin-right: 10px;"><button  class="outsideplugins"  whaturl="https://www.story321.org/" >AI Story Generator ></button></div>
+
+             
+
+                </div>
+                <div class="width100c" style="background-color: #fff; border: 1px solid #ccc;">
+                    <iframe id="outslidepluginsout" width="100%" height="768" src="https://phrasefix.com/tools/remove-special-characters/"
                         title="Google Documents" allowfullscreen></iframe>
                 </div>
             </div>
@@ -2911,6 +2948,9 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 <div class="width100c colorlegend unselectable-text"
                     style="margin-bottom: 10px; background-color: #334; margin-top: 0px; border-top: 4px solid #fff;">
                     <ul style="margin-bottom: 35px;">
+                        <li>Ctrl + Delete = Reload</li>
+                        <li>F1 = Go to Start Sreen</li> 
+                        <li>F11 = Full Screen</li> 
                         <li>Ctrl + B = Bold Text</li>
                         <li>Ctrl + E = Subscript</li>
                         <li>Ctrl + D = Superscript</li>

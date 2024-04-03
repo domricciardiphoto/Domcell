@@ -83,6 +83,12 @@ function createMainWindow() {
     titleBarOverlay: true,
     allowRunningInsecureContent: true,
     navigateOnDragDrop: true,
+
+    width: initialState.width || 800, // Use saved dimensions if available
+    height: initialState.height || 600,
+    x: initialState.x,
+    y: initialState.y,
+
     webPreferences: {
       nodeIntegration:true,
       contextIsolation:false, 
@@ -93,7 +99,10 @@ function createMainWindow() {
     }
 
   })
-  win.loadFile(path.join(__dirname, 'intro.html'))
+  win.loadFile(path.join(__dirname, 'gettingstarted.html'))
+
+  const urlToLoad = initialState.url || 'path/to/default/url';
+  win.loadURL(urlToLoad);
 
   // Save window state on close
   win.on('close', () => {
@@ -436,10 +445,16 @@ app.on('ready', () => {
   autoUpdater.checkForUpdatesAndNotify()
   const mainMenu = Menu.buildFromTemplate(menu)
   Menu.setApplicationMenu(mainMenu)
-  globalShortcut.register('CTRL+R', () => mainWindow.reload())
-  globalShortcut.register('CTRL+D', () => mainWindow.toggleDevTools())
-  globalShortcut.register('CTRL+H', () => gohome())
+  globalShortcut.register('CTRL+Delete', () => win.reload())
+  globalShortcut.register('CTRL+D', () => win.toggleDevTools())
+  globalShortcut.register('F1', () => gohome())
 
+
+  globalShortcut.register('F11', () => {
+    if(win) {
+      win.setFullScreen(!win.isFullScreen());
+    }
+  });
 
 })
 

@@ -17,7 +17,8 @@
     var htmlcodeyesno = 0;
     var htmlcodeyesno2 = 0;
     var faqyes = 0;
-
+    var mycount = 0
+    var addmut = 0
     function saveSelection() {
         if (window.getSelection) {
             var sel = window.getSelection();
@@ -309,8 +310,24 @@
         }
 
         function attachDoubleClickHandler(paragraph) {
-            paragraph.addEventListener('dblclick', function () {
-                enableEditing(paragraph);
+            let clickCount = 0; // Initialize click counter
+            let clickTimer = null; // Initialize timer
+        
+            paragraph.addEventListener('click', function() {
+                clickCount++; // Increment click count on each click
+        
+                if (clickCount === 1) {
+                    // Start a timer if this is the first click
+                    clickTimer = setTimeout(function() {
+                        clickCount = 0; // Reset click count after the timeout
+                    }, 500); // Set timeout (400ms). Adjust as needed.
+                } else if (clickCount === 3) {
+                    // If it's the third click, call the function to enable editing
+                    enableEditing(paragraph);
+        
+                    clearTimeout(clickTimer); // Clear the timer
+                    clickCount = 0; // Reset click count
+                }
             });
         }
 
@@ -1294,6 +1311,45 @@
         loadnewcontent();
     });
 
+
+    $('.outsideplugins').on('click' , function() {
+       wto = $(this).attr('whaturl');
+       $('#outslidepluginsout').attr('src' , wto)
+       $('.outsideplugins').css('background-color' , '#666')
+       $(this).css('background-color' , '#333')
+    })
+
+
+    function updateSliderValuerow(value) {
+        document.getElementById('sliderValuerow').textContent = value;
+    }
+    
+    $('.createlayoutslider').on('click', function() {
+        var addmutiplerows = parseInt(document.getElementById('sliderValuerow').textContent);
+        $('.hidecss').show();
+        $('.interedit').removeClass('interedit');
+    
+        var mycount = 0; // Initialize `mycount` before the loop
+        while (mycount < addmutiplerows) { // Corrected variable name here
+            $('.informationcontent').append(
+                '<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"></div></div>'
+            );
+            mycount++; // Increment `mycount` to eventually meet the loop's exit condition
+        }
+
+        $('.liveelement').on('click', function () {
+            $('.interedit').removeClass('interedit')
+            $(this).addClass('interedit')
+            $('#myhtmleditor').val($(this).html())
+        })
+
+        destructiveoptions()
+        clickanddeleterows()
+        loadnewcontent()
+
+
+    });
+
     function updateSliderValue(value) {
         document.getElementById('sliderValue').textContent = value;
         $('.interedit p').css('line-height', value + 'px')
@@ -1599,6 +1655,21 @@ $('.openclose').hide()
                     })
 
 
+                    $('a').not('.outsidelink').on('click', function (e) {
+                        e.preventDefault();
+                        wheretogo = $(this).attr('href');
+                        gotothelinkfunction(wheretogo)
+    
+                        var $clickedLink = $(this);
+    
+                        $('#noBtn').off('click').on('click', function () {
+                            $clickedLink.replaceWith($clickedLink.text());
+                            loadnewcontent()
+                            document.getElementById("myModal").style.display =
+                                "none";
+                        })
+    
+                    });
 
 
 
@@ -1620,6 +1691,9 @@ $('.openclose').hide()
                 case '#mymatrix5':
                     loadnewcontent();
                     $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
+
+
+
 
                     break;
 
