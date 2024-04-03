@@ -1315,7 +1315,7 @@
     $('.outsideplugins').on('click' , function() {
        wto = $(this).attr('whaturl');
        $('#outslidepluginsout').attr('src' , wto)
-       $('.outsideplugins').css('background-color' , '#666')
+       $('.outsideplugins').css('background-color' , '#000')
        $(this).css('background-color' , '#333')
     })
 

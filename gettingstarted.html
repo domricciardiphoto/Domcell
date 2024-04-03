@@ -103,7 +103,7 @@ box-shadow:inset 0 0 10px 5px #000000;
       border-radius: 10px 10px 10px 10px !important;
     }
 
-    .fadin {
+    .fadin , #legacy {
       opacity: 0;
     }
   </style>
@@ -120,6 +120,7 @@ box-shadow:inset 0 0 10px 5px #000000;
 <div style="width: 100%; float: left; text-align: left; margin-bottom: 10px; font-size: 2rem; font-family: Arial, Helvetica, sans-serif;">WELCOME TO DOMCELL<span class="fadin"> 9</span> </div>
 
       <div style="width: 100%; float: left;">
+
         <div class="blocker-holder">
           <a href="tool-badgebuilder.html">
             <div class="blocker"
@@ -224,6 +225,7 @@ box-shadow:inset 0 0 10px 5px #000000;
 
   </div>
 
+ 
 </body>
 
 </html>
@@ -245,4 +247,5 @@ box-shadow:inset 0 0 10px 5px #000000;
 
   })
   $('.center-box').delay(1000).animate({zoom: '1'}, 3000)
+  $('#legacy').delay(4000).animate({'opacity' : '1'} , 2000)
 </script>
