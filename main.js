@@ -446,8 +446,8 @@ app.on('ready', () => {
   const mainMenu = Menu.buildFromTemplate(menu)
   Menu.setApplicationMenu(mainMenu)
   globalShortcut.register('CTRL+Delete', () => win.reload())
-  globalShortcut.register('CTRL+D', () => win.toggleDevTools())
-  globalShortcut.register('F1', () => gohome())
+  //globalShortcut.register('CTRL+D', () => win.toggleDevTools())
+  //globalShortcut.register('F1', () => gohome())
 
 
   globalShortcut.register('F11', () => {

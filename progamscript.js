@@ -344,6 +344,8 @@
 
 
 
+
+
         $('p').off().on('contextmenu', function (e) {
             e.preventDefault()
             $('.interedit').removeClass('interedit')
@@ -1643,6 +1645,7 @@
 
             switch (whatmatrix) {
                 case '#mymatrix1':
+                    loadnewcontent()
                     $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
                     $('.colorlegend').hide()
                     $('#hidemainmobile').hide()
@@ -3468,6 +3471,57 @@
             );
         });
     });
+
+
+    function attachTripleClickHandlerToImportedContent() {
+        // Select all <div> elements with the class 'importedContent'
+        const elements = document.querySelectorAll('.importedContent');
+    
+        elements.forEach(function(element) {
+            let clickCount = 0; // Initialize click counter
+            let clickTimer = null; // Initialize timer
+    
+            element.addEventListener('click', function() {
+                clickCount++; // Increment click count on each click
+    
+                if (clickCount === 1) {
+                    // Start a timer if this is the first click
+                    clickTimer = setTimeout(function() {
+                        clickCount = 0; // Reset click count after the timeout
+                    }, 400); // Set timeout (400ms). Adjust as needed.
+                } else if (clickCount === 3) {
+                    // If it's the third click, make the content editable
+                    element.contentEditable = "true";
+                    element.focus(); // Optional: bring focus to the editable element
+    
+                    clearTimeout(clickTimer); // Clear the timer
+                    clickCount = 0; // Reset click count
+                }
+            });
+    
+            // Add keypress event listener to handle Enter key
+            element.addEventListener('keypress', function(event) {
+                // Check if the Enter key was pressed
+                if (event.key === 'Enter' || event.keyCode === 13) {
+                    event.preventDefault(); // Prevent default action (important if inside a form)
+                    loadnewcontent(); // Call the loadContent function
+                }
+            });
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     document.getElementById('fileimport').addEventListener('change', function() {
         var file = this.files[0];
         if (!file) return; // Exit if no file is selected
@@ -3480,12 +3534,13 @@
             $('.internalbuttons').slideDown();
             $('.layoutbuilder').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable onblock">' + 
-                '<div class="width100c liveelement in910 layoutpale layoutpale100 interedit">' + 
+                '<div class="width100c liveelement in910 layoutpale layoutpale100 importedContent interedit">' + 
                 fileContent + '</div></div>'
             );
     
             attachEventHandlers();
             loadnewcontent()
+            attachTripleClickHandlerToImportedContent();
         }
     
         // Function to display content, specifically for converting .docx to HTML
@@ -3496,12 +3551,13 @@
             $('.internalbuttons').slideDown();
             $('.layoutbuilder').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable onblock">' + 
-                '<div class="width100c liveelement in910 layoutpale layoutpale100 interedit">' + 
+                '<div class="width100c liveelement in910 layoutpale layoutpale100 importedContent interedit">' + 
                 htmlContent + '</div></div>'
             );
     
             attachEventHandlers();
             loadnewcontent()
+            attachTripleClickHandlerToImportedContent();
         }
     
         // Attach event handlers for dynamically added content
