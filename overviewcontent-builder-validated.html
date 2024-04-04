@@ -105,6 +105,9 @@
             color: yellow;
         }
 
+        .htmlimporter {
+            display: none;
+        }
 
         
     </style>
@@ -169,8 +172,11 @@
                 <div class="width20c unselectable-text thetopbox mytoolsboxtop2" style="font-size: 80%;"
                     whatbox="Tools">Components</div>
 
-                <div class="width20c unselectable-text thetopbox mytoolsboxtop3" style="font-size: 80%; float: left; margin-left: 2%;"
+                <div class="width20c unselectable-text thetopbox mytoolsboxtop3" style="font-size: 80%; float: left; margin-left: 1%;"
                     whatbox="Rows">Rows</div>
+
+                    <div class="width20c unselectable-text thetopbox mytoolsboxtop3" style="font-size: 80%; float: left; margin-left: 1%;"
+                    whatbox="Import">Import</div>
 
                 <div id="myace" class="openthematrix" mymatrix="mymatrix3" style="font-size: 60%; display:none "
                     whatbox="Tools"> A.C.E</div>
@@ -181,7 +187,12 @@
                 <div id="clearandrestart" class="width50c unselectable-text">Clear &amp; Restart</div>
             </div>
 
-
+            <div id="Importer" class="width100c openclose" openclose="htmlimporter" style="display: none;">
+                <div class="width100c unselectable-text" style="margin-left: -3%;">
+                    <span class="myindicator">+</span>
+                    <span style="font-size: 0.8rem;">&nbsp;&nbsp;Word / Txt / .HTML  Importer</span>
+                </div>
+            </div>
 
 
 
@@ -196,6 +207,17 @@
                 </div>
             </div>
 
+
+            <div class="width100c toolboxlayoutoptions unselectable-text htmlimporter"
+            style="width: 98%; margin-left:4%; margin-top:10px">
+        
+            <input type="file" id="fileimport" accept=".html,.txt,.docx">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.7.1/mammoth.browser.js"></script>
+
+
+        </div>
+
+            
 
             <div class="width100c toolboxlayoutoptions unselectable-text layoutbuilder-oc2"
                 style="width: 98%; margin-left:4%; margin-top:10px">
@@ -1608,6 +1630,15 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                             Video</button>
                     </div>
 
+                    <div class="width100c" style="border-top: 1px solid #ccc; margin-top: 18px; padding-top: 8px; ">
+                     
+                        <span style="font-size: 0.7rem !important; margin-left: 3px;">Convert CSV / SRT Files to VTT</span><br>
+                        <input type="file" id="csvFileInput" accept=".csv" multiple style="margin-top: 5px; background-color: transparent; border: 1px solid #ccc; margin-left: 5px; margin-right: 5px;font-size: 0.8rem;">
+                        <button id="convertBtn" style="border: 1px solid #fff; padding-left: 5px; padding-right: 5px; background-color: transparent; color: #fff;font-size: 0.8rem;">Convert to VTT</button>
+
+
+                    </div>
+
 
                 </div>
 
@@ -2562,11 +2593,13 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                <div class="width33cg" style="width: auto; margin-right: 10px;"><button  class="outsideplugins"  whaturl="https://www.story321.org/" >AI Story Generator ></button></div>
 
+               
+
              
 
                 </div>
                 <div class="width100c" style="background-color: #fff; border: 1px solid #ccc;">
-                    <iframe id="outslidepluginsout" width="100%" height="768" src="https://phrasefix.com/tools/remove-special-characters/"
+                    <iframe id="outslidepluginsout" width="100%" height="768" src="nothing.html"
                         title="Google Documents" allowfullscreen></iframe>
                 </div>
             </div>
@@ -3093,7 +3126,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
     </div>
 
     <script src="progamscript.js"></script>
+    <script src="videoconverter.js"></script>
 </body>
 
 
-<!--Mac verison March 24th-->

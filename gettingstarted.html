@@ -91,7 +91,7 @@ box-shadow:inset 0 0 10px 5px #000000;
       background-position: center;
       -webkit-box-shadow: 0 5px 50px 5px #000000;
       box-shadow: 0 5px 50px 5px #000000;
-      margin-top: -5%;
+      margin-top: 6%;
       cursor: pointer;
       border: 1px solid #333;
       display: none;
@@ -181,11 +181,22 @@ box-shadow:inset 0 0 10px 5px #000000;
           </a>
         </div>
 
-        <div class="blocker-holder" style="margin-top: 1%; opacity: 0;">
-          <div class="blocker">
+        <div class="blocker-holder" style="margin-top: 1%;  ">
+          <div class="blocker" style="background-color: #2f2d31;">
+
+    
+
             <div
               style="position: absolute;; bottom: 10px; text-align: center; width: 100%; color: #fff;font-size: 80%;">
-              none active</div>
+
+              <div style="    width: 100%;float: left;margin-top: -46px; margin-left: 20px;">
+                <input type="file" id="csvFileInput" accept=".csv" multiple>
+                </div>
+                <div style="width: 100%; float: left;">
+                <button id="convertBtn" style="    margin-top: -17px;margin-bottom: 14px; border: 1px solid #fff; background-color: #1e3e2f; padding: 6px; color: #fff;">Convert to VTT</button>
+              </div>
+
+              Convert CSV / SRT to VTT</div>
           </div>
         </div>
 
@@ -210,7 +221,7 @@ box-shadow:inset 0 0 10px 5px #000000;
 
           <div style="position: absolute;; bottom: 10px; text-align: center; width: 100%; color: #fff;">Content Designer
             Pro
-            5.0</div>
+            5.0.1</div>
 
         </div>
 
@@ -248,4 +259,52 @@ box-shadow:inset 0 0 10px 5px #000000;
   })
   $('.center-box').delay(1000).animate({zoom: '1'}, 3000)
   $('#legacy').delay(4000).animate({'opacity' : '1'} , 2000)
+
+
+  function csvToVtt(csvText) {
+            let vttText = "WEBVTT\n\n";
+            const lines = csvText.split("\n");
+            lines.forEach((line, index) => {
+                if (line.trim()) {
+                    const parts = line.split(",");
+                    if (parts.length >= 3) {
+                        const startTime = parts[0].trim();
+                        const endTime = parts[1].trim();
+                        const text = parts.slice(2).join(",").trim();
+                        vttText += `${index}\n${startTime} --> ${endTime}\n${text}\n\n`;
+                    }
+                }
+            });
+            return vttText;
+        }
+
+        function downloadVttFile(vttText, filename) {
+            const blob = new Blob([vttText], { type: 'text/vtt' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        document.getElementById('convertBtn').addEventListener('click', () => {
+            const fileInput = document.getElementById('csvFileInput');
+            if (fileInput.files.length > 0) {
+                Array.from(fileInput.files).forEach((file, index) => {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const csvContent = event.target.result;
+                        const vttContent = csvToVtt(csvContent);
+                        downloadVttFile(vttContent, file.name.replace('.csv', '') + '.vtt');
+                    };
+                    reader.readAsText(file);
+                });
+            } else {
+                alert('Please select at least one CSV file.');
+            }
+        });
+
+
 </script>

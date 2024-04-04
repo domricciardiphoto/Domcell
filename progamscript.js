@@ -1454,6 +1454,8 @@
                 $('.toolboxlayoutoptions').hide()
                 $('.layoutbuilder-oc').hide()
                 $('.openclose').show()
+                $('#Importer').hide()
+                $('.htmlimporter').hide()
             } if (whichboxtoopen == 'Rows') {
                 $('#layoutbuilder-oc2').css('display', 'none')
                 $('#myhtmleditor').show()
@@ -1462,12 +1464,27 @@
                 $('.imagebuilder').hide()
                 $('.videocomponent').hide()
                 $('.mylinkbuilder').hide()
-$('.openclose').hide()
+                $('.openclose').hide()
                 $('.toolboxhide').show()
                 $('.toolboxlayoutoptions').hide()
                 $('.layoutbuilder-oc').hide()
                 $('.myrowbuilder').slideDown()
+                $('#Importer').hide()
+                $('.htmlimporter').hide()
             }
+         if (whichboxtoopen == 'Import') {
+            $('.openclose').hide()
+            $('.layoutbuilder-oc').hide()
+            $('.mylinkbuilder').hide()
+            $('.myrowbuilder').hide()
+            $('.toolboxlayoutoptions').hide()
+            $('#layoutbuilder-oc2').css('display', 'none')
+            $('.titlebuilder-oc').hide()
+            $('#Importer').show()
+            $('#Importer').click()
+        }
+
+
              if (whichboxtoopen == 'Layout') {
                 $('#layoutbuilder-oc2').css('display', 'block')
                 $('#myhtmleditor').hide()
@@ -1475,6 +1492,8 @@ $('.openclose').hide()
                 $('.toolboxhide').hide()
                 $('.toolboxlayoutoptions').show()
                 $('.layoutbuilder-oc').show()
+                $('#Importer').hide()
+                $('.htmlimporter').hide()
             }  
 
 
@@ -3448,4 +3467,79 @@ $('.openclose').hide()
                 }
             );
         });
+    });
+    document.getElementById('fileimport').addEventListener('change', function() {
+        var file = this.files[0];
+        if (!file) return; // Exit if no file is selected
+    
+        // Function to display content for .html and .txt files
+        function displayDirectContent(fileContent) {
+            // Process and display the file content directly without conversion
+            $('.hidecss').show();
+            $('.onblock').removeClass('onblock');
+            $('.internalbuttons').slideDown();
+            $('.layoutbuilder').append(
+                '<div class="width100c layoutpale layoutpale100 liverow droppable onblock">' + 
+                '<div class="width100c liveelement in910 layoutpale layoutpale100 interedit">' + 
+                fileContent + '</div></div>'
+            );
+    
+            attachEventHandlers();
+            loadnewcontent()
+        }
+    
+        // Function to display content, specifically for converting .docx to HTML
+        function displayConvertedContent(htmlContent) {
+            // Similar to displayDirectContent but specifically for .docx conversion results
+            $('.hidecss').show();
+            $('.onblock').removeClass('onblock');
+            $('.internalbuttons').slideDown();
+            $('.layoutbuilder').append(
+                '<div class="width100c layoutpale layoutpale100 liverow droppable onblock">' + 
+                '<div class="width100c liveelement in910 layoutpale layoutpale100 interedit">' + 
+                htmlContent + '</div></div>'
+            );
+    
+            attachEventHandlers();
+            loadnewcontent()
+        }
+    
+        // Attach event handlers for dynamically added content
+        function attachEventHandlers() {
+            $('.liverow').on('click', function () {
+                $('.liverow').removeClass('onblock');
+                $(this).addClass('onblock');
+                highlightedbackground(); // Assuming this function is defined elsewhere
+            });
+    
+            $('a').not('.outsidelink').on('click', function(e) {
+                e.preventDefault();
+                var wheretogo = $(this).attr('href');
+                gotothelinkfunction(wheretogo); // Assuming this function is defined elsewhere
+            });
+        }
+    
+        // Determine file type and process accordingly
+        if (file.name.endsWith('.docx')) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var arrayBuffer = e.target.result;
+                mammoth.convertToHtml({arrayBuffer: arrayBuffer})
+                    .then(function(result) {
+                        displayConvertedContent(result.value); // Display the converted HTML
+                    })
+                    .catch(function(err) {
+                        console.log(err);
+                    });
+            };
+            reader.readAsArrayBuffer(file);
+        } else {
+            // For .txt or .html, read as text and display directly
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var fileContent = e.target.result;
+                displayDirectContent(fileContent);
+            };
+            reader.readAsText(file);
+        }
     });
