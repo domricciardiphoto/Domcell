@@ -3529,13 +3529,14 @@
         // Function to display content for .html and .txt files
         function displayDirectContent(fileContent) {
             // Process and display the file content directly without conversion
+            var processedContent = fileContent.replace(/https:\/\/www\.pcrichard\.com/g, '');
             $('.hidecss').show();
             $('.onblock').removeClass('onblock');
             $('.internalbuttons').slideDown();
             $('.layoutbuilder').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable onblock">' + 
                 '<div class="width100c liveelement in910 layoutpale layoutpale100 importedContent interedit">' + 
-                fileContent + '</div></div>'
+                processedContent + '</div></div>'
             );
     
             attachEventHandlers();
@@ -3546,13 +3547,15 @@
         // Function to display content, specifically for converting .docx to HTML
         function displayConvertedContent(htmlContent) {
             // Similar to displayDirectContent but specifically for .docx conversion results
+
+            var processedHtmlContent = htmlContent.replace(/https:\/\/www\.pcrichard\.com/g, '');
             $('.hidecss').show();
             $('.onblock').removeClass('onblock');
             $('.internalbuttons').slideDown();
             $('.layoutbuilder').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable onblock">' + 
                 '<div class="width100c liveelement in910 layoutpale layoutpale100 importedContent interedit">' + 
-                htmlContent + '</div></div>'
+                processedHtmlContent + '</div></div>'
             );
     
             attachEventHandlers();
