@@ -1442,6 +1442,32 @@
             }
         });
 
+        $(function() {
+            var maxWidthPercentage = 27; // Max width in percentage for #programming
+            var maxWidthInPixels = $(window).width() * (maxWidthPercentage / 100);
+        
+            // Initialize resizable on #programming with a maxWidth and resize event
+            $("#programming").resizable({
+                maxWidth: maxWidthInPixels,
+                resize: function(event, ui) {
+                    var parentWidth = ui.element.parent().width(); // Assuming direct parent, adjust selector as needed
+                    var programmingWidth = ui.size.width;
+                    var remainingWidth = parentWidth - programmingWidth;
+                    $("#resizable-div").width(remainingWidth - 40); // Adjust -10 or as needed for margins/paddings
+                }
+            });
+        
+            // Assuming #resizable-div should also be resizable
+            $("#resizable-div").resizable({
+                // Additional options if needed
+            });
+        
+            // Optional: Recalculate on window resize if you need the limit to be responsive
+            $(window).resize(function() {
+                var maxWidthInPixels = $(window).width() * (maxWidthPercentage / 100);
+                $("#programming").resizable("option", "maxWidth", maxWidthInPixels);
+            });
+        });
 
         $('.thetopbox').on('click', function () {
             whichboxtoopen = $(this).attr('whatbox')
@@ -1449,15 +1475,21 @@
             $(this).css('background-color', '#fff').css('color', '#333')
 
             if (whichboxtoopen === 'Tools') {
-                $('#layoutbuilder-oc2').css('display', 'none')
+
+               
                 $('#myhtmleditor').show()
                 $('.internalscroller').show()
                 $('.toolboxhide').show()
                 $('.toolboxlayoutoptions').hide()
-                $('.layoutbuilder-oc').hide()
+                
                 $('.openclose').show()
                 $('#Importer').hide()
                 $('.htmlimporter').hide()
+                $('.myrowbuilder21').hide()
+                $('.myrowbuilder').hide()
+                $('#layoutbuilder-oc2').hide()
+                $('#layoutbuilder-oc').hide()
+                $('.layoutbuilder-oc').hide()
             } if (whichboxtoopen == 'Rows') {
                 $('#layoutbuilder-oc2').css('display', 'none')
                 $('#myhtmleditor').show()
@@ -3530,13 +3562,18 @@
         function displayDirectContent(fileContent) {
             // Process and display the file content directly without conversion
             var processedContent = fileContent.replace(/https:\/\/www\.pcrichard\.com/g, '');
+            var $content = $('<div>').html(processedContent);
+            $content.find('h1, h2 , h3 , h4 ,h5').addClass('t-h4-style').wrap('<div class="pd-header-tag width100c"></div>');
+            $content.find('a').filter(function() {
+                return $.trim($(this).text()) === '' && $(this).children().length === 0;
+            }).remove();
             $('.hidecss').show();
             $('.onblock').removeClass('onblock');
             $('.internalbuttons').slideDown();
-            $('.layoutbuilder').append(
+            $('.informationcontent').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable onblock">' + 
                 '<div class="width100c liveelement in910 layoutpale layoutpale100 importedContent interedit">' + 
-                processedContent + '</div></div>'
+                $content.html() + '</div></div>'
             );
     
             attachEventHandlers();
@@ -3549,13 +3586,19 @@
             // Similar to displayDirectContent but specifically for .docx conversion results
 
             var processedHtmlContent = htmlContent.replace(/https:\/\/www\.pcrichard\.com/g, '');
+            var $htmlContent = $('<div>').html(processedHtmlContent);
+            $htmlContent.find('h1, h2 , h3 , h4 ,h5').addClass('t-h4-style').wrap('<div class="pd-header-tag width100c"></div>');
+            $htmlContent.find('a').filter(function() {
+                return $.trim($(this).text()) === '' && $(this).children().length === 0;
+            }).remove();
+        
             $('.hidecss').show();
             $('.onblock').removeClass('onblock');
             $('.internalbuttons').slideDown();
-            $('.layoutbuilder').append(
+            $('.informationcontent').append(
                 '<div class="width100c layoutpale layoutpale100 liverow droppable onblock">' + 
                 '<div class="width100c liveelement in910 layoutpale layoutpale100 importedContent interedit">' + 
-                processedHtmlContent + '</div></div>'
+                $htmlContent.html()  + '</div></div>'
             );
     
             attachEventHandlers();
