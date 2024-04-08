@@ -205,6 +205,7 @@ Reminds us all to cherish the simple, the serene.
 
 <script>
 var interface = 0
+var savesession = 0
     let hoverTimer;
     const element = document.querySelector('#footer');
     const popup = document.querySelector('#popup');
@@ -260,7 +261,15 @@ var interface = 0
 
 
     document.querySelectorAll('.tab:not(#addwindow)').forEach(tab => {
+
+
+
+      
+
   tab.addEventListener('click', function() {
+
+
+
     // Hide all elements with the class 'myloadedtools'
     this.style.backgroundColor = '#333'; // Correct way to set background color
     this.style.color = '#fff'; // Correct way to set text color
@@ -298,6 +307,14 @@ var interface = 0
 let interfaceCount = 0; // Replace this with the correct initial value if different
 
 document.getElementById('addwindow').addEventListener('click', function() {
+
+  if(savesession > 0 ) {
+  savesession++
+} else {
+  localStorage.clear();
+}
+
+
   interfaceCount++;
 
   // Hide all elements with the class 'myloadedtools'

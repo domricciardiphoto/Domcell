@@ -293,11 +293,9 @@
             color: #fff;
             text-align: center;
             cursor: pointer;
-            border: 1px solid #ccc;
-            border-bottom: 0px;
             width: auto;
-            border-radius: 5px 5px 0px 0px;
-            float: right; font-size: 80%;
+            font-size: 90%;
+            margin-right: 3px;
         }
 
         #message2 {
@@ -1118,7 +1116,7 @@
         }
 
         .internalscroller {
-            width: 94.5%;
+            width: 89%;
             margin-left: 0%;
             margin-right: 0.5%;
             max-height: 700px;

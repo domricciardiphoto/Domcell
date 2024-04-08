@@ -1490,6 +1490,7 @@
                 $('#layoutbuilder-oc2').hide()
                 $('#layoutbuilder-oc').hide()
                 $('.layoutbuilder-oc').hide()
+                $('.blogbuilder').hide()
             } if (whichboxtoopen == 'Rows') {
                 $('#layoutbuilder-oc2').css('display', 'none')
                 $('#myhtmleditor').show()
@@ -1505,6 +1506,8 @@
                 $('.myrowbuilder').slideDown()
                 $('#Importer').hide()
                 $('.htmlimporter').hide()
+                $('.blogbuilder').hide()
+
             }
          if (whichboxtoopen == 'Import') {
             $('.openclose').hide()
@@ -1516,10 +1519,9 @@
             $('.titlebuilder-oc').hide()
             $('#Importer').show()
             $('#Importer').click()
+            $('.blogbuilder').hide()
         }
-
-
-             if (whichboxtoopen == 'Layout') {
+         if (whichboxtoopen == 'Layout') {
                 $('#layoutbuilder-oc2').css('display', 'block')
                 $('#myhtmleditor').hide()
                 $('.internalscroller').hide()
@@ -1528,10 +1530,21 @@
                 $('.layoutbuilder-oc').show()
                 $('#Importer').hide()
                 $('.htmlimporter').hide()
-            }  
+                $('.blogbuilder').hide()
+         }  
+         if (whichboxtoopen == 'Blog') {
+            $('#layoutbuilder-oc2').css('display', 'none')
+            $('#myhtmleditor').hide()
+            $('.internalscroller').hide()
+            $('.toolboxhide').hide()
+            $('.toolboxlayoutoptions').hide()
+            $('#Importer').hide()
+            $('.htmlimporter').hide()
+            $('.layoutbuilder-oc').hide()
+            $('.blogbuilder').show()
+            $('#layoutbuilder-oc').hide()
+         }
 
-
-            
         })
 
 
@@ -1985,6 +1998,23 @@
 
 
         });
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
 
         $('#addrow2x2').on('click', function () {
             $('.hidecss').show()
@@ -2606,6 +2636,7 @@
 
 
         $('#clearandrestart').on('click', function () {
+              localStorage.clear();
             location.reload()
         })
 
@@ -2820,14 +2851,49 @@
                    $('.clearsection').on('click', function () {
                     $('.interedit').html('')
                 })
+
+                $('a').not('.outsidelink').on('click', function (e) {
+                    wheretogo = null
+                    e.preventDefault();
+                    wheretogo = $(this).attr('href');
+                    gotothelinkfunction(wheretogo)
+                    var $clickedLink = $(this);
+    
+                    $('#noBtn').off('click').on('click', function () {
+                        $clickedLink.replaceWith($clickedLink.text());
+                        loadnewcontent()
+                        document.getElementById("myModal").style.display = "none";
+                    })
+    
+                });
+                
                 return false;
             } if (htmlcodeyesno2 === 1) {
+            
                 $('.informationcontent').parent('div').parent('div').prepend(newval)
                 loadnewcontent()
                 $('#cinput3a').val('')
                 $('.clearsection').on('click', function () {
                     $('.interedit').html('')
                 })
+
+                $('a').not('.outsidelink').on('click', function (e) {
+                    wheretogo = null
+                    e.preventDefault();
+                    wheretogo = $(this).attr('href');
+                    gotothelinkfunction(wheretogo)
+                    var $clickedLink = $(this);
+    
+                    $('#noBtn').off('click').on('click', function () {
+                        $clickedLink.replaceWith($clickedLink.text());
+                        loadnewcontent()
+                        document.getElementById("myModal").style.display = "none";
+                    })
+    
+                });
+
+
+
             layoutmode = 0
                 return false;
             } else {
@@ -2837,6 +2903,22 @@
                 $('.clearsection').on('click', function () {
                     $('.interedit').html('')
                 })
+
+                $('a').not('.outsidelink').on('click', function (e) {
+                    wheretogo = null
+                    e.preventDefault();
+                    wheretogo = $(this).attr('href');
+                    gotothelinkfunction(wheretogo)
+                    var $clickedLink = $(this);
+    
+                    $('#noBtn').off('click').on('click', function () {
+                        $clickedLink.replaceWith($clickedLink.text());
+                        loadnewcontent()
+                        document.getElementById("myModal").style.display = "none";
+                    })
+    
+                });
+
             layoutmode = 0
             }
 
@@ -3645,3 +3727,52 @@
             reader.readAsText(file);
         }
     });
+
+
+
+
+     $(document).ready(function() {
+
+
+
+    var savedContent = localStorage.getItem("savedContent");
+    if(savedContent) {
+        $('#pullthecode2').html(savedContent);
+        
+        $('a').not('.outsidelink').on('click', function (e) {
+            e.preventDefault();
+            wheretogo = $(this).attr('href');
+            gotothelinkfunction(wheretogo)
+
+            var $clickedLink = $(this);
+
+            $('#noBtn').off('click').on('click', function () {
+                $clickedLink.replaceWith($clickedLink.text());
+                loadnewcontent()
+                document.getElementById("myModal").style.display =
+                    "none";
+            })
+
+        });
+    }
+});
+
+// Function to save the current state of the content area
+function saveContent() {
+    localStorage.setItem("savedContent", $('#pullthecode2').html());
+}
+
+// Example of manually triggering save on a specific action
+$('#saveButton').on('click', function() {
+    saveContent();
+});
+
+// Use setInterval for periodic saving, with a content check to ensure efficiency
+var lastSavedContent = $('#pullthecode2').html();
+setInterval(function() {
+    var currentContent = $('#pullthecode2').html();
+    if(currentContent !== lastSavedContent) {
+        saveContent();
+        lastSavedContent = currentContent;
+    }
+}, 10000);

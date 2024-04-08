@@ -1,4 +1,5 @@
 const {app, BrowserWindow, ipcMain, Menu, globalShortcut, shell,} = require('electron')
+const axios = require('axios'); 
 const {autoUpdater} = require('electron-updater');
 
 const log = require('electron-log');
@@ -73,19 +74,16 @@ function createMainWindow() {
   }
 
   win = new BrowserWindow({
-    title: 'Domcell Badge Builder',
-    icon: `${__dirname}assets/icons/app-icon.png`,
-    width: 1920,
-    height: 1080,
+    title: 'Domcell 9',
+    icon: path.join(__dirname, 'assets', 'icons', 'app-icon.png'),
     hasShadow: true,
     darkTheme: true,
     visualEffectState: 'active',
     titleBarOverlay: true,
     allowRunningInsecureContent: true,
     navigateOnDragDrop: true,
-
-    width: initialState.width || 800, // Use saved dimensions if available
-    height: initialState.height || 600,
+    width: initialState.width || 1368, // Use saved dimensions if available
+    height: initialState.height || 912,
     x: initialState.x,
     y: initialState.y,
 
@@ -99,10 +97,11 @@ function createMainWindow() {
     }
 
   })
-  win.loadFile(path.join(__dirname, 'gettingstarted.html'))
 
+  win.loadFile(path.join(__dirname, 'gettingstarted.html'))
+  checkForUpdates();
   const urlToLoad = initialState.url || 'path/to/default/url';
-  win.loadURL(urlToLoad);
+  //win.loadURL(urlToLoad);
 
   // Save window state on close
   win.on('close', () => {
@@ -127,6 +126,27 @@ function createMainWindow() {
 }
 
 
+ipcMain.on('app_version', (event) => {
+  event.sender.send('app_version', { version: app.getVersion() });
+});
+
+async function checkForUpdates() {
+  try {
+    const currentVersion = app.getVersion();
+    const response = await axios.get('https://api.github.com/repos/domricciardiphoto/Domcell/releases/latest');
+    const latestVersion = response.data.tag_name;
+
+    if (latestVersion > currentVersion) {
+      // If the latest version is greater, an update is available
+      win.webContents.send('update_status', 'UPDATE AVAILABLE');
+    } else if (latestVersion === currentVersion) {
+      // If the versions are equal, it's the current version
+      win.webContents.send('update_status', 'CURRENT VERSION');
+    }
+  } catch (error) {
+    console.error('Failed to check for updates:', error);
+  }
+}
 
 
 
