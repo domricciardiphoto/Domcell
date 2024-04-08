@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Domcell 9</title>
+  <title>Domcell 9.0.5</title>
   <script src="jquery.js"></script>
   <style>
 
 body {
-  background-image: url('assets/web-designer-version2.jpg');
+  background-image: url('assets/web-designer-version3.jpg');
       background-position: center;
       background-size: cover;
       background-color: rebeccapurple;
@@ -101,6 +101,8 @@ box-shadow:inset 0 0 10px 5px #000000;
       opacity: 0.8;
       border: 1px solid #fff;
       border-radius: 10px 10px 10px 10px !important;
+      background-image: url('assets/web-designer-in.png');
+      color: #000 !important;
     }
 
     .fadin , #legacy {
@@ -117,7 +119,7 @@ box-shadow:inset 0 0 10px 5px #000000;
 
     <div style="width: 70%; float: left;">
 
-<div style="width: 100%; float: left; text-align: left; margin-bottom: 10px; font-size: 2rem; font-family: Arial, Helvetica, sans-serif;">WELCOME TO DOMCELL<span class="fadin"> 9</span> </div>
+<div style="width: 100%; float: left; text-align: left; margin-bottom: 10px; font-size: 2rem; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #023020;">WELCOME TO DOMCELL<span class="fadin"> 9</span> </div>
 
       <div style="width: 100%; float: left;">
 
@@ -243,15 +245,7 @@ box-shadow:inset 0 0 10px 5px #000000;
 
 <script>
 
-const { ipcRenderer } = require('electron');
 
-ipcRenderer.on('update_status', (event, message) => {
-  if (message === 'UPDATE AVAILABLE') {
-    document.getElementById('wn2024').textContent = 'UPDATE AVAILABLE';
-  } else if (message === 'CURRENT VERSION') {
-    document.getElementById('wn2024').textContent = 'CURRENT VERSION';
-  }
-});
 
 
 
