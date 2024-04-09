@@ -2869,8 +2869,9 @@
                 
                 return false;
             } if (htmlcodeyesno2 === 1) {
-            
-                $('.informationcontent').parent('div').parent('div').prepend(newval)
+              
+                captureState()
+                $('.informationcontent').parent('div').parent('div').prepend('<div class="htmlonly">'+newval+'</div>')
                 loadnewcontent()
                 $('#cinput3a').val('')
                 $('.clearsection').on('click', function () {
@@ -2892,12 +2893,52 @@
     
                 });
 
+                $('.htmlonly').off().on('contextmenu', function (e) {
+                    e.preventDefault()
+                    $('.interedit').removeClass('interedit')
+                    $(this).parent('.in910').addClass('interedit')
+                    document.getElementById("myModalcontent").style.display = "block";
+
+                    $('#yesBtn99').on('click', function () {
+                        $('.interedit').empty()
+                        document.getElementById("myModalcontent").style.display = "none";
+                        $('#findthecode2').text($('#pullthecode2').html());
+                    })
+
+                    $('#yescopyBtn99').on('click', function () {
+                        var textToCopy = $('.interedit').children('p').text();
+                        navigator.clipboard.writeText(textToCopy).then(function () {
+                            console.log('Text copied to clipboard');
+                        }).catch(function (error) {
+                            console.error('Error copying text: ', error);
+                        });
+                        document.getElementById("myModalcontent").style.display = "none";
+                    })
+
+                    $('#closediag99').on('click', function () {
+                        document.getElementById("myModalcontent").style.display = "none";
+                        $('#optionb4').prop('checked', false);
+                    })
+                })
+
+
+                $(".htmlonly").dblclick(function() {
+                    $(this).attr("contenteditable", "true");
+                    $(this).focus();
+                  });
+
+
+                  $(".htmlonly").blur(function() {
+                    loadContent();
+                  });
 
 
             layoutmode = 0
                 return false;
             } else {
-                $('.interedit').append(newval)
+      
+                captureState()
+                $('.interedit').append('<div class="htmlonly">'+newval+'</div>')
                 loadnewcontent()
                 $('#cinput3a').val('')
                 $('.clearsection').on('click', function () {
@@ -2918,6 +2959,45 @@
                     })
     
                 });
+
+                $('.htmlonly').off().on('contextmenu', function (e) {
+                    e.preventDefault()
+                    $('.interedit').removeClass('interedit')
+                    $(this).parent('.in910').addClass('interedit')
+                    document.getElementById("myModalcontent").style.display = "block";
+
+                    $('#yesBtn99').on('click', function () {
+                        $('.interedit').empty()
+                        document.getElementById("myModalcontent").style.display = "none";
+                        $('#findthecode2').text($('#pullthecode2').html());
+                    })
+
+                    $('#yescopyBtn99').on('click', function () {
+                        var textToCopy = $('.interedit').children('p').text();
+                        navigator.clipboard.writeText(textToCopy).then(function () {
+                            console.log('Text copied to clipboard');
+                        }).catch(function (error) {
+                            console.error('Error copying text: ', error);
+                        });
+                        document.getElementById("myModalcontent").style.display = "none";
+                    })
+
+                    $('#closediag99').on('click', function () {
+                        document.getElementById("myModalcontent").style.display = "none";
+                        $('#optionb4').prop('checked', false);
+                    })
+                })
+
+                $(".htmlonly").dblclick(function() {
+                    $(this).attr("contenteditable", "true");
+                    $(this).focus();
+                  });
+
+
+                  $(".htmlonly").blur(function() {
+                    loadContent();
+                  });
+
 
             layoutmode = 0
             }

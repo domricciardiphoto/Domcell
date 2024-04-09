@@ -84,6 +84,8 @@ function createMainWindow() {
     navigateOnDragDrop: true,
     width: initialState.width || 1368, // Use saved dimensions if available
     height: initialState.height || 912,
+    minWidth: 1024,
+    minHeight: 768,
     x: initialState.x,
     y: initialState.y,
 
@@ -98,10 +100,14 @@ function createMainWindow() {
 
   })
 
+
+
+
   win.loadFile(path.join(__dirname, 'gettingstarted.html'))
   checkForUpdates();
-  const urlToLoad = initialState.url || 'path/to/default/url';
-  //win.loadURL(urlToLoad);
+
+
+ 
 
   // Save window state on close
   win.on('close', () => {
