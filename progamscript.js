@@ -1730,7 +1730,7 @@
                     })
 
 
-                    $('a').not('.outsidelink').on('click', function (e) {
+                    $('a').not('.outsidelink').not('.googledrive').on('click', function (e) {
                         e.preventDefault();
                         wheretogo = $(this).attr('href');
                         gotothelinkfunction(wheretogo)
@@ -1936,7 +1936,7 @@
                 })
 
 
-                $('a').not('.outsidelink').on('click', function (e) {
+                $('a').not('.outsidelink').not('.googledrive').on('click', function (e) {
                     e.preventDefault();
                     wheretogo = $(this).attr('href');
                     gotothelinkfunction(wheretogo)
@@ -2588,7 +2588,7 @@
                     $('a').on('click', function (e) {
                         e.preventDefault();
 
-                        $('a').not('.outsidelink').on('click', function (e) {
+                        $('a').not('.outsidelink').not('.googledrive').on('click', function (e) {
                             wheretogo = null
                             e.preventDefault();
                             wheretogo = $(this).attr('href');
@@ -2860,7 +2860,7 @@
                     $('.interedit').html('')
                 })
 
-                $('a').not('.outsidelink').on('click', function (e) {
+                $('a').not('.outsidelink').not('.googledrive').on('click', function (e) {
                     wheretogo = null
                     e.preventDefault();
                     wheretogo = $(this).attr('href');
@@ -2886,7 +2886,7 @@
                     $('.interedit').html('')
                 })
 
-                $('a').not('.outsidelink').on('click', function (e) {
+                $('a').not('.outsidelink').not('.googledrive').on('click', function (e) {
                     wheretogo = null
                     e.preventDefault();
                     wheretogo = $(this).attr('href');
@@ -2953,7 +2953,7 @@
                     $('.interedit').html('')
                 })
 
-                $('a').not('.outsidelink').on('click', function (e) {
+                $('a').not('.outsidelink').not('.googledrive').on('click', function (e) {
                     wheretogo = null
                     e.preventDefault();
                     wheretogo = $(this).attr('href');
@@ -3480,7 +3480,7 @@
 
 
 
-            $('a').not('.outsidelink').on('click', function (e) {
+            $('a').not('.outsidelink').not('.googledrive').on('click', function (e) {
                 wheretogo = null
                 e.preventDefault();
                 wheretogo = $(this).attr('href');
@@ -3784,7 +3784,7 @@
                 highlightedbackground(); // Assuming this function is defined elsewhere
             });
     
-            $('a').not('.outsidelink').on('click', function(e) {
+            $('a').not('.outsidelink').not('.googledrive').on('click', function(e) {
                 e.preventDefault();
                 var wheretogo = $(this).attr('href');
                 gotothelinkfunction(wheretogo); // Assuming this function is defined elsewhere
@@ -3827,7 +3827,7 @@
     if(savedContent) {
         $('#pullthecode2').html(savedContent);
         
-        $('a').not('.outsidelink').on('click', function (e) {
+        $('a').not('.outsidelink').not('.googledrive').on('click', function (e) {
             e.preventDefault();
             wheretogo = $(this).attr('href');
             gotothelinkfunction(wheretogo)
