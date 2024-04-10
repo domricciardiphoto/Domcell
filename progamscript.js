@@ -1443,35 +1443,43 @@
         });
 
         $(function() {
-            var maxWidthPercentage = 27; // Max width in percentage for #programming
+            var maxWidthPercentage = 27;
             var maxWidthInPixels = $(window).width() * (maxWidthPercentage / 100);
+            var minWidthPixels = 300; // Minimum width in pixels for #programming
         
-            // Initialize resizable on #programming with a maxWidth and resize event
+            // Initialize resizable on #programming with adjusted calculations
             $("#programming").resizable({
                 maxWidth: maxWidthInPixels,
+                minWidth: minWidthPixels,
                 resize: function(event, ui) {
-                    var parentWidth = ui.element.parent().width(); // Assuming direct parent, adjust selector as needed
+                    var parentWidth = ui.element.parent().width();
                     var programmingWidth = ui.size.width;
-                    var remainingWidth = parentWidth - programmingWidth;
-                    $("#resizable-div").width(remainingWidth - 40); // Adjust -10 or as needed for margins/paddings
+                    // Adjust the calculation for remaining width, considering potential padding/border
+                    var remainingWidth = parentWidth - programmingWidth - 2; // Adjust the subtraction value as needed
+        
+                    // Ensure the resizable-div does not wrap under programming
+                    $("#resizable-div").width(Math.max(remainingWidth - 40, 0)); // Ensure non-negative width
                 }
             });
         
-            // Assuming #resizable-div should also be resizable
-            $("#resizable-div").resizable({
-                // Additional options if needed
-            });
-        
-            // Optional: Recalculate on window resize if you need the limit to be responsive
+            // Optional: Update on window resize
             $(window).resize(function() {
                 var maxWidthInPixels = $(window).width() * (maxWidthPercentage / 100);
                 $("#programming").resizable("option", "maxWidth", maxWidthInPixels);
             });
+        
+            // CSS adjustments for consistent sizing
+            $("#programming, #resizable-div").css('box-sizing', 'border-box');
         });
+
+        $('#whatsnewwb').on('click' , function() {
+            $('#pluginsandtools').click()
+            $('#outslidepluginsout').attr('src' , 'release-notes.html')
+        })
 
         $('.thetopbox').on('click', function () {
             whichboxtoopen = $(this).attr('whatbox')
-            $('.thetopbox').css('background-color', '#333').css('color', '#fff')
+            $('.thetopbox').css('background-color', 'transparent').css('color', '#f7f7f7')
             $(this).css('background-color', '#fff').css('color', '#333')
 
             if (whichboxtoopen === 'Tools') {

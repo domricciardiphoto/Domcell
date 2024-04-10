@@ -14,6 +14,16 @@
     <style>
         body {
             user-select: none;
+            background-color: rgb(37, 37, 37);
+   
+
+        }
+
+        #fullinterface {
+       position: absolute;
+       left: 3px;
+       top: 5px;
+       width: 99.7%;
 
         }
 
@@ -109,6 +119,10 @@
         .blogbuilder {
             display: none;
         }
+
+        .openthematrix {
+            border-radius: 5px 5px 0px 0px;
+        }
     </style>
 </head>
 
@@ -167,6 +181,9 @@
                     font-size: 80%;
                     float: left;
                     margin-right: 2%;
+                    border: none;
+                    background-color: transparent;
+
                 }
 
                 #overviewmenud {
@@ -177,7 +194,7 @@
                     overflow: auto;
                     float: left;
                     margin-right: 2%;
-                    border-right: 1px solid #fff;
+                    margin-top: -16PX;
                 }
 
                 ::-webkit-scrollbar {
@@ -203,18 +220,27 @@
             <div id="overviewmenud">
 
                 <div class="width100c" style="width: 310px; float: left;">
-                    <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Import">Import</div>
-                    <div class="unselectable-text thetopbox mytoolsboxtop letbutton21" whatbox="Layout">Layout</div>
-                    <div class="unselectable-text thetopbox mytoolsboxtop2 letbutton21" whatbox="Tools">Components</div>
-                    <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Rows">Rows</div>
-                    <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Blog">Blog</div>
+                    <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Import"
+                        style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
+                            src="assets/iconimport.png" /></div>
+                    <div class="unselectable-text thetopbox mytoolsboxtop letbutton21" whatbox="Layout"
+                        style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 60%;"
+                            src="assets/rowicon.png" /></div>
+                    <div class="unselectable-text thetopbox mytoolsboxtop2 letbutton21" whatbox="Tools"
+                        style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
+                            src="assets/compicon.png" /></div>
+                    <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Rows"
+                        style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
+                            src="assets/iconmodify.png" /></div>
+                    <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Blog">Blog (In DEV)
+                    </div>
                 </div>
 
             </div>
 
             <div class="width20c" style=" float: left;">
                 <div id="clearandrestart" class="width50c unselectable-text"
-                    style="padding-left: 3px; padding-right: 3px;">Restart</div>
+                    style="padding-left: 3px; padding-right: 3px; margin-top: -16px;">Restart</div>
             </div>
 
             <div
@@ -249,7 +275,7 @@
             <div class="width100c toolboxlayoutoptions unselectable-text htmlimporter"
                 style="width: 98%; margin-left:4%; margin-top:10px">
 
-                <div class="width100c">Import Word / TXT / .HTML</div>
+                <div class="width100c">Import: Word .docx / Text / .HTML</div>
                 <input type="file" id="fileimport" accept=".html,.txt,.docx">
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.7.1/mammoth.browser.js"></script>
 
@@ -259,38 +285,43 @@
             <div class="width100c toolboxlayoutoptions unselectable-text blogbuilder"
                 style="width: 95%; margin-left:4%; margin-top:10px; max-height: 770px; overflow: auto;">
 
-                <div class="width100c"
-                style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; ">Publish Date</div>
+                <div class="width100c" style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; ">Publish
+                    Date</div>
                 <div class="width100c" style="margin-bottom: 10px;">
                     <input type="date">
                 </div>
 
                 <div class="width100c"
-                style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; margin-top: 10px; font-size: 0.8rem; ">Author</div>
+                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; margin-top: 10px; font-size: 0.8rem; ">
+                    Author</div>
                 <div class="width100c" style="margin-bottom: 10px;">
                     <input type="text">
                 </div>
 
                 <div class="width100c"
-                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; margin-top: 10px; font-size: 0.8rem; ">Featured
+                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; margin-top: 10px; font-size: 0.8rem; ">
+                    Featured
                     Image</div>
                 <div class="width100c" style="margin-bottom: 10px;">
                     <input type="text">
                 </div>
-                <div class="width100c" style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; font-size: 0.8rem; ">Excerpt
+                <div class="width100c"
+                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; font-size: 0.8rem; ">Excerpt
                 </div>
                 <div class="width100c" style="margin-bottom: 10px;">
 
                     <textarea name="" id="" cols="5" rows="5" style="width: 94%; min-height: 100px;"></textarea>
                 </div>
-                <div class="width100c" style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; font-size: 0.8rem; ">Tags
+                <div class="width100c"
+                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; font-size: 0.8rem; ">Tags
                 </div>
                 <div class="width100c" style="margin-bottom: 10px;">
                     <input type="text">
                 </div>
 
 
-                <div class="width100c" style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 94%; font-size: 0.8rem; ">
+                <div class="width100c"
+                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 94%; font-size: 0.8rem; ">
                     Categories</div>
 
                 <div class="width100c" style="max-height: 250px; overflow: auto; width: 94%;">
@@ -299,14 +330,15 @@
                             width: auto;
                             font-size: 0.8rem !important;
                         }
+
                         #blogcats div label {
                             font-size: 0.85rem;
                         }
 
-                        #blogcats input , #blogcats textarea {
+                        #blogcats input,
+                        #blogcats textarea {
                             font-size: 0.8rem !important;
                         }
-                        
                     </style>
 
                     <form id="blogcats" style="width: 75%;">
@@ -571,11 +603,12 @@
 
                 </div>
 
-<div class="width100c" style="margin-top: 10px;">
+                <div class="width100c" style="margin-top: 10px;">
 
-<div class="width50c"><button>Clear Categorie Checkboxes</button></div>
-<div class="width50c">Enable Blog Features <input type="checkbox" id="subCheckbox5"  style="width: auto;"></div>
-</div>
+                    <div class="width50c"><button>Clear Categorie Checkboxes</button></div>
+                    <div class="width50c">Enable Blog Features <input type="checkbox" id="subCheckbox5"
+                            style="width: auto;"></div>
+                </div>
 
             </div>
 
@@ -2552,8 +2585,9 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
                 <div class="width100c">
-                    <div class="width50c advanced-Buttons" id="myhelp2">Help</div>
-                    <div class="width50c advanced-Buttons" id="ace">Advanced Code Editor</div>
+                    <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix7" style=" color: #fff !important;min-height: 35px; line-height: 35px; width: 28%;">Help</div>
+                    <div id="whatsnewwb" class="width30c advanced-Buttons"                                    style=" color: #fff !important; min-height: 41px; line-height: 41px;width: 28%">Whats New?</div>
+                    <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix3" style=" color: #fff !important;min-height: 35px; line-height: 35px;width: 28%">Advanced Code Editor</div>
                 </div>
 
 
@@ -2584,7 +2618,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                             <?xml version="1.0" encoding="utf-8"?>
                             <!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                            <svg version="1.1" id="asdf" xmlns="http://www.w3.org/2000/svg"
+                            <svg version="1.1" style="width:100%" id="asdf" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
                                 style="enable-background:new 0 0 50 50;" xml:space="preserve">
                                 <style type="text/css">
@@ -2620,35 +2654,39 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                         </div>
 
 
+                        <div class="width100c" id="fullscreenresort" style="    margin-bottom: -12px;margin-top: -6px;">
 
+                            <div class="width20c" style="width: auto; min-width: 10%">Sort / Reorder :</div>
 
-                        <div class="width100c" id="fullscreenresort">
-
-                            <div style="float: left; margin-left: -7px; width: auto; float: left;"
-                                class="mysort unselectable-text">
-                                <input type="checkbox" id="mysort" name="mysort" class="mysort"
-                                    style="width: 10px; zoom: 2; margin-top: 0px; float: right;">
-                                Sort / Reorder : Rows
+                            <div class="width20c" style="width: auto;min-width: 10%; margin-left:10px ">
+                                <div class="width50c" style="max-width: 36px;"><img
+                                        style="width: 87% !important; float: left;" src="assets/rowicon.png"> </div>
+                                <div class="width50c"> <input type="checkbox" id="mysort" name="mysort" class="mysort"
+                                        style="width: 10px; zoom: 2; margin-top: 0px; float: left;"></div>
                             </div>
 
-                            <div style="float: left; margin-left: 7px; width: auto; float: left;"
-                                class="mysort unselectable-text">
-                                <input type="checkbox" id="mysortcomponents" name="mysortcomponents"
-                                    class="mysortcomponents"
-                                    style="width: 10px; zoom: 2; margin-top: 0px; float: right;">
-                                Components
+                            <div class="width20c">
+                                <div class="width50c" style="max-width: 36px;"> <img
+                                        style="width: 80% !important; float: left;" src="assets/compicon.png"></div>
+                                <div class="width50c"><input type="checkbox" id="mysortcomponents"
+                                        name="mysortcomponents" class="mysortcomponents"
+                                        style="width: 10px; zoom: 2; margin-top: 0px; float: left;"></div>
+                            </div>
+                            <div class="width30c">
+                                <div class="width50c" style="max-width: 70px;"> Fullsreeen</div>
+                                <div class="width50c"> <input type="checkbox" id="mytoolsview" name="mytoolsview"
+                                        class="mytoolsview"
+                                        style="width: 10px; zoom: 2; margin-top: 0px; float: left; margin-right:5px">
+                                </div>
+
                             </div>
 
 
-                            <div style="float: left; margin-left: 10px; width: auto; float: left"
-                                class=" unselectable-text">
-                                <input type="checkbox" id="mytoolsview" name="mytoolsview" class="mytoolsview"
-                                    style="width: 10px; zoom: 2; margin-top: 0px; float: right;">
-                                &nbsp; || &nbsp;&nbsp; Fullsreeen
 
-
-                            </div>
                         </div>
+
+
+
 
 
                     </div>
@@ -2789,37 +2827,43 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
             <div class="width100c" style="margin-bottom: 0px;   width: 94%; margin-left: 4%;">
 
-            <div class="width100c" style=" margin-left: 1%; width: 98%; min-height: 20px; overflow: auto; max-width: 1250px;">
-            <div class="width100c"  style="width: 872px;">
-                <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2" style="border-radius: 5px 5px 0px 0px; margin-left: .1%;">Workspace</div>
-                <div class="openthematrix" mymatrix="mymatrix4" style="border-radius: 5px 5px 0px 0px">Check on PCR</div>
-                <div class="openthematrix" mymatrix="mymatrix9" style="border-radius: 5px 5px 0px 0px; float: left;"><strong>Plugins & Tools</strong></div>
-                <div class="openthematrix" mymatrix="mymatrix1" style="border-radius: 5px 5px 0px 0px; "><strong>Final Code</strong></div>
+                <div class="width100c" style=" margin-left: 1%; width: 98%; min-height: 20px; overflow: auto; ">
+                    <div class="width100c" style="width: 462px;">
+                        <div class="openthematrix" mymatrix="mymatrix6" style="float: right;"><strong>Templetes</strong>
+                        </div>
+                        <div class="openthematrix" mymatrix="mymatrix1" style="float: right; "><strong>Final
+                                Code</strong></div>
+                        <div id="pluginsandtools" class="openthematrix" mymatrix="mymatrix9" style="float: right;"><strong>Plugins &
+                                Tools</strong></div>
+                        <div class="openthematrix" mymatrix="mymatrix4" style="float: right;">Check on PCR</div>
+                        <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2"
+                            style="margin-left: .1%;float: right;">Workspace</div>
 
-                
-                <div class="openthematrix" mymatrix="mymatrix6" style="border-radius: 5px 5px 0px 0px; float: right; ">
-                    <strong>Templetes</strong></div>
 
+
+
+
+                        <!--
                 <div id="hidemainmobile" myhide="0" class="unselectable-text"
                     style=" color: #fff; float: right; margin-left: 10px; background-color: #333; padding-left: 3px; padding-right: 3px;  font-size: 0.7rem; cursor: pointer; padding: 3px;">
                     Hide Mobile</div>
+-->
 
 
-
-            </div>
-            </div>
-
-
-              
-
-                
+                    </div>
+                </div>
 
 
 
 
-                
 
-                
+
+
+
+
+
+
+
 
 
                 <div class="width100c"
@@ -2847,7 +2891,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
 
-            
+
 
 
             </div>
@@ -3175,10 +3219,10 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                 <button class="textaligner3 unselectable-text" title="Create a Line Break in the Text"
                     style="width: 100%;font-size: 1em;max-width: none; color: #fff;  background-color: transparent;margin-bottom: 10px; "
-                    cssadd="<br>">br</button>
+                    cssadd="<br>"> &lt;br/&gt;</button>
 
                 <div class="hover-item" style="margin-left: -5px; width: 36px;">
-                    H2-4
+                    &lt;H/&gt;
                     <div class="popup hidden" style="width: 120px; margin-left: -1px;">
 
                         <button class="texttype unselectable-text" title="Make Selected Text an H2"
@@ -3201,16 +3245,22 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
                 <div class="hover-item" style="margin-left: -10px; margin-top: -7px;">
-                    <button class="unselectable-text " title="Add Rows" style=" text-align: center;
-                        background-color: blue;
-                        color: #fff;
-                        width: 97%;
-                        margin-top: 10px;
-                        margin-bottom: 0px;
-                        padding-top: 5px;
-                        padding-bottom: 5px;
-                        padding-left: 44%;
-                        padding-right: 128%;">Row</button>
+                    <button class="unselectable-text " title="Add Rows" style="text-align: center;
+                    color: #fff;
+                    width: 97%;
+                    margin-top: 10px;
+                    margin-bottom: 0px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    padding-left: 44%;
+                    padding-right: 128%;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    background-image: url(assets/rowicon.png);
+                    background-position: center;
+                    background-repeat: no-repeat;">
+                        <span style="opacity: 0;">Row</span>
+                    </button>
 
                     <div class="popup hidden"
                         style="margin-left: 24px; margin-top: 10px; width: 250px; padding-bottom: 5px;">
@@ -3230,43 +3280,69 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
 
-                <button id="addrow1x1a" class="unselectable-text" title="Add 100% Component"
-                    style="text-align: center;  background-color: yellow; color:#333; padding-top: 4px; padding-bottom: 4px; width: 100%;  margin-bottom: 5px; min-width: 54px">100</button>
+                <button id="addrow1x1a" class="unselectable-text" title="Add 100% Component" style="    text-align: center;
+                    color: #fff;
+                    width: 97%;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    padding-top: 7px;
+                    padding-bottom: 5px;
+                    margin-bottom: 10px;
+                    padding-left: 9%;
+                    padding-right: 110%;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    background-image: url(assets/compicon.png);
+                    background-position: center;
+                    background-repeat: no-repeat;">
+
+                    <span style="opacity: 0;">100</span>
+                </button>
 
                 <div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
 
 
                 <div class="hover-item">
                     <div class="texttype unselectable-text" value="span style='color:#034694'" title="Define Text Color"
-                        style="text-align: center;
-                    background-color: #034694;
-                    color: #fff;
-                    margin-left: -10px;
-                    width: 186%;
-                    min-width: 40px;
-                    margin-top: 5px;
-                    margin-bottom: 5px;">C</div>
+                        style="    text-align: center;
+                        color: #fff;
+                        width: 97%;
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+                        padding-top: 7px;
+                        padding-bottom: 5px;
+                        margin-bottom: 10px;
+                        padding-left: 11%;
+                        padding-right: 128%;
+                        margin-left: 2px;
+                        background-color: transparent !important;
+                        background-size: contain;
+                        background-image: url(assets/coloricon.png);
+                        background-position: center;
+                        background-repeat: no-repeat;">
+                        <span style="opacity: 0;">C</span>
+                    </div>
                     <div class="popup hidden"
                         style="padding-top: 5px; padding-bottom: 5px; margin-top: 5px; width: 400px;">
 
                         <button class="texttype unselectable-text" value="span style='color:#034694'"
                             title="Text Color Blue"
-                            style="text-align: center;  background-color: #034694; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;">C</button>
+                            style="text-align: center;  background-color: #034694; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;">Blue</button>
 
 
                         <button class="texttype unselectable-text" value="span style='color:#d71920'"
                             title="Text Color Red"
-                            style="text-align: center;  background-color: #d71920; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;">C</button>
+                            style="text-align: center;  background-color: #d71920; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;">Red</button>
 
 
                         <button class="texttype unselectable-text" value="span style='color:#fff'"
                             title="Text Color White"
-                            style="text-align: center;  background-color: #000; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;">C</button>
+                            style="text-align: center;  background-color: #000; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;">White</button>
 
 
                         <button class="texttype unselectable-text" value="span style='color:#000'"
                             title="Text Color Black"
-                            style="text-align: center;  background-color: #fff; color:#000; width: 24%; margin-top: 5px; margin-bottom: 5px;">C</button>
+                            style="text-align: center;  background-color: #fff; color:#000; width: 24%; margin-top: 5px; margin-bottom: 5px;">Black</button>
 
 
                     </div>
@@ -3283,17 +3359,58 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                 <div style="width: 94%; border: 2px solid #ccc; margin-bottom: 10px; "></div>
 
-                <button class="deleterow unselectable-text" title="Delete Row"
-                    style="text-align: center; background-color: #730000; color: white; width: 100%; margin-top: 5px; margin-bottom: 5px;">R</button>
-                <button class="deletecode  unselectable-text" title="Delete Component"
-                    style="text-align: center; background-color: #730000; color: white; width: 100%; border: 2px solid yellow;margin-top: 5px; margin-bottom: 5px;">C</button>
-                <button class="clearsection unselectable-text" title="Empty Component"
-                    style="text-align: center; background-color: #fff; color: #730000; width: 100%; margin-top: 5px; margin-bottom: 5px; border: 2px solid #730000;">E</button>
+                <button class="deleterow unselectable-text" title="Delete Row" style="text-align: center;
+                color: #fff;
+                width: 97%;
+                margin-top: 3px;
+                margin-bottom: 6px;
+                padding-top: 6px;
+                padding-bottom: 5px;
+                padding-left: 11%;
+                padding-right: 110%;
+                background-color: transparent !important;
+                background-size: contain;
+                background-image: url(assets/icontrash.png);
+                background-position: center;
+                background-repeat: no-repeat;"><span style="opacity: 0;">R</span></button>
+
+
+
+                <button class="deletecode  unselectable-text" title="Delete Component" style="text-align: center;
+                    color: #fff;
+                    width: 97%;
+                    margin-top: 13px;
+                    margin-bottom: 6px;
+                    padding-top: 6px;
+                    padding-bottom: 5px;
+                    padding-left: 11%;
+                    padding-right: 110%;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    background-image: url(assets/icondelcomp.png);
+                    background-position: center;
+                    background-repeat: no-repeat;"><span style="opacity: 0;">C</span></button>
+
+
+                <button class="clearsection unselectable-text" title="Empty Component" style="text-align: center;
+                    color: #fff;
+                    width: 97%;
+                    margin-top: 3px;
+                    margin-bottom: 6px;
+                    padding-top: 6px;
+                    padding-bottom: 5px;
+                    padding-left: 11%;
+                    padding-right: 110%;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    background-image: url(assets/iconemptycomp.png);
+                    background-position: center;
+                    background-repeat: no-repeat;"><span style="opacity: 0;">E</span></button>
 
 
 
             </div>
-            <div id="pullthecode2" class="width50c layout2">
+            <div id="pullthecode2" class="width50c layout2" style="border-radius: 10px 10px 10px;">
 
                 <div class="width100c">
 
@@ -3364,7 +3481,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                     style="margin-bottom: 10px; background-color: #334; margin-top: 0px; border-top: 4px solid #fff;">
                     <ul style="margin-bottom: 35px;">
                         <li>Ctrl + Delete = Reload</li>
-                        <li>F1 = Go to Start Sreen</li>
                         <li>F11 = Full Screen</li>
                         <li>Ctrl + B = Bold Text</li>
                         <li>Ctrl + E = Subscript</li>
