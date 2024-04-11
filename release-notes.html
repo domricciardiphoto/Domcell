@@ -5,266 +5,323 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="global-style.css"/>
-  <title>Release Notes</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Technical Release Notes Timeline</title>
   <style>
     body {
       background-color: #121212;
-      font-size: 1.2rem;
-      padding: 5%;
-      padding-top: 0px;
-      color: #fff;
+      font-family: Arial, sans-serif;
+      color: #ddd;
+      margin: 0;
+      padding: 20px;
     }
 
-.whatsnew {
-  font-size: 0.875em;
-  line-height: 30px;
-}
+    .timeline {
+      position: relative;
+      margin: auto;
+      padding: 40px 0;
+      width: 90%;
+    }
 
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: #ddd;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    .container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    .container::before {
+      content: ' ';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: white;
+      border: 4px solid #FF9F55;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .right {
+      left: 50%;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .right::before {
+      left: -17px;
+    }
+
+    .content {
+      padding: 20px 30px;
+      background-color: #333;
+      position: relative;
+      border-radius: 6px;
+    }
+
+    .content::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 22px;
+      right: -15px;
+      border: 15px solid transparent;
+      border-left-color: #333;
+      border-right: 0;
+      margin-top: -15px;
+      margin-right: -15px;
+    }
+
+    .right .content::after {
+      left: -15px;
+      right: auto;
+      border-left-color: transparent;
+      border-right-color: #333;
+    }
+
+    .fa-bug,
+    .fa-plus,
+    .fa-wrench {
+      margin-right: 10px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 100px;
+      z-index: 9;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      color: black;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 
 <body>
-<div class="whatsnew">
-  2024----------------<br>
-4/9<br>
-<ol>
-  <li>WOW! Now that is embarrasing... There was alot of half baked stuff in the last build!</li>
-  <li>Fixed: The Help (Although needs to be rewritten) || Fixed Advanced Code Editor</li>
-  <li>Fixed: Put a minimum width on the toolbox fixed it crushing</li>
-  <li>Fixed: An Intermitant Bug where the Templete download wouldnt open correctly</li>
-  <li>Cleaned up editing after import</li>
-  <li>Widend the interface to fill ALL available space. Trying to sqeeze every pixel for more work area.</li>
-  <li>Implimented more save on close features to be activated later</li>
-  <li>Implimented new Icons for buttons that are more descriptive (I do like the "row" boat ahh nerd joy</li>
-</ol>
 
+  <div class="timeline">
 
-  4/8<br>
-  <ol>
-    <li>Menus made for overflow</li>
-    <li>Blog Features started</li>
-    <li>Save Implimented  Will save the last thing you are working on. Wont save multiple tabs just the last one</li>
-    <li>Added Editing to ECP and Code Imported Content</li>
-  </ol>
-  4/4<br>
-  <ol>
-    <li>New CSV / SRT to VTT Converter add to video component and getting started page</li>
-    <li>New HTML / TXT Importer to HTML</li>
-    <li>Microsoft Word Doc importer to html</li>
-    <li>Toolbox and Workspace are scaleable when dragged</li>
-    <li>Updated Interface to v9</li>
-    <li>---Research into crashes and Program being removed from Computers--</li>
-    <li>"Behind the scenes" all programming code libraries updated to latest versions</li>
-    <li>Full Removal of the Tutorial  (No Longer vaild)</li>
-    <li>Special Character checker removed as no longer nessasary</li>
-  </ol>
+    <div class="container right">
+      <div class="content">
+        <h2><span class="fa fa-wrench"></span>2024/4/11 Bug Fixes</h2>
+        <p>Bug Fixes and Useabiity issues</p>
+        <button id="btnFeatureUpdate411a">Read more</button>
+      </div>
+    </div>
 
-4/2<br>
-<ol>
-  <li>New Intro Screen: Official Application Icons. Overview Content is now labeled as Content Designer.</li>
-  <li>New Key Commands:
-      <ul>
-          <li>Ctrl + Delete = Reload</li>
-          <li>F1 = Go to Start Screen</li>
-          <li>F11 = Full Screen</li>
-      </ul>
-  </li>
-  <li>The application will open in the same size it was closed in. This is the first step towards a Save feature.</li>
-  <li>The Code Cleaner button is now renamed to Plugins & Tools, which contains options for:
-      <ul>
-          <li>Store Locator</li>
-          <li>Banner Scheduler</li>
-          <li>Special Character Tool</li>
-          <li>HTML Manifier</li>
-          <li>AI Story Generator</li>
-      </ul>
-      Note: The frame that holds applications is in the process of being refreshed with an integrated Menu. It's time for a mature coat of paint as the core is eventually done.
-  </li>
-  <li>Double-clicking on text to edit has been changed to triple-click to allow selecting text again with a double click.</li>
-  <li>ECP Code import Button: This will put editable code outside the frame. It's useful for when you want to edit existing ecp code to add links, etc., and replace without adding a lot of new code.</li>
-  <li>Layout Section Revised: The Add Rows section has been modified with a slider so you can add up to 20 rows in a single click.</li>
-  <li>Rows Section completely overhauled with sliders. Using these dials, you can make full-blown callouts and banners. The sliders allow for 100x more precision.</li>
-  <li>Bug Fix: Clicking links in PCR Viewer not opening Modal.</li>
-  <li>Titles of buttons are using fewer words so they don't overlap on smaller screens.</li>
-  <li>Note: Background Image on Rows Development has begun.</li>
-  <li>Note: Tools from the Domcell interface will begin migrating over to the web builder so they are all part of the same code platform. As they do, options will disappear from the Getting Started screen.</li>
-  <li>Note: Web Builder will be broken up into Production and a DEV version if there are any future Large Feature updates to work out any problems before moving it to the Production version. This will be available in the Getting Started Domcell Home screen.</li>
-  <li>Features:
-      <ul>
-          <li>Row Radius</li>
-          <li>Row Padding</li>
-          <li>Row Background Color</li>
-          <li>Body Background Color</li>
-          <li>Font Color</li>
-          <li>Hide on Desktop & Hide on Mobile</li>
-      </ul>
-  </li>
-  <li>Notes: These options are in "Row Options". Ergonomics will be considered in future updates and eventually background image options as requested.</li>
-</ol>
+    <div id="modalFeatureUpdate411a" class="modal">
+      <div class="modal-content">
+        <span class="close" data-modal="modalFeatureUpdate411a">&times;</span>
+        <h2>Fixes Update Details</h2>
+        <ol>
+          <li>On Row select Row Tools shows whether its hiiden in mobile and / or desktop</li>
+          <li>Check On PCR Fixed to show and hide Correct Mobile or Desktop versions</li>
+          <li>Mobile Workspace viewer fixed to show correct Mobile Versions </li>
+          <li>On Reload Row Selection issues fixed</li>   
+          <li>Lowered Minimum Device Requirements for the app: Min width is an 1024px</li> 
+          <li>List of Stability fixes</li>
+          <li>Research into Touch screens has begun</li>
 
-  2/12<br>
-<ol>
-  <li>Update to Long Banner in Badge Builder</li>
-  <li>Overview / Webpage Builder in near final release version</li>
-</ol>
-
-1/15<br>
-<ol>
-  <li>New Overview Content Builder</li>
-  <li>video tag Builder in dev</li>
-</ol>
-2023-------------<br>
-
-  10/17<br>
-  <ol>
-    <li>Fixed Banner Builder tag</li>
-    <li>Updated Secondary Banner code</li>
-  </ol>
-
-  8/29<br>
-  <ol>
-    <li>New Badge CSS file</li>
-  </ol>
-
-8/25<br>
-<ol>
-  <li>New Top of Page SEO Tool</li>
-  <li>New Video Player (HTML 5) Code builder with live preview</li>
-  <li>Menu builder out of Dev (Complete)</li>
-  <li>Breadcrumb builder out of Dev (Complete)</li>
-  <li>Domcell Framework 3 started (expected release Dec 2024)</li>
-  <li>What is the shortest complete sentence in the English language?<br> Answer:  "GO"</li>
-</ol>
+        </ol>
+      </div>
+    </div>
 
 
 
-  8/11<br>
-<ol>
-  <li>Added New Badge for Products</li>
-  <li>Released Tool: Breadbrumb Builder</li>
-  <li>Fixed PCR Search Menu</li>
-</ol>
 
+    <div class="container left">
+      <div class="content">
+        <h2><span class="fa fa-plus"></span>2024/4/11 New Features</h2>
+        <p>Wed Designer Tools Added</p>
+        <button id="btnFeatureUpdate411">Read more</button>
+      </div>
+    </div>
 
-8/7<br>
-The Big Bad Monster of an update!<br> Domcell v7 is finally here!
-<ol>
-<li>New Menu system</li>
-<li>Updated search options open in Default Browser Windows</li>
-<li>New Getting Started Page</li>
-<li>Updated Tool frame with new Tech for future functions</li>
-<li>Prep for New tools from the unreleased Developer browser only tools to move over to Domcell for everyone (maybe)</li>
-<li>Added Save to txt file for Menu builder</li>
-<li>Added Refresh to Menu Builder</li>
-<li>Total recode for speed of app</li>
-<li>Added IPC functions appwide</li>
-<li>More responsive for smaller screens (Still needs more work)</li>
-<li>Move towards plain javascript from jquery JS as IPC doesnt get along with jquery</li>
-<li>Updated Riddle</li>
-</ol>
-
-
-  8/4<br>
-  <ol>
-    <li>Added Refresh to Bubble Menu Maker</li>
-    <li>Added Save to Text in Bubble Menu Maker</li>
-    <li>Added Mac Build info to stay current with Win Version</li>
-  </ol>
-
-  6/13<br>
-  <ol>
-    <li>Added New Menu Builder Tool</li>
-    <li>Updated Banner Builder Tool Version 2.0</li>
-    <li>Added Mac Version of App</li>
-    <li>General Bug Fixes</li>
-    <li>Prep for Total rebuild for Version 7 TBA</li>
-  </ol>
+    <div id="modalFeatureUpdate411" class="modal">
+      <div class="modal-content">
+        <span class="close" data-modal="modalFeatureUpdate411">&times;</span>
+        <h2>Web Designer Tools and Bug Fixes</h2>
+        <ol>
+          <li>New: Component Layout Tools added From Background Color, Font family, padding , Line height and more. Now
+            you can modify COMPONENTS in the same row!</li>
+          <li>Sterns and Foster Font linotype-didot added as an option</li>
+          <li>Fixed: On Open from a Closed program Exiting file now fully editable</li>
+          <li>New Release Notes Layout</li>
+          <li>New 3 Row Layout Option added</li>
+          <li>Background Colors increased</li>
+          <li>Check on PCR Now resizeable on the right side -- Toggle to turn that on and off is coming soon (Known
+            issue if you drag it the Button Sizes Dont work)</li>
+          <li>Buttons on Sliders for smaller Screens</li>
+        </ol>
+        <ul>
+          <li><strong>Coming Soon:</strong></li>
+          <li>Ability to double click on Web Designer tools numbers and type in directly</li>
+          <li>Custom Background Colors</li>
+        </ul>
+      </div>
+    </div>
 
 
 
-5/10<br>
-<ol>
-  <li>Added Colors to Dog Ear Badge</li>
-  <li>Moved CMS Options to top Menu so they open in your Browser</li>
-  <li>Stopped Intro from reopening every time you open Badge Builder</li>
-  <li>Refactor of Menu items to Electron Menu and added Submenus</li>
-  <li>Added Full Screen Tools</li>
-  <li>IPC will be the last Electron feature before Version 7 of the app</li>
-
-</ol>
 
 
-  5/3<br>
-  <ol>
-    <li>Added Green Long Banner</li>
-    <li>CSS Bracket fix</li>
-    <li>Updated Help File</li>
-    <li>Added Mobile Views of PCR</li>
-  </ol>
-
-  5/2<br>
-
-<ol>
-  <li>Updateable App</li>
-  <li>Additional Tools Framework</li>
-  <li>Full Released App out of beta</li>
-  <li>Offical Version 6+</li>
-  <li>Badge CSS Ver 9</li>
-  <li>Electron framework development beginning</li>
-</ol>
-
-5/1<br>
-<ol>
-  <li>Added a Water Filter Badge</li>
-  <li>Added Green Circle color Badge</li>
-  <li>Updated code to GIT</li>
-  <li>Got ride of update icon</li>
-  <li>Made Tools 100%</li>
-  <li>Updated to Beta RC 2.0.7</li>
-  <li>Updated CSS to Beta 9</li>
-  <li>Built logging into code</li>
-</ol>
-
-  4/28<br>
 
 
-<ol>
-  <li>cleanup of code</li>
-  <li>added dropdown menus</li>
-  <li>added Code Minifer tool</li>
-  <li>Added preview image to Content Builder</li>
-  <li>Change Store Locator Builder to Banner builder with added capabiulites</li>
-  <li>Updated Beta to 4</li>
-  <li>Cleanup CSS for smaller screens</li>
-  <li>Persistent Menu</li>
-  <li> its a secret! ;)</li>
-</ol>
 
 
-  Coming Soon....<br>
 
-<ol>
-  <li>Help document</li>
-  <li>More Tools</li>
-</ol>
-</div>
 
+
+    <div class="container right">
+      <div class="content">
+        <h2><span class="fa fa-plus"></span>2024/4/10 Page Update</h2>
+        <p>New Release Note layout</p>
+        <button id="btnFeatureUpdate">Read more</button>
+      </div>
+    </div>
+
+    <div id="modalFeatureUpdate" class="modal">
+      <div class="modal-content">
+        <span class="close" data-modal="modalFeatureUpdate">&times;</span>
+        <h2>Feature Update Details</h2>
+        <p>New Release Notes layout to be part of the design forward approch of Domcell 9</p>
+      </div>
+    </div>
+
+
+    <div class="container left">
+      <div class="content">
+        <h2><span class="fa fa-plus"></span>2024/4/9 New Features</h2>
+        <p>Introduced new icons, enhanced UI for better workspace utilization, and more...</p>
+        <button id="myBtn">Read more</button>
+      </div>
+    </div>
+
+    <div class="container right">
+      <div class="content">
+        <h2><span class="fa fa-wrench"></span>2024/4/8 Enhancements</h2>
+        <p>Optimized code execution paths, improved error handling, and interface refinements.</p>
+        <button id="btnEnhancements">Read more</button>
+      </div>
+    </div>
+    <!-- Enhancement Modal -->
+    <div id="modalEnhancements" class="modal">
+      <div class="modal-content">
+        <span class="close" data-modal="modalEnhancements">&times;</span>
+        <h2>Enhancements Details</h2>
+        <li>Cleaned up editing after import</li>
+        <li>Menus made for overflow</li>
+        <li>Added Editing to ECP and Code Imported Content</li>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <h2><span class="fa fa-bug"></span>2024/4/4 Bug Fixes</h2>
+        <p>Addressed critical bugs affecting the application's stability and added error logging for improved
+          diagnostics.</p>
+        <button id="btnBugFixes">Read more</button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>New Features Details</h2>
+        <ol>
+          <li>Widend the interface to fill ALL available space. Trying to sqeeze every pixel for more work area.</li>
+          <li>Implimented more save on close features to be activated later</li>
+          <li>Implimented new Icons for buttons that are more descriptive (I do like the "row" boat ahh nerd joy)</li>
+          <li>Save Implimented Will save the last thing you are working on. Wont save multiple tabs just the last one
+          </li>
+          <li>Blog Features started</li>
+          <li>New CSV / SRT to VTT Converter add to video component and getting started page</li>
+          <li>New HTML / TXT Importer to HTML</li>
+          <li>Microsoft Word Doc importer to html</li>
+        </ol>
+      </div>
+    </div>
+
+
+    <div id="modalBugFixes" class="modal">
+      <div class="modal-content">
+        <span class="close" data-modal="modalBugFixes">&times;</span>
+        <h2>Bug Fixes Details</h2>
+        <ol>
+          <li>Fixed: The Help (Although needs to be rewritten) || Fixed Advanced Code Editor</li>
+          <li>Fixed: Put a minimum width on the toolbox fixed it crushing</li>
+          <li>Fixed: An Intermitant Bug where the Templete download wouldnt open correctly</li>
+        </ol>
+      </div>
+    </div>
+    <!-- More entries -->
+  </div>
+
+  <script>
+    document.querySelectorAll('button[id^="btn"], #myBtn').forEach(btn => {
+      btn.onclick = function () {
+        var modalId = this.id === "myBtn" ? "myModal" : this.id.replace('btn', 'modal');
+        document.getElementById(modalId).style.display = "block";
+      }
+    });
+
+    document.querySelectorAll('.close').forEach(span => {
+      span.onclick = function () {
+        var modalId = this.dataset.modal ? this.dataset.modal : "myModal";
+        document.getElementById(modalId).style.display = "none";
+      }
+    });
+
+    window.onclick = function (event) {
+      if (event.target.className === 'modal') {
+        event.target.style.display = "none";
+      }
+    }
+  </script>
 
 </body>
-<script src="jquery.js"></script>
-<script src="global.js"></script>
-
-
-
-
-
-
-
-
-
-
 
 </html>
-

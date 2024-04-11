@@ -191,7 +191,8 @@
                     width: 73%;
                     margin-bottom: 10px;
                     margin-left: 4%;
-                    overflow: auto;
+                    overflow-x: auto;
+                    overflow-y: hidden;
                     float: left;
                     margin-right: 2%;
                     margin-top: -16PX;
@@ -662,6 +663,15 @@ color: #fff;
 width: 45%; margin-right: 2%;
 line-height: 25px; float: left;
 margin-bottom: 8px;">Add a 40 / 60 Row</button>
+
+
+<button class="unselectable-text addrow30x3" style="background-color: #001ca7;
+color: #fff;
+width: 45%; margin-right: 2%;
+line-height: 25px; float: left;
+margin-bottom: 8px;">Add a 33% x3 Row</button>
+
+
                     </div>
 
 
@@ -681,44 +691,12 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                     <button class="createlayoutslider"
                         style="width: 92%; color: #fff; background-color: transparent; border: 1px solid #ccc; padding-top: 7px; padding-bottom: 7px; margin-top: 10px;">Create
                         Multiple Rows</button>
-                    <!--
-
-                    <div class="width100c">
-                        <button class="secondlauyout layoutloader unselectable-text"
-                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                            id="wid100code1" layout="wid100code1">Width 100 x1</button>
-                        <button class="secondlauyout layoutloader unselectable-text"
-                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                            id="wid100code2" layout="wid100code2">Width 100 x2</button>
-                    </div>
-
-                    
-                    <div class="width100c">
-                        <button class="secondlauyout layoutloader unselectable-text"
-                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                            id="wid100code3" layout="wid100code3">Width 100 x3</button>
-                        <button class="secondlauyout layoutloader unselectable-text"
-                            style="background-color: transparent; color: #fff;border: 1px solid orange;"
-                            id="wid100code4" layout="wid100code4">Width 100 x4</button>
-                    </div>
-
--->
+      
                 </div>
 
-                <!--
-                <div class="width100c  " style="margin-top: 5px;">
+         
 
-                    <button class="secondlauyout layoutloader unselectable-text"
-                        style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code5"
-                        layout="wid100code5">Width 100 x5</button>
 
-                    <button class="secondlauyout layoutloader unselectable-text"
-                        style="background-color: transparent; color: #fff;border: 1px solid orange;" id="wid100code6"
-                        layout="wid100code6">Width 100 x6</button>
-
-                </div>
-
--->
                 <div class="width100c ">
                     <div class="width100c findthecode2 findthecode2"
                         style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -5px; margin-top: 10px;">
@@ -2216,12 +2194,12 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                 <div openclose="myrowbuilder" class="width100c stage1  myrowbuilder"
                     style="padding-left: 2.5%; padding-top:10px">
 
-
+                    <div class="width100c" style="margin-top: -20px; text-align: center; margin-bottom: 5px;">-Row Tools-</div>
 
 
                     <div class="width100c">
                         <div class="width100c"
-                            style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px; margin-bottom: 5px; color: yellow;">
+                            style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px; margin-bottom: 5px; color: lightblue;">
                             Device Visability:
                         </div>
                         <div class="width50c">Hide on mobile <input id="mobilehidev2d" type="checkbox"
@@ -2242,7 +2220,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                     <div class="width100c">
                         <div class="width50c">
                             <div class="width100c"
-                                style="margin-top:5px; width:88%; font-size:0.8rem;font-size: 90%; color: yellow;">
+                                style="margin-top:5px; width:88%; font-size:0.8rem;font-size: 90%; color: lightblue;">
                                 Row Background Color:</div>
 
 
@@ -2251,39 +2229,23 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                                 <option value="" disabled>Row Background Color</option>
                                 <option value="none" value1="#333">Transparent</option>
                                 <option value="rgb(247, 247, 247)" value1="#333">Highlighted</option>
-                                <option value="rgb(102, 102, 102)" value1="#fff">Dark Gray</option>
-                                <option value="rgb(153, 153, 153)" value1="#333">Gray</option>
-                                <option value="rgb(249, 249, 249)" value1="#333">Light Gray</option>
+                                <option value="rgb(0, 0, 0)" value1="#fff">Black</option>
+                                <option value="rgb(153, 153, 153)" value1="#333">Gray</option>  
+                                <option value="rgb(102, 102, 102)" value1="#fff">Dark Gray</option>                                                      
                                 <option value="rgb(204, 0, 0)" value1="#fff">Red</option>
                                 <option value="rgb(2, 48, 74)" value1="#fff">Blue</option>
                                 <option value="rgb(0, 136, 39)" value1="#fff">Green</option>
-                                <option value="rgb(0, 0, 0)" value1="#fff">Black</option>
+                                <option value="rgb(249, 249, 249)" value1="#333">Light Gray</option>
+                                <option value="rgb(126, 170, 200, .5)" value1="#d4e1eb">Light Blue</option>
+                                <option value="rgb(255, 201, 198, .5)" value1="#ffc9c6">Light Pink</option>
                             </select>
 
                         </div>
                         <div class="width50c">
-                            <div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem;color: yellow;">
+                            <div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem;color: lightblue;">
                                 Row Margin Top:
                             </div>
-                            <!--
-                            <select name="Row-Margin-Top" id="Row-Margin-Top" style="width: auto; margin-top:10px">
-                                <option value="" disabled>Row Margin Top</option>
-                                <option value="none">Select Height</option>
-                                <option value="0"> Level 0</option>
-                                <option value="10">Level 1</option>
-                                <option value="20">Level 2</option>
-                                <option value="30">Level 3</option>
-                                <option value="40">Level 4</option>
-                                <option value="50">Level 5</option>
-                                <option value="60">Level 6</option>
-                                <option value="70">Level 7</option>
-                                <option value="80">Level 8</option>
-                                <option value="90">Level 9</option>
-                                <option value="100">Level 10</option>
-                                <option value="150">Level 11</option>
-                                <option value="200">Level 12</option>
-                            </select>
--->
+
                             <div class="width100c">
                                 <label for="rangeSlider"><span id="sliderValue2">0</span>px</label>
                                 <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="200" value="0"
@@ -2297,20 +2259,9 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                             <div class="width50c">
                                 <div class="width100c"
-                                    style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px; color: yellow;">
+                                    style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px; color: lightblue;">
                                     Row Padding</div>
-                                <!--
-                                <select name="Row-Border-Radius" id="Row-Border-Radius"
-                                    style="width: 120px; margin-top:10px; margin-left: 5px;">
-                                    <option value="0" disabled>Select</option>
-                                    <option value="0"> Square</option>
-                                    <option value="10px">10px</option>
-                                    <option value="20px">20px</option>
-                                    <option value="30px">30px</option>
-                                    <option value="40px">40px</option>
-                                    <option value="50px">Roundest</option>
-                                </select>
--->
+      
                                 <select name="Row-Padding-Radius" id="Row-Padding-Radius"
                                     style="width: 120px; margin-top:10px; margin-left: 5px;">
                                     <option value="0" disabled>Select</option>
@@ -2333,7 +2284,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
                             <div class="width50c">
                                 <div class="width100c"
-                                    style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px;color: yellow;">
+                                    style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px;color: lightblue;">
                                     Row Border Radius</div>
 
 
@@ -2343,13 +2294,6 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                                     <input type="range" id="rangeSlider4" name="rangeSlider3" min="1" max="100"
                                         value="0" oninput="updateSliderValue4(this.value)">
                                 </div>
-
-                                <!--
-                                <div class="width100c">
-                                <label for="rangeSlider"><span id="sliderValue3">0</span>%</label>
-                                <input type="range" id="rangeSlider3" name="rangeSlider3" min="1" max="100" value="0" oninput="updateSliderValue3(this.value)">
-                            </div>
--->
 
                             </div>
 
@@ -2362,10 +2306,11 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
                         <div class="width100c" style="padding-top: 10px;">
-                            <div class="width50c" style="color: yellow;">Body Color<br>
+                            <div class="width50c" style="color: orange;font-size:0.8rem; background-color: #444; width: 45.5%; margin-right: 2.2%; border: 1px solid #fff;">
+                               <div class="width100c" style="text-align: center;">Body Color</div>
 
                                 <select name="body-color" id="body-color"
-                                    style="width: 120px; margin-top:10px; margin-left: 5px;">
+                                    style="width: 98%; margin-left: 1%; margin-top:10px; ">
                                     <option value="transparent" disabled>Select</option>
                                     <option value="Transparent"> Transparent</option>
                                     <option value="#fff"> White</option>
@@ -2377,7 +2322,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                                 </select>
                             </div>
                             <div class="width50c">
-                                <span style="color: yellow;">Line Height</span>
+                                <span style="color: lightblue;font-size:0.8rem;">Line Height</span>
                                 <div class="width100c">
                                     <label for="rangeSlider"><span id="sliderValue">23</span>px</label>
                                     <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="100" value="23"
@@ -2391,163 +2336,117 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
                     </div>
 
 
+<div class="width100c" style="border-top: 1px solid #fff; margin-top: 10px;">
+<div class="width100c" style="margin-top: 10px; text-align: center; margin-bottom: 10px;">-Component Tools-</div>
+
+
+<div class="width50c" style="margin-top:5px; width: 46%;  font-size:0.8rem; margin-left: 5px; color: yellow;">
+    Comp. Background Color
+
+    <select name="comp-color" id="comp-color"
+    style="width: 120px; margin-top:10px; margin-left: 5px;">
+    <option value="transparent" disabled>Select</option>
+    <option value="Transparent"> Transparent</option>
+    <option value="#fff"> White</option>  
+    <option value="#000">Black</option> 
+    <option value="#666">Gray</option>
+    <option value="rgb(2, 48, 74)">Blue</option>
+    <option value="#333">Dark Gray</option>
+    <option value="#999">Light Gray</option>
+    <option value="rgb(126, 169, 200)">Mid Blue</option>
+    <option value="rgb(126, 170, 200, .5)">Light Blue</option>
+    <option value="rgb(255, 201, 198, .5)">Light Pink</option>
+  
+</select>
+
+</div>
+
+
+
+<div class="width50c" style="margin-top:5px; width: 46%;  font-size:0.8rem; margin-left: 5px; color: yellow;">
+    Font Family<br>
+
+    <select name="comp-font" id="comp-font"
+    style="width: 120px; margin-top:10px; margin-left: 5px;">
+    <option value="transparent" disabled>Select</option>
+    <option value="inherit"> Standard</option>
+    <option value="linotype-didot,Open Sans,serif"> linotype-didot</option>
+
+</select>
+
+</div>
 
 
 
 
-                </div>
-
-
-                <!--
-                <div class="width100c openclose" openclose="mytextbuilder" style="display: none;">
-                    <div class="width100c unselectable-text" style="margin-left: -3%;">
-                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
-                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Text Options</span>
-                    </div>
-                </div>
-
-               
-                <div openclose="mytextbuilder" class="width100c stage1 tools mytextbuilder"
-                    style="width: 97%; margin-left: 2%;">
-
-
-                    <div class="width100c">
-                        <button class="texttype"
-                            style="width: 9%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;"
-                            value="strong"><strong class="unselectable-text">Bjjj</strong></button>
-                        <button class="texttype" style="width: 9%; color: #fff; background-color: transparent;"
-                            value="i"><i class="unselectable-text">I</i></button>
-                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
-                            value="strong class='strongitalic'"><strong><i
-                                    class="unselectable-text">B+I</i></strong></button>
-                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
-                            value="u"><u class="unselectable-text">U</u></button>
-                        <button class="texttype"
-                            style="width: 9%; color: #fff;  background-color: transparent;font-size: 0.8rem;"
-                            value="sub">X<sub>2</sub></button>
-                        <button class="texttype"
-                            style="width: 9%; color: #fff; border-right: 1px solid #ccc; background-color: transparent;font-size: 0.8rem;"
-                            value="sup">
-                            X<sup>2</sup></button>
-
-                        <button class="textaligner"
-                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
-                            cssadd='left'>
-                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
-                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
-                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
-                                <style>
-                                    .st1a {
-                                        stroke: #fff;
-                                        stroke-width: 6;
-                                        stroke-miterlimit: 10
-                                    }
-                                </style>
-                                <line class=st1a x1=6 x2=43.6 y1=6.8 y2=6.6 />
-                                <line class=st1a x1=6 x2=43.5 y1=30.1 y2=30 />
-                                <line class=st1a x1=6 x2=35.6 y1=41.5 y2=41.4 />
-                                <line class=st1a x1=5.9 x2=35.5 y1=17.4 y2=17.3 />
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                            </svg></button>
-                        <button class="textaligner"
-                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
-                            cssadd='center'>
-                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
-                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
-                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
-                                <style>
-                                    .st0dd {
-                                        fill: #333
-                                    }
-
-                                    .st1dd {
-                                        stroke: #fff;
-                                        stroke-width: 6;
-                                        stroke-miterlimit: 10
-                                    }
-                                </style>
-                                <rect class=st0 height=51 width=50.2 x=-0.2 y=-0.3 />
-                                <line class=st1dd x1=6 x2=43.6 y1=6.8 y2=6.6 />
-                                <line class=st1dd x1=6 x2=43.5 y1=30.1 y2=30 />
-                                <line class=st1dd x1=6.3 x2=43.6 y1=41.5 y2=41.4 />
-                                <line class=st1dd x1=6.2 x2=43.5 y1=17.6 y2=17.5 />
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                            </svg></button>
-
-                        <button class="textaligner"
-                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
-                            cssadd='right'>
-                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
-                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
-                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
-                                <style>
-                                    .st0c {
-                                        fill: #333
-                                    }
-
-                                    .st1c {
-                                        stroke: #fff;
-                                        stroke-width: 6;
-                                        stroke-miterlimit: 10
-                                    }
-                                </style>
-                                <rect class=st0c height=51 width=50.2 x=-0.2 y=-0.3 />
-                                <line class=st1c x1=6 x2=43.6 y1=6.8 y2=6.6 />
-                                <line class=st1c x1=6 x2=43.5 y1=30.1 y2=30 />
-                                <line class=st1c x1=14 x2=43.6 y1=41.5 y2=41.4 />
-                                <line class=st1 x1=13.9 x2=43.5 y1=17.4 y2=17.3 />
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                                <g></g>
-                            </svg></button>
-
-                        <button class="textaligner3"
-                            style="width: 10%;font-size: 0.85em;max-width: none; color: #fff;  background-color: transparent;border-right: 1px solid #ccc; "
-                            cssadd='<br>'>br</button>
-
-
-
-                    </div>
-
-
-                    <div class="width100c" style="margin-top: 10px;">
-
-                        <select name="textaligner2" id="textaligner2b" style="    margin-top: 6px;
-                                width: 24%;
-                                font-size: 74%;
-                                max-width: none;
-                                min-height: 30px;
-                                text-align: center; background-color: #333; color: #fff; ">
-                            <option value="addpadding0">Add Top Margin 0px</option>
-                            <option value="addpadding10">Add Top Margin 10px</option>
-                            <option value="addpadding20">Add Top Margin 20px</option>
-                            <option value="addpadding30">Add Top Margin 30px</option>
-                            <option value="addpadding40">Add Top Margin 40px</option>
-                            <option value="addpadding60">Add Top Margin 60px</option>
-                            <option value="addpadding80">Add Top Margin 80px</option>
-                            <option value="addpadding100">Add Top Margin 100px</option>
-                        </select>
-                    </div>
 
 
 
 
+<div class="width50c" style="margin-top:5px;width: 46%;   margin-left: 5px;">
+    <span style=" color: yellow;font-size:0.8rem;">Font Size</span>
+     <div class="width100c">
+         <label for="fontSlider"><span id="sliderValue66">0</span>em</label>
+         <input type="range" id="fontSlider" name="fontSlider" min="0" max="3"  step="0.1" value="0"
+         oninput="updateSliderValue66(this.value)">
+     </div>
+ </div>
+
+
+
+<div class="width50c" style="margin-top:5px;width: 46%;   margin-left: 5px;">
+   <span style=" color: yellow;font-size:0.8rem;">Comp Width</span>
+    <div class="width100c">
+        <label for="widthSlider"><span id="sliderValue33">100</span>%</label>
+        <input type="range" id="widthSlider" name="widthSlider" min="1" max="100" value="100"
+        oninput="updateSliderValue33(this.value)">
+    </div>
+</div>
+
+
+<div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+    <span style=" color: yellow;font-size:0.8rem;">Comp Padding</span>
+     <div class="width100c">
+         <label for="widthSlider"><span id="sliderValue99">0</span>px</label>
+         <input type="range" id="widthSlider" name="widthSlider" min="1" max="200" value="0"
+         oninput="updateSliderValue99(this.value)">
+     </div>
+ </div>
+
+ <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+    <span style=" color: yellow;font-size:0.8rem;">Line Height</span>
+     <div class="width100c">
+         <label for="widthSlider00"><span id="sliderValue00">0</span>px</label>
+         <input type="range" id="widthSlider00" name="widthSlider00" min="0" max="100" value="10"
+         oninput="updateSliderValue00(this.value)">
+     </div>
+ </div>
+ 
+ <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+    <span style=" color: yellow;font-size:0.8rem;">Border Radius</span>
+     <div class="width100c">
+         <label for="widthSlider11"><span id="sliderValue11">0</span>px</label>
+         <input type="range" id="widthSlider00" name="widthSlider00" min="0" max="10" value="0"
+         oninput="updateSliderValue11(this.value)">
+     </div>
+ </div>
+
+ <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+    <span style=" color: yellow;font-size:0.8rem;">Margin Top</span>
+     <div class="width100c">
+         <label for="widthSlider22"><span id="sliderValue22">0</span>px</label>
+         <input type="range" id="widthSlider22" name="widthSlider22" min="-20" max="100" value="0"
+         oninput="updateSliderValue22(this.value)">
+     </div>
+ </div>
+ 
+
+
+</div>
 
                 </div>
--->
+
+
 
             </div>
 
@@ -3586,7 +3485,7 @@ margin-bottom: 8px;">Add a 40 / 60 Row</button>
     <div id="fullembedcodeddd">
 
         <div
-            style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left; max-width: 1560px;">
+            style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left; max-width: 1560px;" id="fullembedcodeddd2">
 
             <div class="pcrtitleclass"><span
                     style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px; ">Overview</span><span

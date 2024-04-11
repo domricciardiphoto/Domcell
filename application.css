@@ -109,7 +109,8 @@
 
 
         .mymobile .width50c2 {
-            width: 100% !important;
+            width: 98% !important;
+            max-width: 92% !important;
         }
 
         .mymobile .width50c3 {
@@ -1251,6 +1252,7 @@
 
         .makeit100now {
             width: 100% !important;
+            max-width: 95% !important;
         }
 
         .makeit50now {
@@ -1905,7 +1907,26 @@
 }
   }
 
+  .background-important {
+    background-color: inherit !important;
+}
+
         /* Mac Version March 24th */
+
+        @media only screen and (max-width:1024px) {
+            #programming {
+                min-width: 260px;
+
+            }
+            .mymobile {
+                display: none !important;
+            }
+
+            #pullthecode2 {
+                width: 89%;    
+            }
+
+        }
 
 
         

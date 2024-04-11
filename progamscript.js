@@ -18,7 +18,8 @@
     var htmlcodeyesno2 = 0;
     var faqyes = 0;
     var mycount = 0
-    var addmut = 0
+    var addmut = 0;
+    var whatcheckingsizeview = 0;
     function saveSelection() {
         if (window.getSelection) {
             var sel = window.getSelection();
@@ -520,7 +521,7 @@
 
 
         $('#pcrdesktopview').on('click', function () {
-
+            whatcheckingsizeview = 0
             $('#fullembedcodeddd').css('max-width', 'none').css('margin-left', '0%').css('background-color', '#333')
             $('.morebutt').not('#closeembed').css('background-color', '#fff').css('color', '#333')
             $(this).css('background-color', '#333').css('color', '#fff')
@@ -531,12 +532,19 @@
             $('#codeloaderpcrview').find('.makeit50now').each(function () {
                 $(this).removeClass('makeit50now')
             })
+            $('#codeloaderpcrview').find('.hideonlyonmobile').each(function () {
+                $(this).show()
+            })
+            $('#codeloaderpcrview').find('.hideonlyondesktop').each(function () {
+                $(this).hide()
+            })
+
 
         })
 
 
         $('#pcrtabletview').on('click', function () {
-
+            whatcheckingsizeview = 1
             $('#fullembedcodeddd').css('max-width', '769px').css('margin-left', '6%').css('background-color', '#333')
             $('.morebutt').not('#closeembed').css('background-color', '#fff').css('color', '#333')
             $(this).css('background-color', '#333').css('color', '#fff')
@@ -547,6 +555,12 @@
             $('#codeloaderpcrview').find('.makeit50now').each(function () {
                 $(this).removeClass('makeit50now')
             })
+            $('#codeloaderpcrview').find('.hideonlyonmobile').each(function () {
+                $(this).show()
+            })
+            $('#codeloaderpcrview').find('.hideonlyondesktop').each(function () {
+                $(this).hide()
+            })
 
         })
 
@@ -554,7 +568,7 @@
 
 
         $('#pcrmobileview').on('click', function () {
-
+            whatcheckingsizeview = 2
             $('#fullembedcodeddd').css('max-width', '400px').css('margin-left', '7.85%').css('background-color', '#333')
             $('.morebutt').not('#closeembed').css('background-color', '#fff').css('color', '#333')
             $(this).css('background-color', '#333').css('color', '#fff')
@@ -568,6 +582,14 @@
                 $(this).addClass('makeit50now')
             })
 
+            
+            $('#codeloaderpcrview').find('.hideonlyonmobile').each(function () {
+                $(this).hide()
+            })
+
+            $('#codeloaderpcrview').find('.hideonlyondesktop').each(function () {
+                $(this).show()
+            })
 
         })
 
@@ -1313,18 +1335,71 @@
         loadnewcontent();
     });
 
+    $('#comp-color').on('change', function () {
+        var selectedOption = $(this).find('option:selected');
+        var bodycolor = selectedOption.attr('value')
+        $('.interedit').attr('style', 'background-color: ' + bodycolor + ' !important;');
+     
+        loadnewcontent();
+    });
+
+    $('#comp-font').on('change', function () {
+        var selectedOption = $(this).find('option:selected');
+        var bodyfont = selectedOption.attr('value')
+        $('.interedit').css('font-family' , bodyfont)
+     
+        loadnewcontent();
+    });
+
 
     $('.outsideplugins').on('click' , function() {
        wto = $(this).attr('whaturl');
        $('#outslidepluginsout').attr('src' , wto)
        $('.outsideplugins').css('background-color' , '#000')
        $(this).css('background-color' , '#333')
+       loadnewcontent();
     })
 
 
     function updateSliderValuerow(value) {
         document.getElementById('sliderValuerow').textContent = value;
     }
+
+    function updateSliderValue33(value) {
+        document.getElementById('sliderValue33').textContent = value;
+        maxleftvalue = (100 - value)/2+"%"
+        $('.interedit').css('max-width', value + '%').css('margin-left' , maxleftvalue)
+        loadnewcontent();
+    }
+
+
+     function updateSliderValue66(value) {
+    document.getElementById('sliderValue66').innerText = value;
+    $('.interedit p').css('font-size', value + 'em')
+    loadnewcontent();
+}
+
+function updateSliderValue99(value) {
+    document.getElementById('sliderValue99').innerText = value;
+    $('.interedit p').css('padding', value + 'px')
+}
+
+
+function updateSliderValue00(value) {
+    document.getElementById('sliderValue00').innerText = value;
+    $('.interedit p').css('line-height', value + 'px')
+}
+
+function updateSliderValue11(value) {
+    document.getElementById('sliderValue11').innerText = value;
+    $('.interedit').css('border-radius', value + 'px')
+}
+
+function updateSliderValue22(value) {
+    document.getElementById('sliderValue22').innerText = value;
+    $('.interedit p').css('margin-top', value + 'px')
+}
+
     
     $('.createlayoutslider').on('click', function() {
         var addmutiplerows = parseInt(document.getElementById('sliderValuerow').textContent);
@@ -1447,6 +1522,7 @@
             var maxWidthInPixels = $(window).width() * (maxWidthPercentage / 100);
             var minWidthPixels = 300; // Minimum width in pixels for #programming
         
+            $("#fullembedcodeddd2").resizable();
             // Initialize resizable on #programming with adjusted calculations
             $("#programming").resizable({
                 maxWidth: maxWidthInPixels,
@@ -1720,6 +1796,7 @@
                     break;
                 case '#mymatrix4':
                     loadnewcontent();
+                
                     $('#programming, #resizable-div').hide();
                     $('#fullembedcodeddd').show()
                     $('#fullinterface').hide()
@@ -1761,6 +1838,13 @@
                     })
 
                     $('.colorlegend').hide()
+
+
+if( whatcheckingsizeview == 2) {
+    $('#pcrmobileview').click()
+}
+
+
                     break;
 
                 case '#mymatrix5':
@@ -1952,8 +2036,27 @@
 
                 });
 
+                $('.liverow').on('click', function () {
+                    $('.onblock').removeClass('onblock')
+                    $(this).addClass('onblock')
+        
+                    if ($(this).hasClass('hideonlyondesktop')) {
+                        $('#desktophidev2d').prop('checked', true);
+                    } else {
+                        $('#desktophidev2d').prop('checked', false);
+                    }
+        
+                    if ($(this).hasClass('hideonlyonmobile')) {
+                        $('#mobilehidev2d').prop('checked', true);
+                    } else {
+                        $('#mobilehidev2d').prop('checked', false);
+                    }
+    
+                })
+
 
                 loadnewcontent()
+            
                 $('.informationcontent').css('opacity', '1')
                 $('img.promoimg21').on("contextmenu", function (e) {
                     e.preventDefault(); // Prevent the default context menu
@@ -2343,6 +2446,40 @@
             loadnewcontent()
 
         })
+
+        $('.addrow30x3').on('click', function () {
+            $('.internalbuttons').slideDown()
+            $('.hidecss').show()
+            $('.onblock').removeClass('onblock')
+            $('.layoutbuilder').append(
+                '<div class="width100c"><div class="width33c width50c2  layoutpale layoutpale33 liverow droppable onblock"></div><div class="width33c width50c2 layoutpale layoutpale33 liverow droppable "></div><div class="width33c width50c2 layoutpale layoutpale33 liverow droppable "></div></div>'
+            )
+
+            $('.liverow').on('click', function () {
+                $('.liverow').removeClass('onblock')
+                $(this).addClass('onblock')
+
+            })
+
+            $('#EditandSubmitAL').on('click', function () {
+                $('.interedit').html($('#myhtmleditor').val())
+                loadnewcontent()
+            })
+            $('#myhtmleditor').val($(this).html())
+
+            loadnewcontent()
+
+        })
+
+
+
+
+
+
+
+
+
+
 
         $('.addrow6040').on('click', function () {
             $('.internalbuttons').slideDown()
@@ -3826,7 +3963,68 @@
     var savedContent = localStorage.getItem("savedContent");
     if(savedContent) {
         $('#pullthecode2').html(savedContent);
-        
+        $('.liverow').on('click', function () {
+            $('.liverow').removeClass('onblock')
+            $(this).addClass('onblock')
+
+        })
+
+        $('.liveelement').on('click', function () {
+            $('.liveelement').removeClass('interedit')
+            $(this).addClass('interedit')
+            //$('#fixthecode').val($(this).html())
+            $('.clearsection').on('click', function () {
+                $('.interedit').html('')
+                loadnewcontent()
+            })
+
+            $('#selectionclear').on('click', function () {
+                $('.interedit').removeClass('interedit')
+            })
+
+            $('.interedit').on('click', function () {
+                editorcopy = $(this).html()
+
+                $('#myhtmleditor').val(editorcopy)
+                $('#EditandSubmitAL').show()
+
+            })
+           
+
+            $('.liverow').on('click', function () {
+                $('.onblock').removeClass('onblock')
+                $(this).addClass('onblock')
+    
+                if ($(this).hasClass('hideonlyondesktop')) {
+                    $('#desktophidev2d').prop('checked', true);
+                } else {
+                    $('#desktophidev2d').prop('checked', false);
+                }
+    
+                if ($(this).hasClass('hideonlyonmobile')) {
+                    $('#mobilehidev2d').prop('checked', true);
+                } else {
+                    $('#mobilehidev2d').prop('checked', false);
+                }
+
+            })
+
+            $('#EditandSubmitAL').on('click', function () {
+
+                $('.interedit').html($('#myhtmleditor').val())
+                loadnewcontent()
+                
+            })
+            $('#myhtmleditor').val($(this).html())
+            
+
+
+
+            layoutmode = 1
+
+        })
+        loadnewcontent()
+     
         $('a').not('.outsidelink').not('.googledrive').on('click', function (e) {
             e.preventDefault();
             wheretogo = $(this).attr('href');
@@ -3842,7 +4040,9 @@
             })
 
         });
+        
     }
+    
 });
 
 // Function to save the current state of the content area
@@ -3863,4 +4063,5 @@ setInterval(function() {
         saveContent();
         lastSavedContent = currentContent;
     }
-}, 10000);
+}, 15000);
+
