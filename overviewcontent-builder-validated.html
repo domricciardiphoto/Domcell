@@ -15,15 +15,15 @@
         body {
             user-select: none;
             background-color: rgb(37, 37, 37);
-   
+
 
         }
 
         #fullinterface {
-       position: absolute;
-       left: 3px;
-       top: 5px;
-       width: 99.7%;
+            position: absolute;
+            left: 3px;
+            top: 5px;
+            width: 99.7%;
 
         }
 
@@ -93,8 +93,16 @@
             float: left;
         }
 
+        .width33cg ul li {
+            margin-bottom: 0px;
+            max-width: 100px;
+            max-width: 192px;
+        }
+
         .width33cg ul li a {
             text-decoration: none;
+            font-size: 0.8rem;
+            line-height: 10px;
         }
 
         #content-asset-d2 {
@@ -102,7 +110,7 @@
         }
 
         .hidecss {
-            display: none;
+            display: block;
         }
 
         .outsideplugins {
@@ -123,6 +131,127 @@
         .openthematrix {
             border-radius: 5px 5px 0px 0px;
         }
+
+        #explorerpanel {
+            display: none;
+        }
+
+      
+
+
+        #explorer .indent {
+            cursor: pointer;
+            font-size: 0.8rem;
+    padding: 2px;
+    padding-left: 10px;
+        }
+
+        #sliderLabel[contenteditable="true"] {
+            border-color: blue;
+        }
+
+        .indent {
+            font-size: 0.9rem;
+            padding-left: 4px;
+        }
+
+        .indentselected {
+            background-color: rgba(0, 128, 0, 0.3);
+            border: 1px solid #ccc;
+
+        }
+
+
+        .tagmangaerright,
+        .tagmangaerright2,
+        .tagmangaerright3,
+        .tagmangaerright4 {
+            text-align: right;
+            color: #fff;
+            float: right;
+            margin-right: 20px;
+            font-size: 2rem;
+            margin-top: -4px;
+            cursor: pointer;
+        }
+
+.myrowbuilder , #comptoolslist {
+    display: none;
+}
+
+
+
+
+
+
+
+#explorer {
+    font-family: Arial, sans-serif;
+    background-color: #000;  /* Black background */
+    color: #fff;  /* White text for contrast */
+    border-left: 3px solid #333;  /* Darker border for subtlety */
+    padding: 5px;
+    overflow: auto;
+    height: 90vh; /* adjust based on your layout */
+    max-height: 350px;
+}
+
+.indent {
+    padding: 8px;
+    margin: 2px 0;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    background-color: #222;  /* Slightly lighter than background for visibility */
+    color: #ddd;  /* Light gray text */
+}
+
+.indent:hover {
+    background-color: #333;  /* Dark gray on hover */
+    cursor: pointer;
+}
+
+.indentselected {
+    border-left: 3px solid #007bff;  /* Bright blue for visibility */
+    background-color: #1a1a1a;  /* Very dark gray selected background */
+}
+
+.indent strong {
+    color: #fff;  /* White text for strong tags */
+}
+
+.indent span {
+    font-size: 12px;
+    color: #999;  /* Lighter gray for smaller text */
+}
+
+/* Custom colors for specific tags or classes, using brighter colors for visibility */
+.indent[data-tag="DIV"] {
+    border-color: #4caf50;  /* Green */
+}
+
+.indent[data-tag="P"] {
+    border-color: #f44336;  /* Red */
+}
+
+.indent[data-tag="IMG"] {
+    border-color: #ffeb3b;  /* Yellow */
+}
+
+.indent[data-tag="A"] {
+    border-color: #2196f3;  /* Blue */
+}
+
+.indent[data-tag="COMPONENT"],
+.indent[data-tag="ROW"] {
+    border-color: #9c27b0;  /* Purple */
+}
+
+.explorerselected {
+    border: 1px solid black;
+    box-shadow: 0 0 10px #666; /* Optional: adds a shadow for better visibility */
+}
+
+
     </style>
 </head>
 
@@ -230,11 +359,17 @@
                     <div class="unselectable-text thetopbox mytoolsboxtop2 letbutton21" whatbox="Tools"
                         style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
                             src="assets/compicon.png" /></div>
+
                     <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Rows"
-                        style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
+                        style="width: 15% !important;height: 30px;padding: 0px;display: none;"><img style="width: 56%;"
                             src="assets/iconmodify.png" /></div>
-                    <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Blog">Blog (In DEV)
-                    </div>
+
+                    <div class="unselectable-text thetopbox mytoolsboxtop4 letbutton21" whatbox="FileExplorer"
+                        style="width: 15% !important;height: 30px;padding: 0px; "><img
+                            style="width: 56%; margin-left: 18%;" src="assets/iconcompase.png" /></div>
+
+
+                    <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Blog">Blog</div>
                 </div>
 
             </div>
@@ -259,9 +394,327 @@
                 </div>
             </div>
 
+            <div id="explorerpanel" class="width100c" style="margin-left: 0%;  width: 86.5%; padding-left: 5%;">
+
+                <div class="width100c" id="DeviceVisability">
 
 
 
+                    <div class="width100c openclose" openclose="visiblechecks">
+                        <div class="width100c unselectable-text" style="margin-left: -3%;">
+                            <span class="myindicator">+</span>
+                            <span style="font-size: 0.8rem;">&nbsp;Show Hide</span>
+                            <span class="mysmalltext">Rows in Desktop / Mobile</span>
+                        </div>
+                    </div>
+
+
+                   
+
+                
+
+                    <div class="width100c visiblechecks">
+                        <div class="width50c">Hide on mobile <input id="mobilehidev2d" type="checkbox"
+                                style="width: auto;"></div>
+
+                        <div class="width50c">Hide on Desktop<input id="desktophidev2d" type="checkbox"
+                                style="width: auto;"></div>
+                    </div>
+                </div>
+
+                <div class="width100c openclose" openclose="myrowbuilder">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator">-</span>
+                        <span style="font-size: 0.8rem;">&nbsp;Design</span>
+                        <span class="mysmalltext">Row Tools</span>
+                    </div>
+                </div>
+
+
+        
+
+<div openclose="myrowbuilder" class="width100c stage1  myrowbuilder"
+style="padding-left: 2.5%; padding-top:10px">
+
+<div class="width100c"
+    style="border-bottom:1px solid #ccc; width:88%;margin-top:5px;margin-bottom:5px"></div>
+
+
+
+
+
+
+<div class="width100c">
+    <div class="width50c">
+        <div class="width100c"
+            style="margin-top:5px; width:88%; font-size:0.8rem;font-size: 90%; color: lightblue;">
+            Row Background Color:</div>
+
+
+        <select name="Row-Background-Color" id="RowBackgroundColorlist"
+            style="width: auto; margin-top:10px; ">
+            <option value="" disabled>Row Background Color</option>
+            <option value="none" value1="#333">Transparent</option>
+            <option value="rgb(247, 247, 247)" value1="#333">Highlighted</option>
+            <option value="rgb(0, 0, 0)" value1="#fff">Black</option>
+            <option value="rgb(153, 153, 153)" value1="#333">Gray</option>
+            <option value="rgb(102, 102, 102)" value1="#fff">Dark Gray</option>
+            <option value="rgb(204, 0, 0)" value1="#fff">Red</option>
+            <option value="rgb(2, 48, 74)" value1="#fff">Blue</option>
+            <option value="rgb(0, 136, 39)" value1="#fff">Green</option>
+            <option value="rgb(249, 249, 249)" value1="#333">Light Gray</option>
+            <option value="rgb(126, 170, 200, .5)" value1="#d4e1eb">Light Blue</option>
+            <option value="rgb(255, 201, 198, .5)" value1="#ffc9c6">Light Pink</option>
+        </select>
+
+    </div>
+
+
+    <div class="width50c">
+        <div class="width100c"
+            style="margin-top:5px; width:88%; font-size:0.8rem;color: lightblue;">
+            Row Margin Top:
+        </div>
+
+        <div class="width100c">
+            <label class="slider-label" for="rangeSlider"><span class="slider-control"
+                    id="sliderValue2">0</span>px</label>
+            <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="200" value="0"
+                oninput="updateSliderValue2(this.value)">
+        </div>
+
+    </div>
+
+
+    <div class="width100c" style="border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+
+        <div class="width50c">
+            <div class="width100c"
+                style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px; color: lightblue;">
+                Row Padding</div>
+
+            <select name="Row-Padding-Radius" id="Row-Padding-Radius"
+                style="width: 120px; margin-top:10px; margin-left: 5px;">
+                <option value="0" disabled>Select</option>
+                <option value="0"> No Padding</option>
+                <option value=".5">Level 1</option>
+                <option value="1">Level 2</option>
+                <option value="1.5">Level 3</option>
+                <option value="2">Level 4</option>
+                <option value="2.5">Level 5</option>
+                <option value="3">Level 6</option>
+                <option value="3.5">Level 7</option>
+                <option value="4">Level 8</option>
+                <option value="4.5">Level 9</option>
+                <option value="5">Level 10</option>
+            </select>
+
+
+        </div>
+
+
+        <div class="width50c">
+            <div class="width100c"
+                style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px;color: lightblue;">
+                Row Border Radius</div>
+
+
+
+            <div class="width100c">
+                <label for="rangeSlider"><span id="sliderValue4">0</span>px</label>
+                <input type="range" id="rangeSlider4" name="rangeSlider3" min="1" max="100"
+                    value="0" oninput="updateSliderValue4(this.value)">
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <div class="width100c" style="padding-top: 10px;">
+        <div class="width50c"
+            style="color: orange;font-size:0.8rem; background-color: #444; width: 45.5%; margin-right: 2.2%; border: 1px solid #fff;">
+            <div class="width100c" style="text-align: center;">Body Color</div>
+
+            <select name="body-color" id="body-color"
+                style="width: 98%; margin-left: 1%; margin-top:10px; ">
+                <option value="transparent" disabled>Select</option>
+                <option value="Transparent"> Transparent</option>
+                <option value="#fff"> White</option>
+                <option value="#999">Light Gray</option>
+                <option value="#666">Gray</option>
+                <option value="#333">Dark Gray</option>
+                <option value="rgb(2, 48, 74)">Blue</option>
+                <option value="#000">Black</option>
+            </select>
+        </div>
+        <div class="width50c">
+            <span style="color: lightblue;font-size:0.8rem;">Line Height</span>
+            <div class="width100c">
+                <label for="rangeSlider"><span id="sliderValue">23</span>px</label>
+                <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="100" value="23"
+                    oninput="updateSliderValue(this.value)">
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+<div class="width100c openclose" openclose="comptoolslist">
+    <div class="width100c unselectable-text" style="margin-left: -3%;">
+        <span class="myindicator">+</span>
+        <span style="font-size: 0.8rem;">&nbsp;Design</span>
+        <span class="mysmalltext">Component Tools</span>
+    </div>
+</div>
+
+               
+
+
+<!---->
+
+<div class="width100c comptoolslist" id="comptoolslist" style=" margin-top: 10px;">
+
+    <div class="width50c"
+        style="margin-top:5px; width: 46%;  font-size:0.8rem; margin-left: 5px; color: yellow;">
+        Comp. Background Color
+
+        <select name="comp-color" id="comp-color"
+            style="width: 120px; margin-top:10px; margin-left: 5px;">
+            <option value="transparent" disabled>Select</option>
+            <option value="Transparent"> Transparent</option>
+            <option value="#fff"> White</option>
+            <option value="#000">Black</option>
+            <option value="#666">Gray</option>
+            <option value="rgb(2, 48, 74)">Blue</option>
+            <option value="#333">Dark Gray</option>
+            <option value="#999">Light Gray</option>
+            <option value="rgb(126, 169, 200)">Mid Blue</option>
+            <option value="rgb(126, 170, 200, .5)">Light Blue</option>
+            <option value="rgb(255, 201, 198, .5)">Light Pink</option>
+
+        </select>
+
+    </div>
+
+
+
+    <div class="width50c"
+        style="margin-top:5px; width: 46%;  font-size:0.8rem; margin-left: 5px; color: yellow;">
+        Font Family<br>
+
+        <select name="comp-font" id="comp-font"
+            style="width: 120px; margin-top:10px; margin-left: 5px;">
+            <option value="transparent" disabled>Select</option>
+            <option value="inherit"> Standard</option>
+            <option value="linotype-didot,Open Sans,serif"> linotype-didot</option>
+
+        </select>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="width50c" style="margin-top:5px;width: 46%;   margin-left: 5px;">
+        <span style=" color: yellow;font-size:0.8rem;">Font Size</span>
+        <div class="width100c">
+            <label for="fontSlider"><span id="sliderValue66">0</span>em</label>
+            <input type="range" id="fontSlider" name="fontSlider" min="0" max="3" step="0.1"
+                value="0" oninput="updateSliderValue66(this.value)">
+        </div>
+    </div>
+
+
+
+    <div class="width50c" style="margin-top:5px;width: 46%;   margin-left: 5px;">
+        <span style=" color: yellow;font-size:0.8rem;">Comp Width</span>
+        <div class="width100c">
+            <label for="widthSlider"><span id="sliderValue33">100</span>%</label>
+            <input type="range" id="widthSlider" name="widthSlider" min="1" max="100" value="100"
+                oninput="updateSliderValue33(this.value)">
+        </div>
+    </div>
+
+
+    <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+        <span style=" color: yellow;font-size:0.8rem;">Comp Padding</span>
+        <div class="width100c">
+            <label for="widthSlider"><span id="sliderValue99">0</span>px</label>
+            <input type="range" id="widthSlider" name="widthSlider" min="1" max="200" value="0"
+                oninput="updateSliderValue99(this.value)">
+        </div>
+    </div>
+
+    <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+        <span style=" color: yellow;font-size:0.8rem;">Line Height</span>
+        <div class="width100c">
+            <label for="widthSlider00"><span id="sliderValue00">0</span>px</label>
+            <input type="range" id="widthSlider00" name="widthSlider00" min="0" max="100" value="10"
+                oninput="updateSliderValue00(this.value)">
+        </div>
+    </div>
+
+    <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+        <span style=" color: yellow;font-size:0.8rem;">Border Radius</span>
+        <div class="width100c">
+            <label for="widthSlider11"><span id="sliderValue11">0</span>px</label>
+            <input type="range" id="widthSlider00" name="widthSlider00" min="0" max="10" value="0"
+                oninput="updateSliderValue11(this.value)">
+        </div>
+    </div>
+
+    <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+        <span style=" color: yellow;font-size:0.8rem;">Margin Top</span>
+        <div class="width100c">
+            <label for="widthSlider22"><span id="sliderValue22">0</span>px</label>
+            <input type="range" id="widthSlider22" name="widthSlider22" min="-20" max="100"
+                value="0" oninput="updateSliderValue22(this.value)">
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="width100c openclose" openclose="explorerd">
+    <div class="width100c unselectable-text" style="margin-left: -3%;">
+        <span class="myindicator">-</span>
+        <span style="font-size: 0.8rem;">&nbsp;Selection</span>
+        <span class="mysmalltext">Tag Explorer</span>
+    </div>
+</div>
+
+
+            
+
+                <div id="explorer" class="width100c explorerd"></div>
+            </div>
 
             <div id="layoutbuilder-oc2" class="width100c openclose" openclose="layoutbuilder-oc2">
                 <div class="width100c unselectable-text" style="margin-left: -3%;">
@@ -273,12 +726,17 @@
             </div>
 
 
+
+
             <div class="width100c toolboxlayoutoptions unselectable-text htmlimporter"
                 style="width: 98%; margin-left:4%; margin-top:10px">
 
                 <div class="width100c">Import: Word .docx / Text / .HTML</div>
                 <input type="file" id="fileimport" accept=".html,.txt,.docx">
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.7.1/mammoth.browser.js"></script>
+
+
+
 
 
             </div>
@@ -298,6 +756,14 @@
                 <div class="width100c" style="margin-bottom: 10px;">
                     <input type="text">
                 </div>
+
+                <div class="width100c"
+                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; margin-top: 10px; font-size: 0.8rem; ">
+                    Blog Title</div>
+                <div class="width100c" style="margin-bottom: 10px;">
+                    <input type="text">
+                </div>
+
 
                 <div class="width100c"
                     style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; margin-top: 10px; font-size: 0.8rem; ">
@@ -665,7 +1131,7 @@ line-height: 25px; float: left;
 margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
-<button class="unselectable-text addrow30x3" style="background-color: #001ca7;
+                        <button class="unselectable-text addrow30x3" style="background-color: #001ca7;
 color: #fff;
 width: 45%; margin-right: 2%;
 line-height: 25px; float: left;
@@ -683,7 +1149,8 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
                 </div>
                 <div class="width100c  ">
 
-                    <label for="rangeSliderow">Add Rows: <span id="sliderValuerow">2</span></label>
+                    <label class="slider-label" for="rangeSliderow">Add Rows: <span class="slider-control"
+                            id="sliderValuerow">2</span></label>
                     <input type="range" id="rangeSliderow" name="rangeSliderow" min="1" max="20" value="2"
                         oninput="updateSliderValuerow(this.value)">
 
@@ -691,10 +1158,10 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
                     <button class="createlayoutslider"
                         style="width: 92%; color: #fff; background-color: transparent; border: 1px solid #ccc; padding-top: 7px; padding-bottom: 7px; margin-top: 10px;">Create
                         Multiple Rows</button>
-      
+
                 </div>
 
-         
+
 
 
                 <div class="width100c ">
@@ -2191,260 +2658,7 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
                 </div>
 
 
-                <div openclose="myrowbuilder" class="width100c stage1  myrowbuilder"
-                    style="padding-left: 2.5%; padding-top:10px">
-
-                    <div class="width100c" style="margin-top: -20px; text-align: center; margin-bottom: 5px;">-Row Tools-</div>
-
-
-                    <div class="width100c">
-                        <div class="width100c"
-                            style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px; margin-bottom: 5px; color: lightblue;">
-                            Device Visability:
-                        </div>
-                        <div class="width50c">Hide on mobile <input id="mobilehidev2d" type="checkbox"
-                                style="width: auto;"></div>
-
-                        <div class="width50c">Hide on Desktop<input id="desktophidev2d" type="checkbox"
-                                style="width: auto;"></div>
-
-                    </div>
-                    <div class="width100c"
-                        style="border-bottom:1px solid #ccc; width:88%;margin-top:5px;margin-bottom:5px"></div>
-
-
-
-
-
-
-                    <div class="width100c">
-                        <div class="width50c">
-                            <div class="width100c"
-                                style="margin-top:5px; width:88%; font-size:0.8rem;font-size: 90%; color: lightblue;">
-                                Row Background Color:</div>
-
-
-                            <select name="Row-Background-Color" id="RowBackgroundColorlist"
-                                style="width: auto; margin-top:10px; ">
-                                <option value="" disabled>Row Background Color</option>
-                                <option value="none" value1="#333">Transparent</option>
-                                <option value="rgb(247, 247, 247)" value1="#333">Highlighted</option>
-                                <option value="rgb(0, 0, 0)" value1="#fff">Black</option>
-                                <option value="rgb(153, 153, 153)" value1="#333">Gray</option>  
-                                <option value="rgb(102, 102, 102)" value1="#fff">Dark Gray</option>                                                      
-                                <option value="rgb(204, 0, 0)" value1="#fff">Red</option>
-                                <option value="rgb(2, 48, 74)" value1="#fff">Blue</option>
-                                <option value="rgb(0, 136, 39)" value1="#fff">Green</option>
-                                <option value="rgb(249, 249, 249)" value1="#333">Light Gray</option>
-                                <option value="rgb(126, 170, 200, .5)" value1="#d4e1eb">Light Blue</option>
-                                <option value="rgb(255, 201, 198, .5)" value1="#ffc9c6">Light Pink</option>
-                            </select>
-
-                        </div>
-                        <div class="width50c">
-                            <div class="width100c" style="margin-top:5px; width:88%; font-size:0.8rem;color: lightblue;">
-                                Row Margin Top:
-                            </div>
-
-                            <div class="width100c">
-                                <label for="rangeSlider"><span id="sliderValue2">0</span>px</label>
-                                <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="200" value="0"
-                                    oninput="updateSliderValue2(this.value)">
-                            </div>
-
-                        </div>
-
-
-                        <div class="width100c" style="border-bottom: 1px solid #ccc; padding-bottom: 10px;">
-
-                            <div class="width50c">
-                                <div class="width100c"
-                                    style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px; color: lightblue;">
-                                    Row Padding</div>
-      
-                                <select name="Row-Padding-Radius" id="Row-Padding-Radius"
-                                    style="width: 120px; margin-top:10px; margin-left: 5px;">
-                                    <option value="0" disabled>Select</option>
-                                    <option value="0"> No Padding</option>
-                                    <option value=".5">Level 1</option>
-                                    <option value="1">Level 2</option>
-                                    <option value="1.5">Level 3</option>
-                                    <option value="2">Level 4</option>
-                                    <option value="2.5">Level 5</option>
-                                    <option value="3">Level 6</option>
-                                    <option value="3.5">Level 7</option>
-                                    <option value="4">Level 8</option>
-                                    <option value="4.5">Level 9</option>
-                                    <option value="5">Level 10</option>
-                                </select>
-
-
-                            </div>
-
-
-                            <div class="width50c">
-                                <div class="width100c"
-                                    style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px;color: lightblue;">
-                                    Row Border Radius</div>
-
-
-
-                                <div class="width100c">
-                                    <label for="rangeSlider"><span id="sliderValue4">0</span>px</label>
-                                    <input type="range" id="rangeSlider4" name="rangeSlider3" min="1" max="100"
-                                        value="0" oninput="updateSliderValue4(this.value)">
-                                </div>
-
-                            </div>
-
-
-
-
-
-                        </div>
-
-
-
-                        <div class="width100c" style="padding-top: 10px;">
-                            <div class="width50c" style="color: orange;font-size:0.8rem; background-color: #444; width: 45.5%; margin-right: 2.2%; border: 1px solid #fff;">
-                               <div class="width100c" style="text-align: center;">Body Color</div>
-
-                                <select name="body-color" id="body-color"
-                                    style="width: 98%; margin-left: 1%; margin-top:10px; ">
-                                    <option value="transparent" disabled>Select</option>
-                                    <option value="Transparent"> Transparent</option>
-                                    <option value="#fff"> White</option>
-                                    <option value="#999">Light Gray</option>
-                                    <option value="#666">Gray</option>
-                                    <option value="#333">Dark Gray</option>
-                                    <option value="rgb(2, 48, 74)">Blue</option>
-                                    <option value="#000">Black</option>
-                                </select>
-                            </div>
-                            <div class="width50c">
-                                <span style="color: lightblue;font-size:0.8rem;">Line Height</span>
-                                <div class="width100c">
-                                    <label for="rangeSlider"><span id="sliderValue">23</span>px</label>
-                                    <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="100" value="23"
-                                        oninput="updateSliderValue(this.value)">
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-<div class="width100c" style="border-top: 1px solid #fff; margin-top: 10px;">
-<div class="width100c" style="margin-top: 10px; text-align: center; margin-bottom: 10px;">-Component Tools-</div>
-
-
-<div class="width50c" style="margin-top:5px; width: 46%;  font-size:0.8rem; margin-left: 5px; color: yellow;">
-    Comp. Background Color
-
-    <select name="comp-color" id="comp-color"
-    style="width: 120px; margin-top:10px; margin-left: 5px;">
-    <option value="transparent" disabled>Select</option>
-    <option value="Transparent"> Transparent</option>
-    <option value="#fff"> White</option>  
-    <option value="#000">Black</option> 
-    <option value="#666">Gray</option>
-    <option value="rgb(2, 48, 74)">Blue</option>
-    <option value="#333">Dark Gray</option>
-    <option value="#999">Light Gray</option>
-    <option value="rgb(126, 169, 200)">Mid Blue</option>
-    <option value="rgb(126, 170, 200, .5)">Light Blue</option>
-    <option value="rgb(255, 201, 198, .5)">Light Pink</option>
-  
-</select>
-
-</div>
-
-
-
-<div class="width50c" style="margin-top:5px; width: 46%;  font-size:0.8rem; margin-left: 5px; color: yellow;">
-    Font Family<br>
-
-    <select name="comp-font" id="comp-font"
-    style="width: 120px; margin-top:10px; margin-left: 5px;">
-    <option value="transparent" disabled>Select</option>
-    <option value="inherit"> Standard</option>
-    <option value="linotype-didot,Open Sans,serif"> linotype-didot</option>
-
-</select>
-
-</div>
-
-
-
-
-
-
-
-
-<div class="width50c" style="margin-top:5px;width: 46%;   margin-left: 5px;">
-    <span style=" color: yellow;font-size:0.8rem;">Font Size</span>
-     <div class="width100c">
-         <label for="fontSlider"><span id="sliderValue66">0</span>em</label>
-         <input type="range" id="fontSlider" name="fontSlider" min="0" max="3"  step="0.1" value="0"
-         oninput="updateSliderValue66(this.value)">
-     </div>
- </div>
-
-
-
-<div class="width50c" style="margin-top:5px;width: 46%;   margin-left: 5px;">
-   <span style=" color: yellow;font-size:0.8rem;">Comp Width</span>
-    <div class="width100c">
-        <label for="widthSlider"><span id="sliderValue33">100</span>%</label>
-        <input type="range" id="widthSlider" name="widthSlider" min="1" max="100" value="100"
-        oninput="updateSliderValue33(this.value)">
-    </div>
-</div>
-
-
-<div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
-    <span style=" color: yellow;font-size:0.8rem;">Comp Padding</span>
-     <div class="width100c">
-         <label for="widthSlider"><span id="sliderValue99">0</span>px</label>
-         <input type="range" id="widthSlider" name="widthSlider" min="1" max="200" value="0"
-         oninput="updateSliderValue99(this.value)">
-     </div>
- </div>
-
- <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
-    <span style=" color: yellow;font-size:0.8rem;">Line Height</span>
-     <div class="width100c">
-         <label for="widthSlider00"><span id="sliderValue00">0</span>px</label>
-         <input type="range" id="widthSlider00" name="widthSlider00" min="0" max="100" value="10"
-         oninput="updateSliderValue00(this.value)">
-     </div>
- </div>
- 
- <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
-    <span style=" color: yellow;font-size:0.8rem;">Border Radius</span>
-     <div class="width100c">
-         <label for="widthSlider11"><span id="sliderValue11">0</span>px</label>
-         <input type="range" id="widthSlider00" name="widthSlider00" min="0" max="10" value="0"
-         oninput="updateSliderValue11(this.value)">
-     </div>
- </div>
-
- <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
-    <span style=" color: yellow;font-size:0.8rem;">Margin Top</span>
-     <div class="width100c">
-         <label for="widthSlider22"><span id="sliderValue22">0</span>px</label>
-         <input type="range" id="widthSlider22" name="widthSlider22" min="-20" max="100" value="0"
-         oninput="updateSliderValue22(this.value)">
-     </div>
- </div>
- 
-
-
-</div>
-
-                </div>
+              
 
 
 
@@ -2484,9 +2698,13 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
 
 
                 <div class="width100c">
-                    <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix7" style=" color: #fff !important;min-height: 35px; line-height: 35px; width: 28%;">Help</div>
-                    <div id="whatsnewwb" class="width30c advanced-Buttons"                                    style=" color: #fff !important; min-height: 41px; line-height: 41px;width: 28%">Whats New?</div>
-                    <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix3" style=" color: #fff !important;min-height: 35px; line-height: 35px;width: 28%">Advanced Code Editor</div>
+                    <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix7"
+                        style=" color: #fff !important;min-height: 35px; line-height: 35px; width: 28%;">Help</div>
+                    <div id="whatsnewwb" class="width30c advanced-Buttons"
+                        style=" color: #fff !important; min-height: 41px; line-height: 41px;width: 28%">Whats New!</div>
+                    <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix3"
+                        style=" color: #fff !important;min-height: 35px; line-height: 35px;width: 28%">Adv. Code
+                        Editor</div>
                 </div>
 
 
@@ -2559,14 +2777,16 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
 
                             <div class="width20c" style="width: auto;min-width: 10%; margin-left:10px ">
                                 <div class="width50c" style="max-width: 36px;"><img
-                                        style="width: 87% !important; float: left;" src="assets/rowicon.png" title="Sort Rows"> </div>
+                                        style="width: 87% !important; float: left;" src="assets/rowicon.png"
+                                        title="Sort Rows"> </div>
                                 <div class="width50c"> <input type="checkbox" id="mysort" name="mysort" class="mysort"
                                         style="width: 10px; zoom: 2; margin-top: 0px; float: left;"></div>
                             </div>
 
                             <div class="width20c">
                                 <div class="width50c" style="max-width: 36px;"> <img
-                                        style="width: 80% !important; float: left;" src="assets/compicon.png" title="Sort Components"></div>
+                                        style="width: 80% !important; float: left;" src="assets/compicon.png"
+                                        title="Sort Components"></div>
                                 <div class="width50c"><input type="checkbox" id="mysortcomponents"
                                         name="mysortcomponents" class="mysortcomponents"
                                         style="width: 10px; zoom: 2; margin-top: 0px; float: left;"></div>
@@ -2695,30 +2915,9 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
 
 
             <div id="resize-handle"></div>
-            <div id="pullthecode" class="prod100 layout1"
-                style="background-color: #f7f7f7; color: #000; max-width: 100%; margin: 0px; width: 97%; ">
-                <div id="reversmodify" class="width100c">
-                    <div class="width20c ">
-                        <img id="cinputval1"
-                            src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwf8295540/images/hires/Z_MQD83AM-A.jpg"
-                            alt="AirPods Pro">
-                    </div>
 
 
 
-                    <div class="width80c trev21">
-
-                        <div
-                            class="informationcontent la layoutop1 experience-component experience-pcrs_assets-markup ">
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-
-            </div>
 
 
 
@@ -2732,36 +2931,15 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
                         </div>
                         <div class="openthematrix" mymatrix="mymatrix1" style="float: right; "><strong>Final
                                 Code</strong></div>
-                        <div id="pluginsandtools" class="openthematrix" mymatrix="mymatrix9" style="float: right;"><strong>Plugins &
+                        <div id="pluginsandtools" class="openthematrix" mymatrix="mymatrix9" style="float: right;">
+                            <strong>Plugins &
                                 Tools</strong></div>
                         <div class="openthematrix" mymatrix="mymatrix4" style="float: right;">Check on PCR</div>
                         <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2"
                             style="margin-left: .1%;float: right;">Workspace</div>
 
-
-
-
-
-                        <!--
-                <div id="hidemainmobile" myhide="0" class="unselectable-text"
-                    style=" color: #fff; float: right; margin-left: 10px; background-color: #333; padding-left: 3px; padding-right: 3px;  font-size: 0.7rem; cursor: pointer; padding: 3px;">
-                    Hide Mobile</div>
--->
-
-
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2786,11 +2964,6 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
                 <div class="openthematrix" mymatrix="mymatrix5"
                     style="border-radius: 5px 5px 0px 0px; float: right; display: none;">
                     <strong>Video Tutorial</strong></div>
-
-
-
-
-
 
 
             </div>
@@ -2933,25 +3106,10 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
 
 
 
-            <div id="mymatrix5" class="width100c closethematrix" style="width: 94%; margin-left: 4%;">
-                <div id="closetutorial2" class="width100c">Close Tutorial
-                </div>
-                <div id="vidtutorial" class="width100c">
-                    <!--<iframe width="100%" height="768"
-                        src="https://www.youtube.com/embed/arfmvD-spxk?si=UiPIUF7P1qVWqqjv" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>-->
-                </div>
-            </div>
+
 
 
             <div id="sidetoolset" class="unselectable-text">
-
-
-
-
-
-
 
                 <div class="hover-item" style="margin-left: -5px; margin-top: 22px;">
                     B&bull;I&bull;U
@@ -2983,7 +3141,7 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
 
 
                 <div class="hover-item" style="margin-left: 2px;">
-                    <!--?xml version="1.0" encoding="utf-8"?-->
+
                     <svg id="asdf2" version="1.1" viewBox="0 0 50 50" x="0px" xml:space="preserve"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"
                         style="width: 300%; margin-left: -5px;">
@@ -3296,12 +3454,12 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
                     width: 97%;
                     margin-top: 3px;
                     margin-bottom: 6px;
-                    padding-top: 6px;
+                    padding-top: 8px;
                     padding-bottom: 5px;
                     padding-left: 11%;
                     padding-right: 110%;
                     background-color: transparent !important;
-                    background-size: contain;
+                    background-size: cover;
                     background-image: url(assets/iconemptycomp.png);
                     background-position: center;
                     background-repeat: no-repeat;"><span style="opacity: 0;">E</span></button>
@@ -3484,8 +3642,8 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
 
     <div id="fullembedcodeddd">
 
-        <div
-            style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left; max-width: 1560px;" id="fullembedcodeddd2">
+        <div style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left; max-width: 1560px;"
+            id="fullembedcodeddd2">
 
             <div class="pcrtitleclass"><span
                     style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px; ">Overview</span><span
@@ -3522,6 +3680,9 @@ margin-bottom: 8px;">Add a 33% x3 Row</button>
 
     </div>
 
+    <script src="js/explorer.js"></script>
     <script src="progamscript.js"></script>
+    <script src="js/applicationfunctions.js"></script>
     <script src="videoconverter.js"></script>
+
 </body>
