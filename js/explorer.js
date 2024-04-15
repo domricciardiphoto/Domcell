@@ -13,31 +13,26 @@ function runexplorer() {
         'interedit', 'onblock'
     ];
 
+    // Function to explore elements and create the explorer structure
     function exploreElements(element, depth = 0, parentContainer = explorer) {
         let elements = element.children;
         for (let i = 0; i < elements.length; i++) {
             let tagLabel = elements[i].tagName;
-            let labelColor = getColorForTag(tagLabel, elements[i]);
+            let specialLabel = getSpecialLabel(elements[i]);  // Determine if it needs a special label like COMPONENT or ROW
+            let labelColor = getColorForTag(tagLabel, elements[i]); // This function might need adjustment if color is based on specialLabel
             let classDisplay = getClassDisplay(elements[i]);
 
             const details = document.createElement('div');
             details.className = 'indent';
             details.style.marginLeft = `${depth * 20}px`;
-            details.innerHTML = `<strong style="color: ${labelColor};">${tagLabel}</strong>&nbsp;&nbsp;${classDisplay}: <em>&nbsp;</em>`;
+            details.setAttribute('data-tag', specialLabel || tagLabel); // Use special label for CSS or default to tag name
+            details.innerHTML = `<strong style="color: ${labelColor};">${specialLabel || tagLabel}</strong>&nbsp;&nbsp;${classDisplay}: <em>&nbsp;</em>`;
             parentContainer.appendChild(details);
 
             details.addEventListener('click', function() {
                 $('.indent').removeClass('indentselected');
                 details.classList.add('indentselected');
-                elements[i].click();
                 elements[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-            });
-
-            elements[i].addEventListener('click', function(event) {
-                event.stopPropagation();
-                $('.indent').removeClass('indentselected');
-                details.classList.add('indentselected');
-                details.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
             });
 
             if (elements[i].children.length > 0) {
@@ -46,6 +41,17 @@ function runexplorer() {
         }
     }
 
+    // Determine special labels based on element classes
+    function getSpecialLabel(element) {
+        if (element.classList.contains('liveelement')) {
+            return 'COMPONENT';
+        } else if (element.classList.contains('liverow')) {
+            return 'ROW';
+        }
+        return null; // Return null if no special label is needed
+    }
+
+    // Retrieve the color for the tag based on its type
     function getColorForTag(tag, element) {
         if (element.classList.contains('liverow')) {
             return '#007bff'; // Blue
@@ -55,10 +61,12 @@ function runexplorer() {
         return '#28a745'; // Green
     }
 
+    // Filter classes and prepare display format
     function getClassDisplay(element) {
         let classesArray = Array.from(element.classList).filter(cls => !excludedClasses.includes(cls));
         return classesArray.length > 0 ? `<span style="font-size: smaller;"> (${classesArray.join(' ')})</span>` : '';
     }
 
+    // Start exploring from the target div
     exploreElements(target);
 }
