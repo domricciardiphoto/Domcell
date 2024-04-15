@@ -5,7 +5,6 @@ function runexplorer() {
 
     let lastSelectedElement = null; // Track the last selected element for removing highlights
 
-    // List of classes to exclude from display
     const excludedClasses = [
         'informationcontent', 'layoutbuilder', 'sortable', 'layoutop2', 'experience-component',
         'experience-pcrs_assets-markup', 'liveelement', 'in910', 'layoutpale', 'layoutpale33',
@@ -38,7 +37,7 @@ function runexplorer() {
             });
 
             elements[i].addEventListener('click', function(event) {
-                event.stopPropagation(); // Stop propagation to avoid nested element click issues
+                event.stopPropagation(); // Prevent event propagation
                 selectAndHighlightElement(elements[i], true);
             });
 
@@ -49,18 +48,33 @@ function runexplorer() {
     }
 
     function selectAndHighlightElement(element, scrollElement = false) {
-        if (lastSelectedElement) {
-            lastSelectedElement.classList.remove('explorerselected');
-            lastSelectedElement.explorerIndent.classList.remove('indentselected');
-        }
+        clearSelection();
         element.classList.add('explorerselected');
-        element.explorerIndent.classList.add('indentselected');
-        element.explorerIndent.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-        if (scrollElement) {
+        $('#myhtmleditor').val($('.explorerselected').html())
+        if (element.explorerIndent) {
+            element.explorerIndent.classList.add('indentselected');
+            element.explorerIndent.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        }
+        if (scrollElement && element.scrollIntoView) {
             element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
         }
         lastSelectedElement = element; // Update last selected element
     }
+
+    function clearSelection() {
+        if (lastSelectedElement) {
+            lastSelectedElement.classList.remove('explorerselected');
+            if (lastSelectedElement.explorerIndent) {
+                lastSelectedElement.explorerIndent.classList.remove('indentselected');
+            }
+        }
+    }
+
+
+    $('#EditandSubmitAL').on('click', function () {
+        $('.explorerselected').html($('#myhtmleditor').val())
+        loadnewcontent2()
+    })
 
     function getSpecialLabel(element) {
         if (element.classList.contains('liveelement')) {
@@ -82,7 +96,7 @@ function runexplorer() {
 
     function getClassDisplay(element) {
         let classesArray = Array.from(element.classList).filter(cls => !excludedClasses.includes(cls));
-        return classesArray.length > 0 ? `<span style="font-size: smaller;">(${classesArray.join(' ')})</span>` : '';
+        return classesArray.length > 0 ? `<span style="font-size: smaller;"> (${classesArray.join(' ')})</span>` : '';
     }
 
     exploreElements(target);

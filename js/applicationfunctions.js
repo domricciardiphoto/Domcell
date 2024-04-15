@@ -1,14 +1,14 @@
 
 
 
-
+/*
 $('#EditandSubmitAL').on('click', function () {
     $('.interedit').html($('#myhtmleditor').val())
     loadnewcontent()
 })
 
 
-
+*/
 
 
 
