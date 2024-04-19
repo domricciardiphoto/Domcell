@@ -81,8 +81,7 @@
         .totalinternalcontent,
         #thisisthefinalcode,
         #pullthecode2 {
-            user-select: text;
-
+            user-select: text
         }
 
         .interedit {
@@ -90,15 +89,9 @@
             caret-color: #ff0000;
             caret-color: rgb(255, 0, 0);
             caret-color: hsl(0, 97%, 50%);
-            
         }
 
-        #pullthecode2 {
-            user-select: text;
-            caret-color: red;
-        }
 
-       
 
         .width33cg {
             width: 20%;
@@ -284,7 +277,6 @@
 
         .explorerselected {
             box-shadow: 0 0 10px #666;
-            user-select: text;
             /* Optional: adds a shadow for better visibility */
         }
 
@@ -406,18 +398,6 @@
             min-height: 200px;
             word-wrap: break-word
         }
-
-#mobilepreview2 {
-    min-height: 461px;
-    background-color: #fff;
-    display: block;
-}
-#pullthecode2 {
-    display: block;
-}
-
-
-
     </style>
 
 
@@ -543,12 +523,9 @@
                 }
 
                 #programming {
-                    /*
     max-height: 836px;
     overflow-y: auto;
     overflow-x: hidden;
-
-    */
 }
 
 .internalscroller {
@@ -587,7 +564,7 @@
 
 
                     <div class="unselectable-text thetopbox mytoolsboxtop4 letbutton21"
-                        style="width: 15% !important;height: 30px;padding: 0px; display: none; " whatbox="Blog">
+                        style="width: 15% !important;height: 30px;padding: 0px; " whatbox="Blog">
                         <img style="width: 56%; margin-left: 18%;" src="assets/iconblog.png" />
                     </div>
                 </div>
@@ -624,7 +601,7 @@
 
 
 
-                    <div id="visiblechecks" class="width100c openclose" openclose="visiblechecks">
+                    <div class="width100c openclose" openclose="visiblechecks">
                         <div class="width100c unselectable-text" style="margin-left: -3%;">
                             <span class="myindicator">-</span>
                             <span style="font-size: 0.8rem;">&nbsp;Show Hide</span>
@@ -646,7 +623,7 @@
                     </div>
                 </div>
 
-                <div id="designd" class="width100c openclose" openclose="myrowbuilder">
+                <div class="width100c openclose" openclose="myrowbuilder">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator">-</span>
                         <span style="font-size: 0.8rem;">&nbsp;Design</span>
@@ -777,7 +754,7 @@
                                     <option value="#000">Black</option>
                                 </select>
                             </div>
-                            <div class="width50c" style="display: none;">
+                            <div class="width50c">
                                 <span style="color: lightblue;font-size:0.8rem;">Line Height</span>
                                 <div class="width100c">
                                     <label for="rangeSlider"><span id="sliderValue">23</span>px</label>
@@ -798,7 +775,7 @@
 
 
 
-                <div id="comptoolslistc" class="width100c openclose" openclose="comptoolslist">
+                <div class="width100c openclose" openclose="comptoolslist">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator">+</span>
                         <span style="font-size: 0.8rem;">&nbsp;Design</span>
@@ -924,7 +901,7 @@
 
 
 
-  <!-- 
+
 
                 <div class="width100c openclose" openclose="explorerd">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
@@ -934,7 +911,7 @@
                     </div>
                 </div>
 
-            <div id="explorer" class="width100c explorerd" style="margin-top: 3px; "></div>--> 
+                <div id="explorer" class="width100c explorerd" style="margin-top: 3px; "></div>
 
 
 
@@ -1312,13 +1289,13 @@
 
 
 
-                <div class="width100c  layoutbuilder-oc2 part1"
+                <div class="width100c  layoutbuilder-oc2"
                     style="margin-top: 5px; font-size: 0.7rem; margin-bottom: 0px;">
                     <span class="unselectable-text"> Multi Rows and Components</span>
                 </div>
 
 
-                <div class="width100c  part1" style="width: 89%; margin-left: -1.5%; padding: 10px; border: 1px solid #000;-webkit-box-shadow:inset 0 0 7px 3px #0A0A0A;
+                <div class="width100c  " style="width: 89%; margin-left: -1.5%; padding: 10px; border: 1px solid #000;-webkit-box-shadow:inset 0 0 7px 3px #0A0A0A;
                 box-shadow:inset 0 0 7px 3px #0A0A0A;">
 
                     <div class="width50c">
@@ -1370,43 +1347,36 @@
 
 
 
-                <div class="width100c part2">
+                <div class="width100c">
 
                     <span class="unselectable-text " style="font-size: 0.7rem;">To Create Rows</span>
 
                 </div>
 
 
-                <div class="width100c part2">
+                <div class="width100c">
 
 
 
                     <div class="width100c ">
-                        
-                        <button id="addrow" class="addrow100" data-layout="100">Add 100% Row</button>
-
-                     
-                       
-                        
+                        <button class="addrow unselectable-text" id="addrow">Add a 100% Row</button>
                     </div>
 
 
                     <div class="width100c ">
 
 
-                        <button class="addrow " data-layout="50,50" style="background-color: #001ca7;
-                        color: #fff;
-                        width: 45%; margin-right: 2%;
-                        line-height: 25px; float: left;
-                        margin-bottom: 8px;">Add 50% x2 Row</button>
+                        <button class="unselectable-text addrow50" style="background-color: #001ca7;
+color: #fff;
+width: 45%; margin-right: 2%;
+line-height: 25px; float: left;
+margin-bottom: 8px;">Add a 50% x2 Row</button>
 
-                        <button class="addrow " data-layout="25,25,25,25" style="background-color: #001ca7;
-                        color: #fff;
-                        width: 45%; margin-right: 2%;
-                        line-height: 25px; float: left;
-                        margin-bottom: 8px;">Add 25% Quad Row</button>
-
-
+                        <button class="unselectable-text addrow25" style="background-color: #001ca7;
+color: #fff;
+width: 45%; margin-right: 2%;
+line-height: 25px; float: left;
+margin-bottom: 8px;">Add a 25% x4 Row</button>
 
                     </div>
 
@@ -1417,16 +1387,18 @@
 
 
 
-                        <button class="addrow" data-layout="60,40" style="background-color: #001ca7;
-                        color: #fff;
-                        width: 45%; margin-right: 2%;
-                        line-height: 25px; float: left;
-                        margin-bottom: 8px;">Add 60/40 Row</button>
-                        <button class="addrow addrow4060" data-layout="40,60" style="background-color: #001ca7;
-                        color: #fff;
-                        width: 45%; margin-right: 2%;
-                        line-height: 25px; float: left;
-                        margin-bottom: 8px;">Add 40/60 Row</button>
+                        <button class="unselectable-text addrow6040" style="background-color: #001ca7;
+color: #fff;
+width: 45%; margin-right: 2%;
+line-height: 25px; float: left;
+margin-bottom: 8px;">Add a 60 / 40 Row</button>
+
+
+                        <button class="unselectable-text addrow4060" style="background-color: #001ca7;
+color: #fff;
+width: 45%; margin-right: 2%;
+line-height: 25px; float: left;
+margin-bottom: 8px;">Add a 40 / 60 Row</button>
 
 
 
@@ -1435,14 +1407,13 @@
                     </div>
 
                     <div class="width100c">
-                        <button class="addrow" data-layout="33,33,33" style="background-color: #001ca7;
+                        <button class="unselectable-text addrow30x3" style="background-color: #001ca7;
                         color: #fff;
                         width: 45%; margin-right: 2%;
                         line-height: 25px; float: left;
-                        margin-bottom: 8px;">Add 33% Tri Row</button>
+                        margin-bottom: 8px;">Add a 33% x3 Row</button>
                     </div>
 
-          
 
                 </div>
 
@@ -1456,7 +1427,7 @@
 
 
 
-                <div class="width100c plan1 ">
+                <div class="width100c ">
                     <div class="width100c findthecode2 findthecode2"
                         style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -5px; margin-top: 10px;">
                         <span class="unselectable-text"> Multi Row Layouts</span></div>
@@ -1507,7 +1478,7 @@
                             Component</button>
                     </div>
 
-                    <div class="width50c" style="margin-bottom: 10px; ">
+                    <div class="width50c" style="margin-bottom: 10px;">
                         <button class="deletecode"
                             style="color: #fff; width: 98%; background-color: #730000; font-size: 100%; border: 4px solid yellow; padding-top:6px; padding-bottom: 6px;">Delete
                             Component</button>
@@ -1749,7 +1720,7 @@
                 </div>
 
 
-                <div id="tools1" class="width100c openclose" openclose="titlebuilder-oc">
+                <div class="width100c openclose" openclose="titlebuilder-oc">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator">+</span>
                         <span style="font-size: 0.8rem;">&nbsp;Text / Code</span>
@@ -1783,7 +1754,7 @@
                     </div>
 
                     <div class="prod100" style="padding-left: 0px; margin-left: 0px; width: 100%;background-color: transparent;">
-                        <!--<button class="simpleshow" id="cinput1-clickh2">Submit</button>-->
+                        <button class="simpleshow" id="cinput1-clickh2">Submit</button>
 
 
 
@@ -2244,7 +2215,7 @@
 
                 </div>
 
-                <div id="tools2" class="width100c openclose" openclose="imagebuilder">
+                <div class="width100c openclose" openclose="imagebuilder">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator" style="font-size: 0.8rem;">+</span>
                         <span style="font-size: 0.8rem;">&nbsp;&nbsp;Image Component </span>
@@ -2633,7 +2604,7 @@
 
                 </div>
 
-                <div id="tools3" class="width100c openclose" openclose="listbuilder">
+                <div class="width100c openclose" openclose="listbuilder">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator" style="font-size: 0.8rem;">+</span>
                         <span style="font-size: 0.8rem;">&nbsp;&nbsp;List Component </span>
@@ -2645,7 +2616,7 @@
 
 
                 <div class="prod100 stage1 tools listbuilder"
-                    style=" margin-top: 5px; margin-left: 0px;  width: 95%; margin-left: 2%; border: 1px solid #ccc; background-color: transparent;">
+                    style=" margin-top: 5px; margin-left: 0px;  width: 95%; margin-left: 2%;">
 
 
                     <div class="width100c" style="margin-bottom: 20px;">
@@ -2712,7 +2683,6 @@
                         <input type="text" class="lister" id="list10" placeholder="List Item 10"
                             style="width: 80%; margin-right: 40%; margin-bottom: 5px;">
 
-                            <!--
                         <select name="mylistwidth" id="mylistwidth" style="float: right; margin-bottom: 5px;">
 
                             <option value="width100c">100% across</option>
@@ -2722,9 +2692,7 @@
                             <option value="width20c">&nbsp;&nbsp;25% across</option>
 
                         </select>
-                     
                         <span class="stage2a" style="float: right; margin-right: 10px;">List width </span>
-                    -->
                         <br>
 
                         <div class="width100c">
@@ -2738,7 +2706,7 @@
 
 
 
-                <div id="tools4" class="width100c openclose" openclose="videocomponent">
+                <div class="width100c openclose" openclose="videocomponent">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator" style="font-size: 0.8rem;">+</span>
                         <span style="font-size: 0.8rem;">&nbsp;&nbsp;Video Player </span>
@@ -2786,7 +2754,7 @@
 
                 </div>
 
-                <div id="mylinkbuilderd" class="width100c openclose" openclose="mylinkbuilder">
+                <div class="width100c openclose" openclose="mylinkbuilder">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator" style="font-size: 0.8rem;">+</span>
                         <span style="font-size: 0.8rem;">&nbsp;&nbsp;Text Options & Link Builder </span>
@@ -2794,7 +2762,7 @@
                     </div>
                 </div>
 
-                <div id="tools5" openclose="mylinkbuilder" class="width100c stage1 tools mylinkbuilder"
+                <div openclose="mylinkbuilder" class="width100c stage1 tools mylinkbuilder"
                     style=" margin-top: 20px; margin-left: 0px;  width: 97%; margin-left: 2%;">
                     <p class="unselectable-text" style="margin-bottom: 5px;  margin-top: 0px;">Create Links Here: (Put
                         in
@@ -2828,7 +2796,7 @@
 
 
                     <div class="width100c">
-                        <button class="texttype" id="theboldtext"
+                        <button class="texttype"
                             style="width: 9%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;"
                             value="strong"><strong class="unselectable-text">B</strong></button>
                         <button class="texttype" style="width: 9%; color: #fff; background-color: transparent;"
@@ -3181,6 +3149,29 @@
 
 
 
+
+                    <button class="layoutbuttons" id="layout1reverse"
+                        style="float: left; margin-right: 5px; font-size: 0.87rem; margin-left: 20px; margin-top: 5px; background-color: antiquewhite;">(reverse
+                        image)</button>
+
+                    <button class="layoutbuttons" id="layout150"
+                        style="float: left; margin-right: 5px; font-size: 0.87rem; margin-left: 20px; margin-top: 5px; background-color: antiquewhite;">50%
+                        / 50%</button>
+
+                    <button class="layoutbuttons" id="layout120"
+                        style="float: left; margin-right: 5px; font-size: 0.87rem; margin-left: 20px; margin-top: 5px; background-color: antiquewhite;">20%
+                        / 80%</button>
+
+                    <button class="layoutbuttons" id="layout160"
+                        style="float: left; margin-right: 5px; font-size: 0.87rem; margin-left: 20px; margin-top: 5px; background-color: antiquewhite;">60%
+                        / 40%</button>
+
+                    <button class="layoutbuttons" id="layout2"
+                        style="float: right; padding: 5px; display: none !important;">Advanced
+                        Layout</button>
+                    <button class="layoutbuttons" id="layout1"
+                        style="float: right; padding: 5px; margin-right: 5px; display: none !important;">Simple
+                        Layout</button>
                 </div>
             </div>
 
@@ -3595,15 +3586,15 @@
                         style="margin-left: 24px; margin-top: 10px; width: 350px; padding-bottom: 5px;">
                         <button class="unselectable-text addrow-click" title="Add 100% Row"
                             style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 23%; margin-top: 10px; margin-bottom: 5px;">100</button>
-                        <button class="unselectable-text addrow50 addrow" data-layout="50,50" title="Add 2 50% Rows"
+                        <button class="unselectable-text addrow50" title="Add 2 50% Rows"
                             style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 23%; margin-top: 10px; margin-bottom: 5px;">50%
                             x2</button>
 
-                        <button class="unselectable-text addrow25 addrow" data-layout="25,25,25,25"  title="Add 4 25% Rows"
+                        <button class="unselectable-text addrow25" title="Add 4 25% Rows"
                             style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 23%; margin-top: 10px; margin-bottom: 5px;">25%
                             x 4</button>
 
-                        <button class="unselectable-text addrow30x3 addrow" data-layout="33,33,33" title="Add 3 33% Rows"
+                        <button class="unselectable-text addrow30x3" title="Add 3 33% Rows"
                             style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 23%; margin-top: 10px; margin-bottom: 5px;">33%
                             x 3</button>
 
@@ -3709,7 +3700,20 @@
 
 
 
-          
+                <button class="deletecode  unselectable-text" title="Delete Component" style="text-align: center;
+                    color: #fff;
+                    width: 97%;
+                    margin-top: 13px;
+                    margin-bottom: 6px;
+                    padding-top: 6px;
+                    padding-bottom: 5px;
+                    padding-left: 11%;
+                    padding-right: 110%;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    background-image: url(assets/icondelcomp.png);
+                    background-position: center;
+                    background-repeat: no-repeat;"><span style="opacity: 0;">C</span></button>
 
 
                 <button class="clearsection unselectable-text" title="Empty Component" style="text-align: center;
@@ -3760,7 +3764,11 @@
                         style="float: right; font-size: 80%; border: 1px solid #333;">Export Final Code to File</button>
                 </div>
 
-           
+                <div class="prod100 layout1 "
+                    style="background-color: #333; color: #fff;  margin-bottom: 20px; margin-left: 0px; width: 96%;">
+                    &lt;link href="images/pim-content/occontent2024-v7a.css?$staticlink$" rel="stylesheet" /> <br>
+                    <span id="findthecode"></span>
+                </div>
 
                 <div id="thisisthefinalcode" class="prod100 layout2 selectall"
                     style="background-color: #000; color: #fff; margin-bottom: 20px; margin-left: 0px; width: 96.4%; padding-top: 20px; padding-bottom: 20px;">
@@ -3944,21 +3952,11 @@
 
 
     </div>
-<!--
-    <script src="js2/explorer-beta2.js"></script>
-    <script src="js2/explorer-beta2-workspace.js"></script>
-    <script src="js2/progamscript-beta.js"></script>
-    <script src="js2/applicationfunctions.js"></script>
-
- -->
-    <script src="js2/explorer-beta2.js"></script>
-    <script src="js2/primary.js"></script>
-    <script src="js2/internalfunctions.js"></script>
-    <script src="js2/imports.js"></script>
-
-    <script src="js2/saverestore.js"></script>
-
-
-    <script src="js2/videoconverter.js"></script>
+ 
+    <script src="js/explorer-beta2.js"></script>
+    <script src="js/explorer-beta2-workspace.js"></script>
+    <script src="progamscript-beta.js"></script>
+    <script src="js/applicationfunctions.js"></script>
+    <script src="videoconverter.js"></script>
 
 </body>

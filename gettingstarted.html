@@ -9,7 +9,7 @@
   <style>
 
 body {
-  background-image: url('assets/web-designer-version3.jpg');
+  background-image: url('assets/web-designer-version4.jpg');
       background-position: center;
       background-size: cover;
       background-color: rebeccapurple;
@@ -289,7 +289,7 @@ box-shadow:inset 0 0 10px 5px #000000;
               style="background-image: url('assets/badge-builder.png'); background-position: center; background-size: cover;">
               <div id="wn2024"
                 style="position: absolute;; bottom: 10px; text-align: center; width: 100%; color: #fff;font-size: 80%; line-height: 15px;">
-                Whats New in Domcell?<br> Updated:4/10/24 </div>
+                Whats New in Domcell?<br> Updated:4/17/24 </div>
             </div>
           </a>
         </div>
@@ -302,7 +302,7 @@ box-shadow:inset 0 0 10px 5px #000000;
 
           <div style="position: absolute;; bottom: 10px; text-align: center; width: 100%; color: #fff;">Content Designer Pro
           <div style="position: absolute;
-          right: 6px; bottom: -3px;font-size: 0.7rem;color:yellow"> ver. 5.0.6</div>
+          right: 6px; bottom: -3px;font-size: 0.7rem;color:yellow"> ver. 5.2</div>
           </div>
 
         </div>
@@ -394,4 +394,24 @@ box-shadow:inset 0 0 10px 5px #000000;
         });
 
 
+</script>
+
+
+<script>
+  // List of background images
+  const backgrounds = [
+    "url('assets/web-designer-version4.jpg')",
+    "url('assets/web-designer-version3.jpg')",
+    "url('assets/web-designer-version6.jpg')",
+    "url('assets/web-designer-version7.jpg')"
+  ];
+
+  // Function to select a random background image
+  function changeBackground() {
+    const index = Math.floor(Math.random() * backgrounds.length);
+    document.body.style.backgroundImage = backgrounds[index];
+  }
+
+  // Change background on load
+  window.onload = changeBackground;
 </script>

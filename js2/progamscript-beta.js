@@ -66,7 +66,7 @@ function myatag() {
         var target = $(e.target);
         if (!target.is('a')) {
             target = target.closest('a');
-        }
+    }
 
 
         e.preventDefault();
@@ -131,8 +131,6 @@ function clickanddeleterows() {
     $('.liverow').on('click', function () {
         $('.onblock').removeClass('onblock')
         $(this).addClass('onblock')
-
-
         if ($(this).hasClass('hideonlyondesktop')) {
             $('#desktophidev2d').prop('checked', true);
         } else {
@@ -258,6 +256,8 @@ function gotothelinkfunction(wheretogo) {
     });
 
 }
+
+
 function toggleReadMore(ptagid) {
     // Ensure the ID is passed as a string
     // If ptagid is not a string, it assumes ptagid might be an element or has another issue
@@ -1830,8 +1830,6 @@ $(document).ready(function () {
             $('.toolboxhide').show()
         }
 
-
-
     })
 
 
@@ -2155,7 +2153,6 @@ $(document).ready(function () {
 
     $('.pcrcloseicon').on('click', function () {
         $('#codeloaderpcrview').toggle()
-
     })
 
 
@@ -2459,6 +2456,8 @@ $(document).ready(function () {
 
 
 
+
+
     $('#addrowc1xc1').on('click', function () {
         $('.hidecss').show()
         $('.interedit').removeClass('interedit')
@@ -2512,8 +2511,6 @@ $(document).ready(function () {
         explorerpostload()
     })
 
-
-
     $('#addrowc4xc6').on('click', function () {
         $('.hidecss').show()
         $('.informationcontent').append(
@@ -2530,6 +2527,8 @@ $(document).ready(function () {
         clickanddeleterows()
         explorerpostload()
     })
+
+    
 
     $('#addactiverow').on('click', function () {
         $('.hidecss').show()
@@ -3092,8 +3091,6 @@ $(document).ready(function () {
 
     $('#cinput3-comp').on('click', function () {
 
-        
-
         if ($('#cinput3a').val() === '') {
             return false;
         }
@@ -3229,15 +3226,8 @@ $(document).ready(function () {
             });
 
 
-            layoutmode = 0
+           
         }
-
-
-
-
-
-
-
 
     })
 
@@ -3833,6 +3823,8 @@ document.getElementById('imgfileInput').addEventListener('change', function (eve
 
 
 $(document).ready(function () {
+
+
     $('.hover-item').each(function () { // Iterate over each .hover-item
         var timeoutId; // Variable to hold the timeout, unique to each .hover-item
 
@@ -3853,6 +3845,8 @@ $(document).ready(function () {
             }
         );
     });
+
+
 });
 
 
