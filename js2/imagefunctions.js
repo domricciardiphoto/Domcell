@@ -81,6 +81,7 @@ $('.showthepreviewimage').on('click', function () {
         imageselect = $(this).attr('prefix')
         imagename00 = $('#cinput1').val()
         newval2 = $('#cinput1b').val()
+        imageheader = $('#cinput1c').val()
         if ($('#cinput1c').val() == '') {
             imagedata =
                 '<div class="width100c"><img class="loading-lazy promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +

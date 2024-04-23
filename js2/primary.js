@@ -523,12 +523,11 @@ document.getElementById('mysortcomponents').addEventListener('change', function 
     }
 })
 
-$('#clearandrestartbutton_nocache').on('click', function () {
-    localStorage.clear();
-    location.reload()
-})
 
-$('#clearandrestartbutton').on('click', function () {
+
+
+
+$('#clearandrestartbuttonrefresh').on('click', function () {
     location.reload()
 })
 
@@ -724,20 +723,21 @@ $('.texttype').click(function () {
 $('.textaligner3').on('click', function () {
     captureState()
     var selection = window.getSelection();
-
     if (selection.rangeCount > 0) {
         var range = selection.getRangeAt(0);
         var brElement = document.createElement('br');
         range.insertNode(brElement);
+        // Batch DOM update: wrap text nodes in a single operation
         $('.interedit').contents().filter(function () {
             return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
         }).wrap('<p></p>');
     }
-    $('#myhtmleditor').val($('.interedit').html());
-    runexplorer()
+    // Update #myhtmleditor and #mobilepreview2 at the end of the function
+    var intereditHTML = $('.interedit').html();
+    $('#myhtmleditor').val('');
     $('#mobilepreview2').html($('#pullthecode2').html());
+    runexplorer()
 });
-
 
 
 
@@ -1276,19 +1276,7 @@ function deleteHighlightedText() {
         } else if (e.key === 'Enter' && e.shiftKey) {
             e.preventDefault();
             captureState() 
-            var selection = window.getSelection();
-
-            if (selection.rangeCount > 0) {
-                var range = selection.getRangeAt(0);
-                var brElement = document.createElement('br');
-                range.insertNode(brElement);
-                $('.interedit').contents().filter(function () {
-                    return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
-                }).wrap('<p></p>');
-            }
-            $('#myhtmleditor').val($('.interedit').html());
-            runexplorer()
-            $('#mobilepreview2').html($('#pullthecode2').html());
+            $('#breakbuttonlive').click()
             runexplorer();
         }
 

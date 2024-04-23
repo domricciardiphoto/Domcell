@@ -1,4 +1,4 @@
-const $explorerContainer = $('#pullthecode3');
+const $explorerContainer = $('#pullthecode2');
 var $in910 = $('.in910');
 function liverowactivy() {
 
@@ -219,7 +219,7 @@ function runexplorer() {
         }
     }
 
-    liverowactivy()
+   
 
     $(document).on('click', '.in910', function() {
         $('.interedit').removeClass('interedit');
@@ -309,9 +309,6 @@ $('#contextMenu ul li').click(function() {
 });
 
 
-$('#fullinterface').on('click' , function() {
-    $('#contextMenu').hide();
-})
 
 
 

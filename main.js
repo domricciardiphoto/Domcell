@@ -1,5 +1,5 @@
 const {app, BrowserWindow, ipcMain, Menu, globalShortcut, shell,} = require('electron')
-const axios = require('axios'); 
+
 const {autoUpdater} = require('electron-updater');
 
 const log = require('electron-log');
@@ -90,12 +90,9 @@ function createMainWindow() {
     y: initialState.y,
 
     webPreferences: {
-      nodeIntegration:true,
-      contextIsolation:false, 
+      nodeIntegration:false,
+      contextIsolation:true, 
       devTools:true,
-      spellcheck: true,
-      preload: path.join(__dirname, 'assets/preload.js')
-      
     }
 
   })
