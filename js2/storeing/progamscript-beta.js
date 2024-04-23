@@ -1141,36 +1141,7 @@ document.getElementById('htmlcodeyesno2').addEventListener('input', function () 
 })
 
 
-document.getElementById('cinput1').addEventListener('input', function () {
 
-    $('.showthepreviewimage').css('pointer-events', 'all')
-    $('.showthepreviewimage').each(function () {
-        previewurld =
-            'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/'
-        imageprefix = $(this).attr('prefix');
-        $(this).attr('src', previewurld + imageprefix + $('#cinput1').val() + '.jpg')
-    })
-
-
-    var imgs = document.getElementsByTagName('img');
-    for (var i = 0, j = imgs.length; i < j; i++) {
-        if (imgs[i].classList.contains(
-                'showthepreviewimage')) { // Check if the image has the specific class
-            // Hide parent <div> initially until image is confirmed to load
-            imgs[i].parentNode.style.display = 'none';
-
-            imgs[i].onload = function () {
-                this.parentNode.style.display = ''; // Show the parent <div> of the image
-            };
-
-            imgs[i].onerror = function (e) {
-                this.parentNode.style.display = 'none'; // Hide the parent <div> of the image
-            };
-        }
-    }
-
-
-})
 
 
 document.getElementById('cinput1promotional').addEventListener('input', function () {
@@ -2801,94 +2772,7 @@ $(document).ready(function () {
     })
 
 
-    $('.showthepreviewimage').on('click', function () {
-
-        imageselect = $(this).attr('prefix')
-        imagename00 = $('#cinput1').val()
-
-        imageheader =
-            '<div class="pd-header-tag width100c" style="margin-bottom:10px"><h3 class="t-h6-style in910" id="ocinsertcontent2369">' +
-            $('#cinput1c').val() + '</h3></div>'
-
-        if ($('#cinput1b').val() == '') {
-
-            $('.imagemessage').slideDown().delay(2000).slideUp()
-            return false
-        } else {
-
-            newval2 = $('#cinput1b').val()
-
-            if ($('#cinput1c').val() == '') {
-                imagedata =
-                    '<div class="width100c"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
-                    imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + newval2 +
-                    '"></div>'
-            } else {
-                imagedata = imageheader +
-                    '<div class="width100c"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
-                    imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + newval2 +
-                    '"></div>'
-            }
-
-
-            $('.interedit').append(imagedata).removeClass('.interedit')
-            explorerpostload()
-            //---------------------------------------------------------
-
-
-            $('img.promoimg21').on("contextmenu", function (e) {
-                e.preventDefault(); // Prevent the default context menu
-                currentImage = $(this); // Set the current image
-                $('#customModal').show(); // Show the custom modal
-
-            });
-
-            $('#wrapImage').click(function () {
-                $('#customModal').hide(); // Hide the custom modal
-                $('#urlModal').show(); // Show the URL modal
-            });
-
-            $('#submitUrl').click(function () {
-
-                var url = $('#imageUrl').val(); // Get URL from input field
-                if (url && url !== "http://") {
-                    if (currentImage.parent('a').length === 0) {
-                        currentImage.wrap('<a class="" href="' + url + '"></a>');
-                    } else {
-                        currentImage.parent('a').attr('href', url);
-                    }
-                }
-                $('#urlModal').hide(); // Hide the URL modal
-
-                explorerpostload()
-                myatag()
-
-            });
-
-            $('#cancelUrl').click(function () {
-                $('#urlModal').hide(); // Hide the URL modal
-                explorerpostload()
-            });
-
-            $('#deleteImage').click(function () {
-                currentImage.parent('a').remove();
-                currentImage.remove(); // Remove the image
-                $('#customModal').hide();
-                // Hide the custom modal
-                explorerpostload()
-            });
-
-            $('#closeModal').click(function () {
-                $('#customModal').hide(); // Hide the custom modal without any action
-            });
-
-            //--------------------------------------------------------
-
-        }
-
-
-
-    })
+  
 
 
     $('.layoutbuttons').on('click', function () {
@@ -3293,64 +3177,7 @@ $(document).ready(function () {
     })
 
 
-    $('#wraparoundproductnumber').on('input', function () {
-        getthewraparoundnumber = $(this).val()
-        $('.showthepreviewimage2').css('pointer-events', 'all')
-        $('.showthepreviewimage2').each(function () {
-            previewurld2 =
-                'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/'
-            imageprefix2 = $(this).attr('prefix');
-            $(this).attr('src', previewurld2 + imageprefix2 + $('#wraparoundproductnumber')
-                .val() + '.jpg?sw=300&sh=300&sm=fit')
-
-
-            var imgs = document.getElementsByTagName('img');
-            for (var i = 0, j = imgs.length; i < j; i++) {
-                if (imgs[i].classList.contains(
-                        'showthepreviewimage2'
-                    )) { // Check if the image has the specific class
-                    // Hide parent <div> initially until image is confirmed to load
-                    imgs[i].parentNode.style.display = 'none';
-
-                    imgs[i].onload = function () {
-                        this.parentNode.style.display =
-                            ''; // Show the parent <div> of the image
-                    };
-
-                    imgs[i].onerror = function (e) {
-                        this.parentNode.style.display =
-                            'none'; // Hide the parent <div> of the image
-                    };
-                }
-            }
-
-        })
-
-        $('.showthepreviewimage2').on('click', function () {
-
-            if ($('#wraparoundalt').val() === '') {
-                $('.imagemessage').slideDown().delay(2000).slideUp()
-                return false
-            }
-
-
-            if ($('#reverseimage').val() === 'yes') {
-                imagefloat = 'right'
-            } else {
-                imagefloat = 'left'
-            }
-
-            $('.interedit').html(
-                ' <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' +
-                imagefloat + ';"><img  alt="' +
-                $('#wraparoundalt').val() + '"' + 'src="' + $(this).attr('src') +
-                '"' + '/> </div></div>' +
-                '<div style="align-items: flex-start;"><div style="flex: 1 1 auto" ><p>' +
-                $('#wraparoundimage').val() + '</p></div>')
-
-        })
-
-    })
+   
 
     $('#wraparoundsubmit').on('click', function () {
 
@@ -3740,7 +3567,6 @@ $(document).ready(function () {
         } catch (err) {
             console.log('Oops, unable to copy');
         }
-
 
     });
 

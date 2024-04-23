@@ -54,6 +54,25 @@ $('#fileInput').change(function (event) {
             const fileContents = e.target.result;
             $('#pullthecode2').children('div').children('.informationcontent').html(fileContents);
             postimg() 
+            $('a').not('.googledrive').not('.outsidelink').on('click', function(e) {
+                var target = $(e.target);
+                  if (!target.is('a')) {
+                      target = target.closest('a');
+                  }
+              e.preventDefault();
+              var wheretogo = target.attr('href');
+              gotothelinkfunction(wheretogo);
+          
+              $('#noBtn').off('click').on('click', function () {
+                var target = $(e.target);
+                if (!target.is('a')) {
+                    target = target.closest('a');
+                }
+                  target.replaceWith(target.text());
+                  runexplorer();
+                  document.getElementById("myModal").style.display = "none";
+              });
+          });
         };
 
         reader.readAsText(file);

@@ -90,7 +90,7 @@
             caret-color: #ff0000;
             caret-color: rgb(255, 0, 0);
             caret-color: hsl(0, 97%, 50%);
-            
+
         }
 
         #pullthecode2 {
@@ -98,7 +98,7 @@
             caret-color: red;
         }
 
-       
+
 
         .width33cg {
             width: 20%;
@@ -151,7 +151,8 @@
 
 
 
-        #explorer .indent , #explorer2 .indent {
+        #explorer .indent,
+        #explorer2 .indent {
             cursor: pointer;
             font-size: 0.8rem;
             padding: 2px;
@@ -199,7 +200,8 @@
 
 
 
-        #explorer ,#explorer2 {
+        #explorer,
+        #explorer2 {
             font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
@@ -407,17 +409,15 @@
             word-wrap: break-word
         }
 
-#mobilepreview2 {
-    min-height: 461px;
-    background-color: #fff;
-    display: block;
-}
-#pullthecode2 {
-    display: block;
-}
+        #mobilepreview2 {
+            min-height: 461px;
+            background-color: #fff;
+            display: block;
+        }
 
-
-
+        #pullthecode2 {
+            display: block;
+        }
     </style>
 
 
@@ -444,6 +444,7 @@
             <li id="component" style="background-color: yellow;">(Row) Make Active</li>
             <li id="empty" style="background-color: lightgreen; color: #333;">Empty</li>
             <li id="delete" style="background-color: red; color: #fff;">Delete</li>
+            <li id="close" style="background-color: rgb(21, 0, 114); color: #fff;">Close</li>
         </ul>
     </div>
 
@@ -549,17 +550,15 @@
     overflow-x: hidden;
 
     */
-}
+                }
 
-.internalscroller {
-    max-height: none;
-}
+                .internalscroller {
+                    max-height: none;
+                }
 
-.blogbuilder {
-    max-height:none !important
-}
-
-
+                .blogbuilder {
+                    max-height: none !important
+                }
             </style>
 
 
@@ -594,15 +593,21 @@
 
             </div>
 
-            <div class="width20c" style=" float: left;">
-                <div id="clearandrestart" class="width50c unselectable-text"
-                    style="padding-left: 3px; padding-right: 3px; margin-top: -16px; margin-right: 16px; background-color: transparent;">
-                    <img style="width: 33% !important; margin-left: 20%; " src="assets/restart.jpg" />
+            <div class="width20c" style=" float: left; width: 17%; margin-top: -20px;">
+
+                <div class="width50c" style="float: right;">
+                    <img id="clearandrestartbutton"
+                        style="width: 80% !important;  max-width: 35px; float: left; cursor: pointer; "
+                        src="assets/restart.jpg" />
                 </div>
+
+
+
+
             </div>
 
             <div
-                style="width: 91%; float: left; border-bottom: 1px solid #ccc; height: 2px; margin-top: -12px; margin-left: 4%;">
+                style="width: 91%; float: left; border-bottom: 3px solid red; height: 2px; margin-top: -8px; margin-left: 4%; margin-bottom: 5px; ">
             </div>
 
 
@@ -845,7 +850,7 @@
                             style="width: 120px; margin-top:10px; margin-left: 5px;">
                             <option value="transparent" disabled>Select</option>
                             <option value="inherit"> Standard</option>
-                            <option value="linotype-didot,Open Sans,serif"> linotype-didot</option>
+                            <option value="linotype-didot"> linotype-didot</option>
 
                         </select>
 
@@ -882,8 +887,8 @@
                     <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
                         <span style=" color: yellow;font-size:0.8rem;">Comp Padding</span>
                         <div class="width100c">
-                            <label for="widthSlider"><span id="sliderValue99">0</span>px</label>
-                            <input type="range" id="widthSlider" name="widthSlider" min="1" max="200" value="0"
+                            <label for="widthSlider00a"><span id="sliderValue99">0</span>px</label>
+                            <input type="range" id="widthSlider00a" name="widthSlider00a" min="1" max="200" value="0"
                                 oninput="updateSliderValue99(this.value)">
                         </div>
                     </div>
@@ -891,8 +896,8 @@
                     <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
                         <span style=" color: yellow;font-size:0.8rem;">Line Height</span>
                         <div class="width100c">
-                            <label for="widthSlider00"><span id="sliderValue00">0</span>px</label>
-                            <input type="range" id="widthSlider00" name="widthSlider00" min="0" max="100" value="10"
+                            <label for="widthSlider00b"><span id="sliderValue00">0</span>px</label>
+                            <input type="range" id="widthSlider00b" name="widthSlider00b" min="0" max="100" value="10"
                                 oninput="updateSliderValue00(this.value)">
                         </div>
                     </div>
@@ -900,8 +905,8 @@
                     <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
                         <span style=" color: yellow;font-size:0.8rem;">Border Radius</span>
                         <div class="width100c">
-                            <label for="widthSlider11"><span id="sliderValue11">0</span>px</label>
-                            <input type="range" id="widthSlider00" name="widthSlider00" min="0" max="10" value="0"
+                            <label for="widthSlider00c"><span id="sliderValue11">0</span>px</label>
+                            <input type="range" id="widthSlider00c" name="widthSlider00c" min="0" max="50" value="0"
                                 oninput="updateSliderValue11(this.value)">
                         </div>
                     </div>
@@ -924,7 +929,7 @@
 
 
 
-  <!-- 
+                <!-- 
 
                 <div class="width100c openclose" openclose="explorerd">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
@@ -934,7 +939,7 @@
                     </div>
                 </div>
 
-            <div id="explorer" class="width100c explorerd" style="margin-top: 3px; "></div>--> 
+            <div id="explorer" class="width100c explorerd" style="margin-top: 3px; "></div>-->
 
 
 
@@ -965,6 +970,7 @@
 
             </div>
 
+            <!--
             <div class="width100c toolboxlayoutoptions unselectable-text blogbuilder"
                 style="width: 95%; margin-left:4%; margin-top:10px; max-height: 770px; overflow: auto;">
 
@@ -1303,7 +1309,7 @@
 
             </div>
 
-
+-->
 
             <div class="width100c toolboxlayoutoptions unselectable-text layoutbuilder-oc2"
                 style="width: 98%; margin-left:4%; margin-top:10px">
@@ -1331,6 +1337,8 @@
 
                         <select name="selectwidthrow" id="selectwidthrow" style="width: 93%;">
                             <option selected value="100" value2="">100% Rows</option>
+                            <option value="80" value2="width50c2">80% Rows</option>
+                            <option value="60" value2="width50c2">60% Rows</option>
                             <option value="50" value2="width50c2">50% Rows</option>
                             <option value="33" value2="width50c2">33% Rows</option>
                             <option value="25" value2="width50c3">25% Rows</option>
@@ -1353,7 +1361,7 @@
 
                         <select name="selectwidthcomp" id="selectwidthcomp" style="width: 93%;">
                             <option selected value="100">100% Comps</option>
-                            <option value="80">60% Comps</option>
+                            <option value="80">80% Comps</option>
                             <option value="60">60% Comps</option>
                             <option value="50">50% Comps</option>
                             <option value="40">40% Comps</option>
@@ -1382,12 +1390,12 @@
 
 
                     <div class="width100c ">
-                        
+
                         <button id="addrow" class="addrow100" data-layout="100">Add 100% Row</button>
 
-                     
-                       
-                        
+
+
+
                     </div>
 
 
@@ -1442,7 +1450,7 @@
                         margin-bottom: 8px;">Add 33% Tri Row</button>
                     </div>
 
-          
+
 
                 </div>
 
@@ -1544,7 +1552,8 @@
 
 
 
-            <div class="prod100 tools layoutbuilder-oc" style="width: 94%; margin-left: 1%; margin-right: 0.5%; background-color: transparent; ">
+            <div class="prod100 tools layoutbuilder-oc"
+                style="width: 94%; margin-left: 1%; margin-right: 0.5%; background-color: transparent; ">
                 <div class="width100c">
                     <div class="width50c unselectable-text" style="text-align: center; width: 45%; margin-left: 3%;">
                         Constant Width's</div>
@@ -1782,7 +1791,8 @@
                         </div>
                     </div>
 
-                    <div class="prod100" style="padding-left: 0px; margin-left: 0px; width: 100%;background-color: transparent;">
+                    <div class="prod100"
+                        style="padding-left: 0px; margin-left: 0px; width: 100%;background-color: transparent;">
                         <!--<button class="simpleshow" id="cinput1-clickh2">Submit</button>-->
 
 
@@ -2253,7 +2263,7 @@
 
 
                 <div class="prod100 stage1 tools imagebuilder" id="imagebuilder"
-                    style=" margin-top: 20px; margin-left: 0px;  width: 95%; margin-left: 2%;">
+                    style=" margin-top: 20px; margin-left: 0px;  width: 95%; margin-left: 2%;background-color: transparent;">
 
 
                     <div class="prod100 imagemessage"
@@ -2269,7 +2279,7 @@
                             Images</button>
                         <button class="whattypeofimage unselectable-text" openimagebuilder="promoimage">Promo
                             Images</button>
-                        <button class="whattypeofimage unselectable-text" openimagebuilder="wrapimage">Wrap Around
+                        <button class="whattypeofimage unselectable-text" openimagebuilder="wrapimage">Text Wrap /
                             Image</button>
                     </duv>
 
@@ -2712,7 +2722,7 @@
                         <input type="text" class="lister" id="list10" placeholder="List Item 10"
                             style="width: 80%; margin-right: 40%; margin-bottom: 5px;">
 
-                            <!--
+                        <!--
                         <select name="mylistwidth" id="mylistwidth" style="float: right; margin-bottom: 5px;">
 
                             <option value="width100c">100% across</option>
@@ -3123,54 +3133,7 @@
                             style="display: none;">
 
 
-                        <script>
-                            async function uploadFile() {
-                                const fileInput = document.getElementById('fileInput-gd');
-                                const file = fileInput.files[0]; // Get the file from the input
-
-                                if (!file) {
-                                    alert('Please select a file first!');
-                                    return;
-                                }
-
-                                const folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91';
-                                const accessToken =
-                                    'AIzaSyBCShnlpcHZxF7WKYbNQ_0waMjVh9Q-kgc'; // Replace with your access token
-                                const url = 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart';
-
-                                const metadata = {
-                                    'name': file.name, // Filename at Google Drive
-                                    'parents': [folderId], // Folder ID at Google Drive
-                                };
-
-                                const formData = new FormData();
-                                formData.append('metadata', new Blob([JSON.stringify(metadata)], {
-                                    type: 'application/json'
-                                }));
-                                formData.append('file', file);
-
-                                try {
-                                    const response = await fetch(url, {
-                                        method: 'POST',
-                                        headers: new Headers({
-                                            'Authorization': 'Bearer ' + accessToken
-                                        }),
-                                        body: formData,
-                                    });
-
-                                    if (!response.ok) {
-                                        throw new Error('Upload failed');
-                                    }
-
-                                    const result = await response.json();
-                                    console.log(result);
-                                    alert('Upload successful');
-                                } catch (error) {
-                                    console.error('Error:', error);
-                                    alert('Error during file upload: ' + error.message);
-                                }
-                            }
-                        </script>
+                     
 
 
 
@@ -3254,103 +3217,11 @@
                             style="float: right; margin-top: 5px;">Refresh
                             List</button></div>
 
-
-
-
-
-
-
-                    <div class="width100c" style="display: none;"> <input type="file" id="fileInput-gd"
-                            style="float: left; width: auto; margin-bottom: 10px;"></div>
-                    <div class="width100c" style="display: none;"> <button onclick="uploadFile()"
-                            style="float: left;">Upload to Drive</button>
-
-
-
-                    </div>
+                  
                 </div>
             </div>
 
 
-
-            <script>
-                async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91') {
-                    async function fetchFiles(folderId, filesList = []) {
-                        let apiKey = a231 + a2312 + 'jVh9Q-kgc'; // Example API key
-                        let response = await fetch(
-                            `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}`
-                        );
-                        let data = await response.json();
-                        let files = data.files || [];
-
-                        for (let file of files) {
-                            // If the file is a folder, recursively fetch its files
-                            if (file.mimeType === 'application/vnd.google-apps.folder') {
-                                await fetchFiles(file.id, filesList);
-                            } else {
-                                filesList.push(file); // Add non-folder files to the list
-                            }
-                        }
-                    }
-
-                    let allFiles = [];
-                    await fetchFiles(folderId, allFiles);
-
-                    // Sort all files alphabetically by name
-                    allFiles.sort((a, b) => a.name.localeCompare(b.name));
-
-                    let output = ''; // Initialize output HTML
-                    let ulCounter = 0; // Counter for <ul> elements
-                    let currentFirstLetter = '';
-                    let previousFirstLetter = '';
-
-                    for (let file of allFiles) {
-                        $('a.googledrive').on('click', function (e) {
-                            e.preventDefault();
-
-                        });
-                        currentFirstLetter = file.name.charAt(0).toLowerCase();
-                        if (currentFirstLetter !== previousFirstLetter) {
-                            // Whenever the first letter changes, check if we need to wrap previous <ul>s in a <div>
-                            if (ulCounter % 3 === 0) {
-                                if (ulCounter !== 0) { // Close the previous div if it's not the first group
-                                    output += '</div>';
-                                }
-                                output +=
-                                    '<div class="width33cg">'; // Start a new div for every group of three <ul>s
-                            }
-                            if (previousFirstLetter !== '') {
-                                output += '</ul>'; // Close the previous list if it's not the first iteration
-                            }
-                            output += '<ul>'; // Start a new list for the new first letter
-                            ulCounter++; // Increment <ul> counter
-
-
-
-                        }
-
-                        let displayName = file.name.replace('.txt', ''); // Example display name modification
-                        // Append each file link to the output HTML
-                        output +=
-                            `<li><a title="Download the file of - ${displayName} -" style="color:#fff" class="googledrive" href="https://drive.google.com/uc?export=download&id=${file.id}"  return false" download="${file.name}">${displayName} &#8595;</a></li>`;
-
-                        previousFirstLetter =
-                            currentFirstLetter; // Update the letter tracker for the next iteration
-
-                    }
-
-                    output += '</ul>'; // Close the last list
-                    if (ulCounter % 3 !== 0 || ulCounter === 0) {
-                        output +=
-                            '</div>'; // Ensure the closing div is added for the last group if it's not a full group of three
-                    }
-
-                    // Display the output HTML
-                    document.getElementById('driveContents').innerHTML = output;
-                }
-
-                listAllDriveFiles(); // Initial call to list files
-            </script>
 
             <div id="mymatrix9" class="width100c closethematrix" style="width: 94%; margin-left: 4%;">
                 <div class="width100c" style="margin-top: 10px;">
@@ -3595,15 +3466,22 @@
                         style="margin-left: 24px; margin-top: 10px; width: 350px; padding-bottom: 5px;">
                         <button class="unselectable-text addrow-click" title="Add 100% Row"
                             style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 23%; margin-top: 10px; margin-bottom: 5px;">100</button>
+
+
+
+
+
                         <button class="unselectable-text addrow50 addrow" data-layout="50,50" title="Add 2 50% Rows"
                             style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 23%; margin-top: 10px; margin-bottom: 5px;">50%
                             x2</button>
 
-                        <button class="unselectable-text addrow25 addrow" data-layout="25,25,25,25"  title="Add 4 25% Rows"
+                        <button class="unselectable-text addrow25 addrow" data-layout="25,25,25,25"
+                            title="Add 4 25% Rows"
                             style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 23%; margin-top: 10px; margin-bottom: 5px;">25%
                             x 4</button>
 
-                        <button class="unselectable-text addrow30x3 addrow" data-layout="33,33,33" title="Add 3 33% Rows"
+                        <button class="unselectable-text addrow30x3 addrow" data-layout="33,33,33"
+                            title="Add 3 33% Rows"
                             style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 23%; margin-top: 10px; margin-bottom: 5px;">33%
                             x 3</button>
 
@@ -3611,9 +3489,36 @@
                 </div>
 
 
+                
+                <div class="hover-item" style="margin-left: -10px; margin-top: -7px;">
+                    <button class="unselectable-text " id="addrow1x1a" title="Add Rows" style="text-align: center;
+                    color: #fff;
+                    width: 97%;
+                    margin-top: 10px;
+                    margin-bottom: 0px;
+                    padding-top: 5px;
+                    padding-left: 44%;
+                    padding-right: 128%;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    background-image: url(assets/compicon.png);
+                    background-position: center;
+                    background-repeat: no-repeat;">
+                        <span style="opacity: 0;">Row</span>
+                    </button>
+
+                    <div class="popup hidden"
+                    style="margin-left: 24px; margin-top: 10px; width: 350px; padding-bottom: 5px;">
+                
+                <div id="addrow1x1a" style="                  text-align: center; background-color: yellow; color:#333; width: 23%; margin-top: 10px; margin-bottom: 5px; float: left;">100%</div>
+                <div id="addrow2x2a" style=" margin-left:5px; text-align: center; background-color: yellow; color:#333; width: 23%; margin-top: 10px; margin-bottom: 5px; float: left;">50/50</div>
+                </div>
+                    </div>
 
 
-                <button id="addrow1x1a" class="unselectable-text" title="Add 100% Component" style="    text-align: center;
+
+<!--
+                <button   class="unselectable-text" title="Add 100% Component" style="    text-align: center;
                     color: #fff;
                     width: 97%;
                     margin-top: 0px;
@@ -3631,8 +3536,9 @@
 
                     <span style="opacity: 0;">100</span>
                 </button>
+                -->
 
-                <div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
+               
 
 
                 <div class="hover-item">
@@ -3642,7 +3548,6 @@
                         width: 97%;
                         margin-top: 0px;
                         margin-bottom: 0px;
-                        padding-top: 7px;
                         padding-bottom: 5px;
                         margin-bottom: 10px;
                         padding-left: 11%;
@@ -3709,7 +3614,7 @@
 
 
 
-          
+
 
 
                 <button class="clearsection unselectable-text" title="Empty Component" style="text-align: center;
@@ -3747,7 +3652,9 @@
                     style="max-height: 460px; width: 100%; margin-left: 0%;  overflow-y: auto;  margin-right: 0px; padding-right: 0px; ">
 
                 </div>
-                <div id="explorer2" class="width100c explorerd" style="margin-top: 3px; padding-left: 0px; margin-left: -10px; margin-top: 10px; width: 100%; "></div>
+                <div id="explorer2" class="width100c explorerd"
+                    style="margin-top: 3px; padding-left: 0px; margin-left: -10px; margin-top: 10px; width: 100%; ">
+                </div>
             </div>
 
 
@@ -3760,7 +3667,7 @@
                         style="float: right; font-size: 80%; border: 1px solid #333;">Export Final Code to File</button>
                 </div>
 
-           
+
 
                 <div id="thisisthefinalcode" class="prod100 layout2 selectall"
                     style="background-color: #000; color: #fff; margin-bottom: 20px; margin-left: 0px; width: 96.4%; padding-top: 20px; padding-bottom: 20px;">
@@ -3944,7 +3851,7 @@
 
 
     </div>
-<!--
+    <!--
     <script src="js2/explorer-beta2.js"></script>
     <script src="js2/explorer-beta2-workspace.js"></script>
     <script src="js2/progamscript-beta.js"></script>
@@ -3954,11 +3861,9 @@
     <script src="js2/explorer-beta2.js"></script>
     <script src="js2/primary.js"></script>
     <script src="js2/internalfunctions.js"></script>
+    <script src="js2/imagefunctions.js"></script>
     <script src="js2/imports.js"></script>
-
     <script src="js2/saverestore.js"></script>
-
-
     <script src="js2/videoconverter.js"></script>
 
 </body>

@@ -1,11 +1,29 @@
+const $explorerContainer = $('#pullthecode3');
+var $in910 = $('.in910');
+function liverowactivy() {
+
+   $explorerContainer.on('click', '.liverow', function () {
+        $('.onblock').removeClass('onblock');
+        $(this).addClass('onblock');
+        $('#desktophidev2d').prop('checked', $(this).hasClass('hideonlyondesktop'));
+        $('#mobilehidev2d').prop('checked', $(this).hasClass('hideonlyonmobile'));
+    });
+}
+
+
+
 $('#EditandSubmitAL').on('click', function () {
     $('.explorerselected').html($('#myhtmleditor').val())
     $('#mobilepreview2').html($('#pullthecode2').html());
     runexplorer();
 })
 
+
 $(".draggable").draggable({
-    revert: "valid"
+    revert: "valid",
+    stop: function() {
+        runexplorer();  // update only once dragging stops
+    }
 });
 
 function enabledrop() {
@@ -76,11 +94,20 @@ function editElement(clickedElement) {
 
 
 function duplicateElement(clickedElement) {
+    captureState()
     var originalElement = $(clickedElement).data('linkedElement');
     var clone = $(originalElement).clone();
     $(originalElement).after(clone);
 
 }
+
+
+
+
+
+
+
+
 
 function runexplorer() {
     
@@ -149,10 +176,23 @@ function runexplorer() {
     
         clearSelection(); // Assuming this function clears any prior selections properly
         $('.explorerselected').removeClass('explorerselected');
+        $('.onblock').removeClass('onblock')
+        $('.interedit').removeClass('interedit')
 
     
         // Since the element exists and is part of #pullthecode2, add the class
         element.classList.add('explorerselected');
+        if (!element.classList.contains('liveelement')) {
+            element.classList.add('onblock');
+            
+        }
+
+        if (element.classList.contains('liveelement')) {
+            element.classList.add('interedit');
+            
+        }
+        
+
 
         // Trigger a click, assuming you're simulating a click event for some functionality
         $(element).click(); // Using jQuery here since your setup appears to integrate it
@@ -162,10 +202,10 @@ function runexplorer() {
         // Handle visual selection and scrolling if needed
         if (element.explorerIndent) {
             element.explorerIndent.classList.add('indentselected');
-            element.explorerIndent.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            element.explorerIndent.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'start' });
         }
         if (scrollElement && element.scrollIntoView) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            element.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'start' });
         }
         lastSelectedElement = element; // Update last selected element
     }
@@ -179,15 +219,12 @@ function runexplorer() {
         }
     }
 
-   $('.liverow').on('click' , function() {
-    $('.onblock').removeClass('onblock')
-$(this).addClass('onblock')
-   })
+    liverowactivy()
 
-   $('.in910').on('click' , function() {
-     $('.interedit').removeClass('interedit')
-     $(this).addClass('interedit')
-   })
+    $(document).on('click', '.in910', function() {
+        $('.interedit').removeClass('interedit');
+        $(this).addClass('interedit');
+    });
 
     
 
@@ -223,8 +260,8 @@ $(document).on('contextmenu', '.indent', function(e) {
     e.preventDefault();
     $('#contextMenu').css({
         display: "block",
-        left: e.pageX,
-        top: e.pageY
+        left: "70%",//e.pageX,
+        top: "451px"//e.pageY
     }).data('clickedElement', this); // Attach the clicked element data to the context menu
     return false;
 });
@@ -236,26 +273,35 @@ $('#contextMenu ul li').click(function() {
     var clickedElement = $('#contextMenu').data('clickedElement');
     switch (action) {
         case 'delete':
+            captureState()
             var correspondingElement = $(clickedElement).data('linkedElement');
             $(correspondingElement).remove(); // Remove the corresponding element in #pullthecode3
             $(clickedElement).remove(); // Remove the `.indent`
             $('#mobilepreview2').html($('#pullthecode2').html());
             runexplorer();
             break;
+
             case 'duplicate':
             duplicateElement(clickedElement);
             $('#mobilepreview2').html($('#pullthecode2').html());
             runexplorer()
             break;
-        case 'component':
+
+            case 'component':
             $('#addrow1x1a').click()
             break;
+
             case 'empty':
+                captureState()
                 $('.explorerselected').empty()
                 $('#mobilepreview2').html($('#pullthecode2').html());
                 runexplorer()
             break;
-        case 'edit':
+
+            case 'close':           
+                break;
+
+            case 'edit':
             editElement(clickedElement);
             break;
     }
@@ -273,7 +319,6 @@ $(document).not('#myhtmleditor').on('click', function() {
     $('#contextMenu').hide();
    $('.explorerselected').removeClass('explorerselected')
    $('#mobilepreview2').html($('#pullthecode2').html());
-
 });
 
 function gotothelinkfunction(wheretogo) {
@@ -285,3 +330,27 @@ function gotothelinkfunction(wheretogo) {
 
 }
 
+
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+// Usage with a function that needs debouncing
+var myEfficientFn = debounce(function() {
+    // All the taxing stuff you do
+    runexplorer();
+    
+}, 250);
+
+window.addEventListener('resize', myEfficientFn);

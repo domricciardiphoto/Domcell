@@ -1711,7 +1711,7 @@
         
         
         #fullembedcodeddd {
-            width: 100%; min-height: 500px; background-color: #333; position: relative; float: left;   
+            width: 100%; min-height: 500px;  position: relative; float: left;   
         }
 
 
@@ -1935,4 +1935,6 @@
     box-shadow: none;
     
 }
-        
+       #codeloaderpcrview .onblock {
+        background-color: transparent !important;
+       }

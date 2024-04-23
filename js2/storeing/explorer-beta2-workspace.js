@@ -59,6 +59,7 @@ function duplicateElement(clickedElement) {
 
 $(document).on('contextmenu', '.indent', function(e) {
     e.preventDefault();
+  
     $('#contextMenu').css({
         display: "block",
         left: e.pageX,

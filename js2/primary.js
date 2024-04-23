@@ -145,6 +145,7 @@ $('.thetopbox').on('click', function () {
         $('#Importer').click()
         $('.blogbuilder').hide()
         $('#explorerpanel').hide()
+        $('#layoutbuilder-oc').hide()
     }
     if (whichboxtoopen == 'Layout') {
 
@@ -225,16 +226,23 @@ $('.openthematrix').on('click', function () {
             // Define the words you want to remove
             var wordsToRemove = ['liveelement', 'in910', 'layoutpale', 'layoutpale50', 'liverow', 'droppable',
                 'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'ui-', 'layoutpale100', ' ui-',
-                'layoutpale30', 'layoutpale20', , 'layoutpale33', 'onblock', 'interedit',
+                'layoutpale30', 'layoutpale20', , 'layoutpale33', 'onblock', 'interedit','explorerselected',
                 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
-                'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle',
+                'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle','ui-',
                 'https://staging-na01-pcrichard.demandware.net'
             ];
         
             // Loop through the words and remove them from the content
             wordsToRemove.forEach(function (word) {
-                content = content.replace(new RegExp('\\b' + word + '\\b', 'g'), '')
-        
+                var pattern;
+                if (word.startsWith('ui-')) {
+                    // Special pattern for strings starting with 'ui-', remove leading/trailing spaces in pattern
+                    pattern = new RegExp('(?:^|\\s)' + word + '(?=\\s|$)', 'g');
+                } else {
+                    // Default pattern using word boundaries
+                    pattern = new RegExp('\\b' + word + '\\b', 'g');
+                }
+                content = content.replace(pattern, '');
             });
         
             // Set the modified content back to the element
@@ -309,10 +317,10 @@ $('.openthematrix').on('click', function () {
             $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
             break;
         case '#mymatrix6':
-
             $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
             $('#hidemainmobile').hide()
             $('.colorlegend').hide()
+            listAllDriveFiles();
             break;
         case '#mymatrix7':
 
@@ -334,7 +342,7 @@ $('#pcrdesktopview').on('click', function () {
     $("#fullembedcodeddd2").animate({
         'width': '1024px'
     })
-    $('#fullembedcodeddd').css('max-width', 'none').css('margin-left', '0%').css('background-color', '#333')
+    $('#fullembedcodeddd').css('max-width', 'none').css('margin-left', '0%')
     $('.morebutt').not('#closeembed').css('background-color', '#fff').css('color', '#333')
     $(this).css('background-color', '#333').css('color', '#fff')
     $('body').css('background-color', '#333')
@@ -363,7 +371,7 @@ $('#pcrtabletview').on('click', function () {
     $("#fullembedcodeddd2").animate({
         'width': '768px'
     })
-    $('#fullembedcodeddd').css('max-width', '769px').css('margin-left', '6%').css('background-color', '#333')
+    $('#fullembedcodeddd').css('max-width', '769px').css('margin-left', '6%')
     $('.morebutt').not('#closeembed').css('background-color', '#fff').css('color', '#333')
     $(this).css('background-color', '#333').css('color', '#fff')
     $('body').css('background-color', '#333')
@@ -393,7 +401,7 @@ $('#pcrmobileview').on('click', function () {
     $("#fullembedcodeddd2").animate({
         'width': '390px'
     })
-    $('#fullembedcodeddd').css('max-width', '400px').css('margin-left', '7.85%').css('background-color', '#333')
+    $('#fullembedcodeddd').css('max-width', '400px').css('margin-left', '7.85%')
     $('.morebutt').not('#closeembed').css('background-color', '#fff').css('color', '#333')
     $(this).css('background-color', '#333').css('color', '#fff')
     $('body').css('background-color', '#333')
@@ -515,10 +523,16 @@ document.getElementById('mysortcomponents').addEventListener('change', function 
     }
 })
 
-$('#clearandrestart').on('click', function () {
+$('#clearandrestartbutton_nocache').on('click', function () {
     localStorage.clear();
     location.reload()
 })
+
+$('#clearandrestartbutton').on('click', function () {
+    location.reload()
+})
+
+
 
 $('.pcrcloseicon').on('click', function () {
     $('#codeloaderpcrview').toggle()
@@ -615,7 +629,7 @@ document.getElementById('desktophidev2d').addEventListener('input', function () 
 })
 
 
-
+/*---former convert
 $('.texttype').click(function () {
     captureState()
     // Assuming this function captures the current state for undo functionality
@@ -664,8 +678,47 @@ $('.texttype').click(function () {
    // Load new content after updating the DOM
    runexplorer()
    $('#mobilepreview2').html($('#pullthecode2').html());
- //  runexplorer2()
 });
+
+*/
+
+$('.texttype').click(function () {
+    captureState(); // Assuming this function captures the current state for undo functionality
+
+    var selection = window.getSelection();
+    if (!selection.rangeCount) return;
+    var selectedText = selection.toString();
+    var textWrapper = $(this).val();
+    var headerNewColor = ''; // Assuming this variable is declared elsewhere or will be used later
+
+    // Create a new HTML element with the selected text wrapped in the specified tag
+    var contentWrapped = '<' + textWrapper + ' ' + headerNewColor + '>' + selectedText + '</' + textWrapper + '>';
+
+    // Get the selected range and the original content
+    var range = selection.getRangeAt(0);
+    var originalContent = range.startContainer.nodeValue;
+    var startText = originalContent.substring(0, range.startOffset);
+    var endText = originalContent.substring(range.endOffset, originalContent.length);
+
+    // Create a new document fragment with the wrapped content and the remaining parts
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild(document.createTextNode(startText)); // Adds text before the selection
+    fragment.appendChild(range.createContextualFragment(contentWrapped)); // Adds the wrapped selection
+    fragment.appendChild(document.createTextNode(endText)); // Adds text after the selection
+
+    // Replace the original content in the node with the new content
+    range.startContainer.nodeValue = '';
+    range.insertNode(fragment);
+
+    // Clear the selection to prevent confusion
+    selection.removeAllRanges();
+
+    // Load new content after updating the DOM
+    runexplorer();
+    $('#mobilepreview2').html($('#pullthecode2').html());
+});
+
+
 
 
 $('.textaligner3').on('click', function () {
@@ -954,15 +1007,7 @@ captureState()
       var wheretogo = target.attr('href');
       gotothelinkfunction(wheretogo);
   
-      $('#noBtn').off('click').on('click', function () {
-        var target = $(e.target);
-        if (!target.is('a')) {
-            target = target.closest('a');
-        }
-          target.replaceWith(target.text());
-          runexplorer();
-          document.getElementById("myModal").style.display = "none";
-      });
+     
   });
 
 });
@@ -1005,11 +1050,7 @@ $('#linkmaker3').click(function () {
       var wheretogo = target.attr('href');
       gotothelinkfunction(wheretogo);
   
-      $('#noBtn').off('click').on('click', function () {
-          target.replaceWith(target.text());
-          runexplorer();
-          document.getElementById("myModal").style.display = "none";
-      });
+     
   });
 
 });
@@ -1257,391 +1298,12 @@ function deleteHighlightedText() {
     // Images ------------------------------------------------
 
 
-    $('.whattypeofimage').on('click', function () {
-        $('.typeofim').hide()
-        openimagebuilder = '.' + $(this).attr('openimagebuilder');
-        $(openimagebuilder).slideDown()
-    
-        if (openimagebuilder === '.productimage') {
-            $('#mycompimagelist , #clicktoloadlocalfiles').hide()
-        } else {
-            $('#mycompimagelist , #clicktoloadlocalfiles').show()
-        }
-        $('.whattypeofimage').css('background-color', 'transparent')
-        $(this).css('background-color', '#333')
-    })
 
-    document.getElementById('cinput1').addEventListener('input', function () {
-
-        $('.showthepreviewimage').css('pointer-events', 'all')
-        $('.showthepreviewimage').each(function () {
-            previewurld =
-                'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/'
-            imageprefix = $(this).attr('prefix');
-            $(this).attr('src', previewurld + imageprefix + $('#cinput1').val() + '.jpg')
-        })
-    
-    
-        var imgs = document.getElementsByTagName('img');
-        for (var i = 0, j = imgs.length; i < j; i++) {
-            if (imgs[i].classList.contains(
-                    'showthepreviewimage')) { // Check if the image has the specific class
-                // Hide parent <div> initially until image is confirmed to load
-                imgs[i].parentNode.style.display = 'none';
-    
-                imgs[i].onload = function () {
-                    this.parentNode.style.display = ''; // Show the parent <div> of the image
-                };
-    
-                imgs[i].onerror = function (e) {
-                    this.parentNode.style.display = 'none'; // Hide the parent <div> of the image
-                };
-            }
-        }
-    
-    
-    })
-
-
-
-    $('.showthepreviewimage').on('click', function () {
-
-        imageselect = $(this).attr('prefix')
-        imagename00 = $('#cinput1').val()
-
-        imageheader =
-            '<div class="pd-header-tag width100c" style="margin-bottom:10px"><h3 class="t-h6-style in910" id="ocinsertcontent2369">' +
-            $('#cinput1c').val() + '</h3></div>'
-
-        if ($('#cinput1b').val() == '') {
-
-            $('.imagemessage').slideDown().delay(2000).slideUp()
-            return false
-        } else {
-
-            newval2 = $('#cinput1b').val()
-
-            if ($('#cinput1c').val() == '') {
-                imagedata =
-                    '<div class="width100c"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
-                    imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + newval2 +
-                    '"></div>'
-            } else {
-                imagedata = imageheader +
-                    '<div class="width100c"><img class="loading-lazy promoimg21 in910" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
-                    imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + newval2 +
-                    '"></div>'
-            }
-
-
-            $('.interedit').append(imagedata).removeClass('.interedit')
-            runexplorer();
-            $('img.loading-lazy').each(function() {
-                $(this).attr('src' , $(this).attr('data-src'))
-            })
-            $('#mobilepreview2').html($('#pullthecode2').html());
-            //---------------------------------------------------------
-
-
-            $('img.promoimg21').on("contextmenu", function (e) {
-                e.preventDefault(); // Prevent the default context menu
-                currentImage = $(this); // Set the current image
-                $('#customModal').show(); // Show the custom modal
-
-            });
-
-            $('#wrapImage').click(function () {
-                $('#customModal').hide(); // Hide the custom modal
-                $('#urlModal').show(); // Show the URL modal
-            });
-
-            $('#submitUrl').click(function () {
-
-                var url = $('#imageUrl').val(); // Get URL from input field
-                if (url && url !== "http://") {
-                    if (currentImage.parent('a').length === 0) {
-                        currentImage.wrap('<a class="" href="' + url + '"></a>');
-                    } else {
-                        currentImage.parent('a').attr('href', url);
-                    }
-                }
-                $('#urlModal').hide(); // Hide the URL modal
-
-                runexplorer();
-                
-
-            });
-
-            $('#cancelUrl').click(function () {
-                $('#urlModal').hide(); // Hide the URL modal
-                runexplorer();
-            });
-
-            $('#deleteImage').click(function () {
-                currentImage.parent('a').remove();
-                currentImage.remove(); // Remove the image
-                $('#customModal').hide();
-                // Hide the custom modal
-                runexplorer();
-            });
-
-            $('#closeModal').click(function () {
-                $('#customModal').hide(); // Hide the custom modal without any action
-            });
-
-            //--------------------------------------------------------
-
-        }
-
-      
-
-
-    })
-
-
-    document.getElementById('cinput1promotional').addEventListener('input', function () {
-        catalogselector = $('#catalogselector').val()
-        promotionalsource =
-            'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/' +
-            catalogselector;
-        $('#showthepromotionalimage').attr('src', promotionalsource + $('#cinput1promotional').val())
-    })
-    
-    
-    document.getElementById('catalogselector').addEventListener('change', function () {
-        catalogselector = $('#catalogselector').val()
-        promotionalsource =
-            'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/' +
-            catalogselector;
-        $('#showthepromotionalimage').attr('src', promotionalsource + $('#cinput1promotional').val())
-    })
-
-
-    $('#showthepromotionalimage').on('click', function () {
-        imagename01 = $(this).attr('src');
-
-        if ($('#cinput1bpromotional').val() == '') {
-            $('.imagemessage').slideDown().delay(2000).slideUp()
-            return false
-        } else {
-            newval3 = $('#cinput1bpromotional').val()
-            imagedata2 = '<img class="loading-lazy promoimg21 in910" data-src="' + imagename01 +
-                '" alt="' + newval3 + '">'
-            $('.interedit').append(imagedata2).removeClass('.interedit')
-
-        }
-
-
-        $('img.promoimg21').on("contextmenu", function (e) {
-            e.preventDefault(); // Prevent the default context menu
-            currentImage = $(this); // Set the current image
-            $('#customModal').show(); // Show the custom modal
-        });
-
-
-
-        $('#wrapImage').click(function () {
-            $('#customModal').hide(); // Hide the custom modal
-            $('#urlModal').show(); // Show the URL modal
-        });
-
-
-
-        $('#cancelUrl').click(function () {
-            $('#urlModal').hide(); // Hide the URL modal
-            runexplorer();
-        });
-
-
-        $('#deleteImage').click(function () {
-            currentImage.parent('a').remove();
-            currentImage.remove(); // Remove the image
-            $('#customModal').hide();
-            // Hide the custom modal
-            runexplorer();
-        });
-
-        $('#closeModal').click(function () {
-            $('#customModal').hide(); // Hide the custom modal without any action
-        });
-
-
-        $('img.loading-lazy').each(function() {
-            $(this).attr('src' , $(this).attr('data-src'))
-        })
-
-        runexplorer();
-
-        
-
-    })
-
-
-    document.getElementById('clicktoloadlocalfiles').addEventListener('click', function () {
-        document.getElementById('imgfileInput').click(); // Simulate file input click
-        $('#loadedimagemessage').show()
-    });
-
-    $('.whattypeofimage').on('click', function () {
-        $('.typeofim').hide()
-        openimagebuilder = '.' + $(this).attr('openimagebuilder');
-        $(openimagebuilder).slideDown()
-    
-        if (openimagebuilder === '.productimage') {
-            $('#mycompimagelist , #clicktoloadlocalfiles').hide()
-        } else {
-            $('#mycompimagelist , #clicktoloadlocalfiles').show()
-        }
-        $('.whattypeofimage').css('background-color', 'transparent')
-        $(this).css('background-color', '#333')
-    })
-
-    document.getElementById('clicktoloadlocalfiles').addEventListener('click', function () {
-        document.getElementById('imgfileInput').click(); // Simulate file input click
-        $('#loadedimagemessage').show()
-    });
     
     $("#sidetoolset").delay(600).animate({
         opacity: 1
     }, 1000); // 1000 milliseconds = 1 second
     
-    document.getElementById('imgfileInput').addEventListener('change', function (event) {
-        const files = event.target.files; // Get selected files
-        const imageListDiv = document.getElementById('mycompimagelist');
-    
-        imageListDiv.innerHTML = ''; // Clear the div before adding new images
-    
-        // Loop through files, filter for images, and display them with filenames
-        for (const file of files) {
-            if (file.type.startsWith('image/')) {
-                const imgContainer = document.createElement('div'); // Container for image and filename
-                imgContainer.className = 'myloadedimages'; // Assign class to the container
-    
-                const img = document.createElement('img');
-                const filenameDiv = document.createElement('div'); // Element for the filename
-                filenameDiv.className = 'myloadedfilenames'; // Assign class to the filename div
-    
-                img.src = URL.createObjectURL(file);
-                img.style.width = '100px'; // Example size, adjust as needed
-                img.onload = function () {
-                    URL.revokeObjectURL(img.src); // Free memory when the image is loaded
-                };
-    
-                filenameDiv.textContent = file.name; // Set the text to the file name
-                filenameDiv.style.textAlign = 'center'; // Center align the filename
-    
-                imgContainer.appendChild(img);
-                imgContainer.appendChild(filenameDiv); // Append the filename below the image
-                imageListDiv.appendChild(imgContainer);
-            }
-        }
-    
-    
-        $('.myloadedimages').on('click', function () {
-            var desktoppictures = $(this).children('.myloadedfilenames').text()
-            $('#cinput1promotional , #wraparoundfilename').val(desktoppictures)
-            $('#showthepromotionalimage').attr('src',
-                'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images' +
-                $('#catalogselector').val() + desktoppictures)
-        })
-    
-    
-    
-    });
-
-    $('#wraparoundsubmit').on('click', function () {
-
-        if ($('#wraparoundalt').val() === '') {
-            $('.imagemessage').slideDown().delay(2000).slideUp()
-            return false
-        }
-
-        wraptext = '<p >' + $('#wraparoundimage').val() + '</p>'
-        wrapcatalogselect = $('#wraparoundselect').val()
-        wrapimagefilename = $('#wraparoundfilename').val()
-        wrapimagealt = $('#wraparoundalt').val()
-
-        if ($('#reverseimage').val() === 'yes') {
-            imagefloat = 'right'
-        } else {
-            imagefloat = 'left'
-        }
-
-
-        if (wrapcatalogselect === 'product') {
-
-            wrapfullimage =
-                '<img class="loading-lazy promoimg21 in910" style="width:45% !important; padding:0.5%" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_' +
-                wrapimagefilename + '.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="' + wrapimagealt +
-                '" src="#">'
-            $('.interedit').html('<div class="width100c">' + wrapfullimage + wraptext + '</div>')
-        }
-        if (wrapcatalogselect === 'promo') {
-
-            wrapimagefilename2 =
-                'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/promo/' +
-                wrapimagefilename + '?sw=400&amp;sh=400&amp;sm=fit'
-            wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' + imagefloat + ';'
-            $('.interedit').html('<div style="' + wrapimagestyle +
-                '"><img class="loading-lazy promoimg21 in910" alt="' + wrapimagealt +
-                '" src="' + wrapimagefilename2 + '" data-src="' + wrapimagefilename2 +
-                '"/></div></div><div style="align-items: flex-start;"><div style="flex: 1 1 auto" >' +
-                wraptext + '</div>')
-        }
-
-        if (wrapcatalogselect === 'blog') {
-
-            wrapimagefilename2 =
-                'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/' +
-                wrapimagefilename + '?sw=400&amp;sh=400&amp;sm=fit'
-            wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' + imagefloat + ';'
-            $('.interedit').html('<div style="' + wrapimagestyle +
-                '"><img class="loading-lazy promoimg21 in910" alt="' + wrapimagealt +
-                '" src="' + wrapimagefilename2 + '" data-src="' + wrapimagefilename2 +
-                '"/></div></div><div style="align-items: flex-start;"><div style="flex: 1 1 auto" >' +
-                wraptext + '</div>')
-
-
-        }
-
-        $('img.promoimg21').on("contextmenu", function (e) {
-            e.preventDefault();
-            currentImage = $(this); // Set the current image
-            $('#customModal').show(); // Show the custom modal
-        });
-
-        $('#wrapImage').click(function () {
-            $('#customModal').hide(); // Hide the custom modal
-            $('#urlModal').show(); // Show the URL modal
-        });
-
-
-
-        $('#cancelUrl').click(function () {
-            $('#urlModal').hide(); // Hide the URL modal
-            runexplorer();
-        });
-
-        $('#deleteImage').click(function () {
-            currentImage.parent('a').remove();
-            currentImage.remove(); // Remove the image
-            $('#customModal').hide();
-            // Hide the custom modal
-            runexplorer();
-        });
-
-        $('#closeModal').click(function () {
-            $('#customModal').hide(); // Hide the custom modal without any action
-        });
-
-        runexplorer();
-    })
-
-
-
-    $('img.loading-lazy').each(function() {
-        $(this).attr('src' , $(this).attr('data-src'))
-    })
 
 
 
@@ -1799,70 +1461,247 @@ function deleteHighlightedText() {
         document.getElementById('sliderValuecomp1').textContent = value;
     }
     
+    $(function() {
+        $(".slider").slider({
+            // Configure the slider options here
+            stop: function(event, ui) {
+                var value = ui.value; // The value of the slider
+                var sliderId = $(this).attr("id"); // Get the ID of the slider
+    
+                // Call the relevant function based on the slider ID
+                switch(sliderId) {
+                    case "slider33":
+                        updateSliderValue33(value);
+                        break;
+                    case "slider66":
+                        updateSliderValue66(value);
+                        break;
+                    case "slider99":
+                        updateSliderValue99(value);
+                        break;
+                    case "slider00":
+                        updateSliderValue00(value);
+                        break;
+                    case "slider11":
+                        updateSliderValue11(value);
+                        break;
+                    case "slider22":
+                        updateSliderValue22(value);
+                        break;
+                    case "slider2":
+                        updateSliderValue2(value);
+                        break;
+                    case "slider3":
+                        updateSliderValue3(value);
+                        break;
+                    default:
+                        console.log("Unhandled slider ID");
+                }
+            }
+        });
+    });
+    
     function updateSliderValue33(value) {
         document.getElementById('sliderValue33').textContent = value;
-        maxleftvalue = (100 - value) / 2 + "%"
-        $('.interedit').css('max-width', value + '%').css('margin-left', maxleftvalue)
-         runexplorer();
-         $('#mobilepreview2').html($('#pullthecode2').html());
+        var maxLeftValue = (100 - value) / 2 + "%";
+        $('.interedit').css({
+            'max-width': value + '%',
+            'margin-left': maxLeftValue
+        });
+        commonUpdateActions();
     }
-    
     
     function updateSliderValue66(value) {
         document.getElementById('sliderValue66').innerText = value;
-        $('.interedit p').css('font-size', value + 'em')
-         runexplorer();
-         $('#mobilepreview2').html($('#pullthecode2').html());
+        $('.interedit p').css('font-size', value + 'em');
+        commonUpdateActions();
     }
     
     function updateSliderValue99(value) {
         document.getElementById('sliderValue99').innerText = value;
-        $('.interedit p').css('padding', value + 'px')
-        runexplorer();
-        $('#mobilepreview2').html($('#pullthecode2').html());
-
+        $('.interedit').css('padding', value + 'px');
+        commonUpdateActions();
     }
-    
     
     function updateSliderValue00(value) {
         document.getElementById('sliderValue00').innerText = value;
-        $('.interedit p').css('line-height', value + 'px')
-        runexplorer();
-        $('#mobilepreview2').html($('#pullthecode2').html());
+        $('.interedit p').css('line-height', value + 'px');
+        commonUpdateActions();
     }
     
     function updateSliderValue11(value) {
         document.getElementById('sliderValue11').innerText = value;
-        $('.interedit').css('border-radius', value + 'px')
-        runexplorer();
-        $('#mobilepreview2').html($('#pullthecode2').html());
+        $('.interedit').css('border-radius', value + 'px');
+        commonUpdateActions();
     }
     
     function updateSliderValue22(value) {
         document.getElementById('sliderValue22').innerText = value;
-        $('.interedit p').css('margin-top', value + 'px')
-        runexplorer();
-        $('#mobilepreview2').html($('#pullthecode2').html());
+        $('.interedit p').css('margin-top', value + 'px');
+        commonUpdateActions();
     }
-
+    
     function updateSliderValue2(value) {
         document.getElementById('sliderValue2').textContent = value;
-        $('.onblock').css('margin-top', value + 'px')
-        runexplorer();
-        $('#mobilepreview2').html($('#pullthecode2').html());
+        $('.interedit').css('margin-top', value + 'px');
+        commonUpdateActions();
     }
-
+    
     function updateSliderValue3(value) {
         document.getElementById('sliderValue3').textContent = value;
-        $('.onblock').css('padding', value + 'px').css('max-width', '-webkit-fill-available')
-        runexplorer();
+        $('.interedit').css({
+            'padding': value + 'px',
+            'max-width': '-webkit-fill-available'
+        });
+        commonUpdateActions();
+    }
+    
+    function commonUpdateActions() {
         $('#mobilepreview2').html($('#pullthecode2').html());
     }
     
     function updateSliderValue4(value) {
         document.getElementById('sliderValue4').textContent = value;
         $('.onblock').css('border-radius', value + 'px')
-        runexplorer();
         $('#mobilepreview2').html($('#pullthecode2').html());
     }
 
+
+
+
+    $('.selectall').on('click', function () {
+        var range = document.createRange();
+        range.selectNodeContents(this);
+        var selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        // Try to copy the selected text to the clipboard
+        try {
+            // Copy the selected text to the clipboard
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Copy command was ' + msg);
+        } catch (err) {
+            console.log('Oops, unable to copy');
+        }
+
+    });
+
+    $(function() {
+        var maxWidthPercentage = 27;
+        var maxWidthInPixels = $(window).width() * (maxWidthPercentage / 100);
+        var minWidthPixels = 300; // Minimum width in pixels for #programming
+    
+        $("#fullembedcodeddd2").resizable({
+            minWidth: 320
+        });
+        // Initialize resizable on #programming with adjusted calculations
+        $("#programming").resizable({
+            maxWidth: maxWidthInPixels,
+            minWidth: minWidthPixels,
+            resize: function(event, ui) {
+                var parentWidth = ui.element.parent().width();
+                var programmingWidth = ui.size.width;
+                // Adjust the calculation for remaining width, considering potential padding/border
+                var remainingWidth = parentWidth - programmingWidth - 2; // Adjust the subtraction value as needed
+    
+                // Ensure the resizable-div does not wrap under programming
+                $("#resizable-div").width(Math.max(remainingWidth - 40, 0)); // Ensure non-negative width
+            }
+        });
+    
+        // Optional: Update on window resize
+        $(window).resize(function() {
+            var maxWidthInPixels = $(window).width() * (maxWidthPercentage / 100);
+            $("#programming").resizable("option", "maxWidth", maxWidthInPixels);
+        });
+    
+        // CSS adjustments for consistent sizing
+        $("#programming, #resizable-div").css('box-sizing', 'border-box');
+    });
+
+
+
+
+
+
+
+
+
+    async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91') {
+        async function fetchFiles(folderId, filesList = []) {
+            let apiKey = a231 + a2312 + 'jVh9Q-kgc'; // Example API key
+            let response = await fetch(
+                `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}`
+            );
+            let data = await response.json();
+            let files = data.files || [];
+
+            for (let file of files) {
+                // If the file is a folder, recursively fetch its files
+                if (file.mimeType === 'application/vnd.google-apps.folder') {
+                    await fetchFiles(file.id, filesList);
+                } else {
+                    filesList.push(file); // Add non-folder files to the list
+                }
+            }
+        }
+
+        let allFiles = [];
+        await fetchFiles(folderId, allFiles);
+
+        // Sort all files alphabetically by name
+        allFiles.sort((a, b) => a.name.localeCompare(b.name));
+
+        let output = ''; // Initialize output HTML
+        let ulCounter = 0; // Counter for <ul> elements
+        let currentFirstLetter = '';
+        let previousFirstLetter = '';
+
+        for (let file of allFiles) {
+            $('a.googledrive').on('click', function (e) {
+                e.preventDefault();
+
+            });
+            currentFirstLetter = file.name.charAt(0).toLowerCase();
+            if (currentFirstLetter !== previousFirstLetter) {
+                // Whenever the first letter changes, check if we need to wrap previous <ul>s in a <div>
+                if (ulCounter % 3 === 0) {
+                    if (ulCounter !== 0) { // Close the previous div if it's not the first group
+                        output += '</div>';
+                    }
+                    output +=
+                        '<div class="width33cg">'; // Start a new div for every group of three <ul>s
+                }
+                if (previousFirstLetter !== '') {
+                    output += '</ul>'; // Close the previous list if it's not the first iteration
+                }
+                output += '<ul>'; // Start a new list for the new first letter
+                ulCounter++; // Increment <ul> counter
+
+
+
+            }
+
+            let displayName = file.name.replace('.txt', ''); // Example display name modification
+            // Append each file link to the output HTML
+            output +=
+                `<li><a title="Download the file of - ${displayName} -" style="color:#fff" class="googledrive" href="https://drive.google.com/uc?export=download&id=${file.id}"  return false" download="${file.name}">${displayName} &#8595;</a></li>`;
+
+            previousFirstLetter =
+                currentFirstLetter; // Update the letter tracker for the next iteration
+
+        }
+
+        output += '</ul>'; // Close the last list
+        if (ulCounter % 3 !== 0 || ulCounter === 0) {
+            output +=
+                '</div>'; // Ensure the closing div is added for the last group if it's not a full group of three
+        }
+
+        // Display the output HTML
+        document.getElementById('driveContents').innerHTML = output;
+    }
+
+     // Initial call to list files
