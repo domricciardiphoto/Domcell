@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="application.css">
     <link rel="stylesheet" href="css/videocomponent.css">
     <link rel="stylesheet" href="css/listbuilder.css">
+  
 
     <style>
         body {
@@ -421,10 +422,9 @@
             display: block;
         }
 
-.programoverflow {
-    overflow: auto;
-}
-
+        .programoverflow {
+            overflow: auto;
+        }
     </style>
 
 
@@ -571,39 +571,52 @@
 
 
 
-<style>
-    :root {
-        --width33c-width: 33%
-    }
+            <style>
+                :root {
+                    --width33c-width: 33%
+                }
 
-    #mobilepreview2  .width33c {
-        width: var(--width33c-width) !important
-    }
+                #mobilepreview2 .width33c {
+                    width: var(--width33c-width) !important
+                }
 
- 
- #mobilepreview2 .programoverflow  .width33c {
-            width: 26% !important;
-            max-width: 300px
-        }
 
-        #mobilepreview2  .scrollersection {
-            overflow: auto;
-            width: 100%;
-            scroll-behavior: smooth
-        }
+                #mobilepreview2 .programoverflow .width33c {
+                    width: 26% !important;
+                    max-width: 300px
+                }
 
-        #mobilepreview2 .scrollersection+div {
-            width: 1000px !important;
-            overflow: auto !important 
-        }
+                #mobilepreview2 .scrollersection {
+                    overflow: auto;
+                    width: 100%;
+                    scroll-behavior: smooth
+                }
 
-        #mobilepreview2  .subscrollerdiv {
-            width: calc(var(--width33c-width) * 9) !important
-        }
+                #mobilepreview2 .scrollersection+div {
+                    width: 1000px !important;
+                    overflow: auto !important
+                }
 
-      
+                #mobilepreview2 .subscrollerdiv {
+                    width: calc(var(--width33c-width) * 9) !important
+                }
 
-</style>
+
+
+                #progressContainer {
+                    width: 100%;
+                    background-color: #eee;
+                    border: 1px solid #ccc;
+                }
+
+                #progressBar {
+                    height: 20px;
+                    background-color: #4CAF50;
+                    width: 0%;
+                    transition: width 0.4s ease-in-out;
+                }
+            </style>
+
 
             <div class="newtopmenu" style="float: left; width: 100%; position: relative;">
                 <div id="overviewmenud">
@@ -733,7 +746,7 @@
 
                             <select name="Row-Background-Color" id="RowBackgroundColorlist"
                                 style="width: auto; margin-top:10px; ">
-                                <option value="" >Row Background Color</option>
+                                <option value="">Row Background Color</option>
                                 <option value="none" value1="#333">Transparent</option>
                                 <option value="rgb(247, 247, 247)" value1="#333">Highlighted</option>
                                 <option value="rgb(0, 0, 0)" value1="#fff">Black</option>
@@ -823,7 +836,7 @@
 
                                 <select name="body-color" id="body-color"
                                     style="width: 98%; margin-left: 1%; margin-top:10px; ">
-                                    <option value="transparent" >Select</option>
+                                    <option value="transparent">Select</option>
                                     <option value="Transparent"> Transparent</option>
                                     <option value="#fff"> White</option>
                                     <option value="#999">Light Gray</option>
@@ -1859,7 +1872,8 @@
 
                             </div>
                             <div class="width30c spanbutton" style="width: 33%;">
-                                <button class="simplehide unselectable-text" id="cinput1-clickh2-comp" style="background-color: #007BFF; color: white;">Add Header</button>
+                                <button class="simplehide unselectable-text" id="cinput1-clickh2-comp"
+                                    style="background-color: purple; color: white;">Add Header</button>
                             </div>
                         </div>
 
@@ -1869,7 +1883,7 @@
 
 
                     <div class="width100c"
-                        style="border-top: 3px solid #ccc; padding-top: 8px; margin-top: 10px; ">
+                        style="border-top: 3px solid #ccc; padding-top: 8px; margin-top: 10px; background-color: #333;">
                         <p class="unselectable-text" style="margin-bottom: 5px; margin-top: 0px; font-size: 0.8rem;">
                             &bull; Paragraph text
                             here -(p) &nbsp;&nbsp;&nbsp; &bull; HTML code (.html)&nbsp;&nbsp;&nbsp; &bull; Javascript
@@ -2485,7 +2499,7 @@
                         <div class="width100c" style="margin-bottom: 10px;">
                             Catalog Selector <select id="catalogselector">
                                 <option value="/blog/" selected>Blog</option>
-                                <option value="/pim-content/" >pim-content</option>
+                                <option value="/pim-content/">pim-content</option>
 
                             </select>
                         </div>
@@ -2698,7 +2712,8 @@
 
 
 
-                <div class="prod100 stage1 tools listbuilder" style="margin-top: 5px; width: 95%; margin-left: 2%; background-color: transparent; display: block;">
+                <div class="prod100 stage1 tools listbuilder"
+                    style=" margin-top: 5px; margin-left: 0px;  width: 95%; margin-left: 2%; background-color: transparent;">
 
 
                   
@@ -2721,7 +2736,7 @@
                                 <label for="listAmount">List Amount:</label>
                                 <select id="listAmount" class="form-control">
                                     <!-- Options will be dynamically filled -->
-                                <option value="1">1 Item</option><option value="2">2 Items</option><option value="3">3 Items</option><option value="4">4 Items</option><option value="5">5 Items</option><option value="6">6 Items</option><option value="7">7 Items</option><option value="8">8 Items</option><option value="9">9 Items</option><option value="10">10 Items</option></select>
+                                </select>
                             </div>
                     
                             <div class="form-group">
@@ -2734,7 +2749,9 @@
                     
                             <fieldset class="list-items">
                                 <legend>List Items</legend>
-                                <div id="listItems"><input type="text" class="form-control list-item-input" placeholder="List Item 1"></div>
+                                <div id="listItems">
+                                    <!-- List item inputs will be generated based on the List Amount selection -->
+                                </div>
                             </fieldset>
                     
                             <button type="button" id="submitList" class="list-button" style="float: right;">Submit List</button>
@@ -2759,64 +2776,121 @@
                     </div>
                 </div>
 
+
+
+
+
+
+
+
                 <div class="width100c tools videocomponent"
-                style=" width: 97%; padding-left: 2%; padding-bottom: 2%; margin-left: 0%;">
+                    style=" width: 97%; padding-left: 2%; padding-bottom: 2%; margin-left: 0%;">
+                     
+                        <div class="container">
+                            <div class="input-group">
+                                <label for="videofilename">Video Filename (mp4):</label>
+                                <input id="videofilename" type="text" placeholder="Enter video filename" class="input-field">
+                            </div>
+                        
+                            <div class="input-group">
+                                <label for="videocaptions">Captions Filename (vtt):</label>
+                                <input id="videocaptions" type="text" placeholder="Enter captions filename" class="input-field">
+                            </div>
+                        
+                            <div class="input-group">
+                                <label for="videoposter">Video Poster (jpg):</label>
+                                <input id="videoposter" type="text" placeholder="Enter poster filename" class="input-field">
+                                
+                            </div>
+                            <div class="input-group">
+                            <button id="submitvideofile" class="submit-button">Submit Video</button>
+                        </div>
+                            <div class="conversion-section">
+                                <h3>Convert Files</h3>
+                                <span>Convert CSV / SRT Files to VTT</span>
+                                <input type="file" id="csvFileInput" accept=".csv, .srt" multiple class="file-input">
+
+                             
+                        
+                                <div id="statusReport" class="status-report"></div>
+                        
+                                <div class="options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="includeHeader"  style="width: auto;">
+                                        Include VTT Header
+                                    </label>
+                                    <label>
+                                        Filename Suffix: 
+                                        <input type="text" id="filenameSuffix" placeholder="-converted" class="input-field">
+                                    </label>
+                                </div>
+
+                                <button id="convertBtn" class="convert-button">Convert to VTT</button>
+                        
+                                <div id="progressContainer" class="progress-container">
+                                    <div id="progressBar" class="progress-bar"></div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
                  
-                    <div class="container">
-                        <div class="input-group">
-                            <label for="videofilename">Video Filename (mp4):</label>
-                            <input id="videofilename" type="text" placeholder="Enter video filename" class="input-field">
-                        </div>
-                    
-                        <div class="input-group">
-                            <label for="videocaptions">Captions Filename (vtt):</label>
-                            <input id="videocaptions" type="text" placeholder="Enter captions filename" class="input-field">
-                        </div>
-                    
-                        <div class="input-group">
-                            <label for="videoposter">Video Poster (jpg):</label>
-                            <input id="videoposter" type="text" placeholder="Enter poster filename" class="input-field">
-                            
-                        </div>
-                        <div class="input-group">
-                        <button id="submitvideofile" class="submit-button">Submit Video</button>
-                    </div>
-                        <div class="conversion-section">
-                            <h3>Convert Files</h3>
-                            <span>Convert CSV / SRT Files to VTT</span>
-                            <input type="file" id="csvFileInput" accept=".csv, .srt" multiple class="file-input">
 
-                         
-                    
-                            <div id="statusReport" class="status-report"></div>
-                    
-                            <div class="options">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="includeHeader"  style="width: auto;">
-                                    Include VTT Header
-                                </label>
-                                <label>
-                                    Filename Suffix: 
-                                    <input type="text" id="filenameSuffix" placeholder="-converted" class="input-field">
-                                </label>
-                            </div>
 
-                            <button id="convertBtn" class="convert-button">Convert to VTT</button>
-                    
-                            <div id="progressContainer" class="progress-container">
-                                <div id="progressBar" class="progress-bar"></div>
-                            </div>
+                </div>
 
 
 
-                        </div>
-                    </div>
 
 
-             
 
 
-            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <div id="mylinkbuilderd" class="width100c openclose" openclose="mylinkbuilder">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
@@ -3258,6 +3332,9 @@
                     <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
                             whaturl="bannersheduler.html">Domcell Banner Schedular ></button></div>
 
+                            <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                                whaturl="roundmenu-beta.html">Rounded Menu Builder ></button></div>
+
                     <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
                             whaturl="https://www.willpeavy.com/tools/minifier/">HTML Minifer ></button></div>
 
@@ -3524,8 +3601,10 @@
                         <button class="unselectable-text addrow30x3 addrow" data-layout="40,60" title="Add 60/40 Rows"
                             style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 30%; margin-top: 10px; margin-bottom: 5px;">40/60</button>
 
-                            <button class="unselectable-text addrow30x3 addrowslider" data-layout="33,33,33" title="Add a 33% x 3 Slider"
-                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 50%; margin-top: 10px; margin-bottom: 5px;">33% Scroller (In Dev)</button>
+                        <button class="unselectable-text addrow30x3 addrowslider" data-layout="33,33,33"
+                            title="Add a 33% x 3 Slider"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 50%; margin-top: 10px; margin-bottom: 5px;">33%
+                            Scroller (In Dev)</button>
 
                     </div>
                 </div>
@@ -3773,10 +3852,10 @@
 
                 </div>
 
-          
 
 
-            
+
+
 
 
 
@@ -3852,8 +3931,8 @@
     <script src="js2/applicationfunctions.js"></script>
 
  -->
-    <script src="js2/explorer-beta2.js"></script>
-    <script src="js2/primary.js"></script>
+    <script src="js3/explorer-beta2.js"></script>
+    <script src="js3/primary.js"></script>
     <script src="js2/internalfunctions.js"></script>
     <script src="js2/imagefunctions.js"></script>
     <script src="js2/imports.js"></script>

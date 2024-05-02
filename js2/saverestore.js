@@ -1,8 +1,13 @@
+
+
+
+
 var savedContent = localStorage.getItem("savedContent");
 
 
 
 if (savedContent) {
+
     $('#pullthecode2').html(savedContent);
     $('#mobilepreview2').html($('#pullthecode2').html());
     enabledrop()
@@ -38,7 +43,7 @@ if (savedContent) {
         runexplorer();
     });
 
-    $('.liverow').on('click', function () {
+    $('.liverow').off('click').on('click', function () {
         $('.onblock').removeClass('onblock')
         $(this).addClass('onblock')
         if ($(this).hasClass('hideonlyondesktop')) {
@@ -53,6 +58,7 @@ if (savedContent) {
             $('#mobilehidev2d').prop('checked', false);
         }
     })
+    
 }
 
 
@@ -105,7 +111,8 @@ $(document).ready(function() {
         $('#pullthecode2').html(savedContent); // Set the content of the element if there is any saved
         runexplorer()
         imagefunctions()
-        $('a').not('.googledrive').not('.outsidelink').on('click', function (e) {
+        paragraphfunctions()
+        $('a').not('.googledrive').not('.outsidelink').off('click').on('click', function (e) {
             var target = $(e.target);
             if (!target.is('a')) {
                 target = target.closest('a');
@@ -114,7 +121,10 @@ $(document).ready(function() {
             var wheretogo = target.attr('href');
             gotothelinkfunction(wheretogo);
             imagefunctions()
-        
+           
         });
     }
 });
+setTimeout(() => {
+    enabledrop() 
+}, 2000);

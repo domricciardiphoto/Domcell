@@ -1,0 +1,47 @@
+.dark-mode .form-group {
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
+
+.dark-mode .form-control {
+    width: 100%;
+    padding: 4px;
+    font-size: 0.8rem;
+    border: 1px solid #555;
+    color: #333;
+    border-radius: 4px;
+    margin-bottom: 3px;
+}
+
+.dark-mode .list-builder-form {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.dark-mode label {
+    color: #aaa;
+}
+
+.dark-mode .list-button {
+    padding: 10px 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+    margin-top: 12px;
+}
+
+.dark-mode .list-button:hover {
+    background-color: #0056b3;
+}
+
+.dark-mode fieldset {
+    border-color: #444;
+}
+
+.dark-mode legend {
+    color: #ddd;
+}

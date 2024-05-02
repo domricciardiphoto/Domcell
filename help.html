@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Help Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .card {
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            color: #ff8c00;
+            margin-top: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            background: #555;
+        }
+        code {
+            background-color: #eee;
+            color: black;
+            padding: 5px 8px;
+            border-radius: 3px;
+            font-size: 1rem;
+        }
+        strong {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Key Commands</h2>
+            <ul>
+                <li><strong>Full Screen:</strong><br><br> Press <code>F11</code> for full-screen mode.</li>
+                <li><strong>Clear and Restart:</strong><br><br>  Press <code>CTRL+R</code> to reset everything.</li>
+                <li><strong>Undo Edit:</strong><br><br>  Press <code>CTRL+Z</code> to undo.</li>
+                <li><strong>Redo Edit:</strong><br><br>  Press <code>CTRL+Y</code> to redo.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Text Commands</h2>
+            <ul>
+                <li><strong>Bold:</strong><br><br>  Press <code>CTRL+B</code> to make selected text bold.</li>
+                <li><strong>Subscript:</strong><br><br>  Press <code>CTRL+E</code> for subscript.</li>
+                <li><strong>Superscript:</strong><br><br>  Press <code>CTRL+D</code> for superscript.</li>
+                <li><strong>Right Click on text</strong><br><br> Clamp Text / Delete Text / Copy to Clipboard</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Mouse Commands</h2>
+            <ul>
+                <li><strong>Click to Edit:</strong><br><br>  Click any element to edit it in the HTML Editor or Explorer</li>
+                <li><strong>Drag to Move:</strong><br><br>  Drag elements to reposition them (when in Sort / Reorder mode).</li>
+                <li><strong>Right Click:</strong><br><br>  Right-click an element in Explorer for more options.</li>
+                <li><strong>Right Click on Images:</strong><br><br>  Right-click an image for more options.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Editing and Layout Buttons</h2>
+            <ul>
+                <li><strong>Add Row:</strong><br><br>  Click "Add Row" (Blue) to insert a new row.</li>
+                <li><strong>Add Component:</strong><br><br>  Click "Add Component" (Orange) to insert a new Component.</li>
+                <li><strong>Delete Element:</strong><br><br>  Drag "Numbered Component" (Yellow) to a row to insert a new Component.</li>
+                <li><strong>Edit Element:</strong><br><br>  Select an element to start editing. (Explorer / HTML Editor)</li>
+                <li><strong>Delete Element:</strong><br><br>  Click Trashcan and delete any selected element.</li>
+                
+              
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Image Commands</h2>
+            <ul>
+                <li><strong>Add Image:</strong><br><br>  Use the Image Component to add an image.</li>
+                <li><strong>Edit Image:</strong><br><br>  Click on the Effects button for editing options.</li>
+                <li><strong>Delete Image:</strong><br><br>  Right-click an image or object in the Explorer for option to delete it.</li>
+                <li><strong>Right Click Image:</strong><br><br> Add Link / Remove Link / Delete Image</li>
+            </ul>
+        </div>
+
+
+        <div class="card">
+            <h2>Explorer Commands</h2>
+            <ul>
+                <li><strong>Edit:</strong><br><br>  Edit the content in the Object or Edit the Copy and styling of a Text Component</li>
+                <li><strong>Duplicate:</strong><br><br>  Duplicate the Object </li>
+                <li><strong>Make Active:</strong><br><br>  Put a 100% Component in a Selected Row</li>
+                <li><strong>Empty:</strong><br><br>  Empty Selected Object</li>
+                <li><strong>Delete:</strong><br><br>  Remove Selected Object</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

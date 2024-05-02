@@ -1,6 +1,19 @@
 const $explorerContainer = $('#pullthecode2');
+const $mobilePreview = $('#mobilepreview2');
+const $pullTheCode = $('#pullthecode2');
+const desktopHideCheckbox = $('#desktophidev2d');
+    const mobileHideCheckbox = $('#mobilehidev2d');
 var $in910 = $('.in910');
+
+function updateMobilePreview() {
+    $mobilePreview.html($pullTheCode.html());
+    
+}
+
+
+
 function liverowactivy() {
+
    $explorerContainer.on('click', '.liverow', function () {
         $('.onblock').removeClass('onblock');
         $(this).addClass('onblock');
@@ -13,7 +26,7 @@ function liverowactivy() {
 
 $('#EditandSubmitAL').on('click', function () {
     $('.explorerselected').html($('#myhtmleditor').val())
-    $('#mobilepreview2').html($('#pullthecode2').html());
+    $mobilePreview.html($pullTheCode.html());
     runexplorer();
 })
 
@@ -37,7 +50,7 @@ function enabledrop() {
 
             }
 
-            $('#mobilepreview2').html($('#pullthecode2').html());
+            $mobilePreview.html($pullTheCode.html());
             runexplorer();
 
         }
@@ -129,53 +142,6 @@ function runexplorer() {
 
 
 
-
-
-
-
-/* former
-    function exploreElements(element, depth = 0, parentContainer = explorer) {
-        let elements = element.children;
-        for (let i = 0; i < elements.length; i++) {
-            let tagLabel = elements[i].tagName;
-            let specialLabel = getSpecialLabel(elements[i]);
-            let labelColor = getColorForTag(tagLabel, elements[i]);
-            let classDisplay = getClassDisplay(elements[i]);
-            let linkDetails = ''; // Initialize empty link details string
-    
-            // Check if the element is an anchor tag and add its text and href attribute to the display
-            if (elements[i].tagName.toLowerCase() === 'a' && elements[i].hasAttribute('href')) {
-                let linkedText = elements[i].textContent.trim(); // Get the text content of the link
-                let hrefAttribute = elements[i].getAttribute('href');
-                linkDetails = ` <span style="color: #fff;">("${linkedText}") - href: = <span style="color:yellow">${hrefAttribute}</span></span>`;
-            }
-    
-            const details = document.createElement('div');
-            details.className = 'indent';
-            details.style.marginLeft = `${depth * 20}px`;
-            details.setAttribute('data-tag', specialLabel || tagLabel);
-            details.innerHTML = `<strong style="color: ${labelColor};">${specialLabel || tagLabel}</strong>${classDisplay}${linkDetails}`;
-            parentContainer.appendChild(details);
-            $(details).data('linkedElement', elements[i]);
-            // Store a reference to the explorer indent on the DOM element for easy access
-            elements[i].explorerIndent = details;
-    
-            details.addEventListener('click', function() {
-                selectAndHighlightElement(elements[i]);
-            });
-    
-            elements[i].addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevent event propagation
-                selectAndHighlightElement(elements[i], true);
-            });
-    
-            if (elements[i].children.length > 0) {
-                exploreElements(elements[i], depth + 1, parentContainer);
-            }
-        }
-    }
-*/
-
 function exploreElements(element, depth = 0, parentContainer = explorer) {
     if (!element) {
         console.error('Invalid element provided to exploreElements');
@@ -236,7 +202,10 @@ function exploreElements(element, depth = 0, parentContainer = explorer) {
 
 
 
-    function selectAndHighlightElement(element, scrollElement = false) {
+   
+/*
+
+ function selectAndHighlightElement(element, scrollElement = false) {
         // First, check if the element is actually present in the DOM within #pullthecode2
         if (!element || !$('#pullthecode2').find(element).length) {
                                                             // console.error('Element not found in #pullthecode2 or is undefined');
@@ -262,7 +231,6 @@ function exploreElements(element, depth = 0, parentContainer = explorer) {
         }
         
 
-
         // Trigger a click, assuming you're simulating a click event for some functionality
         $(element).click(); // Using jQuery here since your setup appears to integrate it
         $('#contextMenu').hide(); // Assuming you want to hide some contextual menu
@@ -277,7 +245,68 @@ function exploreElements(element, depth = 0, parentContainer = explorer) {
             element.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'start' });
         }
         lastSelectedElement = element; // Update last selected element
+
+        if ($('#mobilehidev2d').is(':visible')) {
+
+        desktopHideCheckbox.prop('checked', $(lastSelectedElement).hasClass('hideonlyondesktop'));
+        mobileHideCheckbox.prop('checked', $(lastSelectedElement).hasClass('hideonlyonmobile'));
+        }
+
+
     }
+
+
+*/
+
+
+function selectAndHighlightElement(element, scrollElement = false) {
+    const $pullthecode2 = $('#pullthecode2');
+    const $element = $(element);
+
+    // Check if the element is present in the DOM within #pullthecode2
+    if (!$element.length || !$pullthecode2.find($element).length) {
+        return; // Exit the function if element is not found
+    }
+
+    clearSelection();
+    $('.explorerselected, .onblock, .interedit').removeClass('explorerselected onblock interedit');
+    
+    // Add classes using jQuery to maintain consistency
+    $element.addClass('explorerselected');
+    if (!$element.hasClass('liveelement')) {
+        $element.addClass('onblock');
+    } else {
+        $element.addClass('interedit');
+    }
+
+    $element.click();
+    $('#contextMenu').hide();
+    $('#myhtmleditor').val($element.html());
+
+    // Handle visual selection and scrolling if needed
+    if (element.explorerIndent) {
+        $(element.explorerIndent).addClass('indentselected').get(0).scrollIntoView({
+            behavior: 'auto', block: 'nearest', inline: 'start'
+        });
+    }
+    if (scrollElement) {
+        $element.get(0).scrollIntoView({
+            behavior: 'auto', block: 'nearest', inline: 'start'
+        });
+    }
+
+    // Update last selected element
+    window.lastSelectedElement = element;
+
+    // Conditional updates based on visibility
+    if ($('#mobilehidev2d').is(':visible')) {
+        desktopHideCheckbox.prop('checked', $element.hasClass('hideonlyondesktop'));
+        mobileHideCheckbox.prop('checked', $element.hasClass('hideonlyonmobile'));
+    }
+}
+
+
+
 
     function clearSelection() {
         if (lastSelectedElement) {
@@ -346,13 +375,13 @@ $('#contextMenu ul li').click(function() {
             var correspondingElement = $(clickedElement).data('linkedElement');
             $(correspondingElement).remove(); // Remove the corresponding element in #pullthecode3
             $(clickedElement).remove(); // Remove the `.indent`
-            $('#mobilepreview2').html($('#pullthecode2').html());
+            $mobilePreview.html($pullTheCode.html());
             runexplorer();
             break;
 
             case 'duplicate':
             duplicateElement(clickedElement);
-            $('#mobilepreview2').html($('#pullthecode2').html());
+            $mobilePreview.html($pullTheCode.html());
             runexplorer()
             break;
 
@@ -363,7 +392,7 @@ $('#contextMenu ul li').click(function() {
             case 'empty':
                 captureState()
                 $('.explorerselected').empty()
-                $('#mobilepreview2').html($('#pullthecode2').html());
+                $mobilePreview.html($pullTheCode.html());
                 runexplorer()
             break;
 
@@ -384,7 +413,7 @@ $('#contextMenu ul li').click(function() {
 $(document).not('#myhtmleditor').on('click', function() {
     $('#contextMenu').hide();
    $('.explorerselected').removeClass('explorerselected')
-   $('#mobilepreview2').html($('#pullthecode2').html());
+   $mobilePreview.html($pullTheCode.html());
 });
 
 function gotothelinkfunction(wheretogo) {

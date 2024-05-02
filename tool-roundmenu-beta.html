@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domcell Beta Build 2</title>
+
+<style>
+/* Basic reset for styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background for the body */
+    color: #e0e0e0; /* Light grey text for general readability */
+}
+
+.header, .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #101025;
+    padding: 4px 20px;
+    align-items: center;
+    overflow: hidden;
+}
+.home-button a img {
+    width: 24px; /* Adjust size as needed */
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: 50px;
+    scrollbar-width: thin;
+    scrollbar-color: #666 #333;
+    max-width: 80%;
+    padding-bottom: 5px;
+    float: right;
+}
+
+.tab {
+    flex-shrink: 0;
+    padding: 5px 13px;
+    cursor: pointer;
+    background-color: #200000;
+    color: #666;
+    border: 1px solid #444;
+    margin: 0px 5px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    -webkit-box-shadow:inset 0 0 5px 5px #242020;
+box-shadow:inset 0 0 5px 5px #242020;
+}
+.tab:hover {
+    background-color: #1a1a1a; /* Slightly lighter on hover for visual feedback */
+    color: #fff;
+}
+
+.tab.active {
+    background-color: #000; /* Active tab has a distinguishable color */
+    color: #fff;
+}
+
+.add-tab button {
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.content {
+    padding-top:5px;
+    background-color: #181818; /* Dark background for content area */
+}
+
+.content-item {
+    display: none;
+    color: #ddd; /* Ensure text within content is readable */
+}
+
+.content-item.active {
+    display: block;
+}
+
+/* Styles for the custom scrollbar */
+.tabs::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tabs::-webkit-scrollbar-track {
+    background: #333;
+}
+
+.tabs::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 10px;
+}
+
+embed {
+    width:100%;
+    min-height: 90vh;
+}
+.close-tab {
+    margin-left: 5px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    padding: 2px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+}
+.close-tab:hover {
+color: red;
+}
+</style>
+
+
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <div class="nav-bar">
+            <!-- Home Button -->
+            <div class="home-button">
+                <a href="gettingstarted.html"><img src="assets/home.png" alt="Home"></a>
+            </div>
+
+            <!-- Dynamic Tabs -->
+            <div class="tabs">
+        
+                <!-- Additional tabs here -->
+            </div>
+
+            <!-- Add Tab Button -->
+            <div class="add-tab">
+                <button onclick="addTab()">+</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tab Contents -->
+    <div class="content">
+
+            
+        </div>
+        <!-- Additional content divs here -->
+    </div>
+
+<script>
+
+
+let isFirstCall = true; // Flag to check if it's the first call
+
+function clearIndexedDB() {
+    const dbName = 'DomcellDB';  // Ensure this matches the database used throughout your app
+    const storeName = 'DomcellcontentStore';  // Ensure this matches the store name used in your app
+
+    // Open a connection to your database
+    var request = indexedDB.open(dbName, 1);
+
+    request.onerror = function(event) {
+        console.error("Database error: " + event.target.errorCode);
+    };
+
+    request.onupgradeneeded = function(event) {
+        // Handle any upgrades or initial setup here if needed
+        var db = event.target.result;
+        if (!db.objectStoreNames.contains(storeName)) {
+            db.createObjectStore(storeName, { keyPath: 'id' });
+        }
+    };
+
+    request.onsuccess = function(event) {
+        var db = event.target.result;
+
+        // Create a transaction on the correct store with readwrite permissions
+        var transaction = db.transaction([storeName], "readwrite");
+        var objectStore = transaction.objectStore(storeName);
+
+        // Clear all the data in the object store
+        var clearRequest = objectStore.clear();
+
+        clearRequest.onsuccess = function() {
+            // Data cleared successfully
+            console.log("IndexedDB data cleared successfully.");
+            window.clearAndRestartClicked = true;
+        };
+
+        clearRequest.onerror = function(event) {
+            console.error("Clear operation failed: ", event.target.errorCode);
+        };
+    };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function addTab() {
+  
+    const numTabs = document.querySelectorAll('.tab').length + 1;
+    const newTab = document.createElement('div');
+    newTab.classList.add('tab');
+    newTab.textContent = 'Workspace ' + numTabs;
+    newTab.setAttribute('data-content', 'tab' + numTabs);
+
+    // Create close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'X';
+    closeButton.classList.add('close-tab');
+    // Append close button to the tab
+    newTab.appendChild(closeButton);
+
+    const newContent = document.createElement('embed');
+    newContent.id = 'tab' + numTabs;
+    newContent.src = 'roundmenu-beta.html';
+    newContent.classList.add('content-item');
+
+    document.querySelector('.tabs').appendChild(newTab);
+    document.querySelector('.content').appendChild(newContent);
+
+    newTab.addEventListener('click', function(event) {
+
+        if (event.target === closeButton) {
+            // Find the index of the tab before removal
+            const tabIndex = Array.from(document.querySelectorAll('.tab')).indexOf(newTab);
+            // Remove the tab and content
+            newContent.remove();
+            newTab.remove();
+            // Activate the previous tab if it exists
+            const tabs = document.querySelectorAll('.tab');
+            if (tabs.length > 0) {
+                const newActiveIndex = Math.max(0, tabIndex - 1);
+                tabs[newActiveIndex].click();
+               
+            }
+            return;
+        }
+
+
+
+      
+
+    if (isFirstCall) {
+        isFirstCall = false; 
+    } else {
+        clearIndexedDB();
+    }
+
+
+
+     
+        // Activate this tab and its content
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        document.querySelectorAll('.content-item').forEach(item => item.classList.remove('active'));
+        newContent.classList.add('active');
+    });
+}
+
+// Add event listeners to initial tabs (if any exist on page load)
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', function(event) {
+     
+        if (event.target.classList.contains('close-tab')) {
+            const contentId = this.getAttribute('data-content');
+            const contentElement = document.getElementById(contentId);
+            const tabIndex = Array.from(document.querySelectorAll('.tab')).indexOf(this);
+            contentElement?.remove();
+            this.remove();
+            // Activate the previous tab if possible
+            const tabs = document.querySelectorAll('.tab');
+            if (tabs.length > 0) {
+    
+                const newActiveIndex = Math.max(0, tabIndex - 1);
+                tabs[newActiveIndex].click();
+
+            }
+            return;
+        }
+
+        // Tab activation logic
+      
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        document.querySelectorAll('.content-item').forEach(item => item.classList.remove('active'));
+        const contentId = this.getAttribute('data-content');
+        const contentElement = document.getElementById(contentId);
+        if (contentElement) {
+         
+            setTimeout(() => contentElement.classList.add('active'), 800);  // Corrected setTimeout usage
+        }
+    });
+});
+</script>
+
+
+<script>
+    addTab()
+document.querySelectorAll('.tab').forEach(element => {
+
+    element.click();
+});
+
+childFrame.postMessage("Hello from parent", "*");
+
+</script>
+
+</body>
+</html>

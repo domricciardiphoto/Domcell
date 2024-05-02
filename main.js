@@ -90,8 +90,8 @@ function createMainWindow() {
     y: initialState.y,
 
     webPreferences: {
-      nodeIntegration:false,
-      contextIsolation:true, 
+      nodeIntegration:true,
+      contextIsolation:false, 
       devTools:true,
     }
 
@@ -101,7 +101,7 @@ function createMainWindow() {
 
 
   win.loadFile(path.join(__dirname, 'gettingstarted.html'))
-  checkForUpdates();
+
 
 
  
@@ -133,23 +133,6 @@ ipcMain.on('app_version', (event) => {
   event.sender.send('app_version', { version: app.getVersion() });
 });
 
-async function checkForUpdates() {
-  try {
-    const currentVersion = app.getVersion();
-    const response = await axios.get('https://api.github.com/repos/domricciardiphoto/Domcell/releases/latest');
-    const latestVersion = response.data.tag_name;
-
-    if (latestVersion > currentVersion) {
-      // If the latest version is greater, an update is available
-      win.webContents.send('update_status', 'UPDATE AVAILABLE');
-    } else if (latestVersion === currentVersion) {
-      // If the versions are equal, it's the current version
-      win.webContents.send('update_status', 'CURRENT VERSION');
-    }
-  } catch (error) {
-    console.error('Failed to check for updates:', error);
-  }
-}
 
 
 
@@ -221,22 +204,6 @@ function createmenubuilder() {
 }
 
 
-function createbeta21() {
-
-  createbeta = new BrowserWindow({
-    title: 'Round Menu Builder',
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true, 
-      contextIsolation: false,
-    } 
-  })
-    createbeta.loadFile('beta.html')
-    ipcMain.on('open-url', (event, url) => {
-      shell.openExternal(url);
-    });
-}
 
 
 

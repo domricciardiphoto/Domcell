@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domcell 2024</title>
+
+    <style>
+        /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.top-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-link img {
+    width: 30px;
+    height: auto;
+}
+
+.tab-container {
+    display: flex;
+}
+
+.tab {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background: #555;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tab:hover {
+    background: #777;
+}
+
+.close-tab {
+    margin-left: 10px;
+    color: #f00;
+    cursor: pointer;
+}
+
+.add-tab {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.embedded-content {
+    width: 100%;
+    height: 600px; /* Adjust based on content */
+    border: none;
+}
+
+/* Footer and Dialogs */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background: #333;
+    text-align: center;
+}
+
+.confirm-dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.dialog-content button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dialog-content button:hover {
+    background: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-navigation {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+<body>
+    <header id="mainHeader">
+        <nav class="top-navigation">
+            <a href="gettingstarted.html" class="home-link">
+                <img src="assets/home.png" alt="Home" title="Home" class="home-icon">
+            </a>
+            <div class="tab-container">
+                <div class="tab" data-interface="0">Untitled<span class="close-tab">×</span></div>
+            </div>
+            <button class="add-tab">+</button>
+        </nav>
+    </header>
+
+    <main id="contentArea">
+        <embed src="overviewcontent-builder-validated.html" class="embedded-content"></embed>
+    </main>
+
+    <footer id="mainFooter">
+        <div class="confirm-dialog" id="confirmDialog">
+            <div class="dialog-content">
+                <button class="close-dialog">×</button>
+                <p>Are You Sure You want to Delete?</p>
+                <button id="confirmYes">Yes</button>
+                <button id="confirmNo">No</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabContainer = document.querySelector('.tab-container');
+    const addTabButton = document.querySelector('.add-tab');
+    const mainContentArea = document.getElementById('contentArea');
+    const confirmDialog = document.getElementById('confirmDialog');
+    const yesBtn = document.getElementById('confirmYes');
+    const noBtn = document.getElementById('confirmNo');
+    const closeDialogButton = document.querySelector('.close-dialog');
+
+    // Function to create a new embed
+    function createNewEmbed(index) {
+        const embed = document.createElement('embed');
+        embed.src = 'overviewcontent-builder-validated.html';  // Set this to the correct URL for each embed
+        embed.className = 'embedded-content';
+        embed.style.display = 'none'; // Hide by default
+        embed.id = `embed${index}`;
+        mainContentArea.appendChild(embed);
+        return embed;
+    }
+
+    // Add new tab and corresponding embed
+    addTabButton.addEventListener('click', function() {
+        const index = document.querySelectorAll('.tab').length;
+        const newTab = document.createElement('div');
+        newTab.className = 'tab';
+        newTab.innerHTML = `Tab ${index + 1}<span class="close-tab">X</span>`;
+        newTab.dataset.embedId = `embed${index}`;
+        tabContainer.appendChild(newTab);
+
+        createNewEmbed(index);
+
+        attachTabEvents(newTab);
+        selectTab(newTab); // Automatically select new tab
+    });
+
+    // Function to attach events to tabs
+    function attachTabEvents(tab) {
+        tab.addEventListener('click', function(event) {
+            if (event.target.classList.contains('close-tab')) {
+                openModal(tab);
+            } else {
+                selectTab(tab);
+            }
+        });
+    }
+
+    // Select a tab and show corresponding embed
+    function selectTab(tab) {
+        const allTabs = document.querySelectorAll('.tab');
+        allTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const allEmbeds = document.querySelectorAll('.embedded-content');
+        allEmbeds.forEach(embed => embed.style.display = 'none'); // Hide all embeds
+
+        const activeEmbed = document.getElementById(tab.dataset.embedId);
+        activeEmbed.style.display = 'block'; // Show the active embed
+    }
+
+    // Open modal dialog
+    function openModal(tab) {
+        confirmDialog.style.display = 'block';
+        yesBtn.onclick = function() { deleteTab(tab); };
+        noBtn.onclick = function() { closeModal(); };
+        closeDialogButton.onclick = function() { closeModal(); };
+    }
+
+    // Delete a tab and its corresponding embed
+    function deleteTab(tab) {
+        const embed = document.getElementById(tab.dataset.embedId);
+        embed.remove(); // Remove the embed
+        tab.remove(); // Remove the tab
+        closeModal();
+        console.log('Tab and embed deleted');
+        if (tabContainer.children.length > 0) {
+            selectTab(tabContainer.children[0]); // Select the first remaining tab if any
+        } else {
+            // Optionally handle the scenario when no tabs are left
+        }
+    }
+
+    // Close modal dialog
+    function closeModal() {
+        confirmDialog.style.display = 'none';
+    }
+
+    // Initially select the first tab if it exists
+    if (tabContainer.children.length > 0) {
+        selectTab(tabContainer.children[0]);
+    }
+});
+
+      </script>
+</body>
+</html>

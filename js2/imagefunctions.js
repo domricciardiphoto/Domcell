@@ -4,11 +4,11 @@ function imagefunctions() {
         currentImage = $(this); // Set the current image
         $('#customModal').show(); // Show the custom modal
     });
-    $('a img').on('click' , function(e) {
+    $('a img').on('click', function (e) {
         e.preventDefault()
     })
 
-    $('#noBtn').click(function() {
+    $('#noBtn').click(function () {
         // Find the <a> tag by using a more generic selector that looks for <a> tags with an <img> inside
         var $link = $('a:has(img)');
 
@@ -141,10 +141,15 @@ $('#submitUrl').click(function () {
 
 document.getElementById('catalogselector').addEventListener('change', function () {
     catalogselector = $('#catalogselector').val()
-    promotionalsource =
-        'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/' +
-        catalogselector;
-    $('#showthepromotionalimage').attr('src', promotionalsource + $('#cinput1promotional').val())
+    promotionalsource ='https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images' +catalogselector;
+    pimsource = 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c'+catalogselector;
+
+if (catalogselector === '/blog/') {
+    imagelivesource = promotionalsource
+} else {
+    imagelivesource = pimsource
+}
+$('#showthepromotionalimage').attr('src', imagelivesource + $('#cinput1promotional').val())  
 })
 
 document.getElementById('clicktoloadlocalfiles').addEventListener('click', function () {
@@ -188,9 +193,17 @@ document.getElementById('imgfileInput').addEventListener('change', function (eve
     $('.myloadedimages').on('click', function () {
         var desktoppictures = $(this).children('.myloadedfilenames').text()
         $('#cinput1promotional , #wraparoundfilename').val(desktoppictures)
-        $('#showthepromotionalimage').attr('src',
-            'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images' +
-            $('#catalogselector').val() + desktoppictures)
+        catalogselector = $('#catalogselector').val()
+        promotionalsource = 'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/' + catalogselector;
+        pimsource = 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c'+catalogselector;
+
+        if (catalogselector === '/blog/') {
+            imagelivesource = promotionalsource
+        } else {
+            imagelivesource = pimsource
+        }
+
+        $('#showthepromotionalimage').attr('src', imagelivesource + desktoppictures)
     })
 
 
@@ -203,12 +216,22 @@ document.getElementById('imgfileInput').addEventListener('change', function (eve
 $('#showthepromotionalimage').on('click', function () {
     imagename01 = $(this).attr('src');
 
+
+    if ($('#catalogselector').val() === 'pim-content/') {
+        pimPromotional = 'pimpromotional'
+    } else {
+        pimPromotional = ''
+
+    }
+
+
+
     if ($('#cinput1bpromotional').val() == '') {
         $('.imagemessage').slideDown().delay(2000).slideUp()
         return false
     } else {
         newval3 = $('#cinput1bpromotional').val()
-        imagedata2 = '<img class="loading-lazy promoimg21 in910" src="'+imagename01+'" data-src="' + imagename01 +
+        imagedata2 = '<img class="loading-lazy promoimg21 in910 '+ pimPromotional +'" src="' + imagename01 + '" data-src="' + imagename01 +
             '" alt="' + newval3 + '">'
         $('.interedit').append(imagedata2).removeClass('.interedit')
 
@@ -220,10 +243,10 @@ $('#showthepromotionalimage').on('click', function () {
     });
 
 
-   
+
     runexplorer();
     imagefunctions()
-    
+    updateMobilePreview()
 
 })
 
@@ -350,8 +373,8 @@ $('#wraparoundproductnumber').on('input', function () {
             '"' + '/> </div></div>' +
             '<div style="align-items: flex-start;"><div style="flex: 1 1 auto" ><p>' +
             $('#wraparoundimage').val() + '</p></div>')
-            runexplorer();
-            imagefunctions()
+        runexplorer();
+        imagefunctions()
 
     })
 
@@ -368,9 +391,14 @@ $('#wraparoundproductnumber').on('input', function () {
 
 document.getElementById('cinput1promotional').addEventListener('input', function () {
     catalogselector = $('#catalogselector').val()
-    promotionalsource =
-        'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/' + catalogselector;
-    $('#showthepromotionalimage').attr('src', promotionalsource + $('#cinput1promotional').val())
+    promotionalsource = 'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/' + catalogselector;
+    pimsource = 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c'+catalogselector;
+
+    if (catalogselector === '/blog/') {
+        imagelivesource = promotionalsource
+    } else {
+        imagelivesource = pimsource
+    }
+
+    $('#showthepromotionalimage').attr('src', imagelivesource + $('#cinput1promotional').val())
 })
-
-

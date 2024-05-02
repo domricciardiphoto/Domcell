@@ -3258,7 +3258,6 @@ if( whatcheckingsizeview == 2) {
                 $('.interedit p').removeClass('clampclassd')
                 $('.interedit').find('span.readmoreclampdbutton').remove();
             }
-            loadnewcontent()
         })
 
 

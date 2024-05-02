@@ -7,41 +7,55 @@ function updateMobilePreview() {
     $mobilePreview2.html($pullTheCode2.html());
 }
 
-$('.createlayoutslider').on('click', function () {
-    var addmutiplerows = parseInt(document.getElementById('sliderValuerow').textContent);
-    var whatwidthisit = $('#selectwidthrow').val()
-    var whatmobilewith = $('#selectwidthrow').find('option:selected').attr('value2');
+//----------------------------------------------
+function addClickHandler(selector, sliderId, widthSelector, additionalClass, targetSelector, htmlTemplate) {
+    $(selector).on('click', function () {
+        const numberOfItems = parseInt(document.getElementById(sliderId).textContent);
+        const widthValue = $(widthSelector).val();
+        const mobileWidth = $(widthSelector).find('option:selected').attr('value2') || ''; // Handling no value2 attribute case
 
-    var mycount = 0; // Initialize `mycount` before the loop
-    while (mycount < addmutiplerows) { // Corrected variable name here
-        $('.informationcontent').append(
-            '<div class="width' + whatwidthisit + 'c ' + whatmobilewith + ' layoutpale layoutpale' + whatwidthisit + ' liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"></div></div>'
-        );
-        mycount++; // Increment `mycount` to eventually meet the loop's exit condition
-    }
+        let htmlString = '';
+        for (let i = 0; i < numberOfItems; i++) {
+            htmlString += htmlTemplate(widthValue, mobileWidth, additionalClass);
+        }
+        $(targetSelector).append(htmlString);
 
-    enabledrop()
-    runexplorer()
-    updateMobilePreview()
-});
+        commonUpdates();
+        bindElementClick();
+    });
+}
 
-$('.createcomponentslider').on('click', function () {
+function commonUpdates() {
+    enabledrop();
+    runexplorer();
+    updateMobilePreview();
+}
 
-    var addmutiplecomps = parseInt(document.getElementById('sliderValuecomp1').textContent);
-    var whatwidthisit = $('#selectwidthcomp').val()
+function bindElementClick() {
+    $('.liveelement').off('click').on('click', function () { // Turn off existing handlers to avoid duplicates
+        $('.interedit').removeClass('interedit');
+        $('.explorerselected').removeClass('explorerselected');
+        $(this).addClass('explorerselected interedit');
+    });
+}
 
-    var mycount = 0;
-   
-    while (mycount < addmutiplecomps) { // Corrected variable name here
-        $('.explorerselected').append(
-            '<div class="width' + whatwidthisit + 'c liveelement in910 layoutpale layoutpale' + whatwidthisit + '"></div>'
-        );
-        mycount++; // Increment `mycount` to eventually meet the loop's exit condition
-    }
+function layoutHtmlTemplate(width, mobileWidth, additionalClass) {
+    return `<div class="width${width}c ${mobileWidth} ${additionalClass} layoutpale layoutpale${width} liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"></div></div>`;
+}
 
-    runexplorer()
-    updateMobilePreview()
-})
+function componentHtmlTemplate(width, mobileWidth, additionalClass) {
+    return `<div class="width${width}c ${additionalClass} liveelement in910 layoutpale layoutpale${width}"></div>`;
+}
+
+// Configure layout additions
+addClickHandler('.createlayoutslider', 'sliderValuerow', '#selectwidthrow', 'layoutpale', '.informationcontent', layoutHtmlTemplate);
+
+// Configure component additions
+addClickHandler('.createcomponentslider', 'sliderValuecomp1', '#selectwidthcomp', '', '.explorerselected', componentHtmlTemplate);
+
+
+
+//-----------------------------------------------
 
 
 
@@ -76,6 +90,14 @@ $('.addrow').on('click', function () {
     enabledrop()
     runexplorer();
 });
+
+$('.addrowslider').on('click' , function() {
+    html = '<div class="width100c programoverflow"><div class="width100c subscrollerdiv"><div class="width33c layoutpale layoutpale33 liverow droppable onblock ui-droppable"></div><div class="width33c layoutpale layoutpale33 liverow droppable ui-droppable"></div><div class="width33c layoutpale layoutpale33 liverow droppable ui-droppable"></div></div></div>'
+    $('.layoutbuilder').append(html);
+    $('.onblock').removeClass('onblock');
+    updateMobilePreview()
+    runexplorer();
+})
 
 
 $('#addrowc1xc1').on('click', function () {

@@ -1,0 +1,82 @@
+           .videocomponent   .container {
+                            width: 94%;
+                            margin: 0 auto;
+                            color: #fff; /* Light text for readability */
+                            font-size: 0.8rem;
+                        }
+
+                        .videocomponent    .input-group {
+                            width: 100%;
+                            float: left;
+                        }
+                        
+                    .videocomponent    .input-group label {
+                            display: block;
+                            margin-bottom: 5px;
+                            font-weight: bold;
+                        }
+                        
+                        .videocomponent      .input-field {
+                            width: 100%;
+                            padding: 6px;
+                            margin-bottom: 20px;
+                            border: 1px solid #555; /* Darker border for input fields */
+                            background-color: #222; /* Darker background for input fields */
+                            color: #ddd; /* Lighter text for input fields */
+                            border-radius: 4px;
+                        }
+                        
+                        .videocomponent .submit-button,  .videocomponent .convert-button , #submitvideofile {
+                            padding: 10px 10px;
+                            border: none;
+                            background-color: #007BFF;
+                            color: white;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            margin-right: 10px;
+                            transition: background-color 0.3s;
+                            margin-top: -12px;
+                            margin-bottom: 5px;
+                           
+                        }
+                        
+                        .videocomponent    .progress-container {
+                            width: 100%;
+                            background-color: #555; /* Darker progress container */
+                            border: 1px solid #666;
+                            border-radius: 4px;
+                            margin-top: 10px;
+                        }
+                        
+                        .videocomponent   .progress-bar {
+                            height: 20px;
+                            background-color: #4CAF50; /* Bright color for contrast */
+                            width: 0%;
+                            border-radius: 4px;
+                        }
+                        
+                        .videocomponent  .status-report {
+                            margin-top: 10px;
+                        }
+                        
+                        .videocomponent     .options {
+                            margin-top: 5px;
+                        }
+                        
+                        .videocomponent       .checkbox-label {
+                            margin-right: 20px;
+                            user-select: none; /* Prevents text selection */
+                        }
+                        
+                        .videocomponent    .file-input {
+                            background-color: #222;
+    border: 1px solid #555;
+    color: #ddd;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+                        }
+
+                        .videocomponent input {
+                            font-size: 0.8rem;
+                        }

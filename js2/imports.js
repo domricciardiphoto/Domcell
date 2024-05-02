@@ -54,7 +54,7 @@ $('#fileInput').change(function (event) {
             const fileContents = e.target.result;
             $('#pullthecode2').children('div').children('.informationcontent').html(fileContents);
             postimg() 
-            $('a').not('.googledrive').not('.outsidelink').on('click', function(e) {
+            $('a').not('.googledrive').not('.outsidelink').not('.list-button').on('click', function(e) {
                 var target = $(e.target);
                   if (!target.is('a')) {
                       target = target.closest('a');
@@ -76,13 +76,19 @@ $('#fileInput').change(function (event) {
         };
 
         reader.readAsText(file);
-       
+        setTimeout(() => {
+            enabledrop() 
+        }, 2000);
+        
+
+        
     } else {
 
     }
   
     setTimeout(pushtomobile, 2000);
    
+    
 })
 
 
@@ -257,14 +263,6 @@ $('#export').on('click', function () {
     // Clean up the object URL
     URL.revokeObjectURL(url);
 });
-
-
-
-
-
-
-
-
 
 
 

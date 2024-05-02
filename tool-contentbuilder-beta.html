@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="global-style.css" />
+  <title>Domcell 2024</title>
+
+
+
+  <style>
+    .popup {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      position: fixed;
+      padding: 20px;
+      left: 36%;
+      top: 24%;
+      font-size: 1.3rem;
+      line-height: 34px;
+      border: 7px solid #FFF;
+      cursor: pointer;
+
+    }
+
+    #popup {
+      display: none;
+    }
+
+    .myloadedtools {
+      width: 100%;
+      border: none;
+      min-height: 1000px;
+      height: 92vh;
+      padding-top: 0px;
+    }
+
+
+
+
+    .tab {
+      float: left;
+      width: fit-content;
+      padding-left: 6px;
+      padding-right: 6px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      background-color: #333;
+      margin-right: .5%;
+      font-size: 0.875rem;
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+      user-select: none;
+      opacity: 1;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 3px;
+      color: #fff;
+    }
+
+    .tab:hover {
+      opacity: 0.7;
+
+    }
+
+    .tabselected {}
+
+
+    .width100c {
+      width: 100%;
+      float: left;
+    }
+
+    .myclostab {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      float: right;
+    }
+
+    .myclostab:hover {
+      color: #fff;
+    }
+
+    /* Style the modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 15%;
+      /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+    #header {
+      min-height: 20px;
+      background-image: none;
+    }
+
+    .widthmenu {
+      width: auto;
+      float: left;
+      padding-left: 5px;
+      padding-right: 5px;
+      color: #fff;
+      font-size: 0.775rem;
+      line-height: 20px;
+    }
+
+    .widthmenu a {
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div id="confirmDialog" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Are You Sure You want
+        to Delete?</p>
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+  </div>
+
+  <div id="popup" class="popup">
+
+
+    In a field of green, under skies so blue,<br>
+    Snoopy dances, bringing joy anew.<br>
+    With a laugh, a leap, a joyful prance,<br>
+    He invites the world to join his dance.<br>
+    <br>
+    In his whimsical world, where dreams take flight,<br>
+    He turns our darkest days to light.<br>
+    With Woodstock by his side, so small and spry,<br>
+    Together, they soar, they swoop, they fly.<br>
+    <br>
+    His happy dance, a beacon of delight,<br>
+    Spreads warmth and cheer, making spirits bright.<br>
+    Snoopy, our joy, in every comic strip scene,<br>
+    Reminds us all to cherish the simple, the serene.
+
+  </div>
+
+
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #f7f7f7;
+    padding: 15px 1%;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.home-link, .home-icon {
+    display: block;
+    width: 20px;
+    margin-right: 10px;
+    color: white; /* Ensure the icon inherits this color if it's an SVG */
+    text-decoration: none;
+}
+
+.tab {
+    background-color: #333;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.tab-title {
+    margin-right: 10px;
+   width: max-content;
+}
+
+.close-tab {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.add-tab {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+</style>
+
+
+  <div class="container">
+    <div class="navigation">
+        <a href="gettingstarted.html" class="home-link">
+            <img src="assets/home.png" alt="Home" class="home-icon">
+        </a>
+        <div class="tab" interface="0">
+            <span class="tab-title">Untitled</span>
+            <button class="close-tab">X</button>
+        </div>
+    </div>
+    <button class="add-tab">+</button>
+</div>
+
+
+
+
+
+
+
+  <div id="toolcontent" class="promo100 toolcontent">
+
+    <embed id="interface0" class="myloadedtools" src="overviewcontent-builder-beta.html"></embed>
+
+  </div>
+
+
+
+
+
+
+  <div id="footer" class="promo100 footer"></div>
+
+
+</body>
+
+</html>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    initializeTabs();
+    initializePopup();
+    activateInitialTab();
+});
+
+function initializeTabs() {
+    const container = document.querySelector('.container');
+    container.addEventListener('click', event => {
+        if (event.target.classList.contains('close-tab')) {
+            closeTab(event.target);
+        } else if (event.target.classList.contains('add-tab')) {
+            addTab();
+        } else if (event.target.closest('.tab')) {
+            activateTab(event.target.closest('.tab'));
+        }
+    });
+}
+
+function closeTab(closeButton) {
+    const tab = closeButton.closest('.tab');
+    const interfaceId = tab.dataset.interface;
+    const contentToRemove = document.getElementById('interface' + interfaceId);
+    if (contentToRemove) {
+        contentToRemove.remove();
+    }
+    tab.remove();
+    if (document.querySelector('.tab')) {
+        activateTab(document.querySelector('.tab')); // Activate the first tab if one still exists after removal
+    }
+}
+
+function addTab() {
+    const tabInterface = document.querySelector('.navigation');
+    const newTabId = document.querySelectorAll('.tab').length; // Generate new interface ID based on count
+    const newTab = document.createElement('div');
+    newTab.className = 'tab';
+    newTab.setAttribute('data-interface', newTabId);
+    newTab.innerHTML = `
+        <span class="tab-title">Untitled</span>
+        <button class="close-tab">X</button>
+    `;
+    tabInterface.appendChild(newTab);
+
+    const toolContent = document.getElementById('toolcontent');
+    const newContent = document.createElement('embed');
+    newContent.id = 'interface' + newTabId;
+    newContent.className = 'myloadedtools';
+    newContent.src = 'overviewcontent-builder-beta.html';
+    newContent.style.display = 'none'; // Start hidden
+    toolContent.appendChild(newContent);
+    activateTab(newTab); // Automatically activate the newly created tab
+}
+
+function activateTab(tab) {
+    const interfaceId = tab.dataset.interface;
+    const allTabs = document.querySelectorAll('.tab');
+    const allContents = document.querySelectorAll('.myloadedtools');
+
+    allTabs.forEach(t => {
+        t.classList.remove('active'); // Optionally add some active styling
+    });
+    tab.classList.add('active'); // Optionally add some active styling
+
+    allContents.forEach(content => {
+        if (content.id === 'interface' + interfaceId) {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    });
+}
+
+function activateInitialTab() {
+    const firstTab = document.querySelector('.tab');
+    if (firstTab) {
+        activateTab(firstTab);
+    }
+}
+
+function initializePopup() {
+    const footer = document.querySelector('#footer');
+    const popup = document.querySelector('#popup');
+    footer.addEventListener('mouseover', () => fadeIn(popup, 10000));
+    footer.addEventListener('mouseout', () => fadeOut(popup));
+    popup.addEventListener('mouseover', () => fadeOut(popup));
+}
+
+function fadeIn(element, duration = 400) {
+    element.style.opacity = 0;
+    element.style.display = 'block';
+    let last = +new Date();
+    const tick = () => {
+        element.style.opacity = +element.style.opacity + (new Date() - last) / duration;
+        last = +new Date();
+        if (+element.style.opacity < 1) {
+            (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+        }
+    };
+    tick();
+}
+
+function fadeOut(element) {
+    let opacity = parseFloat(window.getComputedStyle(element).opacity);
+    const fade = () => {
+        opacity -= 0.05;
+        if (opacity <= 0) {
+            opacity = 0;
+            element.style.display = 'none';
+        } else {
+            element.style.opacity = opacity;
+            setTimeout(fade, 20);
+        }
+    };
+    fade();
+}
+</script>
+
+
+
+
+
+
+
+<!--
+Look at you intrepid traveler! looking all under the hood! well then here is your riddle! 
+
+   -- When is a raven like a writting desk? --
+
+if you figure it out you get a prize! well, actually no prize, but wouldnt it be fun to know! 
+Everyone enjoys a good easter egg, and tada you found one!
+Best wishes Dom
+-->

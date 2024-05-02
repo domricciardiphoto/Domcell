@@ -151,13 +151,6 @@ $('.openclose').on('click', function () {
 
 
 
-
-
-
-
-
-
-
 $('.thetopbox').on('click', function () {
     whichboxtoopen = $(this).attr('whatbox')
     $('.thetopbox').css('background-color', 'transparent').css('color', '#f7f7f7')
@@ -311,12 +304,6 @@ $('.openthematrix').on('click', function () {
 
             // Set the modified content back to the element
             element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '-').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>'));
-
-
-
-
-
-
 
 
 
@@ -784,7 +771,7 @@ $('.texttype').off('click').on('click', function () {
 
 
 
-$('.textaligner3').on('click', function () {
+$('.textaligner3').off('click').on('click', function () {
     captureState()
     var selection = window.getSelection();
     if (selection.rangeCount > 0) {
@@ -805,20 +792,30 @@ $('.textaligner3').on('click', function () {
 
 
 
-$('.textaligner').on('click', function () {
-    cssadd = $(this).attr('cssadd')
-    $('.interedit').css('text-align', cssadd);
-    $('.interedit p').css('text-align', cssadd)
-    $('.interedit .pd-header-tag').css('text-align', cssadd).css('line-height', '116%');
-    $('.interedit .pd-header-tag h2 ,.interedit .pd-header-tag h3').attr('style', function (i, style) {
-        return style + ';margin-bottom: 0px !important;';
+$('.textaligner').off('click').on('click', function () {
+   
+    var $interedit = $('.interedit');
+    var cssadd = $(this).attr('cssadd');
+    console.log(cssadd)
+    // Apply styles in a batched manner
+    $interedit.css('text-align', cssadd);
+    $interedit.find('p, .pd-header-tag').css('text-align', cssadd);
+    $interedit.find('.pd-header-tag').css({
+        'text-align': cssadd,
+        'line-height': '116%'
     });
-    // $('.interedit .pd-header-tag h3').css('text-align', cssadd);
-    editorcopy = $('.interedit').html()
-    $('#myhtmleditor').val(editorcopy)
-    runexplorer()
+
+    // Adjust styles via function efficiently
+    $interedit.find('.pd-header-tag h2, .pd-header-tag h3').attr('style', function (i, style) {
+        return (style || '') + '; margin-bottom: 0px !important;';
+    });
+
+    // Reduce the number of times the DOM is queried and modified
+    var editorcopy = $interedit.html();
+    $('#myhtmleditor').val(editorcopy);
+    runexplorer();
     $('#mobilepreview2').html($('#pullthecode2').html());
-})
+});
 
 
 
@@ -1305,55 +1302,59 @@ function deleteHighlightedText() {
 
 
 $(document).keydown(function (e) {
-    if (e.key === 'b' && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
-        e.preventDefault(); // Prevent default undo behavior  
-        captureState()
-        $('#theboldtext').off('click').click()
-        runexplorer();
-
-    } else if (e.key === 'z' && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
-        e.preventDefault(); // Prevent default undo behavior         
-        undoChange();
-        runexplorer();
-
-    } else if (e.key === 'y' && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault(); // Prevent default redo behavior
-        redoChange();
-        runexplorer();
-    } else if (e.key === 'Delete' && e.ctrlKey) {
-        e.preventDefault(); // Prevent default delete behavior
-        captureState()
-        deleteHighlightedText();
-        runexplorer();
-    } else if (e.key === 'e' && e.ctrlKey) {
-        e.preventDefault();
-        captureState()
-        $('#superscriptbutton').off('click').click()
-        runexplorer();
-    } else if (e.key === 'd' && e.ctrlKey) {
-        e.preventDefault();
-        captureState()
-        $('#subscriptbutton').off('click').click()
-        runexplorer();
-
-    } else if (e.key === 'i' && e.ctrlKey) {
-        e.preventDefault();
-        captureState()
-        $('#italicbutton').off('click').click()
-        runexplorer();
-
-    } else if (e.key === 'u' && e.ctrlKey) {
-        e.preventDefault();
-        captureState()
-        $('#underlinebutton').off('click').click()
-        runexplorer();
-    } else if (e.key === 'Enter' && e.shiftKey) {
-        e.preventDefault();
-        captureState()
-        $('#breakbuttonlive').off('click').click()
-        runexplorer();
+    // Function to handle event triggering in a cleaner way
+    function handleButtonAction(selector) {
+        $(selector).trigger('click');
     }
 
+    if ((e.ctrlKey || e.metaKey) && !e.shiftKey) {
+        switch (e.key) {
+            case 'b':
+                e.preventDefault();
+                captureState();
+                handleButtonAction('#theboldtext');
+                break;
+            case 'z':
+                e.preventDefault();
+                undoChange();
+                break;
+            case 'y':
+                e.preventDefault();
+                redoChange();
+                break;
+            case 'Delete':
+                e.preventDefault();
+                captureState();
+              //  deleteHighlightedText();
+                break;
+            case 'e':
+                e.preventDefault();
+                captureState();
+                handleButtonAction('#superscriptbutton');
+                break;
+            case 'd':
+                e.preventDefault();
+                captureState();
+                handleButtonAction('#subscriptbutton');
+                break;
+            case 'i':
+                e.preventDefault();
+                captureState();
+                handleButtonAction('#italicbutton');
+                break;
+            case 'u':
+                e.preventDefault();
+                captureState();
+                handleButtonAction('#underlinebutton');
+                break;
+        }
+        runexplorer(); // Consolidate runexplorer calls to a single place if possible
+    } else if (e.key === 'Enter' && e.shiftKey) {
+        e.preventDefault();
+        captureState();
+        handleButtonAction('#breakbuttonlive');
+        runexplorer();
+    }
 });
 
 
@@ -1682,11 +1683,6 @@ $(function () {
     // CSS adjustments for consistent sizing
     $("#programming, #resizable-div").css('box-sizing', 'border-box');
 });
-
-
-
-
-
 
 
 
