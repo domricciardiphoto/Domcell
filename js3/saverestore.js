@@ -1,3 +1,5 @@
+
+
 function clearIndexedDB() {
     const dbName = 'DomcellDB';  // Ensure this matches the database used throughout your app
     const storeName = 'DomcellcontentStore';  // Ensure this matches the store name used in your app
@@ -111,7 +113,7 @@ $(document).ready(function() {
 
     // Initialize UI components after content is loaded
     function initializeUI() {
-        runexplorer();
+        //runexplorer();
         enabledrop();
         imagefunctions();
         paragraphfunctions();
@@ -129,7 +131,7 @@ $(document).ready(function() {
     // Cancel URL modal
     $('#cancelUrl').click(function() {
         urlModal.hide();
-        runexplorer();
+        //runexplorer();
     });
 
     // Handle class toggles

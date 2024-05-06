@@ -7,7 +7,7 @@ var savedContent = localStorage.getItem("savedContent");
 
 
 if (savedContent) {
-
+    $mobilePreview.html($pullTheCode.html());
     $('#pullthecode2').html(savedContent);
     $('#mobilepreview2').html($('#pullthecode2').html());
     enabledrop()

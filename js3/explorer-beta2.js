@@ -11,6 +11,16 @@ function updateMobilePreview() {
 }
 
 
+function deleteelement() {
+    $('.deleterow').on('click', function () {
+        captureState()
+        $('.explorerselected').remove()
+        //runexplorer();
+    })
+    
+}
+
+
 
 function liverowactivy() {
 
@@ -27,14 +37,14 @@ function liverowactivy() {
 $('#EditandSubmitAL').on('click', function () {
     $('.explorerselected').html($('#myhtmleditor').val())
     $mobilePreview.html($pullTheCode.html());
-    runexplorer();
+   //runexplorer();
 })
 
 
 $(".draggable").draggable({
     revert: "valid",
     stop: function() {
-        runexplorer();  // update only once dragging stops
+        //runexplorer();  // update only once dragging stops
     }
 });
 
@@ -51,7 +61,7 @@ function enabledrop() {
             }
 
             $mobilePreview.html($pullTheCode.html());
-            runexplorer();
+            //runexplorer();
 
         }
 
@@ -82,7 +92,7 @@ function editElement(clickedElement) {
                 // When user clicks outside the textarea, update the element and remove textarea
                 $(targetElement).html($(this).val()).removeClass('edit-mode');
                 // Refresh the explorer view if needed
-                runexplorer();
+                //runexplorer();
             },
             keyup: function(e) {
                 if (e.key === 'Enter' && !e.shiftKey) {
@@ -285,6 +295,7 @@ function selectAndHighlightElement(element, scrollElement = false) {
 
     // Handle visual selection and scrolling if needed
     if (element.explorerIndent) {
+        $('.indentselected').removeClass('indent indentselected')
         $(element.explorerIndent).addClass('indentselected').get(0).scrollIntoView({
             behavior: 'auto', block: 'nearest', inline: 'start'
         });
@@ -354,7 +365,7 @@ function selectAndHighlightElement(element, scrollElement = false) {
 }
 
 
-$(document).on('contextmenu', '.indent', function(e) {
+$(document).on('contextmenu', '.indent , .indentselected', function(e) {
     e.preventDefault();
     $('#contextMenu').css({
         display: "block",
@@ -376,7 +387,7 @@ $('#contextMenu ul li').click(function() {
             $(correspondingElement).remove(); // Remove the corresponding element in #pullthecode3
             $(clickedElement).remove(); // Remove the `.indent`
             $mobilePreview.html($pullTheCode.html());
-            runexplorer();
+           //runexplorer();
             break;
 
             case 'duplicate':
@@ -444,8 +455,40 @@ function debounce(func, wait, immediate) {
 // Usage with a function that needs debouncing
 var myEfficientFn = debounce(function() {
     // All the taxing stuff you do
-    runexplorer();
+   //runexplorer();
     
 }, 250);
 
 window.addEventListener('resize', myEfficientFn);
+
+runexplorer();
+liverowactivy()
+deleteelement()
+
+
+function main() {
+    console.log('function ran')
+    // Function to run when changes occur in the observed element
+    const observerCallback = function(mutationsList, observer) {
+        for(let mutation of mutationsList) {
+            if (mutation.type === 'childList' || mutation.type === 'subtree') {
+                runexplorer(); // Call runExplorer when content changes
+                break; // Exit loop after the first change
+            }
+        }
+    };
+
+    // Options for the observer (which mutations to observe)
+    const observerConfig = { childList: true, subtree: true };
+
+    // Create a new observer with the callback function and options
+    const observer = new MutationObserver(observerCallback);
+
+    // Start observing the #pullthecode2 div for changes
+    observer.observe(document.querySelector('#pullthecode2'), observerConfig);
+}
+
+
+
+
+main();

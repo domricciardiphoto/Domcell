@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Append the new list to the container without replacing existing content
         listContainer.appendChild(listElement);
-        runexplorer();
+        //runexplorer();
         $('#listTitle').val('')
         $('.list-item-input').val('')
     });

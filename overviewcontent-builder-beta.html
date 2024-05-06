@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="application.css">
     <link rel="stylesheet" href="css/videocomponent.css">
     <link rel="stylesheet" href="css/listbuilder.css">
-  
+
 
     <style>
         body {
@@ -302,6 +302,8 @@
 
 
 
+
+
     <style>
         #driveContents {
             font-family: 'Arial', sans-serif;
@@ -424,6 +426,19 @@
 
         .programoverflow {
             overflow: auto;
+        }
+
+
+        #explorer2 {
+            margin-left: -1px !important;
+            border: 1px solid #ccc;
+            width: 97% !important;
+            font-size: 0.8rem;
+            padding-left: 3% !important;
+        }
+
+        #mobilepreview2 .width50c3 {
+            width: 49% !important;
         }
     </style>
 
@@ -567,13 +582,24 @@
                 .blogbuilder {
                     max-height: none !important
                 }
+
+
+
+                #pullthecode3 img {
+                    width: 99% !important;
+                    padding-left: .5%;
+                    padding-right: .5%;
+                    padding-top: .5%;
+                    padding-bottom: .5%;
+                }
             </style>
 
 
 
             <style>
                 :root {
-                    --width33c-width: 33%
+                    --width33c-width: 33%;
+                    --width33c3-width: 49%
                 }
 
                 #mobilepreview2 .width33c {
@@ -2716,7 +2742,7 @@
                     style=" margin-top: 5px; margin-left: 0px;  width: 95%; margin-left: 2%; background-color: transparent;">
 
 
-                  
+
                     <div class="list-builder-container dark-mode">
                         <div class="list-builder-form">
 
@@ -2731,14 +2757,14 @@
                                 <label for="listTitle">List Title:</label>
                                 <input type="text" id="listTitle" placeholder="Enter list title" class="form-control">
                             </div>
-                    
+
                             <div class="form-group">
                                 <label for="listAmount">List Amount:</label>
                                 <select id="listAmount" class="form-control">
                                     <!-- Options will be dynamically filled -->
                                 </select>
                             </div>
-                    
+
                             <div class="form-group">
                                 <label for="listType">Type of List:</label>
                                 <select id="listType" class="form-control">
@@ -2746,16 +2772,17 @@
                                     <option value="1">Bullet List</option>
                                 </select>
                             </div>
-                    
+
                             <fieldset class="list-items">
                                 <legend>List Items</legend>
                                 <div id="listItems">
                                     <!-- List item inputs will be generated based on the List Amount selection -->
                                 </div>
                             </fieldset>
-                    
-                            <button type="button" id="submitList" class="list-button" style="float: right;">Submit List</button>
-                           
+
+                            <button type="button" id="submitList" class="list-button" style="float: right;">Submit
+                                List</button>
+
                         </div>
                     </div>
 
@@ -2785,69 +2812,183 @@
 
                 <div class="width100c tools videocomponent"
                     style=" width: 97%; padding-left: 2%; padding-bottom: 2%; margin-left: 0%;">
-                     
-                        <div class="container">
-                            <div class="input-group">
-                                <label for="videofilename">Video Filename (mp4):</label>
-                                <input id="videofilename" type="text" placeholder="Enter video filename" class="input-field">
-                            </div>
-                        
-                            <div class="input-group">
-                                <label for="videocaptions">Captions Filename (vtt):</label>
-                                <input id="videocaptions" type="text" placeholder="Enter captions filename" class="input-field">
-                            </div>
-                        
-                            <div class="input-group">
-                                <label for="videoposter">Video Poster (jpg):</label>
-                                <input id="videoposter" type="text" placeholder="Enter poster filename" class="input-field">
-                                
-                            </div>
-                            <div class="input-group">
+
+                    <div class="container">
+                        <div class="input-group">
+                            <label for="videofilename">Video Filename (mp4):</label>
+                            <input id="videofilename" type="text" placeholder="Enter video filename"
+                                class="input-field">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="videocaptions">Captions Filename (vtt):</label>
+                            <input id="videocaptions" type="text" placeholder="Enter captions filename"
+                                class="input-field">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="videoposter">Video Poster (jpg):</label>
+                            <input id="videoposter" type="text" placeholder="Enter poster filename" class="input-field">
+
+                        </div>
+
+
+                        <div class="input-group">
+                            <label for="videoseotitle">Video SEO Title*</label>
+                            <input id="videoseotitle" type="text" placeholder="Enter Video Title" class="input-field"
+                                required>
+
+                        </div>
+                        <div class="input-group">
+                            <label for="videoseodescription">Video SEO Description*</label>
+                            <textarea id="videoseodescription" type="text" placeholder="Enter Video Description"
+                                class="input-field" required></textarea>
+
+                        </div>
+
+
+
+                        <div class="input-group">
                             <button id="submitvideofile" class="submit-button">Submit Video</button>
                         </div>
-                            <div class="conversion-section">
-                                <h3>Convert Files</h3>
-                                <span>Convert CSV / SRT Files to VTT</span>
-                                <input type="file" id="csvFileInput" accept=".csv, .srt" multiple class="file-input">
-
-                             
-                        
-                                <div id="statusReport" class="status-report"></div>
-                        
-                                <div class="options">
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" id="includeHeader"  style="width: auto;">
-                                        Include VTT Header
-                                    </label>
-                                    <label>
-                                        Filename Suffix: 
-                                        <input type="text" id="filenameSuffix" placeholder="-converted" class="input-field">
-                                    </label>
-                                </div>
-
-                                <button id="convertBtn" class="convert-button">Convert to VTT</button>
-                        
-                                <div id="progressContainer" class="progress-container">
-                                    <div id="progressBar" class="progress-bar"></div>
-                                </div>
 
 
 
-                            </div>
-                        </div>
 
 
-                 
+
+                    </div>
+
+
+
 
 
                 </div>
 
 
+                <div id="tools4" class="width100c openclose" openclose="videofullconvert">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Subtitles Converter </span>
+                        <span class="mysmalltext">(VTT)</span>
+                    </div>
+                </div>
+
+
+
+                <div class="width100c tools videofullconvert">
+
+                   
+<style>
+.dark-container {
+    color: #fff; /* Text color */
+    width: 94%;
+    margin-left: 2%;
+}
+
+.dark-container.conversion-section {
+    margin-bottom: 20px;
+}
+
+.dark-container h3 {
+    margin-top: 0;
+}
+
+.dark-container span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.dark-container .file-input {
+    margin-bottom: 10px;
+}
+
+.dark-container .status-report {
+    background-color: #555; /* Darker background for status report */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.dark-container .options {
+    margin-bottom: 10px;
+}
+
+.dark-container .checkbox-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dark-container .input-field {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.dark-container .convert-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-container .convert-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.dark-container .progress-container {
+    background-color: #555; /* Darker background for progress container */
+    border-radius: 5px;
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.dark-container .progress-bar {
+    background-color: #4CAF50; /* Green progress bar */
+    height: 10px;
+    border-radius: 5px;
+}
+</style>
+
+                    <div class="container dark-container">
+                        <div class="conversion-section">
+
+                            <span>Convert CSV / SRT Files to VTT</span>
+                            <input type="file" id="csvFileInput" accept=".csv, .srt" multiple class="file-input">
+
+
+
+                            <div id="statusReport" class="status-report"></div>
+
+                            <div class="options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="includeHeader" style="width: auto;">
+                                    Include VTT Header
+                                </label>
+                                <label>
+                                    Filename Suffix:
+                                    <input type="text" id="filenameSuffix" placeholder="-converted" class="input-field">
+                                </label>
+                            </div>
+
+                            <button id="convertBtn" class="convert-button">Convert to VTT</button>
+
+                            <div id="progressContainer" class="progress-container">
+                                <div id="progressBar" class="progress-bar"></div>
+                            </div>
+
+                        </div>
+                    </div>
 
 
 
 
 
+                    
+
+                </div>
 
 
 
@@ -3332,8 +3473,8 @@
                     <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
                             whaturl="bannersheduler.html">Domcell Banner Schedular ></button></div>
 
-                            <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
-                                whaturl="roundmenu-beta.html">Rounded Menu Builder ></button></div>
+                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                            whaturl="roundmenu-beta.html">Rounded Menu Builder ></button></div>
 
                     <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
                             whaturl="https://www.willpeavy.com/tools/minifier/">HTML Minifer ></button></div>
@@ -3773,6 +3914,13 @@
 
 
             <div class="width50c" style="max-width: 24%;">
+
+                <style>
+                    #mobilepreview2 .width50c3 {
+                        width: var(--width33c3-width) !important
+                    }
+                </style>
+
                 <div class=" mymobile" id="mobilepreview2"
                     style="max-height: 460px; width: 100%; margin-left: 0%;  overflow-y: auto;  margin-right: 0px; padding-right: 0px; ">
 
@@ -3933,9 +4081,9 @@
  -->
     <script src="js3/explorer-beta2.js"></script>
     <script src="js3/primary.js"></script>
-    <script src="js2/internalfunctions.js"></script>
-    <script src="js2/imagefunctions.js"></script>
-    <script src="js2/imports.js"></script>
+    <script src="js3/internalfunctions.js"></script>
+    <script src="js3/imagefunctions.js"></script>
+    <script src="js3/imports.js"></script>
     <script src="js3/saverestore.js"></script>
     <script src="js3/videoconverter.js"></script>
     <script src="js3/listmaker.js"></script>

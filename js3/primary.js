@@ -57,7 +57,7 @@ function redoChange() {
 
 
 function paragraphfunctions() {
-    $('p').off('click').on('contextmenu', function (e) {
+    $('p , h2 , h3 , h4').off('click').on('contextmenu', function (e) {
         e.preventDefault()
         $('.interedit').removeClass('interedit')
         $(this).parent('.in910').addClass('interedit')
@@ -321,6 +321,7 @@ $('.openthematrix').on('click', function () {
             $('.colorlegend').hide()
             $('#hidemainmobile').show()
             $('#explorer2').show()
+            $('#clearandrestartbuttonrefresh').click()
             break;
         case '#mymatrix3':
 
@@ -556,7 +557,7 @@ document.getElementById('mysort').addEventListener('change', function () {
         $(".sortable").sortable();
         $(".sortable").sortable('disable');
         $('#mobilepreview2').html($('#pullthecode2').html());
-        runexplorer();
+        //runexplorer();
     }
 })
 
@@ -570,7 +571,7 @@ document.getElementById('mysortcomponents').addEventListener('change', function 
         $("div.layoutpale").not('h2 , p').sortable();
         $("div.layoutpale").not('h2 , p').sortable('disable');
         $('#mobilepreview2').html($('#pullthecode2').html());
-        runexplorer();
+        //runexplorer();
     }
 })
 
@@ -622,13 +623,13 @@ $('.hover-item').each(function () { // Iterate over each .hover-item
 $('.deleterow').on('click', function () {
     captureState()
     $('.explorerselected').remove()
-    runexplorer();
+    //runexplorer();
 })
 
 $('.clearsection').on('click', function () {
     captureState()
     $('.explorerselected').empty()
-    runexplorer();
+    //runexplorer();
 })
 
 function beautifyHtml(html) {
@@ -655,11 +656,11 @@ document.getElementById('mobilehidev2d').addEventListener('input', function () {
     if (this.checked) {
         $('.explorerselected').addClass('hideonlyonmobile')
         $('#mobilepreview2').html($('#pullthecode2').html());
-        runexplorer();
+        //runexplorer();
     } else {
         $('.explorerselected').removeClass('hideonlyonmobile')
         $('#mobilepreview2').html($('#pullthecode2').html());
-        runexplorer();
+        //runexplorer();
     }
 
 })
@@ -669,11 +670,11 @@ document.getElementById('desktophidev2d').addEventListener('input', function () 
     if (this.checked) {
         $('.explorerselected').addClass('hideonlyondesktop')
         $('#mobilepreview2').html($('#pullthecode2').html());
-        runexplorer();
+        //runexplorer();
     } else {
         $('.explorerselected').removeClass('hideonlyondesktop')
         $('#mobilepreview2').html($('#pullthecode2').html());
-        runexplorer();
+        //runexplorer();
     }
 
 })
@@ -764,7 +765,7 @@ $('.texttype').off('click').on('click', function () {
     selection.removeAllRanges();
 
     // Load new content after updating the DOM
-    runexplorer();
+    //runexplorer();
     $('#mobilepreview2').html($('#pullthecode2').html());
 });
 
@@ -787,7 +788,7 @@ $('.textaligner3').off('click').on('click', function () {
     var intereditHTML = $('.interedit').html();
     $('#myhtmleditor').val('');
     $('#mobilepreview2').html($('#pullthecode2').html());
-    runexplorer()
+    //runexplorer()
 });
 
 
@@ -813,7 +814,7 @@ $('.textaligner').off('click').on('click', function () {
     // Reduce the number of times the DOM is queried and modified
     var editorcopy = $interedit.html();
     $('#myhtmleditor').val(editorcopy);
-    runexplorer();
+    //runexplorer();
     $('#mobilepreview2').html($('#pullthecode2').html());
 });
 
@@ -901,7 +902,7 @@ $('#cinput3-comp').on('click', function () {
         setupContextMenu();
         setupModalInteractions();
     }
-    runexplorer();
+    //runexplorer();
     paragraphfunctions()
     $('#mobilepreview2').html($('#pullthecode2').html());
     return false;
@@ -919,7 +920,7 @@ $('#textaligner2 , #textaligner2a , #textaligner2b').on('change', function () {
 
     editorcopy = $('.interedit').html();
     $('#myhtmleditor').val(editorcopy);
-    runexplorer();
+    //runexplorer();
 });
 
 $('#choosehtag').on('change', function () {
@@ -1067,7 +1068,7 @@ $('#linkmaker').click(function () {
         range.insertNode(newNode.firstChild);
 
     }
-    runexplorer();
+    //runexplorer();
     $('a').not('#convertBtn').not('.list-button').not('.googledrive').not('.outsidelink').on('click', function (e) {
         var target = $(e.target);
         if (!target.is('a')) {
@@ -1110,7 +1111,7 @@ $('#linkmaker3').click(function () {
     range.deleteContents();
     range.insertNode(newNode.firstChild);
 
-    runexplorer();
+    //runexplorer();
     $('a').not('.googledrive').not('.outsidelink').on('click', function (e) {
     
         var target = $(e.target);
@@ -1135,19 +1136,74 @@ $('#closediag').on('click', function () {
 
 
 
+function getCurrentDateTime() {
+    // Get current date and time
+    const now = new Date();
 
-function createVideoElement(videoFilename, videoCaptions, videoPoster) {
-    const basePath =
-        'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/';
+    // Get date components
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Month is zero-based
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    // Get timezone offset
+    const timezoneOffset = -now.getTimezoneOffset(); // Reverse offset to get offset in minutes
+    const offsetHours = String(Math.floor(Math.abs(timezoneOffset) / 60)).padStart(2, '0');
+    const offsetMinutes = String(Math.abs(timezoneOffset) % 60).padStart(2, '0');
+    const timezoneSign = timezoneOffset < 0 ? '-' : '+';
+
+    // Construct formatted date string
+    const formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}${timezoneSign}${offsetHours}:${offsetMinutes}`;
+
+    return formattedDateTime;
+}
+
+// Get current date and time
+getCurrentDateTime()
+
+
+function createVideoElement(videoFilename, videoCaptions, videoPoster , videoseotitle , videoseodescription) {
+    const currentDateTime = getCurrentDateTime();
+    const basePath = 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/';
     const videoSrc = `${basePath}${videoFilename}.mp4`;
     const captionsSrc = `${basePath}${videoCaptions}.vtt`;
     const posterSrc = `${basePath}${videoPoster}.jpg`;
 
+    // JavaScript object for schema.org JSON
+    const schemaOrgData = {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": videoseotitle,
+        "description": videoseodescription,
+        "thumbnailUrl": posterSrc,
+        "uploadDate": currentDateTime,
+        "duration": "PT2M",
+        "contentUrl": videoSrc,
+        "embedUrl": videoSrc,
+        "publisher": {
+            "@type": "Organization",
+            "name": "P.C. Richard & Son",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.pcrichard.com/images/pim-content/pcrmainlogo.png"
+            }
+        }
+    };
+
+    // Convert JavaScript object to JSON string
+    const schemaOrgJson = JSON.stringify(schemaOrgData);
+
+    // HTML template
     return `<video aria-label="Video Player" class="videoPlayer" controls poster="${posterSrc}" tabindex="0">
-        <source src="${videoSrc}" type="video/mp4">
-        <track kind="captions" label="English" src="${captionsSrc}" srclang="en">
-        Your browser does not support the video tag.
-    </video>`;
+                <source src="${videoSrc}" type="video/mp4">
+                <track kind="captions" label="English" src="${captionsSrc}" srclang="en">
+                Your browser does not support the video tag.
+            </video>
+            <script type="application/ld+json">
+                ${schemaOrgJson}
+            </script>`;
 }
 
 
@@ -1155,9 +1211,11 @@ $(document).on('click', '#submitvideofile', function () {
     const videoFilename = $('#videofilename').val();
     const videoCaptions = $('#videocaptions').val();
     const videoPoster = $('#videoposter').val();
-    const videoElement = createVideoElement(videoFilename, videoCaptions, videoPoster);
+    const videoseotitle = $('#videoseotitle').val();
+    const videoseodescription = $('#videoseodescription').val();
+    const videoElement = createVideoElement(videoFilename, videoCaptions, videoPoster , videoseotitle , videoseodescription);
     $('.interedit').html(videoElement);
-    runexplorer()
+    //runexplorer()
 });
 
 
@@ -1274,7 +1332,7 @@ $('#listsubmit').on('click', function () {
     $('.lister').val('')
     $('#listtitle-d').val('')
     $('#mobilepreview2').html($('#pullthecode2').html());
-    runexplorer();
+    //runexplorer();
 
 
 
@@ -1348,12 +1406,12 @@ $(document).keydown(function (e) {
                 handleButtonAction('#underlinebutton');
                 break;
         }
-        runexplorer(); // Consolidate runexplorer calls to a single place if possible
+        //runexplorer(); // Consolidate runexplorer calls to a single place if possible
     } else if (e.key === 'Enter' && e.shiftKey) {
         e.preventDefault();
         captureState();
         handleButtonAction('#breakbuttonlive');
-        runexplorer();
+        //runexplorer();
     }
 });
 
@@ -1393,7 +1451,7 @@ $('#submitUrl').click(function () {
         }
     }
     $('#urlModal').hide(); // Hide the URL modal
-    runexplorer();
+    //runexplorer();
 
     $('a img').off('click').on('click', function (e) {
         e.preventDefault()
@@ -1444,7 +1502,7 @@ $('#RowBackgroundColorlist').on('change', function () {
     $(this).val('none').change(); // This will not cause the handler to execute its logic again
     isProgrammaticChangeRowMarginTop2 = false; // Reset the flag immediately
 
-    runexplorer();
+    //runexplorer();
     $('#mobilepreview2').html($('#pullthecode2').html());
 });
 
@@ -1454,7 +1512,7 @@ $('#Row-Border-Radius').on('change', function () {
     var boxmargin = selectedOption.attr('value')
     $('.onblock').css('border-radius', boxmargin)
     $('#Row-Border-Radius').prop('selectedIndex', 0);
-    runexplorer();
+    //runexplorer();
     $('#mobilepreview2').html($('#pullthecode2').html());
 })
 
@@ -1485,7 +1543,7 @@ $('#Row-Padding-Radius').on('change', function () {
 
     $('.onblock').css('padding', boxpadding + '%').css('margin-left', '0px').css('max-width', boxmaxwidth)
     $('#Row-Padding-Radius').prop('selectedIndex', 0);
-    runexplorer();
+    //runexplorer();
     $('#mobilepreview2').html($('#pullthecode2').html());
 })
 
@@ -1493,7 +1551,7 @@ $('#body-color').on('change', function () {
     var selectedOption = $(this).find('option:selected');
     var bodycolor = selectedOption.attr('value');
     $('.informationcontent').attr('style', 'background-color: ' + bodycolor + ' !important;');
-    runexplorer();
+    //runexplorer();
     $('#mobilepreview2').html($('#pullthecode2').html());
 });
 
@@ -1502,7 +1560,7 @@ $('#comp-color').on('change', function () {
     var bodycolor = selectedOption.attr('value')
     $('.interedit').attr('style', 'background-color: ' + bodycolor + ' !important;');
 
-    runexplorer();
+    //runexplorer();
     $('#mobilepreview2').html($('#pullthecode2').html());
 });
 
@@ -1511,7 +1569,7 @@ $('#comp-font').on('change', function () {
     var bodyfont = selectedOption.attr('value')
     $('.interedit').css('font-family', bodyfont)
 
-    runexplorer();
+    //runexplorer();
     $('#mobilepreview2').html($('#pullthecode2').html());
 });
 
