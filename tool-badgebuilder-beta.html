@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domcell Round Menu Builder</title>
+    <title>Domcell Badge Builder</title>
 
 <style>
 /* Basic reset for styling */
@@ -231,7 +231,7 @@ function addTab() {
 
     const newContent = document.createElement('embed');
     newContent.id = 'tab' + numTabs;
-    newContent.src = 'roundmenu-beta.html';
+    newContent.src = 'badgebuilder.html';
     newContent.classList.add('content-item');
 
     document.querySelector('.tabs').appendChild(newTab);
@@ -320,7 +320,7 @@ document.querySelectorAll('.tab').forEach(element => {
     element.click();
 });
 
-childFrame.postMessage("Hello from parent", "*");
+
 
 </script>
 
