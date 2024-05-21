@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Page Builder</title>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
-    <script src="jquery.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
     <script src="231.js"></script>
     <link rel="stylesheet" href="application.css">
     <link rel="stylesheet" href="css/videocomponent.css">
     <link rel="stylesheet" href="css/listbuilder.css">
-
+  
 
     <style>
         body {
@@ -212,7 +213,7 @@
             padding: 5px;
             overflow: auto;
             height: 90vh;
-            max-height: 274px;
+            max-height: 350px;
             width: 92%;
             margin-left: 3%;
             border-radius: 8px;
@@ -368,6 +369,25 @@
             .width33cg {
                 width: 50%;
             }
+            #explorer2 {
+    border: 1px solid #ccc;
+    width: 97% !important;
+    font-size: 0.8rem;
+    padding-left: 3% !important;
+    min-width: 399%;
+    float: none;
+    max-height: 236px;
+}
+
+#resizable-div {
+    width: 70% !important;
+}
+
+#pullthecode2 {
+    max-height: 446px;
+}
+
+
         }
 
         @media (max-width: 600px) {
@@ -455,24 +475,211 @@
 
 <body>
 
+    <style>
+ #contextMenu {
+    display: block;
+    position: absolute;
+    z-index: 2147483647;
+    left: 50%;
+    top: 451px;
+    width: 15%;
+    font-family: Arial, sans-serif; /* Modern font */
+    color: #fff; /* Light text color for readability */
+    border-radius: 5px;
+}
+
+#contextMenu ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* More prominent shadow for dark theme */
+    border-radius: 5px;
+    background-color: #333; /* Dark background for the menu */
+}
+
+#contextMenu ul li {
+    padding: 4px 12px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    font-size: 1rem;
+    background-color: #444; /* Slightly lighter than menu for contrast */
+    text-align: left;
+    line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 3px;
+}
+
+#contextMenu ul li:hover {
+    background-color: #0056b3;
+    opacity: 0.8; /* Bright color for hover to make it pop */
+}
+
+#contextMenu ul li:not(:last-child) {
+    border-bottom: 1px solid #555; /* Subtle separator that fits the dark theme */
+}
+
+/* Specific background colors for important actions, ensuring visibility */
+#edit { background-color: darkgreen; }
+#duplicate { background-color: #666; /* Darker shade for better theme integration */ }
+#component { background-color: darkgoldenrod; color: #000; /* Adjusted for visibility in dark theme */ }
+#empty { background-color: darkolivegreen; }
+#delete { background-color: darkred; }
+#close { background-color: navy; }
 
 
 
+#mobilepreview .width50c2 {
+    width: 100% !important;
+}
 
-    <div id="contextMenu" style="display:none; position:absolute; z-index:9999999999999999999000;" class="context-menu">
+#sidetoolset {opacity: 1;}
+#resizable-div {
+    width: 71.9%;
+}
+
+
+
+    </style>
+
+<style>
+    .delete-transition {
+        transition: opacity 0.5s ease-out;
+        opacity: 0;
+    }
+</style>
+
+
+    <div id="contextMenu" style="display:none; position:absolute; z-index:9999999999999999999000; min-width: 200px" class="context-menu draggable">
         <ul>
-            <li id="edit" style="background-color: darkgreen; color: #fff;">Edit</li>
-            <li id="duplicate">Duplicate</li>
-            <li id="component" style="background-color: yellow;">(Row) Make Active</li>
-            <li id="empty" style="background-color: lightgreen; color: #333;">Empty</li>
-            <li id="delete" style="background-color: red; color: #fff;">Delete</li>
-            <li id="close" style="background-color: rgb(21, 0, 114); color: #fff;">Close</li>
+            <li  class="cmenulist compaddsystem"   style="background-color: rgb(140, 175, 0); color: #fff;  min-height: 50px;  ">
+                
+
+
+<span  style="font-size: 0.8rem;"> Add Componet :Before </span>
+
+ <div id="asdf1" style="width: 20px; height: 20px; float: right; margin-left: 10px; border-radius: 50px; background-image: url(assets/redbutton.png); background-size: cover;"></div>
+
+                <select name="adder-comp-a" id="adder-comp-a" style="float: right; width: 100%;">
+                    <option value="100">100% Width</option>
+                    <option value="50">50% Width</option>
+                    <option value="33">33% Width</option>
+                    <option value="25">25% Width</option>
+                    <option value="20">20% Width</option>
+                                </select>
+            
+
+           
+            
+            
+            </li>
+            <li class="cmenulist compaddsystem"   style="background-color: rgb(122, 182, 1); color: #fff;  min-height: 50px; ">
+                
+                <span  style="font-size: 0.8rem;"> Add Componet :After</span>
+
+                <div id="asdf2" style="width: 20px; height: 20px; float: right; margin-left: 10px; border-radius: 50px;  background-image: url(assets/redbutton.png); background-size: cover;"></div>
+            
+                <select name="adder-comp-b" id="adder-comp-b" style="float: right; width: 100%;">
+                    <option value="100">100% Width</option>
+                    <option value="50">50% Width</option>
+                    <option value="33">33% Width</option>
+                    <option value="25">25% Width</option>
+                    <option value="20">20% Width</option>          
+                 </select>
+
+             
+            
+            
+            </li>
+            
+            <li  class="cmenulist rowaddsystem"  style="background-color: rgb(39, 134, 202); color: #fff; min-height: 50px;  ">
+                <span  style="font-size: 0.8rem;">      Add Row :Before</span>
+                <div id="asdf3" style="width: 20px; height: 20px;  float: right; margin-left: 10px; border-radius: 50px; background-image: url(assets/redbutton.png); background-size: cover;"></div>
+
+                <select name="adder-row-a" id="adder-row-a" style="float: right; width: 100%;">
+                    <option value="100">100% Width</option>
+                    <option value="50">50% Width</option>
+                    <option value="33">33% Width</option>
+                    <option value="25">25% Width</option>
+                    <option value="20">20% Width</option>          
+                 </select>
+            
+            </li>
+            <li class="cmenulist rowaddsystem"  style="background-color: rgb(3, 95, 128); color: #fff;  min-height: 50px; ">
+                <span  style="font-size: 0.8rem;">  Add 100% :After</span>
+                <div id="asdf4" style="width: 20px; height: 20px; float: right; margin-left: 10px; border-radius: 50px; background-image: url(assets/redbutton.png); background-size: cover;"></div>
+            
+                <select name="adder-row-a" id="adder-row-a" style="float: right; width: 100%;">
+                    <option value="100">100% Width</option>
+                    <option value="50">50% Width</option>
+                    <option value="33">33% Width</option>
+                    <option value="25">25% Width</option>
+                    <option value="20">20% Width</option>          
+                 </select>
+            
+            </li>
+            <li id="edit" style="background-color: darkgreen; color: #fff; text-align: center;">Edit</li>
+            <li id="duplicate" style="text-align: center;">Duplicate</li>
+            <li id="component" style="background-color: yellow;text-align: center;">(Row) Make Active</li>
+            <li id="textarea" style="background-color: black; color: yellow;text-align: center;">Exit Edit Mode</li>
+            <li id="empty" style="background-color: lightgreen; color: #333;text-align: center;">Empty</li>
+            <li id="delete" style="background-color: red; color: #fff;text-align: center;">Delete</li>
+            <li id="close" style="background-color: rgb(21, 0, 114); color: #fff;text-align: center; ">Close</li>
         </ul>
     </div>
 
 
 
+<style>
+    #urlModal, #myModalcontent {
+    z-index: 99999999999999;
+    position: absolute; /* Check if 'fixed' might be better for modals */
+}
 
+#urlmodel-internal {
+    background: #333; /* Dark background for the modal */
+    padding: 20px;
+    color: #fff; /* Light text for high contrast and readability */
+    border-radius: 5px;
+    width: 430px; /* Fixed width */
+    position: fixed;
+    top: 50%; /* Centering vertically */
+    left: 50%; /* Centering horizontally */
+    transform: translate(-50%, -50%); /* Perfect center alignment */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* Subtle shadow to add depth */
+}
+
+input[type="text"]#imageUrl {
+    width: 98% !important; /* Full width of the modal */
+    padding: 8px; /* Adequate padding for ease of input */
+    border-radius: 3px; /* Slightly rounded corners */
+    border: 1px solid #555; /* Subtle border that fits the dark theme */
+    background-color: #444; /* Slightly lighter than the modal for contrast */
+    color: #ddd; /* Light color for the text input for readability */
+    margin-bottom: 10px; /* Space below the input field */
+}
+
+#submitUrl, #cancelUrl {
+    background-color: #444; /* Darker background for buttons to fit the theme */
+    color: #fff; /* White text for contrast and visibility */
+    border-radius: 3px; /* Rounded corners for a modern look */
+    border: none; /* No border for a cleaner look */
+    cursor: pointer; /* Cursor pointer for interactive elements */
+    padding: 10px 20px; /* Padding for button size and comfort */
+    font-size: 1rem; /* Adequate font size for button text */
+    margin-top: 5px; /* Space between buttons */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for visual feedback */
+}
+
+#submitUrl:hover, #cancelUrl:hover {
+    background-color: #0056b3; /* Highlight on hover */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Shadow effect for depth on hover */
+}
+
+#urlModal {
+    display: none; /* Initially hidden, to be shown via JavaScript */
+}
+</style>
 
 
 
@@ -487,6 +694,50 @@
     </div>
 
 
+<style>
+    #customModal, #urlModal, #myModalcontent {
+    z-index: 99999999999999;
+    position: absolute; /* You might want to check if 'fixed' would be better for modals */
+}
+
+#customModal-internal {
+    background: #333; /* Dark background for the modal */
+    color: #fff; /* Light text for high contrast and readability */
+    padding: 20px;
+    border-radius: 5px;
+    width: 36%;
+    position: fixed;
+    top: 50%; /* Centering vertically */
+    left: 50%; /* Centering horizontally */
+    transform: translate(-50%, -50%); /* Perfect center alignment */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* Subtle shadow to add depth */
+}
+
+.secondmodal {
+    width: 100%; /* Full width inside the modal */
+    padding: 10px 20px; /* Adequate padding for touch friendliness */
+    border: none; /* Removing border for a cleaner look */
+    background: #444; /* Slightly lighter than modal for subtle contrast */
+    color: #fff; /* Maintaining light text for readability */
+    font-size: 1rem; /* Adequate font size for clarity */
+    text-align: center; /* Center align text */
+    border-radius: 3px; /* Rounded corners */
+    margin-top: 10px; /* Space between buttons */
+    cursor: pointer; /* Indicate button functionality */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
+}
+
+.secondmodal:hover {
+    background-color: #0056b3; /* Bright color for hover to stand out */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5); /* Deeper shadow on hover for 3D effect */
+}
+
+#customModal {
+    display: none; /* Initially hidden, show with JS as needed */
+}
+</style>
+
+    
 
     <div id="customModal" style="display: none;">
         <div id="customModal-internal">
@@ -507,6 +758,58 @@
         </div>
     </div>
 
+
+<style>
+    .customModal, #urlModal, #myModalcontent {
+    z-index: 99999999999999;
+    position: absolute;
+    display: none;
+}
+
+.modal-content {
+    background-color: #222; /* Dark background for the modal content */
+    margin: 15% auto;
+    padding: 20px;
+    border: none; /* Removing border for a cleaner look */
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    color: #fff; /* White text for contrast */
+    border-radius: 8px; /* Rounded corners for a softer, modern look */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5); /* Shadow for depth */
+}
+
+#yesBtn99, #yescopyBtn99, #closediag99 {
+    background-color: #333; /* Dark button background */
+    color: #fff; /* White text for visibility */
+    border-radius: 3px; /* Rounded corners */
+    padding: 10px 20px; /* Adequate padding for better clickability */
+    cursor: pointer;
+    margin: 10px 5px; /* Spacing between buttons */
+    transition: background-color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+#yesBtn99:hover, #yescopyBtn99:hover, #closediag99:hover {
+    background-color: #0056b3; /* Highlight on hover */
+}
+
+#optionb4 {
+    width: auto; /* Auto width for checkbox */
+    vertical-align: middle; /* Align with label */
+    margin-left: 5px; /* Space after label */
+    cursor: pointer;
+}
+
+label[for="optionb4"] {
+    color: #ccc; /* Light grey for text, better contrast with dark background */
+    cursor: pointer;
+}
+
+
+</style>
+
+
+    
 
     <div id="myModalcontent" class="modal">
         <div class="modal-content">
@@ -600,6 +903,7 @@
                 :root {
                     --width33c-width: 33%;
                     --width33c3-width: 49%
+                    --width33c4-width: 99%
                 }
 
                 #mobilepreview2 .width33c {
@@ -641,7 +945,98 @@
                     width: 0%;
                     transition: width 0.4s ease-in-out;
                 }
+
+                #contextMenu #textarea {
+                    display: none;
+                }
+
+                h4.t-h4-style {
+                    margin: 5px;
+                }
+
+
+                #mobilepreview2 .width50c2 {
+                    width: var(--width33c4-width) !important  
+                }
+
             </style>
+
+
+
+
+
+
+
+<style>
+
+ input[type="range"] {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #555;
+    border-radius: 3px;
+    padding: 8px;
+    width: 93%;
+    box-sizing: border-box;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 93%;
+    background: #444;
+    height: 2px;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.liverow {
+    background-color: #dbdbdb !important;
+}
+.liverow:hover {
+    background-color: #fff !important;
+}
+
+.onblock {
+    background-color: rgb(166 205 251 / 40%) !important;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             <div class="newtopmenu" style="float: left; width: 100%; position: relative;">
@@ -651,7 +1046,7 @@
                         <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Import"
                             style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
                                 src="assets/iconimport.png" /></div>
-                        <div class="unselectable-text thetopbox mytoolsboxtop letbutton21" whatbox="Layout"
+                        <div class="unselectable-text thetopbox mytoolsboxtop letbutton21 thestartbutton" whatbox="Layout"
                             style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 60%;"
                                 src="assets/rowicon.png" /></div>
                         <div class="unselectable-text thetopbox mytoolsboxtop2 letbutton21" whatbox="Tools"
@@ -671,6 +1066,15 @@
                             style="width: 15% !important;height: 30px;padding: 0px; display: none; " whatbox="Blog">
                             <img style="width: 56%; margin-left: 18%;" src="assets/iconblog.png" />
                         </div>
+
+                        <div class="width33c" >
+                            <img id="savetomemory"
+                                style="width: 60% !important;  max-width: 28px; float: left; cursor: pointer; "
+                                src="assets/saveme.png" title="Save to Memory" />
+                        </div>
+
+
+
                     </div>
 
                 </div>
@@ -1044,255 +1448,166 @@
                 </div>
             </div>
 
+
+            <style>
+  .toolboxlayoutoptions {
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.toolboxlayoutoptions input[type="file"],
+.toolboxlayoutoptions input[type="text"],
+.toolboxlayoutoptions button {
+    margin-bottom: 15px;
+    width: 95%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+.toolboxlayoutoptions button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toolboxlayoutoptions button:hover {
+    background-color: #0056b3;
+}
+
+.toolboxlayoutoptions input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+}
+
+.toolboxlayoutoptions .hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toolboxlayoutoptions .hamburger:hover {
+    background-color: #444;
+}
+
+
+#nametextfile {
+    display: none;
+    max-width: 200px;
+}
+
+#export {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+#export:hover {
+    background-color: #218838;
+}
+
+#import {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+}
+
+#import:hover {
+    background-color: #e0a800;
+}
+
+
+
+
+#mytoolsview,
+#mysort,
+#mysortcomponents {
+    margin-left: 5px;
+}
+            </style>
+      
             <div class="width100c toolboxlayoutoptions unselectable-text htmlimporter"
-                style="width: 98%; margin-left:4%; margin-top:10px">
-
-                <div class="width100c">Import: Word .docx / Text / .HTML</div>
-                <input type="file" id="fileimport" accept=".html,.txt,.docx">
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.7.1/mammoth.browser.js"></script>
-
-
-
-
-
-            </div>
-
-            <!--
-            <div class="width100c toolboxlayoutoptions unselectable-text blogbuilder"
-                style="width: 95%; margin-left:4%; margin-top:10px; max-height: 770px; overflow: auto;">
-
-                <div class="width100c" style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; ">Publish
-                    Date</div>
-                <div class="width100c" style="margin-bottom: 10px;">
-                    <input type="date">
-                </div>
-
-                <div class="width100c"
-                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; margin-top: 10px; font-size: 0.8rem; ">
-                    Author</div>
-                <div class="width100c" style="margin-bottom: 10px;">
-                    <input type="text">
-                </div>
-
-                <div class="width100c"
-                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; margin-top: 10px; font-size: 0.8rem; ">
-                    Blog Title</div>
-                <div class="width100c" style="margin-bottom: 10px;">
-                    <input type="text">
-                </div>
-
-
-                <div class="width100c"
-                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; margin-top: 10px; font-size: 0.8rem; ">
-                    Featured
-                    Image</div>
-                <div class="width100c" style="margin-bottom: 10px;">
-                    <input type="text">
-                </div>
-                <div class="width100c"
-                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; font-size: 0.8rem; ">Excerpt
-                </div>
-                <div class="width100c" style="margin-bottom: 10px;">
-
-                    <textarea name="" id="" cols="5" rows="5" style="width: 94%; min-height: 100px;"></textarea>
-                </div>
-                <div class="width100c"
-                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 96%; font-size: 0.8rem; ">Tags
-                </div>
-                <div class="width100c" style="margin-bottom: 10px;">
-                    <input type="text">
-                </div>
-
-
-                <div class="width100c"
-                    style="margin-bottom: 10px; border-bottom: 1px solid #fff; width: 94%; font-size: 0.8rem; ">
-                    Categories</div>
-
-                <div class="width100c" style="max-height: 250px; overflow: auto; width: 94%;">
-                    <style>
-                        #blogcats div input {
-                            width: auto;
-                            font-size: 0.8rem !important;
-                        }
-
-                        #blogcats div label {
-                            font-size: 0.85rem;
-                        }
-
-                        #blogcats input,
-                        #blogcats textarea {
-                            font-size: 0.8rem !important;
-                        }
-                    </style>
-
-                    <form id="blogcats" style="width: 75%;">
-                        <div>
-                            <input type="checkbox" id="mainCheckbox" name="mainCheckbox">
-                            <label for="mainCheckbox">About P.C. Richard & Son</label>
-                        </div>
-
-
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="mainCheckbox" name="mainCheckbox">
-                            <label for="mainCheckbox">Main Checkmark</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox1" name="subCheckbox1" class="subCheckbox">
-                            <label for="subCheckbox1">Air Conditioners</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox2" name="subCheckbox2" class="subCheckbox">
-                            <label for="subCheckbox2">Air Purifiers</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox3" name="subCheckbox3" class="subCheckbox">
-                            <label for="subCheckbox3">Dehumidifiers</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox4" name="subCheckbox4" class="subCheckbox">
-                            <label for="subCheckbox4">Fans</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Heaters</label>
-                        </div>
-
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Humidifiers</label>
-                        </div>
-
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="mainCheckbox" name="mainCheckbox">
-                            <label for="mainCheckbox">Audio</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox1" name="subCheckbox1" class="subCheckbox">
-                            <label for="subCheckbox1">Audio Cables & Accessories</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox2" name="subCheckbox2" class="subCheckbox">
-                            <label for="subCheckbox2">Audio Components</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox3" name="subCheckbox3" class="subCheckbox">
-                            <label for="subCheckbox3">Audio Players</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox4" name="subCheckbox4" class="subCheckbox">
-                            <label for="subCheckbox4">Headphones</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Karaoke & Instruments</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Speakers</label>
-                        </div>
-
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Car Audio & Electronics</label>
-                        </div>
-
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Automotive Lighting</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Car Alarms & Remote Starts</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Car Audio</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Dashcams & Backup Cameras</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Marine Audio & Lighting</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Portable GPS Navigation</label>
-                        </div>
-
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Outdoor Living</label>
-                        </div>
-
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Coolers & Drinkware</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Generators</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Grills & BBQ Accessories</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Outdoor Power Equipment</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Patio Furniture</label>
-                        </div>
-
-
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Small Appliances & Vacuums</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Housewares</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Small Appliances</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Vacuums</label>
-                        </div>
-
-
-
-
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Smart Home</label>
-                        </div>
-
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Smart Home Essentials</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Smart Home Security</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Smart Lighting</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Smart Speakers & Displays</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Smart WiFi Thermostats</label>
-                        </div>
+            style="width: 85%; margin-left: 4%; margin-top: 10px;">
+       
+           <div class="width100c" style="margin-bottom: 15px;">Import: Word .docx / Text / .HTML</div>
+           <input type="file" id="fileimport" accept=".html,.txt,.docx" style="margin-bottom: 20px;">
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.7.1/mammoth.browser.js"></script>
+       
+           <div class="width100c" style="margin-bottom: 15px;">
+               <input id="nametextfile" type="text" placeholder="filename" style="max-width: 200px; display: none;">
+               <button id="export" class="unselectable-text" style="background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; border-radius: 5px;">Save Workspace <span style="color: #f0cd97;">&uarr;</span></button>
+           </div>
+       
+           <div class="width100c" style="margin-bottom: 15px;">
+               <button id="import" class="unselectable-text" accept=".txt" style="background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; border-radius: 5px;">Load Workspace <span style="color: #f0cd97;">&darr;</span></button>
+               <input type="file" id="fileInput" accept=".txt" placeholder="Imported file" style="display: none;">
+           </div>
+       
+           <div class="width100c" style="margin-bottom: 15px;">
+               <div class="width20c" style="width: auto; min-width: 10%">Sort / Reorder :</div>
+           </div>
+       
+           <div class="width100c" style="margin-bottom: 15px;">
+               <div class="width20c" style="width: auto; min-width: 10%; margin-left: 10px;">
+                   <div class="width50c" style="max-width: 36px;">
+                       <img style="width: 87%; float: left;" src="assets/rowicon.png" title="Sort Rows">
+                   </div>
+                   <div class="width50c">
+                       <input type="checkbox" id="mysort" name="mysort" class="mysort" style="width: 20px; height: 20px; margin-top: 0px; float: left;">
+                   </div>
+               </div>
+       
+               <div class="width20c">
+                   <div class="width50c" style="max-width: 36px;">
+                       <img style="width: 80%; float: left;" src="assets/compicon.png" title="Sort Components">
+                   </div>
+                   <div class="width50c">
+                       <input type="checkbox" id="mysortcomponents" name="mysortcomponents" class="mysortcomponents" style="width: 20px; height: 20px; margin-top: 0px; float: left;">
+                   </div>
+               </div>
+           </div>
+       
+           <div class="width100c" style="margin-bottom: 15px; display: none;">
+               <div class="width50c" style="max-width: 70px;">Fullscreen</div>
+               <div class="width50c">
+                   <input type="checkbox" id="mytoolsview" name="mytoolsview" class="mytoolsview" style="width: 20px; height: 20px; margin-top: 0px; float: left; margin-right: 5px;">
+               </div>
+           </div>
+       
+           <div class="width100c" style="display: none;">
+               <div class="hamburger">
+                   <svg version="1.1" style="width: 100%;" id="asdf" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
+                        style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                       <style type="text/css">
+                           .st0 {
+                               display: none;
+                           }
+                           .st1 {
+                               stroke: #FFFFFF;
+                               stroke-width: 6;
+                               stroke-miterlimit: 10;
+                           }
+                       </style>
+                       <rect x="-0.2" y="-0.3" class="st0" width="50.2" height="51" />
+                       <line class="st1" x1="6" y1="11.8" x2="43.6" y2="11.6" />
+                       <line class="st1" x1="6.2" y1="25.3" x2="43.8" y2="25.2" />
+                       <line class="st1" x1="6" y1="39.6" x2="43.6" y2="39.5" />
+                   </svg>
+               </div>
+           </div>
+       
+       </div>
 
 
 
@@ -1300,103 +1615,6 @@
 
 
 
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">TV & Home Theater</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Blu-Ray & DVD Players</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Outdoor Televisions</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Projectors</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Streaming Media Players</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">TV & Home Theater</label>
-                        </div>
-
-
-
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Uncategorized</label>
-                        </div>
-
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Video Games & Toys</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Cameras & Camcorders</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Drones</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Toys</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Video Games</label>
-                        </div>
-
-
-
-
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Washers & Dryers</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Dryers</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Washer & Dryer Combos</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Washers</label>
-                        </div>
-
-
-                        <div style="margin-top: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Water Heaters</label>
-                        </div>
-                        <div style="margin-left: 20px;">
-                            <input type="checkbox" id="subCheckbox5" name="subCheckbox5" class="subCheckbox">
-                            <label for="subCheckbox5">Water Heaters</label>
-                        </div>
-
-                    </form>
-
-                </div>
-
-                <div class="width100c" style="margin-top: 10px;">
-
-                    <div class="width50c"><button>Clear Categorie Checkboxes</button></div>
-                    <div class="width50c">Enable Blog Features <input type="checkbox" id="subCheckbox5"
-                            style="width: auto;"></div>
-                </div>
-
-            </div>
-
--->
 
             <div class="width100c toolboxlayoutoptions unselectable-text layoutbuilder-oc2"
                 style="width: 98%; margin-left:4%; margin-top:10px">
@@ -1886,8 +2104,8 @@
                         <div class="width100c">
 
                             <div class="width30c span50small" style="width: 33%;">
-                                <button id="colorswatch2">
-                                    Select Header Color
+                                <button id="colorswatch2" style="padding-top: 5px;">
+                                    Header Color
                                 </button>
                             </div>
                             <div class="width30c span50small" style="width: 33%;">
@@ -2748,6 +2966,7 @@
 
 
                             <div class="form-group">
+                               
                                 <button type="button" id="exportList" class="list-button">Export List</button>
                                 <button type="button" id="importList" class="list-button">Import List</button>
                                 <input type="file" id="fileInputList" style="display: none;">
@@ -3208,8 +3427,8 @@
 
 
 
-            <div class="width100c toolboxhide"
-                style="margin-top: 30px;  padding: 5px; width: 97%; padding-bottom: 5px;">
+            <div class="width100c toolboxhide codechanger"
+                style="margin-top: 5px;  padding: 5px; width: 97%; padding-bottom: 5px;">
                 <div class="width100c unselectable-text" style="margin-bottom: 5px; padding-left: 15px;">
 
                     <div class="width60c " style="font-size: 90% !important;">
@@ -3233,27 +3452,32 @@
 
 
 
-                <textarea name="myhtmleditor" id="myhtmleditor" cols="30" rows="8"
+                <textarea name="myhtmleditor" id="myhtmleditor" class="codechanger" cols="30" rows="8"
                     placeholder="Click on a Component to Edit the HTML"></textarea>
-
+                   
 
 
 
 
                 <div class="width100c" id="bottommatrix">
                     <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix7"
-                        style=" color: #fff !important;width: 27%;">
+                        style=" color: #fff !important;width: 14%;">
                         <img src="assets/help.png" style="width: 30%;" title="Help">
                     </div>
 
-                    <div id="whatsnewwb" class="width30c advanced-Buttons" style=" color: #fff !important; width: 30%">
-
-                        <img src="assets/whatsnew.png" style="width: 30%;" title="Whats New">
-                    </div>
                     <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix3"
-                        style=" color: #fff !important; width: 27%;">
+                        style=" color: #fff !important; width: 14%;">
                         <img src="assets/advanded-code.png" style="width: 30%;" title="Advanced Code Editor">
                     </div>
+
+                    <div id="whatsnewwb" class="width30c advanced-Buttons" style=" color: #fff !important; width: 16%">
+                        <img src="assets/whatsnew.png" style="width: 30%;" title="Whats New">
+                    </div>
+
+                 
+
+
+
                 </div>
 
 
@@ -3269,146 +3493,17 @@
 
         <div class="promo50" id="resizable-div">
 
-            <div id="toptoolsblock" class="prod100"
-                style="margin: 0px;  margin-left: 4%; width: 93%;background-color: transparent; ">
-
-                <div class="prod100"
-                    style="padding-left: 0px; margin-left: -10px; width: 100%; margin-top: -10px; border-bottom: 1px solid #ccc; min-height: auto; background-color: transparent;">
-                    <div style="float: left; display: none;">Edit Mode </div>
-                    <input type="checkbox" id="editmode" name="editmode">
-
-
-
-
-                    <div class="width50c" style="min-height: auto; padding-bottom: 0px; width: 60%;">
-                        <div class="hamburger">
-
-                            <?xml version="1.0" encoding="utf-8"?>
-                            <!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                            <svg version="1.1" style="width:100%" id="asdf" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
-                                style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                                <style type="text/css">
-                                    .st0 {
-                                        display: none;
-                                    }
-
-                                    .st1 {
-                                        stroke: #FFFFFF;
-                                        stroke-width: 6;
-                                        stroke-miterlimit: 10;
-                                    }
-                                </style>
-                                <rect x="-0.2" y="-0.3" class="st0" width="50.2" height="51" />
-                                <line class="st1" x1="6" y1="11.8" x2="43.6" y2="11.6" />
-                                <line class="st1" x1="6.2" y1="25.3" x2="43.8" y2="25.2" />
-                                <line class="st1" x1="6" y1="39.6" x2="43.6" y2="39.5" />
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                            </svg>
-
-
-                        </div>
-
-
-                        <div class="width100c" id="fullscreenresort" style="    margin-bottom: -12px;margin-top: -6px;">
-
-                            <div class="width20c" style="width: auto; min-width: 10%">Sort / Reorder :</div>
-
-                            <div class="width20c" style="width: auto;min-width: 10%; margin-left:10px ">
-                                <div class="width50c" style="max-width: 36px;"><img
-                                        style="width: 87% !important; float: left;" src="assets/rowicon.png"
-                                        title="Sort Rows"> </div>
-                                <div class="width50c"> <input type="checkbox" id="mysort" name="mysort" class="mysort"
-                                        style="width: 10px; zoom: 2; margin-top: 0px; float: left;"></div>
-                            </div>
-
-                            <div class="width20c">
-                                <div class="width50c" style="max-width: 36px;"> <img
-                                        style="width: 80% !important; float: left;" src="assets/compicon.png"
-                                        title="Sort Components"></div>
-                                <div class="width50c"><input type="checkbox" id="mysortcomponents"
-                                        name="mysortcomponents" class="mysortcomponents"
-                                        style="width: 10px; zoom: 2; margin-top: 0px; float: left;"></div>
-                            </div>
-                            <div class="width30c">
-                                <div class="width50c" style="max-width: 70px;"> Fullsreeen</div>
-                                <div class="width50c"> <input type="checkbox" id="mytoolsview" name="mytoolsview"
-                                        class="mytoolsview"
-                                        style="width: 10px; zoom: 2; margin-top: 0px; float: left; margin-right:5px">
-                                </div>
-
-                            </div>
-
-
-
-                        </div>
-
-
-
-
-
-                    </div>
-
-
-
-
-                    <div class="width50c" style="min-height: auto; padding-bottom: 0px; width: 30%; float: right;">
-
-                        <input id="nametextfile" type="text" placeholder="filename"
-                            style="float: right; max-width: 200px; display: none;">
-                        <button id="export" class="unselectable-text"
-                            style="float: right; margin-right: -8%; background-color: transparent; color: #fff;">Save
-                            Workspace <span style="color: #f0cd97;">&uarr;</span></button>
-                        <button id="import" class="unselectable-text" accept=".txt"
-                            style="float: right; margin-right: 1%; background-color: transparent; color: #fff;">Load
-                            Workspace
-                            <span style="color: #f0cd97;"> &darr;</span></button>
-                        <input type="file" id="fileInput" accept=".txt" placeholder="Imported file"
-                            style="display: none;">
-
-
-
-
-
-
-
-
-                    </div>
-
-
-
-
-                </div>
-            </div>
-
-
-
+    
             <div id="resize-handle"></div>
-
-
-
-
-
-
 
 
             <div class="width100c" style="margin-bottom: 0px;   width: 94%; margin-left: 4%;">
 
                 <div class="width100c" style=" margin-left: 1%; width: 98%; min-height: 20px; overflow: auto; ">
                     <div class="width100c" style="width: 462px;">
-                        <div class="openthematrix" mymatrix="mymatrix6" style="float: right;"><strong>Templetes</strong>
-                        </div>
+                        <div class="openthematrix" mymatrix="mymatrix-dark" style="float: right;"><strong>Dark View</strong></div>
+                        <div class="openthematrix" mymatrix="mymatrix6" style="float: right;"><strong>Templetes</strong></div>
+                        
                         <div class="openthematrix" mymatrix="mymatrix1" style="float: right; "><strong>Final
                                 Code</strong></div>
                         <div id="pluginsandtools" class="openthematrix" mymatrix="mymatrix9" style="float: right;">
@@ -3501,9 +3596,7 @@
 
 
             <div id="sidetoolset" class="unselectable-text">
-                <div id="toptoolstoggle"
-                    style="margin-top: 0px; margin-bottom: -30px;  cursor: pointer; float: left; min-height: 30px; text-align: center; position: relative;">
-                    <img src="assets/topmenutools.png" style="width: 80%; margin-left: 10%;"></div>
+             
                 <div class="hover-item" style="margin-left: -5px; margin-top: 22px;">
                     B&bull;I&bull;U
                     <div class="popup hidden" style="margin-left: 0px; margin-top: 10px;">
@@ -3747,6 +3840,11 @@
                             style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 50%; margin-top: 10px; margin-bottom: 5px;">33%
                             Scroller (In Dev)</button>
 
+                            <button class="unselectable-text addrow50x2 addrowslider50" data-layout="50,50"
+                            title="Add a 50% x 2 Slider"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 50%; margin-top: 10px; margin-bottom: 5px;">50%
+                            Scroller (In Dev)</button>
+
                     </div>
                 </div>
 
@@ -3909,8 +4007,9 @@
                         class="informationcontent layoutbuilder   sortable layoutop2 experience-component experience-pcrs_assets-markup">
                     </div>
                 </div>
-
+               
             </div>
+            
 
 
             <div class="width50c" style="max-width: 24%;">
@@ -3928,6 +4027,7 @@
                 <div id="explorer2" class="width100c explorerd"
                     style="margin-top: 3px; padding-left: 0px; margin-left: -10px; margin-top: 10px; width: 100%; ">
                 </div>
+                <div  class="saveinfo" style="font-size: 0.6rem; color: yellow; float: left; text-align: right; width: 96%;">Save Pending</div>
             </div>
 
 
@@ -4035,7 +4135,9 @@
 
     <div id="fullembedcodeddd">
 
-        <div style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left; max-width: 1560px;"
+        <div style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left; max-width: 1560px;    max-height: 900px;
+        overflow: hidden;
+        overflow-y: auto;"
             id="fullembedcodeddd2">
 
             <div class="pcrtitleclass"><span
@@ -4078,7 +4180,7 @@
     <script src="js2/progamscript-beta.js"></script>
     <script src="js2/applicationfunctions.js"></script>
 
- -->
+
     <script src="js3/explorer-beta2.js"></script>
     <script src="js3/primary.js"></script>
     <script src="js3/internalfunctions.js"></script>
@@ -4087,5 +4189,7 @@
     <script src="js3/saverestore.js"></script>
     <script src="js3/videoconverter.js"></script>
     <script src="js3/listmaker.js"></script>
+ -->
+ <script src="js4/complete.js"></script>
 
 </body>

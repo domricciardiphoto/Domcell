@@ -4,49 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About DOMCELL 2023</title>
+    <title>About DOMCELL 2024</title>
 
     <style>
         body {
-            background-color: green;
-            color: #000;
+            background-color: #121212; /* Dark background for better contrast */
+            color: #E0E0E0; /* Light text color for readability */
             text-align: center;
-            background-image: url('assets/background-green.png');
+            background-image: url('assets/background-dark.jpg'); /* Updated dark themed background */
             background-size: cover;
             cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition for background color */
         }
         .centercontent {
-            margin-top: 30%;
+            margin-top: 20%; /* Adjusted for better spacing */
             font-weight: bolder;
-           
+            animation: fadeIn 2s ease-out; /* Adding fade-in animation */
         }
 
         .centercontent h1 {
-    font-size: 3.2rem;
-    padding-bottom: 0px;
-    margin-bottom: 10px;
-    
-}
+            font-size: 3.2rem;
+            padding-bottom: 0px;
+            margin-bottom: 10px;
+        }
 
         .boxcontent {
             text-align: left;
-            width: 50%;
+            width: 60%; /* Adjusted width for better alignment */
             float: left;
-            margin-left: 10%;
-            line-height: 25px;
+            margin-left: 20%; /* Centering the box content */
+            line-height: 1.6; /* Improved line spacing */
             font-weight: bold;
             margin-top: 30px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the text box */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners for the box */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
-<body >
+<body>
     <div id="contercontent" class="centercontent">
-        <h1>DOMCELL 9.0.29</h1>
+        <h1>DOMCELL 9.1.4</h1>
         <span class="version"></span>
     </div>
 
     <div class="boxcontent">
-    Tool Framework:Domcell 4<br>
+        Tool Framework: Domcell 5<br>
         Core Framework: Electron 29<br>
         PCR Badge CSS Ver: Beta 12<br>
         PCR Secondary Badge CSS Ver: 1.0
@@ -56,26 +64,21 @@
 </html>
 
 <script>
-   
     const { ipcRenderer } = require('electron');
 
-
     document.body.addEventListener('mouseover', () => {
-        document.body.style.opacity = '0.8';
+        document.body.style.backgroundColor = '#263238'; /* Darker shade on hover */
     });
 
     document.body.addEventListener('mouseout', () => {
-        document.body.style.opacity = '1';
+        document.body.style.backgroundColor = '#121212'; /* Return to original background */
     });
 
     document.body.addEventListener('click', () => {
         ipcRenderer.send('close-window');
     });
 
-    setTimeout(function() {
-        const { ipcRenderer } = require('electron');
+    setTimeout(() => {
         ipcRenderer.send('close-window');
     }, 7000); 
-
 </script>
-

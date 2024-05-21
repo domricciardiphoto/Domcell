@@ -1,0 +1,4201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page Builder</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
+    <script src="231.js"></script>
+    <link rel="stylesheet" href="application.css">
+    <link rel="stylesheet" href="css/videocomponent.css">
+    <link rel="stylesheet" href="css/listbuilder.css">
+  
+
+    <style>
+        body {
+            user-select: none;
+            background-color: rgb(37, 37, 37);
+            background-image: url('assets/web-designer-version-dark-2.jpg');
+            background-size: cover;
+
+        }
+
+        #fullinterface {
+            position: absolute;
+            left: 3px;
+            top: 5px;
+            width: 99.7%;
+            background-image: url('assets/dark-overlay.png');
+            background-size: cover;
+            background-position: bottom;
+            background-color: transparent;
+
+        }
+
+        #EditandSubmitAL {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            font-size: 80%;
+            border-radius: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .hamburger {
+            display: none;
+            float: left;
+        }
+
+        #sidetoolset {
+            float: left;
+            width: 3%;
+            margin-right: 1%;
+            margin-left: 0%;
+            height: auto;
+            margin-top: -30px;
+            min-width: 36px
+        }
+
+        #codeloaderpcrview .interedit {
+            background-color: transparent !important;
+        }
+
+        #codeloaderpcrview div {
+            background-color: transparent !important;
+        }
+
+
+
+
+        .liverow {
+            user-select: none;
+        }
+
+        .interedit p,
+        .interedit h3,
+        .interedit h2,
+        .interedit h4,
+        .interedit li,
+        #findthecode2,
+        .totalinternalcontent,
+        #thisisthefinalcode,
+        #pullthecode2 {
+            user-select: text;
+
+        }
+
+        .interedit {
+            caret-color: red;
+            caret-color: #ff0000;
+            caret-color: rgb(255, 0, 0);
+            caret-color: hsl(0, 97%, 50%);
+
+        }
+
+        #pullthecode2 {
+            user-select: text;
+            caret-color: red;
+        }
+
+
+
+        .width33cg {
+            width: 20%;
+            float: left;
+        }
+
+        .width33cg ul li {
+            margin-bottom: 0px;
+            max-width: 100px;
+            max-width: 192px;
+        }
+
+        .width33cg ul li a {
+            text-decoration: none;
+            font-size: 0.8rem;
+            line-height: 10px;
+        }
+
+        #content-asset-d2 {
+            user-select: text;
+        }
+
+        .hidecss {
+            display: block;
+        }
+
+        .outsideplugins {
+            border: 1px solid #ccc;
+            background-color: #000;
+            padding: 5px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 0.7rem;
+            color: yellow;
+        }
+
+        .htmlimporter,
+        .blogbuilder {
+            display: none;
+        }
+
+        .openthematrix {
+            border-radius: 5px 5px 0px 0px;
+        }
+
+        #explorerpanel {
+            display: none;
+        }
+
+
+
+
+        #explorer .indent,
+        #explorer2 .indent {
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 2px;
+            padding-left: 10px;
+            max-width: 68%;
+        }
+
+        #sliderLabel[contenteditable="true"] {
+            border-color: blue;
+        }
+
+        .indent {
+            font-size: 0.9rem;
+            padding-left: 4px;
+        }
+
+        .indentselected {
+            background-color: rgba(0, 128, 0, 0.3);
+            border: 1px solid #ccc;
+
+        }
+
+
+        .tagmangaerright,
+        .tagmangaerright2,
+        .tagmangaerright3,
+        .tagmangaerright4 {
+            text-align: right;
+            color: #fff;
+            float: right;
+            margin-right: 20px;
+            font-size: 2rem;
+            margin-top: -4px;
+            cursor: pointer;
+        }
+
+        .myrowbuilder,
+        #comptoolslist {
+            display: none;
+        }
+
+
+
+
+
+
+
+        #explorer,
+        #explorer2 {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #ccc;
+            padding: 5px;
+            overflow: auto;
+            height: 90vh;
+            max-height: 350px;
+            width: 92%;
+            margin-left: 3%;
+            border-radius: 8px;
+            margin-top: 7px !important;
+        }
+
+        #explorer2 {
+            margin-left: -1px !important;
+            border: 1px solid #ccc;
+            width: 98% !important;
+        }
+
+        .indent {
+            padding: 8px;
+            margin: 2px 0;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+            background-color: #222;
+            /* Slightly lighter than background for visibility */
+            color: #ddd;
+            /* Light gray text */
+        }
+
+        .indent:hover {
+            background-color: #333;
+            /* Dark gray on hover */
+            cursor: pointer;
+        }
+
+        .indentselected {
+            border-left: 3px solid #007bff;
+            /* Bright blue for visibility */
+            background-color: #1a1a1a;
+            /* Very dark gray selected background */
+        }
+
+        .indent strong {
+            color: #fff;
+            /* White text for strong tags */
+        }
+
+        .indent span {
+            font-size: 12px;
+            color: #999;
+            /* Lighter gray for smaller text */
+        }
+
+        /* Custom colors for specific tags or classes, using brighter colors for visibility */
+        .indent[data-tag="DIV"] {
+            border-color: #4caf50;
+            /* Green */
+        }
+
+        .indent[data-tag="P"] {
+            border-color: #f44336;
+            /* Red */
+        }
+
+        .indent[data-tag="IMG"] {
+            border-color: #ffeb3b;
+            /* Yellow */
+        }
+
+        .indent[data-tag="A"] {
+            border-color: #2196f3;
+            /* Blue */
+        }
+
+        .indent[data-tag="COMPONENT"],
+        .indent[data-tag="ROW"] {
+            border-color: #9c27b0;
+            /* Purple */
+        }
+
+        .explorerselected {
+            box-shadow: 0 0 10px #666;
+            user-select: text;
+            /* Optional: adds a shadow for better visibility */
+        }
+
+        #codeloaderpcrview .explorerselected {
+            box-shadow: none;
+        }
+    </style>
+
+
+
+
+
+
+
+    <style>
+        #driveContents {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 97%;
+        }
+
+        .width33cg {
+            width: 24%;
+            float: left;
+            padding: 10px;
+            box-sizing: border-box;
+            max-height: 350px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .width33cg ul li a {
+            text-decoration: none;
+            font-size: 0.7rem;
+            line-height: 14px;
+            color: #333 !important;
+        }
+
+        .width33cg ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .width33cg ul li {
+            margin-bottom: 10px;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            color: #333 !important;
+        }
+
+        .width33cg ul li:hover {
+            background: linear-gradient(145deg, #e9e9e9, #cccccc);
+        }
+
+        a.googledrive {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            font-weight: bold;
+        }
+
+        a.googledrive:hover {
+            color: #0056b3;
+        }
+
+
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .width33cg {
+                width: 50%;
+            }
+            #explorer2 {
+    border: 1px solid #ccc;
+    width: 97% !important;
+    font-size: 0.8rem;
+    padding-left: 3% !important;
+    min-width: 399%;
+    float: none;
+    max-height: 236px;
+}
+
+#resizable-div {
+    width: 70% !important;
+}
+
+#pullthecode2 {
+    max-height: 446px;
+}
+
+
+        }
+
+        @media (max-width: 600px) {
+            .width33cg {
+                width: 100%;
+            }
+        }
+
+
+
+        .context-menu ul {
+            list-style: none;
+            padding: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 10px #aaa;
+            border-radius: 8px;
+            margin-top: -9px;
+            margin-left: 56px;
+            background-color: #333;
+        }
+
+        .context-menu ul li {
+            padding: 1px;
+            cursor: pointer;
+            margin-bottom: 3px;
+            font-size: 0.85rem;
+            background-color: #f7f7f7;
+            text-align: center;
+            line-height: 23px;
+        }
+
+        .context-menu ul li:hover {
+            background-color: #f0f0f0;
+        }
+
+
+        .editor-input {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: fit-content;
+            min-height: 200px;
+            word-wrap: break-word
+        }
+
+        #mobilepreview2 {
+            min-height: 461px;
+            background-color: #fff;
+            display: block;
+        }
+
+        #pullthecode2 {
+            display: block;
+        }
+
+        .programoverflow {
+            overflow: auto;
+        }
+
+
+        #explorer2 {
+            margin-left: -1px !important;
+            border: 1px solid #ccc;
+            width: 97% !important;
+            font-size: 0.8rem;
+            padding-left: 3% !important;
+        }
+
+        #mobilepreview2 .width50c3 {
+            width: 49% !important;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <style>
+ #contextMenu {
+    display: block;
+    position: absolute;
+    z-index: 2147483647;
+    left: 50%;
+    top: 451px;
+    width: 15%;
+    font-family: Arial, sans-serif; /* Modern font */
+    color: #fff; /* Light text color for readability */
+    border-radius: 5px;
+}
+
+#contextMenu ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* More prominent shadow for dark theme */
+    border-radius: 5px;
+    background-color: #333; /* Dark background for the menu */
+}
+
+#contextMenu ul li {
+    padding: 4px 12px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    font-size: 1rem;
+    background-color: #444; /* Slightly lighter than menu for contrast */
+    text-align: left;
+    line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 3px;
+}
+
+#contextMenu ul li:hover {
+    background-color: #0056b3;
+    opacity: 0.8; /* Bright color for hover to make it pop */
+}
+
+#contextMenu ul li:not(:last-child) {
+    border-bottom: 1px solid #555; /* Subtle separator that fits the dark theme */
+}
+
+/* Specific background colors for important actions, ensuring visibility */
+#edit { background-color: darkgreen; }
+#duplicate { background-color: #666; /* Darker shade for better theme integration */ }
+#component { background-color: darkgoldenrod; color: #000; /* Adjusted for visibility in dark theme */ }
+#empty { background-color: darkolivegreen; }
+#delete { background-color: darkred; }
+#close { background-color: navy; }
+
+
+
+#mobilepreview .width50c2 {
+    width: 100% !important;
+}
+
+#sidetoolset {opacity: 1;}
+#resizable-div {
+    width: 71.9%;
+}
+
+
+
+    </style>
+
+<style>
+    .delete-transition {
+        transition: opacity 0.5s ease-out;
+        opacity: 0;
+    }
+</style>
+
+
+    <div id="contextMenu" style="display:none; position:absolute; z-index:9999999999999999999000; min-width: 200px" class="context-menu draggable">
+        <ul>
+            <li  class="cmenulist compaddsystem"   style="background-color: rgb(140, 175, 0); color: #fff;  min-height: 50px;  ">
+                
+
+
+<span  style="font-size: 0.8rem;"> Add Componet :Before </span>
+
+ <div id="asdf1" style="width: 20px; height: 20px; float: right; margin-left: 10px; border-radius: 50px; background-image: url(assets/redbutton.png); background-size: cover;"></div>
+
+                <select name="adder-comp-a" id="adder-comp-a" style="float: right; width: 100%;">
+                    <option value="100">100% Width</option>
+                    <option value="50">50% Width</option>
+                    <option value="33">33% Width</option>
+                    <option value="25">25% Width</option>
+                    <option value="20">20% Width</option>
+                                </select>
+            
+
+           
+            
+            
+            </li>
+            <li class="cmenulist compaddsystem"   style="background-color: rgb(122, 182, 1); color: #fff;  min-height: 50px; ">
+                
+                <span  style="font-size: 0.8rem;"> Add Componet :After</span>
+
+                <div id="asdf2" style="width: 20px; height: 20px; float: right; margin-left: 10px; border-radius: 50px;  background-image: url(assets/redbutton.png); background-size: cover;"></div>
+            
+                <select name="adder-comp-b" id="adder-comp-b" style="float: right; width: 100%;">
+                    <option value="100">100% Width</option>
+                    <option value="50">50% Width</option>
+                    <option value="33">33% Width</option>
+                    <option value="25">25% Width</option>
+                    <option value="20">20% Width</option>          
+                 </select>
+
+             
+            
+            
+            </li>
+            
+            <li  class="cmenulist rowaddsystem"  style="background-color: rgb(39, 134, 202); color: #fff; min-height: 50px;  ">
+                <span  style="font-size: 0.8rem;">      Add Row :Before</span>
+                <div id="asdf3" style="width: 20px; height: 20px;  float: right; margin-left: 10px; border-radius: 50px; background-image: url(assets/redbutton.png); background-size: cover;"></div>
+
+                <select name="adder-row-a" id="adder-row-a" style="float: right; width: 100%;">
+                    <option value="100">100% Width</option>
+                    <option value="50">50% Width</option>
+                    <option value="33">33% Width</option>
+                    <option value="25">25% Width</option>
+                    <option value="20">20% Width</option>          
+                 </select>
+            
+            </li>
+            <li class="cmenulist rowaddsystem"  style="background-color: rgb(3, 95, 128); color: #fff;  min-height: 50px; ">
+                <span  style="font-size: 0.8rem;">  Add 100% :After</span>
+                <div id="asdf4" style="width: 20px; height: 20px; float: right; margin-left: 10px; border-radius: 50px; background-image: url(assets/redbutton.png); background-size: cover;"></div>
+            
+                <select name="adder-row-a" id="adder-row-a" style="float: right; width: 100%;">
+                    <option value="100">100% Width</option>
+                    <option value="50">50% Width</option>
+                    <option value="33">33% Width</option>
+                    <option value="25">25% Width</option>
+                    <option value="20">20% Width</option>          
+                 </select>
+            
+            </li>
+            <li id="edit" style="background-color: darkgreen; color: #fff; text-align: center;">Edit</li>
+            <li id="duplicate" style="text-align: center;">Duplicate</li>
+            <li id="component" style="background-color: yellow;text-align: center;">(Row) Make Active</li>
+            <li id="textarea" style="background-color: black; color: yellow;text-align: center;">Exit Edit Mode</li>
+            <li id="empty" style="background-color: lightgreen; color: #333;text-align: center;">Empty</li>
+            <li id="delete" style="background-color: red; color: #fff;text-align: center;">Delete</li>
+            <li id="close" style="background-color: rgb(21, 0, 114); color: #fff;text-align: center; ">Close</li>
+        </ul>
+    </div>
+
+
+
+<style>
+    #urlModal, #myModalcontent {
+    z-index: 99999999999999;
+    position: absolute; /* Check if 'fixed' might be better for modals */
+}
+
+#urlmodel-internal {
+    background: #333; /* Dark background for the modal */
+    padding: 20px;
+    color: #fff; /* Light text for high contrast and readability */
+    border-radius: 5px;
+    width: 430px; /* Fixed width */
+    position: fixed;
+    top: 50%; /* Centering vertically */
+    left: 50%; /* Centering horizontally */
+    transform: translate(-50%, -50%); /* Perfect center alignment */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* Subtle shadow to add depth */
+}
+
+input[type="text"]#imageUrl {
+    width: 98% !important; /* Full width of the modal */
+    padding: 8px; /* Adequate padding for ease of input */
+    border-radius: 3px; /* Slightly rounded corners */
+    border: 1px solid #555; /* Subtle border that fits the dark theme */
+    background-color: #444; /* Slightly lighter than the modal for contrast */
+    color: #ddd; /* Light color for the text input for readability */
+    margin-bottom: 10px; /* Space below the input field */
+}
+
+#submitUrl, #cancelUrl {
+    background-color: #444; /* Darker background for buttons to fit the theme */
+    color: #fff; /* White text for contrast and visibility */
+    border-radius: 3px; /* Rounded corners for a modern look */
+    border: none; /* No border for a cleaner look */
+    cursor: pointer; /* Cursor pointer for interactive elements */
+    padding: 10px 20px; /* Padding for button size and comfort */
+    font-size: 1rem; /* Adequate font size for button text */
+    margin-top: 5px; /* Space between buttons */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for visual feedback */
+}
+
+#submitUrl:hover, #cancelUrl:hover {
+    background-color: #0056b3; /* Highlight on hover */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Shadow effect for depth on hover */
+}
+
+#urlModal {
+    display: none; /* Initially hidden, to be shown via JavaScript */
+}
+</style>
+
+
+
+
+    <div id="urlModal" style="display: none;">
+        <div id="urlmodel-internal">
+            <p>Enter the URL:</p>
+            <input type="text" id="imageUrl" value="" style="width: 100%;">
+            <button id="submitUrl">Submit</button>
+            <button id="cancelUrl">Cancel</button>
+        </div>
+    </div>
+
+
+<style>
+    #customModal, #urlModal, #myModalcontent {
+    z-index: 99999999999999;
+    position: absolute; /* You might want to check if 'fixed' would be better for modals */
+}
+
+#customModal-internal {
+    background: #333; /* Dark background for the modal */
+    color: #fff; /* Light text for high contrast and readability */
+    padding: 20px;
+    border-radius: 5px;
+    width: 36%;
+    position: fixed;
+    top: 50%; /* Centering vertically */
+    left: 50%; /* Centering horizontally */
+    transform: translate(-50%, -50%); /* Perfect center alignment */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* Subtle shadow to add depth */
+}
+
+.secondmodal {
+    width: 100%; /* Full width inside the modal */
+    padding: 10px 20px; /* Adequate padding for touch friendliness */
+    border: none; /* Removing border for a cleaner look */
+    background: #444; /* Slightly lighter than modal for subtle contrast */
+    color: #fff; /* Maintaining light text for readability */
+    font-size: 1rem; /* Adequate font size for clarity */
+    text-align: center; /* Center align text */
+    border-radius: 3px; /* Rounded corners */
+    margin-top: 10px; /* Space between buttons */
+    cursor: pointer; /* Indicate button functionality */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
+}
+
+.secondmodal:hover {
+    background-color: #0056b3; /* Bright color for hover to stand out */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5); /* Deeper shadow on hover for 3D effect */
+}
+
+#customModal {
+    display: none; /* Initially hidden, show with JS as needed */
+}
+</style>
+
+    
+
+    <div id="customModal" style="display: none;">
+        <div id="customModal-internal">
+            <p>Select an action:</p>
+            <button class="secondmodal" id="wrapImage">Wrap Image with URL</button>
+            <button class="secondmodal" id="deleteImage">Delete Image</button>
+            <button class="secondmodal" id="closeModal">Cancel</button>
+        </div>
+    </div>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>What Do you Want to Do?</p>
+            <button id="yesBtn">Go to Link</button>
+            <button id="noBtn">Remove Link</button>
+            <button id="closediag">Close</button>
+        </div>
+    </div>
+
+
+<style>
+    .customModal, #urlModal, #myModalcontent {
+    z-index: 99999999999999;
+    position: absolute;
+    display: none;
+}
+
+.modal-content {
+    background-color: #222; /* Dark background for the modal content */
+    margin: 15% auto;
+    padding: 20px;
+    border: none; /* Removing border for a cleaner look */
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    color: #fff; /* White text for contrast */
+    border-radius: 8px; /* Rounded corners for a softer, modern look */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5); /* Shadow for depth */
+}
+
+#yesBtn99, #yescopyBtn99, #closediag99 {
+    background-color: #333; /* Dark button background */
+    color: #fff; /* White text for visibility */
+    border-radius: 3px; /* Rounded corners */
+    padding: 10px 20px; /* Adequate padding for better clickability */
+    cursor: pointer;
+    margin: 10px 5px; /* Spacing between buttons */
+    transition: background-color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+#yesBtn99:hover, #yescopyBtn99:hover, #closediag99:hover {
+    background-color: #0056b3; /* Highlight on hover */
+}
+
+#optionb4 {
+    width: auto; /* Auto width for checkbox */
+    vertical-align: middle; /* Align with label */
+    margin-left: 5px; /* Space after label */
+    cursor: pointer;
+}
+
+label[for="optionb4"] {
+    color: #ccc; /* Light grey for text, better contrast with dark background */
+    cursor: pointer;
+}
+
+
+</style>
+
+
+    
+
+    <div id="myModalcontent" class="modal">
+        <div class="modal-content">
+            <p>What Do you Want to Do?</p>
+            <button id="yesBtn99">Clear Componant</button>
+            <button id="yescopyBtn99">Copy to Clipboard</button>
+            <label for="optionb4"> Clamp Text</label><input id="optionb4" class="back-blue" type="checkbox"
+                style="width: auto;">
+            <button id="closediag99">Close</button>
+        </div>
+    </div>
+
+
+
+
+    <div id="fullinterface" class="prod100 interface">
+
+
+        <div class="promo50" id="programming">
+
+            <style>
+                .letbutton21 {
+                    font-size: 80%;
+                    float: left;
+                    margin-right: 2%;
+                    border: none;
+                    background-color: transparent;
+
+                }
+
+                #overviewmenud {
+
+                    width: 73%;
+                    margin-bottom: 10px;
+                    margin-left: 4%;
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    float: left;
+                    margin-right: 2%;
+                    margin-top: -16PX;
+                }
+
+                ::-webkit-scrollbar {
+                    width: 8px
+                        /* Or any desired width */
+                    ;
+                    height: 10px;
+                }
+
+                /* Handle */
+                ::-webkit-scrollbar-thumb {
+                    background: #666;
+                }
+
+                /* Handle on hover */
+                ::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                }
+
+                #programming {
+                    /*
+    max-height: 836px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    */
+                }
+
+                .internalscroller {
+                    max-height: none;
+                }
+
+                .blogbuilder {
+                    max-height: none !important
+                }
+
+
+
+                #pullthecode3 img {
+                    width: 99% !important;
+                    padding-left: .5%;
+                    padding-right: .5%;
+                    padding-top: .5%;
+                    padding-bottom: .5%;
+                }
+            </style>
+
+
+
+            <style>
+                :root {
+                    --width33c-width: 33%;
+                    --width33c3-width: 49%
+                    --width33c4-width: 99%
+                }
+
+                #mobilepreview2 .width33c {
+                    width: var(--width33c-width) !important
+                }
+
+
+                #mobilepreview2 .programoverflow .width33c {
+                    width: 26% !important;
+                    max-width: 300px
+                }
+
+                #mobilepreview2 .scrollersection {
+                    overflow: auto;
+                    width: 100%;
+                    scroll-behavior: smooth
+                }
+
+                #mobilepreview2 .scrollersection+div {
+                    width: 1000px !important;
+                    overflow: auto !important
+                }
+
+                #mobilepreview2 .subscrollerdiv {
+                    width: calc(var(--width33c-width) * 9) !important
+                }
+
+
+
+                #progressContainer {
+                    width: 100%;
+                    background-color: #eee;
+                    border: 1px solid #ccc;
+                }
+
+                #progressBar {
+                    height: 20px;
+                    background-color: #4CAF50;
+                    width: 0%;
+                    transition: width 0.4s ease-in-out;
+                }
+
+                #contextMenu #textarea {
+                    display: none;
+                }
+
+                h4.t-h4-style {
+                    margin: 5px;
+                }
+
+
+                #mobilepreview2 .width50c2 {
+                    width: var(--width33c4-width) !important  
+                }
+
+            </style>
+
+
+
+
+
+
+
+<style>
+
+ input[type="range"] {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #555;
+    border-radius: 3px;
+    padding: 8px;
+    width: 93%;
+    box-sizing: border-box;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 93%;
+    background: #444;
+    height: 2px;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.liverow {
+    background-color: #dbdbdb !important;
+}
+.liverow:hover {
+    background-color: #fff !important;
+}
+
+.onblock {
+    background-color: rgb(166 205 251 / 40%) !important;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="newtopmenu" style="float: left; width: 100%; position: relative;">
+                <div id="overviewmenud">
+
+                    <div class="width100c" style="width: 310px; float: left;">
+                        <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Import"
+                            style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
+                                src="assets/iconimport.png" /></div>
+                        <div class="unselectable-text thetopbox mytoolsboxtop letbutton21 thestartbutton" whatbox="Layout"
+                            style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 60%;"
+                                src="assets/rowicon.png" /></div>
+                        <div class="unselectable-text thetopbox mytoolsboxtop2 letbutton21" whatbox="Tools"
+                            style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
+                                src="assets/compicon.png" /></div>
+
+                        <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Rows"
+                            style="width: 15% !important;height: 30px;padding: 0px;display: none;"><img
+                                style="width: 56%;" src="assets/iconmodify.png" /></div>
+
+                        <div class="unselectable-text thetopbox mytoolsboxtop4 letbutton21" whatbox="FileExplorer"
+                            style="width: 15% !important;height: 30px;padding: 0px; "><img
+                                style="width: 56%; margin-left: 18%;" src="assets/iconcompase.png" /></div>
+
+
+                        <div class="unselectable-text thetopbox mytoolsboxtop4 letbutton21"
+                            style="width: 15% !important;height: 30px;padding: 0px; display: none; " whatbox="Blog">
+                            <img style="width: 56%; margin-left: 18%;" src="assets/iconblog.png" />
+                        </div>
+
+                        <div class="width33c" >
+                            <img id="savetomemory"
+                                style="width: 60% !important;  max-width: 28px; float: left; cursor: pointer; "
+                                src="assets/saveme.png" title="Save to Memory" />
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                <div class="width20c" style=" float: left; width: 17%; margin-top: -20px;">
+
+
+                    <div class="width50c" style="float: right;">
+                        <img id="clearandrestartbutton"
+                            style="width: 80% !important;  max-width: 35px; float: left; cursor: pointer; "
+                            src="assets/restart.jpg" title="Refresh and Clear All" />
+                    </div>
+
+                    <div class="width50c" style="float: right;">
+                        <img id="clearandrestartbuttonrefresh"
+                            style="width: 80% !important;  max-width: 35px; float: left; cursor: pointer; "
+                            src="assets/restart2.png" title="Refresh without Losing Work" />
+                    </div>
+
+
+
+
+
+
+
+                </div>
+                <div
+                    style="width: 91%; float: left; border-bottom: 3px solid red; height: 2px; margin-top: -8px; margin-left: 4%; margin-bottom: 5px; ">
+                </div>
+            </div>
+
+
+
+
+            <div id="Importer" class="width100c openclose" openclose="htmlimporter" style="display: none;">
+                <div class="width100c unselectable-text" style="margin-left: -3%;">
+                    <span class="myindicator">+</span>
+                    <span style="font-size: 0.8rem;">&nbsp;&nbsp;Code Importer</span>
+                </div>
+            </div>
+
+            <div id="explorerpanel" class="width100c" style="    margin-left: 0%;
+            width: 96.5%;
+            padding-left: 1%;">
+
+                <div class="width100c" id="DeviceVisability">
+
+
+
+                    <div id="visiblechecks" class="width100c openclose" openclose="visiblechecks">
+                        <div class="width100c unselectable-text" style="margin-left: -3%;">
+                            <span class="myindicator">-</span>
+                            <span style="font-size: 0.8rem;">&nbsp;Show Hide</span>
+                            <span class="mysmalltext">Rows in Desktop / Mobile</span>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="width100c visiblechecks" style="margin-left: 20px; margin-top: 10px;">
+                        <div class="width50c">Hide on mobile <input id="mobilehidev2d" type="checkbox"
+                                style="width: auto;"></div>
+
+                        <div class="width50c">Hide on Desktop<input id="desktophidev2d" type="checkbox"
+                                style="width: auto;"></div>
+                    </div>
+                </div>
+
+                <div id="designd" class="width100c openclose" openclose="myrowbuilder">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator">-</span>
+                        <span style="font-size: 0.8rem;">&nbsp;Design</span>
+                        <span class="mysmalltext">Row Tools</span>
+                    </div>
+                </div>
+
+
+
+
+                <div openclose="myrowbuilder" class="width100c stage1  myrowbuilder"
+                    style="padding-left: 2.5%; padding-top:10px">
+
+                    <div class="width100c"
+                        style="border-bottom:1px solid #ccc; width:88%;margin-top:5px;margin-bottom:5px"></div>
+
+
+
+
+
+
+                    <div class="width100c">
+                        <div class="width50c">
+                            <div class="width100c"
+                                style="margin-top:5px; width:88%; font-size:0.8rem;font-size: 90%; color: lightblue;">
+                                Row Background Color:</div>
+
+
+                            <select name="Row-Background-Color" id="RowBackgroundColorlist"
+                                style="width: auto; margin-top:10px; ">
+                                <option value="">Row Background Color</option>
+                                <option value="none" value1="#333">Transparent</option>
+                                <option value="rgb(247, 247, 247)" value1="#333">Highlighted</option>
+                                <option value="rgb(0, 0, 0)" value1="#fff">Black</option>
+                                <option value="rgb(153, 153, 153)" value1="#333">Gray</option>
+                                <option value="rgb(102, 102, 102)" value1="#fff">Dark Gray</option>
+                                <option value="rgb(204, 0, 0)" value1="#fff">Red</option>
+                                <option value="rgb(2, 48, 74)" value1="#fff">Blue</option>
+                                <option value="rgb(0, 136, 39)" value1="#fff">Green</option>
+                                <option value="rgb(249, 249, 249)" value1="#333">Light Gray</option>
+                                <option value="rgb(126, 170, 200, .5)" value1="#d4e1eb">Light Blue</option>
+                                <option value="rgb(255, 201, 198, .5)" value1="#ffc9c6">Light Pink</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="width50c">
+                            <div class="width100c"
+                                style="margin-top:5px; width:88%; font-size:0.8rem;color: lightblue;">
+                                Row Margin Top:
+                            </div>
+
+                            <div class="width100c">
+                                <label class="slider-label" for="rangeSlider"><span class="slider-control"
+                                        id="sliderValue2">0</span>px</label>
+                                <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="200" value="0"
+                                    oninput="updateSliderValue2(this.value)">
+                            </div>
+
+                        </div>
+
+
+                        <div class="width100c" style="border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+
+                            <div class="width50c">
+                                <div class="width100c"
+                                    style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px; color: lightblue;">
+                                    Row Padding</div>
+
+                                <select name="Row-Padding-Radius" id="Row-Padding-Radius"
+                                    style="width: 120px; margin-top:10px; margin-left: 5px;">
+                                    <option value="0" disabled>Select</option>
+                                    <option value="0"> No Padding</option>
+                                    <option value=".5">Level 1</option>
+                                    <option value="1">Level 2</option>
+                                    <option value="1.5">Level 3</option>
+                                    <option value="2">Level 4</option>
+                                    <option value="2.5">Level 5</option>
+                                    <option value="3">Level 6</option>
+                                    <option value="3.5">Level 7</option>
+                                    <option value="4">Level 8</option>
+                                    <option value="4.5">Level 9</option>
+                                    <option value="5">Level 10</option>
+                                </select>
+
+
+                            </div>
+
+
+                            <div class="width50c">
+                                <div class="width100c"
+                                    style="margin-top:5px; width:88%; font-size:0.8rem; margin-left: 5px;color: lightblue;">
+                                    Row Border Radius</div>
+
+
+
+                                <div class="width100c">
+                                    <label for="rangeSlider"><span id="sliderValue4">0</span>px</label>
+                                    <input type="range" id="rangeSlider4" name="rangeSlider3" min="1" max="100"
+                                        value="0" oninput="updateSliderValue4(this.value)">
+                                </div>
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+                        <div class="width100c" style="padding-top: 10px;">
+                            <div class="width50c"
+                                style="color: orange;font-size:0.8rem; background-color: #444; width: 45.5%; margin-right: 2.2%; border: 1px solid #fff;">
+                                <div class="width100c" style="text-align: center;">Body Color</div>
+
+                                <select name="body-color" id="body-color"
+                                    style="width: 98%; margin-left: 1%; margin-top:10px; ">
+                                    <option value="transparent">Select</option>
+                                    <option value="Transparent"> Transparent</option>
+                                    <option value="#fff"> White</option>
+                                    <option value="#999">Light Gray</option>
+                                    <option value="#666">Gray</option>
+                                    <option value="#333">Dark Gray</option>
+                                    <option value="rgb(2, 48, 74)">Blue</option>
+                                    <option value="#000">Black</option>
+                                </select>
+                            </div>
+                            <div class="width50c" style="display: none;">
+                                <span style="color: lightblue;font-size:0.8rem;">Line Height</span>
+                                <div class="width100c">
+                                    <label for="rangeSlider"><span id="sliderValue">23</span>px</label>
+                                    <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="100" value="23"
+                                        oninput="updateSliderValue(this.value)">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+                <div id="comptoolslistc" class="width100c openclose" openclose="comptoolslist">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;Design</span>
+                        <span class="mysmalltext">Component Tools</span>
+                    </div>
+                </div>
+
+
+
+
+                <!---->
+
+                <div class="width100c comptoolslist" id="comptoolslist" style=" margin-top: 10px;">
+
+                    <div class="width50c"
+                        style="margin-top:5px; width: 46%;  font-size:0.8rem; margin-left: 5px; color: yellow;">
+                        Comp. Background Color
+
+                        <select name="comp-color" id="comp-color"
+                            style="width: 120px; margin-top:10px; margin-left: 5px;">
+                            <option value="transparent" disabled>Select</option>
+                            <option value="Transparent"> Transparent</option>
+                            <option value="#fff"> White</option>
+                            <option value="#000">Black</option>
+                            <option value="#666">Gray</option>
+                            <option value="rgb(2, 48, 74)">Blue</option>
+                            <option value="#333">Dark Gray</option>
+                            <option value="#999">Light Gray</option>
+                            <option value="rgb(126, 169, 200)">Mid Blue</option>
+                            <option value="rgb(126, 170, 200, .5)">Light Blue</option>
+                            <option value="rgb(255, 201, 198, .5)">Light Pink</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="width50c"
+                        style="margin-top:5px; width: 46%;  font-size:0.8rem; margin-left: 5px; color: yellow;">
+                        Font Family<br>
+
+                        <select name="comp-font" id="comp-font"
+                            style="width: 120px; margin-top:10px; margin-left: 5px;">
+                            <option value="transparent" disabled>Select</option>
+                            <option value="inherit"> Standard</option>
+                            <option value="linotype-didot"> linotype-didot</option>
+
+                        </select>
+
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="width50c" style="margin-top:5px;width: 46%;   margin-left: 5px;">
+                        <span style=" color: yellow;font-size:0.8rem;">Font Size</span>
+                        <div class="width100c">
+                            <label for="fontSlider"><span id="sliderValue66">0</span>em</label>
+                            <input type="range" id="fontSlider" name="fontSlider" min="0" max="3" step="0.1" value="0"
+                                oninput="updateSliderValue66(this.value)">
+                        </div>
+                    </div>
+
+
+
+                    <div class="width50c" style="margin-top:5px;width: 46%;   margin-left: 5px;">
+                        <span style=" color: yellow;font-size:0.8rem;">Comp Width</span>
+                        <div class="width100c">
+                            <label for="widthSlider"><span id="sliderValue33">100</span>%</label>
+                            <input type="range" id="widthSlider" name="widthSlider" min="1" max="100" value="100"
+                                oninput="updateSliderValue33(this.value)">
+                        </div>
+                    </div>
+
+
+                    <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+                        <span style=" color: yellow;font-size:0.8rem;">Comp Padding</span>
+                        <div class="width100c">
+                            <label for="widthSlider00a"><span id="sliderValue99">0</span>px</label>
+                            <input type="range" id="widthSlider00a" name="widthSlider00a" min="1" max="200" value="0"
+                                oninput="updateSliderValue99(this.value)">
+                        </div>
+                    </div>
+
+                    <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+                        <span style=" color: yellow;font-size:0.8rem;">Line Height</span>
+                        <div class="width100c">
+                            <label for="widthSlider00b"><span id="sliderValue00">0</span>px</label>
+                            <input type="range" id="widthSlider00b" name="widthSlider00b" min="0" max="100" value="10"
+                                oninput="updateSliderValue00(this.value)">
+                        </div>
+                    </div>
+
+                    <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+                        <span style=" color: yellow;font-size:0.8rem;">Border Radius</span>
+                        <div class="width100c">
+                            <label for="widthSlider00c"><span id="sliderValue11">0</span>px</label>
+                            <input type="range" id="widthSlider00c" name="widthSlider00c" min="0" max="50" value="0"
+                                oninput="updateSliderValue11(this.value)">
+                        </div>
+                    </div>
+
+                    <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
+                        <span style=" color: yellow;font-size:0.8rem;">Margin Top</span>
+                        <div class="width100c">
+                            <label for="widthSlider22"><span id="sliderValue22">0</span>px</label>
+                            <input type="range" id="widthSlider22" name="widthSlider22" min="-20" max="100" value="0"
+                                oninput="updateSliderValue22(this.value)">
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+                <!-- 
+
+                <div class="width100c openclose" openclose="explorerd">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator">-</span>
+                        <span style="font-size: 0.8rem;">&nbsp;Selection</span>
+                        <span class="mysmalltext">Element Explorer</span>
+                    </div>
+                </div>
+
+            <div id="explorer" class="width100c explorerd" style="margin-top: 3px; "></div>-->
+
+
+
+            </div>
+
+            <div id="layoutbuilder-oc2" class="width100c openclose" openclose="layoutbuilder-oc2">
+                <div class="width100c unselectable-text" style="margin-left: -3%;">
+                    <span class="myindicator">+</span>
+                    <span style="font-size: 0.8rem;">&nbsp;&nbsp;Row Builder</span>
+                    <span class="mysmalltext" style="color: blue;">(div)</span><span style="font-size: 0.8rem;"> - Step
+                        1</span>
+                </div>
+            </div>
+
+
+            <style>
+  .toolboxlayoutoptions {
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.toolboxlayoutoptions input[type="file"],
+.toolboxlayoutoptions input[type="text"],
+.toolboxlayoutoptions button {
+    margin-bottom: 15px;
+    width: 95%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+.toolboxlayoutoptions button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toolboxlayoutoptions button:hover {
+    background-color: #0056b3;
+}
+
+.toolboxlayoutoptions input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+}
+
+.toolboxlayoutoptions .hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toolboxlayoutoptions .hamburger:hover {
+    background-color: #444;
+}
+
+
+#nametextfile {
+    display: none;
+    max-width: 200px;
+}
+
+#export {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+#export:hover {
+    background-color: #218838;
+}
+
+#import {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+}
+
+#import:hover {
+    background-color: #e0a800;
+}
+
+
+
+
+#mytoolsview,
+#mysort,
+#mysortcomponents {
+    margin-left: 5px;
+}
+            </style>
+      
+            <div class="width100c toolboxlayoutoptions unselectable-text htmlimporter"
+            style="width: 85%; margin-left: 4%; margin-top: 10px;">
+       
+           <div class="width100c" style="margin-bottom: 15px;">Import: Word .docx / Text / .HTML</div>
+           <input type="file" id="fileimport" accept=".html,.txt,.docx" style="margin-bottom: 20px;">
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.7.1/mammoth.browser.js"></script>
+       
+           <div class="width100c" style="margin-bottom: 15px;">
+               <input id="nametextfile" type="text" placeholder="filename" style="max-width: 200px; display: none;">
+               <button id="export" class="unselectable-text" style="background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; border-radius: 5px;">Save Workspace <span style="color: #f0cd97;">&uarr;</span></button>
+           </div>
+       
+           <div class="width100c" style="margin-bottom: 15px;">
+               <button id="import" class="unselectable-text" accept=".txt" style="background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; border-radius: 5px;">Load Workspace <span style="color: #f0cd97;">&darr;</span></button>
+               <input type="file" id="fileInput" accept=".txt" placeholder="Imported file" style="display: none;">
+           </div>
+
+         <div class="width100c">
+            <button id="saveVersionBtn">Save Version</button>
+            <select id="versionList"></select>
+            <button id="revertVersionBtn">Revert to Selected Version</button>
+         </div>
+       
+           <div class="width100c" style="margin-bottom: 15px;">
+               <div class="width20c" style="width: auto; min-width: 10%">Sort / Reorder :</div>
+           </div>
+       
+           <div class="width100c" style="margin-bottom: 15px;">
+               <div class="width20c" style="width: auto; min-width: 10%; margin-left: 10px;">
+                   <div class="width50c" style="max-width: 36px;">
+                       <img style="width: 87%; float: left;" src="assets/rowicon.png" title="Sort Rows">
+                   </div>
+                   <div class="width50c">
+                       <input type="checkbox" id="mysort" name="mysort" class="mysort" style="width: 20px; height: 20px; margin-top: 0px; float: left;">
+                   </div>
+               </div>
+       
+               <div class="width20c">
+                   <div class="width50c" style="max-width: 36px;">
+                       <img style="width: 80%; float: left;" src="assets/compicon.png" title="Sort Components">
+                   </div>
+                   <div class="width50c">
+                       <input type="checkbox" id="mysortcomponents" name="mysortcomponents" class="mysortcomponents" style="width: 20px; height: 20px; margin-top: 0px; float: left;">
+                   </div>
+               </div>
+           </div>
+       
+           <div class="width100c" style="margin-bottom: 15px; display: none;">
+               <div class="width50c" style="max-width: 70px;">Fullscreen</div>
+               <div class="width50c">
+                   <input type="checkbox" id="mytoolsview" name="mytoolsview" class="mytoolsview" style="width: 20px; height: 20px; margin-top: 0px; float: left; margin-right: 5px;">
+               </div>
+           </div>
+       
+           <div class="width100c" style="display: none;">
+               <div class="hamburger">
+                   <svg version="1.1" style="width: 100%;" id="asdf" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
+                        style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                       <style type="text/css">
+                           .st0 {
+                               display: none;
+                           }
+                           .st1 {
+                               stroke: #FFFFFF;
+                               stroke-width: 6;
+                               stroke-miterlimit: 10;
+                           }
+                       </style>
+                       <rect x="-0.2" y="-0.3" class="st0" width="50.2" height="51" />
+                       <line class="st1" x1="6" y1="11.8" x2="43.6" y2="11.6" />
+                       <line class="st1" x1="6.2" y1="25.3" x2="43.8" y2="25.2" />
+                       <line class="st1" x1="6" y1="39.6" x2="43.6" y2="39.5" />
+                   </svg>
+               </div>
+           </div>
+       
+       </div>
+
+
+
+
+
+
+
+
+            <div class="width100c toolboxlayoutoptions unselectable-text layoutbuilder-oc2"
+                style="width: 98%; margin-left:4%; margin-top:10px">
+
+
+
+
+
+                <div class="width100c  layoutbuilder-oc2 part1"
+                    style="margin-top: 5px; font-size: 0.7rem; margin-bottom: 0px;">
+                    <span class="unselectable-text"> Multi Rows and Components</span>
+                </div>
+
+
+                <div class="width100c  part1" style="width: 89%; margin-left: -1.5%; padding: 10px; border: 1px solid #000;-webkit-box-shadow:inset 0 0 7px 3px #0A0A0A;
+                box-shadow:inset 0 0 7px 3px #0A0A0A;">
+
+                    <div class="width50c">
+
+                        <label class="slider-label" for="rangeSliderow">Rows: <span class="slider-control"
+                                id="sliderValuerow">2</span></label>
+                        <input type="range" id="rangeSliderow" name="rangeSliderow" min="1" max="20" value="2"
+                            oninput="updateSliderValuerow(this.value)">
+
+
+                        <select name="selectwidthrow" id="selectwidthrow" style="width: 93%;">
+                            <option selected value="100" value2="">100% Rows</option>
+                            <option value="80" value2="width50c2">80% Rows</option>
+                            <option value="60" value2="width50c2">60% Rows</option>
+                            <option value="50" value2="width50c2">50% Rows</option>
+                            <option value="33" value2="width50c2">33% Rows</option>
+                            <option value="25" value2="width50c3">25% Rows</option>
+                        </select>
+
+                        <button class="createlayoutslider"
+                            style="width: 92%; color: #fff;font-size: 0.8rem !important; background-color: transparent; border: 1px solid #ccc; padding-top: 7px; padding-bottom: 7px; margin-top: 10px;">Create
+                            Multiple Rows</button>
+                    </div>
+
+
+
+                    <div class="width50c">
+
+                        <label class="slider-label" for="rangeSlidecomp">Comps: <span class="slider-control"
+                                id="sliderValuecomp1">2</span></label>
+                        <input type="range" id="rangeSlidecomp" name="rangeSlidecomp" min="1" max="20" value="2"
+                            oninput="updateSliderValuecomp(this.value)">
+
+
+                        <select name="selectwidthcomp" id="selectwidthcomp" style="width: 93%;">
+                            <option selected value="100">100% Comps</option>
+                            <option value="80">80% Comps</option>
+                            <option value="60">60% Comps</option>
+                            <option value="50">50% Comps</option>
+                            <option value="40">40% Comps</option>
+                            <option value="33">33% Comps</option>
+                            <option value="25">25% Comps</option>
+                        </select>
+
+                        <button class="createcomponentslider"
+                            style="width: 92%; color: #fff; background-color: transparent;font-size: 0.8rem !important; border: 1px solid #ccc; padding-top: 7px; padding-bottom: 7px; margin-top: 10px;">Create
+                            Multiple Components</button>
+                    </div>
+
+                </div>
+
+
+
+                <div class="width100c part2" style="display: none;">
+
+                    <span class="unselectable-text " style="font-size: 0.7rem;">To Create Rows</span>
+
+                </div>
+
+
+                <div class="width100c part2">
+
+
+
+                    <div class="width100c " style="display: none;">
+
+                        <button id="addrow" class="addrow100" data-layout="100">Add 100% Row</button>
+
+
+
+
+                    </div>
+
+
+                    <div class="width100c " style="display: none;">
+
+
+                        <button class="addrow " data-layout="50,50" style="background-color: #001ca7;
+                        color: #fff;
+                        width: 45%; margin-right: 2%;
+                        line-height: 25px; float: left;
+                        margin-bottom: 8px;">Add 50% x2 Row</button>
+
+                        <button class="addrow " data-layout="25,25,25,25" style="background-color: #001ca7;
+                        color: #fff;
+                        width: 45%; margin-right: 2%;
+                        line-height: 25px; float: left;
+                        margin-bottom: 8px;">Add 25% Quad Row</button>
+
+
+
+                    </div>
+
+
+
+
+                    <div class="width100c  " style="display: none;">
+
+
+
+                        <button class="addrow" data-layout="60,40" style="background-color: #001ca7;
+                        color: #fff;
+                        width: 45%; margin-right: 2%;
+                        line-height: 25px; float: left;
+                        margin-bottom: 8px;">Add 60/40 Row</button>
+                        <button class="addrow addrow4060" data-layout="40,60" style="background-color: #001ca7;
+                        color: #fff;
+                        width: 45%; margin-right: 2%;
+                        line-height: 25px; float: left;
+                        margin-bottom: 8px;">Add 40/60 Row</button>
+
+
+
+
+
+                    </div>
+
+                    <div class="width100c" style="display: none;">
+                        <button class="addrow" data-layout="33,33,33" style="background-color: #001ca7;
+                        color: #fff;
+                        width: 45%; margin-right: 2%;
+                        line-height: 25px; float: left;
+                        margin-bottom: 8px;">Add 33% Tri Row</button>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="width100c plan1 ">
+                    <div class="width100c findthecode2 findthecode2"
+                        style="margin-top: 5px; font-size: 0.7rem; margin-bottom: -5px; margin-top: 10px;">
+                        <span class="unselectable-text"> Multi Row Layouts</span></div>
+
+
+                    <div class="width100c  " style="margin-bottom: 5px;">
+                        <button class="secondlauyout unselectable-text" id="addrowc1xc1"
+                            style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px; border: 1px solid orange;">
+                            50/50 Criss Cross Layout (X2)</button>
+
+
+                        <button class="secondlauyout unselectable-text" id="addrowcxc"
+                            style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange;">
+                            50/50 Criss Cross Layout (X4)</button>
+                    </div>
+
+
+                    <button class="secondlauyout unselectable-text" id="addrowc2xc8"
+                        style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange; ">
+                        80/20 Criss Cross Layout (X3)</button>
+
+
+                    <button class="secondlauyout unselectable-text" id="addrowc4xc6"
+                        style="background-color: transparent; color: #fff;padding: 5px; width: 45%; float: left;margin-right: 1%; font-size: 84%; margin-top: 5px;border: 1px solid orange; ">
+                        40/60 Left List Layout (X3)</button>
+                </div>
+
+
+
+
+
+
+
+
+                <div id="mes2" class="width100c">
+
+                    <div class="width100c unselectable-text" style="margin-bottom: 10px; font-size: 0.8rem;padding-bottom: 0px;
+                    margin-bottom: 0px;
+                    margin-top: -6px; ">Destructive Options :
+                    </div>
+
+                    <div class="width50c" style="margin-bottom: 10px; ">
+
+                        <button id="selectionclear">Clear<br>
+                            Selection</button>
+                        <button class="clearsection"
+                            style="color: #730000; background-color: #fff;  padding: 5px; width: 48%; font-size: 80%;">Empty<br>
+                            Component</button>
+                    </div>
+
+                    <div class="width50c" style="margin-bottom: 10px; ">
+                        <button class="deletecode"
+                            style="color: #fff; width: 98%; background-color: #730000; font-size: 100%; border: 4px solid yellow; padding-top:6px; padding-bottom: 6px;">Delete
+                            Component</button>
+
+
+                    </div>
+
+
+                    <div class="width100c">
+                        <button class="deleterowfull"
+                            style="color: #fff; background-color: #730000;  margin-right: 1%; width: 98%; padding-top: 3px; padding-bottom: 3px;">
+                            <span class="unselectable-text">Clear Workspace</span></button>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+            <div id="layoutbuilder-oc" class="width100c openclose" openclose="layoutbuilder-oc" style="display: block;">
+                <div class="width100c unselectable-text" style="margin-left: -3%;">
+                    <span class="myindicator">+</span>
+                    <span style="font-size: 0.8rem;">&nbsp;&nbsp;Layout Builder</span>
+                    <span class="mysmalltext" style="color: yellow;">(div)</span><span style="font-size: 0.8rem;"> -
+                        Step 2</span>
+                </div>
+            </div>
+
+            <div class="prod100 tools layoutbuilder-oc"
+                style="width: 94%; margin-left: 1%; margin-right: 0.5%; background-color: transparent; ">
+                <div class="width100c">
+                    <div class="width50c unselectable-text" style="text-align: center; width: 45%; margin-left: 3%;">
+                        Constant Width's</div>
+                    <div class="width50c unselectable-text" style="text-align: center; width: 42%; margin-left: 0%;">
+                        Width: Different in Mobile</div>
+
+
+                </div>
+
+                <div class="prod100 stage2 hideinfullscreen" style="margin-left: 5%; background-color: transparent;">
+
+
+                    <div class="width50c" style="margin-left: -5px;">
+
+                        <div class="width100c">
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width100c liveelement" pale="100">100%
+                            </div>
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width80c  liveelement" pale="80">80%
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="width100c">
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width50c liveelement" pale="50">50%</div>
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width33c liveelement" pale="33">33%</div>
+
+                        </div>
+
+
+                        <div class="width100c" style="margin-top: 5px;">
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width20c liveelement" pale="25">25%</div>
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width20c liveelement" pale="20">20%</div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="width50c">
+
+                        <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width80c width50c2 liveelement" pale="25">
+                            80% D 100% M</div>
+
+                        <div class="dropsection draggable ui-widget-content unselectable-text"
+                            size="width75c width50c2  liveelement" pale="75">75% D 100% M</div>
+
+
+                        <div class="width100c" style="margin-top: 10px;  padding-top: 3px;">
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width60c width50c2  liveelement" pale="60">60% D 100% M</div>
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width50c width50c2 liveelement" pale="50">50% D 100% M</div>
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="width100c" style="margin-top: 10px;  padding-top: 3px;">
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width40c width50c2  liveelement" pale="40">40% D 100% M</div>
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width33c width50c2  liveelement" pale="33">33% D 100% M</div>
+                        </div>
+
+
+                        <div class="width100c" style="margin-top: 10px;  padding-top: 3px;">
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width25c width50c2  liveelement" pale="25">25% D 100% M</div>
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width20c width50c2 liveelement" pale="20">20% D 100% M</div>
+
+                        </div>
+
+                        <div class="width100c" style="margin-top: 10px;  padding-top: 3px;">
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width33c width50c3  liveelement" pale="33">33% D 50% M</div>
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width25c width50c3 liveelement unselectable-text" pale="25">25% D 50% M</div>
+
+
+
+                            <div class="dropsection draggable ui-widget-content unselectable-text"
+                                size="width20c width50c3 liveelement" pale="20">20% D
+                                50%
+                                M</div>
+
+                        </div>
+
+
+                        <div class="simplelayout">Simple Layout</div>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+                <div id="mes3" class="width100c internalbuttons">
+
+                    <span class="unselectable-text" style="font-size: 0.7rem;">Layouts For an Existing Row</span>
+
+                    <div class="width100c internalbuttons" style="display: block; ">
+
+                        <button class="secondlauyout unselectable-text" id="addrow1x1">100%
+                            Layout</button>
+                        <button class="secondlauyout unselectable-text" id="addrow2x2">50/50
+                            Layout</button>
+
+                    </div>
+
+
+                    <div class="width100c internalbuttons" style="display: block;">
+
+                        <button class="secondlauyout unselectable-text" id="addrow2x8">20/80
+                            Layout</button>
+                        <button class="secondlauyout unselectable-text" id="addrow4x6">40/60
+                            Layout</button>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="width100c internalbuttons" style="display: block;">
+
+                        <button class="secondlauyout unselectable-text" id="addrow4x6a">60/40
+                            Layout</button>
+
+                        <button class="secondlauyout unselectable-text" id="addrow2x7">25/75
+                            Layout</button>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="width100c internalbuttons" style="display: block;">
+
+
+                        <button class="secondlauyout unselectable-text" id="addrow3x3">33% Layout
+                            -(3)</button>
+                        <button class="secondlauyout unselectable-text" id="addrow4x4">25% Layout
+                            -(4)</button>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+
+            <div class="prod100 internalscroller" style="background-color: transparent;">
+
+                <div id="editcontentbox" class="prod100" style="margin-left: 0px; margin-top:68px; ">
+                    Select and replace (p) content -- This is an HTML Editor if you want to include html and links as
+                    well
+                    <textarea id="fixthecode" style="width: 100%; min-height: 200px; max-width: 100%;"></textarea>
+                    <button class="unselectable-text" id="submitnewcode">Update Section</button> or
+                    <button class="deletecode unselectable-text">Delete Section</button>
+                </div>
+
+
+                <div id="tools1" class="width100c openclose" openclose="titlebuilder-oc">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;Text / Code</span>
+                        <span class="mysmalltext">(h2,&nbsp;&nbsp;h3,&nbsp;&nbsp;h4,&nbsp;&nbsp;p&nbsp;&nbsp; &lt; /
+                            &gt;&nbsp;&nbsp;.js )</span>
+                    </div>
+                </div>
+
+                <div class="prod100 stage1 tools titlebuilder-oc"
+                    style="margin-top: 20px; margin-left: 0px;  width: 95%; margin-left: 2%; margin-top: -1%; margin-bottom: 0%; background-color: transparent;">
+
+
+                    <div class="width100c">
+                        <span class="unselectable-text" style="margin-bottom: 5px;  margin-top: 0px;">Put Title text
+                            Here
+                            and click
+                            submit (h2)</span>
+                    </div>
+                    <div class="width100c" style="margin-top: 5px;">
+                        <div style="width: 80%; float: left;">
+                            <input type="text" id="cinput1h2" placeholder="Title Info" style="width: 100%;">
+                        </div>
+
+                        <div style="width: 15%; float: left; padding-left: 10px;">
+                            <select id="choosehtag" name="choosehtag" style="margin-left: 5px;">
+                                <option value="0" selected>H2</option>
+                                <option value="1">H3</option>
+                                <option value="2">H4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="prod100"
+                        style="padding-left: 0px; margin-left: 0px; width: 100%;background-color: transparent;">
+                        <!--<button class="simpleshow" id="cinput1-clickh2">Submit</button>-->
+
+
+
+
+                        <div class="width100c">
+
+                            <div class="width30c span50small" style="width: 33%;">
+                                <button id="colorswatch2" style="padding-top: 5px;">
+                                    Header Color
+                                </button>
+                            </div>
+                            <div class="width30c span50small" style="width: 33%;">
+                                <input type="checkbox" id="faqyes" name="faqyes" class="faqyes"
+                                    style="width: 10px; zoom: 2; margin-top: 0px; float: left; ">
+                                <span class="unselectable-text" style="font-size: 80%;"> &nbsp;&nbsp;FAQ <span
+                                        style="color:yellow">Yes?</span></span>
+
+                            </div>
+                            <div class="width30c spanbutton" style="width: 33%;">
+                                <button class="simplehide unselectable-text" id="cinput1-clickh2-comp"
+                                    style="background-color: purple; color: white;">Add Header</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="width100c"
+                        style="border-top: 3px solid #ccc; padding-top: 8px; margin-top: 10px; background-color: #333;">
+                        <p class="unselectable-text" style="margin-bottom: 5px; margin-top: 0px; font-size: 0.8rem;">
+                            &bull; Paragraph text
+                            here -(p) &nbsp;&nbsp;&nbsp; &bull; HTML code (.html)&nbsp;&nbsp;&nbsp; &bull; Javascript
+                            (.js)
+                        </p>
+
+
+
+
+                        <textarea id="cinput3a"
+                            placeholder="Are you serious about cooking? Whether you're making a delicious meal..."
+                            name="content" cols="25" rows="5"></textarea><br><br>
+
+
+                    </div>
+
+                    <div class="width100c"
+                        style="border-bottom: 3px solid #ccc; padding-bottom: 21px; margin-bottom: 5px; ">
+                        <div style="width: 20%; float: left;">
+                            <button class="ipsom unselectable-text" style="width: 100%; min-width: 60px;">Ipsom
+                                Lorem</button>
+                        </div>
+                        <div style="width: 20%; float: left; margin-left: 10px; padding-left: 10px;min-width: 100px;">
+
+
+                            <input type="checkbox" id="htmlcodeyesno" name="htmlcodeyesno" class="htmlcodeyesno"
+                                style="width: 10px; zoom: 2; margin-top: 0px; float: left;"> <span
+                                style="font-size: 80%;" class="unselectable-text">Code <span
+                                    style="color:yellow">Yes?</span></span>
+
+                        </div>
+                        <div style="width: 25%; float: left; margin-left: 10px; min-width: 160px; ">
+                            <span style="font-size: 80%;" class="unselectable-text">ECP Code? <span
+                                    style="color:yellow">Yes?</span></span>
+
+                            <input type="checkbox" id="htmlcodeyesno2" name="htmlcodeyesno2" class="htmlcodeyesno"
+                                style="width: 10px; zoom: 2; margin-top: 0px; float: left;">
+
+                        </div>
+
+                        <div style="width: 95%; float: left; min-width: 150px;">
+                            <button class="simplehide spanbutton unselectable-text"
+                                style="width: 97%;  line-height: 20px; margin-top: 10PX;" id="cinput3-comp"
+                                type="submit">Add
+                                Copy To Component</button>
+                        </div>
+
+
+
+
+
+                    </div>
+
+                    <div class="width100c" style="margin-top: 10px; ">
+                        Text Colors:
+                    </div>
+
+                    <div class="width100c">
+
+                        <div class="width30c" style="margin-right: 2%;">
+                            <button class="texttype unselectable-text" value="span style='color:#034694'"
+                                title="Make Color Blue"
+                                style="text-align: center;  background-color: #034694; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 5px;">
+                                Blue</button>
+                        </div>
+                        <div class="width30c" style="margin-right: 2%;">
+                            <button class="texttype unselectable-text" value="span style='color:#d71920'"
+                                title="Make Color Red"
+                                style="text-align: center;  background-color: #d71920; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 10px;">
+                                Red</button>
+                        </div>
+
+                        <div class="width30c">
+                            <button class="texttype unselectable-text" value="span style='color:#fff'"
+                                title="Make Color White"
+                                style="text-align: center;  background-color: #000; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 10px;">
+                                White</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="width100c" style="margin-top: 10px; ">
+                        Text Options:
+                    </div>
+
+                    <div class="width100c">
+                        <button class="texttype" title="Bold Selected Text"
+                            style=" border-left: 1px solid #ccc; margin-top: 10px;" value="strong"><strong
+                                class="unselectable-text">B</strong></button>
+                        <button class="texttype" value="i"><i class="unselectable-text">I</i></button>
+                        <button class="texttype" title="Bold and Italic text"
+                            value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
+                        <button title="Underline Text" class="texttype" value="u"><u
+                                class="unselectable-text">U</u></button>
+                        <button title="Subscript Text" class="texttype unselectable-text" value="sub"
+                            style="font-size: 0.8rem;">X<sub>2</sub></button>
+                        <button title="Superscript Text" class="texttype unselectable-text"
+                            style=" border-right: 1px solid #ccc;font-size: 0.8rem; " value="sup">
+                            X<sup>2</sup></button>
+
+                        <button class="textaligner" title="Left Justify Text"
+                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                            cssadd='left'>
+                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
+                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                <style>
+                                    .st1a {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <line class=st1a x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                <line class=st1a x1=6 x2=43.5 y1=30.1 y2=30 />
+                                <line class=st1a x1=6 x2=35.6 y1=41.5 y2=41.4 />
+                                <line class=st1a x1=5.9 x2=35.5 y1=17.4 y2=17.3 />
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+                        <button class="textaligner" title="Center Justify Text"
+                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                            cssadd='center'>
+                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
+                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                <style>
+                                    .st0dd {
+                                        fill: #333
+                                    }
+
+                                    .st1dd {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <rect class=st0 height=51 width=50.2 x=-0.2 y=-0.3 />
+                                <line class=st1dd x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                <line class=st1dd x1=6 x2=43.5 y1=30.1 y2=30 />
+                                <line class=st1dd x1=6.3 x2=43.6 y1=41.5 y2=41.4 />
+                                <line class=st1dd x1=6.2 x2=43.5 y1=17.6 y2=17.5 />
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+
+                        <button class="textaligner" title="Left Justify Text"
+                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
+                            cssadd='right'>
+                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
+                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                <style>
+                                    .st0c {
+                                        fill: #333
+                                    }
+
+                                    .st1c {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <rect class=st0c height=51 width=50.2 x=-0.2 y=-0.3 />
+                                <line class=st1c x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                <line class=st1c x1=6 x2=43.5 y1=30.1 y2=30 />
+                                <line class=st1c x1=14 x2=43.6 y1=41.5 y2=41.4 />
+                                <line class=st1 x1=13.9 x2=43.5 y1=17.4 y2=17.3 />
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+
+                        <button class="textaligner3" title="Add Break to Text"
+                            style="font-size: 0.85em;max-width: none; border-right: 1px solid #ccc; "
+                            cssadd='<br>'>br</button>
+
+
+                    </div>
+
+
+
+
+                    <div class="width100c" style="margin-top: 10px;">
+
+                        <select name="textaligner2" id="textaligner2a" style="    margin-top: 6px;
+                                width: 72%;
+                                font-size: 74%;
+                                max-width: none;
+                                min-height: 30px;
+                                text-align: center; background-color: #333; color: #fff; ">
+                            <option value="addpadding0">Add Top Margin 0px</option>
+                            <option value="addpadding10">Add Top Margin 10px</option>
+                            <option value="addpadding20">Add Top Margin 20px</option>
+                            <option value="addpadding30">Add Top Margin 30px</option>
+                            <option value="addpadding40">Add Top Margin 40px</option>
+                            <option value="addpadding60">Add Top Margin 60px</option>
+                            <option value="addpadding80">Add Top Margin 80px</option>
+                            <option value="addpadding100">Add Top Margin 100px</option>
+                        </select>
+
+                        <button class="clearsection" style="color: #730000;
+    background-color: #fff;
+    width: 20%;
+    float: left;
+    margin-right: 3%;
+    font-size: 65%;
+    padding-bottom: 8px;
+    padding-top: 7px;
+    margin-top: 8px;">Empty Component</button>
+
+                    </div>
+
+
+
+                    <div class="width100c" style="margin-left: 1%; width: 96%; margin-top: 10px;">
+                        <p class="unselectable-text"
+                            style="margin-bottom: 5px;  margin-top: 0px; font-size: 0.75em; color: #f0cd97;">Create
+                            Links
+                            Here: (Put in link first THEN select text)</p>
+                    </div>
+                    <div class="width80c" style="width: 65% !important; min-height: auto;">
+                        <input id="whatsthelink" type="text" placeholder="text link" style="width: 100%;">
+                    </div>
+                    <div class="width20c" style="width: 35% !important; min-height: auto;">
+                        <button id="linkmaker">Convert to Link</button>
+                    </div>
+                    <div class="width100c" style="margin-left: 1%; width: 96%; margin-top: 10px;">
+                        <p class="unselectable-text" style="margin-bottom: 5px;  margin-top: 0px; font-size: 0.75em;">
+                            Open Link in a New Window? <input type="checkbox" id="linktooutside" name="linktooutside"
+                                class="linktooutside" style="width: 20px;"></p>
+                    </div>
+
+                </div>
+
+                <!--
+                <div class="width100c openclose" openclose="copybuilder" style="display: none;">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span style="font-size: 0.8rem;" class="myindicator">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Text Component </span>
+                        <span class="mysmalltext">(P)</span></div>
+                </div>
+-->
+
+                <div class="prod100 stage1 tools copybuilder"
+                    style=" margin-top: 0px; margin-left: 0px;  width: 95%; margin-left: 1%;">
+
+
+
+                    <select name="myTEXTwidth" id="myTEXTwidth"
+                        style="float: right; margin-top: -25px; margin-right: 10px;">
+
+                        <option value="width100c">100% across</option>
+                        <option value="width50c">&nbsp;&nbsp;50% across</option>
+                        <option value="width30c">&nbsp;&nbsp;30% across</option>
+                        <option value="width20c">&nbsp;&nbsp;20% across</option>
+
+                    </select>
+
+
+                    <div class="width100c" style="margin-top: 10px; ">
+                        Text Options:
+                    </div>
+
+                    <div class="width100c">
+                        <button class="texttype"
+                            style="width: 9%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;"
+                            value="strong"><strong class="unselectable-text">B</strong></button>
+                        <button class="texttype" style="width: 9%; color: #fff; background-color: transparent;"
+                            value="i"><i class="unselectable-text">I</i></button>
+                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                            value="strong class='strongitalic'"><strong><i
+                                    class="unselectable-text">B+I</i></strong></button>
+                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                            value="u"><u>U</u></button>
+                        <button class="texttype"
+                            style="width: 9%; color: #fff;  background-color: transparent;font-size: 0.8rem;"
+                            value="sub">X<sub>2</sub></button>
+                        <button class="texttype"
+                            style="width: 9%; color: #fff; border-right: 1px solid #ccc; background-color: transparent;font-size: 0.8rem;"
+                            value="sup">
+                            X<sup>2</sup></button>
+
+                        <button class="textaligner"
+                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                            cssadd='left'>
+                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
+                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                <style>
+                                    .st1a {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <line class=st1a x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                <line class=st1a x1=6 x2=43.5 y1=30.1 y2=30 />
+                                <line class=st1a x1=6 x2=35.6 y1=41.5 y2=41.4 />
+                                <line class=st1a x1=5.9 x2=35.5 y1=17.4 y2=17.3 />
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+                        <button class="textaligner"
+                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                            cssadd='center'>
+                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
+                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                <style>
+                                    .st0dd {
+                                        fill: #333
+                                    }
+
+                                    .st1dd {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <rect class=st0 height=51 width=50.2 x=-0.2 y=-0.3 />
+                                <line class=st1dd x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                <line class=st1dd x1=6 x2=43.5 y1=30.1 y2=30 />
+                                <line class=st1dd x1=6.3 x2=43.6 y1=41.5 y2=41.4 />
+                                <line class=st1dd x1=6.2 x2=43.5 y1=17.6 y2=17.5 />
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+
+                        <button class="textaligner"
+                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
+                            cssadd='right'>
+                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
+                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                <style>
+                                    .st0c {
+                                        fill: #333
+                                    }
+
+                                    .st1c {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <rect class=st0c height=51 width=50.2 x=-0.2 y=-0.3 />
+                                <line class=st1c x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                <line class=st1c x1=6 x2=43.5 y1=30.1 y2=30 />
+                                <line class=st1c x1=14 x2=43.6 y1=41.5 y2=41.4 />
+                                <line class=st1 x1=13.9 x2=43.5 y1=17.4 y2=17.3 />
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+
+                        <button class="textaligner3"
+                            style="width: 10%;font-size: 0.85em;max-width: none; color: #fff;  background-color: transparent;border-right: 1px solid #ccc; "
+                            cssadd='<br>'>br</button>
+
+
+
+
+
+                    </div>
+
+
+                    <div class="width100c" style="margin-top: 10px;">
+                        <select name="textaligner2" id="textaligner2">
+                            <option value="addpadding0">Add Top Margin 0px</option>
+                            <option value="addpadding10">Add Top Margin 10px</option>
+                            <option value="addpadding20">Add Top Margin 20px</option>
+                            <option value="addpadding30">Add Top Margin 30px</option>
+                            <option value="addpadding40">Add Top Margin 40px</option>
+                            <option value="addpadding60">Add Top Margin 60px</option>
+                            <option value="addpadding80">Add Top Margin 80px</option>
+                            <option value="addpadding100">Add Top Margin 100px</option>
+                        </select>
+                    </div>
+
+
+                    <div class="width100c" style="margin-left: 1%; width: 96%; margin-top: 10px;">
+                        <p class="unselectable-text"
+                            style="margin-bottom: 5px;  margin-top: 0px; font-size: 0.75em; color: #f0cd97;">Create
+                            Links
+                            Here: (Put in link first THEN select text)</p>
+                    </div>
+                    <div class="width80c" style="width: 65% !important;">
+                        <input id="whatsthelink2" type="text" placeholder="text link" style="width: 100%;">
+                    </div>
+                    <div class="width20c" style="width: 35% !important;">
+                        <button id="linkmaker2">Convert
+                            to
+                            Link</button>
+                    </div>
+                    <div class="width100c" style="margin-left: 1%; width: 96%; margin-top: 10px;">
+                        <p class="unselectable-text" style="margin-bottom: 5px;  margin-top: 0px; font-size: 0.75em;">
+                            Open Link in a New Window?
+                            <input type="checkbox" id="linktooutside2" name="linktooutside2" class="linktooutside2"
+                                style="width: 20px;">
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="tools2" class="width100c openclose" openclose="imagebuilder">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Image Component </span>
+                        <span class="mysmalltext">(IMG)</span></div>
+                </div>
+
+
+                <div class="prod100 stage1 tools imagebuilder" id="imagebuilder"
+                    style=" margin-top: 20px; margin-left: 0px;  width: 95%; margin-left: 2%;background-color: transparent;">
+
+
+                    <div class="prod100 imagemessage"
+                        style=" margin-top:-10px; margin-left: 0px; text-align: center; display: none; margin-bottom: 20px; padding: 0px; background-color: #fff;">
+                        <span style="color: #730000; text-align: center; font-weight: bold;">IMAGE MUST HAVE A ALT TAG!
+                            ---
+                            NO ALT
+                            NO IMAGE</span>
+                    </div>
+
+                    <duv class="width100c" style="margin-top: -10px; margin-bottom: 10px;">
+                        <button class="whattypeofimage unselectable-text" openimagebuilder="productimage">Product
+                            Images</button>
+                        <button class="whattypeofimage unselectable-text" openimagebuilder="promoimage">Promo
+                            Images</button>
+                        <button class="whattypeofimage unselectable-text" openimagebuilder="wrapimage">Text Wrap /
+                            Image</button>
+                    </duv>
+
+                    <div class="width100c imgbuild typeofim productimage"
+                        style="width: 99%; margin-right: 1%; display: none;">
+
+
+
+                        <input type="text" id="cinput1" placeholder="Product Model Number" style=" width: 100%;">
+                        <input type="text" id="cinput1b" placeholder="Product Img alt tag"
+                            style="width: 100%; margin-top: 20px;">
+
+                        <input type="text" id="cinput1c" placeholder="Optional Header for Image"
+                            style="width: 100%; margin-top: 20px;">
+
+                        <div class="prod100 stage 2" id="largeimagepreview"
+                            style="margin-left: 0px; width: 100%; margin-left: 0px; padding-left: 0px;">
+                            <div class="width100c unselectable-text" style="margin-bottom: 5px;"><span
+                                    style="color: #f0cd97;">Click to Select Image for Component</span>
+                            </div>
+
+                            <div style="width: 100%; float: left; overflow: auto;">
+                                <div style="width: 200%; float: left;">
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_RF18A5101SR.jpg"
+                                            num="0" prefix="Z_" alt="Image 1">
+                                        <span>Image 1</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ1_75U8H.jpg"
+                                            num="1" prefix="AZ1_" alt="Image 2">
+                                        <span>Image 2</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw852e6d8a/images/hires/AZ1_527521-51Q.jpg?sw=300&sh=300&sm=fit"
+                                            num="2" prefix="AZ2_" alt="Image 3">
+                                        <span>Image 3</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwd629ed5a/images/hires/Z_TO1950SBD.jpg?sw=300&sh=300&sm=fit"
+                                            num="3" prefix="AZ3_" alt="Image 4">
+                                        <span>Image 4</span>
+                                    </div>
+
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwbba38b6f/images/hires/Z_DMH-W4660NEX.jpg?sw=300&sh=300&sm=fit"
+                                            num="4" prefix="AZ4_" alt="Image 5">
+                                        <span>Image 5</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw80f22513/images/hires/Z_KATNA1512445.jpg?sw=300&sh=300&sm=fit"
+                                            num="5" prefix="AZ5_" alt="Image 6">
+                                        <span>Image 6</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw8ad4e935/images/hires/Z_MPQ03LL-A.jpg?sw=300&sh=300&sm=fit"
+                                            num="6" prefix="AZ6_" alt="Image 7">
+                                        <span>Image 7</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwd523bb01/images/hires/AZ10_OJPRO9015E.jpg?sw=300&sh=300&sm=fit"
+                                            num="7" prefix="AZ7_" alt="Image 8">
+                                        <span>Image 8</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dweef45a4d/images/hires/Z_427120.jpg?sw=300&sh=300&sm=fit"
+                                            num="8" prefix="AZ8_" alt="Image 9">
+                                        <span>Image 9</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw1a25013a/images/hires/Z_936.jpg?sw=300&sh=300&sm=fit"
+                                            num="9" prefix="AZ9_" alt="Image 10">
+                                        <span>Image 10</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw95998783/images/hires/AZ2_KATNA1512445.jpg?sw=300&sh=300&sm=fit"
+                                            num="10" prefix="AZ10_" alt="Image 11">
+                                        <span>Image 11</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw3d4c40be/images/hires/Remote2.jpg?sw=300&sh=300&sm=fit"
+                                            num="11" prefix="AZ11_" alt="Image 12">
+                                        <span>Image 12</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwee5b3664/images/hires/Z_35034.jpg?sw=300&sh=300&sm=fit"
+                                            num="12" prefix="AZ12_" alt="Image 13">
+                                        <span>Image 13</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwb5130fe8/images/hires/Z_527521-51Q.jpg?sw=300&sh=300&sm=fit"
+                                            num="13" prefix="AZ13_" alt="Image 14">
+                                        <span>Image 14</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ8_RF18A5101SR.jpg"
+                                            num="14" prefix="AZ14_" alt="Image 15">
+                                        <span>Image 15</span>
+                                    </div>
+
+                                    <div class="promo16c">
+                                        <img class="showthepreviewimage"
+                                            src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/RF18A5101SR.jpg"
+                                            num="15" prefix="" alt="Image 16">
+                                        <span>Guide</span>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <div class="width100c imgbuild typeofim promoimage"
+                        style="width: 99%; margin-right: 1%; display: none;">
+
+
+                        <div class="width100c" style="margin-bottom: 10px;">
+                            Catalog Selector <select id="catalogselector">
+                                <option value="/blog/" selected>Blog</option>
+                                <option value="/pim-content/">pim-content</option>
+
+                            </select>
+                        </div>
+                        <input type="text" id="cinput1promotional" placeholder="tv-monitor-feat.jpg"
+                            style=" width: 100%;">
+                        <input type="text" id="cinput1bpromotional" placeholder="TV with a video game and controllers"
+                            style="width: 100%; margin-top: 20px;">
+
+                        <div class="width100c" style="margin-top: 10px;">
+                            <img id="showthepromotionalimage" style="padding: 0px;
+    margin: 0px;
+    width: 30% !important; cursor: pointer;"
+                                src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/tv-monitor-feat.jpg">
+                            <div class="width100c" style="font-size: 0.7rem; color: #f0cd97;"> Click this image to add
+                                it
+                                to the Workspace</div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="width100c imgbuild typeofim wrapimage"
+                        style="width: 99%; margin-right: 1%; display: none;">
+                        <div class="width100c imgbuild" style="border-bottom: 1px solid #ccc;margin-bottom: 10px;  ">
+
+                            <textarea style="width: 94%; margin-bottom: 5px; max-width: 94%;" name="wraparoundimage"
+                                id="wraparoundimage" cols="30" rows="8"
+                                placeholder="Click on a Component to Edit the HTML"></textarea>
+
+
+                            <div class="width100c" style="margin-bottom: 10px;">
+                                Catalog Selector <select name="wraparoundselect" id="wraparoundselect">
+                                    <option value="blog" selected>Blog</option>
+                                    <option value="product">Product</option>
+                                </select>
+                            </div>
+
+                            <div class="width100c" style="margin-bottom: 10px;">
+                                <input type="text" id="wraparoundfilename" placeholder="Image Filename"
+                                    style=" width: 50%; margin-bottom: 10px;">
+
+                                <input type="text" id="wraparoundproductnumber" placeholder="Enter Product Number"
+                                    style=" width: 50%; margin-bottom: 10px;">
+                                <select title="Reverse Layout" name="reverseimage" id="reverseimage">
+
+                                    <option selected value="no">Image First</option>
+                                    <option value="yes">Image Second</option>
+                                </select>
+
+
+                                <input type="text" id="wraparoundalt" placeholder="Image Alt Tag" style=" width: 95%; ">
+                                <button id="wraparoundsubmit" type="submit">Submit
+                                    Component</button>
+
+                                <div id="blogproductlist" class="width100c">
+                                    <div class="width100c unselectable-text" style="margin-bottom: 5px;"><span
+                                            style="color: #f0cd97;">Click to Select Image for Component</span>
+                                    </div>
+                                    <div style="width: 200%; float: left;">
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_RF18A5101SR.jpg"
+                                                num="0" prefix="Z_">
+                                            <span>Image 1</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ1_75U8H.jpg"
+                                                num="1" prefix="AZ1_">
+                                            <span>Image 2</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw852e6d8a/images/hires/AZ1_527521-51Q.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="2" prefix="AZ2_">
+                                            <span>Image 3</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwd629ed5a/images/hires/Z_TO1950SBD.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="3" prefix="AZ3_">
+                                            <span>Image 4</span>
+                                        </div>
+
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwbba38b6f/images/hires/Z_DMH-W4660NEX.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="4" prefix="AZ4_">
+                                            <span>Image 5</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw80f22513/images/hires/Z_KATNA1512445.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="5" prefix="AZ5_">
+                                            <span>Image 6</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw8ad4e935/images/hires/Z_MPQ03LL-A.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="6" prefix="AZ6_">
+                                            <span>Image 7</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwd523bb01/images/hires/AZ10_OJPRO9015E.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="7" prefix="AZ7_">
+                                            <span>Image 8</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dweef45a4d/images/hires/Z_427120.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="8" prefix="AZ8_">
+                                            <span>Image 9</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw1a25013a/images/hires/Z_936.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="9" prefix="AZ9_">
+                                            <span>Image 10</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw95998783/images/hires/AZ2_KATNA1512445.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="10" prefix="AZ10_">
+                                            <span>Image 11</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dw3d4c40be/images/hires/Remote2.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="11" prefix="AZ11_">
+                                            <span>Image 12</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwee5b3664/images/hires/Z_35034.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="12" prefix="AZ12_">
+                                            <span>Image 13</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwb5130fe8/images/hires/Z_527521-51Q.jpg?sw=300&amp;sh=300&amp;sm=fit"
+                                                num="13" prefix="AZ13_">
+                                            <span>Image 14</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ8_RF18A5101SR.jpg"
+                                                num="14" prefix="AZ14_">
+                                            <span>Image 15</span>
+                                        </div>
+
+                                        <div class="promo16c">
+                                            <img class="showthepreviewimage2"
+                                                src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/RF18A5101SR.jpg"
+                                                num="15" prefix="">
+                                            <span>Guide</span>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="width100c" style="margin-top: 10px; width: 97%; ">
+                        <span id="loadedimagemessage" style="font-size: 0.7rem;"> Loaded Images: Select Image to Preview
+                        </span>
+                        <input type="file" id="imgfileInput" webkitdirectory directory multiple style="display: none;">
+
+                        <div class="width100c" id="mycompimagelist" style="overflow: auto; max-height: 117px;">
+                        </div>
+
+                    </div>
+                    <button id="clicktoloadlocalfiles" class="unselectable-text">Load
+                        Preview Images from Folder</button>
+
+
+                </div>
+
+                <div id="tools3" class="width100c openclose" openclose="listbuilder">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;List Component </span>
+                        <span class="mysmalltext">(LI)</span>
+
+                    </div>
+                </div>
+
+
+
+                <div class="prod100 stage1 tools listbuilder"
+                    style=" margin-top: 5px; margin-left: 0px;  width: 95%; margin-left: 2%; background-color: transparent;">
+
+
+
+                    <div class="list-builder-container dark-mode">
+                        <div class="list-builder-form">
+
+
+                            <div class="form-group">
+                               
+                                <button type="button" id="exportList" class="list-button">Export List</button>
+                                <button type="button" id="importList" class="list-button">Import List</button>
+                                <input type="file" id="fileInputList" style="display: none;">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="listTitle">List Title:</label>
+                                <input type="text" id="listTitle" placeholder="Enter list title" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="listAmount">List Amount:</label>
+                                <select id="listAmount" class="form-control">
+                                    <!-- Options will be dynamically filled -->
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="listType">Type of List:</label>
+                                <select id="listType" class="form-control">
+                                    <option value="0">Numbered List</option>
+                                    <option value="1">Bullet List</option>
+                                </select>
+                            </div>
+
+                            <fieldset class="list-items">
+                                <legend>List Items</legend>
+                                <div id="listItems">
+                                    <!-- List item inputs will be generated based on the List Amount selection -->
+                                </div>
+                            </fieldset>
+
+                            <button type="button" id="submitList" class="list-button" style="float: right;">Submit
+                                List</button>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+                <div id="tools4" class="width100c openclose" openclose="videocomponent">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Video Player </span>
+                        <span class="mysmalltext">(MP4)</span>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="width100c tools videocomponent"
+                    style=" width: 97%; padding-left: 2%; padding-bottom: 2%; margin-left: 0%;">
+
+                    <div class="container">
+                        <div class="input-group">
+                            <label for="videofilename">Video Filename (mp4):</label>
+                            <input id="videofilename" type="text" placeholder="Enter video filename"
+                                class="input-field">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="videocaptions">Captions Filename (vtt):</label>
+                            <input id="videocaptions" type="text" placeholder="Enter captions filename"
+                                class="input-field">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="videoposter">Video Poster (jpg):</label>
+                            <input id="videoposter" type="text" placeholder="Enter poster filename" class="input-field">
+
+                        </div>
+
+
+                        <div class="input-group">
+                            <label for="videoseotitle">Video SEO Title*</label>
+                            <input id="videoseotitle" type="text" placeholder="Enter Video Title" class="input-field"
+                                required>
+
+                        </div>
+                        <div class="input-group">
+                            <label for="videoseodescription">Video SEO Description*</label>
+                            <textarea id="videoseodescription" type="text" placeholder="Enter Video Description"
+                                class="input-field" required></textarea>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+                            <button id="submitvideofile" class="submit-button">Submit Video</button>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <div id="tools4" class="width100c openclose" openclose="videofullconvert">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Subtitles Converter </span>
+                        <span class="mysmalltext">(VTT)</span>
+                    </div>
+                </div>
+
+
+
+                <div class="width100c tools videofullconvert">
+
+                   
+<style>
+.dark-container {
+    color: #fff; /* Text color */
+    width: 94%;
+    margin-left: 2%;
+}
+
+.dark-container.conversion-section {
+    margin-bottom: 20px;
+}
+
+.dark-container h3 {
+    margin-top: 0;
+}
+
+.dark-container span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.dark-container .file-input {
+    margin-bottom: 10px;
+}
+
+.dark-container .status-report {
+    background-color: #555; /* Darker background for status report */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.dark-container .options {
+    margin-bottom: 10px;
+}
+
+.dark-container .checkbox-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dark-container .input-field {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.dark-container .convert-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-container .convert-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.dark-container .progress-container {
+    background-color: #555; /* Darker background for progress container */
+    border-radius: 5px;
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.dark-container .progress-bar {
+    background-color: #4CAF50; /* Green progress bar */
+    height: 10px;
+    border-radius: 5px;
+}
+</style>
+
+                    <div class="container dark-container">
+                        <div class="conversion-section">
+
+                            <span>Convert CSV / SRT Files to VTT</span>
+                            <input type="file" id="csvFileInput" accept=".csv, .srt" multiple class="file-input">
+
+
+
+                            <div id="statusReport" class="status-report"></div>
+
+                            <div class="options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="includeHeader" style="width: auto;">
+                                    Include VTT Header
+                                </label>
+                                <label>
+                                    Filename Suffix:
+                                    <input type="text" id="filenameSuffix" placeholder="-converted" class="input-field">
+                                </label>
+                            </div>
+
+                            <button id="convertBtn" class="convert-button">Convert to VTT</button>
+
+                            <div id="progressContainer" class="progress-container">
+                                <div id="progressBar" class="progress-bar"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div id="mylinkbuilderd" class="width100c openclose" openclose="mylinkbuilder">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Text Options & Link Builder </span>
+
+                    </div>
+                </div>
+
+                <div id="tools5" openclose="mylinkbuilder" class="width100c stage1 tools mylinkbuilder"
+                    style=" margin-top: 20px; margin-left: 0px;  width: 97%; margin-left: 2%;">
+                    <p class="unselectable-text" style="margin-bottom: 5px;  margin-top: 0px;">Create Links Here: (Put
+                        in
+                        link first THEN select text)
+                    </p>
+
+                    <div class="width80c" style="width: 65% !important;">
+                        <input id="whatsthelink3" type="text" placeholder="text link" style="width: 100%;">
+                    </div>
+                    <div class="width20c" style="width: 35%;">
+                        <button id="linkmaker3"
+                            style="padding: 5px; margin-left: 15px; padding-bottom: 3px; font-size: 86%;">Convert to
+                            Link</button>
+                    </div>
+
+                    <div class="width100c">
+                        <div style="float: left; padding-top: 10px;"> <span style="line-height: 20px;"
+                                class="unselectable-text">Open Link in a
+                                New
+                                Window?</span></div>
+                        <div style="margin-top: 10px; float: left;"> <input type="checkbox" id="linktooutside3"
+                                name="linktooutside3" class="linktooutside3"
+                                style="width: 10px; zoom: 2; margin-top: 0px; ">
+                        </div>
+
+                    </div>
+
+                    <div class="prod100" id="message2">
+                        BAD
+                        LINK, RELATIVE LINKS ONLY!</div>
+
+
+                    <div class="width100c">
+                        <button class="texttype" id="theboldtext"
+                            style="width: 9%; color: #fff; border-left: 1px solid #ccc; background-color: transparent; margin-top: 10px;"
+                            value="strong"><strong class="unselectable-text">B</strong></button>
+                        <button class="texttype" style="width: 9%; color: #fff; background-color: transparent;"
+                            value="i"><i class="unselectable-text">I</i></button>
+                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                            value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
+                        <button class="texttype" style="width: 9%; color: #fff;  background-color: transparent;"
+                            value="u"><u class="unselectable-text">U</u></button>
+                        <button class="texttype"
+                            style="width: 9%; color: #fff;  background-color: transparent;font-size: 0.8rem;"
+                            value="sub">X<sub>2</sub></button>
+                        <button class="texttype"
+                            style="width: 9%; color: #fff; border-right: 1px solid #ccc; background-color: transparent;font-size: 0.8rem;"
+                            value="sup">
+                            X<sup>2</sup></button>
+
+                        <button class="textaligner"
+                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                            cssadd='left'>
+                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
+                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                <style>
+                                    .st1a {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <line class=st1a x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                <line class=st1a x1=6 x2=43.5 y1=30.1 y2=30 />
+                                <line class=st1a x1=6 x2=35.6 y1=41.5 y2=41.4 />
+                                <line class=st1a x1=5.9 x2=35.5 y1=17.4 y2=17.3 />
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+                        <button class="textaligner"
+                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
+                            cssadd='center'>
+                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
+                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                <style>
+                                    .st0dd {
+                                        fill: #333
+                                    }
+
+                                    .st1dd {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <rect class=st0 height=51 width=50.2 x=-0.2 y=-0.3 />
+                                <line class=st1dd x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                <line class=st1dd x1=6 x2=43.5 y1=30.1 y2=30 />
+                                <line class=st1dd x1=6.3 x2=43.6 y1=41.5 y2=41.4 />
+                                <line class=st1dd x1=6.2 x2=43.5 y1=17.6 y2=17.5 />
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+
+                        <button class="textaligner"
+                            style="width: 8%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent;border-right: 1px solid #ccc; "
+                            cssadd='right'>
+                            <?xml version="1.0" encoding="utf-8"?><svg version=1.1 viewBox="0 0 50 50" x=0px
+                                xml:space=preserve xmlns=http://www.w3.org/2000/svg
+                                xmlns:xlink=http://www.w3.org/1999/xlink y=0px>
+                                <style>
+                                    .st0c {
+                                        fill: #333
+                                    }
+
+                                    .st1c {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <rect class=st0c height=51 width=50.2 x=-0.2 y=-0.3 />
+                                <line class=st1c x1=6 x2=43.6 y1=6.8 y2=6.6 />
+                                <line class=st1c x1=6 x2=43.5 y1=30.1 y2=30 />
+                                <line class=st1c x1=14 x2=43.6 y1=41.5 y2=41.4 />
+                                <line class=st1 x1=13.9 x2=43.5 y1=17.4 y2=17.3 />
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+
+                        <button class="textaligner3"
+                            style="width: 10%;font-size: 0.85em;max-width: none; color: #fff;  background-color: transparent;border-right: 1px solid #ccc; "
+                            cssadd='<br>'>br</button>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="width100c openclose myrowbuilder21" openclose="myrowbuilder">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Row Options</span>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+
+
+            <div class="width100c toolboxhide codechanger"
+                style="margin-top: 5px;  padding: 5px; width: 97%; padding-bottom: 5px;">
+                <div class="width100c unselectable-text" style="margin-bottom: 5px; padding-left: 15px;">
+
+                    <div class="width60c " style="font-size: 90% !important;">
+                        HTML
+
+                        Editor
+                        and Copy Correction
+                    </div>
+                    <div class="width40c">
+
+                        <button id="EditandSubmitAL" class="unselectable-text"
+                            style="float: right; margin-right: 8%; margin-top: 3px;">
+                            Submit
+                            New Code</button>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <textarea name="myhtmleditor" id="myhtmleditor" class="codechanger" cols="30" rows="8"
+                    placeholder="Click on a Component to Edit the HTML"></textarea>
+                   
+
+
+
+
+                <div class="width100c" id="bottommatrix">
+                    <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix7"
+                        style=" color: #fff !important;width: 14%;">
+                        <img src="assets/help.png" style="width: 30%;" title="Help">
+                    </div>
+
+                    <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix3"
+                        style=" color: #fff !important; width: 14%;">
+                        <img src="assets/advanded-code.png" style="width: 30%;" title="Advanced Code Editor">
+                    </div>
+
+                    <div id="whatsnewwb" class="width30c advanced-Buttons" style=" color: #fff !important; width: 16%">
+                        <img src="assets/whatsnew.png" style="width: 30%;" title="Whats New">
+                    </div>
+
+                 
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <div class="promo50" id="resizable-div">
+
+    
+            <div id="resize-handle"></div>
+
+
+            <div class="width100c" style="margin-bottom: 0px;   width: 94%; margin-left: 4%;">
+
+                <div class="width100c" style=" margin-left: 1%; width: 98%; min-height: 20px; overflow: auto; ">
+                    <div class="width100c" style="width: 462px;">
+                        <div class="openthematrix" mymatrix="mymatrix-dark" style="float: right;"><strong>Dark View</strong></div>
+                        <div class="openthematrix" mymatrix="mymatrix6" style="float: right;"><strong>Templetes</strong></div>
+                        
+                        <div class="openthematrix" mymatrix="mymatrix1" style="float: right; "><strong>Final
+                                Code</strong></div>
+                        <div id="pluginsandtools" class="openthematrix" mymatrix="mymatrix9" style="float: right;">
+                            <strong>Plugins &
+                                Tools</strong></div>
+                        <div class="openthematrix" mymatrix="mymatrix4" style="float: right;">Check on PCR</div>
+                        <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2"
+                            style="margin-left: .1%;float: right;">Workspace</div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="width100c"
+                    style="margin-left: 15px; width: auto;  padding-top: 2px;  margin-top: 5px; color: #fff; padding-left: 5px; font-size: 0.85rem; height: 15px; color: yellow; display: none;">
+                    <div style="width: auto; float: left;">Row Background Color: &nbsp;&nbsp;&nbsp;</div>
+                    <form style="float: left;">
+                        <label for="optionb1">Cleer</label> <input id="optionb1" class="back-clear"
+                            name="backgroundcolor" rowbackgroundcolor="selectedcleard" type="radio"
+                            style="width: auto;"> &nbsp;&nbsp;
+                        <label for="optionb2">Highlighted</label> <input id="optionb2" class="back-tan"
+                            name="backgroundcolor" rowbackgroundcolor="selectedtand" type="radio" style="width: auto;">
+                        &nbsp;&nbsp;
+                        <label for="optionb3" style="display:none">Blue</label> <input id="optionb3" class="back-blue"
+                            name="backgroundcolor" rowbackgroundcolor="selectedblued" type="radio"
+                            style="width: auto; display: none;">
+                    </form>
+
+                </div>
+
+
+                <div class="openthematrix" mymatrix="mymatrix5"
+                    style="border-radius: 5px 5px 0px 0px; float: right; display: none;">
+                    <strong>Video Tutorial</strong></div>
+
+
+            </div>
+
+
+
+
+
+
+            <div id="mymatrix6" class="width100c closethematrix">
+                <div id="mes1" class="width100c unselectable-text">
+                    Click Templete Files to Download to Your Computer</div>
+                <div class="width100c" style="margin-top: 0px;">
+                    <div id="driveContents"></div>
+                    <div class="width100c"><button onclick="listAllDriveFiles()"
+                            style="float: right; margin-top: 5px;">Refresh
+                            List</button></div>
+
+
+                </div>
+            </div>
+
+
+
+            <div id="mymatrix9" class="width100c closethematrix" style="width: 94%; margin-left: 4%;">
+                <div class="width100c" style="margin-top: 10px;">
+                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                            whaturl="bannersheduler.html">Domcell Banner Schedular ></button></div>
+
+                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                            whaturl="roundmenu-beta.html">Rounded Menu Builder ></button></div>
+
+                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                            whaturl="https://www.willpeavy.com/tools/minifier/">HTML Minifer ></button></div>
+
+                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                            whaturl="https://www.story321.org/">AI Story Generator ></button></div>
+
+
+
+
+
+                </div>
+                <div class="width100c" style="background-color: #fff; border: 1px solid #ccc;">
+                    <iframe id="outslidepluginsout" width="100%" height="768" src="nothing.html"
+                        title="Google Documents" allowfullscreen></iframe>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div id="sidetoolset" class="unselectable-text">
+             
+                <div class="hover-item" style="margin-left: -5px; margin-top: 22px;">
+                    B&bull;I&bull;U
+                    <div class="popup hidden" style="margin-left: 0px; margin-top: 10px;">
+
+                        <button class="texttype" title="Bold Selected Text"
+                            style="width: 23%; color: #fff;  background-color: transparent; margin-top: 10px; margin-bottom: 10px;"
+                            value="strong"><strong class="unselectable-text">B</strong></button>
+
+
+                        <button id="italicbutton" class="texttype" title="Italic Selected Text"
+                            style="width: 23%; color: #fff; background-color: transparent; margin-bottom: 10px;"
+                            value="i"><i class="unselectable-text">I</i></button>
+
+
+                        <button class="texttype unselectable-text" title="Bold and Italic Selected Text"
+                            style="width: 23%; color: #fff;  background-color: transparent; margin-bottom: 10px;"
+                            value="strong class='strongitalic'"><strong><i>B+I</i></strong></button>
+
+
+                        <button id="underlinebutton" class="texttype" title="Underline Selected Text"
+                            style="width: 23%; color: #fff;  background-color: transparent; margin-bottom: 10px;"
+                            value="u"><u class="unselectable-text">U</u></button>
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="hover-item" style="margin-left: 2px;">
+
+                    <svg id="asdf2" version="1.1" viewBox="0 0 50 50" x="0px" xml:space="preserve"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"
+                        style="width: 300%; margin-left: -5px;">
+                        <style>
+                            .st0dd {
+                                fill: #333
+                            }
+
+                            .st1dd {
+                                stroke: #fff;
+                                stroke-width: 6;
+                                stroke-miterlimit: 10
+                            }
+                        </style>
+                        <rect class="st0" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
+                        <line class="st1dd" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+                        <line class="st1dd" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+                        <line class="st1dd" x1="6.3" x2="43.6" y1="41.5" y2="41.4"></line>
+                        <line class="st1dd" x1="6.2" x2="43.5" y1="17.6" y2="17.5"></line>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                    </svg>
+                    <div class="popup hidden" style="padding-top: 10px;">
+
+                        <button class="textaligner" title="Align Text Left"
+                            style="width: 31%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;margin-bottom: 10px;"
+                            cssadd="left">
+                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="asdf1" version="1.1" viewBox="0 0 50 50"
+                                x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" y="0px" style="width: 100%;">
+                                <style>
+                                    .st1a {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <line class="st1a" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+                                <line class="st1a" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+                                <line class="st1a" x1="6" x2="35.6" y1="41.5" y2="41.4"></line>
+                                <line class="st1a" x1="5.9" x2="35.5" y1="17.4" y2="17.3"></line>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+                        <button class="textaligner" title="Align Text Center"
+                            style="width: 31%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;margin-bottom: 10px;"
+                            cssadd="center">
+                            <!--?xml version="1.0" encoding="utf-8"?--><svg id="asdf2" version="1.1" viewBox="0 0 50 50"
+                                x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                                <style>
+                                    .st0dd {
+                                        fill: #333
+                                    }
+
+                                    .st1dd {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <rect class="st0" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
+                                <line class="st1dd" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+                                <line class="st1dd" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+                                <line class="st1dd" x1="6.3" x2="43.6" y1="41.5" y2="41.4"></line>
+                                <line class="st1dd" x1="6.2" x2="43.5" y1="17.6" y2="17.5"></line>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+
+                        <button class="textaligner" title="Align Text Right"
+                            style="width: 31%;font-size: 0.85em;max-width: none; color: #fff;background-color: transparent; margin-bottom: 10px;"
+                            cssadd="right">
+                            <!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" viewBox="0 0 50 50" x="0px"
+                                xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                                <style>
+                                    .st0c {
+                                        fill: #333
+                                    }
+
+                                    .st1c {
+                                        stroke: #fff;
+                                        stroke-width: 6;
+                                        stroke-miterlimit: 10
+                                    }
+                                </style>
+                                <rect class="st0c" height="51" width="50.2" x="-0.2" y="-0.3"></rect>
+                                <line class="st1c" x1="6" x2="43.6" y1="6.8" y2="6.6"></line>
+                                <line class="st1c" x1="6" x2="43.5" y1="30.1" y2="30"></line>
+                                <line class="st1c" x1="14" x2="43.6" y1="41.5" y2="41.4"></line>
+                                <line class="st1" x1="13.9" x2="43.5" y1="17.4" y2="17.3"></line>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg></button>
+
+                    </div>
+                </div>
+
+
+                <div class="hover-item">
+                    <sup>2</sup>X<sub>2</sub>
+                    <div class="popup hidden" style="width: 75px; margin-left: 8px; padding-top: 10px;">
+                        <button id="subscriptbutton" class="texttype unselectable-text" title="Subscript Selected Text"
+                            style="width: auto; color: #fff;  background-color: transparent;margin-bottom: 10px;"
+                            value="sub">X<sub>2</sub></button>
+                        <button id="superscriptbutton" class="texttype unselectable-text"
+                            title="Superscript Selected Text"
+                            style="width: auto; color: #fff;  background-color: transparent;margin-bottom: 10px;"
+                            value="sup">
+                            X<sup>2</sup></button>
+
+
+                    </div>
+                </div>
+
+                <button id="breakbuttonlive" class="textaligner3 unselectable-text"
+                    title="Create a Line Break in the Text"
+                    style="width: 100%;font-size: 1em;max-width: none; color: #fff;  background-color: transparent;margin-bottom: 10px; "
+                    cssadd="<br>"> &lt;br/&gt;</button>
+
+                <div class="hover-item" style="margin-left: -5px; width: 36px;">
+                    &lt;H/&gt;
+                    <div class="popup hidden" style="width: 120px; margin-left: -1px;">
+
+                        <button class="texttype unselectable-text" title="Make Selected Text an H2"
+                            style="font-size: 0.85em;max-width: none; border-left: 1px;width:100%;margin-bottom: 10px; margin-top:5px; margin-right: 10px; width: auto; padding: 5px; "
+                            value='h2'>H2</button>
+
+                        <button class="texttype unselectable-text" title="Make Selected Text an H3"
+                            style="font-size: 0.85em;max-width: none;  width:100%;margin-bottom: 5px; width: auto; padding: 5px;"
+                            value='h3'>H3</button>
+
+                        <button class="texttype unselectable-text" title="Make Selected Text an H3"
+                            style="font-size: 0.85em;max-width: none;  width:100%;margin-bottom: 5px; width: auto; padding: 5px;"
+                            value='h4'>H4</button>
+
+                    </div>
+                </div>
+
+
+                <div style="width: 94%; border: 2px solid #ccc; margin-top:5px"></div>
+
+
+                <div class="hover-item" style="margin-left: -10px; margin-top: -7px;">
+                    <button class="unselectable-text " title="Add Rows" style="text-align: center;
+                    color: #fff;
+                    width: 97%;
+                    margin-top: 10px;
+                    margin-bottom: 0px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    padding-left: 44%;
+                    padding-right: 128%;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    background-image: url(assets/rowicon.png);
+                    background-position: center;
+                    background-repeat: no-repeat;">
+                        <span style="opacity: 0;">Row</span>
+                    </button>
+
+                    <div class="popup hidden"
+                        style="margin-left: 24px; margin-top: 10px; width: 350px; padding-bottom: 5px;">
+
+
+                        <button class="unselectable-text addrow-click" title="Add 100% Row"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 30%; margin-top: 10px; margin-bottom: 5px;">100</button>
+
+                        <button class="unselectable-text addrow50 addrow" data-layout="50,50" title="Add 2 50% Rows"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 30%; margin-top: 10px; margin-bottom: 5px;">50%
+                            x2</button>
+
+                        <button class="unselectable-text addrow25 addrow" data-layout="25,25,25,25"
+                            title="Add 4 25% Rows"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 30%; margin-top: 10px; margin-bottom: 5px;">25%
+                            x 4</button>
+
+
+
+                        <button class="unselectable-text addrow30x3 addrow" data-layout="33,33,33"
+                            title="Add 3 33% Rows"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 30%; margin-top: 10px; margin-bottom: 5px;">33%
+                            x 3</button>
+
+                        <button class="unselectable-text addrow30x3 addrow" data-layout="60,40" title="Add 60/40 Rows"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 30%; margin-top: 10px; margin-bottom: 5px;">60/40</button>
+
+                        <button class="unselectable-text addrow30x3 addrow" data-layout="40,60" title="Add 60/40 Rows"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 30%; margin-top: 10px; margin-bottom: 5px;">40/60</button>
+
+                        <button class="unselectable-text addrow30x3 addrowslider" data-layout="33,33,33"
+                            title="Add a 33% x 3 Slider"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 50%; margin-top: 10px; margin-bottom: 5px;">33%
+                            Scroller (In Dev)</button>
+
+                            <button class="unselectable-text addrow50x2 addrowslider50" data-layout="50,50"
+                            title="Add a 50% x 2 Slider"
+                            style="text-align: center; background-color: #fff; background-color: blue; color:#fff; width: 50%; margin-top: 10px; margin-bottom: 5px;">50%
+                            Scroller (In Dev)</button>
+
+                    </div>
+                </div>
+
+
+
+                <div class="hover-item" style="margin-left: -10px; margin-top: -7px;">
+                    <button class="unselectable-text " id="addrow1x1a" title="Add Rows" style="text-align: center;
+                    color: #fff;
+                    width: 97%;
+                    margin-top: 10px;
+                    margin-bottom: 0px;
+                    padding-top: 5px;
+                    padding-left: 44%;
+                    padding-right: 128%;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    background-image: url(assets/compicon.png);
+                    background-position: center;
+                    background-repeat: no-repeat;">
+                        <span style="opacity: 0;">Row</span>
+                    </button>
+
+                    <div class="popup hidden"
+                        style="margin-left: 24px; margin-top: 10px; width: 350px; padding-bottom: 5px;">
+
+                        <div id="addrow1x1a"
+                            style="                  text-align: center; background-color: yellow; color:#333; width: 23%; margin-top: 10px; margin-bottom: 5px; float: left;">
+                            100%</div>
+                        <div id="addrow2x2a"
+                            style=" margin-left:5px; text-align: center; background-color: yellow; color:#333; width: 23%; margin-top: 10px; margin-bottom: 5px; float: left;">
+                            50/50</div>
+                    </div>
+                </div>
+
+
+
+                <!--
+                <button   class="unselectable-text" title="Add 100% Component" style="    text-align: center;
+                    color: #fff;
+                    width: 97%;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    padding-top: 7px;
+                    padding-bottom: 5px;
+                    margin-bottom: 10px;
+                    padding-left: 9%;
+                    padding-right: 110%;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    background-image: url(assets/compicon.png);
+                    background-position: center;
+                    background-repeat: no-repeat;">
+
+                    <span style="opacity: 0;">100</span>
+                </button>
+                -->
+
+
+
+
+                <div class="hover-item">
+                    <div class="texttype unselectable-text" value="span style='color:#034694'" title="Define Text Color"
+                        style="    text-align: center;
+                        color: #fff;
+                        width: 97%;
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+                        padding-bottom: 5px;
+                        margin-bottom: 10px;
+                        padding-left: 11%;
+                        padding-right: 128%;
+                        margin-left: 2px;
+                        background-color: transparent !important;
+                        background-size: contain;
+                        background-image: url(assets/coloricon.png);
+                        background-position: center;
+                        background-repeat: no-repeat;">
+                        <span style="opacity: 0;">C</span>
+                    </div>
+                    <div class="popup hidden"
+                        style="padding-top: 5px; padding-bottom: 5px; margin-top: 5px; width: 400px;">
+
+                        <button class="texttype unselectable-text" value="span style='color:#034694'"
+                            title="Text Color Blue"
+                            style="text-align: center;  background-color: #034694; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;">Blue</button>
+
+
+                        <button class="texttype unselectable-text" value="span style='color:#d71920'"
+                            title="Text Color Red"
+                            style="text-align: center;  background-color: #d71920; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;">Red</button>
+
+
+                        <button class="texttype unselectable-text" value="span style='color:#fff'"
+                            title="Text Color White"
+                            style="text-align: center;  background-color: #000; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;">White</button>
+
+
+                        <button class="texttype unselectable-text" value="span style='color:#000'"
+                            title="Text Color Black"
+                            style="text-align: center;  background-color: #fff; color:#000; width: 24%; margin-top: 5px; margin-bottom: 5px;">Black</button>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div style="width: 94%; border: 2px solid #ccc; margin-bottom: 10px; "></div>
+
+                <button class="deleterow unselectable-text" title="Delete Row" style="text-align: center;
+                color: #fff;
+                width: 97%;
+                margin-top: 3px;
+                margin-bottom: 6px;
+                padding-top: 6px;
+                padding-bottom: 5px;
+                padding-left: 11%;
+                padding-right: 110%;
+                background-color: transparent !important;
+                background-size: contain;
+                background-image: url(assets/icontrash.png);
+                background-position: center;
+                background-repeat: no-repeat;"><span style="opacity: 0;">R</span></button>
+
+
+
+
+
+
+                <button class="clearsection unselectable-text" title="Empty Component" style="text-align: center;
+                    color: #fff;
+                    width: 97%;
+                    margin-top: 3px;
+                    margin-bottom: 6px;
+                    padding-top: 8px;
+                    padding-bottom: 5px;
+                    padding-left: 11%;
+                    padding-right: 110%;
+                    background-color: transparent !important;
+                    background-size: cover;
+                    background-image: url(assets/iconemptycomp.png);
+                    background-position: center;
+                    background-repeat: no-repeat;"><span style="opacity: 0;">E</span></button>
+
+
+
+            </div>
+            <div id="pullthecode2" class="width50c layout2" style="border-radius: 10px 10px 10px;">
+
+                <div class="width100c">
+
+                    <div id="pullthecode3"
+                        class="informationcontent layoutbuilder   sortable layoutop2 experience-component experience-pcrs_assets-markup">
+                    </div>
+                </div>
+               
+            </div>
+            
+
+
+            <div class="width50c" style="max-width: 24%;">
+
+                <style>
+                    #mobilepreview2 .width50c3 {
+                        width: var(--width33c3-width) !important
+                    }
+                </style>
+
+                <div class=" mymobile" id="mobilepreview2"
+                    style="max-height: 460px; width: 100%; margin-left: 0%;  overflow-y: auto;  margin-right: 0px; padding-right: 0px; ">
+
+                </div>
+                <div id="explorer2" class="width100c explorerd"
+                    style="margin-top: 3px; padding-left: 0px; margin-left: -10px; margin-top: 10px; width: 100%; ">
+                </div>
+                <div  class="saveinfo" style="font-size: 0.6rem; color: yellow; float: left; text-align: right; width: 96%;">Save Pending</div>
+            </div>
+
+
+
+            <div id="mymatrix1" class="width100c closethematrix" style="width: 96%; margin-left: 4%;">
+
+                <div class="prod100 unselectable-text"
+                    style="background-color: #fff; margin-left: 0px; width: 96.4%; color: #333;">
+                    Click on Code To Copy to Clipboard <button id="exportfinalcodetofile"
+                        style="float: right; font-size: 80%; border: 1px solid #333;">Export Final Code to File</button>
+                </div>
+
+
+
+                <div id="thisisthefinalcode" class="prod100 layout2 selectall"
+                    style="background-color: #000; color: #fff; margin-bottom: 20px; margin-left: 0px; width: 96.4%; padding-top: 20px; padding-bottom: 20px;">
+                    <span class="hidecss">
+                        &lt;link href="images/pim-content/occontent2024-v7c.css?$staticlink$" rel="stylesheet" /> <br>
+                    </span>
+                    &lt;div class="totalinternalcontent">
+                    <span id="findthecode2"></span>
+                    &lt;/div>
+                    <br>
+                    <span class="hidecss">
+                        &lt;script src="images/pim-content/occontentclamp2024b.js?$staticlink$">&lt;/script>
+                    </span>
+                </div>
+
+
+
+
+            </div>
+
+
+            <div id="mymatrix2" class="width100c closethematrix">
+
+
+            </div>
+
+
+
+            <div id="mymatrix3" class="width100c closethematrix">
+
+                <textarea name="beautycode" id="beautycode" cols="30" rows="10"></textarea>
+
+
+            </div>
+
+
+            <div class="width100c" style="width: 94%; margin-left: 4%;">
+
+                <div class="width100c colorlegend unselectable-text"
+                    style="margin-bottom: 10px; background-color: #334; margin-top: 0px; border-top: 4px solid #fff;">
+                    <div class="width100c">Key Commands</div>
+                    <ul style="margin-bottom: 35px;">
+                        <li>Ctrl + Delete = Reload</li>
+                        <li>F11 = Full Screen</li>
+                        <li>Ctrl + B = Bold Text</li>
+                        <li>Ctrl + E = Subscript</li>
+                        <li>Ctrl + D = Superscript</li>
+                        <li>Ctrl + Y = Redo</li>
+                        <li>Ctrl + Z = Undo</li>
+                        <li>Shift + Enter = Text Break</li>
+                    </ul>
+                    <div class="width100c">Functions</div>
+                    <ul>
+                        <li>Mouse Right Click on Image to Add link to image or delete image</li>
+                        <li>Mouse Left Click on Links to Preview Links</li>
+                    </ul>
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div id="mymatrix4" class="width100c closethematrix">
+        <div class="width100c">
+            <div class="width100c" style="margin-left: 10%; max-width: 1560px;">
+                <button class="morebutt" id="pcrdesktopview">Desktop View</button>
+                <button class="morebutt" id="pcrtabletview">Tablet View</button>
+                <button class="morebutt" id="pcrmobileview">Mobile View</button>
+                <button class="morebutt" id="closeembed"
+                    style="background-color: red !important;  padding-left: 5px; padding-right: 5px; margin-left: 5px; color:#fff !important">X</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="fullembedcodeddd">
+
+        <div style="width: 80%; background-color: #f7f7f7; min-height: 400px; margin-left: 10%; padding-bottom: 30px; position: relative; float: left; max-width: 1560px;    max-height: 900px;
+        overflow: hidden;
+        overflow-y: auto;"
+            id="fullembedcodeddd2">
+
+            <div class="pcrtitleclass"><span
+                    style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px; ">Overview</span><span
+                    class="pcrcloseicon">-</span></div>
+
+
+
+
+            <div id="codeloaderpcrview"
+                style="width: 90%; margin-left: 5%; min-height: 300px; background-color: #fff; float: left;"></div>
+            <div class="pcrtitleclass"><span
+                    style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Specifications</span><span
+                    class="pcrcloseicon">+</span><br>
+                <span style="font-size: 1rem; margin-left: 1.3%;">Dimensions, Range Details, Oven Details... </span>
+            </div>
+
+            <div class="pcrtitleclass">
+                <span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Reviews</span><span
+                    class="pcrcloseicon">+</span>
+
+
+
+            </div>
+
+            <div class="pcrtitleclass">
+                <span style="font-weight: bold; font-size: 1.3rem;    margin-left: 18px;">Q&A</span><span
+                    class="pcrcloseicon">+</span><br>
+                <span style="font-size: 1rem; margin-left: 1.3%;">0 Questions </span>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!--
+    <script src="js2/explorer-beta2.js"></script>
+    <script src="js2/explorer-beta2-workspace.js"></script>
+    <script src="js2/progamscript-beta.js"></script>
+    <script src="js2/applicationfunctions.js"></script>
+
+
+    <script src="js3/explorer-beta2.js"></script>
+    <script src="js3/primary.js"></script>
+    <script src="js3/internalfunctions.js"></script>
+    <script src="js3/imagefunctions.js"></script>
+    <script src="js3/imports.js"></script>
+    <script src="js3/saverestore.js"></script>
+    <script src="js3/videoconverter.js"></script>
+    <script src="js3/listmaker.js"></script>
+ -->
+ <script src="js4/complete.js"></script>
+ <script src="js/renderer.js"></script>
+</body>

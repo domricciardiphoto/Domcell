@@ -88,6 +88,8 @@ $('#fileInput').change(function (event) {
 
     setTimeout(pushtomobile, 2000);
 
+    
+
 
 })
 

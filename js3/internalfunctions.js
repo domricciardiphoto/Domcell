@@ -112,6 +112,15 @@ $('.addrowslider').on('click' , function() {
 })
 
 
+$('.addrowslider50').on('click' , function() {
+    html = '<div class="width100c programoverflow"><div class="width100c subscrollerdiv"><div class="width50c layoutpale layoutpale50 liverow droppable onblock ui-droppable"></div><div class="width50c layoutpale layoutpale50 liverow droppable ui-droppable"></div></div></div>'
+    $('.layoutbuilder').append(html);
+    $('.onblock').removeClass('onblock');
+    updateMobilePreview()
+    //runexplorer();
+})
+
+
 $('#addrowc1xc1').on('click', function () {
 
     $('.informationcontent').append(

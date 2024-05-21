@@ -300,7 +300,7 @@ function fullscreenOverviewcontent() {
     icon: `${__dirname}assets/icons/app-icon.png`,
     autoHideMenuBar: true
   })
-  Overviewcontentpage.loadFile('tool-contentbuilder.html')
+  Overviewcontentpage.loadFile('test.html')
 }
 
 
@@ -316,7 +316,7 @@ function fullscreenBadgeBuilder() {
   icon: `${__dirname}assets/icons/app-icon.png`,
   autoHideMenuBar: true,
   })
-  BadgeBuilderpage.loadFile('badgebuilder.html')
+  BadgeBuilderpage.loadFile('tool-badgebuilder-beta.html')
 }
 
 
@@ -367,7 +367,7 @@ function addbadgebuildertoindex() {
 }
 
 function addOverviewcontenttoindex() {
-  win.loadFile(path.join(__dirname, 'tool-contentbuilder.html'))
+  win.loadFile(path.join(__dirname, 'test.html'))
 }
 
 function addBannerSchedulertoindex() {
@@ -381,7 +381,7 @@ function videoplayerbuilder() {
 
 
 function createMenuWindowtoindex() {
-  win.loadFile(path.join(__dirname, 'tool-roundmenu.html'))
+  win.loadFile(path.join(__dirname, 'tool-roundmenu-beta.html'))
 }
 
 function createbreadcumb() {

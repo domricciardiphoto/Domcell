@@ -1166,16 +1166,16 @@
         .openthematrix,
         .openthematrix2 {
             float: left;
-            padding: 3px;
-            padding-left: 7px;
-            padding-right: 7px;
+            padding: 0px;
+            padding-left: 5px;
+            padding-right: 5px;
             background-color: #333;
             width: auto;
             color: #fff;
             margin-left: 10px;
             cursor: pointer;
             user-select: none;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
 
         .openthematrix:first-of-type {

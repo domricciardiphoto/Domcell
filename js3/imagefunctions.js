@@ -81,18 +81,19 @@ $('.showthepreviewimage').on('click', function () {
         imageselect = $(this).attr('prefix')
         imagename00 = $('#cinput1').val()
         newval2 = $('#cinput1b').val()
+        var newvalstripped2 = newval2.replace(/"/g , '').replace('®' , '').replace('™' , '');
         imageheader = $('#cinput1c').val()
         if ($('#cinput1c').val() == '') {
             imagedata =
                 '<div class="width100c"><img class="loading-lazy promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
                 imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
-                imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + newval2 +
+                imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + newvalstripped2 +
                 '"></div>'
         } else {
             imagedata = imageheader +
                 '<div class="width100c"><img class="loading-lazy promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
                 imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +
-                imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + newval2 +
+                imageselect + imagename00 + '.jpg?sw=400&sh=400&sm=fit" alt="' + newvalstripped2 +
                 '"></div>'
         }
         $('.interedit').append(imagedata).removeClass('.interedit')
@@ -230,9 +231,10 @@ $('#showthepromotionalimage').on('click', function () {
         $('.imagemessage').slideDown().delay(2000).slideUp()
         return false
     } else {
-        newval3 = $('#cinput1bpromotional').val()
-        imagedata2 = '<img class="loading-lazy promoimg21 in910 '+ pimPromotional +'" src="' + imagename01 + '" data-src="' + imagename01 +
-            '" alt="' + newval3 + '">'
+        var newval3 = $('#cinput1bpromotional').val()
+        var newvalstripped = newval3.replace(/"/g , '').replace('®' , '').replace('™' , '');
+        var imagedata2 = '<img class="loading-lazy promoimg21 in910 '+ pimPromotional +'" src="' + imagename01 + '" data-src="' + imagename01 +
+            '" alt="' + newvalstripped + '">'
         $('.interedit').append(imagedata2).removeClass('.interedit')
 
     }

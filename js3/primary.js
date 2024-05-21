@@ -620,11 +620,6 @@ $('.hover-item').each(function () { // Iterate over each .hover-item
     );
 });
 
-$('.deleterow').on('click', function () {
-    captureState()
-    $('.explorerselected').remove()
-    //runexplorer();
-})
 
 $('.clearsection').on('click', function () {
     captureState()

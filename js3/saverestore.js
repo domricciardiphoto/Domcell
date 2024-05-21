@@ -77,22 +77,21 @@ $(document).ready(function() {
         };
     }
 
-    // Save content to IndexedDB
+ 
+    
     function saveContent(content) {
         const transaction = db.transaction([storeName], 'readwrite');
         const store = transaction.objectStore(storeName);
         const request = store.put({ id: 'savedContent', htmlContent: content });
 
         request.onsuccess = function() {
-            console.log('Content saved to IndexedDB successfully!');
+           // console.log('Content saved to IndexedDB successfully!');
         };
 
         request.onerror = function(event) {
             console.error('Error saving content to IndexedDB:', event.target.errorCode);
         };
     }
-
-    // Load content from IndexedDB
     function loadContent() {
         const transaction = db.transaction([storeName], 'readonly');
         const store = transaction.objectStore(storeName);
@@ -110,6 +109,10 @@ $(document).ready(function() {
             console.error('Error loading content from IndexedDB:', event.target.errorCode);
         };
     }
+
+
+
+
 
     // Initialize UI components after content is loaded
     function initializeUI() {
@@ -161,4 +164,20 @@ $(document).ready(function() {
 
     // Initialize the IndexedDB
     initDB();
+    versionvvv = 0
+    setInterval(function() {  
+        saveContent(contentArea.html()); // Assuming contentArea is a jQuery object
+        var infoElement = $('.saveinfo');
+        infoElement.text('Workspace Saved');  // Update text immediately
+    
+        setTimeout(function() {
+         
+            infoElement.text('Saved Version ('+versionvvv+')'); 
+            versionvvv++
+        }, 2500);
+    }, 200000);  // Repeat every 10000ms (10 seconds)
+
+    var textContent = $('.editor-input').val(); // Extract just the text from the textarea
+    $('.editor-input').replaceWith(textContent);
+
 });

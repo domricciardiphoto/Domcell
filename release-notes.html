@@ -140,8 +140,86 @@
 </head>
 
 <body>
+<a href="gettingstarted.html" style="color: #fff;">
+  <img src="assets/home.png" alt="Home" width="25px">
 
+</a>
   <div class="timeline">
+
+    <div class="container right">
+      <div class="content">
+        <h2><span class="fa fa-plus"></span>2024/5/16 New Features</h2>
+        <p>So much focus on memory I forgot my keys</p>
+        <button id="btnFeature0001z1">Read more</button>
+      </div>
+    </div>
+
+
+
+    <div id="modalFeature0001z1" class="modal">
+      <div class="modal-content">
+        <span class="close" data-modal="modalFeature0001z1">&times;</span>
+        <ol>
+          <li>Implemented new memory management features during operations.</li>
+          <li>Refined delete functions to release memory more efficiently and improve timing with fade animations (animations are for timing purposes, not aesthetics).</li>
+          <li>Enhanced the Explorer right-click menu with options to "Add a Row" and "Add a Component" (before and after the selected element). The red button now adds the element.</li>
+          <li>Fixed various context menu items that were not functioning correctly.</li>
+          <li>Made the Explorer right-click context menu draggable for better accessibility.</li>
+          <li>Integrated memory release processes for drag and drop functionality.</li>
+          <li>Added a "Save to Memory" button at the top of the interface.</li>
+          <li>Set automatic memory saves to occur every 1 minute.</li>
+          <li>Displayed "Saved" version messages at the bottom, under the explorer.</li>
+          <li>Consolidated code files into a single file for future development, with plans to separate them again once features are finalized.</li>
+          <li>Made UI adjustments to improve usability on smaller screens, such as the Microsoft Surface in portrait mode.</li>
+          <li>Optimized mobile updates to occur only when new content is added, rather than during the addition of building blocks, to conserve memory.</li>
+          <li>Removed redundant JavaScript functions to alleviate slowdowns and memory issues.</li>
+          <li>Reworked the undo and redo functions for enhanced reliability.</li>
+          <li>Continued development on scrollers, which are nearing completion.</li>
+          </ol>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="container left">
+      <div class="content">
+        <h2><span class="fa fa-plus"></span>2024/5/07 New Features</h2>
+        <p>Domcell 9.1 and Content Designer 6</p>
+        <button id="btnFeature0001z">Read more</button>
+      </div>
+    </div>
+
+    <div id="modalFeature0001z" class="modal">
+      <div class="modal-content">
+        <span class="close" data-modal="modalFeature0001z">&times;</span>
+<ol>
+  <li>New Content Desinger with a redesigned Explorer</li>
+  <li>Right Click Menus reflect what is being clicked on</li>
+  <li>Explorer Reengineered to prevent slowdowns Application wide</li>
+  <li>Video SEO Schema system added</li>
+  <li>Modal Style updated</li>
+  <li>Content Designer 5.3 made Content Designer Classic -- Eventually will be removed</li>
+  <li>VTT Converter made its own section</li>
+  <li>Complete Redesign of the Top Header tab system</li>
+  <li>Word Import to HTML system massivly enhanced</li>
+<li>SEO Schema system being added to Blog page creation and Custom Pages</li>
+<li>Top of page content options underway</li>
+<li>Snoppy Sunsetted</li>
+
+
+</ol>
+      </div>
+    </div>
+
+
+
 
     <div class="container right">
       <div class="content">
@@ -156,32 +234,38 @@
         <span class="close" data-modal="modalFeature0001">&times;</span>
         <h2>Complete Rebuild from the Ground Up!</h2>
         <ol>
-         <li><strong>Restored:</strong> Right Click Restored to Text (Clamp / Copy / Delete)<br><br></li>
-         <li><strong>Updated: (Requested)</strong> Explorer Right Click Text editor Word Wraps now!</li>
-         <li><strong>Updated: (Requested)</strong> VTT converter made Batch<br><br></li>
-         <li><strong>New:</strong> 33% x3 Scoller option, Scrolls only in Mobile.  Available, but use with caution as is still in dev </li>
-         <li><strong>New:</strong>Updated the Help Section with commands and info (New Layout)</li>
-         <li><strong>New:</strong> Promo Image Catalog selection:  Images in pim-content folder in Salesforce</li>
-         <li><strong>New:(Requested)</strong> Top Menu Hide Button</li>
-         <li><strong>New:</strong> Refresh App Button without losing work (Primary function is if the program slows down)<br><br></li>
-         <li><strong>Fixed:</strong> Muti Rows / Multi Componet Creator after creating has selection issues<br><br></li>
-         <li><strong>Changed:</strong> All Blue Row Options Moved to sidemenu</li>
-         <li><strong>Changed:</strong> Row options removed from layout tab for Space</li>
-         <li><strong>Changed:</strong> Explorer moved to right under the mobile<br><br></li>
-         <li><strong>Advanced:</strong> Undo / Redo added to more functions<br><br></li>
-        
-         <li><strong>New:</strong> Applications Custom Javascript Engine:<br> 
-          <strong>Former:</strong> loadnewcontent2<br>
-          <strong>Implimented:</strong> Explorer 1.1<br>
-          <strong>Notes:</strong>App Slowdowns Reported, Memory Leak still present espcially on laptops. Current Rev 5.3
-         </li>
-         <li>Entire Recode and resort of the programs functions and siloed functions according to type.  P.S. I need a drink</li>
-         <li>Electron Version updated to latest / Removal of old / unused functions</li>
+          <li><strong>Restored:</strong> Right Click Restored to Text (Clamp / Copy / Delete)<br><br></li>
+          <li><strong>Updated: (Requested)</strong> Explorer Right Click Text editor Word Wraps now!</li>
+          <li><strong>Updated: (Requested)</strong> VTT converter made Batch<br><br></li>
+          <li><strong>New:</strong> 33% x3 Scoller option, Scrolls only in Mobile. Available, but use with caution as is
+            still in dev </li>
+          <li><strong>New:</strong>Updated the Help Section with commands and info (New Layout)</li>
+          <li><strong>New:</strong> Promo Image Catalog selection: Images in pim-content folder in Salesforce</li>
+          <li><strong>New:(Requested)</strong> Top Menu Hide Button</li>
+          <li><strong>New:</strong> Refresh App Button without losing work (Primary function is if the program slows
+            down)<br><br></li>
+          <li><strong>Fixed:</strong> Muti Rows / Multi Componet Creator after creating has selection issues<br><br>
+          </li>
+          <li><strong>Changed:</strong> All Blue Row Options Moved to sidemenu</li>
+          <li><strong>Changed:</strong> Row options removed from layout tab for Space</li>
+          <li><strong>Changed:</strong> Explorer moved to right under the mobile<br><br></li>
+          <li><strong>Advanced:</strong> Undo / Redo added to more functions<br><br></li>
+
+          <li><strong>New:</strong> Applications Custom Javascript Engine:<br>
+            <strong>Former:</strong> loadnewcontent2<br>
+            <strong>Implimented:</strong> Explorer 1.1<br>
+            <strong>Notes:</strong>App Slowdowns Reported, Memory Leak still present espcially on laptops. Current Rev
+            5.3
+          </li>
+          <li>Entire Recode and resort of the programs functions and siloed functions according to type. P.S. I need a
+            drink</li>
+          <li>Electron Version updated to latest / Removal of old / unused functions</li>
         </ol>
         <ol style="font-size: 0.75rem;">
           <li>Finish off the scroller</li>
           <li>Reconfigure the left Tab system so sections are more organized</li>
-          <li>Creating templetes and the nessasary functions in Content Designer Pro to migrate "Above the Fold Content" from Domcell 2023 app to 2024 and sunset 2023</li>
+          <li>Creating templetes and the nessasary functions in Content Designer Pro to migrate "Above the Fold Content"
+            from Domcell 2023 app to 2024 and sunset 2023</li>
           <li>Any Nessasary Blog creation Functions</li>
           <li>Possible Decouple VTT converter for Efectus</li>
           <li>Consistancy of Application styles and colours for 9.1</li>
@@ -203,8 +287,8 @@
         <span class="close" data-modal="modalFeature000">&times;</span>
         <h2>Features for Element Explorer</h2>
         <ol>
-         <li>New Right Click on the Element Explorer Elements for Edit / Delete / Duplicate </li>
-         <li>Try Edit --- Im sure it'll change your life!</li>
+          <li>New Right Click on the Element Explorer Elements for Edit / Delete / Duplicate </li>
+          <li>Try Edit --- Im sure it'll change your life!</li>
         </ol>
       </div>
     </div>
@@ -226,18 +310,19 @@
         <span class="close" data-modal="modalFeatureUpdate411ba">&times;</span>
         <h2>Fixes Update Details</h2>
         <ol>
-         <li>Import / Load Workspace - The Ability to edit after loading content</li>
-         <li>The Ability to edit after restart </li>
+          <li>Import / Load Workspace - The Ability to edit after loading content</li>
+          <li>The Ability to edit after restart </li>
         </ol>
         <h2>New Features</h2>
-<ol>
-  <li>Entirely New HTML Selection Engine which enables more features</li>
-  <li>Element Explorer which when selecting elements will bring you to the element in the workspace -- TRY THIS!!</li>
-  <li>HTML Editor can now edit any item in the workspace and is also tirggered by the Element Explorer</li>
-  <li>Design Controls put in dropdowns so its easier to get to the HTML Editor</li>
-  <li>Check on PCR updated with minimum widths and size animation </li>
-  <li>New Icons</li>
-</ol>
+        <ol>
+          <li>Entirely New HTML Selection Engine which enables more features</li>
+          <li>Element Explorer which when selecting elements will bring you to the element in the workspace -- TRY
+            THIS!!</li>
+          <li>HTML Editor can now edit any item in the workspace and is also tirggered by the Element Explorer</li>
+          <li>Design Controls put in dropdowns so its easier to get to the HTML Editor</li>
+          <li>Check on PCR updated with minimum widths and size animation </li>
+          <li>New Icons</li>
+        </ol>
       </div>
     </div>
 
@@ -258,8 +343,8 @@
         <span class="close" data-modal="modalFeatureUpdate411b">&times;</span>
         <h2>Fixes Update Details</h2>
         <ol>
-         <li>Fixed: "Submit New Code" Button</li>
-         <li>Feature: HTML Tag Explorer </li>
+          <li>Fixed: "Submit New Code" Button</li>
+          <li>Feature: HTML Tag Explorer </li>
 
         </ol>
       </div>
@@ -282,8 +367,8 @@
           <li>On Row select Row Tools shows whether its hiiden in mobile and / or desktop</li>
           <li>Check On PCR Fixed to show and hide Correct Mobile or Desktop versions</li>
           <li>Mobile Workspace viewer fixed to show correct Mobile Versions </li>
-          <li>On Reload Row Selection issues fixed</li>   
-          <li>Lowered Minimum Device Requirements for the app: Min width is an 1024px</li> 
+          <li>On Reload Row Selection issues fixed</li>
+          <li>Lowered Minimum Device Requirements for the app: Min width is an 1024px</li>
           <li>List of Stability fixes</li>
           <li>Research into Touch screens has begun</li>
 
