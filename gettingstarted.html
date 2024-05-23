@@ -415,6 +415,20 @@
           overflow: hidden;
         }
 
+       .video-background video {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+        }
+
+
+
         video {
           position: absolute;
           top: 50%;
@@ -425,7 +439,9 @@
           height: auto;
           transform: translate(-50%, -50%);
           z-index: -1;
+          background-color: #000;
         }
+
       </style>
 
 
@@ -434,6 +450,10 @@
 
         <a href="test-v2.html">
           <div class="webdesignerpro video-background" style="max-height: 326px;">
+            <div style="position: absolute; bottom: 10px; text-align: center; width: 100%; color: #fff;z-index: 2;">Content
+              Designer Pro 6
+              <div style="position: absolute; right: 6px; bottom: -3px;font-size: 0.7rem;color:yellow"> ver. 6.1</div>
+            </div>
             <div class="video-background">
               <video autoplay muted loop style="max-height: 100%;">
                 <source src="assets/web-designer-v7.mp4" type="video/mp4">
@@ -441,10 +461,7 @@
               </video>
             </div>
 
-            <div style="position: absolute; bottom: 10px; text-align: center; width: 100%; color: #fff;">Content
-              Designer Pro 6
-              <div style="position: absolute; right: 6px; bottom: -3px;font-size: 0.7rem;color:yellow"> ver. 6.1</div>
-            </div>
+           
 
           </div>
 
@@ -469,6 +486,12 @@
 
 
   </div>
+
+
+  <video autoplay muted loop style="max-height: 100%;">
+    <source src="assets/domcell2_1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
 
 </body>
