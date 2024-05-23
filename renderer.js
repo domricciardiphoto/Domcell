@@ -1,9 +1,9 @@
 document.getElementById('saveVersionBtn').addEventListener('click', async () => {
     const projectId = 1; // Example project id
-    const content = document.getElementById('pullthecode3').innerHTML; // Get the current content
+    const content = document.getElementById('pullthecode2').innerHTML; // Get the current content
 
     const response = await window.api.saveVersion({ projectId, content });
-    alert(response.message);
+   // alert(response.message);
     loadVersions(projectId); // Reload versions after saving
 });
 
@@ -24,7 +24,7 @@ document.getElementById('revertVersionBtn').addEventListener('click', async () =
     const versionNumber = document.getElementById('versionList').value;
 
     const content = await window.api.revertVersion({ projectId, versionNumber });
-    document.getElementById('pullthecode3').innerHTML = content;
+    document.getElementById('pullthecode2').innerHTML = content;
 });
 
 // Call loadVersions when the project is loaded

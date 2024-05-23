@@ -1,13 +1,14 @@
 {
   "name": "domcell",
   "productName": "DOMCELL",
-  "version": "9.1.96",
+  "version": "9.1.97",
   "description": "PCR HTML Builder App",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "package": "electron-builder -p always ",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "build": {
     "appId": "com.domcell.myapp",
@@ -52,6 +53,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "better-sqlite3": "^10.0.0",
     "electron-log": "^4.4.8",
     "electron-packager": "^17.1.2",
     "electron-updater": "^6.1.8",
@@ -61,7 +63,7 @@
     "uglify-js": "^3.17.4"
   },
   "devDependencies": {
-    "electron": "^29.2.0",
+    "electron": "^29.4.0",
     "electron-builder": "^24.13.3"
   }
 }

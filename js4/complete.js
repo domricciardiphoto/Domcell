@@ -926,11 +926,18 @@ $('.openthematrix').on('click', function () {
             listAllDriveFiles();
             break;
             case '#mymatrix-dark':
-$('#sidetoolset, #explorer2').show()
-$('#pullthecode2').css('filter', 'invert(100%)');
-$('#sidetoolset, #explorer2').show()
-$('img').css('filter', 'invert(0%)');
-$('.stage2 , #pullthecode2 , #mobilepreview2').show();
+            $('#sidetoolset, #explorer2').show()
+            $('#pullthecode2').css('filter', 'invert(100%)');
+            $('#sidetoolset, #explorer2').show()
+            $('.stage2 , #pullthecode2 , #mobilepreview2').show();
+            break;
+            case '#mymatrix-hmobile':
+                $('#sidetoolset, #explorer2').show()
+                $('#sidetoolset, #explorer2').show()
+                $('.stage2 , #pullthecode2 ').show();
+                $('#mobilepreview2').toggle()
+                var newHeightForExplorer = $(window).height();
+                $('#explorer2').animate({'max-height': newHeightForExplorer}, 400);
                 break;
 
 
@@ -949,6 +956,15 @@ $('.stage2 , #pullthecode2 , #mobilepreview2').show();
 
 });
 
+
+$('#showversioningmodal').on('click' , function() {
+    $('#versioningmodalshow').show();
+    
+})
+
+$('#CloseVersionModal').on('click' , function() {
+    $('#versioningmodalshow').fadeOut()
+})
 
 $('#pcrdesktopview').on('click', function () {
     whatcheckingsizeview = 0
@@ -1172,6 +1188,10 @@ function updateSliderValuerow(value) {
 function updateSliderValuecomp(value) {
     document.getElementById('sliderValuecomp1').textContent = value;
 }
+
+$('#versionList').on('change' , function() {
+   $('#revertVersionBtn').click()
+})
 
 
 
@@ -3479,6 +3499,8 @@ $('#export').on('click', function () {
     // Get the content from the codeview div
     var content = $('#pullthecode2').children('div').children('.informationcontent').html();
 
+    
+
     // Copy the content to the clipboard
     const el = document.createElement('textarea');
     el.value = content;
@@ -3718,6 +3740,7 @@ $(document).ready(function() {
     // Clear storage and restart application
     $('#clearandrestartbutton').click(function() {
         clearIndexedDB(); // Call the function to clear IndexedDB
+       // $('#clearVersionsBtn').click()
     });
 
     // Save data before unloading the page
@@ -3986,7 +4009,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
 });
 
-//$('#pullthecode2').css('filter', 'invert(100%)');
+
 
 
 
