@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SortableJS Demo</title>
+    <style>
+        .sortable-item {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            cursor: move;
+        }
+        .informationcontent > * {
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+    <label>
+        <input type="checkbox" id="mysort"> Enable Sorting
+    </label>
+    <label>
+        <input type="checkbox" id="mysortcomponents"> Enable Component Sorting
+    </label>
+
+    <div id="pullthecode3">
+        <div class="sortable-item liverow">Item 1</div>
+        <div class="sortable-item liverow">Item 2</div>
+        <div class="sortable-item liverow">Item 3</div>
+        <div class="sortable-item liverow">Item 4</div>
+    </div>
+
+    <div class="layoutpale">Component A</div>
+    <div class="layoutpale">Component B</div>
+    <div class="layoutpale">Component C</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script>
+        document.getElementById('mysort').addEventListener('change', function () {
+            const pullTheCode3 = document.getElementById('pullthecode3');
+            let sortableInstance = Sortable.get(pullTheCode3);
+
+            if (this.checked) {
+                console.log('Enabling sortable on #pullthecode3');
+                if (!sortableInstance) {
+                    console.log('Initializing sortable on #pullthecode3');
+                    sortableInstance = new Sortable(pullTheCode3, {
+                        animation: 150,
+                    });
+                } else {
+                    console.log('Re-enabling sortable on #pullthecode3');
+                    sortableInstance.option('disabled', false);
+                }
+                document.querySelectorAll('.informationcontent > *').forEach(el => el.style.cursor = 'grab');
+            } else {
+                console.log('Disabling sortable on #pullthecode3');
+                if (sortableInstance) {
+                    sortableInstance.option('disabled', true);
+                }
+                document.querySelectorAll('.informationcontent > *').forEach(el => el.style.cursor = '');
+                updateMobilePreview();
+                document.getElementById('clearandrestartbuttonrefresh').click();
+            }
+        });
+
+        document.getElementById('mysortcomponents').addEventListener('change', function () {
+            const sortableElements = document.querySelectorAll("div.layoutpale:not(h2, p)");
+
+            sortableElements.forEach(el => {
+                let sortableInstance = Sortable.get(el);
+
+                if (this.checked) {
+                    console.log('Enabling sortable on', el);
+                    if (!sortableInstance) {
+                        console.log('Initializing sortable on', el);
+                        sortableInstance = new Sortable(el, {
+                            animation: 150,
+                        });
+                    } else {
+                        console.log('Re-enabling sortable on', el);
+                        sortableInstance.option('disabled', false);
+                    }
+                } else {
+                    console.log('Disabling sortable on', el);
+                    if (sortableInstance) {
+                        sortableInstance.option('disabled', true);
+                    }
+                }
+            });
+
+            if (!this.checked) {
+                updateMobilePreview();
+                document.getElementById('clearandrestartbuttonrefresh').click();
+            }
+        });
+
+        function updateMobilePreview() {
+            // Mock function for updating mobile preview
+            console.log('Updating mobile preview');
+        }
+
+        document.getElementById('clearandrestartbuttonrefresh').addEventListener('click', function () {
+            // Mock function for refreshing
+            console.log('Refreshing page');
+        });
+    </script>
+</body>
+</html>

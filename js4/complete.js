@@ -28,7 +28,7 @@ function selectAndHighlightElement(element, scrollElement = false) {
     $element.click();
     $('#contextMenu').hide();
     $('#myhtmleditor').val($element.html());
-
+    $('.fr-element').html($element.html());
 
 
     if (element.explorerIndent) {
@@ -221,16 +221,43 @@ $('#EditandSubmitAL').off('click').on('click', function () {
 });
 
 
+function atag(wheretogo) {
+    alert(wheretogo)
+    var target = $(e.target);
+    if (!target.is('a')) {
+        target = target.closest('a');
+    }
+    e.preventDefault();
+    var wheretogo = target.attr('href');
+    gotothelinkfunction(wheretogo);
+
+    /*
+ var target = $(e.target);
+        if (!target.is('a')) {
+            target = target.closest('a');
+        }
+        e.preventDefault();
+        var wheretogo = target.attr('href');
+        gotothelinkfunction(wheretogo);
+
+    */
+    return false
+}
 
 
 
 $(".draggable").off('draggable').draggable({
     revert: "valid",
     start: function() {
+        $('#mobilepreview2').empty()
         $('#pullthecode2').css('opacity' , '0.7')
+        $('#explorer2').empty()
+        $('#mobilepreview2').empty()
     },
     stop: function() {
         $('#pullthecode2').css('opacity' , '1');
+        $('#explorer2').empty()
+        $('#mobilepreview2').empty()
      // $('#clearandrestartbuttonrefresh').click()
     
     }
@@ -251,28 +278,33 @@ function releaseMemory() {
 
 
 function enabledrop() {
-    $(".droppable").droppable({
+    $(".droppable").off('droppable').droppable({
         drop: function (event, ui) {
+            
             var mysize = $(ui.draggable).attr('size');
             var mypale = $(ui.draggable).attr('pale');
+           
             $('.interedit').removeClass('interedit');
             if (mysize !== undefined && mysize !== "") {
                 $(this).append('<div class="' + mysize + ' in910 layoutpale interedit layoutpale' + mypale + '"></div>');
             }
             debouncedUpdateMobilePreview() ;
-            releaseMemory() 
+           releaseMemory() 
         }
     });
 }
-
 
 function editElement(clickedElement) {
     captureState();
     var targetElement = $(clickedElement).data('linkedElement');
     if (!$(targetElement).is('.edit-mode')) {
         var originalContent = $(targetElement).html();
+        if (originalContent === undefined || originalContent === null) {
+            originalContent = ''; // Default to empty string if originalContent is undefined or null
+        }
         var textarea = $('<textarea>', {
             class: 'editor-input',
+            id: 'editor-input22',
             css: {
                 width: '98%',
                 height: 'auto',
@@ -444,6 +476,7 @@ $(document).not('#myhtmleditor').on('click', function() {
 });
 
 function gotothelinkfunction(wheretogo) {
+
     document.getElementById("myModal").style.display = "block";
     $('#yesBtn').off('click').on('click', function () {
         window.open('https://www.pcrichard.com' + wheretogo, '_blank');
@@ -1139,37 +1172,48 @@ $('.hamburger').on('click', function () {
 })
 
 
+
 document.getElementById('mysort').addEventListener('change', function () {
     if (this.checked) {
-        $(".sortable").sortable();
-        $(".sortable").sortable('enable');
-        $('.informationcontent').children().css('cursor', 'grab !important')
-
+        $("#pullthecode3").sortable({
+            disabled: false
+        });
+        $('.informationcontent').children().css('cursor', 'grab');
     } else {
-        $(".sortable").sortable();
-        $(".sortable").sortable('disable');
-        updateMobilePreview()
-       
+        $("#pullthecode3").sortable({
+            disabled: true
+        });
+        $('.informationcontent').children().css('cursor', '');
+     
+        updateMobilePreview();
+        $('#clearandrestartbuttonrefresh').click()
     }
-})
-
+});
 
 document.getElementById('mysortcomponents').addEventListener('change', function () {
+    const sortableElements = $("div.layoutpale").not('h2 , p');
+
     if (this.checked) {
-        $("div.layoutpale").not('h2 , p').sortable();
-        $("div.layoutpale").not('h2 , p').sortable('enable');
-
+        sortableElements.sortable({
+            disabled: false
+        });
     } else {
-        $("div.layoutpale").not('h2 , p').sortable();
-        $("div.layoutpale").not('h2 , p').sortable('disable');
-        updateMobilePreview()
-       
+        sortableElements.sortable('disable');
+        updateMobilePreview();
+        $('.informationcontent').children().css('cursor', '');
+        $('#clearandrestartbuttonrefresh').click();
     }
-})
+});
 
 
 
 
+
+
+document.getElementById('clearandrestartbuttonrefresh').addEventListener('click', function () {
+    // Mock function for refreshing
+    console.log('Refreshing page');
+});
 
 $('#clearandrestartbuttonrefresh').on('click', function () {
     location.reload()
@@ -1417,7 +1461,8 @@ $('.textaligner').off('click').on('click', function () {
 $('.ipsom').on('click', function () {
     ipsom =
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit dom is great esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-    $('#cinput3a').val(ipsom)
+   // $('#cinput3a').val(ipsom)
+   $('.fr-element').html(ipsom)
 })
 
 function appendNewContent(content) {
@@ -1660,7 +1705,7 @@ $('#linkmaker').click(function () {
 
     }
    
-    $('a').not('#convertBtn').not('.list-button').not('.googledrive').not('.outsidelink').on('click', function (e) {
+    $('a').not('.googledrive').not('.outsidelink').not('.list-button').on('click', function (e) {
         var target = $(e.target);
         if (!target.is('a')) {
             target = target.closest('a');
@@ -1669,7 +1714,15 @@ $('#linkmaker').click(function () {
         var wheretogo = target.attr('href');
         gotothelinkfunction(wheretogo);
 
-
+        $('#noBtn').off('click').on('click', function () {
+            var target = $(e.target);
+            if (!target.is('a')) {
+                target = target.closest('a');
+            }
+            target.replaceWith(target.text());
+            //runexplorer();
+            document.getElementById("myModal").style.display = "none";
+        });
     });
 
 });
@@ -1703,8 +1756,7 @@ $('#linkmaker3').click(function () {
     range.insertNode(newNode.firstChild);
 
    
-    $('a').not('.googledrive').not('.outsidelink').on('click', function (e) {
-    
+    $('a').not('.googledrive').not('.outsidelink').not('.list-button').on('click', function (e) {
         var target = $(e.target);
         if (!target.is('a')) {
             target = target.closest('a');
@@ -1713,7 +1765,15 @@ $('#linkmaker3').click(function () {
         var wheretogo = target.attr('href');
         gotothelinkfunction(wheretogo);
 
-
+        $('#noBtn').off('click').on('click', function () {
+            var target = $(e.target);
+            if (!target.is('a')) {
+                target = target.closest('a');
+            }
+            target.replaceWith(target.text());
+            //runexplorer();
+            document.getElementById("myModal").style.display = "none";
+        });
     });
 
 });
@@ -2368,8 +2428,12 @@ async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91')
 
     for (let file of allFiles) {
         $('a.googledrive').on('click', function (e) {
+            
             e.preventDefault();
-
+            //alert('hi3')
+            var target = $(e.target);
+            var wheretogo = target.attr('href');
+           atag(wheretogo)
         });
         currentFirstLetter = file.name.charAt(0).toLowerCase();
         if (currentFirstLetter !== previousFirstLetter) {
@@ -2731,27 +2795,12 @@ function imagefunctions() {
         $('#customModal').show(); // Show the custom modal
     });
 
-    $('#noBtn').click(function () {
-        // Ensure we are working with the currentImage
-        if (currentImage) {
-            // Find the <a> tag that wraps the currentImage
-            var $link = currentImage.closest('a');
-    
-            // Extract the <img> element from the <a> tag
-            var $img = $link.find('img');
-    
-            // Replace the <a> tag with the <img> element
-            $link.replaceWith($img);
-    
-            // Run explorer function if needed
-            runexplorer();
-    
-            // Hide the modal
-            $('#myModal').hide();
-    
-            // Clear the currentImage reference
-            currentImage = null;
-        }
+    $('#noBtn').click(function(event) {
+        event.preventDefault();
+
+        console.log('currently broken')
+
+        $('#myModal').hide();
     });
 
 }
@@ -3273,7 +3322,7 @@ $('#fileInput').change(function (event) {
             const fileContents = e.target.result;
             $('#pullthecode2').children('div').children('.informationcontent').html(fileContents);
             postimg()
-            $('a img').not('.googledrive').not('.outsidelink').not('.list-button').on('click', function (e) {
+            $('a').not('.googledrive').not('.outsidelink').not('.list-button').on('click', function (e) {
                 var target = $(e.target);
                 if (!target.is('a')) {
                     target = target.closest('a');
@@ -3281,14 +3330,14 @@ $('#fileInput').change(function (event) {
                 e.preventDefault();
                 var wheretogo = target.attr('href');
                 gotothelinkfunction(wheretogo);
-
+    
                 $('#noBtn').off('click').on('click', function () {
                     var target = $(e.target);
                     if (!target.is('a')) {
                         target = target.closest('a');
                     }
                     target.replaceWith(target.text());
-                   
+                    //runexplorer();
                     document.getElementById("myModal").style.display = "none";
                 });
             });
@@ -3299,7 +3348,26 @@ $('#fileInput').change(function (event) {
             enabledrop()
         }, 2000);
 
+        $('a').not('.googledrive').not('.outsidelink').not('.list-button').on('click', function (e) {
+            var target = $(e.target);
+            if (!target.is('a')) {
+                target = target.closest('a');
+            }
+            e.preventDefault();
+            var wheretogo = target.attr('href');
+            gotothelinkfunction(wheretogo);
 
+            $('#noBtn').off('click').on('click', function () {
+                var target = $(e.target);
+                if (!target.is('a')) {
+                    target = target.closest('a');
+                }
+                target.replaceWith(target.text());
+                //runexplorer();
+                document.getElementById("myModal").style.display = "none";
+            });
+        });
+    
 
     } else {
 
@@ -3425,7 +3493,7 @@ document.getElementById('fileimport').addEventListener('change', function () {
                     target = target.closest('a');
                 }
                 target.replaceWith(target.text());
-               
+                //runexplorer();
                 document.getElementById("myModal").style.display = "none";
             });
         });
@@ -3678,7 +3746,7 @@ $(document).ready(function() {
                 contentArea.html(data.htmlContent);
             }
             initializeUI();
-            $('a').not('#convertBtn').not('.list-button').not('.googledrive').not('.outsidelink').on('click', function (e) {
+            $('a').not('.googledrive').not('.outsidelink').not('.list-button').on('click', function (e) {
                 var target = $(e.target);
                 if (!target.is('a')) {
                     target = target.closest('a');
@@ -3686,8 +3754,16 @@ $(document).ready(function() {
                 e.preventDefault();
                 var wheretogo = target.attr('href');
                 gotothelinkfunction(wheretogo);
-        
-        
+    
+                $('#noBtn').off('click').on('click', function () {
+                    var target = $(e.target);
+                    if (!target.is('a')) {
+                        target = target.closest('a');
+                    }
+                    target.replaceWith(target.text());
+                    //runexplorer();
+                    document.getElementById("myModal").style.display = "none";
+                });
             });
         };
 
