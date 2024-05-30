@@ -202,8 +202,12 @@ function deleteElement() {
                 }
             });
             debouncedUpdateMobilePreview();
+            $('#clearandrestartbuttonrefresh').click()
         }, 500); // Match the duration of the CSS transition
+       
     });
+    
+   
 }
 
 function liverowactivy() {
@@ -402,6 +406,7 @@ $('#contextMenu ul li').click(function() {
             $(clickedElement).remove();
             $('#contextMenu').hide();
             debouncedUpdateMobilePreview() ;
+            $('#clearandrestartbuttonrefresh').click()
             break;
         case 'duplicate':
             duplicateElement(clickedElement);
@@ -853,7 +858,15 @@ $('.openthematrix').on('click', function () {
 
             $('#findthecode2').text($('#pullthecode2').html());
 
+            var divElement = document.getElementById('thisisthefinalcode');
 
+// Get the text content of the div
+var textContent = divElement.textContent || divElement.innerText;
+
+// Get the character count
+var characterCount = textContent.length;
+
+            $('#charactercount').html('Character Count ' + '<span style="color:yellow">'+characterCount+' </span>' + ' - Current Salesforce Max is 10,000' )
 
             var element = $('#findthecode2');
             var content = element.text();
@@ -957,6 +970,8 @@ $('.openthematrix').on('click', function () {
             $('#pullthecode2').css('filter', 'invert(100%)');
             $('#sidetoolset, #explorer2').show()
             $('.stage2 , #pullthecode2 , #mobilepreview2').show();
+            var newHeightForExplorer = $(window).height() - 530;
+                $('#explorer2').animate({'max-height': newHeightForExplorer}, 400);
             break;
             case '#mymatrix-hmobile':
                 $('#sidetoolset, #explorer2').show()

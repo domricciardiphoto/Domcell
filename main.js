@@ -7,32 +7,6 @@ const fs = require('fs');
 const appDataPath = app.getPath('userData');
 const windowStateFile = path.join(appDataPath, 'windowState.json');
 
-const Database = require('better-sqlite3');
-const db = new Database('projects.db');
-
-// Create tables with the correct schema if they do not exist
-db.exec(`
-  CREATE TABLE IF NOT EXISTS projects (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT
-  );
-
-  CREATE TABLE IF NOT EXISTS project_versions (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    project_id INTEGER,
-    version_number INTEGER,
-    version_name TEXT,
-    content TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (project_id) REFERENCES projects(id)
-  )
-`);
-
-// Insert a sample project if it doesn't exist
-const sampleProject = db.prepare('SELECT * FROM projects WHERE id = 1').get();
-if (!sampleProject) {
-  db.prepare('INSERT INTO projects (id, name) VALUES (1, ?)').run('Domcell Project');
-}
 
 
 log.transports.file.resolvePath = () => path.join('logs/main.log');
