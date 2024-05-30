@@ -563,20 +563,6 @@ var whatcheckingsizeview = 0;
 
 // Restore --------------------------------------------------
 
-/*
-let undoStack = [];
-let redoStack = []; // Stack for redo functionality
-
-// Function to capture the current state before making changes
-function captureState() {
-    const currentState = $('#pullthecode2').html(); // Adjust selector as needed
-    undoStack.push(currentState);
-    redoStack = []; // Clear redo stack since new action resets the future path
-}
-
-*/
-
-
 
 
 // Initialize the diff-match-patch library
@@ -605,41 +591,9 @@ function resetTransitionStyles() {
 }
 
 
-/*
-function undoChange() {
-    if (undoStack.length > 0) {
-        const lastState = undoStack.pop();
-        redoStack.push($('#pullthecode2').html()); // Push current state to redoStack before undoing
-        $('#pullthecode2').html(lastState); // Adjust selector as needed
-        resetTransitionStyles();
-        debouncedUpdateMobilePreview();
-    }
-}
-
-
-function redoChange() {
-    if (redoStack.length > 0) {
-        const nextState = redoStack.pop();
-        undoStack.push($('#pullthecode2').html()); // Push current state to undoStack before redoing
-        $('#pullthecode2').html(nextState); // Adjust selector as needed
-        resetTransitionStyles();
-        debouncedUpdateMobilePreview();
-    }
-}
-
-*/
-
-
-
-
-
-
-
-
 
 
 // Restore --------------------------------------------------
-
 
 
 
@@ -654,7 +608,7 @@ function paragraphfunctions() {
             $('.interedit').empty()
             document.getElementById("myModalcontent").style.display = "none";
             $('#findthecode2').text($('#pullthecode2').html());
-            //explorerpostload()
+
         })
 
         $('#yescopyBtn99').on('click', function () {
@@ -2522,6 +2476,7 @@ function addClickHandler(selector, sliderId, widthSelector, additionalClass, tar
 
         commonUpdates();
         bindElementClick();
+        enabledrop()
     });
 }
 
@@ -2547,8 +2502,10 @@ function layoutHtmlTemplate(width, mobileWidth, additionalClass) {
         // If it does, return an empty string
         return '';
     } else {
+
         // Otherwise, construct the HTML as before
         return `<div class="width${width}c ${mobileWidth} ${additionalClass} layoutpale layoutpale${width} liverow droppable ui-droppable"></div>`;
+        
     }
 }
 
@@ -3423,7 +3380,7 @@ function attachTripleClickHandlerToImportedContent() {
             // Check if the Enter key was pressed
             if (event.key === 'Enter' || event.keyCode === 13) {
                 event.preventDefault(); // Prevent default action (important if inside a form)
-                //explorerpostload(); // Call the loadContent function
+               
             }
         });
     });
