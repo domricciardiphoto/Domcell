@@ -28,7 +28,7 @@ function selectAndHighlightElement(element, scrollElement = false) {
     $element.click();
     $('#contextMenu').hide();
     $('#myhtmleditor').val($element.html());
-    $('.fr-element').html($element.html());
+    //$('.fr-element').html($element.html());
 
 
     if (element.explorerIndent) {
@@ -249,16 +249,10 @@ function atag(wheretogo) {
 $(".draggable").off('draggable').draggable({
     revert: "valid",
     start: function() {
-        $('#mobilepreview2').empty()
         $('#pullthecode2').css('opacity' , '0.7')
-        $('#explorer2').empty()
-        $('#mobilepreview2').empty()
     },
     stop: function() {
         $('#pullthecode2').css('opacity' , '1');
-        $('#explorer2').empty()
-        $('#mobilepreview2').empty()
-     // $('#clearandrestartbuttonrefresh').click()
     
     }
 });
@@ -645,7 +639,7 @@ function redoChange() {
 
 
 function paragraphfunctions() {
-    $('p , h2 , h3 , h4').off('click').on('contextmenu', function (e) {
+    $('p , h2 , h3 , h4').not('.fr-element p').off('click').on('contextmenu', function (e) {
         e.preventDefault()
         $('.interedit').removeClass('interedit')
         $(this).parent('.in910').addClass('interedit')
@@ -752,7 +746,7 @@ $('.thetopbox').on('click', function () {
         $('.layoutbuilder-oc').hide()
         $('.blogbuilder').hide()
         $('#explorerpanel').hide()
-        $('.internalscroller').css('max-height' , '463px')
+       // $('.internalscroller').css('max-height' , $(window).height())
 
     }
     if (whichboxtoopen == 'Rows') {
@@ -1461,8 +1455,8 @@ $('.textaligner').off('click').on('click', function () {
 $('.ipsom').on('click', function () {
     ipsom =
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit dom is great esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-   // $('#cinput3a').val(ipsom)
-   $('.fr-element').html(ipsom)
+    $('#cinput3a').val(ipsom)
+   //$('.fr-element').html(ipsom)
 })
 
 function appendNewContent(content) {
@@ -1817,10 +1811,14 @@ getCurrentDateTime()
 
 function createVideoElement(videoFilename, videoCaptions, videoPoster , videoseotitle , videoseodescription) {
     const currentDateTime = getCurrentDateTime();
-    const basePath = 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/videos/';
-    const videoSrc = `${basePath}${videoFilename}.mp4`;
-    const captionsSrc = `${basePath}${videoCaptions}.vtt`;
-    const posterSrc = `${basePath}${videoPoster}.jpg`;
+
+const basePathvideo = 'https://d2vxgxvhgubbj8.cloudfront.net/videos/7106/'
+const basePathimg = 'https://d2vxgxvhgubbj8.cloudfront.net/thumbnails/7106/'
+const basePathvtt = 'https://d2vxgxvhgubbj8.cloudfront.net/subs/7106/'
+
+    const videoSrc = `${basePathvideo}${videoFilename}`;
+    const captionsSrc = `${basePathvtt}${videoCaptions}`;
+    const posterSrc = `${basePathimg}${videoPoster}`;
 
     // JavaScript object for schema.org JSON
     const schemaOrgData = {
@@ -4089,4 +4087,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+function adjustMaxHeight() {
+    $('#pullthecode2').css('max-height', $(window).height() - 70);
+    $('#explorer2').css('max-height', $(window).height() - 525);
+    $('.internalscroller').css('max-height', $(window).height() - 435);
+}
+
+// Run the function initially
+adjustMaxHeight();
+
+// Bind the function to the window resize event
+$(window).resize(function() {
+    adjustMaxHeight();
+});
 

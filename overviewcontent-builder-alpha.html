@@ -16,6 +16,7 @@
 
     <script src="231.js"></script>
     <link rel="stylesheet" href="application.css">
+    <link rel="stylesheet" href="application_r.css">
     <link rel="stylesheet" href="css/videocomponent.css">
     <link rel="stylesheet" href="css/listbuilder.css">
 
@@ -744,7 +745,7 @@
                     style="width: 20px; height: 20px; float: right; margin-left: 10px; border-radius: 50px; background-image: url(assets/redbutton.png); background-size: cover;">
                 </div>
 
-                <select name="adder-row-a" id="adder-row-a" style="float: right; width: 100%;">
+                <select name="adder-row-b" id="adder-row-b" style="float: right; width: 100%;">
                     <option value="100">100% Width</option>
                     <option value="50">50% Width</option>
                     <option value="33">33% Width</option>
@@ -853,7 +854,7 @@
 
 
     <style>
-        #saveVersionBtn {
+        #saveVersionBtn ,#showVersionBtn2 {
             background-color: #007BFF;
             color: #fff;
             border: none;
@@ -863,7 +864,13 @@
             padding: 10px;
             font-size: 14px;
             margin-top: 10px;
-            width: 100%;
+            width: 48%;
+            margin-right: 1%;
+        }
+
+        #showVersionBtn2 {
+            float: right;
+            margin-right: 0%;
         }
     </style>
 
@@ -874,6 +881,7 @@
             <input type="text" id="versionName" placeholder="Enter version name"
                 style="user-select: all; width: 98.3%; padding-top: 5px; padding-bottom: 5px; border-radius: 5px; padding: 3px;">
             <button id="saveVersionBtn">Save Version</button>
+            <button id="showVersionBtn2">Show Version List</button>
             <button id="revertVersionBtn">Revert to Selected Version</button>
             <button id="CloseVersionModal"
                 style="margin-top: 10px; width: 20%; text-align: center; padding: 5px; background-color: red; color: #fff; border-radius: 4px;">Close</button><span
@@ -1056,6 +1064,10 @@
 
         #revertVersionBtn {
             display: none;
+        }
+
+        .layoutpale:hover {
+border: none !important;
         }
     </style>
 
@@ -1278,9 +1290,7 @@
                     background-color: rgb(166 205 251 / 40%) !important;
                 }
 
-                .export-btn {
-                    display: none;
-                }
+               
             </style>
 
 
@@ -1339,13 +1349,13 @@
                 <div class="width20c" style=" float: left; width: 17%; margin-top: -20px;">
 
 
-                    <div class="width50c" style="float: right;">
+                    <div class="width50c" style="float: right; width: 48%;">
                         <img id="clearandrestartbutton"
                             style="width: 80% !important;  max-width: 35px; float: left; cursor: pointer; "
                             src="assets/restart.jpg" title="Refresh and Clear All" />
                     </div>
 
-                    <div class="width50c" style="float: right;">
+                    <div class="width50c" style="float: right; width: 48%;">
                         <img id="clearandrestartbuttonrefresh"
                             style="width: 80% !important;  max-width: 35px; float: left; cursor: pointer; "
                             src="assets/restart2.png" title="Refresh without Losing Work" />
@@ -2360,8 +2370,7 @@
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator">+</span>
                         <span style="font-size: 0.8rem;">&nbsp;Text / Code</span>
-                        <span class="mysmalltext">(h2,&nbsp;&nbsp;h3,&nbsp;&nbsp;h4,&nbsp;&nbsp;p&nbsp;&nbsp; &lt; /
-                            &gt;&nbsp;&nbsp;.js )</span>
+                        <span class="mysmalltext">(h2,&nbsp;&nbsp;h3,&nbsp;&nbsp;h4,&nbsp;&nbsp;p )</span>
                     </div>
                 </div>
 
@@ -2440,7 +2449,7 @@
                                 Lorem</button>
                         </div>
                         <div
-                            style="width: 20%; float: left; margin-left: 10px; padding-left: 10px;min-width: 100px; display: none;">
+                            style="width: 20%; float: left; margin-left: 10px; padding-left: 10px;min-width: 100px; ">
 
 
                             <input type="checkbox" id="htmlcodeyesno" name="htmlcodeyesno" class="htmlcodeyesno"
@@ -2449,7 +2458,7 @@
                                     style="color:yellow">Yes?</span></span>
 
                         </div>
-                        <div style="width: 25%; float: left; margin-left: 10px; min-width: 160px; display: none; ">
+                        <div style="width: 25%; float: left; margin-left: 10px; min-width: 160px;  ">
                             <span style="font-size: 80%;" class="unselectable-text">ECP Code? <span
                                     style="color:yellow">Yes?</span></span>
 
@@ -2458,7 +2467,7 @@
 
                         </div>
 
-                        <div style="width: 95%; float: left; min-width: 150px; display: none;">
+                        <div style="width: 95%; float: left; min-width: 150px; ">
                             <button class="simplehide spanbutton unselectable-text"
                                 style="width: 97%;  line-height: 20px; margin-top: 10PX;" id="cinput3-comp"
                                 type="submit">Add
@@ -3323,10 +3332,17 @@
                     style=" width: 97%; padding-left: 2%; padding-bottom: 2%; margin-left: 0%;">
 
                     <div class="container">
-                        <div class="input-group">
+                        <div class="input-group" style="width: 47%; margin-right: 4%;">
                             <label for="videofilename">Video Filename (mp4):</label>
                             <input id="videofilename" type="text" placeholder="Enter video filename"
                                 class="input-field">
+                        </div>
+
+                
+                        <div class="input-group" style="width: 47%; margin-left: 1%;">
+                            <label for="videoposter">Video Poster (jpg):</label>
+                            <input id="videoposter" type="text" placeholder="Enter poster filename" class="input-field">
+
                         </div>
 
                         <div class="input-group">
@@ -3335,11 +3351,6 @@
                                 class="input-field">
                         </div>
 
-                        <div class="input-group">
-                            <label for="videoposter">Video Poster (jpg):</label>
-                            <input id="videoposter" type="text" placeholder="Enter poster filename" class="input-field">
-
-                        </div>
 
 
                         <div class="input-group">
@@ -3350,14 +3361,14 @@
                         </div>
                         <div class="input-group">
                             <label for="videoseodescription">Video SEO Description*</label>
-                            <textarea id="videoseodescription" type="text" placeholder="Enter Video Description"
+                            <textarea id="videoseodescription" style="min-height: 100px; margin-bottom: 5px; max-width: 99%;" type="text" placeholder="Enter Video Description"
                                 class="input-field" required></textarea>
 
                         </div>
 
 
 
-                        <div class="input-group">
+                        <div class="input-group" style="margin-top: 5px;">
                             <button id="submitvideofile" class="submit-button">Submit Video</button>
                         </div>
 
@@ -3814,7 +3825,6 @@
                                 Code</strong></div>
 
                         <div class="openthematrix" mymatrix="mymatrix6"><strong>Templetes</strong></div>
-                        <div style="float: left; margin-left: 5px; font-size: 0.5rem; margin-right: -5px;"> ||</div>
                         <div class="openthematrix" mymatrix="mymatrix-dark"><strong>Dark View</strong></div>
                         <div class="openthematrix" mymatrix="mymatrix-hmobile"><strong>Hide Mobile</strong></div>
 
@@ -3829,7 +3839,6 @@
                         user-select: none;
                         font-size: 0.6rem; margin-right: 1%;">Save Version</div>
                         <div style="float: left; margin-left: 10px;"></div>
-                        <div style="float: left; margin-left: 5px; font-size: 0.5rem; margin-right: -5px;"> ||</div>
                         <div class="saveinfo"
                             style="font-size: 0.6rem; color: yellow; float: left; text-align: right; margin-left: 1.5%; width: auto;">
                             Save Pending</div>
@@ -4597,9 +4606,9 @@
                 versions.forEach(version => {
                     const li = document.createElement('li');
                     li.textContent =
-                        `Ver ${version.id} - ${version.versionName || 'Unnamed'} - ${new Date(version.createdAt).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}`;
+                        `VerID ${version.id} - ${version.versionName || 'Unnamed'} - ${new Date(version.createdAt).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}`;
                     li.setAttribute('data-version-id', version.id);
-
+                    li.setAttribute('data-info', `${version.versionName || 'Unnamed'}`);
                     // Add delete button
                     const deleteButton = document.createElement('span');
                     deleteButton.textContent = 'DELETE';
@@ -4612,6 +4621,7 @@
                     exportButton.textContent = 'EXPORT';
                     exportButton.className = 'export-btn';
                     exportButton.onclick = () => exportVersion(version.id);
+                    exportButton.setAttribute('datainfo', $(this).parent().text());
                     li.appendChild(exportButton);
 
                     versionsList.appendChild(li);
@@ -4657,16 +4667,16 @@
                 };
             }
 
-            function exportVersion(versionId) {
+            function exportVersion(versionId , Versionnameexport) {
 
+        
 
         function getSelectedVersionHtml(callback) {
         var dbName = "ProjectVersionsDB"; // Replace with your IndexedDB database name
         var storeName = "versionsStore"; // Replace with your IndexedDB object store name
-        var selectedVersionKey = versionId; // Replace with the key of the selected version
-
+        var selectedVersionKey = versionId // Replace with the key of the selected version
         var request = indexedDB.open(dbName);
-
+       
         request.onerror = function(event) {
             console.error("IndexedDB error: ", event.target.errorCode);
             alert('Error: Unable to access IndexedDB.');
@@ -4685,7 +4695,7 @@
 
             getRequest.onsuccess = function(event) {
                 if (getRequest.result) {
-                    callback(getRequest.result.htmlContent); // Assuming the HTML content is stored in the 'htmlContent' field
+                    callback(getRequest.result.content); // Assuming the HTML content is stored in the 'htmlContent' field
                 } else {
                     console.error("No data found for the selected version.");
                     alert('Error: No content found for the selected version.');
@@ -4695,30 +4705,32 @@
     }
 
     // Function to download the HTML content as a file
-    function downloadHtmlContent(content) {
-        var filename = 'selected-version.html';
+    function downloadHtmlContent(content, versionId, ) {
+        var mynewname = 'Version' + versionId + 'List.txt'
+    var filename = mynewname;
 
-        // Create a Blob from the HTML content
-        var blob = new Blob([content], { type: 'text/html' });
+    // Create a Blob from the HTML content
+    var blob = new Blob([content], { type: 'text/plain' });
 
-        // Create a link element
-        var link = document.createElement('a');
-        link.className = 'outsidelink'
-        // Set the download attribute with the filename
-        link.download = filename;
+    // Create a link element
+    var link = document.createElement('a');
+    link.className = 'outsidelink';
 
-        // Create an object URL for the Blob
-        link.href = window.URL.createObjectURL(blob);
+    // Set the download attribute with the filename
+    link.download = filename;
 
-        // Append the link to the body
-        document.body.appendChild(link);
+    // Create an object URL for the Blob
+    link.href = window.URL.createObjectURL(blob);
 
-        // Programmatically click the link to trigger the download
-        link.click();
+    // Append the link to the body
+    document.body.appendChild(link);
 
-        // Remove the link from the document
-        document.body.removeChild(link);
-    }
+    // Programmatically click the link to trigger the download
+    link.click();
+
+    // Remove the link from the document
+    document.body.removeChild(link);
+}
 
     // Retrieve the selected version's HTML and download it
     getSelectedVersionHtml(function(htmlContent) {
@@ -4726,6 +4738,18 @@
     });
             }
 
+
+
+
+
+            document.getElementById('showVersionBtn2').addEventListener('click', () => {
+                $('#versioningmodalshow').hide()
+                getVersions(1); // Fetch versions for projectId 1
+                document.getElementById('versionsModal').style.display = 'block';
+            });
+            
+            
+            
             document.getElementById('saveVersionBtn').addEventListener('click', () => {
                 const versionName = document.getElementById('versionName').value;
                 const content = document.getElementById('pullthecode2').innerHTML;
@@ -4784,7 +4808,7 @@
 
 
         $(document).ready(function () {
-            new FroalaEditor('#cinput3a', {
+            new FroalaEditor('#cinput3a2', {
                 theme: 'dark',
                 events: {
                     'contentChanged': function () {
