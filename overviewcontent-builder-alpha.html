@@ -10,9 +10,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.7/css/froala_editor.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/css/themes/dark.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.7/js/froala_editor.min.js"></script>
+
+
+
+    
 
     <script src="231.js"></script>
     <link rel="stylesheet" href="application.css">
@@ -1290,6 +1291,10 @@ border: none !important;
                     background-color: rgb(166 205 251 / 40%) !important;
                 }
 
+                .multiselected {
+                    background-color: red !important;
+                }
+
                
             </style>
 
@@ -1377,6 +1382,7 @@ border: none !important;
 
 
             <div id="Importer" class="width100c openclose" openclose="htmlimporter" style="display: none;">
+                
                 <div class="width100c unselectable-text" style="margin-left: -3%;">
                     <span class="myindicator">+</span>
                     <span style="font-size: 0.8rem;">&nbsp;&nbsp;Code Importer</span>
@@ -1465,14 +1471,14 @@ border: none !important;
                             <div class="width100c"
                                 style="margin-top:5px; width:88%; font-size:0.8rem;color: lightblue;">
                                 Row Margin Top:
+                                <div class="width100c">
+                                <label for="sliderValue_row"><span id="sliderValue4_row">0</span>px</label>
+                                <input type="range" id="sliderValue_row" name="sliderValue_row" min="1" max="100" value="0" oninput="updateSliderValue_row(this.value)">
+                                </div>
                             </div>
 
-                            <div class="width100c">
-                                <label class="slider-label" for="rangeSlider"><span class="slider-control"
-                                        id="sliderValue2">0</span>px</label>
-                                <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="200" value="0"
-                                    oninput="updateSliderValue2(this.value)">
-                            </div>
+                           
+                         
 
                         </div>
 
@@ -1676,15 +1682,21 @@ border: none !important;
                     <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
                         <span style=" color: yellow;font-size:0.8rem;">Margin Top</span>
                         <div class="width100c">
-                            <label for="widthSlider22"><span id="sliderValue22">0</span>px</label>
-                            <input type="range" id="widthSlider22" name="widthSlider22" min="-20" max="100" value="0"
-                                oninput="updateSliderValue22(this.value)">
+                            <label class="slider-label" for="rangeSlider"><span class="slider-control"
+                                id="sliderValue2">0</span>px</label>
+                        <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="200" value="0"
+                            oninput="updateSliderValue2(this.value)">
                         </div>
                     </div>
 
 
 
                 </div>
+
+
+
+              
+
 
 
 
@@ -1826,6 +1838,15 @@ border: none !important;
                     <div class="width20c" style="width: auto; min-width: 10%; font-size: 0.9rem;">Workspace :</div>
                 </div>
 
+
+                <div class="width100c" style="margin-bottom: 15px;  width: 49%;">
+                    <button id="import" class="unselectable-text" accept=".txt"
+                        style="background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; border-radius: 5px;">Load
+                        Workspace <span style="color: #f0cd97;">&darr;</span></button>
+                    <input type="file" id="fileInput" accept=".txt" placeholder="Imported file" style="display: none;">
+                </div>
+
+
                 <div class="width100c" style="margin-bottom: 15px; width: 49%;">
                     <input id="nametextfile" type="text" placeholder="filename"
                         style="max-width: 200px; display: none;">
@@ -1834,12 +1855,7 @@ border: none !important;
                         Workspace <span style="color: #f0cd97;">&uarr;</span></button>
                 </div>
 
-                <div class="width100c" style="margin-bottom: 15px;  width: 49%;">
-                    <button id="import" class="unselectable-text" accept=".txt"
-                        style="background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; border-radius: 5px;">Load
-                        Workspace <span style="color: #f0cd97;">&darr;</span></button>
-                    <input type="file" id="fileInput" accept=".txt" placeholder="Imported file" style="display: none;">
-                </div>
+                
 
                 <div class="width100c" style="margin-bottom: 0px;margin-top: -10px; margin-bottom: -5px;">
                     <div class="width20c" style="width: auto; min-width: 10%; font-size: 0.9rem;">Versions :</div>
@@ -4331,6 +4347,8 @@ border: none !important;
 
 
             </div>
+            
+
             <div id="pullthecode2" class="width50c layout2" style="border-radius: 0px 10px 10px; -webkit-box-shadow:inset 0 0 0px 3px #BDBDBD;
             box-shadow:inset 0 0 5px 5px #BDBDBD;">
 
@@ -4521,7 +4539,7 @@ border: none !important;
     <script src="js3/listmaker.js"></script>
  -->
 
-    <script src="js4/complete-min.js"></script>
+    <script src="js4/complete.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const dbName = 'ProjectVersionsDB';
@@ -4804,17 +4822,13 @@ border: none !important;
 
 
 
-        $(document).ready(function () {
-            new FroalaEditor('#cinput3a2', {
-                theme: 'dark',
-                events: {
-                    'contentChanged': function () {
-                        var content = this.html.get();
-                        $('.explorerselected').html($('#cinput3a').val());
-                        debouncedUpdateMobilePreview();
-                    }
-                }
-            });
-        });
+
+
+
+
+
+
+
+
     </script>
 </body>

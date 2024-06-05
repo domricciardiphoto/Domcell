@@ -7,6 +7,23 @@ const debouncedUpdateMobilePreview = debounce(updateMobilePreview, 500);
 var $in910 = $('.in910');
 let lastSelectedElement = null;
 
+
+
+
+let isShiftPressed = false;
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Shift') {
+        isShiftPressed = true;
+    }
+});
+
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Shift') {
+        isShiftPressed = false;
+    }
+});
+
 function selectAndHighlightElement(element, scrollElement = false) {
     const $pullthecode2 = $('#pullthecode2');
     const $element = $(element);
@@ -16,9 +33,15 @@ function selectAndHighlightElement(element, scrollElement = false) {
     }
 
     clearSelection();
-    $('.explorerselected, .onblock, .interedit').removeClass('explorerselected onblock interedit');
 
-    $element.addClass('explorerselected');
+    if (isShiftPressed) {
+        $element.addClass('explorerselected , multiselected')
+    } else {
+        $('.explorerselected, .onblock, .interedit').removeClass('explorerselected onblock interedit');
+        $('.multiselected').removeClass('multiselected')
+        $element.addClass('explorerselected');
+    }
+
     if (!$element.hasClass('liveelement')) {
         $element.addClass('onblock');
     } else {
@@ -28,8 +51,6 @@ function selectAndHighlightElement(element, scrollElement = false) {
     $element.click();
     $('#contextMenu').hide();
     $('#myhtmleditor').val($element.html());
-    //$('.fr-element').html($element.html());
-
 
     if (element.explorerIndent) {
         $('.indentselected').removeClass('indent indentselected');
@@ -50,7 +71,6 @@ function selectAndHighlightElement(element, scrollElement = false) {
         mobileHideCheckbox.prop('checked', $element.hasClass('hideonlyonmobile'));
     }
 }
-
 function clearSelection() {
     if (lastSelectedElement) {
         lastSelectedElement.classList.remove('explorerselected');
@@ -474,6 +494,8 @@ $(document).not('#myhtmleditor').on('click', function() {
     debouncedUpdateMobilePreview() ;
 });
 
+
+
 function gotothelinkfunction(wheretogo) {
 
     document.getElementById("myModal").style.display = "block";
@@ -820,7 +842,7 @@ var textContent = divElement.textContent || divElement.innerText;
 // Get the character count
 var characterCount = textContent.length;
 
-            $('#charactercount').html('Character Count ' + '<span style="color:yellow">'+characterCount+' </span>' + ' - Current Salesforce Max is 10,000' )
+            $('#charactercount').html('Character Count ' + '<span style="color:yellow">'+characterCount+' </span>' + ' - Current Salesforce Max is 15,000' )
 
             var element = $('#findthecode2');
             var content = element.text();
@@ -1148,7 +1170,7 @@ document.getElementById('mysort').addEventListener('change', function () {
         });
         $('.informationcontent').children().css('cursor', '');
      
-        updateMobilePreview();
+        //updateMobilePreview();
         $('#clearandrestartbuttonrefresh').click()
     }
 });
@@ -1161,10 +1183,15 @@ document.getElementById('mysortcomponents').addEventListener('change', function 
             disabled: false
         });
     } else {
+
+        sortableElements.sortable({
+            disabled: true
+        });
         sortableElements.sortable('disable');
-        updateMobilePreview();
+       // updateMobilePreview();
         $('.informationcontent').children().css('cursor', '');
         $('#clearandrestartbuttonrefresh').click();
+
     }
 });
 
@@ -2302,6 +2329,13 @@ function commonUpdateActions() {
 function updateSliderValue4(value) {
     document.getElementById('sliderValue4').textContent = value;
     $('.onblock').css('border-radius', value + 'px')
+    updateMobilePreview()
+}
+
+
+function updateSliderValue_row(value) {
+    document.getElementById('sliderValue4_row').textContent = value;
+    $('.onblock').css('margin-top', value + 'px')
     updateMobilePreview()
 }
 
@@ -3836,23 +3870,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     var textContent = $('.editor-input').val(); // Extract just the text from the textarea
     $('.editor-input').replaceWith(textContent);
 
@@ -4054,11 +4071,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeListAmountOptions();
     
 });
-
-
-
-
-
 
 function adjustMaxHeight() {
     $('#pullthecode2').css('max-height', $(window).height() - 70);
