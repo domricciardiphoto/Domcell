@@ -175,7 +175,7 @@ function createAboutWindow() {
     title: 'About Domcell',
     icon: `${__dirname}assets/icons/app-icon.png`,
     width: 500,
-    height: 500,
+    height: 550,
     hasShadow: true,
     darkTheme: true,
     visualEffectState: 'active',

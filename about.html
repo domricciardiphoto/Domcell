@@ -5,87 +5,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About DOMCELL 2024</title>
-
     <style>
         body {
-            background-color: #121212; /* Dark background for better contrast */
-            color: #E0E0E0; /* Light text color for readability */
+            background-color: #121212;
+            color: #E0E0E0;
             text-align: center;
-            background-image: url('assets/background-dark.jpg'); /* Updated dark themed background */
+            background-image: url('assets/background-dark.jpg');
             background-size: cover;
             cursor: pointer;
-            transition: background-color 0.3s; /* Smooth transition for background color */
+            transition: background-color 0.3s, transform 0.3s;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
         }
         .centercontent {
-            margin-top: 20%; /* Adjusted for better spacing */
-            font-weight: bolder;
-            animation: fadeIn 2s ease-out; /* Adding fade-in animation */
+            margin-top: 10%;
+            animation: fadeIn 2s ease-out;
         }
-
         .centercontent h1 {
-            font-size: 3.2rem;
-            padding-bottom: 0px;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
         }
-
+        .centercontent span {
+            font-size: 1rem;
+            color: #FFD700;
+        }
         .boxcontent {
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: slideIn 1.5s ease-out;
             text-align: left;
-            width: 60%; /* Adjusted width for better alignment */
-            float: left;
-            margin-left: 20%; /* Centering the box content */
-            line-height: 1.6; /* Improved line spacing */
-            font-weight: bold;
-            margin-top: 30px;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the text box */
-            padding: 20px;
-            border-radius: 10px; /* Rounded corners for the box */
+            font-size: 0.8rem;
+            line-height: 1.4;
         }
-
+        .boxcontent h2 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        .boxcontent p, .boxcontent ul {
+            margin: 5px 0;
+        }
+        .boxcontent ul {
+            padding-left: 20px;
+        }
+        .boxcontent ul li {
+            list-style: disc;
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        @keyframes slideIn {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-    <div id="contercontent" class="centercontent">
-        <h1>DOMCELL 9.2.97</h1>
-        <span class="version"></span>
+    <div id="centercontent" class="centercontent">
+        <h1>DOMCELL 9.3</h1>
+        <span class="version">Content Designer 6</span>
+    </div>
+    <div class="boxcontent">
+        <h2>Tool Framework</h2>
+        <p>Domcell 5</p>
+        <h2>Core Framework</h2>
+        <p>Electron 29</p>
+        <h2>PCR Badge CSS</h2>
+        <p>Version: Beta 12</p>
+        <h2>PCR Secondary Badge CSS</h2>
+        <p>Version: 1.0</p>
+    </div>
+    <div class="boxcontent">
+        <h2>Special Thanks</h2>
+        <p>Testing &amp; Features</p>
+        <ul>
+            <li>Tara Scherer</li>
+            <li>Johnny Bonilla</li>
+            <li>Conor Greene</li>
+        </ul>
     </div>
 
-    <div class="boxcontent">
-        Tool Framework: Domcell 5<br>
-        Core Framework: Electron 29<br>
-        PCR Badge CSS Ver: Beta 12<br>
-        PCR Secondary Badge CSS Ver: 1.0
-    </div>
+    <script>
+        const { ipcRenderer } = require('electron');
 
-    <div class="boxcontent">
-        Special Thanks: Testing &amp; Features<br>
-        : Tara Scherer<br>
-        : Johnny Bonilla<br>   
-        : Conor Greene<br>
-    </div>
-  
+        document.body.addEventListener('mouseover', () => {
+            document.body.style.backgroundColor = '#263238';
+        });
+
+        document.body.addEventListener('mouseout', () => {
+            document.body.style.backgroundColor = '#121212';
+        });
+
+        document.body.addEventListener('click', () => {
+            ipcRenderer.send('close-window');
+        });
+
+        setTimeout(() => {
+            ipcRenderer.send('close-window');
+        }, 8000);
+    </script>
 </body>
 </html>
-
-<script>
-    const { ipcRenderer } = require('electron');
-
-    document.body.addEventListener('mouseover', () => {
-        document.body.style.backgroundColor = '#263238'; /* Darker shade on hover */
-    });
-
-    document.body.addEventListener('mouseout', () => {
-        document.body.style.backgroundColor = '#121212'; /* Return to original background */
-    });
-
-    document.body.addEventListener('click', () => {
-        ipcRenderer.send('close-window');
-    });
-
-    setTimeout(() => {
-        ipcRenderer.send('close-window');
-    }, 7000); 
-</script>

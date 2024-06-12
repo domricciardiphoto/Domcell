@@ -1,7 +1,7 @@
 {
   "name": "domcell",
   "productName": "DOMCELL",
-  "version": "9.2.96",
+  "version": "9.3.1",
   "description": "PCR HTML Builder App",
   "main": "main.js",
   "scripts": {
@@ -55,8 +55,10 @@
     "electron-log": "^4.4.8",
     "electron-packager": "^17.1.2",
     "electron-updater": "^6.1.8",
+    "express": "^4.19.2",
     "menu": "^0.2.5",
     "node.js": "0.0.1-security",
+    "nodemailer": "^6.9.13",
     "shell": "^0.9.4",
     "uglify-js": "^3.17.4"
   },

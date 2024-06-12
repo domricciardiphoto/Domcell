@@ -642,6 +642,7 @@
             background-color: #333;
             list-style: none;
             margin-bottom: 5px;
+            font-size: 0.85rem;
         }
 
         .fr-box {
@@ -750,18 +751,32 @@
                     <option value="100">100% Width</option>
                     <option value="50">50% Width</option>
                     <option value="33">33% Width</option>
-                    <option value="25">25% Width</option>
+                    <option value="25">25% Width</option>   
                     <option value="20">20% Width</option>
                 </select>
 
             </li>
+
+
+
+            <li id="converterh" style="background-color: orangered; color: #fff; text-align: center; display: none;">H Converter Tag</li>
             <li id="edit" style="background-color: darkgreen; color: #fff; text-align: center;">Edit</li>
             <li id="duplicate" style="text-align: center;">Duplicate</li>
             <li id="component" style="background-color: yellow;text-align: center;">(Row) Make Active</li>
             <li id="textarea" style="background-color: black; color: yellow;text-align: center;">Exit Edit Mode</li>
             <li id="empty" style="background-color: lightgreen; color: #333;text-align: center;">Empty</li>
             <li id="delete" style="background-color: red; color: #fff;text-align: center;">Delete</li>
+
+
+
+
+            
             <li id="close" style="background-color: rgb(21, 0, 114); color: #fff;text-align: center; ">Close</li>
+
+
+
+
+
         </ul>
     </div>
 
@@ -890,13 +905,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
     <div id="urlModal" style="display: none;">
         <div id="urlmodel-internal">
             <p>Enter the URL:</p>
@@ -916,7 +924,7 @@
             /* You might want to check if 'fixed' would be better for modals */
         }
 
-        #customModal-internal {
+        #customModal-internal , #customModal-internal21 {
             background: #333;
             /* Dark background for the modal */
             color: #fff;
@@ -974,7 +982,6 @@
     </style>
 
 
-
     <div id="customModal" style="display: none;">
         <div id="customModal-internal">
             <p>Select an action:</p>
@@ -984,6 +991,40 @@
         </div>
     </div>
 
+
+    <div id="customModalhtag" style="display: none; position:absolute; z-index:9999999999999999999000; ">
+        <div id="customModal-internal21" class="draggable"  style="width: 20%; min-width: 370px; padding: 20px; background: #333; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); color: #fff;min-width: 560px;">
+            <div class="width100c">
+                <div class="width50c" style="border: 1px solid #555; width: 40%; margin-right: 3%; padding: 20px; font-size: 0.9rem; border-radius: 5px; background: #444;">
+                    <p>Change H tag (H1 - H5)</p>
+                    <select name="htagselecterh" id="htagselecterh" style="font-size: 1rem; width: 100%; padding: 5px; margin-bottom: 10px; background: #555; color: #fff; border: none;">
+                        <optgroup label="Choose One">
+                            <option value="H1">Convert to <strong>H1</strong></option>
+                            <option value="H2">Convert to <strong>H2</strong></option>
+                            <option value="H3">Convert to <strong>H3</strong></option>
+                            <option value="H4">Convert to <strong>H4</strong></option>
+                            <option value="H5">Convert to <strong>H5</strong></option>
+                        </optgroup>
+                    </select>
+                    <button id="converhtagdoit" style="width: 100%; padding: 10px; text-align: center; background-color: #0056b3; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Convert Tag</button>
+                </div>
+                <div class="width50c" style="border: 1px solid #555; width: 40%; padding: 20px; font-size: 0.9rem; border-radius: 5px; background: #444;">
+                    <p>Color of H Tag</p>
+                    <select name="htagselecterh21" id="htagselecterh21" style="font-size: 1rem; width: 100%; padding: 5px; margin-bottom: 10px; background: #555; color: #fff; border: none;">
+                        <optgroup label="Choose One">
+                            <option value="#333">Color to Black</option>
+                            <option value="#034694">Color to Blue</option>
+                            <option value="#d71920">Color to Red</option>
+                            <option value="#fff">Color to White</option>
+                        </optgroup>
+                    </select>
+                    <button id="converhtagdoitcolor" style="width: 100%; padding: 10px; text-align: center; background-color: #19aa5a; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Change Color</button>
+                </div>
+            </div>
+            <button id="closeconverter" style="padding: 10px 20px; border: none; background-color: #007BFF; color: white; border-radius: 5px; cursor: pointer; margin-top: 20px; transition: background-color 0.3s; width: 9%;  width: 98%;">Close</button>
+        </div>
+    </div>
+    
 
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -998,7 +1039,7 @@
     <style>
         .customModal,
         #urlModal,
-        #myModalcontent {
+        #myModalcontent , #customModalhtag {
             z-index: 99999999999999;
             position: absolute;
             display: none;
@@ -1071,8 +1112,6 @@
 border: none !important;
         }
     </style>
-
-
 
 
     <div id="myModalcontent" class="modal">
@@ -4224,6 +4263,14 @@ border: none !important;
                         <div id="addrow2x2a"
                             style=" margin-left:5px; text-align: center; background-color: yellow; color:#333; width: 23%; margin-top: 10px; margin-bottom: 5px; float: left;">
                             50/50</div>
+
+                            <div id="addrow3x3a"
+                            style=" margin-left:5px; text-align: center; background-color: yellow; color:#333; width: 23%; margin-top: 10px; margin-bottom: 5px; float: left;">
+                            33 X 3</div>
+
+                            <div id="addrow25x4a"
+                            style=" margin-left:5px; text-align: center; background-color: yellow; color:#333; width: 23%; margin-top: 10px; margin-bottom: 5px; float: left;">
+                            25 X 4</div>
                     </div>
                 </div>
 
@@ -4621,7 +4668,7 @@ border: none !important;
                 versions.forEach(version => {
                     const li = document.createElement('li');
                     li.textContent =
-                        `VerID ${version.id} - ${version.versionName || 'Unnamed'} - ${new Date(version.createdAt).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}`;
+                        ` Name : ${version.versionName || 'Unnamed'} -  Created on: ${new Date(version.createdAt).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}`;
                     li.setAttribute('data-version-id', version.id);
                     li.setAttribute('data-info', `${version.versionName || 'Unnamed'}`);
                     // Add delete button
@@ -4817,18 +4864,23 @@ border: none !important;
             initDB();
         });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>

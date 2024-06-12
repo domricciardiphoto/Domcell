@@ -246,7 +246,7 @@ $('#EditandSubmitAL').off('click').on('click', function () {
 
 
 function atag(wheretogo) {
-    alert(wheretogo)
+  
     var target = $(e.target);
     if (!target.is('a')) {
         target = target.closest('a');
@@ -376,37 +376,50 @@ $(document).on('contextmenu', '.indent, .indentselected', function(e) {
         top: "451px"
     }).data('clickedElement', this);
     $('.cmenulist').hide()
+    $('#converterh').hide()
+    $('#converterh').show()
     if ($(this).data('tag') === 'IMG') {
-        $('#contextMenu #edit, #contextMenu #component, #contextMenu #empty, #contextMenu #textarea').hide();
+        $('#contextMenu #edit, #contextMenu #component, #contextMenu #empty, #contextMenu #textarea , #converterh').hide();
+
     } else if ($(this).data('tag') === 'COMPONENT') {
         $('#contextMenu #component , #contextMenu #textarea').hide();
         $('.cmenulist').hide()
         $('.compaddsystem').show()
+
+        
     } 
     else if ($(this).data('tag') === 'ROW') {
-        $('.cmenulist').hide()
+        $('.cmenulist, #converterh').hide()
         $('.rowaddsystem').show()
         $(' #adder-row-b, #adder-row-a').show()
     } 
     
     else if ($(this).data('tag') === 'A') {
-        $('#contextMenu #component, #contextMenu #empty, #contextMenu #textarea').hide();
-    } else if ($(this).data('tag') === 'H4' || $(this).data('tag') === 'H5') {
-        $('#contextMenu #component, #contextMenu #empty, #contextMenu #textarea').hide();
+        $('#contextMenu #component, #contextMenu #empty, #contextMenu #textarea, #converterh').hide();
     } else if ($(this).data('tag') === 'P') {
-        $('#contextMenu #component, #contextMenu #empty').hide();
+        $('#contextMenu #component, #contextMenu #empty ,#converterh').hide();
     } else if ($(this).data('tag') === 'VIDEO') {
-        $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #textarea').hide();
+        $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #textarea, #converterh').hide();
     } else if ($(this).data('tag') === 'SCRIPT') {
-        $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #duplicate, #contextMenu #textarea').hide();
+        $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #duplicate, #contextMenu #textarea, #converterh').hide();
     } else if ($(this).data('tag') === 'TEXTAREA') {
-        $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #duplicate, #duplicate #delete').hide();
+        $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #duplicate, #duplicate #delete, #converterh').hide();
         $('#contextMenu #textarea').show();
         return false;
-    } else if ($(this).data('tag') === 'LI' || $(this).data('tag') === 'H2' || $(this).data('tag') === 'H3' || $(this).data('tag') === 'OL') {
-        $('#contextMenu #component, #contextMenu #empty, #contextMenu #textarea').hide();
-    } else if ($(this).data('tag') === 'SOURCE' || $(this).data('tag') === 'TRACK') {
-        $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #duplicate, #contextMenu #textarea ').hide();
+    } else if ($(this).data('tag') === 'LI' || $(this).data('tag') === 'OL') {
+        $('#contextMenu #component, #contextMenu #empty, #contextMenu #textarea , #converterh').hide();
+    }
+    
+    else if 
+    
+    ($(this).data('tag') === 'H1' || $(this).data('tag') === 'H2' || $(this).data('tag') === 'H3' || $(this).data('tag') === 'H4' || $(this).data('tag') === 'h1' || $(this).data('tag') === 'h2' || $(this).data('tag') === 'h3' || $(this).data('tag') === 'h4' || $(this).data('tag') === 'h5' ) {
+        $('#contextMenu #component, #contextMenu #empty, #contextMenu #textarea ').hide();
+        $('#converterh').show()
+    }
+    
+    
+    else if ($(this).data('tag') === 'SOURCE' || $(this).data('tag') === 'TRACK') {
+        $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #duplicate, #contextMenu #textarea , #converterh').hide();
     } else {
         $('#contextMenu #edit, #contextMenu #component, #contextMenu #empty, #contextMenu #duplicate').show();
     }
@@ -431,6 +444,12 @@ $('#contextMenu ul li').click(function() {
         case 'duplicate':
             duplicateElement(clickedElement);
             debouncedUpdateMobilePreview() ;
+            break;
+
+
+        case 'converterh':
+                $('#customModalhtag').show()
+                $('#contextMenu').hide();
             break;
 
         case 'component':
@@ -459,6 +478,36 @@ $('#contextMenu ul li').click(function() {
     }
    // $('#contextMenu').hide();
    
+});
+
+
+$('#closeconverter').on('click', function() {
+    $('#customModalhtag').hide()
+})
+
+$('#converhtagdoit').on('click' , function() {
+converthtag = $('#htagselecterh').val()
+converthtaghtml = $('.explorerselected').html()
+var converthtag = $('#htagselecterh').val();
+$('.explorerselected').each(function() {
+    var currentTag = $(this).prop('tagName').toLowerCase();
+    if (currentTag.startsWith('h')) {
+        var newContent = $(this).html();
+        var newElement = $('<' + converthtag + '/>').html(newContent).addClass('explorerselected');
+        $(this).replaceWith(newElement);
+    }
+});
+})
+
+function setImportantStyle(element, property, value) {
+    element.each(function() {
+        this.style.setProperty(property, value, 'important');
+    });
+}
+
+$('#converhtagdoitcolor').on('click', function() {
+    var selectedColor = $('#htagselecterh21').val();
+    setImportantStyle($('.explorerselected'), 'color', selectedColor);
 });
 
 
@@ -2580,7 +2629,7 @@ $('.addrow').on('click', function () {
     // Dynamically create the columns based on the layout configuration
     layout.forEach(function (size, index) {
         var onblock = index === 0 ? 'onblock' : ''; // Add 'onblock' class to the first element
-        html += `<div class="width${size}c layoutpale layoutpale${size} liverow droppable ${onblock}"></div>`;
+        html += `<div class="width${size}c width50c2 layoutpale layoutpale${size} liverow droppable ${onblock}"></div>`;
     });
 
     html += '</div>';
@@ -2591,7 +2640,6 @@ $('.addrow').on('click', function () {
     $('.layoutbuilder').append(html);
   
     enabledrop()
-   
 });
 
 $('.addrowslider').on('click' , function() {
@@ -2683,10 +2731,42 @@ $('#addrow2x2 , #addrow2x2a').on('click', function () {
         '<div class="width50c  width50c2 liveelement in910 layoutpale layoutpale50 interedit explorerselected"></div><div class="width50c  width50c2 liveelement in910 layoutpale  layoutpale50"></div>'
     );
 
+    enabledrop()
+   
+})
+
+
+$('#addrow3x3a').on('click', function () {
+    $('.interedit').removeClass('interedit')
+    captureState()
+    $('.interedit').removeClass('interedit')
+    $('.explorerselected').removeClass('explorerselected')
+    $('.onblock').append(
+        '<div class="width33c width50c2 liveelement in910 layoutpale layoutpale33 explorerselected interedit"></div><div class="width33c width50c2 liveelement in910 layoutpale layoutpale33"></div><div class="width33c width50c2 liveelement in910 layoutpale layoutpale33"></div>'
+    );
 
     enabledrop()
    
 })
+
+
+
+$('#addrow25x4a').on('click', function () {
+    $('.interedit').removeClass('interedit')
+    captureState()
+    $('.interedit').removeClass('interedit')
+    $('.explorerselected').removeClass('explorerselected')
+    $('.onblock').append(
+        '<div class="width25c width50c3 liveelement unselectable-text in910 layoutpale layoutpale25 explorerselected interedit"></div><div class="width25c width50c3 liveelement unselectable-text in910 layoutpale layoutpale25"></div><div class="width25c width50c3 liveelement unselectable-text in910 layoutpale layoutpale25"></div><div class="width25c width50c3 liveelement unselectable-text in910 layoutpale layoutpale25"></div>'
+    );
+
+    enabledrop()
+   
+})
+
+
+
+
 
 $('#addrow2x8').on('click', function () {
     $('.interedit').removeClass('interedit')
