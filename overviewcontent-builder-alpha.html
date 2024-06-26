@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.2.3/axe.min.js"></script>
 
     
 
@@ -468,6 +468,8 @@
         #mobilepreview2 .width50c3 {
             width: 49% !important;
         }
+
+        
     </style>
 
 
@@ -663,6 +665,28 @@
         .dark-theme.fr-box.fr-basic .fr-element {}
 
         .dark-theme.fr-box.fr-basic.fr-top .fr-wrapper {}
+
+        #results21aaa {
+    display: none;
+    width: 82%;
+    min-height: 300px;
+    float: left;
+    border: 1px solid #666;
+    padding: 22px;
+    margin-left: 3%;
+    margin-top: 2%;
+    color: #fff;
+    max-height: 550px;
+    overflow-y: auto;
+    font-size: 0.85rem;
+}
+
+#results21aaa::before {
+    content: "ADA Compliance Check";
+}
+
+
+
     </style>
 
 
@@ -1334,6 +1358,17 @@ border: none !important;
                     background-color: red !important;
                 }
 
+
+
+                #codeloaderpcrview .width100c {min-height: 0px;}
+
+                #pullthecode3     .customspacer {
+       background-color: #9c27b0 !important;
+        }
+
+        #codeloaderpcrview #pullthecode3 .customspacer {
+            background-color: transparent !important;
+        }
                
             </style>
 
@@ -1561,6 +1596,23 @@ border: none !important;
                                     <input type="range" id="rangeSlider4" name="rangeSlider3" min="1" max="100"
                                         value="0" oninput="updateSliderValue4(this.value)">
                                 </div>
+
+
+                                
+
+                            </div>
+
+
+                            <div class="width100c" style="border-top: 1px solid #ccc; padding-top: 10px;">
+                            
+                                <div class="width100c">
+                                    <label for="rangeSlider">Row Spacer Height: <span id="rangeSlider4spacer">0</span>px</label>
+                                    <input type="range" id="rangeSlider4spacer" name="rangeSlider4spacer" min="1" max="200"
+                                        value="0" oninput="updateSliderValue4spacer(this.value)">
+                                </div>
+
+
+                                
 
                             </div>
 
@@ -3572,42 +3624,144 @@ border: none !important;
                 </div>
 
 
+ 
+
+                <div id="schedule21" class="width100c openclose" openclose="schedule">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Schedule Content </span>
+
+                    </div>
+                </div>
+
+
+
+
+                <div  class="width100c tools stage1 schedule" >
+
+<style>
+        #dateForm {
+            width: 86%;
+
+    padding: 20px;
+    margin-bottom: 11px;
+    border-radius: 0px;
+    margin-left: 2%;
+
+    }
+
+    #dateForm label {
+        display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 0.875rem;
+    }
+
+    #dateForm input[type="date"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    #dateForm input[type="date"]:focus {
+      border-color: #007bff;
+    }
+
+    #dateForm button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #dateForm button:hover {
+      background-color: #0056b3;
+    }
+</style>
+
+                    <form id="dateForm">
+
+                        <label for="startDate">Start Date:</label>
+                        <input type="date" id="startDate" name="startDate" required>
+
+
+                        <label for="endDate">End Date:</label>
+                        <input type="date" id="endDate" name="endDate" >
+
+
+                        <button type="submit" style="float: right;">Submit</button>
+                      </form>
+
+                      <style>
+                        .timekeeper {
+                            background-color: green !important;
+
+                        }
+
+
+    
+
+                      </style>
+
+                      <script>
+                        var myschedule;
+                    
+                        document.getElementById('dateForm').addEventListener('submit', function(event) {
+                          event.preventDefault();
+                    $('.timekeeper').remove()
+                          
+                          var startDate = document.getElementById('startDate').value;
+                          var endDate = document.getElementById('endDate').value;
+
+
+                    
+
+                            myschedule = `<div class="timekeeper width100c layoutpale layoutpale100 liverow  onblock"><script class="timekeeper21">
+        document.addEventListener('DOMContentLoaded', function () {
+          var startDate = new Date('${startDate}');
+          var endDate = ${endDate ? 'new Date(\'' + endDate + '\')' : 'null'};
+          if (endDate) {
+            endDate.setDate(endDate.getDate() + 1); 
+          }
+          var currentDate = new Date();
+          var elements = document.querySelectorAll('.totalinternalcontent');
+          if (currentDate >= startDate && (!endDate || currentDate < endDate)) {
+            elements.forEach(function (element) {
+              element.style.display = 'block';
+            });
+          } else {
+            elements.forEach(function (element) {
+              element.style.display = 'none';
+            });
+          }
+        });
+      <\/script></div>`;
+
+                    
+          
+                    
+                          console.log(myschedule);
+                          $('#pullthecode3').append(myschedule)
+                    
+                        });
+                      </script>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                </div>
 
 
 
@@ -3650,7 +3804,7 @@ border: none !important;
 
                     </div>
 
-                    <div class="prod100" id="message2">
+                    <div class="prod100" id="message2" >
                         BAD
                         LINK, RELATIVE LINKS ONLY!</div>
 
@@ -3818,7 +3972,7 @@ border: none !important;
                     placeholder="Click on a Component to Edit the HTML"></textarea>
 
 
-
+                
 
 
                 <div class="width100c" id="bottommatrix">
@@ -3836,17 +3990,17 @@ border: none !important;
                         <img src="assets/whatsnew.png" style="width: 30%;" title="Whats New">
                     </div>
 
-
+                   
 
 
 
                 </div>
 
-
+               
 
             </div>
 
-
+            <div id="results21aaa"  ></div>
         </div>
 
 
@@ -4407,7 +4561,7 @@ border: none !important;
                 </div>
 
             </div>
-
+            
 
 
             <div class="width50c" style="max-width: 24%;">
@@ -4569,6 +4723,8 @@ border: none !important;
 
 
     </div>
+
+    
     <!--
     <script src="js2/explorer-beta2.js"></script>
     <script src="js2/explorer-beta2-workspace.js"></script>
@@ -4865,13 +5021,6 @@ border: none !important;
         });
 
     </script>
-
-
-
-
-
-
-
 
 
 

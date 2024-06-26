@@ -71,6 +71,7 @@ function selectAndHighlightElement(element, scrollElement = false) {
         mobileHideCheckbox.prop('checked', $element.hasClass('hideonlyonmobile'));
     }
 }
+
 function clearSelection() {
     if (lastSelectedElement) {
         lastSelectedElement.classList.remove('explorerselected');
@@ -79,6 +80,9 @@ function clearSelection() {
         }
     }
 }
+
+
+
 
 var runExplorerDebounced = debounce(function() {
     $('#explorer2').empty();
@@ -91,7 +95,7 @@ var runExplorerDebounced = debounce(function() {
         'layoutpale20', 'layoutpale25', 'layoutpale40', 'layoutpale50', 'layoutpale75',
         'layoutpale60', 'layoutpale80', 'layoutpale100', 'ui-sortable', 'ui-sortable-disabled',
         'liverow', 'droppable', 'ui-droppable', 'loading-lazy', 'promoimg21', 'ui-sortable-handle',
-        'interedit', 'onblock', 'width50c2' , 'width50c3'
+        'interedit', 'onblock', 'width50c2' , 'width50c3','timekeeper' , 'timekeeper21'
     ];
 
     function exploreElements(element, depth = 0, parentContainer = explorer) {
@@ -160,9 +164,18 @@ var runExplorerDebounced = debounce(function() {
     function getSpecialLabel(element) {
         if (element.classList.contains('liveelement')) {
             return 'COMPONENT';
+
+        }  else if (element.classList.contains('timekeeper')) {
+            return 'TIME KEAPER ROW';
+        }  else if (element.classList.contains('timekeeper21')) {
+            return 'SCRIPT FOR DATES';
         } else if (element.classList.contains('liverow')) {
             return 'ROW';
-        }
+        } else if (element.classList.contains('customspacer')) {
+        return 'SPACER';
+    }
+
+
         return null;
     }
 
@@ -171,6 +184,8 @@ var runExplorerDebounced = debounce(function() {
             return '#007bff';
         } else if (element.classList.contains('liveelement')) {
             return '#ffc107';
+        } else if (element.classList.contains('customspacer')) {
+            return '#9c27b0';
         }
         return '#28a745';
     }
@@ -293,6 +308,65 @@ function releaseMemory() {
     }
 
 }
+
+function checkADACompliance() {
+    const codeDiv = document.getElementById('pullthecode2');
+    const codeAsHTML = codeDiv.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+
+    // Create a temporary element to hold the HTML
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = codeAsHTML;
+
+    // Append the temporary element to the body
+    document.body.appendChild(tempDiv);
+
+    // Run axe-core on the temporary element
+    axe.run(tempDiv, function (err, results) {
+      if (err) throw err;
+
+      const resultsDiv = document.getElementById('results21aaa');
+
+      // Filter out "duplicate-id" violations
+      const filteredViolations = results.violations.filter(violation => violation.id !== 'duplicate-id');
+
+      if (filteredViolations.length) {
+        filteredViolations.forEach(violation => {
+          const violationDiv = document.createElement('div');
+          violationDiv.className = 'violation';
+
+          const violationTitle = document.createElement('h3');
+          violationTitle.textContent = violation.id;
+
+          const violationDescription = document.createElement('p');
+          violationDescription.textContent = violation.description;
+
+          const violationHelp = document.createElement('p');
+          violationHelp.innerHTML = `<a class="outsidelink" href="${violation.helpUrl}" target="_blank">Learn more</a>`;
+
+          violationDiv.appendChild(violationTitle);
+          violationDiv.appendChild(violationDescription);
+          violationDiv.appendChild(violationHelp);
+
+          violation.nodes.forEach(node => {
+            const nodeElement = document.createElement('div');
+            nodeElement.innerHTML = `<p><strong>Element:</strong> <code>${node.html}</code></p>`;
+            nodeElement.innerHTML += `<p><strong>Target:</strong> ${node.target.join(', ')}</p>`;
+            nodeElement.innerHTML += `<p><strong>Failure Summary:</strong> ${node.failureSummary}</p>`;
+            violationDiv.appendChild(nodeElement);
+          });
+
+          resultsDiv.appendChild(violationDiv);
+        });
+      } else {
+        resultsDiv.innerHTML = '<p>No accessibility issues found.</p>';
+      }
+
+      // Clean up by removing the temporary element
+      document.body.removeChild(tempDiv);
+    });
+  }
+
+
 
 
 function enabledrop() {
@@ -549,8 +623,17 @@ function gotothelinkfunction(wheretogo) {
 
     document.getElementById("myModal").style.display = "block";
     $('#yesBtn').off('click').on('click', function () {
-        window.open('https://www.pcrichard.com' + wheretogo, '_blank');
-        document.getElementById("myModal").style.display = "none";
+
+
+        if (wheretogo.includes('https://')) {
+            window.open(wheretogo, '_blank');
+            document.getElementById("myModal").style.display = "none";
+        } else {
+            window.open('https://www.pcrichard.com' + wheretogo, '_blank');
+            document.getElementById("myModal").style.display = "none";
+
+        }
+
     });
 }
 
@@ -861,6 +944,7 @@ $('.thetopbox').on('click', function () {
 
 
 $('.openthematrix').on('click', function () {
+    $('#results21aaa').hide()
     $('#sidetoolset').hide()
     $('#explorer2').hide()
     var whatmatrix = '#' + $(this).attr('mymatrix');
@@ -875,6 +959,8 @@ $('.openthematrix').on('click', function () {
             $('.colorlegend').hide()
             $('#hidemainmobile').hide()
             $('#thisisthefinalcode').show()
+            $('#results21aaa').show()
+          $('.codechanger').hide()
 
             $('img.loading-lazy').each(function () {
                 $(this).attr('src', '#')
@@ -891,7 +977,7 @@ var textContent = divElement.textContent || divElement.innerText;
 // Get the character count
 var characterCount = textContent.length;
 
-            $('#charactercount').html('Character Count ' + '<span style="color:yellow">'+characterCount+' </span>' + ' - Current Salesforce Max is 15,000' )
+            $('#charactercount').html('Character Count ' + '<span style="color:yellow">'+characterCount+' </span>' + ' - Current Salesforce Max is 16,000' )
 
             var element = $('#findthecode2');
             var content = element.text();
@@ -926,6 +1012,7 @@ var characterCount = textContent.length;
 
             finalcheck = $('#findthecode2').html()
             $('#findthecode2').html(finalcheck.replaceAll('α', 'a').replaceAll('×', 'x').replaceAll('–', '-').replaceAll('’', "'").replaceAll('class="width100c     ui-', 'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '--').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>'))
+            checkADACompliance();
             break;
         case '#mymatrix2':
             $('img.loading-lazy').each(function () {
@@ -938,6 +1025,7 @@ var characterCount = textContent.length;
             $('#hidemainmobile').show()
             $('#explorer2').show()
             $('#clearandrestartbuttonrefresh').click()
+            $('#results21aaa').hide()
             break;
         case '#mymatrix3':
 
@@ -1471,14 +1559,10 @@ $('.textaligner').off('click').on('click', function () {
    
     var $interedit = $('.interedit');
     var cssadd = $(this).attr('cssadd');
-    console.log(cssadd)
     // Apply styles in a batched manner
     $interedit.css('text-align', cssadd);
     $interedit.find('p, .pd-header-tag').css('text-align', cssadd);
-    $interedit.find('.pd-header-tag').css({
-        'text-align': cssadd,
-        'line-height': '116%'
-    });
+    $interedit.find('.pd-header-tag').css({'text-align': cssadd,'line-height': '116%' });
 
     // Adjust styles via function efficiently
     $interedit.find('.pd-header-tag h2, .pd-header-tag h3').attr('style', function (i, style) {
@@ -1711,9 +1795,7 @@ document.getElementById('linktooutside3').addEventListener('change', function ()
 
 $('#linkmaker').click(function () {
     captureState()
-    if ($('#whatsthelink').val().includes('pcrichard.com') || $('#whatsthelink').val().includes(
-            'https://') || $('#whatsthelink').val().includes('www') || $('#whatsthelink').val()
-        .includes('staging-na01-pcrichard')) {
+    if ($('#whatsthelink').val().includes('pcrichard.com') ||  $('#whatsthelink').val().includes('staging-na01-pcrichard.com')) {
         $('#message2').slideDown().delay(2000).slideUp()
         return false;
     }
@@ -1770,9 +1852,7 @@ $('#linkmaker').click(function () {
 
 $('#linkmaker3').click(function () {
 
-    if ($('#whatsthelink3').val().includes('pcrichard.com') || $('#whatsthelink3').val().includes(
-            'https://') || $('#whatsthelink3').val().includes('www') || $('#whatsthelink3').val()
-        .includes('staging-na01-pcrichard')) {
+    if ($('#whatsthelink3').val().includes('pcrichard.com') || $('#whatsthelink3').val().includes('staging-na01-pcrichard.com')) {
         $('#message2').slideDown().delay(2000).slideUp()
         return false;
     }
@@ -2124,12 +2204,21 @@ $("#sidetoolset").delay(600).animate({
 
 
 function gotothelinkfunction(wheretogo) {
+
     document.getElementById("myModal").style.display = "block";
     $('#yesBtn').off('click').on('click', function () {
-        window.open('https://www.pcrichard.com' + wheretogo, '_blank');
-        document.getElementById("myModal").style.display = "none";
-    });
 
+
+        if (wheretogo.includes('https://')) {
+            window.open(wheretogo, '_blank');
+            document.getElementById("myModal").style.display = "none";
+        } else {
+            window.open('https://www.pcrichard.com' + wheretogo, '_blank');
+            document.getElementById("myModal").style.display = "none";
+
+        }
+
+    });
 }
 
 
@@ -2378,6 +2467,12 @@ function commonUpdateActions() {
 function updateSliderValue4(value) {
     document.getElementById('sliderValue4').textContent = value;
     $('.onblock').css('border-radius', value + 'px')
+    updateMobilePreview()
+}
+
+function updateSliderValue4spacer(value) {
+    document.getElementById('rangeSlider4spacer').textContent = value;
+    $('.onblock').css('min-height', value + 'px').addClass('customspacer').removeClass('liverow')
     updateMobilePreview()
 }
 
