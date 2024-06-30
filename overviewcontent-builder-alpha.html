@@ -644,7 +644,7 @@
             background-color: #333;
             list-style: none;
             margin-bottom: 5px;
-            font-size: 0.85rem;
+            font-size: 0.7rem;
         }
 
         .fr-box {
@@ -1040,6 +1040,7 @@
                             <option value="#034694">Color to Blue</option>
                             <option value="#d71920">Color to Red</option>
                             <option value="#fff">Color to White</option>
+                            
                         </optgroup>
                     </select>
                     <button id="converhtagdoitcolor" style="width: 100%; padding: 10px; text-align: center; background-color: #19aa5a; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Change Color</button>
@@ -2612,6 +2613,7 @@ border: none !important;
                                 style="text-align: center;  background-color: #000; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 10px;">
                                 White</button>
                         </div>
+                     
 
                     </div>
 
@@ -2634,6 +2636,8 @@ border: none !important;
                         <button title="Superscript Text" class="texttype unselectable-text"
                             style=" border-right: 1px solid #ccc;font-size: 0.8rem; " value="sup">
                             X<sup>2</sup></button>
+
+                            
 
                         <button class="textaligner" title="Left Justify Text"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
@@ -4030,23 +4034,31 @@ border: none !important;
                         <div id="pluginsandtools" class="openthematrix" mymatrix="mymatrix9">
                             <strong>Plugins &
                                 Tools</strong></div>
-                        <div class="openthematrix" mymatrix="mymatrix1"><strong>Final
+                        <div class="openthematrix" mymatrix="mymatrix1" style="background-color: blue; color: #fff;"><strong>Final
                                 Code</strong></div>
 
-                        <div class="openthematrix" mymatrix="mymatrix6"><strong>Templetes</strong></div>
-                        <div class="openthematrix" mymatrix="mymatrix-dark"><strong>Dark View</strong></div>
-                        <div class="openthematrix" mymatrix="mymatrix-hmobile"><strong>Hide Mobile</strong></div>
+                      
 
                         <div id="showversioningmodal" style="float: right;     padding: 0px;
                         padding-left: 8px;
                         padding-right: 8px;
-                        background-color: #333;
+                        background-color: transparent;
+                       
                         width: auto;
                         color: #fff;
                         margin-left: 0px;
                         cursor: pointer;
                         user-select: none;
                         font-size: 0.6rem; margin-right: 1%;">Save Version</div>
+
+
+
+<div class="openthematrix" mymatrix="mymatrix-dark" style="float: right;background-color: transparent;margin-right: 1%;    font-size: 0.55rem; text-decoration: underline;"><strong>Dark View</strong></div>
+
+<div class="openthematrix" mymatrix="mymatrix3" style="float: right;background-color: transparent;   font-size: 0.55rem; text-decoration: underline;"><strong>Code Dual</strong></div>
+
+<div class="openthematrix" mymatrix="mymatrix-hmobile" style="float: right;background-color: transparent;font-size: 0.55rem;text-decoration: underline;"><strong>Hide Mobile</strong></div>
+<div class="openthematrix" mymatrix="mymatrix6" style="float: right;  background-color: transparent; color: #fff;font-size: 0.55rem;text-decoration: underline;"><strong>Templetes</strong></div>
                         <div style="float: left; margin-left: 10px;"></div>
                         <div class="saveinfo"
                             style="font-size: 0.6rem; color: yellow; float: left; text-align: right; margin-left: 1.5%; width: auto;">
@@ -4494,8 +4506,15 @@ border: none !important;
                         <button class="texttype unselectable-text" value="span style='color:#000'"
                             title="Text Color Black"
                             style="text-align: center;  background-color: #fff; color:#000; width: 24%; margin-top: 5px; margin-bottom: 5px;">Black</button>
-
-
+                            <input type="color" id="colorPicker">
+                            <div id="colorDisplay" style="width: 100px; height: 100px; border: 1px solid #000;"></div>
+                            <script>$(document).ready(function() {
+                                $('#colorPicker').on('input', function() {
+                                    var selectedColor = $(this).val();
+                                    $('#colorDisplay').css('background-color', selectedColor);
+                                });
+                            });
+                            </script>
                     </div>
                 </div>
 
@@ -4824,7 +4843,7 @@ border: none !important;
                 versions.forEach(version => {
                     const li = document.createElement('li');
                     li.textContent =
-                        ` Name : ${version.versionName || 'Unnamed'} -  Created on: ${new Date(version.createdAt).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}`;
+                        `${version.versionName || 'Unnamed'}  :   ${new Date(version.createdAt).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}`;
                     li.setAttribute('data-version-id', version.id);
                     li.setAttribute('data-info', `${version.versionName || 'Unnamed'}`);
                     // Add delete button

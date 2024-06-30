@@ -48,6 +48,13 @@ function selectAndHighlightElement(element, scrollElement = false) {
         $element.addClass('interedit');
     }
 
+    //this is new june 2024 added for A tag in explorer
+    if($(element.explorerIndent).attr('data-tag') === 'A') {
+        $('.indentselected').removeClass('indentselected')
+        $(element.explorerIndent).addClass('indentselected')
+        return false
+       }
+
     $element.click();
     $('#contextMenu').hide();
     $('#myhtmleditor').val($element.html());
@@ -57,7 +64,13 @@ function selectAndHighlightElement(element, scrollElement = false) {
         $(element.explorerIndent).addClass('indentselected').get(0).scrollIntoView({
             behavior: 'auto', block: 'nearest', inline: 'start'
         });
+
+      
     }
+
+
+
+    
     if (scrollElement) {
         $element.get(0).scrollIntoView({
             behavior: 'auto', block: 'nearest', inline: 'start'
@@ -95,7 +108,7 @@ var runExplorerDebounced = debounce(function() {
         'layoutpale20', 'layoutpale25', 'layoutpale40', 'layoutpale50', 'layoutpale75',
         'layoutpale60', 'layoutpale80', 'layoutpale100', 'ui-sortable', 'ui-sortable-disabled',
         'liverow', 'droppable', 'ui-droppable', 'loading-lazy', 'promoimg21', 'ui-sortable-handle',
-        'interedit', 'onblock', 'width50c2' , 'width50c3','timekeeper' , 'timekeeper21'
+        'interedit', 'onblock', 'width50c2' , 'width50c3','timekeeper' , 'timekeeper21' , 'unselectable-text' , 'edit-mode'
     ];
 
     function exploreElements(element, depth = 0, parentContainer = explorer) {
@@ -160,6 +173,10 @@ var runExplorerDebounced = debounce(function() {
             }
         }
     }
+
+    
+
+
 
     function getSpecialLabel(element) {
         if (element.classList.contains('liveelement')) {
@@ -443,6 +460,7 @@ function duplicateElement(clickedElement) {
 
 $(document).on('contextmenu', '.indent, .indentselected', function(e) {
     e.preventDefault();
+    
     $(this).click()
     $('#contextMenu').css({
         display: "block",
@@ -456,7 +474,7 @@ $(document).on('contextmenu', '.indent, .indentselected', function(e) {
         $('#contextMenu #edit, #contextMenu #component, #contextMenu #empty, #contextMenu #textarea , #converterh').hide();
 
     } else if ($(this).data('tag') === 'COMPONENT') {
-        $('#contextMenu #component , #contextMenu #textarea').hide();
+        $('#contextMenu #component , #contextMenu #textarea, #converterh').hide();
         $('.cmenulist').hide()
         $('.compaddsystem').show()
 
@@ -476,7 +494,14 @@ $(document).on('contextmenu', '.indent, .indentselected', function(e) {
         $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #textarea, #converterh').hide();
     } else if ($(this).data('tag') === 'SCRIPT') {
         $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #duplicate, #contextMenu #textarea, #converterh').hide();
-    } else if ($(this).data('tag') === 'TEXTAREA') {
+    }else if ($(this).data('tag') === 'FIGURE' || $(this).data('tag') === 'DIV') {
+        $('#contextMenu #component,  #contextMenu #empty,  #contextMenu #textarea, #converterh').hide();
+    }else if ($(this).data('tag') === 'SCRIPT FOR DATES' ) {
+        $('#contextMenu #component,  #contextMenu #empty,  #contextMenu #textarea, #converterh , #contextMenu #duplicate , #contextMenu #edit ').hide();
+    }
+
+
+    else if ($(this).data('tag') === 'TEXTAREA') {
         $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #duplicate, #duplicate #delete, #converterh').hide();
         $('#contextMenu #textarea').show();
         return false;
@@ -985,9 +1010,9 @@ var characterCount = textContent.length;
             // Define the words you want to remove
             var wordsToRemove = ['liveelement', 'in910', 'layoutpale', 'layoutpale50', 'liverow', ' ui-droppable', 'droppable',
                 'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'layoutpale100',
-                'layoutpale30', 'layoutpale20', 'layoutpale33', 'onblock', 'interedit', 'explorerselected',
+                'layoutpale30', 'layoutpale20', 'layoutpale33', 'onblock', 'interedit', 'edit-mode', 'explorerselected',
                 'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
-                'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle',
+                'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle','unselectable-text',
                 'https://staging-na01-pcrichard.demandware.net', 'programoverflow', '/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c/'
             ];
 
@@ -1029,9 +1054,11 @@ var characterCount = textContent.length;
             break;
         case '#mymatrix3':
 
-            $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
-            $('.colorlegend').hide()
-            $('#hidemainmobile').hide()
+           // $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
+            //$('.colorlegend').hide()
+            //$('#hidemainmobile').hide()
+            $('#pullthecode2').animate({'max-height' : '440px'})
+            $('#sidetoolset').show()
             var html = $('#pullthecode2').html()
             var beautifiedHtml = beautifyHtml(html);
             $('#beautycode').val(beautifiedHtml)
@@ -1108,6 +1135,10 @@ var characterCount = textContent.length;
             break;
 
     }
+
+    $('.openthematrixopen').on('click' , function() {
+        $('#firstmatrix').click()
+    })
 
 });
 
@@ -4261,3 +4292,7 @@ $(window).resize(function() {
     adjustMaxHeight();
 });
 
+
+$('#beautycode').on('input', function() {
+    $('#pullthecode2').html($('#beautycode').val());
+});
