@@ -1561,6 +1561,7 @@ $('.texttype').off('click').on('click', function () {
     // Load new content after updating the DOM
    
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 
@@ -1598,6 +1599,7 @@ $('#colorDisplay').off('click').on('click', function () {
     // Load new content after updating the DOM
    
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 
@@ -1638,6 +1640,7 @@ $('#colorPickerManuelactivate').off('click').on('click', function () {
     // Load new content after updating the DOM
    
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 
@@ -1672,6 +1675,7 @@ $('.textaligner3').off('click').on('click', function () {
     var intereditHTML = $('.interedit').html();
     $('#myhtmleditor').val('');
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
     //runexplorer()
 });
 
@@ -1696,6 +1700,7 @@ $('.textaligner').off('click').on('click', function () {
     $('#myhtmleditor').val(editorcopy);
    
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 
@@ -1786,6 +1791,7 @@ $('#cinput3-comp').on('click', function () {
    
     paragraphfunctions()
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
     return false;
 });
 
@@ -1874,6 +1880,7 @@ $('#cinput1-clickh2-comp').on('click', function () {
 
     $('#cinput1h2').val(''); // Clear the input field after appending content
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 // end text functions -----------------------------------------------------------------------
@@ -1967,7 +1974,7 @@ $('#linkmaker').click(function () {
             document.getElementById("myModal").style.display = "none";
         });
     });
-
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 
@@ -2016,6 +2023,7 @@ $('#linkmaker3').click(function () {
             document.getElementById("myModal").style.display = "none";
         });
     });
+    $('#beautycode').val($('#pullthecode3').html())
 
 });
 
@@ -2111,6 +2119,7 @@ $(document).on('click', '#submitvideofile', function () {
     const videoseodescription = $('#videoseodescription').val();
     const videoElement = createVideoElement(videoFilename, videoCaptions, videoPoster , videoseotitle , videoseodescription);
     $('.interedit').html(videoElement);
+    $('#beautycode').val($('#pullthecode3').html())
     //runexplorer()
 });
 
@@ -2231,7 +2240,7 @@ $('#listsubmit').on('click', function () {
    
 
 
-
+    $('#beautycode').val($('#pullthecode3').html())
 
 
 })
@@ -2409,6 +2418,7 @@ $('#RowBackgroundColorlist').on('change', function () {
 
    
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 
@@ -2419,6 +2429,7 @@ $('#Row-Border-Radius').on('change', function () {
     $('#Row-Border-Radius').prop('selectedIndex', 0);
    
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 
@@ -2450,6 +2461,7 @@ $('#Row-Padding-Radius').on('change', function () {
     $('#Row-Padding-Radius').prop('selectedIndex', 0);
    
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 $('#body-color').on('change', function () {
@@ -2458,6 +2470,7 @@ $('#body-color').on('change', function () {
     $('.informationcontent').attr('style', 'background-color: ' + bodycolor + ' !important;');
    
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 $('#comp-color').on('change', function () {
@@ -2467,6 +2480,7 @@ $('#comp-color').on('change', function () {
 
    
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 $('#comp-font').on('change', function () {
@@ -2476,6 +2490,7 @@ $('#comp-font').on('change', function () {
 
    
     updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 
@@ -2835,7 +2850,7 @@ $('#addrow').on('click', function () {
         '<div class="width100c  layoutpale layoutpale100 liverow droppable onblock"></div>')
   
     enabledrop()
-   
+    $('#beautycode').val($('#pullthecode3').html())
     })
 
 
@@ -2857,13 +2872,14 @@ $('.addrow').on('click', function () {
     $('.layoutbuilder').append(html);
   
     enabledrop()
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 $('.addrowslider').on('click' , function() {
     html = '<div class="width100c programoverflow"><div class="width100c subscrollerdiv"><div class="width33c layoutpale layoutpale33 liverow droppable onblock ui-droppable"></div><div class="width33c layoutpale layoutpale33 liverow droppable ui-droppable"></div><div class="width33c layoutpale layoutpale33 liverow droppable ui-droppable"></div></div></div>'
     $('.layoutbuilder').append(html);
     $('.onblock').removeClass('onblock');
-  
+    $('#beautycode').val($('#pullthecode3').html())
    
 })
 
@@ -2873,7 +2889,7 @@ $('.addrowslider50').on('click' , function() {
     $('.layoutbuilder').append(html);
     $('.onblock').removeClass('onblock');
  
-   
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 
@@ -2887,7 +2903,7 @@ $('#addrowc1xc1').on('click', function () {
  
     enabledrop()
    
-    
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 $('#addrowcxc').on('click', function () {
@@ -2898,7 +2914,7 @@ $('#addrowcxc').on('click', function () {
    
     enabledrop()
    
-   
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 $('#addrowc2xc8').on('click', function () {
@@ -2909,7 +2925,7 @@ $('#addrowc2xc8').on('click', function () {
 
     enabledrop()
    
- 
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 $('#addrowc4xc6').on('click', function () {
@@ -2920,7 +2936,7 @@ $('#addrowc4xc6').on('click', function () {
 
   
     enabledrop()
-   
+    $('#beautycode').val($('#pullthecode3').html())
     
 })
 
@@ -2936,7 +2952,7 @@ $('#addrow1x1 , #addrow1x1a').on('click', function () {
     
     enabledrop()
    
-
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 $('#addrow2x2 , #addrow2x2a').on('click', function () {
@@ -2949,7 +2965,7 @@ $('#addrow2x2 , #addrow2x2a').on('click', function () {
     );
 
     enabledrop()
-   
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 
@@ -2963,7 +2979,7 @@ $('#addrow3x3a').on('click', function () {
     );
 
     enabledrop()
-   
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 
@@ -2978,7 +2994,7 @@ $('#addrow25x4a').on('click', function () {
     );
 
     enabledrop()
-   
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 
@@ -2995,7 +3011,7 @@ $('#addrow2x8').on('click', function () {
     );
   
     enabledrop()
-   
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 $('#addrow4x6').on('click', function () {
@@ -3008,7 +3024,7 @@ $('#addrow4x6').on('click', function () {
     );
 
     enabledrop()
-   
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 
@@ -3023,7 +3039,7 @@ $('#addrow4x6a').on('click', function () {
 
     enabledrop()
    
-   
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 
@@ -3038,7 +3054,7 @@ $('#addrow2x7').on('click', function () {
  
     enabledrop()
    
-
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 $('#addrow3x3').on('click', function () {
@@ -3054,7 +3070,7 @@ $('#addrow3x3').on('click', function () {
     enabledrop()
    
 
-
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 
@@ -3069,7 +3085,7 @@ $('#addrow4x4').on('click', function () {
  
     enabledrop()
    
-
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 //----------------------
@@ -3078,6 +3094,7 @@ $('#addrow4x4').on('click', function () {
 $('.addrow-click').on('click' , function() {
     captureState()
     $('.addrow100').click()
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 function imagefunctions() {
@@ -3103,7 +3120,7 @@ function imagefunctions() {
 
         $('#myModal').hide();
     });
-
+    $('#beautycode').val($('#pullthecode3').html())
 }
 
 
@@ -3120,6 +3137,7 @@ $('.whattypeofimage').on('click', function () {
     }
     $('.whattypeofimage').css('background-color', 'transparent')
     $(this).css('background-color', '#666')
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 document.getElementById('cinput1').addEventListener('input', function () {
@@ -3149,7 +3167,7 @@ document.getElementById('cinput1').addEventListener('input', function () {
             };
         }
     }
-
+    $('#beautycode').val($('#pullthecode3').html())
 
 })
 
@@ -3290,7 +3308,7 @@ document.getElementById('imgfileInput').addEventListener('change', function (eve
     })
 
 
-
+    $('#beautycode').val($('#pullthecode3').html())
 });
 
 
@@ -3395,6 +3413,7 @@ $('#wraparoundsubmit').on('click', function () {
 
    
     imagefunctions()
+    $('#beautycode').val($('#pullthecode3').html())
 })
 
 
