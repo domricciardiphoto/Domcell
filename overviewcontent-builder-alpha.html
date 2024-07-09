@@ -4638,9 +4638,25 @@ border: none !important;
 
 
             <div id="mymatrix3" class="width100c closethematrix">
+               
 
-                <textarea name="beautycode" id="beautycode" cols="30" rows="10"></textarea>
+               <div class="width100c" style="margin-left: 5%; margin-top: 10px; margin-bottom: 10px; width: 95%;">
+                <input type="text" id="searchText" placeholder="Enter Text To Find in HTML Editor" style="width: 66%; padding: 8px; margin-right: .7%; border-radius: 5px;">
+                <button onclick="findNext()" style="    background-color: #007BFF;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px; margin-right: .5%;">Find Next</button>
+                <button onclick="resetFind()" style="    background-color: #0068d7;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;">Reset</button>
+               </div>
 
+
+               <textarea name="beautycode" id="beautycode" cols="30" rows="10" ></textarea>
+        
 
             </div>
 

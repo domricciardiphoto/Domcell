@@ -1030,13 +1030,13 @@ var characterCount = textContent.length;
             });
 
             // Set the modified content back to the element
-            element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '-').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>'));
+            element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '-').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'));
 
 
 
 
             finalcheck = $('#findthecode2').html()
-            $('#findthecode2').html(finalcheck.replaceAll('α', 'a').replaceAll('×', 'x').replaceAll('–', '-').replaceAll('’', "'").replaceAll('class="width100c     ui-', 'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '--').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>'))
+            $('#findthecode2').html(finalcheck.replaceAll('α', 'a').replaceAll('×', 'x').replaceAll('–', '-').replaceAll('’', "'").replaceAll('class="width100c     ui-', 'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '--').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'))
             checkADACompliance();
             break;
         case '#mymatrix2':
@@ -4293,6 +4293,68 @@ $(window).resize(function() {
 });
 
 
-$('#beautycode').on('input', function() {
-    $('#pullthecode2').html($('#beautycode').val());
+
+
+
+let searchIndex = -1;
+let searchResults = [];
+
+$(document).ready(function() {
+    $('#beautycode').on('input', function() {
+        $('#pullthecode2').html($('#beautycode').val());
+        $('#mobilepreview2').html($('#beautycode').val());
+
+        // Reset the search when the content changes
+        resetFind();
+    });
+
+    $('#searchText').on('input', function() {
+        // Reset the search when the search term changes
+        resetFind();
+    });
+
+    $('#beautycode').on('focus', function() {
+        $('#mobilepreview2').html($('#beautycode').val());
+    });
 });
+
+function findNext() {
+    const textarea = document.getElementById('beautycode');
+    const searchText = document.getElementById('searchText').value;
+    const content = textarea.value;
+
+    if (!searchText) {
+        return;
+    }
+
+    if (searchResults.length === 0) {
+        // Find all instances of the search text
+        searchResults = [];
+        let startIndex = 0;
+        let index;
+
+        while ((index = content.toLowerCase().indexOf(searchText.toLowerCase(), startIndex)) > -1) {
+            searchResults.push(index);
+            startIndex = index + searchText.length;
+        }
+
+        if (searchResults.length === 0) {
+            alert('Text not found');
+            return;
+        }
+    }
+
+    // Move to the next result
+    searchIndex = (searchIndex + 1) % searchResults.length;
+    const startIndex = searchResults[searchIndex];
+    const endIndex = startIndex + searchText.length;
+
+    // Select the found text
+    textarea.focus();
+    textarea.setSelectionRange(startIndex, endIndex);
+}
+
+function resetFind() {
+    searchIndex = -1;
+    searchResults = [];
+}
