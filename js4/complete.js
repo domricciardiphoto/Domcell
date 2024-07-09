@@ -1059,7 +1059,8 @@ var characterCount = textContent.length;
             //$('#hidemainmobile').hide()
             $('#pullthecode2').animate({'max-height' : '440px'})
             $('#sidetoolset').show()
-            var html = $('#pullthecode2').html()
+            var html = $('#pullthecode3').html()
+            var html2 = $('#pullthecode3').html()
             var beautifiedHtml = beautifyHtml(html);
             $('#beautycode').val(beautifiedHtml)
             break;
@@ -1561,6 +1562,96 @@ $('.texttype').off('click').on('click', function () {
    
     updateMobilePreview()
 });
+
+
+$('#colorDisplay').off('click').on('click', function () {
+    captureState(); // Assuming this function captures the current state for undo functionality
+
+    var selection = window.getSelection();
+    if (!selection.rangeCount) return;
+    var selectedText = selection.toString();
+    var textWrapper = "span style='color:"+$(this).css('background-color')+"'"
+    var headerNewColor = ''; // Assuming this variable is declared elsewhere or will be used later
+
+    // Create a new HTML element with the selected text wrapped in the specified tag
+    var contentWrapped = '<' + textWrapper + ' ' + headerNewColor + '>' + selectedText + '</' + textWrapper + '>';
+
+    // Get the selected range and the original content
+    var range = selection.getRangeAt(0);
+    var originalContent = range.startContainer.nodeValue;
+    var startText = originalContent.substring(0, range.startOffset);
+    var endText = originalContent.substring(range.endOffset, originalContent.length);
+
+    // Create a new document fragment with the wrapped content and the remaining parts
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild(document.createTextNode(startText)); // Adds text before the selection
+    fragment.appendChild(range.createContextualFragment(contentWrapped)); // Adds the wrapped selection
+    fragment.appendChild(document.createTextNode(endText)); // Adds text after the selection
+
+    // Replace the original content in the node with the new content
+    range.startContainer.nodeValue = '';
+    range.insertNode(fragment);
+
+    // Clear the selection to prevent confusion
+    selection.removeAllRanges();
+
+    // Load new content after updating the DOM
+   
+    updateMobilePreview()
+});
+
+
+
+
+
+
+$('#colorPickerManuelactivate').off('click').on('click', function () {
+    captureState(); // Assuming this function captures the current state for undo functionality
+    var selection = window.getSelection();
+    if (!selection.rangeCount) return;
+    var selectedText = selection.toString();
+    var textWrapper = "span style='color:"+$('#colorPickerManuel').text()+"'"
+    var headerNewColor = ''; // Assuming this variable is declared elsewhere or will be used later
+
+    // Create a new HTML element with the selected text wrapped in the specified tag
+    var contentWrapped = '<' + textWrapper + ' ' + headerNewColor + '>' + selectedText + '</' + textWrapper + '>';
+
+    // Get the selected range and the original content
+    var range = selection.getRangeAt(0);
+    var originalContent = range.startContainer.nodeValue;
+    var startText = originalContent.substring(0, range.startOffset);
+    var endText = originalContent.substring(range.endOffset, originalContent.length);
+
+    // Create a new document fragment with the wrapped content and the remaining parts
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild(document.createTextNode(startText)); // Adds text before the selection
+    fragment.appendChild(range.createContextualFragment(contentWrapped)); // Adds the wrapped selection
+    fragment.appendChild(document.createTextNode(endText)); // Adds text after the selection
+
+    // Replace the original content in the node with the new content
+    range.startContainer.nodeValue = '';
+    range.insertNode(fragment);
+
+    // Clear the selection to prevent confusion
+    selection.removeAllRanges();
+
+    // Load new content after updating the DOM
+   
+    updateMobilePreview()
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4301,8 +4392,8 @@ let searchResults = [];
 
 $(document).ready(function() {
     $('#beautycode').on('input', function() {
-        $('#pullthecode2').html($('#beautycode').val());
-        $('#mobilepreview2').html($('#beautycode').val());
+        $('#pullthecode3').html($('#beautycode').val());
+        $('#mobilepreview2 #pullthecode3').html($('#beautycode').val());
 
         // Reset the search when the content changes
         resetFind();
@@ -4314,7 +4405,7 @@ $(document).ready(function() {
     });
 
     $('#beautycode').on('focus', function() {
-        $('#mobilepreview2').html($('#beautycode').val());
+        $('#mobilepreview2 #pullthecode3').html($('#beautycode').val());
     });
 });
 
@@ -4358,3 +4449,5 @@ function resetFind() {
     searchIndex = -1;
     searchResults = [];
 }
+
+
