@@ -1,3 +1,5 @@
+//changes jquery versions  // removed reset after delete
+
 const $explorerContainer = $('#pullthecode2');
 const $mobilePreview = $('#mobilepreview2');
 const $pullTheCode = $('#pullthecode2');
@@ -254,7 +256,7 @@ function deleteElement() {
                 }
             });
             debouncedUpdateMobilePreview();
-            $('#clearandrestartbuttonrefresh').click()
+            //$('#clearandrestartbuttonrefresh').click()
         }, 500); // Match the duration of the CSS transition
        
     });
@@ -779,6 +781,7 @@ function resetTransitionStyles() {
 function paragraphfunctions() {
     $('p , h2 , h3 , h4').not('.fr-element p').off('click').on('contextmenu', function (e) {
         e.preventDefault()
+       
         $('.interedit').removeClass('interedit')
         $(this).parent('.in910').addClass('interedit')
         document.getElementById("myModalcontent").style.display = "block";
@@ -789,6 +792,10 @@ function paragraphfunctions() {
             $('#findthecode2').text($('#pullthecode2').html());
 
         })
+
+        if ($(this).hasClass('clampclassd')) {
+            $('#optionb4').prop('checked', true);
+        }
 
         $('#yescopyBtn99').on('click', function () {
             var textToCopy = $('.interedit').children('p').text();
@@ -827,16 +834,21 @@ function paragraphfunctions() {
 
     $('#optionb4').on('change', function () {
         if (this.checked) {
-            $('.interedit p').addClass('clampclassd')
-            ptagid = $('.interedit p').attr('id')
-            $('.interedit').append('<span class="readmoreclampdbutton" onclick="toggleReadMore(' + ptagid + ')">Read More</span>')
-            toggleReadMore(ptagid)
-            $('.hidescripts').show()
+            $('.interedit p').addClass('clampclassd');
+            ptagid = $('.interedit p').attr('id');
+    
+            // Remove any existing "Read More" buttons before adding a new one
+            $('.interedit').find('span.readmoreclampdbutton').remove();
+    
+            $('.interedit').append('<span class="readmoreclampdbutton" onclick="toggleReadMore(\'' + ptagid + '\')">Read More</span>');
+            toggleReadMore(ptagid);
+            $('.hidescripts').show();
+            return false;
         } else {
-            $('.interedit p').removeClass('clampclassd')
+            $('.interedit p').removeClass('clampclassd');
             $('.interedit').find('span.readmoreclampdbutton').remove();
         }
-    })
+    });
 
 
 
@@ -1057,6 +1069,7 @@ var characterCount = textContent.length;
            // $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
             //$('.colorlegend').hide()
             //$('#hidemainmobile').hide()
+            $('#pullthecode2').show()
             $('#pullthecode2').animate({'max-height' : '440px'})
             $('#sidetoolset').show()
             var html = $('#pullthecode3').html()
@@ -1327,6 +1340,7 @@ $('.hamburger').on('click', function () {
 
 
 
+
 document.getElementById('mysort').addEventListener('change', function () {
     if (this.checked) {
         $("#pullthecode3").sortable({
@@ -1339,7 +1353,6 @@ document.getElementById('mysort').addEventListener('change', function () {
         });
         $('.informationcontent').children().css('cursor', '');
      
-        //updateMobilePreview();
         $('#clearandrestartbuttonrefresh').click()
     }
 });
@@ -1357,7 +1370,6 @@ document.getElementById('mysortcomponents').addEventListener('change', function 
             disabled: true
         });
         sortableElements.sortable('disable');
-       // updateMobilePreview();
         $('.informationcontent').children().css('cursor', '');
         $('#clearandrestartbuttonrefresh').click();
 
@@ -1369,10 +1381,11 @@ document.getElementById('mysortcomponents').addEventListener('change', function 
 
 
 
-document.getElementById('clearandrestartbuttonrefresh').addEventListener('click', function () {
-    // Mock function for refreshing
-    console.log('Refreshing page');
-});
+
+
+
+
+
 
 $('#clearandrestartbuttonrefresh').on('click', function () {
     location.reload()
@@ -3623,10 +3636,16 @@ function pushtomobile() {
    
 }
 
-$('#import').on('click', function () {
+$('#import' ).on('click', function () {
     $('#pullthecode2').children('div').children('.informationcontent').html('')
     $('#fileInput').click();
 
+})
+
+$('#importstart' ).on('click', function () {
+    $('#pullthecode2').children('div').children('.informationcontent').html('')
+    $('#fileInput').click();
+    $('#uniqueModal').fadeOut()
 })
 
 $('#fileInput').change(function (event) {
@@ -4037,6 +4056,7 @@ $(document).ready(function() {
 
         request.onerror = function(event) {
             console.error('Error opening IndexedDB:', event.target.errorCode);
+           
         };
     }
 
@@ -4055,6 +4075,19 @@ $(document).ready(function() {
             console.error('Error saving content to IndexedDB:', event.target.errorCode);
         };
     }
+
+
+  
+    function checkElementContent() {
+        var element = document.getElementById('pullthecode3');
+        if (element.innerHTML.trim() === '') {
+            $('.unique-modal').fadeIn()
+        } 
+    }
+
+
+
+
     function loadContent() {
         const transaction = db.transaction([storeName], 'readonly');
         const store = transaction.objectStore(storeName);
@@ -4064,6 +4097,20 @@ $(document).ready(function() {
             const data = event.target.result;
             if (data) {
                 contentArea.html(data.htmlContent);
+                document.querySelector('.unique-modal').style.display = 'none'; // Hide the modal if content 
+
+               
+              
+            } else {
+                document.querySelector('.unique-modal').style.display = 'block'; // Show the modal if no content exists
+               
+
+                  if (parent && parent.document) {
+        // Hide the element with id 'headerstart' in the parent document
+        var headerElement = parent.document.getElementById('headerstart');
+        if (headerElement) {
+            headerElement.style.display = 'none';
+        }}
             }
             initializeUI();
             $('a').not('.googledrive').not('.outsidelink').not('.list-button').on('click', function (e) {
@@ -4090,10 +4137,16 @@ $(document).ready(function() {
         request.onerror = function(event) {
             console.error('Error loading content from IndexedDB:', event.target.errorCode);
         };
+
+     
+       setTimeout(() => {
+         checkElementContent()
+       }, 100);
+        
     }
 
 
-
+   
 
 
 
@@ -4390,7 +4443,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function adjustMaxHeight() {
     $('#pullthecode2').css('max-height', $(window).height() - 70);
-    $('#explorer2').css('max-height', $(window).height() - 525);
+    $('#explorer2').css('max-height', $(window).height() - 570);
     $('.internalscroller').css('max-height', $(window).height() - 435);
 }
 
@@ -4468,5 +4521,97 @@ function resetFind() {
     searchIndex = -1;
     searchResults = [];
 }
+
+
+
+$('.unique-box').delay(600).fadeIn(800)
+
+
+
+function bringbackthehomebutton() {
+    if (parent && parent.document) {
+        // Hide the element with id 'headerstart' in the parent document
+        var headerElement = parent.document.getElementById('headerstart');
+        if (headerElement) {
+            headerElement.style.display = 'block';
+        }
+    }
+}
+
+
+document.querySelectorAll('.unique-box').forEach(box => {
+    box.addEventListener('click', function() {
+        switch (this.id) {
+            case 'box1u':
+                // Action for box 1
+                $('div.thetopbox[whatbox="Layout"]').click()
+                $('#uniqueModal').fadeOut()
+                bringbackthehomebutton()  
+                break;
+            case 'box2u':
+                // Action for box 2
+                $('div.openthematrix[mymatrix="mymatrix3"]').click()
+                $('div.thetopbox[whatbox="Tools"]').click()
+                $('#tools1').click()
+                document.getElementById('uniqueModal').style.display = 'none';
+                bringbackthehomebutton()
+                break;
+            case 'box3u':
+                // Action for box 3
+                //$('.unique-box').hide()
+                $('#importstart').click()
+                bringbackthehomebutton()
+                break;
+            case 'box4u':
+                $('#pluginsandtools').click()
+                $('button.outsideplugins[whaturl="bannersheduler.html"]').click()
+                document.getElementById('uniqueModal').style.display = 'none';
+                bringbackthehomebutton()
+                break;
+                case 'box5u':
+                    $('div.thetopbox[whatbox="Tools"]').click()  
+                    $('#tools4').click()
+                    $('.addrow-click').click()
+                    $('#addrow1x1a').delay(800).click()
+                    document.getElementById('uniqueModal').style.display = 'none';
+                    bringbackthehomebutton()
+                 break;
+                 case 'box6u':
+                    $('div.openthematrix[mymatrix="mymatrix6"]').click()
+                    document.getElementById('uniqueModal').style.display = 'none';
+                    bringbackthehomebutton()
+                 break;
+
+                 case 'box7u':
+                    //$('div.openthematrix[mymatrix="mymatrix6"]').click()
+                    $('#fileimport').click()
+                    document.getElementById('uniqueModal').style.display = 'none';
+                    bringbackthehomebutton()
+                 break;
+
+
+                 case 'box8u':
+                    //$('div.openthematrix[mymatrix="mymatrix6"]').click()
+                    $('#showVersionsBtn').click()
+                    $('.unique-box ').fadeOut()
+                    bringbackthehomebutton()
+                 break;
+
+                 
+
+            default:
+                console.log('Unknown box clicked');
+        }
+       
+    });
+});
+
+$('.closemodalbutton').on('click' , function() {
+    $('#uniqueModal').fadeOut()
+})
+
+$('.closeapllicationbutton').on('click' , function() {
+    parent.location.href = 'gettingstarted.html';
+})
 
 

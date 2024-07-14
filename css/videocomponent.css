@@ -22,7 +22,7 @@
                             padding: 6px;
                             margin-bottom: 5px;
                             border: 1px solid #555; /* Darker border for input fields */
-                            background-color: #222; /* Darker background for input fields */
+                            background-image: url(../assets/photo-placeholder-5-dark.jpg);
                             color: #ddd; /* Lighter text for input fields */
                             border-radius: 4px;
                         }

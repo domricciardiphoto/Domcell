@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Page Builder</title>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0-beta.js"></script>
+    <script
+    src="https://code.jquery.com/ui/1.14.0-beta.2/jquery-ui.js"
+    integrity="sha256-jP1AFhfuTBpw8WvRteYETbagFOoXaDO5DJIuc5JvzG4="
+    crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.2.3/axe.min.js"></script>
 
-    
+
 
     <script src="231.js"></script>
     <link rel="stylesheet" href="application.css">
@@ -36,7 +39,7 @@
             left: 3px;
             top: 5px;
             width: 99.7%;
-          /*  background-image: url('assets/dark-overlay.png'); */
+            /*  background-image: url('assets/dark-overlay.png'); */
             background-size: cover;
             background-position: bottom;
             background-color: transparent;
@@ -45,16 +48,16 @@
 
         #EditandSubmitAL {
             padding: 5px 5px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: background-color 0.3s;
-    margin-top: 12px;
-    margin-bottom: 10px;
-    font-size: 0.875rem;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+            margin-top: 12px;
+            margin-bottom: 10px;
+            font-size: 0.875rem;
         }
 
         .hamburger {
@@ -472,8 +475,6 @@
         #mobilepreview2 .width50c3 {
             width: 49% !important;
         }
-
-        
     </style>
 
 
@@ -630,27 +631,46 @@
             color: white;
             cursor: pointer;
             float: right;
-            margin-right: 19px;
+            margin-right: 9px;
             padding: 1px;
             font-size: 0.8rem;
             padding-left: 5px;
             padding-right: 5px;
-            border-radius: 5px;
-            border: 1px solid red;
+            background-color: red;
+    
+
+            cursor: pointer;
         }
 
-        #versionsList li {
-            text-align: left;
-            border: 1px solid #666;
-            width: 90%;
-            padding: 3px;
-            padding-left: 21px;
-            background-color: #333;
-            list-style: none;
-            margin-bottom: 5px;
-            font-size: 0.7rem;
-        }
+        .load-btn {
+    float: right;
+    padding: 3px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    padding-left: 6px;
+    padding-right: 6px;
+}
 
+
+#versionsList li {
+    text-align: left;
+    border: 1px solid #666;
+    width: 100%;
+    padding: 3px;
+    padding-left: 21px;
+    background-color: transparent;
+    list-style: none;
+    margin-bottom: 5px;
+    font-size: 0.7rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: -10%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    
+}
         .fr-box {
             float: left;
             margin-bottom: 10px;
@@ -671,33 +691,214 @@
         .dark-theme.fr-box.fr-basic.fr-top .fr-wrapper {}
 
         #results21aaa {
-    display: none;
-    width: 82%;
-    min-height: 300px;
-    float: left;
-    border: 1px solid #666;
-    padding: 22px;
-    margin-left: 3%;
-    margin-top: 2%;
-    color: #fff;
-    max-height: 550px;
-    overflow-y: auto;
-    font-size: 0.85rem;
-}
-
-#results21aaa::before {
-    content: "ADA Compliance Check";
-}
+            display: none;
+            width: 83.7%;
+            min-height: 300px;
+            float: left;
+            padding: 22px;
+            margin-left: 3%;
+            margin-top: 2%;
+            color: #fff;
+            max-height: 550px;
+            overflow-y: auto;
+            font-size: 0.85rem;
+            background-color: #007BFF;
+            border: 3px solid #FFF;
+        }
 
 
-
+        #results21aaa::before {
+            content: "ADA Compliance Check";
+        }
     </style>
+
+
+
+    <style>
+     .unique-modal {
+    display: block; /* Show the modal by default */
+    position: fixed;
+    z-index: 999999999999999999999999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    background-image: url(assets/photo-placeholder-5.jpg);
+    background-size: cover;
+    display: none;
+}
+
+.unique-modal-content {
+
+    margin: 15% auto;
+    padding: 20px;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  
+  
+}
+
+.unique-box {
+    width: 180px;
+    height: 180px;
+    margin: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-image: url(assets/photo-placeholder-5-dark.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    color: #fff;
+    padding: 2%;
+    text-align: center;
+    font-size: 0.875rem;
+    display: none;
+}
+
+.unique-box img {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: -12%;
+    transition: transform 0.5s ease;
+ 
+}
+
+
+
+.unique-box:hover img {
+    transform: scale(1.1);
+}
+
+.unique-box-animate:hover img {
+    transform: rotate(360deg);
+}
+
+.unique-box-animate3:hover img {
+    transform: rotate(-360deg);
+}
+
+.unique-box:hover {
+    border: 2px solid #6e6e6e;
+    -webkit-box-shadow: 5px 5px 50px 5px #d0d0d0;
+box-shadow: 5px 5px 50px 5px #d0d0d0;
+background-image: url(assets/photo-placeholder-5.jpg);
+
+}
+
+#importstart {
+    display: none;
+}
+
+.closemodalbutton {
+    top:0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-color: #f2f2f2;
+    color: #000;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 0px 0px 10px 0px;
+}
+
+.closeapllicationbutton {
+    top:0px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    color: #000;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 0px 0px 0px 10px;
+    background-color: #f2f2f2;
+
+}
+.closeapllicationbutton img {
+    width: 60%;
+    margin-left: 10%;
+    margin-top: 14%;
+}
+    </style>
+
+
+
+
+    <div id="uniqueModal" class="unique-modal">
+        <div class="closemodalbutton">X</div>
+        <div class="closeapllicationbutton"><img src="assets/home-black.png" alt="Home"></div>
+        <div id="inspire" style="position: fixed; right: 10px; bottom: 50px; color: #fff; font-size: 0.875rem; text-align: center; width: 100%;">  </div>
+        <div class="unique-modal-content">
+            <div class="unique-box unique-box-animate2" id="box1u" >
+                <img src="assets/newproject.png" alt="New Project">
+                New Blank Project
+            </div>
+            <div class="unique-box " id="box2u">
+                <img src="assets/updateproject.png" alt="Updating Exisitng Code ">
+                Update Exisitng Code 
+            </div>
+
+            <div class="unique-box " id="box7u">
+                <img src="assets/wordproject.png" alt="Updating Exisitng Code ">
+                 Load Word Content
+            </div>
+
+            <div class="unique-box unique-box-animate" id="box3u">
+                <img src="assets/loadproject.png" alt="Load Workspace">
+                Load Workspace
+            </div>
+
+          <div class="width100c" style="margin-top: 5px; margin-bottom: 5px;">
+
+            <button id="importstart" class="unselectable-text" accept=".txt" style="background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; text-align: center; width: 96%; margin-left: 2%;">Click to Load
+                Workspace <span style="color: #f0cd97;">↓</span></button>
+
+          </div>
+
+            <div class="unique-box" id="box4u">
+                <img src="assets/dateproject.png" alt="Store Banner Schedular">
+                Store Image Schedular
+            </div>
+            <div class="unique-box" id="box5u">
+                <img src="assets/videproject.png" alt=" Video Player">
+                Video Player
+            </div>
+            <div class="unique-box" id="box6u">
+                <img src="assets/templeteproject.png" alt="Templetes">
+               Code Templetes
+            </div>
+            <div class="unique-box unique-box-animate3" id="box8u">
+                <img src="assets/versonproject.png" alt=" Saved Versions">
+               Saved Versions
+            </div>
+          
+        </div>
+    </div>
+
+
+    
+
+
 
 
     <div id="versionsModal" class="modal" style="z-index: 9999999999999999999999999999999999999999999;">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Saved Versions</h2>
+            <span style="color: #fff; font-size: 1.2rem">Saved Versions</span>
             <ul id="versionsList"></ul>
         </div>
     </div>
@@ -779,7 +980,7 @@
                     <option value="100">100% Width</option>
                     <option value="50">50% Width</option>
                     <option value="33">33% Width</option>
-                    <option value="25">25% Width</option>   
+                    <option value="25">25% Width</option>
                     <option value="20">20% Width</option>
                 </select>
 
@@ -787,7 +988,8 @@
 
 
 
-            <li id="converterh" style="background-color: orangered; color: #fff; text-align: center; display: none;">H Converter Tag</li>
+            <li id="converterh" style="background-color: orangered; color: #fff; text-align: center; display: none;">H
+                Converter Tag</li>
             <li id="edit" style="background-color: darkgreen; color: #fff; text-align: center;">Edit</li>
             <li id="duplicate" style="text-align: center;">Duplicate</li>
             <li id="component" style="background-color: yellow;text-align: center;">(Row) Make Active</li>
@@ -798,7 +1000,7 @@
 
 
 
-            
+
             <li id="close" style="background-color: rgb(21, 0, 114); color: #fff;text-align: center; ">Close</li>
 
 
@@ -898,7 +1100,8 @@
 
 
     <style>
-        #saveVersionBtn ,#showVersionBtn2 {
+        #saveVersionBtn,
+        #showVersionBtn2 {
             background-color: #007BFF;
             color: #fff;
             border: none;
@@ -952,7 +1155,8 @@
             /* You might want to check if 'fixed' would be better for modals */
         }
 
-        #customModal-internal , #customModal-internal21 {
+        #customModal-internal,
+        #customModal-internal21 {
             background: #333;
             /* Dark background for the modal */
             color: #fff;
@@ -1021,11 +1225,14 @@
 
 
     <div id="customModalhtag" style="display: none; position:absolute; z-index:9999999999999999999000; ">
-        <div id="customModal-internal21" class="draggable"  style="width: 20%; min-width: 370px; padding: 20px; background: #333; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); color: #fff;min-width: 560px;">
+        <div id="customModal-internal21" class="draggable"
+            style="width: 20%; min-width: 370px; padding: 20px; background: #333; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); color: #fff;min-width: 560px;">
             <div class="width100c">
-                <div class="width50c" style="border: 1px solid #555; width: 40%; margin-right: 3%; padding: 20px; font-size: 0.9rem; border-radius: 5px; background: #444;">
+                <div class="width50c"
+                    style="border: 1px solid #555; width: 40%; margin-right: 3%; padding: 20px; font-size: 0.9rem; border-radius: 5px; background: #444;">
                     <p>Change H tag (H1 - H5)</p>
-                    <select name="htagselecterh" id="htagselecterh" style="font-size: 1rem; width: 100%; padding: 5px; margin-bottom: 10px; background: #555; color: #fff; border: none;">
+                    <select name="htagselecterh" id="htagselecterh"
+                        style="font-size: 1rem; width: 100%; padding: 5px; margin-bottom: 10px; background: #555; color: #fff; border: none;">
                         <optgroup label="Choose One">
                             <option value="H1">Convert to <strong>H1</strong></option>
                             <option value="H2">Convert to <strong>H2</strong></option>
@@ -1034,26 +1241,33 @@
                             <option value="H5">Convert to <strong>H5</strong></option>
                         </optgroup>
                     </select>
-                    <button id="converhtagdoit" style="width: 100%; padding: 10px; text-align: center; background-color: #0056b3; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Convert Tag</button>
+                    <button id="converhtagdoit"
+                        style="width: 100%; padding: 10px; text-align: center; background-color: #0056b3; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Convert
+                        Tag</button>
                 </div>
-                <div class="width50c" style="border: 1px solid #555; width: 40%; padding: 20px; font-size: 0.9rem; border-radius: 5px; background: #444;">
+                <div class="width50c"
+                    style="border: 1px solid #555; width: 40%; padding: 20px; font-size: 0.9rem; border-radius: 5px; background: #444;">
                     <p>Color of H Tag</p>
-                    <select name="htagselecterh21" id="htagselecterh21" style="font-size: 1rem; width: 100%; padding: 5px; margin-bottom: 10px; background: #555; color: #fff; border: none;">
+                    <select name="htagselecterh21" id="htagselecterh21"
+                        style="font-size: 1rem; width: 100%; padding: 5px; margin-bottom: 10px; background: #555; color: #fff; border: none;">
                         <optgroup label="Choose One">
                             <option value="#333">Color to Black</option>
                             <option value="#034694">Color to Blue</option>
                             <option value="#d71920">Color to Red</option>
                             <option value="#fff">Color to White</option>
-                            
+
                         </optgroup>
                     </select>
-                    <button id="converhtagdoitcolor" style="width: 100%; padding: 10px; text-align: center; background-color: #19aa5a; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Change Color</button>
+                    <button id="converhtagdoitcolor"
+                        style="width: 100%; padding: 10px; text-align: center; background-color: #19aa5a; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Change
+                        Color</button>
                 </div>
             </div>
-            <button id="closeconverter" style="padding: 10px 20px; border: none; background-color: #007BFF; color: white; border-radius: 5px; cursor: pointer; margin-top: 20px; transition: background-color 0.3s; width: 9%;  width: 98%;">Close</button>
+            <button id="closeconverter"
+                style="padding: 10px 20px; border: none; background-color: #007BFF; color: white; border-radius: 5px; cursor: pointer; margin-top: 20px; transition: background-color 0.3s; width: 9%;  width: 98%;">Close</button>
         </div>
     </div>
-    
+
 
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -1068,14 +1282,15 @@
     <style>
         .customModal,
         #urlModal,
-        #myModalcontent , #customModalhtag {
+        #myModalcontent,
+        #customModalhtag {
             z-index: 99999999999999;
             position: absolute;
             display: none;
         }
 
         .modal-content {
-            background-color: #222;
+            background-color: transparent;
             /* Dark background for the modal content */
             margin: 15% auto;
             padding: 20px;
@@ -1089,6 +1304,7 @@
             border-radius: 8px;
             /* Rounded corners for a softer, modern look */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border: 1px solid #fff;
             /* Shadow for depth */
         }
 
@@ -1138,7 +1354,7 @@
         }
 
         .layoutpale:hover {
-border: none !important;
+            border: none !important;
         }
     </style>
 
@@ -1365,28 +1581,31 @@ border: none !important;
 
 
 
-                #codeloaderpcrview .width100c {min-height: 0px;}
+                #codeloaderpcrview .width100c {
+                    min-height: 0px;
+                }
 
-                #pullthecode3     .customspacer {
-       background-color: #9c27b0 !important;
-        }
+                #pullthecode3 .customspacer {
+                    background-color: #9c27b0 !important;
+                }
 
-        #codeloaderpcrview #pullthecode3 .customspacer {
-            background-color: transparent !important;
-        }
+                #codeloaderpcrview #pullthecode3 .customspacer {
+                    background-color: transparent !important;
+                }
 
 
-        #explorer2 , #myhtmleditor , #beautycode {
-            background-image: url('assets/photo-placeholder-5-dark.jpg');
-            border-radius: 5px;
-            background-position: left;
-        }
+                #explorer2,
+                #myhtmleditor,
+                #beautycode {
+                    background-image: url('assets/photo-placeholder-5-dark.jpg');
+                    border-radius: 5px;
+                    background-position: left;
+                }
 
-        .popup {
-            background-image: url('assets/photo-placeholder-5.jpg');
-            background-size: cover;
-        }
-               
+                .popup {
+                    background-image: url('assets/photo-placeholder-5.jpg');
+                    background-size: cover;
+                }
             </style>
 
 
@@ -1407,9 +1626,21 @@ border: none !important;
                 <div id="overviewmenud">
 
                     <div class="width100c" style="width: 310px; float: left;">
+
+                        <div id="loadstartmenu" class="unselectable-text letbutton21" 
+                        style="    width: 10% !important;
+                        height: 30px;
+                        padding: 0px;
+                        margin: 2px;
+                        margin-right: 11px; cursor: pointer;"><img style="width: 100%;"
+                            src="assets/homescreen.png" /></div>
+
+
                         <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Import"
                             style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
                                 src="assets/iconimport.png" /></div>
+
+
                         <div class="unselectable-text thetopbox mytoolsboxtop letbutton21 thestartbutton"
                             whatbox="Layout" style="width: 15% !important;height: 30px;padding: 0px;"><img
                                 style="width: 60%;" src="assets/rowicon.png" /></div>
@@ -1473,7 +1704,7 @@ border: none !important;
 
 
             <div id="Importer" class="width100c openclose" openclose="htmlimporter" style="display: none;">
-                
+
                 <div class="width100c unselectable-text" style="margin-left: -3%;">
                     <span class="myindicator">+</span>
                     <span style="font-size: 0.8rem;">&nbsp;&nbsp;Code Importer</span>
@@ -1563,13 +1794,14 @@ border: none !important;
                                 style="margin-top:5px; width:88%; font-size:0.8rem;color: lightblue;">
                                 Row Margin Top:
                                 <div class="width100c">
-                                <label for="sliderValue_row"><span id="sliderValue4_row">0</span>px</label>
-                                <input type="range" id="sliderValue_row" name="sliderValue_row" min="1" max="100" value="0" oninput="updateSliderValue_row(this.value)">
+                                    <label for="sliderValue_row"><span id="sliderValue4_row">0</span>px</label>
+                                    <input type="range" id="sliderValue_row" name="sliderValue_row" min="1" max="100"
+                                        value="0" oninput="updateSliderValue_row(this.value)">
                                 </div>
                             </div>
 
-                           
-                         
+
+
 
                         </div>
 
@@ -1615,21 +1847,22 @@ border: none !important;
                                 </div>
 
 
-                                
+
 
                             </div>
 
 
                             <div class="width100c" style="border-top: 1px solid #ccc; padding-top: 10px;">
-                            
+
                                 <div class="width100c">
-                                    <label for="rangeSlider">Row Spacer Height: <span id="rangeSlider4spacer">0</span>px</label>
-                                    <input type="range" id="rangeSlider4spacer" name="rangeSlider4spacer" min="1" max="200"
-                                        value="0" oninput="updateSliderValue4spacer(this.value)">
+                                    <label for="rangeSlider">Row Spacer Height: <span
+                                            id="rangeSlider4spacer">0</span>px</label>
+                                    <input type="range" id="rangeSlider4spacer" name="rangeSlider4spacer" min="1"
+                                        max="200" value="0" oninput="updateSliderValue4spacer(this.value)">
                                 </div>
 
 
-                                
+
 
                             </div>
 
@@ -1791,9 +2024,9 @@ border: none !important;
                         <span style=" color: yellow;font-size:0.8rem;">Margin Top</span>
                         <div class="width100c">
                             <label class="slider-label" for="rangeSlider"><span class="slider-control"
-                                id="sliderValue2">0</span>px</label>
-                        <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="200" value="0"
-                            oninput="updateSliderValue2(this.value)">
+                                    id="sliderValue2">0</span>px</label>
+                            <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="200" value="0"
+                                oninput="updateSliderValue2(this.value)">
                         </div>
                     </div>
 
@@ -1803,7 +2036,7 @@ border: none !important;
 
 
 
-              
+
 
 
 
@@ -1924,13 +2157,13 @@ border: none !important;
                 }
 
                 .export-btn {
-                    float: right;
-                    font-size: 0.6em;
-                    border: 1px solid #ffffff;
-                    padding: 3px;
-                    padding-top: 0px;
-                    padding-bottom: 0px;
-                }
+    float: right;
+    padding: 3px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    cursor: pointer;
+    font-size: 0.7rem;
+}
             </style>
 
             <div class="width100c toolboxlayoutoptions unselectable-text htmlimporter"
@@ -1963,7 +2196,7 @@ border: none !important;
                         Workspace <span style="color: #f0cd97;">&uarr;</span></button>
                 </div>
 
-                
+
 
                 <div class="width100c" style="margin-bottom: 0px;margin-top: -10px; margin-bottom: -5px;">
                     <div class="width20c" style="width: auto; min-width: 10%; font-size: 0.9rem;">Versions :</div>
@@ -2572,8 +2805,7 @@ border: none !important;
                             <button class="ipsom unselectable-text" style="width: 100%; min-width: 60px;">Ipsom
                                 Lorem</button>
                         </div>
-                        <div
-                            style="width: 20%; float: left; margin-left: 10px; padding-left: 10px;min-width: 100px; ">
+                        <div style="width: 20%; float: left; margin-left: 10px; padding-left: 10px;min-width: 100px; ">
 
 
                             <input type="checkbox" id="htmlcodeyesno" name="htmlcodeyesno" class="htmlcodeyesno"
@@ -2629,7 +2861,7 @@ border: none !important;
                                 style="text-align: center;  background-color: #000; color:#fff; width: 100%; margin-top: 5px; margin-bottom: 10px;">
                                 White</button>
                         </div>
-                     
+
 
                     </div>
 
@@ -2653,7 +2885,7 @@ border: none !important;
                             style=" border-right: 1px solid #ccc;font-size: 0.8rem; " value="sup">
                             X<sup>2</sup></button>
 
-                            
+
 
                         <button class="textaligner" title="Left Justify Text"
                             style="width: 8%;font-size: 0.85em;max-width: none; color: #fff; background-color: transparent;"
@@ -3465,7 +3697,7 @@ border: none !important;
                                 class="input-field">
                         </div>
 
-                
+
                         <div class="input-group" style="width: 47%; margin-left: 1%;">
                             <label for="videoposter">Video Poster (jpg):</label>
                             <input id="videoposter" type="text" placeholder="Enter poster filename" class="input-field">
@@ -3488,8 +3720,9 @@ border: none !important;
                         </div>
                         <div class="input-group">
                             <label for="videoseodescription">Video SEO Description*</label>
-                            <textarea id="videoseodescription" style="min-height: 100px; margin-bottom: 5px; max-width: 99%;" type="text" placeholder="Enter Video Description"
-                                class="input-field" required></textarea>
+                            <textarea id="videoseodescription"
+                                style="min-height: 100px; margin-bottom: 5px; max-width: 99%;" type="text"
+                                placeholder="Enter Video Description" class="input-field" required></textarea>
 
                         </div>
 
@@ -3644,7 +3877,7 @@ border: none !important;
                 </div>
 
 
- 
+
 
                 <div id="schedule21" class="width100c openclose" openclose="schedule">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
@@ -3657,57 +3890,57 @@ border: none !important;
 
 
 
-                <div  class="width100c tools stage1 schedule" >
+                <div class="width100c tools stage1 schedule">
 
-<style>
-        #dateForm {
-            width: 86%;
+                    <style>
+                        #dateForm {
+                            width: 86%;
 
-    padding: 20px;
-    margin-bottom: 11px;
-    border-radius: 0px;
-    margin-left: 2%;
+                            padding: 20px;
+                            margin-bottom: 11px;
+                            border-radius: 0px;
+                            margin-left: 2%;
 
-    }
+                        }
 
-    #dateForm label {
-        display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #fff;
-    font-size: 0.875rem;
-    }
+                        #dateForm label {
+                            display: block;
+                            font-weight: bold;
+                            margin-bottom: 8px;
+                            color: #fff;
+                            font-size: 0.875rem;
+                        }
 
-    #dateForm input[type="date"] {
-      width: calc(100% - 22px);
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-      outline: none;
-      transition: border-color 0.3s;
-    }
+                        #dateForm input[type="date"] {
+                            width: calc(100% - 22px);
+                            padding: 10px;
+                            margin-bottom: 20px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            font-size: 16px;
+                            outline: none;
+                            transition: border-color 0.3s;
+                        }
 
-    #dateForm input[type="date"]:focus {
-      border-color: #007bff;
-    }
+                        #dateForm input[type="date"]:focus {
+                            border-color: #007bff;
+                        }
 
-    #dateForm button {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+                        #dateForm button {
+                            background-color: #007bff;
+                            color: white;
+                            padding: 10px 20px;
+                            border: none;
+                            border-radius: 5px;
+                            font-size: 16px;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+                        }
 
-    #dateForm button:hover {
-      background-color: #0056b3;
-    }
-</style>
+                        #dateForm button:hover {
+                            background-color: #0056b3;
+                        }
+                    </style>
 
                     <form id="dateForm">
 
@@ -3716,35 +3949,31 @@ border: none !important;
 
 
                         <label for="endDate">End Date:</label>
-                        <input type="date" id="endDate" name="endDate" >
+                        <input type="date" id="endDate" name="endDate">
 
 
                         <button type="submit" style="float: right;">Submit</button>
-                      </form>
+                    </form>
 
-                      <style>
+                    <style>
                         .timekeeper {
                             background-color: green !important;
 
                         }
+                    </style>
 
-
-    
-
-                      </style>
-
-                      <script>
+                    <script>
                         var myschedule;
-                    
-                        document.getElementById('dateForm').addEventListener('submit', function(event) {
-                          event.preventDefault();
-                    $('.timekeeper').remove()
-                          
-                          var startDate = document.getElementById('startDate').value;
-                          var endDate = document.getElementById('endDate').value;
+
+                        document.getElementById('dateForm').addEventListener('submit', function (event) {
+                            event.preventDefault();
+                            $('.timekeeper').remove()
+
+                            var startDate = document.getElementById('startDate').value;
+                            var endDate = document.getElementById('endDate').value;
 
 
-                    
+
 
                             myschedule = `<div class="timekeeper width100c layoutpale layoutpale100 liverow  onblock"><script class="timekeeper21">
         document.addEventListener('DOMContentLoaded', function () {
@@ -3767,14 +3996,14 @@ border: none !important;
         });
       <\/script></div>`;
 
-                    
-          
-                    
-                          console.log(myschedule);
-                          $('#pullthecode3').append(myschedule)
-                    
+
+
+
+                            console.log(myschedule);
+                            $('#pullthecode3').append(myschedule)
+
                         });
-                      </script>
+                    </script>
 
 
 
@@ -3824,7 +4053,7 @@ border: none !important;
 
                     </div>
 
-                    <div class="prod100" id="message2" >
+                    <div class="prod100" id="message2">
                         BAD
                         LINK, RELATIVE LINKS ONLY!</div>
 
@@ -3992,7 +4221,7 @@ border: none !important;
                     placeholder="Click on a Component to Edit the HTML"></textarea>
 
 
-                
+
 
 
                 <div class="width100c" id="bottommatrix">
@@ -4010,17 +4239,17 @@ border: none !important;
                         <img src="assets/whatsnew.png" style="width: 30%;" title="Whats New">
                     </div>
 
-                   
+
 
 
 
                 </div>
 
-               
+
 
             </div>
 
-            <div id="results21aaa"  ></div>
+            <div id="results21aaa"></div>
         </div>
 
 
@@ -4050,31 +4279,42 @@ border: none !important;
                         <div id="pluginsandtools" class="openthematrix" mymatrix="mymatrix9">
                             <strong>Plugins &
                                 Tools</strong></div>
-                        <div class="openthematrix" mymatrix="mymatrix1" style="background-color: blue; color: #fff;"><strong>Final
+                        <div class="openthematrix" mymatrix="mymatrix1" style="background-color: #007BFF; color: #fff;">
+                            <strong>Final
                                 Code</strong></div>
 
-                      
 
-                        <div id="showversioningmodal" style="float: right;     padding: 0px;
+
+                        <div id="showversioningmodal" style="    float: right;
+                        padding: 0px;
                         padding-left: 8px;
                         padding-right: 8px;
-                        background-color: transparent;
-                       
                         width: auto;
                         color: #fff;
                         margin-left: 0px;
                         cursor: pointer;
                         user-select: none;
-                        font-size: 0.6rem; margin-right: 1%;">Save Version</div>
+                        font-size: 0.6rem;
+                        margin-right: 1%;
+                        background-color: #007BFF;
+                        border-radius: 8px 8px 0px 0px;">Save Version</div>
 
 
 
-<div class="openthematrix" mymatrix="mymatrix-dark" style="float: right;background-color: transparent;margin-right: 1%;    font-size: 0.55rem; text-decoration: underline;"><strong>Dark View</strong></div>
+                        <div class="openthematrix" mymatrix="mymatrix-dark"
+                            style="float: right;background-color: transparent;margin-right: 1%;    font-size: 0.55rem; text-decoration: underline;">
+                            <strong>Dark View</strong></div>
 
-<div class="openthematrix" mymatrix="mymatrix3" style="float: right;background-color: transparent;   font-size: 0.55rem; text-decoration: underline;"><strong>Code View</strong></div>
+                        <div class="openthematrix" mymatrix="mymatrix3"
+                            style="float: right;background-color: transparent;   font-size: 0.55rem; text-decoration: underline;">
+                            <strong>Code View</strong></div>
 
-<div class="openthematrix" mymatrix="mymatrix-hmobile" style="float: right;background-color: transparent;font-size: 0.55rem;text-decoration: underline;"><strong>Hide Mobile</strong></div>
-<div class="openthematrix" mymatrix="mymatrix6" style="float: right;  background-color: transparent; color: #fff;font-size: 0.55rem;text-decoration: underline;"><strong>Templetes</strong></div>
+                        <div class="openthematrix" mymatrix="mymatrix-hmobile"
+                            style="float: right;background-color: transparent;font-size: 0.55rem;text-decoration: underline;">
+                            <strong>Hide Mobile</strong></div>
+                        <div class="openthematrix" mymatrix="mymatrix6"
+                            style="float: right;  background-color: transparent; color: #fff;font-size: 0.55rem;text-decoration: underline;">
+                            <strong>Templetes</strong></div>
                         <div style="float: left; margin-left: 10px;"></div>
                         <div class="saveinfo"
                             style="font-size: 0.6rem; color: yellow; float: left; text-align: right; margin-left: 1.5%; width: auto;">
@@ -4151,7 +4391,7 @@ border: none !important;
 
 
                 </div>
-                <div class="width100c" style="background-color: #fff; border: 1px solid #ccc;">
+                <div class="width100c" style=" border: 1px solid #ccc;">
                     <iframe id="outslidepluginsout" width="100%" height="768" src="nothing.html"
                         title="Google Documents" allowfullscreen></iframe>
                 </div>
@@ -4446,11 +4686,11 @@ border: none !important;
                             style=" margin-left:5px; text-align: center; background-color: yellow; color:#333; width: 23%; margin-top: 10px; margin-bottom: 5px; float: left;">
                             50/50</div>
 
-                            <div id="addrow3x3a"
+                        <div id="addrow3x3a"
                             style=" margin-left:5px; text-align: center; background-color: yellow; color:#333; width: 23%; margin-top: 10px; margin-bottom: 5px; float: left;">
                             33 X 3</div>
 
-                            <div id="addrow25x4a"
+                        <div id="addrow25x4a"
                             style=" margin-left:5px; text-align: center; background-color: yellow; color:#333; width: 23%; margin-top: 10px; margin-bottom: 5px; float: left;">
                             25 X 4</div>
                     </div>
@@ -4504,56 +4744,67 @@ border: none !important;
                     <div class="popup hidden"
                         style="padding-top: 5px; padding-bottom: 5px; margin-top: 5px; width: 400px;">
 
-                        <div class="width100c" style="padding-bottom: 5px; width: 96%; margin-left: 2%; margin-bottom: 10px;">
+                        <div class="width100c"
+                            style="padding-bottom: 5px; width: 96%; margin-left: 2%; margin-bottom: 10px;">
 
-                        <div class="width100c" style="margin-top: 5px;color: yellow;">Basic Colors</div>
+                            <div class="width100c" style="margin-top: 5px;color: yellow;">Basic Colors</div>
 
-                        <button class="texttype unselectable-text" value="span style='color:#034694'"
-                            title="Text Color Blue"
-                            style="text-align: center;  background-color: #034694; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px; border-radius: 10px;">Blue</button>
-
-
-                        <button class="texttype unselectable-text" value="span style='color:#d71920'"
-                            title="Text Color Red"
-                            style="text-align: center;  background-color: #d71920; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;border-radius: 10px;">Red</button>
+                            <button class="texttype unselectable-text" value="span style='color:#034694'"
+                                title="Text Color Blue"
+                                style="text-align: center;  background-color: #034694; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px; border-radius: 10px;">Blue</button>
 
 
-                        <button class="texttype unselectable-text" value="span style='color:#fff'"
-                            title="Text Color White"
-                            style="text-align: center;  background-color: #000; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;border-radius: 10px;">White</button>
+                            <button class="texttype unselectable-text" value="span style='color:#d71920'"
+                                title="Text Color Red"
+                                style="text-align: center;  background-color: #d71920; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;border-radius: 10px;">Red</button>
 
 
-                        <button class="texttype unselectable-text" value="span style='color:#000'"
-                            title="Text Color Black"
-                            style="text-align: center;  background-color: #fff; color:#000; width: 24%; margin-top: 5px; margin-bottom: 5px;border-radius: 10px;">Black</button>
-</div>
+                            <button class="texttype unselectable-text" value="span style='color:#fff'"
+                                title="Text Color White"
+                                style="text-align: center;  background-color: #000; color:#fff; width: 24%; margin-top: 5px; margin-bottom: 5px;border-radius: 10px;">White</button>
+
+
+                            <button class="texttype unselectable-text" value="span style='color:#000'"
+                                title="Text Color Black"
+                                style="text-align: center;  background-color: #fff; color:#000; width: 24%; margin-top: 5px; margin-bottom: 5px;border-radius: 10px;">Black</button>
+                        </div>
 
 
 
 
 
-                            <div class="width100c" style="padding-bottom: 5px; width: 96%; margin-left: 2%; margin-bottom: 10px;">
-                            <div class="width100c" style=" margin-top: 5px;color: yellow; margin-bottom: -25px;">Color Picker</div>
-                            <div class="width100c" style="margin-top: 2px; padding-top: 0px; font-size: 0.7rem; text-align: right; width: 90%;">Click to Select Custom Color</div>
+                        <div class="width100c"
+                            style="padding-bottom: 5px; width: 96%; margin-left: 2%; margin-bottom: 10px;">
+                            <div class="width100c" style=" margin-top: 5px;color: yellow; margin-bottom: -25px;">Color
+                                Picker</div>
+                            <div class="width100c"
+                                style="margin-top: 2px; padding-top: 0px; font-size: 0.7rem; text-align: right; width: 90%;">
+                                Click to Select Custom Color</div>
                             <input type="color" id="colorPicker" style="width: 46%; float: left; margin-right: 2%">
-                            
-                            <div id="colorDisplay" style="width: 50%; height: 50px; border: 1px solid #490505; float: left; border: 1px solid #fff;"></div>
-                            <script>$(document).ready(function() {
-                                $('#colorPicker').on('input', function() {
-                                    var selectedColor = $(this).val();
-                                    $('#colorDisplay').css('background-color', selectedColor);
+
+                            <div id="colorDisplay"
+                                style="width: 50%; height: 50px; border: 1px solid #490505; float: left; border: 1px solid #fff;">
+                            </div>
+                            <script>
+                                $(document).ready(function () {
+                                    $('#colorPicker').on('input', function () {
+                                        var selectedColor = $(this).val();
+                                        $('#colorDisplay').css('background-color', selectedColor);
+                                    });
                                 });
-                            });
                             </script>
-</div>
+                        </div>
 
 
-                         <div class="width100c" style="padding-bottom: 5px; width: 96%; margin-left: 2%; margin-bottom: 10px;">
+                        <div class="width100c"
+                            style="padding-bottom: 5px; width: 96%; margin-left: 2%; margin-bottom: 10px;">
                             <div class="width100c" style="margin-bottom: 2px; color: yellow;">Type in Color #</div>
-                            <div id="colorPickerManuel" style="width: 46%; float: left; margin-right: 2%; background-color: #f7f7f7; color: #000; border-radius: 5px;" contenteditable="true"></div>
-                            
+                            <div id="colorPickerManuel"
+                                style="width: 46%; float: left; margin-right: 2%; background-color: #f7f7f7; color: #000; border-radius: 5px;"
+                                contenteditable="true"></div>
+
                             <button type="submit" id="colorPickerManuelactivate">Submit Custom Color</button>
-                         </div>
+                        </div>
 
 
 
@@ -4601,15 +4852,15 @@ border: none !important;
                     padding-left: 11%;
                     padding-right: 110%;
                     background-color: transparent !important;
-                    background-size: cover;
-                    background-image: url(assets/iconemptycomp.png);
-                    background-position: center;
-                    background-repeat: no-repeat;"><span style="opacity: 0;">E</span></button>
+    background-image: url(assets/iconemptycomp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;"><span style="opacity: 0;">E</span></button>
 
 
 
             </div>
-            
+
 
             <div id="pullthecode2" class="width50c layout2" style="border-radius: 0px 10px 10px; -webkit-box-shadow:inset 0 0 0px 3px #BDBDBD;
             box-shadow:inset 0 0 5px 5px #BDBDBD;">
@@ -4622,7 +4873,7 @@ border: none !important;
                 </div>
 
             </div>
-            
+
 
 
             <div class="width50c" style="max-width: 24%;">
@@ -4637,8 +4888,11 @@ border: none !important;
                     style="max-height: 460px; width: 100%; margin-left: 0%;  overflow-y: auto;  margin-right: 0px; padding-right: 0px;border-radius: 11px; ">
 
                 </div>
-                <div id="explorer2" class="width100c explorerd"
-                    style="margin-top: 3px; padding-left: 0px; margin-left: -10px; margin-top: 10px; width: 100%; ">
+                <div id="explorer2" class="width100c explorerd" style="max-height: 746px;
+                    padding-left: 5% !important;
+                    padding-top: 5% !important;
+                    margin-top: 17px !important;
+                    padding-bottom: 0px;width: 95% !important; ">
                 </div>
 
             </div>
@@ -4647,15 +4901,39 @@ border: none !important;
 
             <div id="mymatrix1" class="width100c closethematrix" style="width: 96%; margin-left: 4%;">
 
-                <div id="charactercount" style="    float: left;
-    width: 98.6%;
-    background-color: #333;"></div>
-    <button id="exportfinalcodetofile" style="float: left; font-size: 80%; border: 1px solid #333; margin-top:5px">Export Final Code to File</button>
+                <div id="charactercount" style="float: left;
+                width: 98.6%;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                text-align: center;
+                margin-bottom: 5px;
+                border-bottom: 1px solid #fff;"></div>
+                <button id="exportfinalcodetofile" style="float: left;
+    margin-top: 5px;
+    padding-top: 10px;
+    border-radius: 6px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1rem;">Export Final Code to File</button>
 
-                <div id="thisisthefinalcode" class="prod100 layout2 selectall"
-                    style="background-color: #000; color: #fff; margin-bottom: 20px; margin-left: 0px; width: 96.4%; padding-top: 20px; padding-bottom: 20px;">
+                <div id="thisisthefinalcode" class="prod100 layout2 selectall" style="background-color: rgb(0, 0, 0);
+                    color: rgb(255, 255, 255);
+                    margin-bottom: 20px;
+                    margin-left: 0px;
+                    width: 93.4%;
+                    min-height: 400px;
+                    padding: 2.45%;
+                    border: 2px solid rgb(255, 255, 255);
+                    display: block;
+                    background-image: url(assets/photo-placeholder-5-dark.jpg);
+                    line-height: 24px;
+                    font-size: 1rem;">
                     <span class="hidecss">
-                        &lt;link href="/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/v1716228569143/pim-content/occontent2024-v7d.css" rel="stylesheet" /> <br>
+                        &lt;link
+                        href="/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/v1716228569143/pim-content/occontent2024-v7d.css"
+                        rel="stylesheet" /> <br>
                     </span>
                     &lt;div class="totalinternalcontent">
                     <span id="findthecode2"></span>
@@ -4680,25 +4958,26 @@ border: none !important;
 
 
             <div id="mymatrix3" class="width100c closethematrix">
-               
 
-               <div class="width100c" style="margin-left: 5%; margin-top: 10px; margin-bottom: 10px; width: 95%;">
-                <input type="text" id="searchText" placeholder="Enter Text To Find in HTML Editor" style="width: 66%; padding: 8px; margin-right: .7%; border-radius: 5px;">
-                <button onclick="findNext()" style="    background-color: #007BFF;
+
+                <div class="width100c" style="margin-left: 5%; margin-top: 10px; margin-bottom: 10px; width: 95%;">
+                    <input type="text" id="searchText" placeholder="Enter Text To Find in HTML Editor"
+                        style="width: 66%; padding: 8px; margin-right: .7%; border-radius: 5px;">
+                    <button onclick="findNext()" style="    background-color: #007BFF;
                 color: #fff;
                 border: none;
                 padding: 10px 20px;
                 border-radius: 5px; margin-right: .5%;">Find Next</button>
-                <button onclick="resetFind()" style="    background-color: #0068d7;
+                    <button onclick="resetFind()" style="    background-color: #0068d7;
                 color: #fff;
                 border: none;
                 padding: 10px 20px;
                 border-radius: 5px;">Reset</button>
-               </div>
+                </div>
 
 
-               <textarea name="beautycode" id="beautycode" cols="30" rows="10" ></textarea>
-        
+                <textarea name="beautycode" id="beautycode" cols="30" rows="10"></textarea>
+
 
             </div>
 
@@ -4801,7 +5080,7 @@ border: none !important;
 
     </div>
 
-    
+
     <!--
     <script src="js2/explorer-beta2.js"></script>
     <script src="js2/explorer-beta2-workspace.js"></script>
@@ -4915,6 +5194,7 @@ border: none !important;
                     const exportButton = document.createElement('span');
                     exportButton.textContent = 'EXPORT';
                     exportButton.className = 'export-btn';
+                    
                     exportButton.onclick = () => exportVersion(version.id);
                     exportButton.setAttribute('datainfo', $(this).parent().text());
                     li.appendChild(exportButton);
@@ -4928,6 +5208,19 @@ border: none !important;
                         `${version.versionName || 'Unnamed'} - ${new Date(version.createdAt).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}`;
                     versionSelect.add(option);
                 });
+
+                $('.export-btn').each(function() {
+                    thisistheversion = $(this).parent('li').attr('data-version-id')
+                    $(this).after('<div class="load-btn" data-version-id="'+thisistheversion+'" style="margin-right:10px;font-size: 0.8rem;">Load Version</div>');
+                         
+                })
+
+                $('.load-btn').on('click' , function() {
+                    myversionloadnum = $(this).attr('data-version-id')
+                    $('#versionList option[value="' + myversionloadnum + '"]').prop('selected', true).trigger('change');
+                   $('#uniqueModal').fadeOut()
+                   $('#versionsModal').hide()
+                })
             }
 
             function deleteVersion(versionId) {
@@ -4962,75 +5255,79 @@ border: none !important;
                 };
             }
 
-            function exportVersion(versionId , Versionnameexport) {
+            function exportVersion(versionId, Versionnameexport) {
 
-        
 
-        function getSelectedVersionHtml(callback) {
-        var dbName = "ProjectVersionsDB"; // Replace with your IndexedDB database name
-        var storeName = "versionsStore"; // Replace with your IndexedDB object store name
-        var selectedVersionKey = versionId // Replace with the key of the selected version
-        var request = indexedDB.open(dbName);
-       
-        request.onerror = function(event) {
-            console.error("IndexedDB error: ", event.target.errorCode);
-            alert('Error: Unable to access IndexedDB.');
-        };
 
-        request.onsuccess = function(event) {
-            var db = event.target.result;
-            var transaction = db.transaction([storeName], "readonly");
-            var objectStore = transaction.objectStore(storeName);
-            var getRequest = objectStore.get(selectedVersionKey);
+                function getSelectedVersionHtml(callback) {
+                    var dbName = "ProjectVersionsDB"; // Replace with your IndexedDB database name
+                    var storeName = "versionsStore"; // Replace with your IndexedDB object store name
+                    var selectedVersionKey = versionId // Replace with the key of the selected version
+                    var request = indexedDB.open(dbName);
 
-            getRequest.onerror = function(event) {
-                console.error("Error retrieving data from IndexedDB: ", event.target.errorCode);
-                alert('Error: Unable to retrieve data from IndexedDB.');
-            };
+                    request.onerror = function (event) {
+                        console.error("IndexedDB error: ", event.target.errorCode);
+                        alert('Error: Unable to access IndexedDB.');
+                    };
 
-            getRequest.onsuccess = function(event) {
-                if (getRequest.result) {
-                    callback(getRequest.result.content); // Assuming the HTML content is stored in the 'htmlContent' field
-                } else {
-                    console.error("No data found for the selected version.");
-                    alert('Error: No content found for the selected version.');
+                    request.onsuccess = function (event) {
+                        var db = event.target.result;
+                        var transaction = db.transaction([storeName], "readonly");
+                        var objectStore = transaction.objectStore(storeName);
+                        var getRequest = objectStore.get(selectedVersionKey);
+
+                        getRequest.onerror = function (event) {
+                            console.error("Error retrieving data from IndexedDB: ", event.target
+                                .errorCode);
+                            alert('Error: Unable to retrieve data from IndexedDB.');
+                        };
+
+                        getRequest.onsuccess = function (event) {
+                            if (getRequest.result) {
+                                callback(getRequest.result
+                                .content); // Assuming the HTML content is stored in the 'htmlContent' field
+                            } else {
+                                console.error("No data found for the selected version.");
+                                alert('Error: No content found for the selected version.');
+                            }
+                        };
+                    };
                 }
-            };
-        };
-    }
 
-    // Function to download the HTML content as a file
-    function downloadHtmlContent(content, versionId, ) {
-        var mynewname = 'Version' + versionId + 'List.txt'
-    var filename = mynewname;
+                // Function to download the HTML content as a file
+                function downloadHtmlContent(content, versionId, ) {
+                    var mynewname = 'Version' + versionId + 'List.txt'
+                    var filename = mynewname;
 
-    // Create a Blob from the HTML content
-    var blob = new Blob([content], { type: 'text/plain' });
+                    // Create a Blob from the HTML content
+                    var blob = new Blob([content], {
+                        type: 'text/plain'
+                    });
 
-    // Create a link element
-    var link = document.createElement('a');
-    link.className = 'outsidelink';
+                    // Create a link element
+                    var link = document.createElement('a');
+                    link.className = 'outsidelink';
 
-    // Set the download attribute with the filename
-    link.download = filename;
+                    // Set the download attribute with the filename
+                    link.download = filename;
 
-    // Create an object URL for the Blob
-    link.href = window.URL.createObjectURL(blob);
+                    // Create an object URL for the Blob
+                    link.href = window.URL.createObjectURL(blob);
 
-    // Append the link to the body
-    document.body.appendChild(link);
+                    // Append the link to the body
+                    document.body.appendChild(link);
 
-    // Programmatically click the link to trigger the download
-    link.click();
+                    // Programmatically click the link to trigger the download
+                    link.click();
 
-    // Remove the link from the document
-    document.body.removeChild(link);
-}
+                    // Remove the link from the document
+                    document.body.removeChild(link);
+                }
 
-    // Retrieve the selected version's HTML and download it
-    getSelectedVersionHtml(function(htmlContent) {
-        downloadHtmlContent(htmlContent);
-    });
+                // Retrieve the selected version's HTML and download it
+                getSelectedVersionHtml(function (htmlContent) {
+                    downloadHtmlContent(htmlContent);
+                });
             }
 
 
@@ -5042,9 +5339,9 @@ border: none !important;
                 getVersions(1); // Fetch versions for projectId 1
                 document.getElementById('versionsModal').style.display = 'block';
             });
-            
-            
-            
+
+
+
             document.getElementById('saveVersionBtn').addEventListener('click', () => {
                 const versionName = document.getElementById('versionName').value;
                 const content = document.getElementById('pullthecode2').innerHTML;
@@ -5080,6 +5377,7 @@ border: none !important;
             // Close modal when the user clicks on <span> (x)
             document.querySelector('.modal .close').addEventListener('click', () => {
                 document.getElementById('versionsModal').style.display = 'none';
+                $('#uniqueModal').fadeOut()
             });
 
             // Close modal when the user clicks anywhere outside of the modal
@@ -5096,16 +5394,106 @@ border: none !important;
 
             initDB();
         });
-
     </script>
 
 
+<script>
+    $(document).ready(function () {
+        function showModal() {
+            $('#uniqueModal').show();
+            if (parent && parent.document) {
+        // Hide the element with id 'headerstart' in the parent document
+        var headerElement = parent.document.getElementById('headerstart');
+        if (headerElement) {
+            headerElement.style.display = 'none';
+        }
+    }
+        }
+
+        function hideModal() {
+            $('#uniqueModal').hide();
+            if (parent && parent.document) {
+        // Hide the element with id 'headerstart' in the parent document
+        var headerElement = parent.document.getElementById('headerstart');
+        if (headerElement) {
+            headerElement.style.display = 'block';
+        }
+    }
+        }
+
+        window.addEventListener('message', function (event) {
+            console.log('Message received in embedded content:', event.data);
+            if (event.data.action === 'showModal') {
+                console.log('Received showModal message');
+                showModal();
+            }
+        });
+
+        $('.close-modal').on('click', hideModal);
+
+        $(window).on('click', function (event) {
+            if ($(event.target).is('#uniqueModal')) {
+                hideModal();
+            }
+        });
+    });
+</script>
 
 
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const phrases = [
+            "A journey of a thousand miles begins with a single step.",
+            "Rome wasn't built in a day.",
+            "The journey is the reward.",
+            "The man who moves a mountain begins by carrying away small stones.",
+            "Little by little, one travels far.",
+            "Great things are not done by impulse, but by a series of small things brought together.",
+            "Success is the sum of small efforts, repeated day in and day out.",
+            "A little progress each day adds up to big results.",
+            "The secret of getting ahead is getting started.",
+            "Step by step and the thing is done.",
+            "Small deeds done are better than great deeds planned.",
+            "Big journeys begin with small steps.",
+            "The smallest deed is better than the greatest intention.",
+            "By the yard, it's hard; but inch by inch, anything's a cinch.",
+            "One step at a time.",
+            "Little drops of water make a mighty ocean.",
+            "The distance is nothing; it is only the first step that is difficult.",
+            "Small steps lead to big changes.",
+            "Every accomplishment starts with the decision to try.",
+            "The only impossible journey is the one you never begin.",
+            "A single sunbeam is enough to drive away many shadows.",
+            "Small steps every day.",
+            "Slow and steady wins the race.",
+            "One step at a time.",
+            "The journey of a thousand miles begins with one step.",
+            "Tiny steps will take you to the finish line.",
+            "The way to get started is to quit talking and begin doing.",
+            "Small strokes fell great oaks.",
+            "Success is a series of small wins.",
+            "The difference between ordinary and extraordinary is that little extra."
+        ];
 
+        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        document.getElementById('inspire').innerText = randomPhrase;
+    });
 
+$('#loadstartmenu').on('click' , function() {
+    $('#uniqueModal').fadeIn()
+    $('.unique-box').show()
+    if (parent && parent.document) {
+        // Hide the element with id 'headerstart' in the parent document
+        var headerElement = parent.document.getElementById('headerstart');
+        if (headerElement) {
+            headerElement.style.display = 'none';
+        }
+    }
+})
+
+</script>
 
 
 

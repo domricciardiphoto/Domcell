@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Designer Pro 6</title>
+    <title>Content Designer Pro 6.5</title>
 
 <style>
 /* Basic reset for styling */
@@ -108,7 +108,7 @@ box-shadow:inset 0 0 5px 5px #242020;
 
 embed {
     width:100%;
-    min-height: 97vh;
+    min-height: 96vh;
 }
 .close-tab {
     margin-left: 5px;
@@ -130,12 +130,14 @@ color: red;
 </head>
 <body>
     <!-- Header with navigation -->
-    <header>
+    <header id="headerstart">
         <div class="nav-bar">
             <!-- Home Button -->
-            <div class="home-button">
+            <div class="home-button" id="home-buttonstart">
                 <a href="gettingstarted.html"><img src="assets/home.png" alt="Home"></a>
+                
             </div>
+            
 
             <!-- Dynamic Tabs -->
             <div class="tabs">
@@ -145,7 +147,7 @@ color: red;
 
             <!-- Add Tab Button -->
             <div class="add-tab">
-                <button onclick="addTab()">+</button>
+                <button onclick="addTab2()">+</button>
             </div>
         </div>
     </header>
@@ -158,52 +160,119 @@ color: red;
         <!-- Additional content divs here -->
     </div>
 
+    
+
     <script>
-        let isFirstCall = true; // Flag to check if it's the first call
 
-        function clearIndexedDB() {
-            const dbName = 'DomcellDB';  // Ensure this matches the database used throughout your app
-            const storeName = 'DomcellcontentStore';  // Ensure this matches the store name used in your app
+function clearIndexedDB() {
+    const dbName = 'DomcellDB';  // Ensure this matches the database used throughout your app
+    const storeName = 'DomcellcontentStore';  // Ensure this matches the store name used in your app
 
-            // Open a connection to your database
-            var request = indexedDB.open(dbName, 1);
+    // Open a connection to your database
+    var request = indexedDB.open(dbName, 1);
 
-            request.onerror = function(event) {
-                console.error("Database error: " + event.target.errorCode);
-            };
+    request.onerror = function(event) {
+        console.error("Database error: " + event.target.errorCode);
+    };
 
-            request.onupgradeneeded = function(event) {
-                // Handle any upgrades or initial setup here if needed
-                var db = event.target.result;
-                if (!db.objectStoreNames.contains(storeName)) {
-                    db.createObjectStore(storeName, { keyPath: 'id' });
-                }
-            };
-
-            request.onsuccess = function(event) {
-                var db = event.target.result;
-
-                // Create a transaction on the correct store with readwrite permissions
-                var transaction = db.transaction([storeName], "readwrite");
-                var objectStore = transaction.objectStore(storeName);
-
-                // Clear all the data in the object store
-                var clearRequest = objectStore.clear();
-
-                clearRequest.onsuccess = function() {
-                    // Data cleared successfully
-                    console.log("IndexedDB data cleared successfully.");
-                    window.clearAndRestartClicked = true;
-                };
-
-                clearRequest.onerror = function(event) {
-                    console.error("Clear operation failed: ", event.target.errorCode);
-                };
-            };
+    request.onupgradeneeded = function(event) {
+        // Handle any upgrades or initial setup here if needed
+        var db = event.target.result;
+        if (!db.objectStoreNames.contains(storeName)) {
+            db.createObjectStore(storeName, { keyPath: 'id' });
         }
+    };
+
+    request.onsuccess = function(event) {
+        var db = event.target.result;
+
+        // Create a transaction on the correct store with readwrite permissions
+        var transaction = db.transaction([storeName], "readwrite");
+        var objectStore = transaction.objectStore(storeName);
+
+        // Clear all the data in the object store
+        var clearRequest = objectStore.clear();
+
+        clearRequest.onsuccess = function() {
+            // Data cleared successfully
+            console.log("IndexedDB data cleared successfully.");
+            window.clearAndRestartClicked = true;
+        };
+
+        clearRequest.onerror = function(event) {
+            console.error("Clear operation failed: ", event.target.errorCode);
+        };
+    };
+}
+
+
+
+
+
+
+
+function addTab2() {
+    clearIndexedDB()
+    const numTabs = document.querySelectorAll('.tab').length + 1;
+
+// Create new tab
+const newTab = document.createElement('div');
+newTab.classList.add('tab');
+newTab.textContent = 'Workspace ' + numTabs;
+newTab.setAttribute('data-content', 'tab' + numTabs);
+
+// Create close button
+const closeButton = document.createElement('button');
+closeButton.textContent = 'X';
+closeButton.classList.add('close-tab');
+newTab.appendChild(closeButton);
+
+// Create new content
+const newContent = document.createElement('embed');
+newContent.id = 'tab' + numTabs;
+newContent.src = 'overviewcontent-builder-alpha.html';
+newContent.classList.add('content-item');
+
+
+// Append new elements to the DOM
+document.querySelector('.tabs').appendChild(newTab);
+document.querySelector('.content').appendChild(newContent);
+
+// Add click event listener to the new tab
+newTab.addEventListener('click', function(event) {
+   
+    if (event.target === closeButton) {
+        // Find the index of the tab before removal
+        const tabIndex = Array.from(document.querySelectorAll('.tab')).indexOf(newTab);
+        // Remove the tab and content
+        newContent.remove();
+        newTab.remove();
+        // Activate the previous tab if it exists
+        const tabs = document.querySelectorAll('.tab');
+        if (tabs.length > 0) {
+            const newActiveIndex = Math.max(0, tabIndex - 1);
+            tabs[newActiveIndex].click();
+        }
+        return;
+    }
+
+    // Activate this tab and its content
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+    document.querySelectorAll('.content-item').forEach(item => item.classList.remove('active'));
+    newContent.classList.add('active');
+});
+
+// Automatically click the new tab to activate it
+newTab.click();
+}
+
 
         function addTab() {
+           
             const numTabs = document.querySelectorAll('.tab').length + 1;
+
+            // Create new tab
             const newTab = document.createElement('div');
             newTab.classList.add('tab');
             newTab.textContent = 'Workspace ' + numTabs;
@@ -213,17 +282,19 @@ color: red;
             const closeButton = document.createElement('button');
             closeButton.textContent = 'X';
             closeButton.classList.add('close-tab');
-            // Append close button to the tab
             newTab.appendChild(closeButton);
 
+            // Create new content
             const newContent = document.createElement('embed');
             newContent.id = 'tab' + numTabs;
             newContent.src = 'overviewcontent-builder-alpha.html';
             newContent.classList.add('content-item');
 
+            // Append new elements to the DOM
             document.querySelector('.tabs').appendChild(newTab);
             document.querySelector('.content').appendChild(newContent);
 
+            // Add click event listener to the new tab
             newTab.addEventListener('click', function(event) {
                 if (event.target === closeButton) {
                     // Find the index of the tab before removal
@@ -240,18 +311,15 @@ color: red;
                     return;
                 }
 
-                if (isFirstCall) {
-                    isFirstCall = false;
-                } else {
-                    clearIndexedDB();
-                }
-
                 // Activate this tab and its content
                 document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
                 document.querySelectorAll('.content-item').forEach(item => item.classList.remove('active'));
                 newContent.classList.add('active');
             });
+
+            // Automatically click the new tab to activate it
+            newTab.click();
         }
 
         // Add event listeners to initial tabs (if any exist on page load)
@@ -260,7 +328,7 @@ color: red;
                 if (event.target.classList.contains('close-tab')) {
                     const contentId = this.getAttribute('data-content');
                     const contentElement = document.getElementById(contentId);
-                    const tabIndex = Array.from(document.querySelectorAll('.tab')). indexOf(this);
+                    const tabIndex = Array.from(document.querySelectorAll('.tab')).indexOf(this);
                     contentElement?.remove();
                     this.remove();
                     // Activate the previous tab if possible
@@ -284,64 +352,30 @@ color: red;
             });
         });
 
-        window.addEventListener('message', async (event) => {
-            const { type, payload } = event.data;
+        // Automatically add and activate the first tab on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            addTab();
+        });
+    </script>
 
-            if (type === 'saveVersion') {
-                const projectId = 1; // Example project id
-                const response = await window.api.saveVersion({ projectId, ...payload });
-                event.source.postMessage({ type: 'saveVersionResponse', response }, event.origin);
-            } else if (type === 'getVersions') {
-                const projectId = 1; // Example project id
-                const versions = await window.api.getVersions(projectId);
-                event.source.postMessage({ type: 'getVersionsResponse', versions }, event.origin);
-            } else if (type === 'revertVersion') {
-                const projectId = 1; // Example project id
-                const content = await window.api.revertVersion({ projectId, ...payload });
-                event.source.postMessage({ type: 'revertVersionResponse', content }, event.origin);
-            }else if (type === 'clearVersions') {
-                const response = await window.api.clearVersions();
-                event.source.postMessage({ type: 'clearVersionsResponse', response }, event.origin);
-            }else if (type === 'deleteVersion') {
-                const projectId = 1; // Example project id
-    const response = await window.api.deleteVersion({ projectId, ...payload });
-    event.source.postMessage({ type: 'deleteVersionResponse', response }, event.origin);
-            } else if (type === 'reorderVersions') {
-        const response = await window.api.reorderVersions(payload);
-        event.source.postMessage({ type: 'reorderVersionsResponse', response }, event.origin);
+
+
+<script>
+   window.addEventListener('message', function(event) {
+    if (event.origin !== window.location.origin) {
+        // Optionally check the origin of the message for security
+        console.warn('Received message from untrusted origin:', event.origin);
+        return;
     }
-            
-            
-            else if (type === 'export') {
-                const { content } = payload;
-                const projectId = 1; // Example project id
 
-                // Get the version information
-                const versions = await window.api.getVersions(projectId);
-
-                // Combine HTML content and version information
-                let exportContent = `HTML Content:\n\n${content}\n\nVersion Information:\n\n`;
-
-                versions.forEach(version => {
-                    exportContent += `Version Number: ${version.version_number}\n`;
-                    exportContent += `Version Name: ${version.version_name || 'Unnamed'}\n`;
-                    exportContent += `Created At: ${new Date(version.created_at).toLocaleString()}\n\n`;
-                });
-
-               
-
-
-            }
-        
-        });
-
-        // Automatically add and activate a new tab on page load
-        addTab();
-        document.querySelectorAll('.tab').forEach(element => {
-            element.click();
-        });
-
-       
+    if (event.data === 'clickHomeButton') {
+        // Click the button with class 'home-button'
+        var homeButton = document.querySelector('.home-button');
+        if (homeButton) {
+            homeButton.click();
+        }
+    }
+});
     </script>
 
 

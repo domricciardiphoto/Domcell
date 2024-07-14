@@ -606,7 +606,7 @@ ul.width50c {
     font-size: 68%;
     border: 1px solid yellow;
     cursor: pointer;
-    z-index: 9999999999999999999999;
+    z-index: 99999999;
     border-radius: 3px;
 }
 
