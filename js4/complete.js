@@ -990,8 +990,19 @@ $('.openthematrix').on('click', function () {
     $('.openthematrixopen').removeClass('openthematrixopen');
     $(this).addClass('openthematrixopen');
     $('.colorlegend').hide()
+
+
+    
     switch (whatmatrix) {
         case '#mymatrix1':
+
+        var element = document.getElementById("pullthecode3");
+        if (element) {
+            element.style.removeProperty('width');
+            element.style.removeProperty('transform');
+        }
+
+
             $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
             $('.colorlegend').hide()
             $('#hidemainmobile').hide()
@@ -1014,7 +1025,7 @@ var textContent = divElement.textContent || divElement.innerText;
 // Get the character count
 var characterCount = textContent.length;
 
-            $('#charactercount').html('Character Count ' + '<span style="color:yellow">'+characterCount+' </span>' + ' - Current Salesforce Max is 16,000' )
+            $('#charactercount').html('Character Count ' + '<span style="color:yellow">'+characterCount+' </span>' + ' - Maximum ECP to Salesforce Characters is 16,000' )
 
             var element = $('#findthecode2');
             var content = element.text();
@@ -1066,18 +1077,31 @@ var characterCount = textContent.length;
             break;
         case '#mymatrix3':
 
-           // $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
-            //$('.colorlegend').hide()
-            //$('#hidemainmobile').hide()
+
             $('#pullthecode2').show()
-            $('#pullthecode2').animate({'max-height' : '440px'})
+            $('#beautycode').animate({'min-height' : $('#pullthecode2').height()-60})
             $('#sidetoolset').show()
+            $('#programming').hide()
             var html = $('#pullthecode3').html()
             var html2 = $('#pullthecode3').html()
             var beautifiedHtml = beautifyHtml(html);
             $('#beautycode').val(beautifiedHtml)
+            $('#mobilepreview2').parent('div').hide()
+            $('#pullthecode2').animate({'width' : '53%'})
+            $('#mymatrix3').animate({'width' : '40%'})
+            $('#resizable-div').animate({'width' : '100%'})
             break;
         case '#mymatrix4':
+
+
+
+        var element = document.getElementById("pullthecode3");
+        if (element) {
+            element.style.removeProperty('width');
+            element.style.removeProperty('transform');
+        }
+
+
             $('#codeloaderpcrview').html($('#pullthecode2').html())
             $('#programming, #resizable-div').hide();
             $('#fullembedcodeddd').show()
@@ -1122,18 +1146,52 @@ var characterCount = textContent.length;
             case '#mymatrix-dark':
             $('#sidetoolset, #explorer2').show()
             $('#pullthecode2').css('filter', 'invert(100%)');
-            $('#sidetoolset, #explorer2').show()
+           
             $('.stage2 , #pullthecode2 , #mobilepreview2').show();
             var newHeightForExplorer = $(window).height() - 530;
                 $('#explorer2').animate({'max-height': newHeightForExplorer}, 400);
             break;
+
+            case '#mymatrix-review':
+
+            $("#pullthecode2").resizable({
+                minWidth: 1024
+            });
+            $("#pullthecode2").animate({
+                'max-height': '400'
+            })
+
+            $("#mymatrix3").animate({
+                'width': '100%' , 'max-height' : '200px'
+            })
+
+            $("#beautycode").animate({
+               'max-height' : '200px'
+            })
+
+            $('#mymatrix3').fadeIn()
+
+
+$('#pullthecode2').animate({'width' : '94%'})
+$('#resizable-div').animate({'width' : '100%'})
+$('#mobilepreview2').parent('div').hide()
+$('#programming').hide()
+
+            break;
             case '#mymatrix-hmobile':
-                $('#sidetoolset, #explorer2').show()
-                $('#sidetoolset, #explorer2').show()
-                $('.stage2 , #pullthecode2 ').show();
-                $('#mobilepreview2').toggle()
+              
                 var newHeightForExplorer = $(window).height();
-                $('#explorer2').animate({'max-height': newHeightForExplorer}, 400);
+                $('#mobilepreview2').hide()
+                $('#pullthecode2').animate({'width' : '65%'})
+                $('#resizable-div').animate({'width' : '72%'})
+                $('#explorer2').show().animate({'max-height': newHeightForExplorer}, 400);
+                $('#sidetoolset').show()
+                $('.stage2 , #pullthecode2 ').show();
+                $('#programming').show()
+                $('#explorer2').parent('div').show()
+               
+
+
                 break;
 
 
@@ -1146,6 +1204,9 @@ var characterCount = textContent.length;
         case '#mymatrix9':
             $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
             $('.colorlegend').hide()
+            $('#versionList').parent('div').parent('div').hide()
+            $('#programming').hide()
+            $('#resizable-div').animate({'width' : '100%'})
             break;
 
     }
@@ -1992,31 +2053,82 @@ $('#linkmaker').click(function () {
 
 
 
+//not used but available
+$('#linkmakerimg').click(function () {
+  
+
+    // Get the element with the class 'explorerselected'
+    var explorerSelectedElement = document.querySelector('.explorerselected');
+    if (!explorerSelectedElement) {
+        console.log('No element with class "explorerselected" found');
+        return; // Exit if no such element
+    }
+
+    // Store the HTML content of the selected element
+    var selectedHTML = explorerSelectedElement.outerHTML;
+    console.log('Selected HTML: ', selectedHTML);
+
+    // Get the link to create from the input field
+    var whatsthelink = $('#whatsthelink3').val();
+    console.log('Link to create: ', whatsthelink);
+
+    // Create the anchor node
+    var anchorNode = document.createElement('a');
+    anchorNode.href = whatsthelink;
+    if (outsidelink3 !== 0) {
+        anchorNode.target = '_blank';
+    }
+    console.log('Anchor node created');
+
+    // Set the inner HTML of the anchor node to the selected HTML
+    anchorNode.innerHTML = selectedHTML;
+    console.log('Anchor node after setting inner HTML: ', anchorNode.outerHTML);
+
+    // Replace the original selected element with the new anchor node
+    explorerSelectedElement.replaceWith(anchorNode);
+    console.log('Original element replaced with anchor node');
+
+    // Update the hidden input with the new HTML
+    $('#beautycode').val($('#pullthecode3').html());
+    console.log('Code updated in hidden input');
+});
+
+
+
 $('#linkmaker3').click(function () {
 
     if ($('#whatsthelink3').val().includes('pcrichard.com') || $('#whatsthelink3').val().includes('staging-na01-pcrichard.com')) {
-        $('#message2').slideDown().delay(2000).slideUp()
+        $('#message2').slideDown().delay(2000).slideUp();
         return false;
     }
+
     var selection = window.getSelection();
     if (!selection.rangeCount) return; // Exit if no selection
-    var selectedText = selection.toString();
-    var whatsthelink = $('#whatsthelink3').val();
-
-    if (outsidelink3 === 0) {
-        var anchor = '<a href="' + whatsthelink + '">' + selectedText + '</a>';
-    } else {
-        var anchor = '<a href="' + whatsthelink + '" target="_blank">' + selectedText + '</a>';
-    }
 
     var range = selection.getRangeAt(0);
+    var whatsthelink = $('#whatsthelink3').val();
 
-    var newNode = document.createElement('div');
-    newNode.innerHTML = anchor;
-    range.deleteContents();
-    range.insertNode(newNode.firstChild);
+    // Create the anchor node
+    var anchorNode = document.createElement('a');
+    anchorNode.href = whatsthelink;
+    if (outsidelink3 !== 0) {
+        anchorNode.target = '_blank';
+    }
 
-   
+    // Extract the contents of the range and append to the anchor node
+    var content = range.extractContents();
+    anchorNode.appendChild(content);
+
+    // Insert the anchor node back into the range
+    range.insertNode(anchorNode);
+
+    // Remove the original selection and select the newly created anchor
+    selection.removeAllRanges();
+    var newRange = document.createRange();
+    newRange.selectNode(anchorNode);
+    selection.addRange(newRange);
+
+    // Ensure proper handling of clicks on the newly created links
     $('a').not('.googledrive').not('.outsidelink').not('.list-button').on('click', function (e) {
         var target = $(e.target);
         if (!target.is('a')) {
@@ -2036,9 +2148,11 @@ $('#linkmaker3').click(function () {
             document.getElementById("myModal").style.display = "none";
         });
     });
-    $('#beautycode').val($('#pullthecode3').html())
 
+    $('#beautycode').val($('#pullthecode3').html());
 });
+
+
 
 
 
@@ -4464,8 +4578,17 @@ let searchResults = [];
 
 $(document).ready(function() {
     $('#beautycode').on('input', function() {
+       
         $('#pullthecode3').html($('#beautycode').val());
         $('#mobilepreview2 #pullthecode3').html($('#beautycode').val());
+
+
+        $('.totalinternalcontent').find('img').each(function() {
+            var $img = $(this);
+            if (!$img.hasClass('promoimg21')) {
+                $img.addClass('promoimg21');
+            }
+        });
 
         // Reset the search when the content changes
         resetFind();
@@ -4564,11 +4687,12 @@ document.querySelectorAll('.unique-box').forEach(box => {
                 break;
             case 'box4u':
                 $('#pluginsandtools').click()
-                $('button.outsideplugins[whaturl="bannersheduler.html"]').click()
+                $('button.outsideplugins[whaturl="bannersheduler-v2.html"]').click()
                 document.getElementById('uniqueModal').style.display = 'none';
                 bringbackthehomebutton()
                 break;
                 case 'box5u':
+                    $('#pullthecode3').empty()
                     $('div.thetopbox[whatbox="Tools"]').click()  
                     $('#tools4').click()
                     $('.addrow-click').click()
@@ -4608,10 +4732,75 @@ document.querySelectorAll('.unique-box').forEach(box => {
 
 $('.closemodalbutton').on('click' , function() {
     $('#uniqueModal').fadeOut()
+    bringbackthehomebutton()
 })
 
 $('.closeapllicationbutton').on('click' , function() {
     parent.location.href = 'gettingstarted.html';
 })
 
+$('.outsideplugins2').on('click' , function() {
+   $('#firstmatrix').click()
+})
 
+
+const dbName = "layoutDB";
+const storeName = "positions";
+
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(dbName, 1);
+
+        request.onupgradeneeded = event => {
+            const db = event.target.result;
+            if (!db.objectStoreNames.contains(storeName)) {
+                db.createObjectStore(storeName, { keyPath: "id" });
+            }
+        };
+
+        request.onsuccess = event => resolve(event.target.result);
+        request.onerror = event => reject(event.target.error);
+    });
+}
+
+function savePosition(position) {
+    openDB().then(db => {
+        const transaction = db.transaction([storeName], "readwrite");
+        const store = transaction.objectStore(storeName);
+        store.put({ id: "layout", position });
+    });
+}
+
+function getPosition() {
+    return new Promise((resolve, reject) => {
+        openDB().then(db => {
+            const transaction = db.transaction([storeName], "readonly");
+            const store = transaction.objectStore(storeName);
+            const request = store.get("layout");
+
+            request.onsuccess = event => resolve(event.target.result ? event.target.result.position : null);
+            request.onerror = event => reject(event.target.error);
+        });
+    });
+}
+$('#reverse').on('click', function () {
+    let position;
+    if ($('#programming').next().is('#resizable-div')) {
+        $('#resizable-div').insertBefore('#programming');
+        position = "resizable-div-first";
+    } else {
+        $('#programming').insertBefore('#resizable-div');
+        position = "programming-first";
+    }
+    savePosition(position);
+});
+
+$(document).ready(function () {
+    getPosition().then(position => {
+        if (position === "resizable-div-first" && $('#programming').next().is('#resizable-div')) {
+            $('#resizable-div').insertBefore('#programming');
+        } else if (position === "programming-first" && $('#resizable-div').next().is('#programming')) {
+            $('#programming').insertBefore('#resizable-div');
+        }
+    });
+});

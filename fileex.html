@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Explorer</title>
+    <style>
+        #file-explorer {
+            padding: 0px;
+            width: 100%;
+            margin: 0px auto;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        #file-explorer ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        #file-explorer li {
+            margin: 5px 0;
+            padding: 5px;
+            cursor: pointer;
+        }
+        #file-explorer li.file {
+            color: blue;
+        }
+        #file-explorer li.folder {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div id="file-explorer">
+    <button id="select-folder">Select Folder</button>
+    <ul id="file-list"></ul>
+</div>
+
+<script>
+    const DB_NAME = 'file-explorer-db';
+    const DB_STORE_NAME = 'file-handles';
+
+    function openDB() {
+        return new Promise((resolve, reject) => {
+            const request = indexedDB.open(DB_NAME, 1);
+
+            request.onupgradeneeded = (event) => {
+                const db = event.target.result;
+                db.createObjectStore(DB_STORE_NAME, { keyPath: 'id' });
+            };
+
+            request.onsuccess = (event) => {
+                resolve(event.target.result);
+            };
+
+            request.onerror = (event) => {
+                reject(event.target.error);
+            };
+        });
+    }
+
+    function saveHandle(handle) {
+        return openDB().then((db) => {
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction([DB_STORE_NAME], 'readwrite');
+                const store = transaction.objectStore(DB_STORE_NAME);
+                store.put({ id: 'directory-handle', handle });
+                transaction.oncomplete = () => resolve();
+                transaction.onerror = (event) => reject(event.target.error);
+            });
+        });
+    }
+
+    function getHandle() {
+        return openDB().then((db) => {
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction([DB_STORE_NAME], 'readonly');
+                const store = transaction.objectStore(DB_STORE_NAME);
+                const request = store.get('directory-handle');
+
+                request.onsuccess = (event) => {
+                    resolve(event.target.result ? event.target.result.handle : null);
+                };
+
+                request.onerror = (event) => {
+                    reject(event.target.error);
+                };
+            });
+        });
+    }
+
+    async function verifyPermission(fileHandle, withWrite) {
+        const options = {};
+        if (withWrite) {
+            options.mode = 'readwrite';
+        }
+        // Check if permission was already granted. If so, return true.
+        if ((await fileHandle.queryPermission(options)) === 'granted') {
+            return true;
+        }
+        // Request permission. If the user grants permission, return true.
+        if ((await fileHandle.requestPermission(options)) === 'granted') {
+            return true;
+        }
+        // The user didn't grant permission, so return false.
+        return false;
+    }
+
+    async function listFiles(handle, parentElement) {
+        for await (const entry of handle.values()) {
+            const li = document.createElement('li');
+            li.textContent = entry.name;
+            li.className = entry.kind;
+            parentElement.appendChild(li);
+
+            if (entry.kind === 'directory') {
+                li.addEventListener('click', async () => {
+                    if (li.querySelector('ul')) {
+                        li.querySelector('ul').remove();
+                    } else {
+                        const ul = document.createElement('ul');
+                        li.appendChild(ul);
+                        await listFiles(entry, ul);
+                    }
+                });
+            }
+        }
+    }
+
+    async function loadFolder(fileHandle) {
+        const fileListElement = document.getElementById('file-list');
+        fileListElement.innerHTML = ''; // Clear the current list
+        await listFiles(fileHandle, fileListElement);
+    }
+
+    document.getElementById('select-folder').addEventListener('click', async () => {
+        const fileHandle = await window.showDirectoryPicker();
+        if (await verifyPermission(fileHandle, true)) {
+            await saveHandle(fileHandle);
+            loadFolder(fileHandle);
+        }
+    });
+
+    window.addEventListener('load', async () => {
+        const fileHandle = await getHandle();
+        if (fileHandle) {
+            if (await verifyPermission(fileHandle, false)) {
+                loadFolder(fileHandle);
+            } else {
+                alert('Permission denied to access the stored folder. Please reselect the folder.');
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

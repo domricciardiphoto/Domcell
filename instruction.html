@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Instructional Manual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .code {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Application Instructional Manual</h1>
+
+    <div class="section">
+        <h2>Overview</h2>
+        <p>This application is designed to help users create and manage HTML content efficiently. It includes features such as element selection, content editing, sorting functionality, accessibility compliance checks, and much more.</p>
+    </div>
+
+    <div class="section">
+        <h2>Getting Started</h2>
+        <p>To begin using the application, open the main HTML file in your browser. Ensure that JavaScript is enabled for full functionality.</p>
+    </div>
+
+    <div class="section">
+        <h2>Features</h2>
+        <h3>1. Element Selection and Highlighting</h3>
+        <p>Select elements within the content area to highlight and edit them. Use the Shift key to select multiple elements.</p>
+        <div class="code">
+            <pre>
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Shift') {
+        isShiftPressed = true;
+    }
+});
+
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Shift') {
+        isShiftPressed = false;
+    }
+});
+
+function selectAndHighlightElement(element, scrollElement = false) {
+    const $element = $(element);
+
+    if (!$element.length || !$pullthecode2.find($element).length) {
+        return;
+    }
+
+    clearSelection();
+
+    if (isShiftPressed) {
+        $element.addClass('explorerselected multiselected');
+    } else {
+        $('.explorerselected, .onblock, .interedit').removeClass('explorerselected onblock interedit');
+        $('.multiselected').removeClass('multiselected');
+        $element.addClass('explorerselected');
+    }
+
+    if (!$element.hasClass('liveelement')) {
+        $element.addClass('onblock');
+    } else {
+        $element.addClass('interedit');
+    }
+
+    $element.click();
+    $('#contextMenu').hide();
+    $('#myhtmleditor').val($element.html());
+
+    if (scrollElement) {
+        $element.get(0).scrollIntoView({
+            behavior: 'auto', block: 'nearest', inline: 'start'
+        });
+    }
+
+    window.lastSelectedElement = element;
+}
+            </pre>
+        </div>
+
+        <h3>2. Content Editing</h3>
+        <p>Edit the HTML content directly by selecting an element and modifying its HTML in the editor.</p>
+        <div class="code">
+            <pre>
+function editElement(clickedElement) {
+    var targetElement = $(clickedElement).data('linkedElement');
+    if (!$(targetElement).is('.edit-mode')) {
+        var originalContent = $(targetElement).html();
+        var textarea = $('<textarea>', {
+            class: 'editor-input',
+            css: {
+                width: '98%',
+                height: 'auto',
+                resize: 'vertical'
+            },
+            text: originalContent.trim(),
+            blur: function() {
+                $(targetElement).html($(this).val()).removeClass('edit-mode');
+            },
+            keyup: function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    $(this).blur();
+                }
+            }
+        });
+        textarea.on('click', function(event) {
+            event.stopPropagation();
+            event.preventDefault();
+        });
+        $(targetElement).html(textarea).addClass('edit-mode');
+        textarea.focus();
+    }
+}
+            </pre>
+        </div>
+
+        <h3>3. Adding and Managing Elements</h3>
+        <p>Add new elements such as rows, components, headers, and more. Manage the added elements using the toolbar.</p>
+        <div class="code">
+            <pre>
+function appendContent(tag, hasIcon) {
+    var randomFourDigit = getRandomFourDigit(1000, 9999);
+    var content = $('#cinput1h2').val();
+    var html = `<div class="pd-header-tag width100c">`;
+
+    if (hasIcon) {
+        html += `<div class="icon_box"> </div>`;
+    }
+
+    html += `<${tag} class="t-h4-style in910" ${headernewcolor2} id="ocinsertcontent${randomFourDigit}">${content}</${tag}></div>`;
+
+    $('.interedit').append(html).removeClass('interedit');
+}
+
+$('#cinput1-clickh2-comp').on('click', function () {
+    if ($('#cinput1h2').val() === '') {
+        return false;
+    }
+
+    switch (choosehtag) {
+        case '0':
+            appendContent('h2', faqyes === 1);
+            break;
+        case '2':
+            appendContent('h4', faqyes === 1);
+            break;
+        default:
+            appendContent('h3', false);
+            break;
+    }
+
+    $('#cinput1h2').val(''); // Clear the input field after appending content
+    updateMobilePreview()
+    $('#beautycode').val($('#pullthecode3').html())
+});
+            </pre>
+        </div>
+
+        <h3>4. Sorting Functionality</h3>
+        <p>Enable and disable sorting for different components within the application.</p>
+        <div class="code">
+            <pre>
+document.getElementById('mysort').addEventListener('change', function () {
+    if (this.checked) {
+        $("#pullthecode3").sortable({
+            disabled: false
+        });
+        $('.informationcontent').children().css('cursor', 'grab');
+    } else {
+        $("#pullthecode3").sortable({
+            disabled: true
+        });
+        $('.informationcontent').children().css('cursor', '');
+        $('#clearandrestartbuttonrefresh').click()
+    }
+});
+
+document.getElementById('mysortcomponents').addEventListener('change', function () {
+    const sortableElements = $("div.layoutpale").not('h2 , p');
+
+    if (this.checked) {
+        sortableElements.sortable({
+            disabled: false
+        });
+    } else {
+        sortableElements.sortable({
+            disabled: true
+        });
+        sortableElements.sortable('disable');
+        $('.informationcontent').children().css('cursor', '');
+        $('#clearandrestartbuttonrefresh').click();
+    }
+});
+            </pre>
+        </div>
+
+        <h3>5. Accessibility Compliance Check</h3>
+        <p>Run accessibility checks on the content to ensure it meets compliance standards.</p>
+        <div class="code">
+            <pre>
+function checkADACompliance() {
+    const codeDiv = document.getElementById('pullthecode2');
+    const codeAsHTML = codeDiv.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = codeAsHTML;
+
+    document.body.appendChild(tempDiv);
+
+    axe.run(tempDiv, function (err, results) {
+      if (err) throw err;
+
+      const resultsDiv = document.getElementById('results21aaa');
+
+      const filteredViolations = results.violations.filter(violation => violation.id !== 'duplicate-id');
+
+      if (filteredViolations.length) {
+        filteredViolations.forEach(violation => {
+          const violationDiv = document.createElement('div');
+          violationDiv.className = 'violation';
+
+          const violationTitle = document.createElement('h3');
+          violationTitle.textContent = violation.id;
+
+          const violationDescription = document.createElement('p');
+          violationDescription.textContent = violation.description;
+
+          const violationHelp = document.createElement('p');
+          violationHelp.innerHTML = `<a class="outsidelink" href="${violation.helpUrl}" target="_blank">Learn more</a>`;
+
+          violationDiv.appendChild(violationTitle);
+          violationDiv.appendChild(violationDescription);
+          violationDiv.appendChild(violationHelp);
+
+          violation.nodes.forEach(node => {
+            const nodeElement = document.createElement('div');
+            nodeElement.innerHTML = `<p><strong>Element:</strong> <code>${node.html}</code></p>`;
+            nodeElement.innerHTML += `<p><strong>Target:</strong> ${node.target.join(', ')}</p>`;
+            nodeElement.innerHTML += `<p><strong>Failure Summary:</strong> ${node.failureSummary}</p>`;
+            violationDiv.appendChild(nodeElement);
+          });
+
+          resultsDiv.appendChild(violationDiv);
+        });
+      } else {
+        resultsDiv.innerHTML = '<p>No accessibility issues found.</p>';
+      }
+
+      document.body.removeChild(tempDiv);
+    });
+}
+            </pre>
+        </div>
+
+        <h3>6. Debounced Updates</h3>
+        <p>To improve performance, some updates are debounced to prevent excessive executions.</p>
+        <div class="code">
+            <pre>
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+const debouncedUpdateMobilePreview = debounce(updateMobilePreview, 500);
+            </pre>
+        </div>
+
+        <h3>7. Undo and Redo Functionality</h3>
+        <p>Capture and restore states to implement undo and redo functionality.</p>
+        <div class="code">
+            <pre>
+let undoStack = [];
+let redoStack = [];
+
+function captureState() {
+    const currentState = $('#pullthecode2').html();
+    undoStack.push(currentState);
+    redoStack = [];
+}
+
+const debouncedCaptureState = debounce(captureState, 500);
+
+function undo() {
+    if (undoStack.length > 0) {
+        const previousState = undoStack.pop();
+        redoStack.push($('#pullthecode2').html());
+        $('#pullthecode2').html(previousState);
+        runExplorerDebounced();
+    }
+}
+
+function redo() {
+    if (redoStack.length > 0) {
+        const nextState = redoStack.pop();
+        undoStack.push($('#pullthecode2').html());
+        $('#pullthecode2').html(nextState);
+        runExplorerDebounced();
+    }
+}
+            </pre>
+        </div>
+
+        <h3>8. Context Menu</h3>
+        <p>Right-click on elements to access the context menu for additional options such as edit, delete, duplicate, etc.</p>
+        <div class="code">
+            <pre>
+$(document).on('contextmenu', '.indent, .indentselected', function(e) {
+    e.preventDefault();
+    $(this).click();
+    $('#contextMenu').css({
+        display: "block",
+        left: e.pageX,
+        top: e.pageY
+    }).data('clickedElement', this);
+});
+
+$('#contextMenu ul li').click(function() {
+    var action = $(this).attr('id');
+    var clickedElement = $('#contextMenu').data('clickedElement');
+
+    switch (action) {
+        case 'delete':
+            var correspondingElement = $(clickedElement).data('linkedElement');
+            $(correspondingElement).remove();
+            $(clickedElement).remove();
+            $('#contextMenu').hide();
+            break;
+        case 'duplicate':
+            duplicateElement(clickedElement);
+            break;
+        case 'edit':
+            editElement(clickedElement);
+            break;
+    }
+    $('#contextMenu').hide();
+});
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Advanced Features</h2>
+        <h3>1. Debounced Updates</h3>
+        <p>To improve performance, some updates are debounced to prevent excessive executions.</p>
+        <div class="code">
+            <pre>
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+const debouncedUpdateMobilePreview = debounce(updateMobilePreview, 500);
+            </pre>
+        </div>
+
+        <h3>2. Undo and Redo Functionality</h3>
+        <p>Capture and restore states to implement undo and redo functionality.</p>
+        <div class="code">
+            <pre>
+let undoStack = [];
+let redoStack = [];
+
+function captureState() {
+    const currentState = $('#pullthecode2').html(); // Adjust selector as needed
+    undoStack.push(currentState);
+    redoStack = []; // Clear redo stack since new action resets the future path
+}
+
+const debouncedCaptureState = debounce(captureState, 500);
+
+function undo() {
+    if (undoStack.length > 0) {
+        const previousState = undoStack.pop();
+        redoStack.push($('#pullthecode2').html());
+        $('#pullthecode2').html(previousState);
+        runExplorerDebounced();
+    }
+}
+
+function redo() {
+    if (redoStack.length > 0) {
+        const nextState = redoStack.pop();
+        undoStack.push($('#pullthecode2').html());
+        $('#pullthecode2').html(nextState);
+        runExplorerDebounced();
+    }
+}
+            </pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Conclusion</h2>
+        <p>Thank you for using our application. This manual covers the essential features to get you started. For further assistance, please refer to the in-application help or contact support.</p>
+    </div>
+</body>
+</html>

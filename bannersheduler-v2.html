@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Banner Builder</title>
+    <script src="jquery.js"></script>
+    <style>
+
+    body {
+    color: #ddd;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.store {
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.message a {
+    color: #1abc9c;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.message a:hover {
+    color: #16a085;
+}
+
+.builder {
+    margin-top: 20px;
+}
+
+.info {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+input, select {
+    width: calc(100% - 20px);
+    min-height: 30px;
+    font-size: 1rem;
+    padding: 3px;
+    border-radius: 4px;
+    margin-top: 5px;
+    background: #fff;
+    color: #000;
+}
+
+input:focus, select:focus {
+    border-color: #1abc9c;
+    outline: none;
+}
+
+.idoption {
+    display: none;
+}
+
+.codebase {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 0;
+    color: #ddd;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="store">
+            <div class="builder">
+                <div class="info" >Start Date:</div>
+                <div class="info">
+                    <label for="startmonth">Choose Month:</label>
+                    <select name="startmonth" id="startmonth">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <label for="startday">&nbsp;&nbsp;Choose Day:</label>
+                    <select name="startday" id="startday">
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                </div>
+                <div class="info">End Date:</div>
+                <div class="info">
+                    <label for="endmonth">Choose Month:</label>
+                    <select name="endmonth" id="endmonth">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <label for="endday">&nbsp;&nbsp;Choose Day:</label>
+                    <select name="endday" id="endday">
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                </div>
+                <div class="info">Element your NEW content will go before (default is for a store page)</div>
+                <div class="info">
+                    <label for="isclass">Is it before an ID?</label>
+                    <select name="isclass" id="isclass">
+                        <option value="no" selected>no</option>
+                        <option value="yes">yes</option>
+                    </select>
+                </div>
+                <div class="info idoption">Whether you're placing before a class or an ID (default is a class)</div>
+                <div class="info idoption"><input id="element" type="text" placeholder="team-text-banner"></div>
+                <div class="info" style="border-top: 1px solid #f7f7f7; margin-top: 20px;"><br>Upload image into store directory</div>
+                <div class="info">Desktop Image --(DON'T FORGET EXTENSION!) (.jpg /.png)</div>
+                <div class="info"><input id="desktopimage" type="text" placeholder="fordham_clearance_desktopV1_1600x160.jpg"></div>
+                <div class="info">Mobile Image -- (DON'T FORGET EXTENSION!) (.jpg /.png)</div>
+                <div class="info"><input id="mobileimage" type="text" placeholder="fordham_clearance_mobileV1_750x430.jpg"></div>
+                <div class="info">Alt Tag</div>
+                <div class="info"><input id="alttag" type="text" placeholder="Fordham Road Clearance Sale"></div>
+            </div>
+        </div>
+        <div class="codebase">
+            &lt;script&gt;<br>
+            var startdate_dr = new Date(<span id="startyearval">'2024'</span>-<span id="startmonthval">4</span>-<span id="startdayval">27</span>);<br>
+            var enddate_dr = new Date(<span id="startyearval">'2024'</span>-<span id="endmonthval">5</span>-<span id="enddayval">07</span>);<br>
+            var today_dr = new Date();<br>
+            var mobileimaged = '<span id="mobileimageval">fordham_clearance_mobileV1_750x430.jpg?$staticlink$</span>';<br>
+            var desktopimaged = '<span id="dekstopimageval">fordham_clearance_desktopV1_1600x160.jpg?$staticlink$</span>'; <br>
+            var alttagd = '<span id="alttagval">Fordham Road Clearance Sale</span>';<br>
+            var beforelement_dr = '<span id="elementval">team-text-banner</span>';<br>
+            var isanID_dr = '<span id="isclassval">no</span>';<br>
+            &lt;/script&gt;<br>
+            &lt;script src="domotate2024v1.js?$staticlink$" type="text/javascript"&gt;<br>&lt;/script&gt;
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#startmonth').on('change', function() {
+                startmonth = $(this).val()
+                $('#startmonthval').text(startmonth)
+            })
+
+            $('#startday').on('change', function() {
+                startday = $(this).val()
+                $('#startdayval').text(startday)
+            })
+
+            $('#endmonth').on('change', function() {
+                endmonth = $(this).val()
+                $('#endmonthval').text(endmonth)
+            })
+
+            $('#endday').on('change', function() {
+                endday = $(this).val()
+                $('#enddayval').text(endday)
+            })
+
+            $('#isclass').on('change', function() {
+                isclass = $(this).val()
+                $('#isclassval').text(isclass)
+                if (isclass === 'yes') {
+                    $('.idoption').slideDown()
+                } else {
+                    $('.idoption').slideUp()
+                }
+            })
+
+            $('#desktopimage').on('input', function(e) {
+                $('#dekstopimageval').text($(this).val() + '?$staticlink$')
+            })
+
+            $('#mobileimage').on('input', function(e) {
+                $('#mobileimageval').text($(this).val() + '?$staticlink$')
+            })
+
+            $('#alttag').on('input', function(e) {
+                $('#alttagval').text($(this).val())
+            })
+
+            $('#element').on('input', function(e) {
+                $('#elementval').text($(this).val())
+            })
+        })
+    </script>
+</body>
+</html>
