@@ -1546,7 +1546,9 @@
 
         #driveContents ul {
             margin-bottom: 30px;
-            font-size: 88%
+            font-size: 88%;
+            width: 100% !important;
+
         }
 
         #sidetoolset {
@@ -1659,9 +1661,14 @@
         }
         
         #mes1 {
-            text-align: left; padding-top: 10px; margin-bottom: 10px; background-color: #334; margin-bottom: 0px; border-bottom: 1px solid #ccc;  width: 100%; padding-bottom: 5px; text-align: center;  
+            padding-top: 10px;
+            width: 100%;
+            text-align: center;
+            border-left: 1px solid #f7f7f7;
+            border-right: 1px solid #f7f7f7;
+            margin-top: -4px;
+            margin-bottom: -20px;
         }
-
 
         #mes2 {
             margin-top: 10px;

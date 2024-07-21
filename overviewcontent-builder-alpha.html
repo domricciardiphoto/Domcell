@@ -131,7 +131,7 @@
         .width33cg ul li {
             margin-bottom: 0px;
             max-width: 100px;
-            max-width: 192px;
+            max-width: 233px;
         }
 
         .width33cg ul li a {
@@ -327,24 +327,34 @@
 
 
     <style>
-        #driveContents {
-            font-family: 'Arial', sans-serif;
-            background: #f4f4f4;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 97%;
-        }
+#driveContents {
+    font-family: 'Arial', sans-serif;
+    background: transparent;
+    padding: 1%;
+    padding-top: 0px;
+    border-radius: 0px 0px 8px 8px;
+    border: 1px solid #f7f7f7;
+    border-top: none;
+    width: 98%;
+    background-image: url(assets/photo-placeholder-5-dark.jpg);
+}
 
-        .width33cg {
+.width33cg {
     float: left;
-    padding: 10px;
     box-sizing: border-box;
     max-height: 350px;
     overflow-y: auto;
     overflow-x: hidden;
-    padding-bottom: 0px;
-    padding-left: 0px;
+    width: 24%;
+    margin-right: 1%;
+    margin-top: 2%;
+    border: 1px solid #f7f7f7;
+    padding: 2%;
+    padding-top: 1%;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 10px 5px #000000;
+    box-shadow: inset 0 0 10px 5px #000000;
+    background-size: cover;
 }
 
         .width33cg ul li a {
@@ -1279,6 +1289,20 @@ background-image: url(assets/photo-placeholder-5.jpg);
             display: none;
             /* Initially hidden, show with JS as needed */
         }
+
+        .viewbuttonsclass {
+            background-color: #007BFF;
+    color: #fff;
+    padding: 5px 2px;
+    cursor: pointer;
+    margin: 1% 3% 1% 0px;
+    transition: background-color 0.2s ease;
+    width: 29.5%;
+    font-size: 0.8rem;
+    border-radius: 8px;
+}
+
+
     </style>
 
 
@@ -1288,6 +1312,39 @@ background-image: url(assets/photo-placeholder-5.jpg);
             <button class="secondmodal" id="wrapImage">Wrap Image with URL</button>
             <button class="secondmodal" id="deleteImage">Delete Image</button>
             <button class="secondmodal" id="closeModal">Cancel</button>
+        </div>
+    </div>
+
+
+    <div id="myModalcontentviewers" class="modal" style="display: none" >
+      
+        <div class="modal-content" style="position: relative;">
+            <div class="closeviewers" style="    position: absolute;
+            top: 7px;
+            right: 14px;
+            color: #fff;
+            cursor: pointer;">X</div>
+            <div class="width100c" style="float: none; min-height: 44px;">
+       <button class="openthematrix viewbuttonsclass"  mymatrix="Defaultview" >Default View</button>
+       <button class="openthematrix viewbuttonsclass"  mymatrix="mymatrix-dark" >Dark View</button>
+       <button class="openthematrix viewbuttonsclass"  mymatrix="mymatrix-hmobile">Explorer View</button>
+       
+    </div>
+    <div class="width100c" style="float: none;">
+        <button class="openthematrix viewbuttonsclass" mymatrix="mymatrix3">Code View</button>
+       <button class="openthematrix viewbuttonsclass" mymatrix="mymatrix-review">Desktop View</button>
+       <button id="reverse" class="viewbuttonsclass" >Reverse Interface</button>
+       
+       </div>
+
+       <div class="width100c" style="float: none; display: none;">
+        <button class="viewbuttonsclass" id="closeModalclose" style="    width: 94%;
+        margin-left: 2%;
+        background-color: red;">Close</button>
+
+       </div>
+
+
         </div>
     </div>
 
@@ -1351,6 +1408,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
         .customModal,
         #urlModal,
         #myModalcontent,
+        #myModalcontentviewers,
         #customModalhtag {
             z-index: 99999999999999;
             position: absolute;
@@ -1697,8 +1755,6 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
 
-
-
             <div class="newtopmenu" style="float: left; width: 100%; position: relative;">
 
 
@@ -1724,29 +1780,29 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
                         <div class="unselectable-text thetopbox mytoolsboxtop letbutton21 thestartbutton"
                             whatbox="Layout" style="width: 15% !important;height: 30px;padding: 0px;"><img
-                                style="width: 60%;" src="assets/rowicon.png" /></div>
+                                style="width: 60%;cursor: pointer;" src="assets/iconrows2025-w.png" /></div>
                         <div class="unselectable-text thetopbox mytoolsboxtop2 letbutton21" whatbox="Tools"
-                            style="width: 15% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
+                            style="width: 15% !important;height: 30px;padding: 0px; cursor: pointer;"><img style="width: 60%;"
                                 src="assets/compicon.png" /></div>
 
                         <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Rows"
-                            style="width: 15% !important;height: 30px;padding: 0px;display: none;"><img
-                                style="width: 56%;" src="assets/iconmodify.png" /></div>
+                            style="width: 15% !important;height: 30px;padding: 0px;display: none;cursor: pointer;"><img
+                                style="width: 60%;" src="assets/iconmodify.png" /></div>
 
                         <div class="unselectable-text thetopbox mytoolsboxtop4 letbutton21" whatbox="FileExplorer"
                             style="width: 15% !important;height: 30px;padding: 0px; "><img
-                                style="width: 56%; margin-left: 18%;" src="assets/iconcompase.png" /></div>
+                                style="width: 60%; margin-left: 18%;cursor: pointer;" src="assets/gear2024.png" /></div>
 
 
                         <div class="unselectable-text thetopbox mytoolsboxtop4 letbutton21"
                             style="width: 15% !important;height: 30px;padding: 0px; display: none; " whatbox="Blog">
-                            <img style="width: 56%; margin-left: 18%;" src="assets/iconblog.png" />
+                            <img style="width: 60%; margin-left: 18%;cursor: pointer;" src="assets/iconblog.png" />
                         </div>
 
                         <div class="width33c">
                             <img id="savetomemory"
                                 style="width: 60% !important;  max-width: 28px; float: left; cursor: pointer; "
-                                src="assets/saveme.png" title="Save to Memory" />
+                                src="assets/saveme2.png" title="Save to Memory" />
                         </div>
 
 
@@ -2298,7 +2354,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                 <div class="width100c" style="margin-bottom: 15px;">
                     <div class="width20c" style="width: auto; min-width: 10%; margin-left: 10px;">
                         <div class="width50c" style="max-width: 36px;">
-                            <img style="width: 87%; float: left;" src="assets/rowicon.png" title="Sort Rows">
+                            <img style="width: 87%; float: left;" src="assets/iconrows2025-w.png" title="Sort Rows">
                         </div>
                         <div class="width50c">
                             <input type="checkbox" id="mysort" name="mysort" class="mysort"
@@ -4306,20 +4362,25 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
                 <div class="width100c" id="bottommatrix">
+
                     <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix7"
                         style=" color: #fff !important;width: 14%;">
-                        <img src="assets/help.png" style="width: 30%;" title="Help">
+                        <img src="assets/help.png" style="width: 32%; margin-top: 3%;" title="Help">
                     </div>
 
-                    <div class="width30c advanced-Buttons openthematrix" mymatrix="mymatrix3"
-                        style=" color: #fff !important; width: 14%;">
-                        <img src="assets/advanded-code.png" style="width: 30%;" title="Advanced Code Editor">
+                    <div id="viewchange" class="width30c advanced-Buttons" style=" color: #fff !important; width: 16%">
+                        <img src="assets/binoculars.png" style="width: 30%; margin-top: 2%;" title="Layout Viewer">
                     </div>
+
+                    
+
+                 
 
                     <div id="whatsnewwb" class="width30c advanced-Buttons" style=" color: #fff !important; width: 16%">
-                        <img src="assets/whatsnew.png" style="width: 30%;" title="Whats New">
+                        <img src="assets/whatsnew.png" style="width: 33%;" title="Whats New">
                     </div>
 
+                  
 
 
 
@@ -4351,7 +4412,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
                         <select id="versionList"
-                            style="width: 14.1%; margin-bottom: 10px; float: right; border-radius: 5px; ">
+                            style="width: 19.1%; margin-bottom: 10px; float: right; border-radius: 5px; ">
 
                         </select>
                         <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2"
@@ -4385,29 +4446,13 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
 
-<div id="reverse" style="float: right;background-color: transparent;margin-right: 1%; cursor: pointer;    font-size: 0.55rem; text-decoration: underline;">
-<strong>Reverse</strong></div>
 
- <div class="openthematrix" mymatrix="mymatrix-review"
-                            style="float: right;background-color: transparent;margin-right: 1%;    font-size: 0.55rem; text-decoration: underline;">
-                            <strong>Desktop View</strong></div>
 
                       
 
- <div class="openthematrix" mymatrix="mymatrix3"
-                            style="float: right;background-color: transparent;   font-size: 0.55rem; text-decoration: underline;">
-                            <strong>Code View</strong></div>
-
-<div class="openthematrix" mymatrix="mymatrix-hmobile"
-                            style="float: right;background-color: transparent;font-size: 0.55rem;text-decoration: underline;">
-                            <strong>Explorer View</strong></div>
-
-<div class="openthematrix" mymatrix="mymatrix-dark"
-                            style="float: right;background-color: transparent;   font-size: 0.55rem; text-decoration: underline;">
-                            <strong>Dark View</strong></div>
 
 <div class="openthematrix" mymatrix="mymatrix6"
-                            style="float: right;  background-color: transparent; color: #fff;font-size: 0.55rem;text-decoration: underline;">
+                            style="color: #fff;font-size: 0.55rem;text-decoration: underline;">
                             <strong>Templetes</strong></div>
 
 
@@ -4459,7 +4504,15 @@ background-image: url(assets/photo-placeholder-5.jpg);
                 <div class="width100c" style="margin-top: 0px;">
                     <div id="driveContents"></div>
                     <div class="width100c"><button onclick="listAllDriveFiles()"
-                            style="float: right; margin-top: 5px;">Refresh
+                            style="padding: 5px 5px;
+                            border: none;
+                            background-color: #007BFF;
+                            color: white;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+                            margin-bottom: 10px;
+                            font-size: 0.875rem; float: right; margin-top: 5px;">Refresh
                             List</button></div>
 
 
@@ -4468,25 +4521,29 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
 
-            <div id="mymatrix9" class="width100c closethematrix" style="width: 94%; margin-left: 4%;">
+            <div id="mymatrix9" class="width100c closethematrix" style="width: 94%; margin-left: 4%; margin-top: -2%;">
                 <div class="width100c" style="margin-top: 10px;">
-                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins2" style="background-color: #007BFF;"
-                        ><img src="assets/loadproject.png" style="width: 50%; max-width: 50px;    margin-top: -8px;
-    " alt="Go Back"></button></div>
+                    <div class="width33cg" style="width: auto; margin-right: 10px; border: 0px; padding: 0px;"><button class="outsideplugins2" 
+                        ><img src="assets/loadproject.png" style="width: 34%; max-width: 40px; " alt="Go Back"></button></div>
 
-                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                    <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
+    border: 0px;"><button class="outsideplugins"
                             whaturl="bannersheduler-v2.html">Store Banner Schedular ></button></div>
 
-                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                    <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
+    border: 0px;"><button class="outsideplugins"
                             whaturl="roundmenu-beta.html">Rounded Menu Builder ></button></div>
 
-                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                    <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
+    border: 0px;"><button class="outsideplugins"
                             whaturl="https://www.willpeavy.com/tools/minifier/">HTML Minifer ></button></div>
 
-                            <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                            <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
+    border: 0px;"><button class="outsideplugins"
                                 whaturl="badgebuilder.html">Badge Builder ></button></div>
 
-                    <div class="width33cg" style="width: auto; margin-right: 10px;"><button class="outsideplugins"
+                    <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
+    border: 0px;"><button class="outsideplugins"
                             whaturl="https://www.story321.org/">AI Story Generator ></button></div>
 
 
@@ -4712,7 +4769,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                     padding-right: 128%;
                     background-color: transparent !important;
                     background-size: contain;
-                    background-image: url(assets/rowicon.png);
+                    background-image: url(assets/iconrows2025-w.png);
                     background-position: center;
                     background-repeat: no-repeat;">
                         <span style="opacity: 0;">Row</span>
@@ -4927,12 +4984,12 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
                 <button class="deleterow unselectable-text" title="Delete Row" style="text-align: center;
                 color: #fff;
-                width: 97%;
+                width: 100%;
                 margin-top: 3px;
                 margin-bottom: 6px;
                 padding-top: 6px;
-                padding-bottom: 5px;
-                padding-left: 11%;
+                padding-bottom: 13px;
+                padding-left: 17%;
                 padding-right: 110%;
                 background-color: transparent !important;
                 background-size: contain;
@@ -5591,7 +5648,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
     });
 
 $('#loadstartmenu').on('click' , function() {
-    $('#uniqueModal').fadeIn()
+    $("#uniqueModal").show("fold", {horizFirst: true}, 1000);
     $('.unique-box').show()
     if (parent && parent.document) {
         // Hide the element with id 'headerstart' in the parent document

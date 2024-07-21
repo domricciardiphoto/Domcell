@@ -978,182 +978,199 @@ $('.thetopbox').on('click', function () {
 })
 
 
-
+var darkvalue = 0
 
 $('.openthematrix').on('click', function () {
-    $('#results21aaa').hide()
-    $('#sidetoolset').hide()
-    $('#explorer2').hide()
     var whatmatrix = '#' + $(this).attr('mymatrix');
-    $('.closethematrix').hide();
-    $(whatmatrix).toggle();
-    $('.openthematrixopen').removeClass('openthematrixopen');
-    $(this).addClass('openthematrixopen');
-    $('.colorlegend').hide()
-
-
-    
     switch (whatmatrix) {
+        case '#mymatrix2':
+        $('img.loading-lazy').each(function () {
+            $(this).attr('src', $(this).attr('data-src'))
+           
+        })
+        $('#clearandrestartbuttonrefresh').click()
+    
+    
+      
+        break;
+        case '#mymatrix4':
+            var element = document.getElementById("pullthecode3");
+            if (element) {
+                element.style.removeProperty('width');
+                element.style.removeProperty('transform');
+            }
+    
+                $('#mymatrix4').slideDown()
+                $('#codeloaderpcrview').html($('#pullthecode2').html())
+                $('#programming, #resizable-div').hide();
+                $('#fullembedcodeddd').show()
+                $('#fullinterface').hide()
+                $('body').css('background-color', '#333')
+    
+                $('#codeloaderpcrview .readmoreclampdbutton').on('click', function () {
+                    $(this).prev('p.clampclassd').toggleClass('expanded');
+                })
+    
+    
+    
+                $('.readmoreclampdbutton').on('click', function () {
+                    var currentText = $(this).text();
+                    $('#' + ptagid).toggleClass("expanded");
+                    if (currentText === "Read More") {
+                        $(this).text('Read Less');
+                        return false
+                    } else {
+                        $(this).text('Read More');
+                        return false
+                    }
+                })
+    
+    
+    
+    
+                if (whatcheckingsizeview == 2) {
+                    $('#pcrmobileview').click()
+                }
+                break;
+        case '#mymatrix9':
+                    $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
+                    $('.colorlegend').hide()
+                    $('#versionList').parent('div').parent('div').hide()
+                    $('#programming').hide()
+                    $('#resizable-div').animate({'width' : '100%'})
+                    $('#explorer2').hide()
+                    $('#mymatrix9').show()
+                    $('#sidetoolset').hide()
+                    $('#mymatrix1').hide()
+                    break;
         case '#mymatrix1':
 
-        var element = document.getElementById("pullthecode3");
-        if (element) {
-            element.style.removeProperty('width');
-            element.style.removeProperty('transform');
-        }
+                    $('#explorer2').hide()
+                    $('#sidetoolset').hide()
+                    $('#mymatrix1').show()
+                    var element = document.getElementById("pullthecode3");
+                    if (element) {
+                        element.style.removeProperty('width');
+                        element.style.removeProperty('transform');
+                    }
+            
+            
+                        $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
+                        $('.colorlegend').hide()
+                        $('#hidemainmobile').hide()
+                        $('#thisisthefinalcode').show()
+                        $('#results21aaa').show()
+                      $('.codechanger').hide()
+            
+                        $('img.loading-lazy').each(function () {
+                            $(this).attr('src', '#')
+                        })
+            
+            
+                        $('#findthecode2').text($('#pullthecode2').html());
+            
+                        var divElement = document.getElementById('thisisthefinalcode');
+            
+            // Get the text content of the div
+            var textContent = divElement.textContent || divElement.innerText;
+            
+            // Get the character count
+            var characterCount = textContent.length;
+            
+                        $('#charactercount').html('Character Count ' + '<span style="color:yellow">'+characterCount+' </span>' + ' - Maximum ECP to Salesforce Characters is 16,000' )
+            
+                        var element = $('#findthecode2');
+                        var content = element.text();
+            
+                        // Define the words you want to remove
+                        var wordsToRemove = ['liveelement', 'in910', 'layoutpale', 'layoutpale50', 'liverow', ' ui-droppable', 'droppable',
+                            'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'layoutpale100',
+                            'layoutpale30', 'layoutpale20', 'layoutpale33', 'onblock', 'interedit', 'edit-mode', 'explorerselected',
+                            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
+                            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle','unselectable-text',
+                            'https://staging-na01-pcrichard.demandware.net', 'programoverflow', '/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c/'
+                        ];
+            
+                        // Loop through the words and remove them from the content
+                        wordsToRemove.forEach(function (word) {
+                            var pattern;
+                            if (word.startsWith('ui-')) {
+                                // Special pattern for strings starting with 'ui-', remove leading/trailing spaces in pattern
+                                pattern = new RegExp('(?:^|\\s)' + word + '(?=\\s|$)', 'g');
+                            } else {
+                                // Default pattern using word boundaries
+                                pattern = new RegExp('\\b' + word + '\\b', 'g');
+                            }
+                            content = content.replace(pattern, '');
+                        });
+            
+                        // Set the modified content back to the element
+                        element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '-').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'));
+            
+            
+            
+            
+                        finalcheck = $('#findthecode2').html()
+                        $('#findthecode2').html(finalcheck.replaceAll('α', 'a').replaceAll('×', 'x').replaceAll('–', '-').replaceAll('’', "'").replaceAll('class="width100c     ui-', 'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '--').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'))
+                        checkADACompliance();
+                        break;
+        case '#mymatrix6':
+            $('#explorer2').hide()
+            $('#mymatrix3').hide()
+                            $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
+                            $('#hidemainmobile').hide()
+                            $('.colorlegend').hide()
+                            $('#mymatrix6').show()
+                            $("#sidetoolset").hide()
+                            listAllDriveFiles();
+                            break;
+        case '#mymatrix-dark':
+if(darkvalue === 0) {
+    darkvalue = 1
+    $('#pullthecode2').css('filter', 'invert(100%)');
+} else {
+    darkvalue = 0
+    $('#pullthecode2').css('filter', 'invert(0%)');
+}
 
-
-            $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
-            $('.colorlegend').hide()
-            $('#hidemainmobile').hide()
-            $('#thisisthefinalcode').show()
-            $('#results21aaa').show()
-          $('.codechanger').hide()
-
-            $('img.loading-lazy').each(function () {
-                $(this).attr('src', '#')
-            })
-
-
-            $('#findthecode2').text($('#pullthecode2').html());
-
-            var divElement = document.getElementById('thisisthefinalcode');
-
-// Get the text content of the div
-var textContent = divElement.textContent || divElement.innerText;
-
-// Get the character count
-var characterCount = textContent.length;
-
-            $('#charactercount').html('Character Count ' + '<span style="color:yellow">'+characterCount+' </span>' + ' - Maximum ECP to Salesforce Characters is 16,000' )
-
-            var element = $('#findthecode2');
-            var content = element.text();
-
-            // Define the words you want to remove
-            var wordsToRemove = ['liveelement', 'in910', 'layoutpale', 'layoutpale50', 'liverow', ' ui-droppable', 'droppable',
-                'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'layoutpale100',
-                'layoutpale30', 'layoutpale20', 'layoutpale33', 'onblock', 'interedit', 'edit-mode', 'explorerselected',
-                'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
-                'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle','unselectable-text',
-                'https://staging-na01-pcrichard.demandware.net', 'programoverflow', '/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c/'
-            ];
-
-            // Loop through the words and remove them from the content
-            wordsToRemove.forEach(function (word) {
-                var pattern;
-                if (word.startsWith('ui-')) {
-                    // Special pattern for strings starting with 'ui-', remove leading/trailing spaces in pattern
-                    pattern = new RegExp('(?:^|\\s)' + word + '(?=\\s|$)', 'g');
-                } else {
-                    // Default pattern using word boundaries
-                    pattern = new RegExp('\\b' + word + '\\b', 'g');
-                }
-                content = content.replace(pattern, '');
-            });
-
-            // Set the modified content back to the element
-            element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '-').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'));
-
-
-
-
-            finalcheck = $('#findthecode2').html()
-            $('#findthecode2').html(finalcheck.replaceAll('α', 'a').replaceAll('×', 'x').replaceAll('–', '-').replaceAll('’', "'").replaceAll('class="width100c     ui-', 'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '--').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'))
-            checkADACompliance();
-            break;
-        case '#mymatrix2':
-            $('img.loading-lazy').each(function () {
-                $(this).attr('src', $(this).attr('data-src'))
-            })
-
-            $('#sidetoolset').show()
-            $('.stage2 , #pullthecode2 , #mobilepreview2').show();
-            $('.colorlegend').hide()
-            $('#hidemainmobile').show()
-            $('#explorer2').show()
-            $('#clearandrestartbuttonrefresh').click()
-            $('#results21aaa').hide()
-            break;
+        
+        break;
+        case '#mymatrix-hmobile':      
+        var newHeightForExplorer = $(window).height();
+        $('#mobilepreview2').hide()
+        $('#mymatrix6').hide()
+        $('#pullthecode2').hide().animate({'width' : '65%'}).fadeIn()
+        $('#resizable-div').hide().animate({'width' : '72%'}).fadeIn()
+        $('#explorer2').show().animate({'max-height': newHeightForExplorer}, 400);
+        $('#sidetoolset').show()
+        $('.stage2 , #pullthecode2 ').show();
+        $('#programming').show()
+        $('#explorer2').parent('div').show()
+        $('#mymatrix3').hide()
+        break;
         case '#mymatrix3':
 
-
-            $('#pullthecode2').show()
-            $('#beautycode').animate({'min-height' : $('#pullthecode2').height()-60})
-            $('#sidetoolset').show()
-            $('#programming').hide()
-            var html = $('#pullthecode3').html()
-            var html2 = $('#pullthecode3').html()
+             var html = $('#pullthecode3').html()
             var beautifiedHtml = beautifyHtml(html);
             $('#beautycode').val(beautifiedHtml)
+            $('#mymatrix3').css('max-height' , 'none')
+            $('#beautycode').css('max-height' , 'none')
+            $('#pullthecode2').css('max-height' , 'none')
+            $('#mymatrix6').hide()
+            $('#programming').hide()
+            $('#sidetoolset').hide()
+            $('#mymatrix2').hide()
             $('#mobilepreview2').parent('div').hide()
-            $('#pullthecode2').animate({'width' : '53%'})
-            $('#mymatrix3').animate({'width' : '40%'})
-            $('#resizable-div').animate({'width' : '100%'})
+            $('#resizable-div').delay(600).animate({'width' : '100%'})
+            
+            $('#pullthecode2').hide().animate({'width' : '53%'}).fadeIn()
+            $('#beautycode').animate({'min-height' : $('#pullthecode2').height()-60})
+            
+            $('#mymatrix3').hide().animate({'width' : '44%'}).fadeIn()
+            
             break;
-        case '#mymatrix4':
-
-
-
-        var element = document.getElementById("pullthecode3");
-        if (element) {
-            element.style.removeProperty('width');
-            element.style.removeProperty('transform');
-        }
-
-
-            $('#codeloaderpcrview').html($('#pullthecode2').html())
-            $('#programming, #resizable-div').hide();
-            $('#fullembedcodeddd').show()
-            $('#fullinterface').hide()
-            $('body').css('background-color', '#333')
-
-            $('#codeloaderpcrview .readmoreclampdbutton').on('click', function () {
-                $(this).prev('p.clampclassd').toggleClass('expanded');
-            })
-
-
-
-            $('.readmoreclampdbutton').on('click', function () {
-                var currentText = $(this).text();
-                $('#' + ptagid).toggleClass("expanded");
-                if (currentText === "Read More") {
-                    $(this).text('Read Less');
-                    return false
-                } else {
-                    $(this).text('Read More');
-                    return false
-                }
-            })
-
-
-
-
-            if (whatcheckingsizeview == 2) {
-                $('#pcrmobileview').click()
-            }
-            break;
-
-        case '#mymatrix5':
-            $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
-            break;
-        case '#mymatrix6':
-            $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
-            $('#hidemainmobile').hide()
-            $('.colorlegend').hide()
-            listAllDriveFiles();
-            break;
-            case '#mymatrix-dark':
-            $('#sidetoolset, #explorer2').show()
-            $('#pullthecode2').css('filter', 'invert(100%)');
-           
-            $('.stage2 , #pullthecode2 , #mobilepreview2').show();
-            var newHeightForExplorer = $(window).height() - 530;
-                $('#explorer2').animate({'max-height': newHeightForExplorer}, 400);
-            break;
-
-            case '#mymatrix-review':
-
+        case '#mymatrix-review':
+$('#sidetoolset').hide()
             $("#pullthecode2").resizable({
                 minWidth: 1024
             });
@@ -1178,44 +1195,23 @@ $('#mobilepreview2').parent('div').hide()
 $('#programming').hide()
 
             break;
-            case '#mymatrix-hmobile':
-              
-                var newHeightForExplorer = $(window).height();
-                $('#mobilepreview2').hide()
-                $('#pullthecode2').animate({'width' : '65%'})
-                $('#resizable-div').animate({'width' : '72%'})
-                $('#explorer2').show().animate({'max-height': newHeightForExplorer}, 400);
-                $('#sidetoolset').show()
-                $('.stage2 , #pullthecode2 ').show();
-                $('#programming').show()
-                $('#explorer2').parent('div').show()
-               
-
-
-                break;
-
-
-
         case '#mymatrix7':
-
             $('#outslidepluginsout').attr('src', 'help.html')
             $('#pluginsandtools').click()
             break;
-        case '#mymatrix9':
-            $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
-            $('.colorlegend').hide()
-            $('#versionList').parent('div').parent('div').hide()
-            $('#programming').hide()
-            $('#resizable-div').animate({'width' : '100%'})
-            break;
-
-    }
-
-    $('.openthematrixopen').on('click' , function() {
-        $('#firstmatrix').click()
-    })
-
-});
+            case '#Defaultview':
+               $('#myModalcontentviewers').click()
+                 //$('#firstmatrix').click()
+                 $('#pullthecode2').css('filter', 'invert(0%)').css('width' , '65%').css('min-height' , '650px');
+                 $('#sidetoolset').show()
+                 $('#explorer2').show().animate({'max-height' : '540px'})
+                 $('#mobilepreview2').show().parent('div').show()
+                 $('#mymatrix3').hide()
+                 $('#programming').show()
+                 $('#resizable-div').animate({'width' : '72%'})
+                break;
+                        } 
+})
 
 
 $('#showversioningmodal').on('click' , function() {
@@ -4588,6 +4584,30 @@ $(document).ready(function() {
             if (!$img.hasClass('promoimg21')) {
                 $img.addClass('promoimg21');
             }
+
+            $('.totalinternalcontent').find('a').not('.googledrive').not('.outsidelink').not('.list-button').on('click', function (e) {
+                e.preventDefault();
+                var target = $(e.target);
+                if (!target.is('a')) {
+                    target = target.closest('a');
+                }
+                e.preventDefault();
+                var wheretogo = target.attr('href');
+                gotothelinkfunction(wheretogo);
+        
+                $('#noBtn').off('click').on('click', function () {
+                    var target = $(e.target);
+                    if (!target.is('a')) {
+                        target = target.closest('a');
+                    }
+                    target.replaceWith(target.text());
+                    //runexplorer();
+                    document.getElementById("myModal").style.display = "none";
+                });
+            });
+
+
+
         });
 
         // Reset the search when the content changes
@@ -4668,7 +4688,7 @@ document.querySelectorAll('.unique-box').forEach(box => {
             case 'box1u':
                 // Action for box 1
                 $('div.thetopbox[whatbox="Layout"]').click()
-                $('#uniqueModal').fadeOut()
+                $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                 bringbackthehomebutton()  
                 break;
             case 'box2u':
@@ -4676,7 +4696,7 @@ document.querySelectorAll('.unique-box').forEach(box => {
                 $('div.openthematrix[mymatrix="mymatrix3"]').click()
                 $('div.thetopbox[whatbox="Tools"]').click()
                 $('#tools1').click()
-                document.getElementById('uniqueModal').style.display = 'none';
+                $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                 bringbackthehomebutton()
                 break;
             case 'box3u':
@@ -4688,7 +4708,7 @@ document.querySelectorAll('.unique-box').forEach(box => {
             case 'box4u':
                 $('#pluginsandtools').click()
                 $('button.outsideplugins[whaturl="bannersheduler-v2.html"]').click()
-                document.getElementById('uniqueModal').style.display = 'none';
+                $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                 bringbackthehomebutton()
                 break;
                 case 'box5u':
@@ -4697,19 +4717,19 @@ document.querySelectorAll('.unique-box').forEach(box => {
                     $('#tools4').click()
                     $('.addrow-click').click()
                     $('#addrow1x1a').delay(800).click()
-                    document.getElementById('uniqueModal').style.display = 'none';
+                    $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                     bringbackthehomebutton()
                  break;
                  case 'box6u':
                     $('div.openthematrix[mymatrix="mymatrix6"]').click()
-                    document.getElementById('uniqueModal').style.display = 'none';
+                    $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                     bringbackthehomebutton()
                  break;
 
                  case 'box7u':
                     //$('div.openthematrix[mymatrix="mymatrix6"]').click()
                     $('#fileimport').click()
-                    document.getElementById('uniqueModal').style.display = 'none';
+                    $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                     bringbackthehomebutton()
                  break;
 
@@ -4731,7 +4751,7 @@ document.querySelectorAll('.unique-box').forEach(box => {
 });
 
 $('.closemodalbutton').on('click' , function() {
-    $('#uniqueModal').fadeOut()
+    $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
     bringbackthehomebutton()
 })
 
@@ -4740,7 +4760,7 @@ $('.closeapllicationbutton').on('click' , function() {
 })
 
 $('.outsideplugins2').on('click' , function() {
-   $('#firstmatrix').click()
+    $('#clearandrestartbuttonrefresh').click()
 })
 
 
@@ -4804,3 +4824,12 @@ $(document).ready(function () {
         }
     });
 });
+
+
+$('#viewchange').on('click' , function() {
+    $('#myModalcontentviewers').show()
+})
+
+$('.closeviewers').on('click' , function() {
+    $('#myModalcontentviewers').hide()
+})
