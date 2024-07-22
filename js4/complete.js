@@ -981,6 +981,7 @@ $('.thetopbox').on('click', function () {
 var darkvalue = 0
 
 $('.openthematrix').on('click', function () {
+    $('#firstmatrix').css('color' ,'#fff').css('background-color' , '#333')
     var whatmatrix = '#' + $(this).attr('mymatrix');
     switch (whatmatrix) {
         case '#mymatrix2':
@@ -1153,18 +1154,18 @@ if(darkvalue === 0) {
              var html = $('#pullthecode3').html()
             var beautifiedHtml = beautifyHtml(html);
             $('#beautycode').val(beautifiedHtml)
-            $('#mymatrix3').css('max-height' , 'none')
-            $('#beautycode').css('max-height' , 'none')
-            $('#pullthecode2').css('max-height' , 'none')
+            $('#mymatrix3').css('max-height' , $(window).height()-70+'px')
+            $('#pullthecode2').css('max-height' , $(window).height()-80+'px')
+            $('#mymatrix3').css('height' , $(window).height()-70+'px').css('margin-top' , '0%')
+            $('#pullthecode2').css('height' , $(window).height()-80+'px')
             $('#mymatrix6').hide()
             $('#programming').hide()
             $('#sidetoolset').hide()
             $('#mymatrix2').hide()
             $('#mobilepreview2').parent('div').hide()
             $('#resizable-div').delay(600).animate({'width' : '100%'})
-            
             $('#pullthecode2').hide().animate({'width' : '53%'}).fadeIn()
-            $('#beautycode').animate({'min-height' : $('#pullthecode2').height()-60})
+            $('#beautycode').animate({'height' : $('#pullthecode2').height()-60})
             
             $('#mymatrix3').hide().animate({'width' : '44%'}).fadeIn()
             
@@ -1177,10 +1178,13 @@ $('#sidetoolset').hide()
             $("#pullthecode2").animate({
                 'max-height': '400'
             })
+            $("#pullthecode2").animate({
+                'min-height': '400'
+            })
 
             $("#mymatrix3").animate({
                 'width': '100%' , 'max-height' : '200px'
-            })
+            }).css('margin-top' , '0%')
 
             $("#beautycode").animate({
                'max-height' : '200px'
@@ -1200,6 +1204,7 @@ $('#programming').hide()
             $('#pluginsandtools').click()
             break;
             case '#Defaultview':
+                $('#firstmatrix').css('color' ,'#333').css('background-color' , '#fff')
                $('#myModalcontentviewers').click()
                  //$('#firstmatrix').click()
                  $('#pullthecode2').css('filter', 'invert(0%)').css('width' , '65%').css('min-height' , '650px');
@@ -1209,6 +1214,7 @@ $('#programming').hide()
                  $('#mymatrix3').hide()
                  $('#programming').show()
                  $('#resizable-div').animate({'width' : '72%'})
+                 $('#matrix3').hide()
                 break;
                         } 
 })
@@ -4693,11 +4699,19 @@ document.querySelectorAll('.unique-box').forEach(box => {
                 break;
             case 'box2u':
                 // Action for box 2
-                $('div.openthematrix[mymatrix="mymatrix3"]').click()
+                $('#mymatrix3').show().css('width' , '74%').css('margin-top' , '-40%')
                 $('div.thetopbox[whatbox="Tools"]').click()
                 $('#tools1').click()
                 $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                 bringbackthehomebutton()
+                $('#pullthecode3').css('max-height' , '438px').css('min-height' , '438px')
+                $('#beautycode').val($('#pullthecode3').html())
+                $('#mymatrix6').hide()
+                $('#pullthecode2').show()
+                $('#mymatrix3').show()
+                $('#sidetoolset').show()
+                $('#mobilepreview2').show()
+                $('#explorer2').show()
                 break;
             case 'box3u':
                 // Action for box 3
@@ -4730,6 +4744,7 @@ document.querySelectorAll('.unique-box').forEach(box => {
                     //$('div.openthematrix[mymatrix="mymatrix6"]').click()
                     $('#fileimport').click()
                     $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
+                    $('#mymatrix3').hide()
                     bringbackthehomebutton()
                  break;
 
@@ -4756,7 +4771,7 @@ $('.closemodalbutton').on('click' , function() {
 })
 
 $('.closeapllicationbutton').on('click' , function() {
-    parent.location.href = 'gettingstarted.html';
+    parent.location.href = 'gettingstarted-new.html';
 })
 
 $('.outsideplugins2').on('click' , function() {

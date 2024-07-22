@@ -1335,13 +1335,16 @@ background-image: url(assets/photo-placeholder-5.jpg);
        <button class="openthematrix viewbuttonsclass" mymatrix="mymatrix-review">Desktop View</button>
        <button id="reverse" class="viewbuttonsclass" >Reverse Interface</button>
        
+
+
+       
+
        </div>
 
        <div class="width100c" style="float: none; display: none;">
         <button class="viewbuttonsclass" id="closeModalclose" style="    width: 94%;
         margin-left: 2%;
         background-color: red;">Close</button>
-
        </div>
 
 
@@ -5416,6 +5419,8 @@ background-image: url(assets/photo-placeholder-5.jpg);
                 request.onerror = (event) => {
                     console.error('Revert version error:', event.target.errorCode);
                 };
+
+                $('#beautycode').val($('#pullthecode3').html())
             }
 
             function exportVersion(versionId, Versionnameexport) {
