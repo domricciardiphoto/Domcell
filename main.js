@@ -513,10 +513,6 @@ const menu = [
         click: whatsnew
       },
       {
-        label: "Domcell Documentation",
-        click: howtoos
-      },
-      {
         label: "Feature Request",
         click: featurerequest
       },

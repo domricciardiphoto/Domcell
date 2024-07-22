@@ -981,7 +981,6 @@ $('.thetopbox').on('click', function () {
 var darkvalue = 0
 
 $('.openthematrix').on('click', function () {
-    $('#firstmatrix').css('color' ,'#fff').css('background-color' , '#333')
     var whatmatrix = '#' + $(this).attr('mymatrix');
     switch (whatmatrix) {
         case '#mymatrix2':

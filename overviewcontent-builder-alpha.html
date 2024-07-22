@@ -1318,7 +1318,18 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
     <div id="myModalcontentviewers" class="modal" style="display: none" >
       
-        <div class="modal-content" style="position: relative;">
+        <div class="modal-content" style="    background-color: transparent;
+        margin: 15% auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 500px;
+        text-align: center;
+        color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        border: 1px solid #666;
+        position: relative !important;
+        min-height: 77px;">
             <div class="closeviewers" style="    position: absolute;
             top: 7px;
             right: 14px;
@@ -1333,7 +1344,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
     <div class="width100c" style="float: none;">
         <button class="openthematrix viewbuttonsclass" mymatrix="mymatrix3">Code View</button>
        <button class="openthematrix viewbuttonsclass" mymatrix="mymatrix-review">Desktop View</button>
-       <button id="reverse" class="viewbuttonsclass" >Reverse Interface</button>
+     
        
 
 
@@ -1341,11 +1352,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
        </div>
 
-       <div class="width100c" style="float: none; display: none;">
-        <button class="viewbuttonsclass" id="closeModalclose" style="    width: 94%;
-        margin-left: 2%;
-        background-color: red;">Close</button>
-       </div>
+    
 
 
         </div>
@@ -4371,6 +4378,12 @@ background-image: url(assets/photo-placeholder-5.jpg);
                         <img src="assets/help.png" style="width: 32%; margin-top: 3%;" title="Help">
                     </div>
 
+
+
+                    <div id="whatsnewwb" class="width30c advanced-Buttons" style=" color: #fff !important; width: 16%">
+                        <img src="assets/annoucement.png" style="width: 33%;" title="Whats New">
+                    </div>
+
                     <div id="viewchange" class="width30c advanced-Buttons" style=" color: #fff !important; width: 16%">
                         <img src="assets/binoculars.png" style="width: 30%; margin-top: 2%;" title="Layout Viewer">
                     </div>
@@ -4379,12 +4392,12 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
                  
 
-                    <div id="whatsnewwb" class="width30c advanced-Buttons" style=" color: #fff !important; width: 16%">
-                        <img src="assets/whatsnew.png" style="width: 33%;" title="Whats New">
-                    </div>
+                    
 
                   
-
+                    <div id="reverse" class="width30c advanced-Buttons" style=" color: #fff !important; width: 16%">
+                        <img src="assets/arrowsinterface.png" style="width: 33%;" title="Reverse Interface">
+                    </div>
 
 
 
@@ -4418,8 +4431,12 @@ background-image: url(assets/photo-placeholder-5.jpg);
                             style="width: 19.1%; margin-bottom: 10px; float: right; border-radius: 5px; ">
 
                         </select>
-                        <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2"
-                            style="margin-left: 0.05%;">Workspace</div>
+
+                       <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2" style="margin-left: 0.05%;background-color: transparent !important;max-width: 22px;"><img src="assets/homehouse.png" alt="Home" style="
+    width: 102%;
+"></div>
+
+
                         <div class="openthematrix" mymatrix="mymatrix4">Check on PCR</div>
                         <div id="pluginsandtools" class="openthematrix" mymatrix="mymatrix9">
                             <strong>Plugins &
@@ -5264,7 +5281,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
     <script src="js3/listmaker.js"></script>
  -->
 
-    <script src="js4/complete.js"></script>
+    <script src="js4/complete.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const dbName = 'ProjectVersionsDB';
