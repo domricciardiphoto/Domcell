@@ -712,9 +712,7 @@
             display: none;
         }
 
-        .dark-theme.fr-box.fr-basic .fr-element {}
 
-        .dark-theme.fr-box.fr-basic.fr-top .fr-wrapper {}
 
         #results21aaa {
             display: none;
@@ -881,6 +879,29 @@ background-image: url(assets/photo-placeholder-5.jpg);
         float: right;
         margin: 0 0 1.25rem 1.25rem;
     }
+}
+
+
+
+.bottomclassviewers {
+    width: 72%;
+    margin-top: -41%;
+    margin-left: 1.5%;
+    position: absolute;
+    bottom: 6px;
+}
+
+
+@media (max-width: 1091px) {
+    #resizable-div {
+    width: 71%;
+}
+}
+
+@media (max-width: 1071px) {
+    #resizable-div {
+    width: 70%;
+}
 }
 
 
@@ -1197,6 +1218,11 @@ background-image: url(assets/photo-placeholder-5.jpg);
             float: right;
             margin-right: 0%;
         }
+
+
+
+
+
     </style>
 
 
@@ -1293,11 +1319,11 @@ background-image: url(assets/photo-placeholder-5.jpg);
         .viewbuttonsclass {
             background-color: #007BFF;
     color: #fff;
-    padding: 5px 2px;
+    padding: 8px 8px;
     cursor: pointer;
     margin: 1% 3% 1% 0px;
     transition: background-color 0.2s ease;
-    width: 29.5%;
+    width: 45.5%;
     font-size: 0.8rem;
     border-radius: 8px;
 }
@@ -1336,14 +1362,13 @@ background-image: url(assets/photo-placeholder-5.jpg);
             color: #fff;
             cursor: pointer;">X</div>
             <div class="width100c" style="float: none; min-height: 44px;">
-       <button class="openthematrix viewbuttonsclass"  mymatrix="Defaultview" >Default View</button>
        <button class="openthematrix viewbuttonsclass"  mymatrix="mymatrix-dark" >Dark View</button>
-       <button class="openthematrix viewbuttonsclass"  mymatrix="mymatrix-hmobile">Explorer View</button>
+       <button id="ExplorerView" class="openthematrix viewbuttonsclass"  mymatrix="mymatrix-hmobile">Explorer View</button>
        
     </div>
     <div class="width100c" style="float: none;">
         <button class="openthematrix viewbuttonsclass" mymatrix="mymatrix3">Code View</button>
-       <button class="openthematrix viewbuttonsclass" mymatrix="mymatrix-review">Desktop View</button>
+       <button id="DesktopView" class="openthematrix viewbuttonsclass" mymatrix="mymatrix-review">Desktop View</button>
      
        
 
@@ -1555,14 +1580,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                     background: #555;
                 }
 
-                #programming {
-                    /*
-    max-height: 836px;
-    overflow-y: auto;
-    overflow-x: hidden;
 
-    */
-                }
 
                 .internalscroller {
                     max-height: none;
@@ -1665,6 +1683,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                 }
 
                 input[type="range"] {
+                    appearance: none;
                     -webkit-appearance: none;
                     width: 93%;
                     background: #444;
@@ -4401,6 +4420,10 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
 
+                  <div id="hidemytabs" class="width30c advanced-Buttons" style=" color: #fff !important; width: 16%">
+                        <img src="assets/hidetabs.png" style="width: 33%;" title="Hide Tabs">
+                    </div>
+
                 </div>
 
 
@@ -5281,7 +5304,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
     <script src="js3/listmaker.js"></script>
  -->
 
-    <script src="js4/complete.min.js"></script>
+    <script src="js4/complete.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const dbName = 'ProjectVersionsDB';
@@ -5636,7 +5659,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
             "A journey of a thousand miles begins with a single step.",
             "Rome wasn't built in a day.",
             "The journey is the reward.",
-            "The man who moves a mountain begins by carrying away small stones.",
+            "The person who moves a mountain begins by carrying away small stones.",
             "Little by little, one travels far.",
             "Great things are not done by impulse, but by a series of small things brought together.",
             "Success is the sum of small efforts, repeated day in and day out.",
@@ -5646,7 +5669,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
             "Small deeds done are better than great deeds planned.",
             "Big journeys begin with small steps.",
             "The smallest deed is better than the greatest intention.",
-            "By the yard, it's hard; but inch by inch, anything's a cinch.",
+            "By the yard, tasks are hard; but inch by inch, anything's a cinch.",
             "One step at a time.",
             "Little drops of water make a mighty ocean.",
             "The distance is nothing; it is only the first step that is difficult.",
@@ -5660,7 +5683,6 @@ background-image: url(assets/photo-placeholder-5.jpg);
             "The journey of a thousand miles begins with one step.",
             "Tiny steps will take you to the finish line.",
             "The way to get started is to quit talking and begin doing.",
-            "Small strokes fell great oaks.",
             "Success is a series of small wins.",
             "The difference between ordinary and extraordinary is that little extra."
         ];

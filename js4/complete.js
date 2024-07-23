@@ -981,6 +981,7 @@ $('.thetopbox').on('click', function () {
 var darkvalue = 0
 
 $('.openthematrix').on('click', function () {
+    $('#myModalcontentviewers').hide()
     var whatmatrix = '#' + $(this).attr('mymatrix');
     switch (whatmatrix) {
         case '#mymatrix2':
@@ -988,10 +989,21 @@ $('.openthematrix').on('click', function () {
             $(this).attr('src', $(this).attr('data-src'))
            
         })
-        $('#clearandrestartbuttonrefresh').click()
-    
-    
       
+        $('#mobilepreview2').hide()
+        $('#mymatrix6').hide()
+        $('#pullthecode2').animate({'width' : '65%'}).show().css('min-height' , $(document).height() -100).css('max-height' , $(document).height() -100)
+        $('#resizable-div').hide().animate({'width' : '72%'}).show()
+        $('#sidetoolset').show()
+        $('.stage2 , #pullthecode2 ').show();
+        $('#programming').show()
+        $('#explorer2').parent('div').show()
+        $('#mymatrix3').hide()
+        $('#explorer2').css('max-height' ,'500px')
+        $('#mobilepreview2').show()
+        $('#mymatrix1').hide()
+        $('#explorer2').show()
+        $('#mymatrix6').hide()
         break;
         case '#mymatrix4':
             var element = document.getElementById("pullthecode3");
@@ -1005,6 +1017,7 @@ $('.openthematrix').on('click', function () {
                 $('#programming, #resizable-div').hide();
                 $('#fullembedcodeddd').show()
                 $('#fullinterface').hide()
+                $('#mymatrix6').hide()
                 $('body').css('background-color', '#333')
     
                 $('#codeloaderpcrview .readmoreclampdbutton').on('click', function () {
@@ -1042,10 +1055,13 @@ $('.openthematrix').on('click', function () {
                     $('#mymatrix9').show()
                     $('#sidetoolset').hide()
                     $('#mymatrix1').hide()
+                    $('#mymatrix3').hide().removeClass('bottomclassviewers')
+
                     break;
         case '#mymatrix1':
-
+                    $('#mymatrix6').hide()
                     $('#explorer2').hide()
+                    $('#mymatrix3').removeClass('bottomclassviewers').hide()
                     $('#sidetoolset').hide()
                     $('#mymatrix1').show()
                     var element = document.getElementById("pullthecode3");
@@ -1153,7 +1169,7 @@ if(darkvalue === 0) {
              var html = $('#pullthecode3').html()
             var beautifiedHtml = beautifyHtml(html);
             $('#beautycode').val(beautifiedHtml)
-            $('#mymatrix3').css('max-height' , $(window).height()-70+'px')
+            $('#mymatrix3').css('max-height' , $(window).height()-70+'px').removeClass('bottomclassviewers')
             $('#pullthecode2').css('max-height' , $(window).height()-80+'px')
             $('#mymatrix3').css('height' , $(window).height()-70+'px').css('margin-top' , '0%')
             $('#pullthecode2').css('height' , $(window).height()-80+'px')
@@ -1202,8 +1218,7 @@ $('#programming').hide()
             $('#outslidepluginsout').attr('src', 'help.html')
             $('#pluginsandtools').click()
             break;
-            case '#Defaultview':
-                $('#firstmatrix').css('color' ,'#333').css('background-color' , '#fff')
+
                $('#myModalcontentviewers').click()
                  //$('#firstmatrix').click()
                  $('#pullthecode2').css('filter', 'invert(0%)').css('width' , '65%').css('min-height' , '650px');
@@ -4689,6 +4704,7 @@ function bringbackthehomebutton() {
 
 document.querySelectorAll('.unique-box').forEach(box => {
     box.addEventListener('click', function() {
+
         switch (this.id) {
             case 'box1u':
                 // Action for box 1
@@ -4698,7 +4714,8 @@ document.querySelectorAll('.unique-box').forEach(box => {
                 break;
             case 'box2u':
                 // Action for box 2
-                $('#mymatrix3').show().css('width' , '74%').css('margin-top' , '-40%')
+               
+                $('#mymatrix3').addClass('bottomclassviewers').show()
                 $('div.thetopbox[whatbox="Tools"]').click()
                 $('#tools1').click()
                 $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
@@ -4847,3 +4864,78 @@ $('#viewchange').on('click' , function() {
 $('.closeviewers').on('click' , function() {
     $('#myModalcontentviewers').hide()
 })
+
+
+
+
+
+let db;
+const request = indexedDB.open('MarginTopDB', 1);
+
+request.onupgradeneeded = function(event) {
+    db = event.target.result;
+    const store = db.createObjectStore('positions', { keyPath: 'id' });
+};
+
+request.onsuccess = function(event) {
+    db = event.target.result;
+    loadPositions();
+};
+
+request.onerror = function(event) {
+    console.error('Database error:', event.target.errorCode);
+};
+
+function savePositions(elements) {
+    const transaction = db.transaction(['positions'], 'readwrite');
+    const store = transaction.objectStore('positions');
+
+    elements.each(function(index) {
+        const id = $(this).attr('id') || `embed-${index}`; // Ensure each element has a unique ID
+        const position = {
+            id: id,
+            marginTop: $(this).css('margin-top')
+        };
+        store.put(position);
+    });
+}
+
+function loadPositions() {
+    const transaction = db.transaction(['positions'], 'readonly');
+    const store = transaction.objectStore('positions');
+    const request = store.getAll();
+
+    request.onsuccess = function(event) {
+        const positions = event.target.result;
+        positions.forEach(position => {
+            const element = $(parent.document.getElementById(position.id));
+            if (element.length) {
+                element.css('margin-top', position.marginTop);
+            }
+        });
+    };
+
+    request.onerror = function(event) {
+        console.error('Database error:', event.target.errorCode);
+    };
+}
+
+$('#hidemytabs').on('click', function() {
+    const headerElements = $(parent.document.getElementsByTagName('embed')); // wrap with jQuery
+    headerElements.each(function() {
+        const currentMarginTop = $(this).css('margin-top');
+        if (currentMarginTop === '-39px' || currentMarginTop === '-39px') {
+            $(this).animate({ 'margin-top': '0px' }, 500);
+            $('#uniqueModal').css('margin-top' , '0px')
+
+        } else {
+            $(this).animate({ 'margin-top': '-39px' }, 500);
+            $('#uniqueModal').css('margin-top' , '33px')
+        }
+    });
+
+    // Save positions after animation
+    setTimeout(function() {
+        savePositions(headerElements);
+    }, 600); // Ensure it runs after the animation completes
+});
