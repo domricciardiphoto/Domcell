@@ -472,9 +472,10 @@ $(document).on('contextmenu', '.indent, .indentselected', function(e) {
     $('.cmenulist').hide()
     $('#converterh').hide()
     $('#converterh').show()
+    $('#loadimage').hide()
     if ($(this).data('tag') === 'IMG') {
         $('#contextMenu #edit, #contextMenu #component, #contextMenu #empty, #contextMenu #textarea , #converterh').hide();
-
+         $('#loadimage').show()
     } else if ($(this).data('tag') === 'COMPONENT') {
         $('#contextMenu #component , #contextMenu #textarea, #converterh').hide();
         $('.cmenulist').hide()
@@ -989,7 +990,7 @@ $('.openthematrix').on('click', function () {
             $(this).attr('src', $(this).attr('data-src'))
            
         })
-      
+      $('#results21aaa').hide()
         $('#mobilepreview2').hide()
         $('#mymatrix6').hide()
         $('#pullthecode2').animate({'width' : '65%'}).show().css('min-height' , $(document).height() -100).css('max-height' , $(document).height() -100)
@@ -1004,6 +1005,7 @@ $('.openthematrix').on('click', function () {
         $('#mymatrix1').hide()
         $('#explorer2').show()
         $('#mymatrix6').hide()
+        $('.codechanger').show()
         break;
         case '#mymatrix4':
             var element = document.getElementById("pullthecode3");
@@ -1104,7 +1106,7 @@ $('.openthematrix').on('click', function () {
                             'layoutpale30', 'layoutpale20', 'layoutpale33', 'onblock', 'interedit', 'edit-mode', 'explorerselected',
                             'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
                             'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle','unselectable-text',
-                            'https://staging-na01-pcrichard.demandware.net', 'programoverflow', '/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c/'
+                            'https://staging-na01-pcrichard.demandware.net', 'programoverflow', '/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c/' , 'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw543ecf73'
                         ];
             
                         // Loop through the words and remove them from the content
@@ -1139,6 +1141,7 @@ $('.openthematrix').on('click', function () {
                             $('#mymatrix6').show()
                             $("#sidetoolset").hide()
                             listAllDriveFiles();
+                            
                             break;
         case '#mymatrix-dark':
 if(darkvalue === 0) {
@@ -1166,10 +1169,10 @@ if(darkvalue === 0) {
         break;
         case '#mymatrix3':
 
-             var html = $('#pullthecode3').html()
+            var html = $('#pullthecode3').html()
             var beautifiedHtml = beautifyHtml(html);
             $('#beautycode').val(beautifiedHtml)
-            $('#mymatrix3').css('max-height' , $(window).height()-70+'px').removeClass('bottomclassviewers')
+            $('#mymatrix3').css('max-height' , $(window).height()-70+'px').removeClass('bottomclassviewers').css('width' , '44%').css('position' , 'relative')
             $('#pullthecode2').css('max-height' , $(window).height()-80+'px')
             $('#mymatrix3').css('height' , $(window).height()-70+'px').css('margin-top' , '0%')
             $('#pullthecode2').css('height' , $(window).height()-80+'px')
@@ -1183,7 +1186,7 @@ if(darkvalue === 0) {
             $('#beautycode').animate({'height' : $('#pullthecode2').height()-60})
             
             $('#mymatrix3').hide().animate({'width' : '44%'}).fadeIn()
-            
+            $('#beautycode').animate({'min-height' : $(document).height() - 145}).animate({'max-height' : $(document).height() - 145})
             break;
         case '#mymatrix-review':
 $('#sidetoolset').hide()
@@ -2404,6 +2407,13 @@ function deleteHighlightedText() {
     redoStack = []; // Clear redoStack as the future path is reset
 }
 
+function undoChange() {
+    if (undoStack.length > 0) {
+        const lastState = undoStack.pop();
+        redoStack.push($('#beautycode').html()); // Push current state to redoStack before undoing
+        $('#beautycode').html(lastState); // Adjust selector as needed
+    }
+}
 
 
 
@@ -4714,13 +4724,19 @@ document.querySelectorAll('.unique-box').forEach(box => {
                 break;
             case 'box2u':
                 // Action for box 2
-               
-                $('#mymatrix3').addClass('bottomclassviewers').show()
+               $('#mymatrix3').css('position' , 'absolute').css('height' , '428px').css('width' , '72%')
+                $('#pullthecode2').animate({'min-height' : $(document).height() / 2})
+                $('#beautycode').animate({'min-height' : $(document).height() / 2 -200})
+
+                $('#pullthecode2').animate({'max-height' : $(document).height() / 2})
+                $('#beautycode').animate({'max-height' : $(document).height() / 2 -200})
+
+                $('#mymatrix3').addClass('bottomclassviewers').css('wdith' , '73%').show()
                 $('div.thetopbox[whatbox="Tools"]').click()
                 $('#tools1').click()
                 $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                 bringbackthehomebutton()
-                $('#pullthecode3').css('max-height' , '438px').css('min-height' , '438px')
+
                 $('#beautycode').val($('#pullthecode3').html())
                 $('#mymatrix6').hide()
                 $('#pullthecode2').show()
@@ -4728,6 +4744,7 @@ document.querySelectorAll('.unique-box').forEach(box => {
                 $('#sidetoolset').show()
                 $('#mobilepreview2').show()
                 $('#explorer2').show()
+               
                 break;
             case 'box3u':
                 // Action for box 3
@@ -4927,7 +4944,8 @@ $('#hidemytabs').on('click', function() {
         if (currentMarginTop === '-39px' || currentMarginTop === '-39px') {
             $(this).animate({ 'margin-top': '0px' }, 500);
             $('#uniqueModal').css('margin-top' , '0px')
-
+            var tabElementstart = parent.document.getElementById('add-tab');
+            tabElementstart.style.display = 'block'
         } else {
             $(this).animate({ 'margin-top': '-39px' }, 500);
             $('#uniqueModal').css('margin-top' , '33px')
@@ -4938,4 +4956,74 @@ $('#hidemytabs').on('click', function() {
     setTimeout(function() {
         savePositions(headerElements);
     }, 600); // Ensure it runs after the animation completes
+});
+
+
+
+
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('pullthecode2');
+    let history = [];
+    let historyIndex = -1;
+  
+    // Save the current state of the container to the history
+    function saveHistory() {
+      // If the current history index is not at the latest entry, remove all entries after the current index
+      if (historyIndex < history.length - 1) {
+        history = history.slice(0, historyIndex + 1);
+      }
+      history.push(container.innerHTML);
+      historyIndex = history.length - 1;
+    }
+  
+    // Undo the last change
+    function undo() {
+      if (historyIndex > 0) {
+        historyIndex--;
+        container.innerHTML = history[historyIndex];
+      }
+    }
+  
+    // Redo the undone change (if any)
+    function redo() {
+      if (historyIndex < history.length - 1) {
+        historyIndex++;
+        container.innerHTML = history[historyIndex];
+      }
+    }
+  
+    // Initialize the history with the current state
+    saveHistory();
+  
+    // Add event listener for the container input to save history on changes
+    container.addEventListener('input', saveHistory);
+  
+    // Add event listener for keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'z') {
+        e.preventDefault();
+        undo();
+      } else if (e.ctrlKey && e.key === 'y') {
+        e.preventDefault();
+        redo();
+      }
+    });
+  });
+
+  $('#pullthecode2').on('input', function() {
+    $('#beautycode').val($('#pullthecode2').html());
+  });
+
+  $('#loadimage').on('click', function() {
+    $('.explorerselected').each(function() {
+        const currentSrc = $(this).attr('src');
+        const baseUrl = 'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw543ecf73';
+        // Check if the currentSrc already contains the baseUrl
+        if (!currentSrc.includes(baseUrl)) {
+            const newSrc = baseUrl + currentSrc;
+            $(this).attr('src', newSrc).addClass('promoimg21');
+        }
+    });
+    $('#beautycode').val($('#pullthecode2').html());
 });

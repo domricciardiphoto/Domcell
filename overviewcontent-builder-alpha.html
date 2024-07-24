@@ -25,9 +25,8 @@
     <link rel="stylesheet" href="css/listbuilder.css">
 
 
-   
-
-
+ 
+ 
 
 
     <style>
@@ -744,7 +743,7 @@
     position: fixed;
     z-index: 999999999999999999999999999;
     left: 0;
-    top: 0;
+    top: 0px;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -865,14 +864,6 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
 <style>
-.article-details-page .wp-block-image {
-    margin: 1.875rem auto;
-}
-.article-details-page figure, .article-details-page img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
 
 @media (min-width: 769px) {
     .article-details-page .alignright {
@@ -904,6 +895,12 @@ background-image: url(assets/photo-placeholder-5.jpg);
 }
 }
 
+
+@media (max-width: 1368px) {
+    #fullinterface {
+        zoom: 0.9;
+}
+}
 
 </style>
 
@@ -1090,6 +1087,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
             <li id="converterh" style="background-color: orangered; color: #fff; text-align: center; display: none;">H
                 Converter Tag</li>
             <li id="edit" style="background-color: darkgreen; color: #fff; text-align: center;">Edit</li>
+            <li id="loadimage" style="text-align: center; background-color: purple;">Load Image</li>
             <li id="duplicate" style="text-align: center;">Duplicate</li>
             <li id="component" style="background-color: yellow;text-align: center;">(Row) Make Active</li>
             <li id="textarea" style="background-color: black; color: yellow;text-align: center;">Exit Edit Mode</li>
@@ -1776,6 +1774,30 @@ background-image: url(assets/photo-placeholder-5.jpg);
         transform-origin: top left;
     }
 
+
+
+    
+.wp-block-image {
+    margin: 1.875rem auto;
+}
+ .alignright {
+    float: right;
+        margin: 0 0 1.25rem 1.25rem;
+        padding: 0;
+ }
+
+ .alignleft {
+    float: left;
+    margin: 0 1.25rem 1.25rem 0;
+    padding: 0;
+ }
+
+ .alignright img ,.alignleft img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    display: block;
+ }
 
 </style>
 
@@ -4359,7 +4381,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
             <div class="width100c toolboxhide codechanger"
-                style="margin-top: 5px;  padding: 5px; width: 97%; padding-bottom: 5px;">
+                style="margin-top: 0px;  padding: 5px; width: 97%; padding-bottom: 5px;">
                 <div class="width100c unselectable-text" style="margin-bottom: 5px; padding-left: 15px;">
 
                     <div class="width60c " style="font-size: 90% !important;">
@@ -5065,7 +5087,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
             </div>
           
 
-            <div id="pullthecode2" class="width50c layout2" style="border-radius: 0px 10px 10px; -webkit-box-shadow:inset 0 0 0px 3px #BDBDBD;
+            <div id="pullthecode2" contenteditable="true" class="width50c layout2" style="border-radius: 0px 10px 10px; -webkit-box-shadow:inset 0 0 0px 3px #BDBDBD;
             box-shadow:inset 0 0 5px 5px #BDBDBD;">
 
                 <div class="width100c">
@@ -5287,22 +5309,6 @@ background-image: url(assets/photo-placeholder-5.jpg);
     </div>
 
 
-    <!--
-    <script src="js2/explorer-beta2.js"></script>
-    <script src="js2/explorer-beta2-workspace.js"></script>
-    <script src="js2/progamscript-beta.js"></script>
-    <script src="js2/applicationfunctions.js"></script>
-
-
-    <script src="js3/explorer-beta2.js"></script>
-    <script src="js3/primary.js"></script>
-    <script src="js3/internalfunctions.js"></script>
-    <script src="js3/imagefunctions.js"></script>
-    <script src="js3/imports.js"></script>
-    <script src="js3/saverestore.js"></script>
-    <script src="js3/videoconverter.js"></script>
-    <script src="js3/listmaker.js"></script>
- -->
 
     <script src="js4/complete.js"></script>
     <script>
@@ -5692,18 +5698,34 @@ background-image: url(assets/photo-placeholder-5.jpg);
     });
 
 $('#loadstartmenu').on('click' , function() {
+    
+   
     $("#uniqueModal").show("fold", {horizFirst: true}, 1000);
     $('.unique-box').show()
     if (parent && parent.document) {
         // Hide the element with id 'headerstart' in the parent document
         var headerElement = parent.document.getElementById('headerstart');
+        var tabElementstart = parent.document.getElementById('add-tab');
         if (headerElement) {
             headerElement.style.display = 'none';
+            tabElementstart.style.display = 'none'
         }
     }
 })
 
+
+
+
+
+
+
+
+
+
+
+
 </script>
+
 
 
 
