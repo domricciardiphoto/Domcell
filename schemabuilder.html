@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to JSON Article Schema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+        #outputtotal {
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            max-height: 300px;
+            color: #fff;
+            text-wrap: wrap;
+        }
+        #outputtotal pre {
+            text-wrap: pretty;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>HTML to JSON Article Schema Converter</h2>
+<textarea id="htmlInput" placeholder="Paste your HTML here..."></textarea>
+<button onclick="generateJsonSchema()">Generate JSON Schema</button>
+
+<h3>Generated JSON Schema:</h3>
+
+<div id="outputtotal"><span>&lt;script type="application/ld+json"&gt;</span><pre id="output"></pre><span>&lt;/script&gt;</span></div>
+
+<script>
+function generateJsonSchema() {
+    const htmlInput = document.getElementById('htmlInput').value;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlInput, 'text/html');
+    const schema = {
+        article: {
+            title: "", // You can extract title from your HTML if needed
+            content: []
+        }
+    };
+
+    const bodyChildren = doc.body.querySelectorAll('*');
+    schema.article.content = parseHtmlElements(bodyChildren);
+
+    document.getElementById('output').textContent = JSON.stringify(schema, null, 2);
+}
+
+function parseHtmlElements(elements) {
+    const content = [];
+    elements.forEach(element => {
+        const elementSchema = createElementSchema(element);
+        if (elementSchema) {
+            content.push(elementSchema);
+        }
+    });
+    return content;
+}
+
+function createElementSchema(element) {
+    let schema = null;
+    switch (element.tagName.toLowerCase()) {
+        case 'p':
+            schema = {
+                type: 'paragraph',
+                text: element.textContent.trim()
+            };
+            break;
+        case 'img':
+            schema = {
+                type: 'image',
+                src: element.getAttribute('data-src'),
+                alt: element.getAttribute('alt')
+            };
+            break;
+        case 'h2':
+        case 'h3':
+        case 'h4':
+        case 'h5':
+        case 'h6':
+            schema = {
+                type: 'heading',
+                level: parseInt(element.tagName.charAt(1)),
+                text: element.textContent.trim()
+            };
+            break;
+        case 'ul':
+            schema = {
+                type: 'list',
+                items: []
+            };
+            element.querySelectorAll('li').forEach(li => {
+                schema.items.push({
+                    type: 'listItem',
+                    text: li.textContent.trim()
+                });
+            });
+            break;
+        case 'div':
+            if (element.className.includes('wp-block-image')) {
+                const img = element.querySelector('img');
+                if (img) {
+                    schema = {
+                        type: 'image',
+                        src: img.getAttribute('src'),
+                        alt: img.getAttribute('alt')
+                    };
+                }
+            }
+            break;
+        default:
+            // Ignore unknown elements
+            break;
+    }
+    return schema;
+}
+</script>
+
+</body>
+</html>

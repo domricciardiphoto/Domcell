@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to JSON Schema Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+        #outputtotal {
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            max-height: 300px;
+            color: #000;
+        }
+        button {
+            margin-top: 10px;
+        }
+        select {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>HTML to JSON Schema Converter</h2>
+<textarea id="htmlInput" placeholder="Paste your HTML here..."></textarea>
+<select id="schemaTypeSelector" onchange="setSchemaType(this.value)">
+    <option value="article">Article Schema</option>
+    <option value="faq">FAQ Schema</option>
+</select>
+<button onclick="generateJsonSchema()">Generate JSON Schema</button>
+
+<h3>Generated JSON Schema:</h3>
+<div id="outputtotal"><span>&lt;script type="application/ld+json"&gt;</span><pre id="output"></pre><span>&lt;/script&gt;</span></div>
+
+<script>
+let currentSchemaType = 'article';
+
+function setSchemaType(schemaType) {
+    currentSchemaType = schemaType;
+}
+
+function generateJsonSchema() {
+    const htmlInput = document.getElementById('htmlInput').value;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlInput, 'text/html');
+    let schema = {};
+
+    if (currentSchemaType === 'article') {
+        schema = generateArticleSchema(doc);
+    } else if (currentSchemaType === 'faq') {
+        schema = generateFaqSchema(doc);
+    }
+
+    document.getElementById('output').textContent = JSON.stringify(schema, null, 2);
+}
+
+function generateArticleSchema(doc) {
+    const schema = {
+        article: {
+            title: "", // You can extract title from your HTML if needed
+            content: []
+        }
+    };
+    const bodyChildren = doc.body.querySelectorAll('*');
+    schema.article.content = parseHtmlElements(bodyChildren);
+    return schema;
+}
+
+function generateFaqSchema(doc) {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": []
+    };
+    const bodyChildren = doc.body.querySelectorAll('*');
+    schema.mainEntity = parseFaqElements(bodyChildren);
+    return schema;
+}
+
+function parseHtmlElements(elements) {
+    const content = [];
+    elements.forEach(element => {
+        const elementSchema = createElementSchema(element);
+        if (elementSchema) {
+            content.push(elementSchema);
+        }
+    });
+    return content;
+}
+
+function parseFaqElements(elements) {
+    const faqs = [];
+    let currentQuestion = null;
+    elements.forEach(element => {
+        if (element.tagName.toLowerCase() === 'h2' || element.tagName.toLowerCase() === 'h3') {
+            if (currentQuestion) {
+                faqs.push(currentQuestion);
+            }
+            currentQuestion = {
+                "@type": "Question",
+                "name": element.textContent.trim(),
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": ""
+                }
+            };
+        } else if (element.tagName.toLowerCase() === 'p' && currentQuestion) {
+            currentQuestion.acceptedAnswer.text += element.textContent.trim() + " ";
+        }
+    });
+    if (currentQuestion) {
+        faqs.push(currentQuestion);
+    }
+    faqs.forEach(faq => {
+        faq.acceptedAnswer.text = faq.acceptedAnswer.text.trim();
+    });
+    return faqs;
+}
+
+function createElementSchema(element) {
+    let schema = null;
+    switch (element.tagName.toLowerCase()) {
+        case 'p':
+            schema = {
+                type: 'paragraph',
+                text: element.textContent.trim()
+            };
+            break;
+        case 'img':
+            schema = {
+                type: 'image',
+                src: element.getAttribute('data-src') || element.getAttribute('src'),
+                alt: element.getAttribute('alt')
+            };
+            break;
+        case 'h2':
+        case 'h3':
+        case 'h4':
+        case 'h5':
+        case 'h6':
+            schema = {
+                type: 'heading',
+                level: parseInt(element.tagName.charAt(1)),
+                text: element.textContent.trim()
+            };
+            break;
+        case 'ul':
+            schema = {
+                type: 'list',
+                items: []
+            };
+            element.querySelectorAll('li').forEach(li => {
+                schema.items.push({
+                    type: 'listItem',
+                    text: li.textContent.trim()
+                });
+            });
+            break;
+        case 'div':
+            if (element.className.includes('wp-block-image')) {
+                const img = element.querySelector('img');
+                if (img) {
+                    schema = {
+                        type: 'image',
+                        src: img.getAttribute('src'),
+                        alt: img.getAttribute('alt')
+                    };
+                }
+            }
+            break;
+        default:
+            // Ignore unknown elements
+            break;
+    }
+    return schema;
+}
+</script>
+
+</body>
+</html>

@@ -331,11 +331,9 @@
     background: transparent;
     padding: 1%;
     padding-top: 0px;
-    border-radius: 0px 0px 8px 8px;
-    border: 1px solid #f7f7f7;
-    border-top: none;
+    border-bottom: 1px solid #f7f7f7;
     width: 98%;
-    background-image: url(assets/photo-placeholder-5-dark.jpg);
+
 }
 
 .width33cg {
@@ -715,18 +713,18 @@
 
         #results21aaa {
             display: none;
-            width: 83.7%;
-            min-height: 300px;
-            float: left;
-            padding: 22px;
-            margin-left: 3%;
-            margin-top: 2%;
-            color: #fff;
-            max-height: 550px;
-            overflow-y: auto;
-            font-size: 0.85rem;
-            background-color: #007BFF;
-            border: 3px solid #FFF;
+            width: 75.7%;
+    min-height: 300px;
+    float: left;
+    padding: 22px;
+    margin-left: 9%;
+    margin-top: 2%;
+    color: #fff;
+    max-height: 550px;
+    overflow-y: auto;
+    font-size: 0.85rem;
+    border: 1px solid #FFF;
+    border-radius: 13px;
         }
 
 
@@ -901,6 +899,8 @@ background-image: url(assets/photo-placeholder-5.jpg);
         zoom: 0.9;
 }
 }
+
+
 
 </style>
 
@@ -2899,7 +2899,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
             </div>
 
-
+            <div id="results21aaa"></div>
             <div class="prod100 internalscroller" style="background-color: transparent;">
 
                 <div id="editcontentbox" class="prod100" style="margin-left: 0px; margin-top:68px; ">
@@ -4075,7 +4075,235 @@ background-image: url(assets/photo-placeholder-5.jpg);
                     </div>
                 </div>
 
+                
+                <div id="schema21" class="width100c openclose" openclose="schema">
+                    <div class="width100c unselectable-text" style="margin-left: -3%;">
+                        <span class="myindicator" style="font-size: 0.8rem;">+</span>
+                        <span style="font-size: 0.8rem;">&nbsp;&nbsp;Schema</span>
 
+                    </div>
+                </div>
+
+                <div class="width100c tools stage1 schema" style="padding-top: 20px; padding-bottom: 20px;">
+
+                    <div class="width100c">
+                        <div class="width50c" style="width: auto; padding-right: 10px;">Schema Type</div>
+                        <div class="width50c">
+<style>
+    .custom-schema-selector {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-schema-selector:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.custom-schema-selector option {
+    padding: 10px !important;
+    background-color: #fff;
+    font-size: 16px !important;
+}
+</style>
+
+                            <select id="schemaTypeSelector" class="custom-schema-selector"  onchange="setSchemaType(this.value)">
+                                <option value="article">Article / Blog Schema</option>
+                                <option value="faq">F.A.Q. Schema</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input id="schemapagetitle" type="text" style="width: 100%;" placeholder="Enter the page title here...">
+
+                    <button style="width: 50%;padding: 5px 5px;
+                    border: none;
+                    background-color: #007BFF;
+                    color: white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    margin-right: 10px;
+                    transition: background-color 0.3s;
+                    margin-top: 12px;
+                    margin-bottom: 10px;
+                    font-size: 0.875rem;   " onclick="generateJsonSchema()">Generate JSON Schema</button>
+
+
+
+
+<style>
+    .schemalayer {
+    background-color: purple !important;
+}
+</style>
+
+<script>
+    
+    let currentSchemaType = 'article';
+    
+    function setSchemaType(schemaType) {
+        currentSchemaType = schemaType;
+    }
+    
+    function generateJsonSchema() {
+        $('.schemalayer').remove()
+        const htmlInput = $('#pullthecode2').html()
+        const pageTitle = document.getElementById('schemapagetitle').value;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlInput, 'text/html');
+        let schema = {};
+    
+        if (currentSchemaType === 'article') {
+            schema = generateArticleSchema(doc, pageTitle);
+        } else if (currentSchemaType === 'faq') {
+            schema = generateFaqSchema(doc);
+        }
+    
+
+        if(pageTitle === '') {
+            return false
+        } else {
+            $('#pullthecode3').append('<div class="width100c  layoutpale layoutpale100 liverow  onblock schemalayer"> <script type="application/ld+json">'+JSON.stringify(schema, null, 2))
+                $('#beautycode').val($('#pullthecode3').html())
+        }
+        
+    }
+    
+    function generateArticleSchema(doc, title) {
+        const schema = {
+            article: {
+                title: title || "", // Use the title from the input field
+                content: []
+            }
+        };
+        const bodyChildren = doc.body.querySelectorAll('*');
+        schema.article.content = parseHtmlElements(bodyChildren);
+        return schema;
+    }
+    
+    function generateFaqSchema(doc) {
+        const schema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": []
+        };
+        const bodyChildren = doc.body.querySelectorAll('*');
+        schema.mainEntity = parseFaqElements(bodyChildren);
+        return schema;
+    }
+    
+    function parseHtmlElements(elements) {
+        const content = [];
+        elements.forEach(element => {
+            const elementSchema = createElementSchema(element);
+            if (elementSchema) {
+                content.push(elementSchema);
+            }
+        });
+        return content;
+    }
+    
+    function parseFaqElements(elements) {
+        const faqs = [];
+        let currentQuestion = null;
+        elements.forEach(element => {
+            if (element.tagName.toLowerCase() === 'h2' || element.tagName.toLowerCase() === 'h3') {
+                if (currentQuestion) {
+                    faqs.push(currentQuestion);
+                }
+                currentQuestion = {
+                    "@type": "Question",
+                    "name": element.textContent.trim(),
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": ""
+                    }
+                };
+            } else if (element.tagName.toLowerCase() === 'p' && currentQuestion) {
+                currentQuestion.acceptedAnswer.text += element.textContent.trim() + " ";
+            }
+        });
+        if (currentQuestion) {
+            faqs.push(currentQuestion);
+        }
+        faqs.forEach(faq => {
+            faq.acceptedAnswer.text = faq.acceptedAnswer.text.trim();
+        });
+        return faqs;
+    }
+    
+    function createElementSchema(element) {
+        let schema = null;
+        switch (element.tagName.toLowerCase()) {
+            case 'p':
+                schema = {
+                    type: 'paragraph',
+                    text: element.textContent.trim()
+                };
+                break;
+            case 'img':
+                schema = {
+                    type: 'image',
+                    src: element.getAttribute('data-src') || element.getAttribute('src'),
+                    alt: element.getAttribute('alt')
+                };
+                break;
+            case 'h2':
+            case 'h3':
+            case 'h4':
+            case 'h5':
+            case 'h6':
+                schema = {
+                    type: 'heading',
+                    level: parseInt(element.tagName.charAt(1)),
+                    text: element.textContent.trim()
+                };
+                break;
+            case 'ul':
+                schema = {
+                    type: 'list',
+                    items: []
+                };
+                element.querySelectorAll('li').forEach(li => {
+                    schema.items.push({
+                        type: 'listItem',
+                        text: li.textContent.trim()
+                    });
+                });
+                break;
+            case 'div':
+                if (element.className.includes('wp-block-image')) {
+                    const img = element.querySelector('img');
+                    if (img) {
+                        schema = {
+                            type: 'image',
+                            src: img.getAttribute('src'),
+                            alt: img.getAttribute('alt')
+                        };
+                    }
+                }
+                break;
+            default:
+                // Ignore unknown elements
+                break;
+        }
+        return schema;
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+                </div>
 
 
                 <div class="width100c tools stage1 schedule">
@@ -4452,7 +4680,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
             </div>
 
-            <div id="results21aaa"></div>
+          
         </div>
 
 
@@ -4597,15 +4825,15 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
                     <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
     border: 0px;"><button class="outsideplugins"
-                            whaturl="roundmenu-beta.html">Rounded Menu Builder ></button></div>
+                            whaturl="roundmenu-beta.html">Rounded Menu`s ></button></div>
 
                     <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
     border: 0px;"><button class="outsideplugins"
-                            whaturl="https://www.willpeavy.com/tools/minifier/">HTML Minifer ></button></div>
+                            whaturl="schemabuilder-comp.html">HTML Schema  ></button></div>
 
                             <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
     border: 0px;"><button class="outsideplugins"
-                                whaturl="badgebuilder.html">Badge Builder ></button></div>
+                                whaturl="badgebuilder.html">Badge`s ></button></div>
 
                     <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
     border: 0px;"><button class="outsideplugins"
@@ -5124,24 +5352,26 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
 
-            <div id="mymatrix1" class="width100c closethematrix" style="width: 96%; margin-left: 4%;">
+            <div id="mymatrix1" class="width100c closethematrix" style="width: 96%; margin-left: 4%; margin-top: -20px;">
 
                 <div id="charactercount" style="float: left;
-                width: 98.6%;
+                width: 81.6%;
                 padding-top: 6px;
                 padding-bottom: 6px;
                 text-align: center;
+                margin-bottom: 5px;"></div>
+                <button id="exportfinalcodetofile" style="    margin-top: 5px;
+                padding-top: 8px;
+                border-radius: 6px;
+                padding-bottom: 5px;
                 margin-bottom: 5px;
-                border-bottom: 1px solid #fff;"></div>
-                <button id="exportfinalcodetofile" style="float: left;
-    margin-top: 5px;
-    padding-top: 10px;
-    border-radius: 6px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    background-color: #007BFF;
-    color: #fff;
-    font-size: 1rem;">Export Final Code to File</button>
+                background-color: #007BFF;
+                color: #fff;
+                font-size: 0.7rem;
+                width: 30%;
+                max-width: 167px;
+                float: right;
+                margin-right: 1.5%;">Export Final Code to File</button>
 
                 <div id="thisisthefinalcode" class="prod100 layout2 selectall" style="background-color: rgb(0, 0, 0);
                     color: rgb(255, 255, 255);
@@ -5154,7 +5384,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                     display: block;
                     background-image: url(assets/photo-placeholder-5-dark.jpg);
                     line-height: 24px;
-                    font-size: 1rem;">
+                    font-size: 1rem; max-height: 400px; overflow: auto;">
                     <span class="hidecss">
                         &lt;link
                         href="/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/v1716228569143/pim-content/occontent2024-v7d.css"

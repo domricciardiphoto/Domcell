@@ -372,6 +372,7 @@ $('.openthematrix').on('click', function () {
             $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
             $('#hidemainmobile').hide()
             $('.colorlegend').hide()
+           
             listAllDriveFiles();
             break;
         case '#mymatrix7':

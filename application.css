@@ -186,7 +186,7 @@
 
         #cinput3a {
             width: 98%;
-            min-height: 130px;
+            min-height: 125px;
             font-size: 1rem;
         }
 
@@ -1645,7 +1645,7 @@
         }
         
         #myhtmleditor {
-            width: 94%; min-width: 94%; background-color: #000; color: #fff; margin-left: 2%; margin-bottom: 5px; min-height: 250px; max-width: 94%; max-height: 400px;  
+            width: 94%; min-width: 94%; background-color: #000; color: #fff; margin-left: 2%; margin-bottom: 5px; min-height: 240px; max-width: 94%; max-height: 400px;  
         }
         
         #editmode {
@@ -1664,8 +1664,6 @@
             padding-top: 10px;
             width: 100%;
             text-align: center;
-            border-left: 1px solid #f7f7f7;
-            border-right: 1px solid #f7f7f7;
             margin-top: -4px;
             margin-bottom: -20px;
         }

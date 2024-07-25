@@ -1058,9 +1058,14 @@ $('.openthematrix').on('click', function () {
                     $('#sidetoolset').hide()
                     $('#mymatrix1').hide()
                     $('#mymatrix3').hide().removeClass('bottomclassviewers')
+                    $('#mymatrix6').hide()
 
                     break;
         case '#mymatrix1':
+           
+            $('#resizable-div').animate({'width' : '71%'} , function() {
+                $('#programming').show()
+            })
                     $('#mymatrix6').hide()
                     $('#explorer2').hide()
                     $('#mymatrix3').removeClass('bottomclassviewers').hide()
@@ -1140,6 +1145,7 @@ $('.openthematrix').on('click', function () {
                             $('.colorlegend').hide()
                             $('#mymatrix6').show()
                             $("#sidetoolset").hide()
+                            $('#mymatrix1').hide()
                             listAllDriveFiles();
                             
                             break;
@@ -4705,8 +4711,13 @@ function bringbackthehomebutton() {
     if (parent && parent.document) {
         // Hide the element with id 'headerstart' in the parent document
         var headerElement = parent.document.getElementById('headerstart');
+        var headerElement2 = parent.document.getElementById('add-tab');
         if (headerElement) {
             headerElement.style.display = 'block';
+        }
+
+        if (headerElement2) {
+            headerElement2.style.display = 'block';
         }
     }
 }
@@ -4724,27 +4735,34 @@ document.querySelectorAll('.unique-box').forEach(box => {
                 break;
             case 'box2u':
                 // Action for box 2
-               $('#mymatrix3').css('position' , 'absolute').css('height' , '428px').css('width' , '72%')
-                $('#pullthecode2').animate({'min-height' : $(document).height() / 2})
-                $('#beautycode').animate({'min-height' : $(document).height() / 2 -200})
+                var dothemath = $(document).height()
 
-                $('#pullthecode2').animate({'max-height' : $(document).height() / 2})
-                $('#beautycode').animate({'max-height' : $(document).height() / 2 -200})
+                $('#beautycode').val($('#pullthecode3').html())
+               $('#mymatrix3').css('position' , 'absolute').css('height' , 'auto').css('width' , '72%').animate({'max-height' : 'auto'})
+               $('#mymatrix3').addClass('bottomclassviewers').css('wdith' , '73%').css('margin-top' , '-41%').show()
+               $('#resizable-div').animate({'min-height' : dothemath -5})
+        
+                $('#pullthecode2').animate({'min-height' : dothemath / 2})
+                $('#beautycode').animate({'min-height' :dothemath / 3})
 
-                $('#mymatrix3').addClass('bottomclassviewers').css('wdith' , '73%').show()
+                $('#pullthecode2').animate({'max-height' : dothemath / 2})
+                $('#beautycode').animate({'max-height' :dothemath / 3})
+
+                
                 $('div.thetopbox[whatbox="Tools"]').click()
                 $('#tools1').click()
                 $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                 bringbackthehomebutton()
 
-                $('#beautycode').val($('#pullthecode3').html())
+                
                 $('#mymatrix6').hide()
                 $('#pullthecode2').show()
                 $('#mymatrix3').show()
                 $('#sidetoolset').show()
                 $('#mobilepreview2').show()
-                $('#explorer2').show()
-               
+
+                $('#explorer2').show().animate({'max-height' : dothemath / 2})
+                $('#programming').animate({'max-height' : dothemath -25})
                 break;
             case 'box3u':
                 // Action for box 3
