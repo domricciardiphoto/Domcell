@@ -4900,7 +4900,13 @@ $('.closeviewers').on('click' , function() {
     $('#myModalcontentviewers').hide()
 })
 
+$('#fecthID').on('click' , function() {
+    $('#fetchmyid').show()
+})
 
+$('#fetchmyid .close').on('click', function() {
+    $('#fetchmyid').hide()
+})
 
 
 
