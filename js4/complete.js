@@ -52,7 +52,7 @@ function selectAndHighlightElement(element, scrollElement = false) {
 
     //this is new june 2024 added for A tag in explorer
     if($(element.explorerIndent).attr('data-tag') === 'A') {
-        $('.indentselected').removeClass('indentselected')
+        $('.indentselected').removeClass('indentselected').addClass('indent')
         $(element.explorerIndent).addClass('indentselected')
         return false
        }
@@ -62,7 +62,7 @@ function selectAndHighlightElement(element, scrollElement = false) {
     $('#myhtmleditor').val($element.html());
 
     if (element.explorerIndent) {
-        $('.indentselected').removeClass('indent indentselected');
+        $('.indentselected').removeClass('indent indentselected').addClass('indent');
         $(element.explorerIndent).addClass('indentselected').get(0).scrollIntoView({
             behavior: 'auto', block: 'nearest', inline: 'start'
         });
@@ -140,7 +140,7 @@ var runExplorerDebounced = debounce(function() {
 
             const details = document.createElement('div');
             details.className = 'indent';
-            details.style.marginLeft = `${depth * 20}px`;
+            details.style.marginLeft = `${depth * 1}px`;
             details.setAttribute('data-tag', specialLabel || tagLabel);
             details.innerHTML = `<strong style="color: ${labelColor};">${specialLabel || tagLabel}</strong>${classDisplay}${linkDetails}`;
             parentContainer.appendChild(details);
@@ -192,6 +192,8 @@ var runExplorerDebounced = debounce(function() {
             return 'ROW';
         } else if (element.classList.contains('customspacer')) {
         return 'SPACER';
+    } else if (element.classList.contains('schemalayer')) {
+        return 'JSON';
     }
 
 
@@ -982,6 +984,7 @@ $('.thetopbox').on('click', function () {
 var darkvalue = 0
 
 $('.openthematrix').on('click', function () {
+    $('#mymatrix1').hide()
     $('#myModalcontentviewers').hide()
     var whatmatrix = '#' + $(this).attr('mymatrix');
     switch (whatmatrix) {
@@ -1193,6 +1196,10 @@ if(darkvalue === 0) {
             
             $('#mymatrix3').hide().animate({'width' : '44%'}).fadeIn()
             $('#beautycode').animate({'min-height' : $(document).height() - 145}).animate({'max-height' : $(document).height() - 145})
+            break;
+
+            case '#mymatrix-codeview':
+            $('#box2u').click()
             break;
         case '#mymatrix-review':
 $('#sidetoolset').hide()
@@ -4807,7 +4814,13 @@ document.querySelectorAll('.unique-box').forEach(box => {
                     bringbackthehomebutton()
                  break;
 
-                 
+                 case 'box9u':
+                    //$('div.openthematrix[mymatrix="mymatrix6"]').click()
+                    //$('#showVersionsBtn').click()
+                    $('#fetchmyid').show()
+                    $('.unique-box ').fadeOut()
+                    bringbackthehomebutton()
+                 break;
 
             default:
                 console.log('Unknown box clicked');
@@ -4829,7 +4842,10 @@ $('.outsideplugins2').on('click' , function() {
     $('#clearandrestartbuttonrefresh').click()
 })
 
-
+$('#versionsModal .modal-content .close').on('click' , function() {
+$('#versionsModal').hide()
+$('#uniqueModal').fadeOut()
+})
 const dbName = "layoutDB";
 const storeName = "positions";
 
@@ -5051,3 +5067,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     $('#beautycode').val($('#pullthecode2').html());
 });
+
+
+
+
+
+
+/*
+
+
+document.getElementById('scrape-form2').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    let url = document.getElementById('url-input').value;
+    const replacement = document.getElementById('replacement-select').value;
+    const resultDiv = document.getElementById('result');
+    resultDiv.textContent = 'Fetching data...';
+
+    // Add https:// if it's not already present
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
+    }
+
+    try {
+        const response = await fetch(url);
+        const htmlText = await response.text();
+        
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlText, 'text/html');
+        const seoBannerDiv = doc.querySelector('.seo-banner-id');
+
+        if (seoBannerDiv) {
+            // Extract the first comment from the seo-banner-id div
+            let firstComment = null;
+            for (let node of seoBannerDiv.childNodes) {
+                if (node.nodeType === Node.COMMENT_NODE) {
+                    firstComment = node.nodeValue.trim();
+                    break;
+                }
+            }
+
+            if (firstComment) {
+                let commentText = firstComment.replace(/^\[\s*|\s*\]$/g, '');
+                // Check if the comment text ends with _banner and replace it
+                if (commentText.endsWith('_banner')) {
+                    commentText = commentText.replace('_banner', replacement);
+                }
+                resultDiv.textContent = commentText;
+            } else {
+                resultDiv.textContent = "No comment found in the div with class 'seo-banner-id'.";
+            }
+        } else {
+            resultDiv.textContent = "ID not found: Check URL or different method required";
+        }
+    } catch (error) {
+        resultDiv.textContent = `An error occurred: ${error.message}`;
+    }
+});
+
+*/

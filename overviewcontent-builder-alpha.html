@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Page Builder</title>
+    <title>Contact Builder 7</title>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script
@@ -30,6 +30,10 @@
 
 
     <style>
+#getexistingcontent {
+    display: none;
+}
+        
         body {
             user-select: none;
             background-color: rgb(37, 37, 37);
@@ -178,10 +182,17 @@
         #explorer .indent,
         #explorer2 .indent {
             cursor: pointer;
-            font-size: 0.8rem;
-            padding: 2px;
-            padding-left: 10px;
-            max-width: 68%;
+    font-size: 0.7rem;
+    padding: 2px;
+    padding-left: 7px;
+    padding-right: 13px;
+    max-width: fit-content;
+    min-width: auto;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #0014a1;
+    border-radius: 15px;
+    -webkit-box-shadow: inset 0 0 1px 1px #757575;
+    box-shadow: inset 0 0 1px 1px #757575;
         }
 
         #sliderLabel[contenteditable="true"] {
@@ -194,8 +205,12 @@
         }
 
         .indentselected {
-            background-color: rgba(0, 128, 0, 0.3);
-            border: 1px solid #ccc;
+            border: 2px solid red !important;
+    border-radius: 16px;
+    padding-left: 13px;
+    height: 30px;
+    line-height: 30px;
+    background-color: black;
 
         }
 
@@ -965,14 +980,21 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
           </div>
 
+          <div class="unique-box" id="box9u">
+            <img src="assets/fetch.png" alt="Store Banner Schedular">
+            Fetch
+        </div>
+
             <div class="unique-box" id="box4u">
                 <img src="assets/dateproject.png" alt="Store Banner Schedular">
                 Store Image Schedular
             </div>
-            <div class="unique-box" id="box5u">
+<!--
+            <div class="unique-box" id="box5u" >
                 <img src="assets/videproject.png" alt=" Video Player">
                 Video Player
             </div>
+-->
             <div class="unique-box" id="box6u">
                 <img src="assets/templeteproject.png" alt="Templetes">
                Code Templetes
@@ -986,29 +1008,174 @@ background-image: url(assets/photo-placeholder-5.jpg);
     </div>
 
 
-    <div id="fetchmyid" class="modal" style="z-index: 9999999999999999999999999999999999999999999;">
-        <div class="modal-content" style="min-height: 200px;">
+
+
+    <div id="fetchmyid" class="modal" style="z-index: 9999999999999999999999999999999999999999999;    background-color: rgba(0, 0, 0, 0.7);">
+
+
+
+        <div class="modal-content" style="min-height: 400px; max-width: 590px; background-image: url(assets/fetch-black3.png) !important; margin: 10% auto;">
             <span class="close">&times;</span>
-            <div class="width100c" style="margin-bottom: 20px;">Put in full url such as:<br> https://www.pcrichard.com/apartment-size-refrigerators/</div>
+<span style="font-size: 1.2rem;">Content Fetch</span><br>
+<span  style="font-size: 0.7rem;">Load Content Directly From PCR</span>
+
+
+<style>
+    #result {
+        display: none;
+    }
+    .myfetcher {
+        display: none; 
+    }
+
+    .showmyfetch {
+    width: 30.5%;
+    float: left;
+    min-height: 30px;
+    text-align: center;
+    border: 1px solid #fff;
+    line-height: 30px;
+    margin-right: 2%;
+    font-size: 0.8rem;
+    border-radius: 13px;
+    cursor: pointer;
+    text-shadow: 11px 8px 20px #000;
+    -webkit-box-shadow: inset 0 0 10px 5px #757575;
+    box-shadow: inset 0 0 10px 5px #757575;
+}
+
+#fetchme1 {
+    display: block;
+}
+
+.width33c {
+    width: 31% !important;
+    position: relative;
+    float: left;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+
+.width100c {
+    text-align: inherit;
+}
+
+</style>
+
+<div style="width: 100%; margin-top: 30px;">
+    <div class="showmyfetch" openfetch="#fetchme1" backimage="3" style="color: yellow; border-color: yellow; opacity: 0.5;">Content Assets</div>
+    <div class="showmyfetch" openfetch="#fetchme3" backimage="2" >Overview Content</div>
+    <div class="showmyfetch" openfetch="#fetchme2" backimage="4" >Blog Content</div>
+    <div class="width100c" style="margin-bottom: 20px; font-size: 0.7rem; text-align: center; margin-top: 10px;">Put in full url such as:<span style="color: yellow;"> https://www.pcrichard.com/apartment-size-refrigerators/</span></div>
+</div>
+
+        <div id="fetchme1" class="width100c myfetcher" style="margin-top: 10px;  ">
+            
+           
             <form id="scrape-form">
               <div class="width100c">
-                <label for="url-input">URL: </label>
-                <input type="text" id="url-input" name="url" required>
+                <label for="url-input">Page URL: </label><br>
+                <input type="text" id="url-input" name="url" style="width: 90%; height: 30px; border-radius: 5px;" required>
                 
-                <select id="replacement-select" name="replacement" required>
-                    <option value="_banner">Top Content</option>
-                    <option value="_copy">Bottom Content</option>
+                <select id="replacement-select" name="replacement" required style="margin-top: 10px; width: 91%; margin-left: 0.5%; height: 30px; border-radius: 5px;">
+                    <option selected value="_banner">Select For Page Top Content</option>
+                    <option value="_copy">Select For Page Bottom Content</option>
                 </select>
               </div>
                 
                 <div class="width100c" style="margin-top: 30px;">
-                    <button type="submit">Get ID</button>
+                    <button type="submit" style="width: 40%;
+                    padding: 5px;
+                    background-color: #007BFF;
+                    color: rgb(255, 255, 255);
+                    display: block;
+                    text-align: center;
+                    float: left;border-radius: 5px;">Retrieve Content ID</button>
+                    <div id="getexistingcontent" style="width: 40%;
+                    padding: 5px;
+                    background-color: #007BFF;
+                    color: rgb(255, 255, 255);
+                    display: block;
+                    text-align: center;
+                    float: right; cursor: pointer; border-radius: 5px;">Load Asset to Workspace</div>
                 </div>
             </form>
             <div class="width100c" style="margin-top: 20px; text-align: center; font-size: 1.2rem;">
                 <div id="result" contenteditable="true"></div>    
-            </div>    
+            </div> 
+            
         </div>
+
+
+        <div  id="fetchme2" class="width100c myfetcher" style="margin-top: 10px;  ">
+
+            <form id="scrape-form" style="margin-top: 10px;">
+                <div class="width100c">
+                  <label for="url-input2">Blog URL: </label>
+                  <input type="text" id="url-input2" name="url" required style="width: 90%; height: 30px; margin-top: 10px;">
+                  
+                </div>
+                  
+                  <div class="width100c" style="margin-top: 30px;">
+                      <div id="getexistingcontent2" style="
+                          width: 90%;
+    padding: 5px;
+    background-color: #007BFF;
+    color: rgb(255, 255, 255);
+    display: block;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: -10px;
+">Load Blog Content to Workspace</div>
+                  </div>
+              </form>
+
+        </div>
+
+        <div  id="fetchme3" class="width100c myfetcher" style="margin-top: 10px; ">
+
+            <form id="scrape-form3">
+                <div class="width100c" style="margin-top: 30px;">
+                    <label for="url-input3">Overview Content URL: </label>
+                    <input type="text" id="url-input3" name="url" required style="    width: 85%;
+                    margin-top: 10px;
+                    height: 30px;">
+                </div>
+                <div class="width100c" style="margin-top: 30px;">
+                    <div class="width100c" style="margin-top: 10px;">
+                        <div id="getexistingcontent3" style="    width: 85%;
+                        padding: 5px;
+                        background-color: #007BFF;
+                        color: rgb(255, 255, 255);
+                        display: block;
+                        text-align: center;
+                        float: left;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        margin-top: -24px;
+                     ">Load Product Content to Workspace</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+<script>
+    $('.showmyfetch').on('click' , function() {
+        openfetch = $(this).attr('openfetch')
+        backimage = $(this).attr('backimage')
+        $('.myfetcher').hide()
+        $(openfetch).fadeIn()
+        $('.showmyfetch').css('color' , '#fff').css('border-color' , '#fff').css('opacity' , '1')
+        $(this).css('color' , 'yellow').css('border-color' , 'yellow').css('opacity' , '0.5');
+        $('#fetchmyid .modal-content').css('background-image' , 'url(assets/fetch-black'+backimage+'.png)')
+    })
+</script>
+
+
+        </div>
+      
         <script>
             document.getElementById('scrape-form').addEventListener('submit', async function(event) {
                 event.preventDefault();
@@ -1052,12 +1219,142 @@ background-image: url(assets/photo-placeholder-5.jpg);
                             resultDiv.textContent = "No comment found in the div with class 'seo-banner-id'.";
                         }
                     } else {
-                        resultDiv.textContent = "Div with class 'seo-banner-id' not found.";
+                        resultDiv.textContent = "ID not found: Check URL or different method required";
                     }
                 } catch (error) {
                     resultDiv.textContent = `An error occurred: ${error.message}`;
                 }
+                $('#getexistingcontent , #result').show()
+
+
+
             });
+
+
+            $('#getexistingcontent').on('click', function() {
+    var url = $('#url-input').val();
+    var replacement2 = $('#replacement-select').val();
+    if (url) {
+        $.get(url, function(data) {
+            var content;
+            if (replacement2 === '_copy') {
+                content = $(data).find('.seo-copy-id').find('div.content-asset').html();
+            } else {
+                content = $(data).find('.seo-banner-id').find('div.content-asset').html();
+            }
+
+            if (content) {
+                // Parse the content to manipulate DOM elements
+                var tempDiv = $('<div>').html(content);
+
+                // Remove "https://www.pcrichard.com" from the href attributes of stylesheet links, except for a specific URL
+                tempDiv.find('link[rel="stylesheet"]').each(function() {
+                    var href = $(this).attr('href');
+                    if (href && href !== 'https://www.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/v1722481309690/pim-content/Roundedmenu2024.css') {
+                        $(this).attr('href', href.replace('https://www.pcrichard.com', ''));
+                    }
+                });
+
+                // Update <img> tags with data-src attribute
+                tempDiv.find('img[data-src]').each(function() {
+                    $(this).attr('src', $(this).attr('data-src'));
+                });
+
+                // Get the modified content back as HTML
+                content = tempDiv.html();
+
+                $('#pullthecode3, #mobilepreview2').append('<div class="width100c layoutpale layoutpale100 liverow droppable onblock ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100 explorerselected interedit">' + content + '</div></div>');
+                $('#fetchmyid').hide();
+                $('#uniqueModal').fadeOut(800)
+            } else {
+                $('#result').text('No content found');
+            }
+
+        }).fail(function() {
+            $('#result').text('Failed to fetch the content. Please check the URL and try again.');
+        });
+    } else {
+        $('#result').text('Please enter a URL.');
+    }
+});
+
+      
+
+            $('#getexistingcontent2').on('click', function() {
+    var url = $('#url-input2').val();
+    if (url) {
+        $.get(url, function(data) {
+            var content2 = $(data).find('.pdp-description').html();
+            $('#firstmatrix').click()
+
+            if (content2) {
+                // Remove any <link> tags with rel="stylesheet"
+                content2 = content2.replace(/<link[^>]*rel="stylesheet"[^>]*>/g, '');
+
+                // Parse the content to manipulate DOM elements
+                var tempDiv = $('<div>').html(content2);
+
+                // Update <img> tags with data-src attribute
+                tempDiv.find('img[data-src]').each(function() {
+                    $(this).attr('src', 'https://pcrichard.com'+ $(this).attr('data-src'));
+                });
+
+                // Get the modified content back as HTML
+                content2 = tempDiv.html();
+
+                $('#pullthecode3 , #mobilepreview2').append('<div class="width100c layoutpale layoutpale100 liverow droppable onblock ui-droppable"><div class="width100c liveelement in910 layoutpale  layoutpale100 explorerselected interedit">' + content2 + '</div></div>');
+                $('#fetchmyid').hide()
+                $('#uniqueModal').fadeOut(800)
+            } else {
+                $('#result').text('No content found')
+            }
+
+        }).fail(function() {
+            $('#result').text('Failed to fetch the content. Please check the URL and try again.')
+        });
+    } else {
+        $('#result').text('Please enter a URL.')
+    }
+});
+
+
+
+
+
+            $('#getexistingcontent3').on('click', function() {
+    var url3 = $('#url-input3').val();
+    if (url3) {
+        $.get(url3, function(data) {
+            var content3 = $(data).find('.details').html();
+            $('#firstmatrix').click()
+
+            if (content3) {
+                // Remove any <link> tags with rel="stylesheet"
+                content3 = content3.replace(/<link[^>]*rel="stylesheet"[^>]*>/g, '');
+
+                $('#pullthecode3 , #mobilepreview2').append('<div class="width100c layoutpale layoutpale100 liverow droppable onblock ui-droppable"><div class="width100c liveelement in910 layoutpale  layoutpale100 explorerselected interedit">'+content3+'</div></div>');
+                $('#fetchmyid').hide()
+                $('#uniqueModal').fadeOut(800)
+            } else {
+                $('#result').text('No content found')
+            }
+
+        }).fail(function() {
+            $('#result').text('Failed to fetch the content. Please check the URL and try again.')
+        });
+    } else {
+        $('#result').text('Please enter a URL.')
+    }
+});
+
+
+
+
+
+
+
+
+
         </script>
     </div>
 
@@ -1426,7 +1723,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         border: 1px solid #666;
         position: relative !important;
-        min-height: 77px;">
+        min-height: 120px;">
             <div class="closeviewers" style="    position: absolute;
             top: 7px;
             right: 14px;
@@ -1443,12 +1740,12 @@ background-image: url(assets/photo-placeholder-5.jpg);
      
        
 
-
-       
-
        </div>
 
-    
+       <div class="width100c" style="float: none;">
+
+        <button id="codeviewmyviewer" class="openthematrix viewbuttonsclass" mymatrix="mymatrix-codeview">Update Code View</button>
+       </div>
 
 
         </div>
@@ -1676,10 +1973,10 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
             <style>
                 :root {
-                    --width33c-width: 33%;
-                    --width33c3-width: 49%;
+                    --width33c-width: 31%;
+                    --width33c3-width: 48%;
                     --width33c4-width: 99%;
-                    --width33c-m-width: 32%;
+                    --width33c-m-width: 31%;
                 }
 
                 #mobilepreview2 .layoutpale33 {
@@ -1923,7 +2220,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                             <img style="width: 60%; margin-left: 18%;cursor: pointer;" src="assets/iconblog.png" />
                         </div>
 
-                        <div class="width33c">
+                        <div class="width33c" style="width: 15% !important;">
                             <img id="savetomemory"
                                 style="width: 60% !important;  max-width: 28px; float: left; cursor: pointer; "
                                 src="assets/saveme2.png" title="Save to Memory" />
@@ -4179,7 +4476,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
 }
 
 .custom-schema-selector option {
-    padding: 10px !important;
+    padding: 4px !important;
     background-color: #fff;
     font-size: 16px !important;
 }
@@ -4191,9 +4488,13 @@ background-image: url(assets/photo-placeholder-5.jpg);
                             </select>
                         </div>
                     </div>
-                    <input id="schemapagetitle" type="text" style="width: 100%;" placeholder="Enter the page title here...">
-
-                    <button style="width: 50%;padding: 5px 5px;
+                    <form id="schemaform">
+                    <span>Page Title</span>
+                    <input id="schemapagetitle" type="text" style="width: 97%; margin-bottom: 15px; height: 30px; padding-left: 5px;" placeholder="Page title here..." required>
+                    <span>Page URL</span>
+                    <input id="schemapageurla" type="text" style="width: 97%; height: 25px; padding-left: 5px;" placeholder="Page URL here... (inlucde https://www.pcrichard.com)" required>
+                    <button style="    width: 99%;
+                    padding: 5px 5px;
                     border: none;
                     background-color: #007BFF;
                     color: white;
@@ -4203,8 +4504,10 @@ background-image: url(assets/photo-placeholder-5.jpg);
                     transition: background-color 0.3s;
                     margin-top: 12px;
                     margin-bottom: 10px;
-                    font-size: 0.875rem;   " onclick="generateJsonSchema()">Generate JSON Schema</button>
-
+                    font-size: 0.875rem;
+                    height: 33px;
+                " onclick="generateJsonSchema()">Generate JSON Schema</button>
+                    </form>
 
 
 
@@ -4215,7 +4518,6 @@ background-image: url(assets/photo-placeholder-5.jpg);
 </style>
 
 <script>
-    
     let currentSchemaType = 'article';
     
     function setSchemaType(schemaType) {
@@ -4223,45 +4525,52 @@ background-image: url(assets/photo-placeholder-5.jpg);
     }
     
     function generateJsonSchema() {
-        $('.schemalayer').remove()
-        const htmlInput = $('#pullthecode2').html()
+        $('.schemalayer').remove();
+        const htmlInput = $('#pullthecode2').html();
         const pageTitle = document.getElementById('schemapagetitle').value;
+        const pageUrl = document.getElementById('schemapageurla').value; // Get the URL from input
         const parser = new DOMParser();
         const doc = parser.parseFromString(htmlInput, 'text/html');
         let schema = {};
     
         if (currentSchemaType === 'article') {
-            schema = generateArticleSchema(doc, pageTitle);
+            schema = generateArticleSchema(doc, pageTitle, pageUrl);
         } else if (currentSchemaType === 'faq') {
-            schema = generateFaqSchema(doc);
+            schema = generateFaqSchema(doc, pageUrl);
         }
     
-
-        if(pageTitle === '') {
-            return false
+        if (pageTitle === '') {
+            return false;
         } else {
-            $('#pullthecode3').append('<div class="width100c  layoutpale layoutpale100 liverow  onblock schemalayer"> <script type="application/ld+json">'+JSON.stringify(schema, null, 2))
-                $('#beautycode').val($('#pullthecode3').html())
+            $('#pullthecode3').append('<div class="width100c layoutpale layoutpale100 liverow onblock schemalayer"><script type="application/ld+json">' + JSON.stringify(schema, null, 2));
+            $('#beautycode').val($('#pullthecode3').html());
         }
-        
     }
     
-    function generateArticleSchema(doc, title) {
+    function generateArticleSchema(doc, title, url) {
         const schema = {
-            article: {
-                title: title || "", // Use the title from the input field
-                content: []
-            }
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": url
+            },
+            "headline": title || "", // Use the title from the input field
+            "content": []
         };
         const bodyChildren = doc.body.querySelectorAll('*');
-        schema.article.content = parseHtmlElements(bodyChildren);
+        schema.content = parseHtmlElements(bodyChildren);
         return schema;
     }
     
-    function generateFaqSchema(doc) {
+    function generateFaqSchema(doc, url) {
         const schema = {
             "@context": "https://schema.org",
             "@type": "FAQPage",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": url
+            },
             "mainEntity": []
         };
         const bodyChildren = doc.body.querySelectorAll('*');
@@ -4290,38 +4599,40 @@ background-image: url(assets/photo-placeholder-5.jpg);
                 }
                 currentQuestion = {
                     "@type": "Question",
-                    "name": element.textContent.trim(),
+                    "name": element.textContent.trim().replace(/\s+/g, ' '),
                     "acceptedAnswer": {
                         "@type": "Answer",
                         "text": ""
                     }
                 };
             } else if (element.tagName.toLowerCase() === 'p' && currentQuestion) {
-                currentQuestion.acceptedAnswer.text += element.textContent.trim() + " ";
+                currentQuestion.acceptedAnswer.text += element.textContent.trim().replace(/\s+/g, ' ') + " ";
             }
         });
         if (currentQuestion) {
             faqs.push(currentQuestion);
         }
         faqs.forEach(faq => {
-            faq.acceptedAnswer.text = faq.acceptedAnswer.text.trim();
+            faq.acceptedAnswer.text = faq.acceptedAnswer.text.trim().replace(/\s+/g, ' ');
         });
         return faqs;
     }
     
     function createElementSchema(element) {
         let schema = null;
+        const baseUrl = 'https://www.pcrichard.com';
+        
         switch (element.tagName.toLowerCase()) {
             case 'p':
                 schema = {
                     type: 'paragraph',
-                    text: element.textContent.trim()
+                    text: element.textContent.trim().replace(/\s+/g, ' ')
                 };
                 break;
             case 'img':
                 schema = {
                     type: 'image',
-                    src: element.getAttribute('data-src') || element.getAttribute('src'),
+                    src: getAbsoluteUrl(element.getAttribute('data-src') || element.getAttribute('src'), baseUrl),
                     alt: element.getAttribute('alt')
                 };
                 break;
@@ -4333,7 +4644,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                 schema = {
                     type: 'heading',
                     level: parseInt(element.tagName.charAt(1)),
-                    text: element.textContent.trim()
+                    text: element.textContent.trim().replace(/\s+/g, ' ')
                 };
                 break;
             case 'ul':
@@ -4344,7 +4655,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                 element.querySelectorAll('li').forEach(li => {
                     schema.items.push({
                         type: 'listItem',
-                        text: li.textContent.trim()
+                        text: li.textContent.trim().replace(/\s+/g, ' ')
                     });
                 });
                 break;
@@ -4354,7 +4665,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                     if (img) {
                         schema = {
                             type: 'image',
-                            src: img.getAttribute('src'),
+                            src: getAbsoluteUrl(img.getAttribute('src'), baseUrl),
                             alt: img.getAttribute('alt')
                         };
                     }
@@ -4366,7 +4677,20 @@ background-image: url(assets/photo-placeholder-5.jpg);
         }
         return schema;
     }
-    </script>
+    
+    function getAbsoluteUrl(url, baseUrl) {
+        if (!url) return url;
+        // Check if the URL is relative
+        if (url.startsWith('/')) {
+            return baseUrl + url;
+        }
+        // Return the URL if it's already absolute
+        return url;
+    }
+</script>
+
+
+
 
 
 
@@ -4748,7 +5072,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                     </div>
 
                     <div id="fecthID" class="width30c advanced-Buttons" style=" color: #fff !important; width: 16%">
-                        <img src="assets/pcrlogo-small.png" style="width: 33%;" title="Hide Tabs">
+                        <img src="assets/fetch.png" style="width: 33%;" title="Fetch Content from PCR">
                     </div>
 
                 </div>
