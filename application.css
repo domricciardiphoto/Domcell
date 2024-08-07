@@ -1826,20 +1826,18 @@
             margin-top: -11px;
             font-size: 0.875rem;
         }
-
         .advanced-Buttons {
             text-align: center;
             font-size: 0.8rem;
             cursor: pointer;
-            margin-left: 1.5%;
+            margin-left: 1%;
             margin-right: 1%;
             float: left;
             margin-top: 5px;
-            width: 13% !important;
+            width: 14% !important;
             border: 1px solid #333;
             background-color: transparent !important;
         }
-
 
 /* Style for the item that triggers the popup */
 .hover-item {

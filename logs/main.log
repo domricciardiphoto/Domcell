@@ -2217,3 +2217,15 @@ download-progress
 [2024-08-01 09:26:40.598] [info]  Application version 10.0.20
 [2024-08-01 09:51:34.645] [info]  Application version 10.0.20
 [2024-08-01 09:59:43.768] [info]  Application version 10.0.21
+[2024-08-01 11:51:41.508] [info]  Application version 10.0.21
+[2024-08-01 11:57:20.365] [info]  Application version 10.0.21
+[2024-08-01 11:58:54.336] [info]  Application version 10.0.21
+[2024-08-02 17:29:23.622] [info]  Application version 10.0.23
+[2024-08-02 17:42:53.273] [info]  Application version 10.0.23
+[2024-08-02 17:44:00.915] [info]  Application version 10.0.23
+[2024-08-02 17:44:01.017] [error] Error during app initialization: ReferenceError: menuTemplate is not defined
+    at App.<anonymous> (C:\Users\domin\Desktop\domcell 2024\Domcell\Domcell\main.js:406:45)
+    at App.emit (node:events:514:28)
+[2024-08-02 17:48:39.947] [info]  Application version 10.0.23
+[2024-08-02 17:50:46.202] [info]  Application version 10.0.23
+[2024-08-02 17:54:25.535] [info]  Application version 10.0.23

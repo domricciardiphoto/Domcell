@@ -7,3 +7,4 @@ contextBridge.exposeInMainWorld('api', {
   clearVersions: () => ipcRenderer.invoke('clear-versions'),
   deleteVersion: (data) => ipcRenderer.invoke('delete-version', data),
 });
+

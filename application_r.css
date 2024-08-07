@@ -354,7 +354,7 @@ button:hover {
     position: relative;
     min-width: 298px;
     padding-bottom: 0;
-    overflow: hidden;
+    /*overflow: hidden; */
 }
 
 

@@ -1,5 +1,8 @@
 //changes jquery versions  // removed reset after delete
 
+
+
+
 const $explorerContainer = $('#pullthecode2');
 const $mobilePreview = $('#mobilepreview2');
 const $pullTheCode = $('#pullthecode2');
@@ -839,7 +842,8 @@ function paragraphfunctions() {
         if (this.checked) {
             $('.interedit p').addClass('clampclassd');
             ptagid = $('.interedit p').attr('id');
-    
+            $('.clampscript').remove()
+            $('#pullthecode3').append('<div class="width100c layoutpale layoutpale100 liverow clampscript"> <script src="images/pim-content/occontentclamp2024b.js?$staticlink$"></script> </div>')
             // Remove any existing "Read More" buttons before adding a new one
             $('.interedit').find('span.readmoreclampdbutton').remove();
     
@@ -848,6 +852,7 @@ function paragraphfunctions() {
             $('.hidescripts').show();
             return false;
         } else {
+            $('.clampscript').remove()
             $('.interedit p').removeClass('clampclassd');
             $('.interedit').find('span.readmoreclampdbutton').remove();
         }
@@ -866,6 +871,7 @@ $('.openclose').on('click', function () {
     $('.toolboxlayoutoptions, .tools').not(opendropdown).hide();
 
     // Toggle the current dropdown based on its visibility.
+    
     if ($(opendropdown).is(':visible')) {
         $(opendropdown).slideUp();
         $(this).find('.myindicator').html('+'); // Update the indicator to '+'
@@ -984,270 +990,294 @@ $('.thetopbox').on('click', function () {
 var darkvalue = 0
 
 $('.openthematrix').on('click', function () {
-    $('#mymatrix1').hide()
-    $('#myModalcontentviewers').hide()
+    // Cache elements for performance
+    const $pullthecode2 = $('#pullthecode2');
+    const $resizableDiv = $('#resizable-div');
+    const $sidetoolset = $('#sidetoolset');
+    const $mymatrix1 = $('#mymatrix1');
+    const $mymatrix3 = $('#mymatrix3');
+    const $mymatrix6 = $('#mymatrix6');
+    const $mobilepreview2 = $('#mobilepreview2');
+    const $programming = $('#programming');
+    const $explorer2 = $('#explorer2');
+    const $beautycode = $('#beautycode');
+
+    // Hide initial elements
+    $mymatrix1.hide();
+    $('#myModalcontentviewers').hide();
+
+    // Determine which matrix to show
     var whatmatrix = '#' + $(this).attr('mymatrix');
     switch (whatmatrix) {
         case '#mymatrix2':
-        $('img.loading-lazy').each(function () {
-            $(this).attr('src', $(this).attr('data-src'))
-           
-        })
-      $('#results21aaa').hide()
-        $('#mobilepreview2').hide()
-        $('#mymatrix6').hide()
-        $('#pullthecode2').animate({'width' : '65%'}).show().css('min-height' , $(document).height() -100).css('max-height' , $(document).height() -100)
-        $('#resizable-div').hide().animate({'width' : '72%'}).show()
-        $('#sidetoolset').show()
-        $('.stage2 , #pullthecode2 ').show();
-        $('#programming').show()
-        $('#explorer2').parent('div').show()
-        $('#mymatrix3').hide()
-        $('#explorer2').css('max-height' ,'500px')
-        $('#mobilepreview2').show()
-        $('#mymatrix1').hide()
-        $('#explorer2').show()
-        $('#mymatrix6').hide()
-        $('.codechanger').show()
-        break;
-        case '#mymatrix4':
-            var element = document.getElementById("pullthecode3");
-            if (element) {
-                element.style.removeProperty('width');
-                element.style.removeProperty('transform');
-            }
-    
-                $('#mymatrix4').slideDown()
-                $('#codeloaderpcrview').html($('#pullthecode2').html())
-                $('#programming, #resizable-div').hide();
-                $('#fullembedcodeddd').show()
-                $('#fullinterface').hide()
-                $('#mymatrix6').hide()
-                $('body').css('background-color', '#333')
-    
-                $('#codeloaderpcrview .readmoreclampdbutton').on('click', function () {
-                    $(this).prev('p.clampclassd').toggleClass('expanded');
-                })
-    
-    
-    
-                $('.readmoreclampdbutton').on('click', function () {
-                    var currentText = $(this).text();
-                    $('#' + ptagid).toggleClass("expanded");
-                    if (currentText === "Read More") {
-                        $(this).text('Read Less');
-                        return false
-                    } else {
-                        $(this).text('Read More');
-                        return false
-                    }
-                })
-    
-    
-    
-    
-                if (whatcheckingsizeview == 2) {
-                    $('#pcrmobileview').click()
-                }
-                break;
-        case '#mymatrix9':
-                    $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
-                    $('.colorlegend').hide()
-                    $('#versionList').parent('div').parent('div').hide()
-                    $('#programming').hide()
-                    $('#resizable-div').animate({'width' : '100%'})
-                    $('#explorer2').hide()
-                    $('#mymatrix9').show()
-                    $('#sidetoolset').hide()
-                    $('#mymatrix1').hide()
-                    $('#mymatrix3').hide().removeClass('bottomclassviewers')
-                    $('#mymatrix6').hide()
-
-                    break;
-        case '#mymatrix1':
-           
-            $('#resizable-div').animate({'width' : '71%'} , function() {
-                $('#programming').show()
-            })
-                    $('#mymatrix6').hide()
-                    $('#explorer2').hide()
-                    $('#mymatrix3').removeClass('bottomclassviewers').hide()
-                    $('#sidetoolset').hide()
-                    $('#mymatrix1').show()
-                    var element = document.getElementById("pullthecode3");
-                    if (element) {
-                        element.style.removeProperty('width');
-                        element.style.removeProperty('transform');
-                    }
-            
-            
-                        $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
-                        $('.colorlegend').hide()
-                        $('#hidemainmobile').hide()
-                        $('#thisisthefinalcode').show()
-                        $('#results21aaa').show()
-                      $('.codechanger').hide()
-            
-                        $('img.loading-lazy').each(function () {
-                            $(this).attr('src', '#')
-                        })
-            
-            
-                        $('#findthecode2').text($('#pullthecode2').html());
-            
-                        var divElement = document.getElementById('thisisthefinalcode');
-            
-            // Get the text content of the div
-            var textContent = divElement.textContent || divElement.innerText;
-            
-            // Get the character count
-            var characterCount = textContent.length;
-            
-                        $('#charactercount').html('Character Count ' + '<span style="color:yellow">'+characterCount+' </span>' + ' - Maximum ECP to Salesforce Characters is 16,000' )
-            
-                        var element = $('#findthecode2');
-                        var content = element.text();
-            
-                        // Define the words you want to remove
-                        var wordsToRemove = ['liveelement', 'in910', 'layoutpale', 'layoutpale50', 'liverow', ' ui-droppable', 'droppable',
-                            'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'layoutpale100',
-                            'layoutpale30', 'layoutpale20', 'layoutpale33', 'onblock', 'interedit', 'edit-mode', 'explorerselected',
-                            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
-                            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle','unselectable-text',
-                            'https://staging-na01-pcrichard.demandware.net', 'programoverflow', '/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c/' , 'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw543ecf73'
-                        ];
-            
-                        // Loop through the words and remove them from the content
-                        wordsToRemove.forEach(function (word) {
-                            var pattern;
-                            if (word.startsWith('ui-')) {
-                                // Special pattern for strings starting with 'ui-', remove leading/trailing spaces in pattern
-                                pattern = new RegExp('(?:^|\\s)' + word + '(?=\\s|$)', 'g');
-                            } else {
-                                // Default pattern using word boundaries
-                                pattern = new RegExp('\\b' + word + '\\b', 'g');
-                            }
-                            content = content.replace(pattern, '');
-                        });
-            
-                        // Set the modified content back to the element
-                        element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '-').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'));
-            
-            
-            
-            
-                        finalcheck = $('#findthecode2').html()
-                        $('#findthecode2').html(finalcheck.replaceAll('α', 'a').replaceAll('×', 'x').replaceAll('–', '-').replaceAll('’', "'").replaceAll('class="width100c     ui-', 'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '--').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'))
-                        checkADACompliance();
-                        break;
-        case '#mymatrix6':
-            $('#explorer2').hide()
-            $('#mymatrix3').hide()
-                            $('.stage2 , #pullthecode2 , #mobilepreview2').hide();
-                            $('#hidemainmobile').hide()
-                            $('.colorlegend').hide()
-                            $('#mymatrix6').show()
-                            $("#sidetoolset").hide()
-                            $('#mymatrix1').hide()
-                            listAllDriveFiles();
-                            
-                            break;
-        case '#mymatrix-dark':
-if(darkvalue === 0) {
-    darkvalue = 1
-    $('#pullthecode2').css('filter', 'invert(100%)');
-} else {
-    darkvalue = 0
-    $('#pullthecode2').css('filter', 'invert(0%)');
-}
-
-        
-        break;
-        case '#mymatrix-hmobile':      
-        var newHeightForExplorer = $(window).height();
-        $('#mobilepreview2').hide()
-        $('#mymatrix6').hide()
-        $('#pullthecode2').hide().animate({'width' : '65%'}).fadeIn()
-        $('#resizable-div').hide().animate({'width' : '72%'}).fadeIn()
-        $('#explorer2').show().animate({'max-height': newHeightForExplorer}, 400);
-        $('#sidetoolset').show()
-        $('.stage2 , #pullthecode2 ').show();
-        $('#programming').show()
-        $('#explorer2').parent('div').show()
-        $('#mymatrix3').hide()
-        break;
-        case '#mymatrix3':
-
-            var html = $('#pullthecode3').html()
-            var beautifiedHtml = beautifyHtml(html);
-            $('#beautycode').val(beautifiedHtml)
-            $('#mymatrix3').css('max-height' , $(window).height()-70+'px').removeClass('bottomclassviewers').css('width' , '44%').css('position' , 'relative')
-            $('#pullthecode2').css('max-height' , $(window).height()-80+'px')
-            $('#mymatrix3').css('height' , $(window).height()-70+'px').css('margin-top' , '0%')
-            $('#pullthecode2').css('height' , $(window).height()-80+'px')
-            $('#mymatrix6').hide()
-            $('#programming').hide()
-            $('#sidetoolset').hide()
-            $('#mymatrix2').hide()
-            $('#mobilepreview2').parent('div').hide()
-            $('#resizable-div').delay(600).animate({'width' : '100%'})
-            $('#pullthecode2').hide().animate({'width' : '53%'}).fadeIn()
-            $('#beautycode').animate({'height' : $('#pullthecode2').height()-60})
-            
-            $('#mymatrix3').hide().animate({'width' : '44%'}).fadeIn()
-            $('#beautycode').animate({'min-height' : $(document).height() - 145}).animate({'max-height' : $(document).height() - 145})
+            handleMatrix2();
             break;
-
-            case '#mymatrix-codeview':
-            $('#box2u').click()
+        case '#mymatrix4':
+            handleMatrix4();
+            break;
+        case '#mymatrix9':
+            handleMatrix9();
+            break;
+        case '#mymatrix1':
+            handleMatrix1();
+            break;
+        case '#mymatrix6':
+            handleMatrix6();
+            break;
+        case '#mymatrix-dark':
+            handleMatrixDark();
+            break;
+        case '#mymatrix-hmobile':
+            handleMatrixHMobile();
+            break;
+        case '#mymatrix3':
+            handleMatrix3();
+            break;
+        case '#mymatrix-codeview':
+            handleMatrixCodeView();
+          
             break;
         case '#mymatrix-review':
-$('#sidetoolset').hide()
-            $("#pullthecode2").resizable({
-                minWidth: 1024
-            });
-            $("#pullthecode2").animate({
-                'max-height': '400'
-            })
-            $("#pullthecode2").animate({
-                'min-height': '400'
-            })
-
-            $("#mymatrix3").animate({
-                'width': '100%' , 'max-height' : '200px'
-            }).css('margin-top' , '0%')
-
-            $("#beautycode").animate({
-               'max-height' : '200px'
-            })
-
-            $('#mymatrix3').fadeIn()
-
-
-$('#pullthecode2').animate({'width' : '94%'})
-$('#resizable-div').animate({'width' : '100%'})
-$('#mobilepreview2').parent('div').hide()
-$('#programming').hide()
-
+            handleMatrixReview();
             break;
         case '#mymatrix7':
-            $('#outslidepluginsout').attr('src', 'help.html')
-            $('#pluginsandtools').click()
+            handleMatrix7();
             break;
+        default:
+            console.warn("Unknown matrix:", whatmatrix);
+    }
 
-               $('#myModalcontentviewers').click()
-                 //$('#firstmatrix').click()
-                 $('#pullthecode2').css('filter', 'invert(0%)').css('width' , '65%').css('min-height' , '650px');
-                 $('#sidetoolset').show()
-                 $('#explorer2').show().animate({'max-height' : '540px'})
-                 $('#mobilepreview2').show().parent('div').show()
-                 $('#mymatrix3').hide()
-                 $('#programming').show()
-                 $('#resizable-div').animate({'width' : '72%'})
-                 $('#matrix3').hide()
-                break;
-                        } 
-})
+    function handleMatrix2() {
+        $('#mobilepreview2').show()
+        $('img.loading-lazy').each(function () {
+            $(this).attr('src', $(this).attr('data-src'));
+        });
+
+        $('#results21aaa,  #mymatrix6, #mymatrix3').hide();
+        $pullthecode2.clearQueue().animate({ 'width': '65%' }, 200, function () {
+            $(this).css('min-height', $(document).height() - 100)
+                   .css('max-height', $(document).height() - 100);
+        }).show();
+        $resizableDiv.hide().clearQueue().animate({ 'width': '72%' }, 200).show();
+        $sidetoolset.show();
+        $('.stage2, #pullthecode2').show();
+        $programming.show();
+        $explorer2.parent('div').show();
+        $explorer2.css('max-height', $(document).height() / 1.9).show();
+        $('.codechanger').show();
+        $('#explorer2').animate({'max-height' : $(window).height() / 2.1})
+        $('#pullthecode2').animate({'max-height' : $(window).height() / 1.075})
+        $('#pullthecode2').animate({'min-height' : $(window).height() / 1.075})
+    }
+
+    function handleMatrix4() {
+        var element = document.getElementById("pullthecode3");
+        if (element) {
+            element.style.removeProperty('width');
+            element.style.removeProperty('transform');
+        }
+
+        $('#mymatrix4').slideDown();
+        $('#codeloaderpcrview').html($pullthecode2.html());
+        $programming.hide();
+        $resizableDiv.hide();
+        $('#fullembedcodeddd').show();
+        $('#fullinterface').hide();
+        $mymatrix6.hide();
+        $('body').css('background-color', '#333');
+
+        $('#codeloaderpcrview .readmoreclampdbutton').on('click', function () {
+            $(this).prev('p.clampclassd').toggleClass('expanded');
+        });
+
+        $('.readmoreclampdbutton').on('click', function () {
+            var currentText = $(this).text();
+            var ptagid = $(this).prev('p').attr('id'); // Assume a unique ID for previous p tag
+            $('#' + ptagid).toggleClass("expanded");
+            $(this).text(currentText === "Read More" ? 'Read Less' : 'Read More');
+            return false;
+        });
+
+        if (whatcheckingsizeview === 2) {
+            $('#pcrmobileview').click();
+        }
+    }
+
+    function handleMatrix9() {
+        $('.stage2, #pullthecode2, #mobilepreview2').hide();
+        $('.colorlegend').hide();
+        $('#versionList').parent('div').parent('div').hide();
+        $programming.hide();
+        $resizableDiv.clearQueue().animate({ 'width': '100%' }, 200);
+        $explorer2.hide();
+        $('#mymatrix9').show();
+        $sidetoolset.hide();
+        $mymatrix1.hide();
+        $mymatrix3.hide().removeClass('bottomclassviewers');
+        $mymatrix6.hide();
+    }
+
+    function handleMatrix1() {
+        $resizableDiv.clearQueue().animate({ 'width': '71%' }, 200, function () {
+            $programming.show();
+        });
+        $mymatrix6.hide();
+        $explorer2.hide();
+        $mymatrix3.removeClass('bottomclassviewers').hide();
+        $sidetoolset.hide();
+        $mymatrix1.show();
+        var element = document.getElementById("pullthecode3");
+        if (element) {
+            element.style.removeProperty('width');
+            element.style.removeProperty('transform');
+        }
+
+        $('.stage2, #pullthecode2, #mobilepreview2').hide();
+        $('.colorlegend').hide();
+        $('#hidemainmobile').hide();
+        $('#thisisthefinalcode').show();
+        $('#results21aaa').show();
+        $('.codechanger').hide();
+
+        $('img.loading-lazy').each(function () {
+            $(this).attr('src', '#');
+        });
+
+        $('#findthecode2').text($pullthecode2.html());
+
+        var divElement = document.getElementById('thisisthefinalcode');
+        var textContent = divElement.textContent || divElement.innerText;
+        var characterCount = textContent.length;
+
+        $('#charactercount').html('Character Count ' + '<span style="color:yellow">' + characterCount + ' </span>' + ' - Maximum ECP to Salesforce Characters is 16,000');
+
+        var element = $('#findthecode2');
+        var content = element.text();
+
+        var wordsToRemove = ['liveelement', 'in910', 'layoutpale', 'layoutpale50', 'liverow', ' ui-droppable', 'droppable',
+            'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'layoutpale100',
+            'layoutpale30', 'layoutpale20', 'layoutpale33', 'onblock', 'interedit', 'edit-mode', 'explorerselected',
+            'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
+            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle', 'unselectable-text', 'experience-component', 'experience-pcrs_assets-markup',
+            'https://staging-na01-pcrichard.demandware.net', 'programoverflow', '/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c/', 'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw543ecf73'
+        ];
+
+        wordsToRemove.forEach(function (word) {
+            var pattern;
+            if (word.startsWith('ui-')) {
+                pattern = new RegExp('(?:^|\\s)' + word + '(?=\\s|$)', 'g');
+            } else {
+                pattern = new RegExp('\\b' + word + '\\b', 'g');
+            }
+            content = content.replace(pattern, '');
+        });
+
+        element.text(content.replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '-').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'));
+
+        finalcheck = $('#findthecode2').html();
+        $('#findthecode2').html(finalcheck.replaceAll('α', 'a').replaceAll('×', 'x').replaceAll('–', '-').replaceAll('’', "'").replaceAll('class="width100c     ui-', 'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '--').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'));
+
+        checkADACompliance();
+    }
+
+    function handleMatrix6() {
+        $explorer2.hide();
+        $mymatrix3.hide();
+        $('.stage2, #pullthecode2, #mobilepreview2').hide();
+        $('#hidemainmobile').hide();
+        $('.colorlegend').hide();
+        $mymatrix6.show();
+        $sidetoolset.hide();
+        $mymatrix1.hide();
+        listAllDriveFiles();
+    }
+
+    function handleMatrixDark() {
+        const $pullthecode2 = $('#pullthecode2');
+        if (darkvalue === 0) {
+            darkvalue = 1;
+            $pullthecode2.css('filter', 'invert(100%)');
+        } else {
+            darkvalue = 0;
+            $pullthecode2.css('filter', 'invert(0%)');
+        }
+    }
+
+    function handleMatrixHMobile() {
+        const newHeightForExplorer = $(window).height();
+        $mobilepreview2.hide();
+        $mymatrix6.hide();
+        $pullthecode2.clearQueue().animate({ 'width': '65%' }, 200).animate({ 'min-height': $(window).height() - 90 + 'px' }, 200);
+        $resizableDiv.clearQueue().animate({ 'width': '72%' }, 200);
+        $explorer2.show().clearQueue().animate({ 'max-height': newHeightForExplorer }, 400);
+        $sidetoolset.show();
+        $('.stage2, #pullthecode2').show();
+        $programming.show();
+        $explorer2.parent('div').show();
+        $mymatrix3.hide();
+    }
+
+    function handleMatrix3() {
+        $('#mobilepreview2').css('min-height' , $(window).height()  /2).css('max-height' , '300')
+        $('#explorer2').css('min-height' , $(window).height()  /3.5).css('max-height' , $(window).height()  /3.5)
+        var html = $('#pullthecode3').html();
+        var beautifiedHtml = beautifyHtml(html);
+        $mymatrix6.hide();
+        $programming.hide();
+        $sidetoolset.hide();
+        $('#mymatrix2').hide();
+
+        $mobilepreview2.parent('div').hide();
+        $beautycode.val(beautifiedHtml);
+        $mymatrix3.css('max-height', $(window).height() - 70 + 'px').removeClass('bottomclassviewers').css('width', '44%').css('position', 'relative');
+        $mymatrix3.css('height', $(window).height() - 70 + 'px').css('margin-top', '0%');
+        $pullthecode2.css('max-height', $(window).height() - 80 + 'px');       
+        $pullthecode2.css('height', $(window).height() - 80 + 'px');
+        $resizableDiv.delay(600).animate({ 'width': '100%' }, 400);
+        $pullthecode2.hide().animate({ 'width': '53%' }, 400).fadeIn();  
+        $mymatrix3.hide().animate({ 'width': '44%' }, 400).fadeIn();
+        $beautycode.animate({ 'height': $pullthecode2.height() - 60 }, 400);
+        //$beautycode.animate({ 'min-height': $(window).height() - 145 }, 400).animate({ 'max-height': $(window).height() - 145 }, 400);
+    }
+
+    function handleMatrixCodeView() {
+        $('#box2u').click();
+
+        $("#pullthecode2, #resizable-div, #beautycode").hide();
+        $mobilepreview2.show();
+        $.when(
+            $pullthecode2.clearQueue().animate({ 'max-height': $(window).height() / 2.32 }, 0)
+                                 .animate({ 'min-height': $(window).height() / 2.32 }, 0),
+            $resizableDiv.clearQueue().animate({ 'max-height': $(window).height() - 20 }, 0)
+                                  .animate({ 'min-height': $(window).height() - 20 }, 0),
+            $beautycode.clearQueue().animate({ 'max-height': $(window).height() / 2.83 }, 0)
+                                .animate({ 'min-height': $(window).height() / 2.83 }, 0)
+        ).done(function () {
+            $("#pullthecode2, #resizable-div, #beautycode").show();
+        });
+
+        $explorer2.clearQueue().animate({ 'max-height': $(window).height() / 2.1 }, 400);
+        $beautycode.clearQueue().animate({ 'width': '90%' }, 400).animate({ 'margin-left': '5%' }, 400);
+    }
+
+    function handleMatrixReview() {
+        $sidetoolset.hide();
+        $pullthecode2.clearQueue().animate({ 'max-height': '400' }, 200).animate({ 'min-height': '400' }, 200);
+        $resizableDiv.clearQueue().animate({ 'max-height': '50%' }, 200);
+        $mymatrix3.clearQueue().animate({ 'width': '100%', 'max-height': '200px' }, 200).css('margin-top', '0%');
+        $beautycode.clearQueue().animate({ 'max-height': '200px' }, 200).animate({ 'width': '93%' }, 200).animate({ 'margin-left': '.5%' }, 200);
+        $mymatrix3.fadeIn();
+        $pullthecode2.clearQueue().animate({ 'width': '94%' }, 200);
+        $resizableDiv.clearQueue().animate({ 'width': '98%' }, 200).animate({ 'min-height': $(window).height() / 1.8 }, 200);
+        $mobilepreview2.parent('div').hide();
+        $programming.hide();
+    }
+
+    function handleMatrix7() {
+        $('#outslidepluginsout').attr('src', 'help.html');
+        $('#pluginsandtools').click();
+    }
+});
 
 
 $('#showversioningmodal').on('click' , function() {
@@ -2878,7 +2908,7 @@ async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91')
         $('a.googledrive').on('click', function (e) {
             
             e.preventDefault();
-            //alert('hi3')
+   
             var target = $(e.target);
             var wheretogo = target.attr('href');
            atag(wheretogo)
@@ -4436,7 +4466,7 @@ document.getElementById('convertBtn').addEventListener('click', () => {
             reader.readAsText(file);
         });
     } else {
-        alert('Please select at least one CSV file.');
+        //alert('Please select at least one CSV file.');
     }
 
     function updateProgress(processedFiles, totalFiles) {
@@ -4688,7 +4718,7 @@ function findNext() {
         }
 
         if (searchResults.length === 0) {
-            alert('Text not found');
+           // alert('Text not found');
             return;
         }
     }
@@ -4736,8 +4766,15 @@ document.querySelectorAll('.unique-box').forEach(box => {
         switch (this.id) {
             case 'box1u':
                 // Action for box 1
-                $('div.thetopbox[whatbox="Layout"]').click()
+                $('div.thetopbox[whatbox="Tools"]').click()
                 $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
+                $("#pullthecode2").animate({
+                    'max-height': $(document).height() - 100
+                })
+                $("#pullthecode2").animate({
+                    'min-height': $(document).height() - 100
+                })
+                $('#mymatrix3').hide()
                 bringbackthehomebutton()  
                 break;
             case 'box2u':
@@ -4780,6 +4817,12 @@ document.querySelectorAll('.unique-box').forEach(box => {
             case 'box4u':
                 $('#pluginsandtools').click()
                 $('button.outsideplugins[whaturl="bannersheduler-v2.html"]').click()
+                $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
+                bringbackthehomebutton()
+                break;
+                case 'box10u':
+                $('#pluginsandtools').click()
+                $('button.outsideplugins[whaturl="schemabuilder-comp.html"]').click()
                 $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                 bringbackthehomebutton()
                 break;

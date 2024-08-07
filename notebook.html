@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Notebook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        #tabs {
+            display: flex;
+            background-color: #444;
+            padding: 10px 15px;
+            border-bottom: 2px solid #333;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-right: 5px;
+            background-color: #555;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Aligns text and button */
+        }
+
+        .tab:hover {
+            background-color: #666;
+            transform: translateY(-2px);
+        }
+
+        .tab.active {
+            background-color: #888;
+        }
+
+        .close-tab {
+            margin-left: 10px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 16px; /* Larger size for better visibility */
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .close-tab:hover {
+            color: #ff4d4d;
+        }
+
+        #notebook {
+            width: 100%;
+            height: calc(100vh - 120px); /* Adjusted height to accommodate buttons */
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            overflow-y: auto;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        #controls {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 15px;
+            border-top: 2px solid #444;
+        }
+
+        #addTabButton, #clearTabsButton {
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-right: 10px;
+        }
+
+        #addTabButton:hover, #clearTabsButton:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modalContent {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modalButton {
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .modalButton:hover {
+            background-color: #0056b3;
+        }
+
+        #tabNameInput {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        #tabNameInput:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        #notebook span , #notebook div {
+            color: #333 !important;
+            background-color: #fff !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="tabs"></div>
+    <div id="controls">
+        <button id="addTabButton">Add New Page</button>
+        <button id="clearTabsButton" style="    float: right;
+        right: 0px;
+        position: absolute;">Clear All Pages</button>
+    </div>
+    <div id="notebook" contenteditable="true"></div>
+
+    <!-- Modal for Adding New Tab -->
+    <div id="modal" class="modal">
+        <div class="modalContent">
+            <h3>Enter the name for the new page:</h3>
+            <input type="text" id="tabNameInput" placeholder="Tab Name" />
+            <button id="confirmAddTab" class="modalButton">Add Page</button>
+            <button id="closeModal" class="modalButton">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Modal for Confirming Tab Deletion -->
+    <div id="deleteModal" class="modal">
+        <div class="modalContent">
+            <h3 id="deleteModalMessage">Are you sure you want to delete this tab?</h3>
+            <button id="confirmDelete" class="modalButton">Yes, Delete</button>
+            <button id="cancelDelete" class="modalButton">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        const dbName = "notebookDB";
+        const storeName = "notes";
+        const tabListKey = "tabList";
+        let db;
+        let activeTab = null;
+        let tabToDelete = null;
+
+        // Open IndexedDB
+        const openDB = () => {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(dbName, 1);
+
+                request.onupgradeneeded = function(event) {
+                    db = event.target.result;
+                    if (!db.objectStoreNames.contains(storeName)) {
+                        db.createObjectStore(storeName);
+                    }
+                };
+
+                request.onsuccess = function(event) {
+                    db = event.target.result;
+                    resolve();
+                };
+
+                request.onerror = function(event) {
+                    console.error("Database error:", event.target.errorCode);
+                    reject(event.target.errorCode);
+                };
+            });
+        };
+
+        // Save notes to IndexedDB
+        const saveNotes = (tab) => {
+            if (!db || !tab) return; // Prevent operation if db is not ready or tab is null
+            const transaction = db.transaction([storeName], "readwrite");
+            const store = transaction.objectStore(storeName);
+            const notes = document.getElementById("notebook").innerHTML;
+            const request = store.put(notes, tab);
+
+            request.onerror = function(event) {
+                console.error("Failed to save notes:", event.target.errorCode);
+            };
+        };
+
+        // Load notes from IndexedDB
+        const loadNotes = (tab) => {
+            if (!db || !tab) return; // Prevent operation if db is not ready or tab is null
+            const transaction = db.transaction([storeName], "readonly");
+            const store = transaction.objectStore(storeName);
+            const request = store.get(tab);
+
+            request.onsuccess = function(event) {
+                document.getElementById("notebook").innerHTML = event.target.result || "";
+            };
+
+            request.onerror = function(event) {
+                console.error("Failed to load notes for tab:", tab, event.target.errorCode);
+            };
+        };
+
+        // Save tab list to IndexedDB
+        const saveTabList = () => {
+            if (!db) return;
+            const transaction = db.transaction([storeName], "readwrite");
+            const store = transaction.objectStore(storeName);
+            const tabList = Array.from(document.querySelectorAll('.tab')).map(t => t.textContent.replace(/ ×$/, '').trim());
+            const request = store.put(tabList, tabListKey);
+
+            request.onerror = function(event) {
+                console.error("Failed to save tab list:", event.target.errorCode);
+            };
+        };
+
+        // Load tab list from IndexedDB
+        const loadTabList = () => {
+            if (!db) return;
+            const transaction = db.transaction([storeName], "readonly");
+            const store = transaction.objectStore(storeName);
+            const request = store.get(tabListKey);
+
+            request.onsuccess = function(event) {
+                const tabList = event.target.result || ["Workbook"];
+                tabList.forEach((tabName, index) => addTab(tabName, index === 0));
+                switchTab(tabList[0]); // Switch to the first tab in the list
+            };
+
+            request.onerror = function(event) {
+                console.error("Failed to load tab list:", event.target.errorCode);
+            };
+        };
+
+        // Add new tab
+        const addTab = (tabName, isDefault = false) => {
+            const tabs = document.getElementById("tabs");
+            const tab = document.createElement("div");
+            tab.className = "tab";
+            tab.innerHTML = isDefault ? `<span>${tabName}</span>` : `<span>${tabName}</span> <button class="close-tab" onclick="showDeleteModal(event, '${tabName}')">×</button>`;
+            tab.onclick = (e) => {
+                if (e.target.tagName !== 'BUTTON') switchTab(tabName);
+            };
+            tabs.appendChild(tab);
+        };
+
+        // Show delete confirmation modal
+        const showDeleteModal = (event, tabName) => {
+            event.stopPropagation(); // Prevent switching tabs when clicking delete
+            tabToDelete = tabName;
+            document.getElementById("deleteModalMessage").textContent = `Are you sure you want to delete the tab "${tabName}"?`;
+            document.getElementById("deleteModal").style.display = "flex";
+        };
+
+        // Hide delete confirmation modal
+        const hideDeleteModal = () => {
+            document.getElementById("deleteModal").style.display = "none";
+            tabToDelete = null;
+        };
+
+        // Delete a tab
+        const deleteTab = () => {
+            if (!tabToDelete) return;
+            const transaction = db.transaction([storeName], "readwrite");
+            const store = transaction.objectStore(storeName);
+            store.delete(tabToDelete).onsuccess = () => {
+                const tabElement = Array.from(document.querySelectorAll('.tab')).find(t => t.textContent.includes(tabToDelete));
+                if (tabElement) tabElement.remove();
+
+                saveTabList();
+                if (activeTab === tabToDelete) {
+                    const remainingTabs = document.querySelectorAll('.tab');
+                    if (remainingTabs.length > 0) {
+                        switchTab(remainingTabs[0].textContent.replace(/ ×$/, '').trim());
+                    } else {
+                        activeTab = "Workbook";
+                        document.getElementById("notebook").innerHTML = "";
+                        addTab("Workbook", true);
+                    }
+                }
+                hideDeleteModal();
+            };
+        };
+
+        // Switch tab
+        const switchTab = (tabName) => {
+            if (activeTab !== null) saveNotes(activeTab); // Save notes of the current tab
+            activeTab = tabName;
+            loadNotes(tabName); // Load the selected tab's notes
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            const tab = Array.from(document.querySelectorAll('.tab')).find(t => t.textContent.includes(tabName));
+            if (tab) tab.classList.add('active');
+        };
+
+        // Clear all tabs and IndexedDB
+        const clearAllTabs = () => {
+            const transaction = db.transaction([storeName], "readwrite");
+            const store = transaction.objectStore(storeName);
+            store.clear().onsuccess = () => {
+                document.getElementById("tabs").innerHTML = '';
+                addTab("Page 1", true);
+                switchTab("Page 1");
+            };
+        };
+
+        // Initialize the application
+        const initialize = async () => {
+            try {
+                await openDB();
+                loadTabList(); // Load the tab list from the database
+            } catch (error) {
+                console.error("Failed to initialize database:", error);
+            }
+        };
+
+        // Show modal for adding a new tab
+        const showModal = () => {
+            document.getElementById("modal").style.display = "flex";
+        };
+
+        // Hide modal
+        const hideModal = () => {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("tabNameInput").value = ""; // Clear input field
+        };
+
+        // Confirm adding new tab
+        const confirmAddTab = () => {
+            const tabName = document.getElementById("tabNameInput").value.trim();
+            if (tabName && !Array.from(document.querySelectorAll('.tab')).some(t => t.textContent.includes(tabName))) {
+                addTab(tabName);
+                saveTabList();
+                hideModal();
+            } else {
+                alert("Invalid or duplicate tab name.");
+            }
+        };
+
+        document.getElementById("addTabButton").onclick = showModal;
+        document.getElementById("closeModal").onclick = hideModal;
+        document.getElementById("confirmAddTab").onclick = confirmAddTab;
+        document.getElementById("confirmDelete").onclick = deleteTab;
+        document.getElementById("cancelDelete").onclick = hideDeleteModal;
+        document.getElementById("clearTabsButton").onclick = clearAllTabs;
+
+        // Save notes and tab list every 5 seconds
+        setInterval(() => {
+            saveNotes(activeTab);
+            saveTabList();
+        }, 1000);
+
+        initialize();
+    </script>
+</body>
+</html>

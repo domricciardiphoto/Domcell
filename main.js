@@ -1,179 +1,43 @@
 const { app, BrowserWindow, ipcMain, Menu, globalShortcut, shell } = require('electron');
 const { autoUpdater } = require('electron-updater');
-const log = require('electron-log');
 const path = require('path');
 const fs = require('fs');
 
+// Constants for default window settings
+const DEFAULT_WIDTH = 1024;
+const DEFAULT_HEIGHT = 768;
 const appDataPath = app.getPath('userData');
 const windowStateFile = path.join(appDataPath, 'windowState.json');
 
-
-
-log.transports.file.resolvePath = () => path.join('logs/main.log');
+// Global variables for windows
 let ver = app.getVersion();
-log.log("Application version " + ver);
 let win;
+let splash;
 let aboutWindow;
-let mobileonly;
-let tabletonly;
-let whatsnewpage;
-let howtoospage;
-let createhtmlminiferpage;
-let createbannerpage21;
-let BadgeBuilderpage;
-let createmenubuilder21;
-let createbeta;
 
-function createmobileonly() {
-  mobileonly = new BrowserWindow({
-    title: 'Mobile P.C. Richard & Son',
-    width: 390,
-    height: 844,
-    hasShadow: true,
-    resizable: false,
-    titleBarOverlay: false,
-    autoHideMenuBar: true,
-    roundedCorners: true
-  });
-  mobileonly.loadURL('https://www.pcrichard.com');
-}
 
-function createtabletonly() {
-  tabletonly = new BrowserWindow({
-    title: 'Mobile P.C. Richard & Son',
-    width: 768,
-    height: 1024,
-    hasShadow: true,
-    resizable: false,
-    titleBarOverlay: false,
-    autoHideMenuBar: true,
-    roundedCorners: true
-  });
-  tabletonly.loadURL('https://www.pcrichard.com');
-}
-
-function createMainWindow() {
-  let initialState = {};
-
-  if (fs.existsSync(windowStateFile)) {
-    try {
-      initialState = JSON.parse(fs.readFileSync(windowStateFile));
-    } catch (err) {
-      console.error('Failed to read window state file:', err);
-    }
-  }
-
-  win = new BrowserWindow({
-    title: 'Domcell 9.1',
-    icon: path.join(__dirname, 'assets', 'icons', 'app-icon.png'),
-    hasShadow: true,
-    darkTheme: true,
-    visualEffectState: 'active',
-    titleBarOverlay: true,
-    allowRunningInsecureContent: false,
-    navigateOnDragDrop: true,
-    width: initialState.width || 1024,
-    height: initialState.height || 768,
-    minWidth: 1024,
-    minHeight: 768,
-    x: initialState.x,
-    y: initialState.y,
+// Create splash screen
+function createSplashScreen() {
+  splash = new BrowserWindow({
+    width: 1091,
+    height: 300,
+    frame: false, // Make the window frameless
+    alwaysOnTop: true,
+    transparent: true,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      enableRemoteModule: false,
-      preload: path.join(__dirname, 'preload.js')
-    }
-  });
-
-  win.loadFile(path.join(__dirname, 'gettingstarted.html'));
-
-  // Save window state on close
-  win.on('close', () => {
-    const windowState = {
-      width: win.getBounds().width,
-      height: win.getBounds().height,
-      x: win.getBounds().x,
-      y: win.getBounds().y
-    };
-    fs.writeFileSync(windowStateFile, JSON.stringify(windowState));
-  });
-
-  win.webContents.on('console-message', (event, level, message, line, sourceId) => {
-    if (message.includes("'Autofill.enable' wasn't found")) {
-      event.preventDefault();
-    }
-  });
-
-  ipcMain.on('open-url', (event, url) => {
-    shell.openExternal(url);
-  });
-}
-
-ipcMain.on('app_version', (event) => {
-  event.sender.send('app_version', { version: app.getVersion() });
-});
-
-function createhtmlminifer() {
-  createhtmlminiferpage = new BrowserWindow({
-    title: 'HTML MINIFER',
-    hasShadow: true,
-    darkTheme: true,
-    visualEffectState: 'active',
-    center: true,
-    autoHideMenuBar: true,
-    roundedCorners: true,
-    width: 1200,
-    height: 1000
-  });
-
-  createhtmlminiferpage.loadURL('https://www.willpeavy.com/tools/minifier/');
-}
-
-function createseotopcontent() {
-  win.loadFile(path.join(__dirname, 'tool-topcopybuilder.html'));
-}
-
-function createbannerschedular() {
-  createbannerpage21 = new BrowserWindow({
-    title: 'Banner Scheduler',
-    hasShadow: true,
-    darkTheme: true,
-    visualEffectState: 'active',
-    center: true,
-    autoHideMenuBar: true,
-    roundedCorners: true,
-    width: 1200,
-    height: 1000
-  });
-
-  createbannerpage21.loadFile('bannersheduler.html');
-}
-
-function createmenubuilder() {
-  createmenubuilder21 = new BrowserWindow({
-    title: 'Round Menu Builder',
-    hasShadow: true,
-    darkTheme: true,
-    visualEffectState: 'active',
-    center: true,
-    autoHideMenuBar: true,
-    roundedCorners: true,
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
     },
-    width: 1200,
-    height: 1000
   });
 
-  createmenubuilder21.loadFile('tool-roundmenu.html');
+  splash.loadFile(path.join(__dirname, 'splash.html'));
 }
 
+// Create about window
 function createAboutWindow() {
   aboutWindow = new BrowserWindow({
     title: 'About Domcell',
-    icon: `${__dirname}assets/icons/app-icon.png`,
+    icon: path.join(__dirname, 'assets', 'icons', 'app-icon.png'),
     width: 500,
     height: 550,
     hasShadow: true,
@@ -188,8 +52,9 @@ function createAboutWindow() {
     autoHideMenuBar: true,
     roundedCorners: true,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
+      nodeIntegration: false,
+      contextIsolation: true,
+      preload: path.join(__dirname, 'preload.js'),
     }
   });
 
@@ -199,194 +64,171 @@ function createAboutWindow() {
   });
 }
 
-function whatsnew() {
-  whatsnewpage = new BrowserWindow({
-    title: 'Whats New in Domcell',
-    icon: `${__dirname}assets/icons/app-icon.png`,
-    width: 700,
-    height: 500,
+
+
+function createNotebookWindow() {
+  aboutWindow = new BrowserWindow({
+    title: 'Personal Notebook >',
+    icon: path.join(__dirname, 'assets', 'icons', 'app-icon.png'),
+    width: 1024,
+    height: 768,
     hasShadow: true,
     darkTheme: true,
     visualEffectState: 'active',
     titleBarOverlay: true,
-    allowRunningInsecureContent: true,
-    titleBarStyle: 'hidden',
-    alwaysOnTop: true,
     center: true,
-    resizable: false,
-    frame: false,
+    resizable: true,
+    frame: true,
     autoHideMenuBar: true,
     roundedCorners: true
   });
 
-  whatsnewpage.loadFile('release-notes.html');
+  aboutWindow.loadFile('notebook.html');
+  ipcMain.on('close-window', () => {
+    aboutWindow.close();
+  });
 }
 
-function howtoos() {
-  howtoospage = new BrowserWindow({
-    title: 'Domcell How To..',
-    icon: `${__dirname}assets/icons/app-icon.png`,
-    width: 1000,
-    height: 500,
+
+
+ipcMain.on('open-notebook-window', () => {
+  createNotebookWindow();
+});
+
+
+
+
+
+
+
+
+
+// Create main window
+function createMainWindow() {
+  let initialState = {};
+
+  // Load initial state from file if it exists
+  if (fs.existsSync(windowStateFile)) {
+    try {
+      initialState = JSON.parse(fs.readFileSync(windowStateFile));
+    } catch (err) {
+      console.error('Failed to read window state file:', err);
+      initialState = {}; // Fallback to empty state
+    }
+  }
+
+  win = new BrowserWindow({
+    // Basic window settings
+    title: 'Domcell 10',
+    icon: path.join(__dirname, 'assets', 'icons', 'app-icon.png'),
+    show: false, // Start hidden until ready
+
+    // Appearance and behavior
     hasShadow: true,
     darkTheme: true,
     visualEffectState: 'active',
     titleBarOverlay: true,
-    allowRunningInsecureContent: true,
-    titleBarStyle: 'hidden',
-    alwaysOnTop: true,
-    center: true,
-    frame: false,
-    autoHideMenuBar: true,
-    roundedCorners: true
+    allowRunningInsecureContent: false,
+    navigateOnDragDrop: true,
+
+    // Window size and position
+    width: initialState.width || DEFAULT_WIDTH,
+    height: initialState.height || DEFAULT_HEIGHT,
+    minWidth: DEFAULT_WIDTH,
+    minHeight: DEFAULT_HEIGHT,
+    x: initialState.x,
+    y: initialState.y,
+
+    // Web preferences for security
+    webPreferences: {
+      nodeIntegration: false, // Disable Node integration
+      contextIsolation: true, // Enable context isolation
+      enableRemoteModule: false, // Disable remote module
+      preload: path.join(__dirname, 'preload.js'), // Preload script for secure access
+    },
   });
 
-  howtoospage.loadFile('howtoo.html');
-}
+  // Load the main content file
+  win.loadFile(path.join(__dirname, 'gettingstarted-new.html'));
 
-function fullscreenOverviewcontent() {
-  Overviewcontentpage = new BrowserWindow({
-    title: 'Overview Content',
-    hasShadow: true,
-    darkTheme: true,
-    width: 1820,
-    height: 1080,
-    icon: `${__dirname}assets/icons/app-icon.png`,
-    autoHideMenuBar: true
+  // Show the window once ready to avoid flickering
+  win.once('ready-to-show', () => {
+    setTimeout(() => {
+      if (splash && !splash.isDestroyed()) {
+        splash.close();
+      }
+      win.show();
+    }, 3500); // 3 seconds delay
   });
 
-  Overviewcontentpage.loadFile('test-v2.html');
-}
-
-function fullscreenBadgeBuilder() {
-  BadgeBuilderpage = new BrowserWindow({
-    title: 'Badge Builder',
-    hasShadow: true,
-    darkTheme: true,
-    width: 1820,
-    height: 1080,
-    icon: `${__dirname}assets/icons/app-icon.png`,
-    autoHideMenuBar: true
+  // Save the window state when closing
+  win.on('close', () => {
+    const windowState = {
+      width: win.getBounds().width,
+      height: win.getBounds().height,
+      x: win.getBounds().x,
+      y: win.getBounds().y,
+    };
+    fs.writeFileSync(windowStateFile, JSON.stringify(windowState));
   });
 
-  BadgeBuilderpage.loadFile('tool-badgebuilder-beta.html');
+  // Handle console messages to filter specific warnings
+  win.webContents.on('console-message', (event, level, message, line, sourceId) => {
+    if (message.includes("'Autofill.enable' wasn't found")) {
+      event.preventDefault();
+    }
+  });
+
+  // IPC handlers for opening URLs externally
+  ipcMain.on('open-url', (event, url) => {
+    shell.openExternal(url);
+  });
 }
 
-function gotogoogle() {
-  shell.openExternal("http://www.google.com");
-}
-
-function gotostaging() {
-  shell.openExternal("https://staging-na01-pcrichard.demandware.net/on/demandware.store/Sites-Site/default/ViewApplication-DisplayWelcomePage");
-}
-
-function gotodev() {
-  shell.openExternal("https://development-na01-pcrichard.demandware.store/Sites-Site/default/ViewApplication-DisplayWelcomePage");
-}
-
-function gotopim() {
-  shell.openExternal("https://pcr.effectuspartners.com/login");
-}
-
-function pcrstaging() {
-  shell.openExternal("https://storefront:PCRS2021@staging-na01-pcrichard.demandware.net");
-}
-
-function pcrdev() {
-  shell.openExternal("https://sfccdev.pcrichard.com/");
-}
-
-function gohome() {
-  win.loadFile(path.join(__dirname, 'gettingstarted.html'));
-}
-
-function featurerequest() {
-  shell.openExternal("mailto:dom.ricciardi@pcrichard.com?Subject=Feature Request For Domcell " + ver + "&body=I am Using App Version " + ver);
-}
-
-function addminifertoindex() {
-  win.loadFile(path.join(__dirname, 'fullscreen2.html'));
-}
-
-function addbadgebuildertoindex() {
-  win.loadFile(path.join(__dirname, 'tool-badgebuilder.html'));
-}
-
-function addOverviewcontenttoindex() {
-  win.loadFile(path.join(__dirname, 'test-v2.html'));
-}
-
-function addBannerSchedulertoindex() {
-  win.loadFile(path.join(__dirname, 'tool-bannersheduler.html'));
-}
-
-function videoplayerbuilder() {
-  win.loadFile(path.join(__dirname, 'tool-videobuilder.html'));
-}
-
-function createMenuWindowtoindex() {
-  win.loadFile(path.join(__dirname, 'tool-roundmenu-beta.html'));
-}
-
-function createbreadcumb() {
-  win.loadFile(path.join(__dirname, 'tool-breadcrumbbuilder.html'));
-}
-
-function createbreadcumb2() {
-  win.loadFile(path.join(__dirname, 'tool-seo-breadcrumb-builder.html'));
-}
-
-function gotogithub() {
-  shell.openExternal("https://github.com/domricciardiphoto/Domcell");
-}
-
-autoUpdater.on("update-available", (info) => {
-  log.info("update available");
+// IPC handler for app version
+ipcMain.on('app_version', (event) => {
+  event.sender.send('app_version', { version: app.getVersion() });
 });
 
-autoUpdater.on("update-not-available", (info) => {
-  log.info("update not available");
-});
+// Function to go to the home page
+function goHomePage() {
+  win.loadFile(path.join(__dirname, 'gettingstarted-new.html'));
+}
 
-autoUpdater.on('error', (err) => {
-  log.info('Error in auto-updater. ' + err);
-});
+// Function to send a feature request
+function sendFeatureRequest() {
+  shell.openExternal(`mailto:dom.ricciardi@pcrichard.com?Subject=Feature Request For Domcell ${ver}&body=I am Using App Version ${ver}`);
+}
 
-autoUpdater.on("download-progress", (progressTrack) => {
-  log.info("\n\ndownload-progress");
-  log.info(progressTrack);
-});
+// Function to open the GitHub page
+function openGithubPage() {
+  shell.openExternal('https://github.com/domricciardiphoto/Domcell');
+}
 
-autoUpdater.on("checking-for-update", () => {
-  log.info("checking for update");
-});
-
-autoUpdater.on("download-progress", () => {
-  log.info("download progress");
-});
-
-autoUpdater.on("update-downloaded", () => {
-  log.info("update downloaded");
-});
-
+// App ready event
 app.on('ready', () => {
+  createSplashScreen();
   createMainWindow();
   autoUpdater.checkForUpdatesAndNotify();
   const mainMenu = Menu.buildFromTemplate(menu);
   Menu.setApplicationMenu(mainMenu);
+
+  // Register global shortcuts
   globalShortcut.register('CTRL+Delete', () => win.reload());
-  //globalShortcut.register('CTRL+D', () => win.toggleDevTools());
-  //globalShortcut.register('F1', () => gohome());
 
   globalShortcut.register('F11', () => {
     if (win) {
-      win.setFullScreen(!win.isFullScreen());
+      const isFullScreen = win.isFullScreen();
+      win.setFullScreen(!isFullScreen);
+      Menu.setApplicationMenu(isFullScreen ? mainMenu : null); // Hide menu when entering fullscreen
     }
   });
 });
 
+// Check for macOS platform
 const isMac = process.platform === 'darwin';
 
+// Define the application menu
 const menu = [
   ...(isMac ? [{
     label: 'DOMCELL',
@@ -423,26 +265,13 @@ const menu = [
       }
     ]
   }] : []),
-  {
-    label: 'Home',
-    click: gohome
-  },
-  {
-    role: 'separator'
-  },
+
   {
     label: 'Tools >',
-    submenu: [{
-        label: 'Open Additonal Window',
-        click: createMainWindow
-      },
+    submenu: [
       {
         label: "Reload Application and Clear",
         role: 'reload'
-      },
-      {
-        label: "Open Google Browser",
-        click: gotogoogle,
       },
       {
         role: 'toggleDevTools'
@@ -458,78 +287,29 @@ const menu = [
     role: 'separator'
   },
   {
-    label: "PCR Staging and CMS >",
-    submenu: [{
-      label: "Links To CMS",
-      submenu: [{
-          label: 'SALESFORCE (STAGING)',
-          click: gotostaging
-        },
-        {
-          label: 'SALESFORCE (DEV)',
-          click: gotodev
-        },
-        {
-          label: 'EFFECTUS PIM',
-          click: gotopim
-        }
-      ]
-    },
-    {
-      label: 'Staging Sites',
-      submenu: [{
-          label: "PCR STAGING",
-          click: pcrstaging,
-        },
-        {
-          label: "PCR DEVELOPMENT",
-          click: pcrdev,
-        }
-      ]
-    }]
-  },
-  {
-    role: 'separator'
-  },
-  {
-    label: "Viewers of PCR Site >",
-    submenu: [{
-        label: "View: Mobile PCR",
-        click: createmobileonly
-      },
-      {
-        label: "View: Tablet PCR",
-        click: createtabletonly
-      },
-    ]
-  },
-  {
-    role: 'separator'
-  },
-  {
     label: 'Help >',
     submenu: [{
-        label: "Whats New!",
-        click: whatsnew
-      },
-      {
         label: "Feature Request",
-        click: featurerequest
+        click: sendFeatureRequest
       },
       {
         label: 'Domcell on Github',
-        click: gotogithub,
-      },
-      {
+        click: openGithubPage
+      }, {
         label: 'About Domcell',
         click: createAboutWindow,
       }
     ]
+  },{
+    label: 'Personal Notebook',
+    click: createNotebookWindow,
   }
 ];
 
+// Import and use child process for command execution
 const { exec } = require('child_process');
 
+// IPC handler for running shell commands
 ipcMain.handle('run-command', (event, command) => {
   return new Promise((resolve, reject) => {
     exec(command, (err, stdout, stderr) => {
@@ -542,7 +322,7 @@ ipcMain.handle('run-command', (event, command) => {
   });
 });
 
-// Handle IPC calls
+// IPC handler for saving a version
 ipcMain.handle('save-version', async (event, { projectId, versionName, content }) => {
   const versionNumber = db.prepare('SELECT IFNULL(MAX(version_number), 0) + 1 AS version_number FROM project_versions WHERE project_id = ?').get(projectId).version_number;
   const stmt = db.prepare('INSERT INTO project_versions (project_id, version_number, version_name, content) VALUES (?, ?, ?, ?)');
@@ -550,40 +330,39 @@ ipcMain.handle('save-version', async (event, { projectId, versionName, content }
   return { message: 'Version saved successfully' };
 });
 
+// IPC handler for getting versions
 ipcMain.handle('get-versions', async (event, projectId) => {
   const rows = db.prepare('SELECT version_number, version_name, created_at FROM project_versions WHERE project_id = ? ORDER BY version_number DESC').all(projectId);
   return rows;
 });
 
+// IPC handler for reverting a version
 ipcMain.handle('revert-version', async (event, { projectId, versionNumber }) => {
   const row = db.prepare('SELECT content FROM project_versions WHERE project_id = ? AND version_number = ?').get(projectId, versionNumber);
   return row.content;
 });
 
-
+// IPC handler for clearing versions
 ipcMain.handle('clear-versions', async () => {
   db.exec('DELETE FROM project_versions');
   return { message: 'All versions cleared successfully' };
 });
 
-
-
+// IPC handler for deleting a version
 ipcMain.handle('delete-version', async (event, { projectId, versionNumber }) => {
   const stmt = db.prepare('DELETE FROM project_versions WHERE project_id = ? AND version_number = ?');
   stmt.run(projectId, versionNumber);
   return { message: 'Version deleted successfully' };
 });
 
-
-
-
-
+// Handle app closing
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
+// Handle app activation
 app.on('activate', function () {
   if (win === null) {
     createMainWindow();

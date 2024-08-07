@@ -1,0 +1,70 @@
+{
+  "name": "domcell",
+  "productName": "DOMCELL",
+  "version": "10.0.24",
+  "description": "PCR HTML Builder App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder -p always ",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.domcell.myapp",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "application-icon-apple.png",
+      "target": [
+        "dmg"
+      ]
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "icon": "application-icon.png"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "domricciardiphoto",
+        "repo": "Domcell"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "Domcell"
+  },
+  "author": {
+    "name": "Dominick Ricciardi"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axe-core": "^4.9.1",
+    "electron-log": "^4.4.8",
+    "electron-packager": "^17.1.2",
+    "electron-updater": "^6.1.8",
+    "express": "^4.19.2",
+    "menu": "^0.2.5",
+    "node.js": "0.0.1-security",
+    "nodemailer": "^6.9.13",
+    "shell": "^0.9.4",
+    "uglify-js": "^3.17.4"
+  },
+  "devDependencies": {
+    "electron": "^29.4.0",
+    "electron-builder": "^24.13.3"
+  }
+}
