@@ -16,6 +16,7 @@ let splash;
 let aboutWindow;
 
 
+
 // Create splash screen
 function createSplashScreen() {
   splash = new BrowserWindow({
@@ -67,8 +68,8 @@ function createAboutWindow() {
 
 
 function createNotebookWindow() {
-  aboutWindow = new BrowserWindow({
-    title: 'Personal Notebook >',
+ notebookWindow = new BrowserWindow({
+    title: 'Code Notebook >',
     icon: path.join(__dirname, 'assets', 'icons', 'app-icon.png'),
     width: 1024,
     height: 768,
@@ -80,12 +81,17 @@ function createNotebookWindow() {
     resizable: true,
     frame: true,
     autoHideMenuBar: true,
-    roundedCorners: true
+    roundedCorners: true,
+    webPreferences: {
+      nodeIntegration: true, // Disable Node integration
+      contextIsolation: false, // Disable context isolation
+      spellcheck: true,        // Enable spellcheck
+    },
   });
 
-  aboutWindow.loadFile('notebook.html');
+  notebookWindow.loadFile('notebook.html');
   ipcMain.on('close-window', () => {
-    aboutWindow.close();
+    notebookWindow.close();
   });
 }
 
@@ -119,7 +125,7 @@ function createMainWindow() {
 
   win = new BrowserWindow({
     // Basic window settings
-    title: 'Domcell 10',
+    title: 'Domcell 10.1 ',
     icon: path.join(__dirname, 'assets', 'icons', 'app-icon.png'),
     show: false, // Start hidden until ready
 
@@ -136,12 +142,13 @@ function createMainWindow() {
     height: initialState.height || DEFAULT_HEIGHT,
     minWidth: DEFAULT_WIDTH,
     minHeight: DEFAULT_HEIGHT,
+    maxHeight:1920,
     x: initialState.x,
     y: initialState.y,
 
     // Web preferences for security
     webPreferences: {
-      nodeIntegration: false, // Disable Node integration
+      nodeIntegration: true, // Disable Node integration
       contextIsolation: true, // Enable context isolation
       enableRemoteModule: false, // Disable remote module
       preload: path.join(__dirname, 'preload.js'), // Preload script for secure access
@@ -184,6 +191,17 @@ function createMainWindow() {
     shell.openExternal(url);
   });
 }
+
+
+
+
+
+
+
+
+
+
+
 
 // IPC handler for app version
 ipcMain.on('app_version', (event) => {

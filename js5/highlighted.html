@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right-Click Link Editor</title>
+
+<style>
+    /* styles.css */
+
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#content {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 60%;
+    margin: 20px auto;
+    min-height: 100px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#urlInput, #altInput {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#insertLink {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#insertLink:hover {
+    background-color: #45a049;
+}
+</style>
+
+
+</head>
+<body>
+    <div id="content" contenteditable="true">
+        <p>Edit this text and select a portion to link.</p>
+    </div>
+
+    <!-- Modal -->
+    <div id="linkModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Insert Link</h2>
+            <input type="text" id="urlInput" placeholder="Enter URL">
+            <input type="text" id="altInput" placeholder="Enter alt text">
+            <button id="insertLink">Insert</button>
+        </div>
+    </div>
+
+   <script>
+    // script.js
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const content = document.getElementById('content');
+    const modal = document.getElementById('linkModal');
+    const closeBtn = document.querySelector('.close');
+    const insertLinkBtn = document.getElementById('insertLink');
+    const urlInput = document.getElementById('urlInput');
+    const altInput = document.getElementById('altInput');
+
+    let selectedTextRange = null;
+
+    // Listen for right-click to capture selected text
+    content.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+
+        const selection = window.getSelection();
+        if (selection.rangeCount > 0) {
+            selectedTextRange = selection.getRangeAt(0);
+            if (!selectedTextRange.collapsed) {
+                // Open the modal if text is selected
+                modal.style.display = 'block';
+            }
+        }
+    });
+
+    // Close the modal
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // Insert the link
+    insertLinkBtn.onclick = function() {
+        const url = urlInput.value.trim();
+        const altText = altInput.value.trim();
+
+        if (url && selectedTextRange) {
+            const a = document.createElement('a');
+            a.href = url;
+            a.textContent = selectedTextRange.toString();
+            a.setAttribute('title', altText); // Add alt text as title attribute
+
+            // Replace the selected text with the link
+            selectedTextRange.deleteContents();
+            selectedTextRange.insertNode(a);
+
+            // Clear the selection and close the modal
+            selectedTextRange = null;
+            modal.style.display = 'none';
+            urlInput.value = '';
+            altInput.value = '';
+        }
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+});
+
+   </script>
+</body>
+</html>

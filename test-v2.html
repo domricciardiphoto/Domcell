@@ -133,7 +133,7 @@ color: red;
 <body>
 
 
-
+  
 
     <!-- Header with navigation -->
     <header id="headerstart">
@@ -141,7 +141,8 @@ color: red;
             <!-- Home Button -->
             <div class="home-button" id="home-buttonstart">
                 <a href="gettingstarted-new.html"><img src="assets/home.png" alt="Home"></a>
-                
+               
+                <button class="toggle-button" onclick="toggleEmbedSource()" style="background-color:transparent; border: none; width: 25%; cursor: pointer;"><img src="assets/html.png" style="width: 33%;" title="Code Editor"></button>
             </div>
             
 
@@ -383,6 +384,35 @@ newTab.click();
     }
 });
     </script>
+
+
+<script>
+    function toggleEmbedSource() {
+        const embed = document.querySelector('embed.active');
+        if (!embed) {
+            console.error('No active embed found');
+            return;
+        }
+
+        const currentSrc = embed.getAttribute('src');
+        const newSrc = currentSrc === 'overviewcontent-builder-alpha.html' ? 'notebook.html?triggerClick=true' : 'overviewcontent-builder-alpha.html';
+        embed.setAttribute('src', newSrc);
+
+        embed.addEventListener('load', function onLoad() {
+            console.log(`Embed loaded with src: ${newSrc}`);
+        }, { once: true });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
 
 
 </body>

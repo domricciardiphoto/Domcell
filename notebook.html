@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Notebook</title>
+    <title>Code / Text Notebook</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Base CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/show-hint.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/lint.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/dialog/dialog.min.css">
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/xml-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/html-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/css-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/javascript-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/lint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/javascript-lint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.12.0/jshint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/search/searchcursor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/search/search.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/dialog/dialog.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/json-lint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.0/beautify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.0/beautify-html.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.0/beautify-css.min.js"></script>
+
     <style>
-        html, body {
+        html,
+        body {
             padding: 0;
             margin: 0;
             height: 100%;
@@ -18,22 +52,30 @@
 
         #tabs {
             display: flex;
-            background-color: #444;
+            background-color: #101025;
             padding: 10px 15px;
             border-bottom: 2px solid #333;
+            overflow-x: auto;
+            white-space: nowrap;
+            position: fixed;
+            top: 48px;
+            left: 0px;
+            z-index: 999999999999999999999999999999999999;
+            width: 99%;
         }
 
         .tab {
             cursor: pointer;
-            padding: 10px 15px;
+            padding: 4px 10px;
             margin-right: 5px;
-            background-color: #555;
             color: #fff;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.2s ease;
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Aligns text and button */
+            justify-content: space-between;
+            border: 1px solid #999;
+            font-size: 0.8rem;
         }
 
         .tab:hover {
@@ -42,7 +84,7 @@
         }
 
         .tab.active {
-            background-color: #888;
+            background-color: #007BFF;
         }
 
         .close-tab {
@@ -50,7 +92,8 @@
             background: none;
             border: none;
             color: #fff;
-            font-size: 16px; /* Larger size for better visibility */
+            font-size: 16px;
+            /* Larger size for better visibility */
             cursor: pointer;
             transition: color 0.2s ease;
         }
@@ -61,7 +104,8 @@
 
         #notebook {
             width: 100%;
-            height: calc(100vh - 120px); /* Adjusted height to accommodate buttons */
+            height: calc(100vh - 120px);
+            /* Adjusted height to accommodate buttons */
             background-color: #fff;
             color: #333;
             padding: 20px;
@@ -75,27 +119,57 @@
 
         #controls {
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
-            background-color: #333;
+            background-color: #101025;
             padding: 10px 15px;
             border-top: 2px solid #444;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 999999999999999999999999999999999999;
+            width: 99%;
         }
 
-        #addTabButton, #clearTabsButton {
-            cursor: pointer;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
+        .icon-button {
+            background-color: transparent;
             border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px;
             border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-right: 10px;
+            margin-right: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
         }
 
-        #addTabButton:hover, #clearTabsButton:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
+        .icon-button:hover {
+            background-color: #007BFF
+        }
+
+        .settings {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* Space between controls */
+        }
+
+        .settings label {
+            color: #fff;
+            margin-right: 5px;
+        }
+
+        .settings input[type="range"] {
+            margin: 0 10px;
+        }
+
+        .settings select {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
         }
 
         /* Modal Styles */
@@ -152,21 +226,306 @@
             outline: none;
         }
 
-        #notebook span , #notebook div {
+        #notebook span,
+        #notebook div {
             color: #333 !important;
             background-color: #fff !important;
         }
+
+        #code-editor {
+            width: 100%;
+            height: 100%;
+            display: none;
+            /* hide the original textarea */
+        }
+
+        .CodeMirror {
+            height: calc(100vh - 138px) !important;
+            /* Adjust to match your layout */
+            max-height: 97%;
+            overflow: hidden;
+            padding: 20px;
+            padding-left: 1%;
+            padding-right: 1%;
+            max-width: 98%;
+            clip-path: inset(0px);
+            font-size: 22px;
+            position: absolute;
+            top: 98px !important;
+        }
+
+        @media (max-width: 768px) {
+            #controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .settings {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .CodeMirror-linenumber {
+            left: 0px !important;
+        }
+
+        .codepreview {
+            position: absolute;
+            right: 0px;
+            top: 98px;
+            width: 46%;
+            height: 87vh;
+            overflow: auto;
+            display: none;
+            padding: 1%;
+        }
     </style>
+
+
+
+    <style>
+        .CodeMirror-hints {
+            font-size: 16px;
+            /* Increase font size */
+            max-height: 300px;
+            /* Increase the maximum height */
+            overflow-y: auto;
+            /* Allow vertical scrolling */
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+        }
+
+        .CodeMirror-hint {
+            padding: 10px;
+            /* Increase padding for each hint */
+            cursor: pointer;
+        }
+
+        .CodeMirror-hint-active {
+            background: #ddd;
+            /* Highlight active hint */
+        }
+    </style>
+
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modalContent {
+            background-color: #fff;
+            border-radius: 12px;
+            width: 350px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .modalTitle {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .modalBody {
+            margin-bottom: 20px;
+        }
+
+        .modalLabel {
+            display: block;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .modalInput,
+        .modalSelect {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .modalInput:focus,
+        .modalSelect:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .modalFooter {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .modalButton {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .confirmButton {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .confirmButton:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .cancelButton {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .cancelButton:hover {
+            background-color: #aaa;
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+
 </head>
+
 <body>
-    <div id="tabs"></div>
-    <div id="controls">
-        <button id="addTabButton">Add New Page</button>
-        <button id="clearTabsButton" style="    float: right;
-        right: 0px;
-        position: absolute;">Clear All Pages</button>
+
+
+    <div id="saveFileModal" class="modal">
+        <div class="modalContent">
+            <h3 class="modalTitle">Save File</h3>
+            <div class="modalBody">
+                <label for="fileNameInput" class="modalLabel">File Name:</label>
+                <input type="text" id="fileNameInput" placeholder="Enter file name" class="modalInput" />
+                <label for="fileTypeSelect" class="modalLabel">File Type:</label>
+                <select id="fileTypeSelect" class="modalSelect">
+                    <option value="html">HTML</option>
+                    <option value="js">JavaScript</option>
+                    <option value="txt">Plain Text</option>
+                    <option value="json">JSON</option>
+
+                </select>
+            </div>
+            <div class="modalFooter">
+                <button id="saveFileConfirm" class="modalButton confirmButton">Save</button>
+                <button id="saveFileCancel" class="modalButton cancelButton">Cancel</button>
+            </div>
+        </div>
     </div>
-    <div id="notebook" contenteditable="true"></div>
+
+    <div id="controls">
+        <div>
+
+            <button class="icon-button" id="addTab" title="Add Page"><i class="fas fa-plus"></i></button>
+            <button class="icon-button" id="clearTabs" title="Clear All Tabs"><i class="fas fa-trash-alt"></i></button>
+            <button class="icon-button" id="importLive" title="Import Live"><i class="fas fa-inbox"></i></button>
+            <button class="icon-button" id="importFile" title="Import Text File"><i
+                    class="fas fa-file-import"></i></button>
+            <button class="icon-button" id="codePreview" title="Preview Code Live"><i class="fas fa-eye"></i></button>
+            <button class="icon-button" id="beautify" title="Beautify Code"><img
+                src="assets/beautify.png" alt="Salesforce" style="    width: 27px;
+                padding: 0px;
+                margin: -7px;"></button>
+
+            <button class="icon-button" id="saveFile" title="Save File"><i class="fas fa-save"></i></button>
+            <input type="file" id="fileInput" accept=".txt,.html" style="display:none;">
+          
+         
+            
+            <div class="salesforcelink"
+            style="float: right;
+            width: 8%;
+            max-width: 30px;
+            cursor: pointer;
+            margin-right: 14px;
+            margin-left: 3px;
+            margin-top: 5px;"><img
+                src="assets/salesforce.png" alt="Salesforce" style="width: 100%;"></div>
+                    
+        <div class="effectuslink"
+            style="float: right;
+            width: 8%;
+            max-width: 30px;
+            cursor: pointer;
+            margin-right: 14px;
+            margin-left: 10px;
+            margin-top: 5px;"> <img
+                src="assets/ecp.png" alt="Effectus" style="width: 100%;"></div>
+
+                
+        </div>
+       
+        <div class="settings" style="margin-right: 11px;">
+
+            <label for="languageSelect">Lang:</label>
+            <select id="languageSelect">
+                <option value="htmlmixed">HTML</option>
+                <option value="javascript">JavaScript</option>
+                <option value="application/json">JSON</option>
+                <option value="text/plain">Plain Text</option>
+            </select>
+
+
+
+            <label for="fontSizeSlider">Font Size:</label>
+            <input type="range" id="fontSizeSlider" min="10" max="30" value="20" step="1">
+            <label for="themeSelect">Theme:</label>
+            <select id="themeSelect">
+                <option disabled selected value="">Color Theme</option>
+                <option value="3024-night">Default</option>
+                <option value="zenburn">Zenburn</option>
+                <option value="xq-dark">XQ-Dark</option>
+                <option value="material">Material</option>
+                <option value="ambiance">Ambiance</option>
+                <option value="eclipse">Eclipse</option>
+                <option value="monokai">Monokai</option>
+                <option value="dracula">Dracula</option>
+                <option value="solarized">Solarized</option>
+                <option value="gruvbox-dark">Gruvbox Dark</option>
+                <option value="the-matrix">The Matrix</option>
+
+                <option value="nord">Nord</option>
+            </select>
+        </div>
+      
+    </div>
+    <div id="tabs">
+        <div style="margin-right: 5px; color: #fff;line-height: 28px;">Pages:</div>
+    </div>
+    <textarea id="code-editor" spellcheck="true"></textarea>
+    <div id="notebook">
+        <div class="codepreview"></div>
+    </div>
 
     <!-- Modal for Adding New Tab -->
     <div id="modal" class="modal">
@@ -186,217 +545,18 @@
             <button id="cancelDelete" class="modalButton">Cancel</button>
         </div>
     </div>
+    <script src="js5/notebook.js"></script>
 
-    <script>
-        const dbName = "notebookDB";
-        const storeName = "notes";
-        const tabListKey = "tabList";
-        let db;
-        let activeTab = null;
-        let tabToDelete = null;
+   
+    
 
-        // Open IndexedDB
-        const openDB = () => {
-            return new Promise((resolve, reject) => {
-                const request = indexedDB.open(dbName, 1);
 
-                request.onupgradeneeded = function(event) {
-                    db = event.target.result;
-                    if (!db.objectStoreNames.contains(storeName)) {
-                        db.createObjectStore(storeName);
-                    }
-                };
 
-                request.onsuccess = function(event) {
-                    db = event.target.result;
-                    resolve();
-                };
 
-                request.onerror = function(event) {
-                    console.error("Database error:", event.target.errorCode);
-                    reject(event.target.errorCode);
-                };
-            });
-        };
 
-        // Save notes to IndexedDB
-        const saveNotes = (tab) => {
-            if (!db || !tab) return; // Prevent operation if db is not ready or tab is null
-            const transaction = db.transaction([storeName], "readwrite");
-            const store = transaction.objectStore(storeName);
-            const notes = document.getElementById("notebook").innerHTML;
-            const request = store.put(notes, tab);
 
-            request.onerror = function(event) {
-                console.error("Failed to save notes:", event.target.errorCode);
-            };
-        };
 
-        // Load notes from IndexedDB
-        const loadNotes = (tab) => {
-            if (!db || !tab) return; // Prevent operation if db is not ready or tab is null
-            const transaction = db.transaction([storeName], "readonly");
-            const store = transaction.objectStore(storeName);
-            const request = store.get(tab);
 
-            request.onsuccess = function(event) {
-                document.getElementById("notebook").innerHTML = event.target.result || "";
-            };
-
-            request.onerror = function(event) {
-                console.error("Failed to load notes for tab:", tab, event.target.errorCode);
-            };
-        };
-
-        // Save tab list to IndexedDB
-        const saveTabList = () => {
-            if (!db) return;
-            const transaction = db.transaction([storeName], "readwrite");
-            const store = transaction.objectStore(storeName);
-            const tabList = Array.from(document.querySelectorAll('.tab')).map(t => t.textContent.replace(/ ×$/, '').trim());
-            const request = store.put(tabList, tabListKey);
-
-            request.onerror = function(event) {
-                console.error("Failed to save tab list:", event.target.errorCode);
-            };
-        };
-
-        // Load tab list from IndexedDB
-        const loadTabList = () => {
-            if (!db) return;
-            const transaction = db.transaction([storeName], "readonly");
-            const store = transaction.objectStore(storeName);
-            const request = store.get(tabListKey);
-
-            request.onsuccess = function(event) {
-                const tabList = event.target.result || ["Workbook"];
-                tabList.forEach((tabName, index) => addTab(tabName, index === 0));
-                switchTab(tabList[0]); // Switch to the first tab in the list
-            };
-
-            request.onerror = function(event) {
-                console.error("Failed to load tab list:", event.target.errorCode);
-            };
-        };
-
-        // Add new tab
-        const addTab = (tabName, isDefault = false) => {
-            const tabs = document.getElementById("tabs");
-            const tab = document.createElement("div");
-            tab.className = "tab";
-            tab.innerHTML = isDefault ? `<span>${tabName}</span>` : `<span>${tabName}</span> <button class="close-tab" onclick="showDeleteModal(event, '${tabName}')">×</button>`;
-            tab.onclick = (e) => {
-                if (e.target.tagName !== 'BUTTON') switchTab(tabName);
-            };
-            tabs.appendChild(tab);
-        };
-
-        // Show delete confirmation modal
-        const showDeleteModal = (event, tabName) => {
-            event.stopPropagation(); // Prevent switching tabs when clicking delete
-            tabToDelete = tabName;
-            document.getElementById("deleteModalMessage").textContent = `Are you sure you want to delete the tab "${tabName}"?`;
-            document.getElementById("deleteModal").style.display = "flex";
-        };
-
-        // Hide delete confirmation modal
-        const hideDeleteModal = () => {
-            document.getElementById("deleteModal").style.display = "none";
-            tabToDelete = null;
-        };
-
-        // Delete a tab
-        const deleteTab = () => {
-            if (!tabToDelete) return;
-            const transaction = db.transaction([storeName], "readwrite");
-            const store = transaction.objectStore(storeName);
-            store.delete(tabToDelete).onsuccess = () => {
-                const tabElement = Array.from(document.querySelectorAll('.tab')).find(t => t.textContent.includes(tabToDelete));
-                if (tabElement) tabElement.remove();
-
-                saveTabList();
-                if (activeTab === tabToDelete) {
-                    const remainingTabs = document.querySelectorAll('.tab');
-                    if (remainingTabs.length > 0) {
-                        switchTab(remainingTabs[0].textContent.replace(/ ×$/, '').trim());
-                    } else {
-                        activeTab = "Workbook";
-                        document.getElementById("notebook").innerHTML = "";
-                        addTab("Workbook", true);
-                    }
-                }
-                hideDeleteModal();
-            };
-        };
-
-        // Switch tab
-        const switchTab = (tabName) => {
-            if (activeTab !== null) saveNotes(activeTab); // Save notes of the current tab
-            activeTab = tabName;
-            loadNotes(tabName); // Load the selected tab's notes
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            const tab = Array.from(document.querySelectorAll('.tab')).find(t => t.textContent.includes(tabName));
-            if (tab) tab.classList.add('active');
-        };
-
-        // Clear all tabs and IndexedDB
-        const clearAllTabs = () => {
-            const transaction = db.transaction([storeName], "readwrite");
-            const store = transaction.objectStore(storeName);
-            store.clear().onsuccess = () => {
-                document.getElementById("tabs").innerHTML = '';
-                addTab("Page 1", true);
-                switchTab("Page 1");
-            };
-        };
-
-        // Initialize the application
-        const initialize = async () => {
-            try {
-                await openDB();
-                loadTabList(); // Load the tab list from the database
-            } catch (error) {
-                console.error("Failed to initialize database:", error);
-            }
-        };
-
-        // Show modal for adding a new tab
-        const showModal = () => {
-            document.getElementById("modal").style.display = "flex";
-        };
-
-        // Hide modal
-        const hideModal = () => {
-            document.getElementById("modal").style.display = "none";
-            document.getElementById("tabNameInput").value = ""; // Clear input field
-        };
-
-        // Confirm adding new tab
-        const confirmAddTab = () => {
-            const tabName = document.getElementById("tabNameInput").value.trim();
-            if (tabName && !Array.from(document.querySelectorAll('.tab')).some(t => t.textContent.includes(tabName))) {
-                addTab(tabName);
-                saveTabList();
-                hideModal();
-            } else {
-                alert("Invalid or duplicate tab name.");
-            }
-        };
-
-        document.getElementById("addTabButton").onclick = showModal;
-        document.getElementById("closeModal").onclick = hideModal;
-        document.getElementById("confirmAddTab").onclick = confirmAddTab;
-        document.getElementById("confirmDelete").onclick = deleteTab;
-        document.getElementById("cancelDelete").onclick = hideDeleteModal;
-        document.getElementById("clearTabsButton").onclick = clearAllTabs;
-
-        // Save notes and tab list every 5 seconds
-        setInterval(() => {
-            saveNotes(activeTab);
-            saveTabList();
-        }, 1000);
-
-        initialize();
-    </script>
 </body>
+
 </html>

@@ -45,6 +45,77 @@ function selectAndHighlightElement(element, scrollElement = false) {
         $('.explorerselected, .onblock, .interedit').removeClass('explorerselected onblock interedit');
         $('.multiselected').removeClass('multiselected')
         $element.addClass('explorerselected');
+    
+        document.getElementById('beautycode').value = html_beautify(document.getElementById('pullthecode3').innerHTML, {
+            indent_size: 2,  // Indentation size
+            space_in_empty_paren: true,  // Add space inside empty parenthesis
+            preserve_newlines: true,  // Preserve existing line-breaks
+            max_preserve_newlines: 2  // Maximum number of line-breaks to be preserved in one chunk
+        });
+
+        let content = $('#beautycode').val();
+
+        // Function to find the complete <div> block with 'explorerselected' class
+        function findExplorerSelectedBlock(text) {
+            // Find the index of the 'explorerselected' class
+            let explorerIndex = text.indexOf('explorerselected');
+    
+            if (explorerIndex === -1) {
+                return null; // Return null if not found
+            }
+    
+            // Find the start of the opening <div> tag
+            let startIndex = text.lastIndexOf('<div', explorerIndex);
+    
+            // Find the end of the corresponding closing </div>
+            let endIndex = findMatchingClosingDivIndex(text, startIndex);
+    
+            if (startIndex !== -1 && endIndex !== -1) {
+                return { startIndex, endIndex };
+            }
+            return null;
+        }
+    
+        // Find the indices for highlighting
+        let blockIndices = findExplorerSelectedBlock(content);
+    
+        if (blockIndices) {
+            // Select the text range in the textarea
+            let textarea = document.getElementById('beautycode');
+            
+            textarea.setSelectionRange(blockIndices.startIndex, blockIndices.endIndex); // Select until the closing tag
+            
+            // Focus the textarea to make the selection visible
+            textarea.focus();
+        }
+    
+        // Function to find the matching closing </div> index
+        function findMatchingClosingDivIndex(text, start) {
+            let openDivCount = 0;
+            let pos = start;
+    
+            while (pos < text.length) {
+                let nextOpen = text.indexOf('<div', pos);
+                let nextClose = text.indexOf('</div>', pos);
+    
+                if (nextOpen !== -1 && nextOpen < nextClose) {
+                    openDivCount++;
+                    pos = nextOpen + 4; // Move past <div>
+                } else if (nextClose !== -1) {
+                    openDivCount--;
+                    pos = nextClose + 6; // Move past </div>
+                    
+                    if (openDivCount <= 0) {
+                        return pos; // Return position at the end of </div>
+                    }
+                    pos = nextClose + 6;
+                } else {
+                    break;
+                }
+            }
+            
+            return -1; // Not found
+        }
     }
 
     if (!$element.hasClass('liveelement')) {
@@ -480,18 +551,19 @@ $(document).on('contextmenu', '.indent, .indentselected', function(e) {
     $('#loadimage').hide()
     if ($(this).data('tag') === 'IMG') {
         $('#contextMenu #edit, #contextMenu #component, #contextMenu #empty, #contextMenu #textarea , #converterh').hide();
-         $('#loadimage').show()
+         $('#loadimage ').show()
+
     } else if ($(this).data('tag') === 'COMPONENT') {
         $('#contextMenu #component , #contextMenu #textarea, #converterh').hide();
         $('.cmenulist').hide()
-        $('.compaddsystem').show()
+        $('.compaddsystem, #contextMenu #edit').show()
 
         
     } 
     else if ($(this).data('tag') === 'ROW') {
         $('.cmenulist, #converterh').hide()
         $('.rowaddsystem').show()
-        $(' #adder-row-b, #adder-row-a').show()
+        $(' #adder-row-b, #adder-row-a , #contextMenu #edit').show()
     } 
     
     else if ($(this).data('tag') === 'A') {
@@ -527,7 +599,12 @@ $(document).on('contextmenu', '.indent, .indentselected', function(e) {
     
     else if ($(this).data('tag') === 'SOURCE' || $(this).data('tag') === 'TRACK') {
         $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #duplicate, #contextMenu #textarea , #converterh').hide();
-    } else {
+    } else if ($(this).data('tag') === 'DIV' ) {
+        $('#contextMenu #component, #contextMenu #edit, #contextMenu #empty, #contextMenu #duplicate, #contextMenu #textarea , #converterh').show();
+    }  
+    
+    
+    else {
         $('#contextMenu #edit, #contextMenu #component, #contextMenu #empty, #contextMenu #duplicate').show();
     }
 //$(this).click()
@@ -1048,13 +1125,13 @@ $('.openthematrix').on('click', function () {
     }
 
     function handleMatrix2() {
-        $('#mobilepreview2').show()
+        $('#mobilepreview2').show().animate({'min-height' : $(document).height() / 2.288})
         $('img.loading-lazy').each(function () {
             $(this).attr('src', $(this).attr('data-src'));
         });
 
         $('#results21aaa,  #mymatrix6, #mymatrix3').hide();
-        $pullthecode2.clearQueue().animate({ 'width': '65%' }, 200, function () {
+        $pullthecode2.clearQueue().animate({ 'width': '67%' }, 200, function () {
             $(this).css('min-height', $(document).height() - 100)
                    .css('max-height', $(document).height() - 100);
         }).show();
@@ -1207,7 +1284,7 @@ $('.openthematrix').on('click', function () {
         const newHeightForExplorer = $(window).height();
         $mobilepreview2.hide();
         $mymatrix6.hide();
-        $pullthecode2.clearQueue().animate({ 'width': '65%' }, 200).animate({ 'min-height': $(window).height() - 90 + 'px' }, 200);
+        $pullthecode2.clearQueue().animate({ 'width': '67%' }, 200).animate({ 'min-height': $(window).height() - 94 + 'px' }, 200);
         $resizableDiv.clearQueue().animate({ 'width': '72%' }, 200);
         $explorer2.show().clearQueue().animate({ 'max-height': newHeightForExplorer }, 400);
         $sidetoolset.show();
@@ -1236,7 +1313,7 @@ $('.openthematrix').on('click', function () {
         $resizableDiv.delay(600).animate({ 'width': '100%' }, 400);
         $pullthecode2.hide().animate({ 'width': '53%' }, 400).fadeIn();  
         $mymatrix3.hide().animate({ 'width': '44%' }, 400).fadeIn();
-        $beautycode.animate({ 'height': $pullthecode2.height() - 60 }, 400);
+        $beautycode.animate({ 'height': $pullthecode2.height() - 60 }, 400).animate({ 'min-height': $pullthecode2.height() - 60 }, 400).animate({ 'max-height': $pullthecode2.height() - 60 }, 400);;
         //$beautycode.animate({ 'min-height': $(window).height() - 145 }, 400).animate({ 'max-height': $(window).height() - 145 }, 400);
     }
 
@@ -1246,10 +1323,11 @@ $('.openthematrix').on('click', function () {
         $("#pullthecode2, #resizable-div, #beautycode").hide();
         $mobilepreview2.show();
         $.when(
-            $pullthecode2.clearQueue().animate({ 'max-height': $(window).height() / 2.32 }, 0)
-                                 .animate({ 'min-height': $(window).height() / 2.32 }, 0),
-            $resizableDiv.clearQueue().animate({ 'max-height': $(window).height() - 20 }, 0)
-                                  .animate({ 'min-height': $(window).height() - 20 }, 0),
+            
+            $pullthecode2.clearQueue().animate({ 'max-height': $(window).height() / 2.42 }, 0)
+                                 .animate({ 'min-height': $(window).height() / 2.42 }, 0),
+            $resizableDiv.clearQueue().animate({ 'max-height': $(window).height() - 40 }, 0)
+                                  .animate({ 'min-height': $(window).height() - 40 }, 0),
             $beautycode.clearQueue().animate({ 'max-height': $(window).height() / 2.83 }, 0)
                                 .animate({ 'min-height': $(window).height() / 2.83 }, 0)
         ).done(function () {
@@ -1450,7 +1528,7 @@ document.getElementById('mytoolsview').addEventListener('change', function () {
         $('#legend').show()
         $('.hideinfullscreen').show()
         $('.mymobile , #pullthecode2').css('float', 'left')
-        $(' #pullthecode2').css('width', '64%')
+        $(' #pullthecode2').css('width', '68%')  //mod1
         $('.imgbuild').css('width', '98%')
     }
 
@@ -3550,8 +3628,26 @@ $('#showthepromotionalimage').on('click', function () {
 
 
 
-$('#wraparoundsubmit').on('click', function () {
+$('#wraparoundselect').on('change', function() {
+    hideextra = $(this).val()
+    if(hideextra === 'blog') {
+        $('#wrapselectimagepreview').hide()
+        $('#hideforblog').hide()
+    } else {
+        $('#wrapselectimagepreview').show()
+        $('#hideforblog').show()
+    }
+})
 
+
+$('#wrapimageselector').on('change' , function() {
+selectaproductwrapimage = $('#wrapimageselector').val()
+wrapimagefilename = $('#wraparoundfilename').val()
+$('#wrapselectimagepreview').attr('src' , 'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/' +selectaproductwrapimage+wrapimagefilename+'.jpg')
+})
+
+
+$('#wraparoundsubmit').on('click', function () {
     if ($('#wraparoundalt').val() === '') {
         $('.imagemessage').slideDown().delay(2000).slideUp()
         return false
@@ -3570,12 +3666,13 @@ $('#wraparoundsubmit').on('click', function () {
 
 
     if (wrapcatalogselect === 'product') {
-
+selectaproductwrapimage = $('#wrapimageselector').val()
+        wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' + imagefloat + ';'
         wrapfullimage =
-            '<img class="loading-lazy promoimg21 in910" style="width:45% !important; padding:0.5%" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_' +
-            wrapimagefilename + '.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="' + wrapimagealt +
-            '" src="#">'
-        $('.interedit').html('<div class="width100c">' + wrapfullimage + wraptext + '</div>')
+            'https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/' +selectaproductwrapimage+wrapimagefilename+'.jpg?sw=400&amp;sh=400&amp;sm=fit'
+          
+            $('.interedit').html('<div style="' + wrapimagestyle +'"><img class="loading-lazy promoimg21 in910" src="'+ wrapfullimage+'"  data-src="'+wrapfullimage+'" alt="'+wrapimagealt+'"/>   </div><div style="align-items: flex-start;"><div style="flex: 1 1 auto" >' +wraptext + '</div>');
+        
     }
     if (wrapcatalogselect === 'promo') {
 
@@ -5113,7 +5210,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+$('#pullthecode2').animate({'min-height' : $(document).height() -99})
 
 
 /*

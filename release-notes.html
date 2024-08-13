@@ -121,7 +121,13 @@
       border: 1px solid #888;
       width: 80%;
       color: black;
+      max-height: 600px;
+      overflow: auto;
     }
+
+    .modal-content ul li {
+    padding-top: 8px;
+}
 
     .close {
       color: #aaa;
@@ -145,6 +151,105 @@
 
 </a>
   <div class="timeline">
+
+    <div class="container left">
+      <div class="content">
+        <h2><span class="fa fa-plus"></span>2024/8/9 Domcell Version 10</h2>
+        <p>New Features and Major Release</p>
+        <button id="btnFeature0001z499a1">Read more</button>
+      </div>
+    </div>
+
+
+
+    <div id="modalFeature0001z499a1" class="modal" style="font-size: 0.85rem;">
+      <div class="modal-content">
+        <span class="close" data-modal="modalFeature0001z499a1">&times;</span>
+        <h2>Major Release 10.1</h2>
+I am very proud to announce this version as it represents the culmination of the initial vision for version 10. As Domcell heads towards a more traditional workflow, it remains a highly customized PCR toolset.
+        <ul>
+            <li>
+                <strong>New Notebook/Workbook Features</strong>:<br>
+                Persist notes or code with the ability to change the color theme and font size of the Notebook window. These settings are retained upon reopening the app.
+            </li>
+            <li>
+                <strong>New Fetch Feature</strong>:<br>
+                Pull content assets and blogs from PCR and import them directly into Domcell.
+            </li>
+            <li>
+                <strong>New View Modes</strong>:<br>
+                Introduce new view modes to accommodate different workflows.
+            </li>
+            <li>
+                <strong>Enhanced Image Selector</strong>:<br>
+                The image selector for Image Wrap is enhanced, with options for all images in the carousel (1-16), including the Energy Guide.
+            </li>
+            <li>
+                <strong>Improved Code Highlighting</strong>:<br>
+                Code highlighting in Code View or All Panels View will highlight your selection. It's not perfect yet and currently selects more than intended, but it indicates where you should focus. This feature is still in development.
+            </li>
+            <li>
+                <strong>Notebook Updates</strong>:<br>
+                Import the Live page as code.<br>
+                Import text/HTML files to view or edit the code.<br>
+                Added code hinting and completion (Ctrl + Space).
+            </li>
+            <li>
+                <strong>Integrated Salesforce and Effectus</strong>:<br>
+                Buttons to open Salesforce and Effectus windows have been added to the Final Code section (top right) and the Notebook.
+            </li>
+            <li>
+                <strong>Updated Explorer Look</strong>:<br>
+                Revamped the Explorer interface for improved aesthetics and functionality.
+            </li>
+            <li>
+                <strong>Enhanced Workspace Typing</strong>:<br>
+                Improved the ability to type directly into the Workspace, ensuring better reflection in Code View and vice versa.
+            </li>
+            <li>
+                <strong>New Plugin Features</strong>:<br>
+                Added Schema Builder, Badges, and Bubble Links to Plugins.
+            </li>
+            <li>
+                <strong>Full-Screen Mode Enhancement</strong>:<br>
+                Pressing F11 now also hides the application menu for more screen space.
+            </li>
+            <li>
+                <strong>Workflow Buttons</strong>:<br>
+                Additional buttons for starting workflows have been added to the Getting Started screen.
+            </li>
+            <li>
+                <strong>HTML Effects Panel Update</strong>:<br>
+                Set a maximum height for the HTML Effects panel to reduce scrolling when both sections are open.
+            </li>
+            <li>
+                <strong>Application Menu Rebuild</strong>:<br>
+                Complete rebuild of the application menu. Removed unnecessary or deprecated tools and added Notebook to the menu.
+            </li>
+            <li>
+                <strong>Core Code Cleanup</strong>:<br>
+                Updated core <code>main.js</code> for code cleanup.
+            </li>
+            <li>
+                <strong>New App Loading Splash Screen</strong>:<br>
+                Introduced a new splash screen for app loading.
+            </li>
+            <li>
+                <strong>Upcoming Code Minification</strong>:<br>
+                Code minified and speed version release is coming soon (10.1.1).
+            </li>
+        </ul>
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+  
 
     <div class="container right">
       <div class="content">
@@ -181,7 +286,7 @@
 <li>Programming Error with Word and other functions : Jquery reverted back to 3.7.1</li>
 
 <li>10.16: New: Contact Asset ID Finder</li>
-<li>Scrape Site Technology implimented</li>
+<li>Scrap Site Technology implimented</li>
 <li>10:18 PCR Fetch  -- Pulls code from PCR to DOMCELL</li>
 
           </ol>

@@ -799,4 +799,19 @@ $('#loadstartmenu').on('click' , function() {
     $('#openNotebookWindow').on('click', function() {
         // Open a new window with the specified URL and dimensions
         window.open('notebook.html', 'NotebookWindow', 'width=1024,height=768');
+
     });
+
+    
+    $('#openEffectusWindow , .effectuslink').on('click', function() {
+        window.open('https://pcr.effectuspartners.com/login', 'Effectus PIM', 'width=1024,height=768');
+    });
+    $('#openSalesforceWindow , .salesforcelink').on('click', function() {
+        window.open('https://staging-na01-pcrichard.demandware.net/on/demandware.store/Sites-Site/default/ViewApplication-DisplayWelcomePage', 'Salesforce Staging', 'width=1024,height=768');
+    });
+
+    $('#finalcodeNotebook').on('click' , function() {
+       $('#openNotebookWindow').click() 
+    })
+
+
