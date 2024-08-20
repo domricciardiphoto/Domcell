@@ -86,6 +86,8 @@ function createNotebookWindow() {
       nodeIntegration: true, // Disable Node integration
       contextIsolation: false, // Disable context isolation
       spellcheck: true,        // Enable spellcheck
+    
+      
     },
   });
 
@@ -152,11 +154,13 @@ function createMainWindow() {
       contextIsolation: true, // Enable context isolation
       enableRemoteModule: false, // Disable remote module
       preload: path.join(__dirname, 'preload.js'), // Preload script for secure access
+
     },
   });
 
   // Load the main content file
   win.loadFile(path.join(__dirname, 'gettingstarted-new.html'));
+  
 
   // Show the window once ready to avoid flickering
   win.once('ready-to-show', () => {
@@ -191,14 +195,6 @@ function createMainWindow() {
     shell.openExternal(url);
   });
 }
-
-
-
-
-
-
-
-
 
 
 

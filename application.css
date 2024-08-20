@@ -1837,7 +1837,20 @@
             width: 14% !important;
             border: 1px solid #333;
             background-color: transparent !important;
+            -webkit-box-shadow:inset 0 0 10px 0 #000000;
+box-shadow:inset 0 0 10px 0 #000000;
+border-radius: 10px;
         }
+
+        .advanced-Buttons:hover {
+            -webkit-box-shadow:inset 0 0 0px 0 #000000;
+            box-shadow:inset 0 0 0px 0 #000000; 
+        }
+
+        .advanced-Buttons img {
+            width: 30% !important;
+            margin-top: 3% !important;
+        }    
 
 /* Style for the item that triggers the popup */
 .hover-item {

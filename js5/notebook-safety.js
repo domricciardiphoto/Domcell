@@ -1,10 +1,10 @@
 let db, notebookDb;
-const dbName = "DB";
-const storeName = "notes";
-const themeKey = "theme";
-const tabListKey = "tabList";
-const notebookDbName = 'DomcellDB';
-const notebookStoreName = 'DomcellcontentStore';
+const dbName = "DB-window";
+const storeName = "notes-window";
+const themeKey = "theme-window";
+const tabListKey = "tabList-window";
+const notebookDbName = 'DomcellDB-window';
+const notebookStoreName = 'DomcellcontentStore-window';
 let activeTab = null;
 let tabToDelete = null;
 
@@ -38,7 +38,7 @@ const editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
 editor.setSize('100%', '100%');
 document.querySelector('.CodeMirror , textarea').setAttribute('spellcheck', 'true');
 
-// Open IndexedDB for both general use and notebook-specific content
+// Open IndexedDB
 const openDB = () => {
     return new Promise((resolve, reject) => {
         const request = indexedDB.open(dbName, 1);
@@ -61,29 +61,6 @@ const openDB = () => {
         };
     });
 };
-
-async function openNotebookDB() {
-    return new Promise((resolve, reject) => {
-        const request = indexedDB.open(notebookDbName, 1);
-
-        request.onupgradeneeded = function (event) {
-            notebookDb = event.target.result;
-            if (!notebookDb.objectStoreNames.contains(notebookStoreName)) {
-                notebookDb.createObjectStore(notebookStoreName, { keyPath: 'id' });
-            }
-        };
-
-        request.onsuccess = function (event) {
-            notebookDb = event.target.result;
-            resolve();
-        };
-
-        request.onerror = function (event) {
-            console.error('Database error:', event.target.errorCode);
-            reject(event.target.errorCode);
-        };
-    });
-}
 
 // Save notes to IndexedDB
 const saveNotes = (tab) => {
@@ -176,60 +153,6 @@ const loadTheme = () => {
     };
 };
 
-// Save notebook content to IndexedDB
-async function saveNotebookContent(content) {
-    if (!notebookDb) {
-        await openNotebookDB();
-    }
-
-    return new Promise((resolve, reject) => {
-        const transaction = notebookDb.transaction(['DomcellcontentStore'], 'readwrite');
-        const store = transaction.objectStore('DomcellcontentStore');
-        const request = store.put({ id: 'savedContent', htmlContent: content });  // Save using 'savedContent' key
-
-        request.onsuccess = function () {
-            // // console.log(('Content successfully saved to DomcellDB.');
-            resolve();
-        };
-
-        request.onerror = function (event) {
-            console.error('Failed to save content:', event.target.errorCode);
-            reject(event.target.errorCode);
-        };
-    });
-}
-
-// Load notebook content from IndexedDB
-function loadFromDatabase() {
-    const request = indexedDB.open('DomcellDB');
-
-    request.onerror = function(event) {
-        console.error("Database error:", event.target.errorCode);
-    };
-
-    request.onsuccess = function(event) {
-        notebookDb = event.target.result;
-        const transaction = notebookDb.transaction(['DomcellcontentStore'], "readonly");
-        const store = transaction.objectStore('DomcellcontentStore');
-        const getRequest = store.get('savedContent');  // Retrieve using 'savedContent' key
-
-        getRequest.onsuccess = function(event) {
-            const result = event.target.result;
-
-            if (result) {
-                let content = result.htmlContent;
-                editor.setValue(content);
-            } else {
-                console.warn("No content found for key 'savedContent'.");
-            }
-        };
-
-        getRequest.onerror = function(event) {
-            console.error("Error fetching data:", event.target.errorCode);
-        };
-    };
-}
-
 // Load CSS for the selected theme
 const loadThemeCSS = (theme) => {
     const existingLink = document.getElementById('themeStylesheet');
@@ -321,11 +244,9 @@ const clearAllTabs = () => {
 const initialize = async () => {
     try {
         await openDB();
-        await openNotebookDB();
         loadTabList();
         loadTheme();
         loadFontSize();
-        loadFromDatabase();
     } catch (error) {
         console.error("Failed to initialize database:", error);
     }
@@ -351,7 +272,6 @@ const confirmAddTab = () => {
         hideModal();
     } else {
       
-
         $('#changemodelname').text('Invalid or duplicate tab name.');
 
         setTimeout(function() {
@@ -436,16 +356,20 @@ function createButtonAndTextarea(content) {
 
 // Function to fetch HTML from IndexedDB and create elements
 function importLivePage() {
-    const request = indexedDB.open(notebookDbName);
+    const dbName = "DomcellDB";
+    const storeName = "DomcellcontentStore";
+    let db;
+
+    const request = indexedDB.open(dbName);
 
     request.onerror = function (event) {
         console.error("Database error:", event.target.errorCode);
     };
 
     request.onsuccess = function (event) {
-        notebookDb = event.target.result;
-        const transaction = notebookDb.transaction([notebookStoreName], "readonly");
-        const store = transaction.objectStore(notebookStoreName);
+        db = event.target.result;
+        const transaction = db.transaction([storeName], "readonly");
+        const store = transaction.objectStore(storeName);
         const getRequest = store.get("savedContent");
 
         getRequest.onsuccess = function (event) {
@@ -507,18 +431,11 @@ function synchronizePreview() {
     $('.codepreview').html(editor.getValue());
 }
 
-editor.on('change', async function (instance) {
-    const content = instance.getValue();
+editor.on('change', function (instance) {
+    var content = instance.getValue();
     $('.codepreview').html(content);
     synchronizePreview();
-    try {
-        await saveNotebookContent(content);
-        // console.log(('Content saved to IndexedDB.');
-    } catch (error) {
-        console.error('Failed to save content:', error);
-    }
 });
-
 
 editor.on("inputRead", function onInputRead(editor, input) {
     if (input.text[0] === "." || input.text[0] === "<" || input.text[0] === "{") {
@@ -560,12 +477,15 @@ function confirmSaveFile() {
     const content = editor.getValue();
 
     if (!fileName) {
+     
+       
+
 
         $('#changemodelname').text('Please enter a file name.');
 
-        setTimeout(function() {
-            $('#changemodelname').text('Enter the name for the new page:');
-        }, 5000);
+setTimeout(function() {
+    $('#changemodelname').text('Enter the name for the new page:');
+}, 5000);
         return;
     }
 
@@ -612,11 +532,69 @@ function handleAutoClick() {
         const importLiveButton = document.getElementById('importLive');
         if (importLiveButton) {
             importLiveButton.click();
+            console.log('Import Live button automatically clicked based on URL parameter');
         }
     }
 }
 
 window.addEventListener('load', handleAutoClick);
+
+async function openNotebookDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(notebookDbName, 1);
+
+        request.onupgradeneeded = function (event) {
+            notebookDb = event.target.result;
+            if (!notebookDb.objectStoreNames.contains(notebookStoreName)) {
+                notebookDb.createObjectStore(notebookStoreName, { keyPath: 'id' });
+            }
+        };
+
+        request.onsuccess = function (event) {
+            notebookDb = event.target.result;
+            resolve();
+        };
+
+        request.onerror = function (event) {
+            console.error('Database error:', event.target.errorCode);
+            reject(event.target.errorCode);
+        };
+    });
+}
+
+function saveNotebookContent(content) {
+    return new Promise((resolve, reject) => {
+        const transaction = notebookDb.transaction([notebookStoreName], 'readwrite');
+        const store = transaction.objectStore(notebookStoreName);
+        const request = store.put({ id: 'notebookContent', htmlContent: content });
+
+        request.onsuccess = function () {
+            console.log('Notebook content saved to DB successfully.');
+            resolve();
+        };
+
+        request.onerror = function (event) {
+            console.error('Failed to save notebook content:', event.target.errorCode);
+            reject(event.target.errorCode);
+        };
+    });
+}
+
+window.addEventListener('load', async function () {
+    await openNotebookDB();
+
+    // Listen for a message to save the content
+    window.addEventListener('message', async function (event) {
+        if (event.data === 'saveNotebookContent') {
+            const contentToSave = editor.getValue();
+            await saveNotebookContent(contentToSave);
+            window.parent.postMessage('notebookContentSaved', '*');
+        }
+    });
+
+    // Beautify the code when the editor loads
+    beautifyCode();
+});
 
 function beautifyCode() {
     const content = editor.getValue();
@@ -637,37 +615,62 @@ $('#beautify').on('click', function() {
     beautifyCode();
 });
 
+
+
+
+
+
+
+
+
 // Add event listener for clicks on .codepreview
 $('.codepreview').on('click', function(event) {
     const clickedElement = event.target;
+    // Check if the clicked target is an image or element
     if (clickedElement.tagName === 'IMG') {
         highlightElementCode(clickedElement);
     } else {
+        // If not an image, try to highlight text selection
         synchronizeSelection();
     }
 });
 
 function highlightElementCode(element) {
+    // Get the outer HTML of the element
     const elementHtml = element.outerHTML;
+    console.log("Clicked Element HTML:", elementHtml);
 
+    // Normalize the outer HTML to match the CodeMirror content
     const normalizedElementHtml = normalizeText(elementHtml).replace(/\s+/g, '');
+    console.log("Normalized Element HTML:", normalizedElementHtml);
 
+    // Get the normalized content and index mapping from CodeMirror
     const originalContent = editor.getValue();
     const { normalizedText: normalizedContent, indexMap } = normalizeTextWithMapping(originalContent);
+    console.log("Normalized CodeMirror Content:", normalizedContent);
 
+    // Find the start index of the element HTML in the normalized content
     const startIndex = normalizedContent.indexOf(normalizedElementHtml);
     if (startIndex !== -1) {
         const endIndex = startIndex + normalizedElementHtml.length;
+        console.log("Start Index in Normalized Content:", startIndex, "End Index:", endIndex);
 
+        // Use the index map to find the original indices
         const originalStartIndex = indexMap[startIndex];
-        const originalEndIndex = indexMap[endIndex - 1] + 1;
+        const originalEndIndex = indexMap[endIndex - 1] + 1; // End is exclusive
 
+        console.log("Original Start Index:", originalStartIndex, "Original End Index:", originalEndIndex);
+
+        // Convert the indices to CodeMirror positions
         const startPos = editor.posFromIndex(originalStartIndex);
         const endPos = editor.posFromIndex(originalEndIndex);
 
+        console.log("Start Position in CodeMirror:", startPos, "End Position:", endPos);
+
+        // Set the selection in CodeMirror
         editor.setSelection(startPos, endPos);
         editor.focus();
-        editor.refresh();
+        editor.refresh(); // Ensure the editor updates its display
     } else {
         console.warn("Element HTML not found in CodeMirror content.");
     }
@@ -676,26 +679,40 @@ function highlightElementCode(element) {
 function synchronizeSelection() {
     const selection = window.getSelection();
     const selectedText = selection.toString().trim();
+    console.log("Selected Text:", selectedText);
 
     if (selectedText) {
+        // Normalize the selected text
         const normalizedSelectedText = normalizeText(selectedText).replace(/\s+/g, '');
+        console.log("Normalized Selected Text:", normalizedSelectedText);
 
+        // Get the normalized content and index mapping from CodeMirror
         const originalContent = editor.getValue();
         const { normalizedText: normalizedContent, indexMap } = normalizeTextWithMapping(originalContent);
+        console.log("Normalized CodeMirror Content:", normalizedContent);
 
+        // Find the start index in the normalized content
         const startIndex = normalizedContent.indexOf(normalizedSelectedText);
         if (startIndex !== -1) {
             const endIndex = startIndex + normalizedSelectedText.length;
+            console.log("Start Index in Normalized Content:", startIndex, "End Index:", endIndex);
 
+            // Use the index map to find the original indices
             const originalStartIndex = indexMap[startIndex];
-            const originalEndIndex = indexMap[endIndex - 1] + 1;
+            const originalEndIndex = indexMap[endIndex - 1] + 1; // End is exclusive
 
+            console.log("Original Start Index:", originalStartIndex, "Original End Index:", originalEndIndex);
+
+            // Convert the indices to CodeMirror positions
             const startPos = editor.posFromIndex(originalStartIndex);
             const endPos = editor.posFromIndex(originalEndIndex);
 
+            console.log("Start Position in CodeMirror:", startPos, "End Position:", endPos);
+
+            // Set the selection in CodeMirror
             editor.setSelection(startPos, endPos);
             editor.focus();
-            editor.refresh();
+            editor.refresh(); // Ensure the editor updates its display
         } else {
             console.warn("Normalized text not found in CodeMirror content.");
         }
@@ -712,9 +729,10 @@ function normalizeTextWithMapping(text) {
     for (let i = 0; i < text.length; i++) {
         const char = text[i];
 
+        // Only add non-space characters to the normalized text
         if (!/\s/.test(char)) {
             normalizedText.push(char);
-            indexMap[normalizedIndex] = i;
+            indexMap[normalizedIndex] = i; // Map normalized index to original index
             normalizedIndex++;
         }
     }
@@ -725,6 +743,8 @@ function normalizeTextWithMapping(text) {
 function normalizeText(text) {
     return text.replace(/\s+/g, ' ').trim();
 }
+
+
 
 $('.codepreview').on('mouseup', function() {
     synchronizeSelection();

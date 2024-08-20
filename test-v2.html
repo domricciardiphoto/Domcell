@@ -27,10 +27,12 @@ body {
     align-items: center;
     overflow: hidden;
 }
-.home-button a img {
+.home-button a img , .home-button  img {
     width: 20px; /* Adjust size as needed */
     margin-top: 5px;
 }
+
+
 
 .tabs {
     display: flex;
@@ -54,8 +56,7 @@ body {
     border-top: none;
     margin: 0px 5px;
     font-size: 0.6rem;
-    -webkit-box-shadow:inset 0 0 5px 5px #242020;
-box-shadow:inset 0 0 5px 5px #242020;
+
 }
 .tab:hover {
     background-color: #1a1a1a; /* Slightly lighter on hover for visual feedback */
@@ -63,19 +64,24 @@ box-shadow:inset 0 0 5px 5px #242020;
 }
 
 .tab.active {
-    background-color: #000; /* Active tab has a distinguishable color */
-    color: #fff;
+    background-color: transparent; /* Active tab has a distinguishable color */
+    color: yellow;
+    -webkit-box-shadow:inset 0 0 5px 5px #242020;
+    box-shadow:inset 0 0 5px 5px #242020;
 }
 
 .add-tab button {
     border: none;
     background-color: #4CAF50;
     color: white;
-    padding: 8px 15px;
+    padding: 4px 7px;
     cursor: pointer;
     position: absolute;
     right: 0px;
     top: 0px;
+    border-radius: 44px;
+    margin-top: 7px;
+    margin-right: 7px;
    
   
 }
@@ -132,6 +138,15 @@ color: red;
 </head>
 <body>
 
+<!-- HTML for the modal (initially hidden) -->
+<div id="confirmationModal" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); z-index: 1000; width: 300px; text-align: center; transition: all 0.3s ease;">
+    <p style="font-size: 18px; margin-bottom: 20px; color: #000;">Are You Sure You Want to Leave?</p>
+    <button id="yesButton" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; margin-right: 10px; transition: background-color 0.3s ease;">Yes</button>
+    <button id="noButton" style="background-color: #1a1a1a; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease;">No</button>
+</div>
+
+<!-- Background overlay -->
+<div id="modalOverlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 999;"></div>
 
   
 
@@ -140,7 +155,7 @@ color: red;
         <div class="nav-bar">
             <!-- Home Button -->
             <div class="home-button" id="home-buttonstart">
-                <a href="gettingstarted-new.html"><img src="assets/home.png" alt="Home"></a>
+               <img id="clicktogoback" src="assets/home.png" alt="Home" style="cursor: pointer;">
                
                 <button class="toggle-button" onclick="toggleEmbedSource()" style="background-color:transparent; border: none; width: 25%; cursor: pointer;"><img src="assets/html.png" style="width: 33%;" title="Code Editor"></button>
             </div>
@@ -368,6 +383,9 @@ newTab.click();
 
 
 <script>
+
+
+
    window.addEventListener('message', function(event) {
     if (event.origin !== window.location.origin) {
         // Optionally check the origin of the message for security
@@ -388,6 +406,8 @@ newTab.click();
 
 <script>
     function toggleEmbedSource() {
+      
+      
         const embed = document.querySelector('embed.active');
         if (!embed) {
             console.error('No active embed found');
@@ -401,7 +421,47 @@ newTab.click();
         embed.addEventListener('load', function onLoad() {
             console.log(`Embed loaded with src: ${newSrc}`);
         }, { once: true });
+
+        
     }
+
+
+    function handleToggleButtonClick(event) {
+    if (event.data === 'toggleButtonClick') {
+        // Simulate a click on the element with the class 'toggle-button'
+        var embedElement = document.querySelector('embed.active');
+    if (embedElement) {
+        embedElement.setAttribute('src', 'notebook.html');
+    } else {
+        console.error('No embed element with class "active" found.');
+    }
+    }
+}
+
+// Listen for messages from the iframe
+window.addEventListener('message', handleToggleButtonClick);
+
+
+
+
+document.getElementById('clicktogoback').addEventListener('click', function() {
+    // Show the modal and overlay
+    document.getElementById('confirmationModal').style.display = 'block';
+    document.getElementById('modalOverlay').style.display = 'block';
+    
+    // Handle "Yes" button click
+    document.getElementById('yesButton').addEventListener('click', function() {
+        window.location.href = 'gettingstarted-new.html';
+    });
+    
+    // Handle "No" button click
+    document.getElementById('noButton').addEventListener('click', function() {
+        document.getElementById('confirmationModal').style.display = 'none';
+        document.getElementById('modalOverlay').style.display = 'none';
+    });
+});
+
+
 </script>
 </body>
 </html>

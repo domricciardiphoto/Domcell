@@ -618,3 +618,40 @@ ul.width50c {
 .onblock {
     background-color: rgba(3, 70, 148, 0.4) !important;
 }
+
+
+.wp-block-image {
+    margin: 1.875rem auto;
+ }
+ .alignright {
+    float: right;
+        margin: 0 0 1.25rem 1.25rem;
+        padding: 0;
+ }
+ 
+ .alignleft {
+    float: left;
+    margin: 0 1.25rem 1.25rem 0;
+    padding: 0;
+    padding: 0px !important;
+    margin: 0px !important;
+ }
+ 
+ .alignright img ,.alignleft img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    padding: 0px !important;
+    margin: 0px !important;
+ }
+ 
+ img.size-medium {
+     width: unset !important;
+     padding: 0px !important;
+     margin: 0px !important;
+     }
+     
+     img.alignleft {
+     float: left !important;
+     }

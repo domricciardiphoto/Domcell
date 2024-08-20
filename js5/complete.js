@@ -540,10 +540,12 @@ $(document).on('contextmenu', '.indent, .indentselected', function(e) {
     e.preventDefault();
     
     $(this).click()
+    // hide mobile
+    $('#mobilepreview2').animate({'opacity' : '0'})
     $('#contextMenu').css({
         display: "block",
-        left: "50%",
-        top: "451px"
+        left: "82%",
+        top: "64px"
     }).data('clickedElement', this);
     $('.cmenulist').hide()
     $('#converterh').hide()
@@ -654,9 +656,11 @@ $('#contextMenu ul li').click(function() {
             break;
         case 'close':
             $('#contextMenu').hide();
+            $('#mobilepreview2').animate({'opacity' : '1'})
             break;
         case 'edit':
             editElement(clickedElement);
+            $('#close').click()
             break;
           
     }
@@ -1082,9 +1086,11 @@ $('.openthematrix').on('click', function () {
     // Hide initial elements
     $mymatrix1.hide();
     $('#myModalcontentviewers').hide();
-
+$('#contextMenu').hide()
     // Determine which matrix to show
     var whatmatrix = '#' + $(this).attr('mymatrix');
+
+
     switch (whatmatrix) {
         case '#mymatrix2':
             handleMatrix2();
@@ -1125,6 +1131,10 @@ $('.openthematrix').on('click', function () {
     }
 
     function handleMatrix2() {
+        $('#mobilepreview2').animate({'opacity' : '1'})
+        $('#codeloaderpcrview .width50c2').each(function() {
+            this.style.removeProperty('width');
+        });
         $('#mobilepreview2').show().animate({'min-height' : $(document).height() / 2.288})
         $('img.loading-lazy').each(function () {
             $(this).attr('src', $(this).attr('data-src'));
@@ -1235,7 +1245,7 @@ $('.openthematrix').on('click', function () {
             'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'layoutpale100',
             'layoutpale30', 'layoutpale20', 'layoutpale33', 'onblock', 'interedit', 'edit-mode', 'explorerselected',
             'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
-            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle', 'unselectable-text', 'experience-component', 'experience-pcrs_assets-markup',
+            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle', 'unselectable-text', 'experience-component', 'experience-pcrs_assets-markup','cursor: grab;','topofpagecontent',
             'https://staging-na01-pcrichard.demandware.net', 'programoverflow', '/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c/', 'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw543ecf73'
         ];
 
@@ -1319,7 +1329,7 @@ $('.openthematrix').on('click', function () {
 
     function handleMatrixCodeView() {
         $('#box2u').click();
-
+$('#mobilepreview2').css('opacity' , '1')
         $("#pullthecode2, #resizable-div, #beautycode").hide();
         $mobilepreview2.show();
         $.when(
@@ -1372,6 +1382,9 @@ $('#pcrdesktopview').on('click', function () {
     $("#fullembedcodeddd2").animate({
         'width': '1024px'
     })
+    $('#codeloaderpcrview .width50c2').each(function() {
+        this.style.removeProperty('width');
+    });
     $('#fullembedcodeddd').css('max-width', 'none').css('margin-left', '0%')
     $('.morebutt').not('#closeembed').css('background-color', '#fff').css('color', '#333')
     $(this).css('background-color', '#333').css('color', '#fff')
@@ -1404,7 +1417,9 @@ $('#pcrtabletview').on('click', function () {
     $("#fullembedcodeddd2").animate({
         'width': '768px'
     })
-  
+    $('#codeloaderpcrview .width50c2').each(function() {
+        this.style.removeProperty('width');
+    });
 
 
     $('#fullembedcodeddd').css('max-width', '769px').css('margin-left', '6%')
@@ -1469,6 +1484,10 @@ $('#pcrmobileview').on('click', function () {
     })
     $("#fullembedcodeddd2").resizable({
         minWidth: 320
+    });
+
+    $('#codeloaderpcrview .width50c2').each(function() {
+            this.style.setProperty('width', '98%', 'important');
     });
 
 })
@@ -1962,7 +1981,7 @@ function setupModalInteractions() {
         var textToCopy = $('.interedit').children('p').text();
         navigator.clipboard.writeText(textToCopy)
             .then(function () {
-                console.log('Text copied to clipboard');
+                // console.log(('Text copied to clipboard');
             })
             .catch(function (error) {
                 console.error('Error copying text: ', error);
@@ -2200,17 +2219,17 @@ $('#linkmakerimg').click(function () {
     // Get the element with the class 'explorerselected'
     var explorerSelectedElement = document.querySelector('.explorerselected');
     if (!explorerSelectedElement) {
-        console.log('No element with class "explorerselected" found');
+        // console.log(('No element with class "explorerselected" found');
         return; // Exit if no such element
     }
 
     // Store the HTML content of the selected element
     var selectedHTML = explorerSelectedElement.outerHTML;
-    console.log('Selected HTML: ', selectedHTML);
+    // console.log(('Selected HTML: ', selectedHTML);
 
     // Get the link to create from the input field
     var whatsthelink = $('#whatsthelink3').val();
-    console.log('Link to create: ', whatsthelink);
+    // console.log(('Link to create: ', whatsthelink);
 
     // Create the anchor node
     var anchorNode = document.createElement('a');
@@ -2218,19 +2237,19 @@ $('#linkmakerimg').click(function () {
     if (outsidelink3 !== 0) {
         anchorNode.target = '_blank';
     }
-    console.log('Anchor node created');
+    // console.log(('Anchor node created');
 
     // Set the inner HTML of the anchor node to the selected HTML
     anchorNode.innerHTML = selectedHTML;
-    console.log('Anchor node after setting inner HTML: ', anchorNode.outerHTML);
+    // console.log(('Anchor node after setting inner HTML: ', anchorNode.outerHTML);
 
     // Replace the original selected element with the new anchor node
     explorerSelectedElement.replaceWith(anchorNode);
-    console.log('Original element replaced with anchor node');
+    // console.log(('Original element replaced with anchor node');
 
     // Update the hidden input with the new HTML
     $('#beautycode').val($('#pullthecode3').html());
-    console.log('Code updated in hidden input');
+    // console.log(('Code updated in hidden input');
 });
 
 
@@ -2810,7 +2829,7 @@ $(function () {
                     updateSliderValue3(value);
                     break;
                 default:
-                    console.log("Unhandled slider ID");
+                    // console.log(("Unhandled slider ID");
             }
         }
     });
@@ -2909,9 +2928,9 @@ $('.selectall').on('click', function () {
         // Copy the selected text to the clipboard
         var successful = document.execCommand('copy');
         var msg = successful ? 'successful' : 'unsuccessful';
-        console.log('Copy command was ' + msg);
+        // console.log(('Copy command was ' + msg);
     } catch (err) {
-        console.log('Oops, unable to copy');
+        // console.log(('Oops, unable to copy');
     }
 
 });
@@ -3390,7 +3409,7 @@ function imagefunctions() {
     $('#noBtn').click(function(event) {
         event.preventDefault();
 
-        console.log('currently broken')
+        // console.log(('currently broken')
 
         $('#myModal').hide();
     });
@@ -4291,7 +4310,7 @@ function clearIndexedDB() {
 
         clearRequest.onsuccess = function() {
             // Data cleared successfully
-            console.log("IndexedDB data cleared successfully.");
+            // console.log(("IndexedDB data cleared successfully.");
             window.clearAndRestartClicked = true;
             location.reload();  // Reload the page to reset everything after clearing the data
         };
@@ -4360,9 +4379,12 @@ $(document).ready(function() {
   
     function checkElementContent() {
         var element = document.getElementById('pullthecode3');
-        if (element.innerHTML.trim() === '') {
-            $('.unique-modal').fadeIn()
-        } 
+        
+        if (element && element.innerHTML.trim() === '') {
+            $('.unique-modal').fadeIn();
+        } else if (!element) {
+            console.error("Element with ID 'pullthecode3' not found.");
+        }
     }
 
 
@@ -4857,6 +4879,10 @@ function bringbackthehomebutton() {
 }
 
 
+function notifyParent() {
+    window.parent.postMessage('toggleButtonClick', '*');
+}
+
 document.querySelectorAll('.unique-box').forEach(box => {
     box.addEventListener('click', function() {
 
@@ -4923,6 +4949,10 @@ document.querySelectorAll('.unique-box').forEach(box => {
                 $("#uniqueModal").hide("fold", {horizFirst: true}, 1000);
                 bringbackthehomebutton()
                 break;
+                case 'box11u':
+                    window.parent.postMessage('toggleButtonClick', '*');
+
+                    break;
                 case 'box5u':
                     $('#pullthecode3').empty()
                     $('div.thetopbox[whatbox="Tools"]').click()  

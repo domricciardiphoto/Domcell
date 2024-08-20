@@ -533,13 +533,15 @@
 
 <body>
 
+
+
     <style>
         #contextMenu {
             display: block;
             position: absolute;
             z-index: 2147483647;
-            left: 50%;
-            top: 451px;
+            top: 234px;
+            left: 72%;
             width: 15%;
             font-family: Arial, sans-serif;
             /* Modern font */
@@ -773,7 +775,7 @@
 
 .unique-modal-content {
 
-    margin: 15% auto;
+    margin: 10% auto;
     padding: 20px;
     width: 1000px;
     height: 400px;
@@ -1017,6 +1019,11 @@ background-image: url(assets/photo-placeholder-5.jpg);
                Schema Creator
             </div>
             
+            <div class="unique-box" id="box11u" >
+                <img src="assets/code-editor.png" alt="Page Schema Creator">
+              Code Editor
+            </div>
+            
           
         </div>
     </div>
@@ -1204,7 +1211,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
     </div>
 
 
-    <div id="contextMenu" style="display:none; position:absolute; z-index:9999999999999999999000; min-width: 200px"
+    <div id="contextMenu" style="display:none; position:absolute; z-index:9999999999999999999000; min-width: 200px;"
         class="context-menu draggable">
         <ul>
             <li class="cmenulist compaddsystem"
@@ -1422,7 +1429,15 @@ background-image: url(assets/photo-placeholder-5.jpg);
         }
 
 
+        #pullthecode3 .topofpagecontent {
+            background-color: rgba(0, 0, 255, 0.1) !important;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
 
+        #codeloaderpcrview  #pullthecode3 .topofpagecontent {
+         background-color: transparent !important;
+        }
+       
 
 
     </style>
@@ -1801,13 +1816,15 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
 
-                #pullthecode3 img {
+                #pullthecode3 img.in910 {
                     width: 99% !important;
                     padding-left: .5%;
                     padding-right: .5%;
                     padding-top: .5%;
                     padding-bottom: .5%;
                 }
+
+             
             </style>
 
 
@@ -2026,11 +2043,28 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
 
+
 </style>
 
 
 
+<style>
+    #pullthecode3 h2 {
+        color: #333 !important;
+    }
+img.size-medium {
+width: unset !important;
+padding: 0px;
+margin: 0px;
+}
 
+img.alignleft {
+float: left !important;
+width: unset !important;
+}
+
+
+</style>
 
 
             <div class="newtopmenu" style="float: left; width: 100%; position: relative;">
@@ -2057,7 +2091,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                                 style="width: 60%;cursor: pointer;" src="assets/iconrows2025-w.png" /></div>
                         <div class="unselectable-text thetopbox mytoolsboxtop2 letbutton21" whatbox="Tools"
                             style="width: 13% !important;height: 30px;padding: 0px; cursor: pointer;"><img style="width: 60%;"
-                                src="assets/compicon.png" /></div>
+                                src="assets/compicon3.png" /></div>
                         <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Rows"
                             style="width: 13% !important;height: 30px;padding: 0px;display: none;cursor: pointer;"><img
                                 style="width: 60%;" src="assets/iconmodify.png" /></div>
@@ -2089,17 +2123,32 @@ background-image: url(assets/photo-placeholder-5.jpg);
                 </div>
                 <div class="width20c" style=" float: left; width: 17%; margin-top: -20px;">
 
+<style>
+    .myrestbutt:hover , .letbutton21:hover {
+        opacity: 0.7;
+    }
 
-                    <div class="width50c" style="float: right; width: 48%;">
-                        <img id="clearandrestartbutton"
-                            style="width: 80% !important;  max-width: 35px; float: left; cursor: pointer; "
-                            src="assets/restart.jpg" title="Refresh and Clear All" />
+    
+   
+</style>
+                    <div class="width50c" style="    float: right;
+                    width: auto;
+                    min-width: 34px;
+                    padding-left: 5px;
+                    padding-right: 5px;;">
+                        <img class="myrestbutt" id="clearandrestartbutton"
+                            style="width: 80% !important;  max-width: 30px; float: left; cursor: pointer; "
+                            src="assets/restart3.png" title="Refresh and Clear All" />
                     </div>
 
-                    <div class="width50c" style="float: right; width: 48%;">
-                        <img id="clearandrestartbuttonrefresh"
-                            style="width: 80% !important;  max-width: 35px; float: left; cursor: pointer; "
-                            src="assets/restart2.png" title="Refresh without Losing Work" />
+                    <div class="width50c" style="    float: right;
+                    width: auto;
+                    min-width: 34px;
+                    padding-left: 5px;
+                    padding-right: 5px;">
+                        <img  class="myrestbutt" id="clearandrestartbuttonrefresh"
+                            style="width: 80% !important;  max-width: 30px; float: left; cursor: pointer; "
+                            src="assets/restart4.png" title="Refresh without Losing Work" />
                     </div>
 
 
@@ -2171,7 +2220,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                     style="padding-left: 2.5%; padding-top:10px">
 
                     <div class="width100c"
-                        style="border-bottom:1px solid #ccc; width:88%;margin-top:5px;margin-bottom:5px"></div>
+                        style=" width:88%;margin-top:5px;margin-bottom:5px"></div>
 
 
 
@@ -2263,7 +2312,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
                             </div>
 
 
-                            <div class="width100c" style="border-top: 1px solid #ccc; padding-top: 10px;">
+                            <div class="width100c" style="padding-top: 10px;">
 
                                 <div class="width100c">
                                     <label for="rangeSlider" style="color: yellow;">Row Spacer Height: <span
@@ -2991,6 +3040,8 @@ background-image: url(assets/photo-placeholder-5.jpg);
                         <div class="dropsection draggable ui-widget-content unselectable-text"
                             size="width75c width50c2  liveelement" pale="75">75% D 100% M</div>
 
+                            
+
 
                         <div class="width100c" style="margin-top: 10px;  padding-top: 3px;">
                             <div class="dropsection draggable ui-widget-content unselectable-text"
@@ -3191,6 +3242,28 @@ background-image: url(assets/photo-placeholder-5.jpg);
                                 <button class="simplehide unselectable-text" id="cinput1-clickh2-comp"
                                     style="background-color: purple; color: white;">Add Header</button>
                             </div>
+
+
+                            <button id="topofpagecontent" style="
+                           background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    font-size: 0.875rem;
+    padding: 3px 3px;
+    font-weight: bold;
+    width: 98%;
+    margin-left: 0.1% !important;
+    margin-top: 8px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+                        ">
+                            Top of Page Content
+                        </button>
+                       
+
+
                         </div>
 
 
@@ -4726,10 +4799,11 @@ margin-top: 0px;
 
 
             <div class="width100c toolboxhide codechanger"
-                style="margin-top: 0px;  padding: 5px; width: 97%; padding-bottom: 5px;">
-                <div class="width100c unselectable-text" style="margin-bottom: 5px; padding-left: 15px;">
+                style="margin-top: 0px;  padding: 5px; width: 96.5%; padding-bottom: 5px;-webkit-box-shadow: 0 -3px 10px 5px #000000;
+box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
+                <div class="width100c unselectable-text" style="margin-bottom: 5px; padding-left: 15px; width: 96%;">
 
-                    <div class="width60c " style="font-size: 90% !important;">
+                    <div class="width60c " style="font-size: 90% !important; line-height: 40px;">
                         HTML
 
                         Editor
@@ -4738,7 +4812,7 @@ margin-top: 0px;
                     <div class="width40c">
 
                         <button id="EditandSubmitAL" class="unselectable-text"
-                            style="float: right; margin-right: 8%; margin-top: 3px;">
+                            style="float: right; margin-right: 8%; margin-top: 5px; padding-left: 6px; padding-right: 6px; font-size: 0.8rem;">
                             Submit
                             New Code</button>
 
@@ -5433,8 +5507,14 @@ margin-top: 0px;
 
             <div id="pullthecode2" contenteditable="true" class="width50c layout2" style="border-radius: 0px 10px 10px; -webkit-box-shadow:inset 0 0 0px 3px #BDBDBD;
             box-shadow:inset 0 0 5px 5px #BDBDBD;">
+       
+
 
                 <div class="width100c">
+                    <!--wordpress code-->
+                
+
+                 
 
                     <div id="pullthecode3"
                         class="informationcontent layoutbuilder layoutop2 experience-component experience-pcrs_assets-markup">
@@ -5711,7 +5791,9 @@ margin-right: 1%;">Notebook</button>
 
 
 
+
 <script src="js5/complete.js"></script>
 <script src="js5/complete-part2.js"></script>
+
 
 </body>

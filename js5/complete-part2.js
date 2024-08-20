@@ -376,7 +376,7 @@ element.style.display = 'none';
 
 
 
-        console.log(myschedule);
+       // console.log(myschedule);
         $('#pullthecode3').append(myschedule)
 
     });
@@ -798,7 +798,7 @@ $('#loadstartmenu').on('click' , function() {
 
     $('#openNotebookWindow').on('click', function() {
         // Open a new window with the specified URL and dimensions
-        window.open('notebook.html', 'NotebookWindow', 'width=1024,height=768');
+        window.open('notebook-window.html', 'NotebookWindow', 'width=1100,height=768');
 
     });
 
@@ -814,4 +814,13 @@ $('#loadstartmenu').on('click' , function() {
        $('#openNotebookWindow').click() 
     })
 
+    $('#topofpagecontent').on('click', function() {
+        var $element = $('.explorerselected');
+        
+        if ($element.hasClass('topofpagecontent')) {
+            $element.css('padding-left', '').removeClass('topofpagecontent');
+        } else {
+            $element.css('padding-left', '17px').addClass('topofpagecontent');
+        }
+    });
 
