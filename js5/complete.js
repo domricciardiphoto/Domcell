@@ -313,6 +313,7 @@ observer.observe(target, { childList: true, subtree: true });
 
 function deleteElement() {
     $('.deleterow').off('click').on('click', function() {
+
         debouncedCaptureState();
 
         // Get the elements to be deleted
@@ -334,10 +335,10 @@ function deleteElement() {
             debouncedUpdateMobilePreview();
             //$('#clearandrestartbuttonrefresh').click()
         }, 500); // Match the duration of the CSS transition
-       
+        $('#clearandrestartbuttonrefresh').click()
     });
     
-   
+  
 }
 
 function liverowactivy() {
