@@ -673,19 +673,30 @@ $('#closeconverter').on('click', function() {
     $('#customModalhtag').hide()
 })
 
-$('#converhtagdoit').on('click' , function() {
-converthtag = $('#htagselecterh').val()
-converthtaghtml = $('.explorerselected').html()
-var converthtag = $('#htagselecterh').val();
-$('.explorerselected').each(function() {
-    var currentTag = $(this).prop('tagName').toLowerCase();
-    if (currentTag.startsWith('h')) {
-        var newContent = $(this).html();
-        var newElement = $('<' + converthtag + '/>').html(newContent).addClass('explorerselected');
-        $(this).replaceWith(newElement);
-    }
+$('#converhtagdoit').on('click', function() {
+    // Get the selected tag type and convert it to lowercase
+    var converthtag = $('#htagselecterh').val().toLowerCase();
+    
+    $('.explorerselected').each(function() {
+        var currentTag = $(this).prop('tagName').toLowerCase();
+        if (currentTag.startsWith('h')) {
+            var newContent = $(this).html();
+            var newElement = $('<' + converthtag + '/>').html(newContent).addClass('explorerselected');
+
+            // Add specific classes if converting to h2 or h3
+            if (converthtag === 'h2') {
+                newElement.addClass('t-h4-style c-blue').attr('style', 'color:#034694 !important');
+            } else if (converthtag === 'h3') {
+                newElement.addClass('t-h6-style c-blue').attr('style', 'color:#034694 !important');
+            }
+
+            // Replace the original element with the new one
+            $(this).replaceWith(newElement);
+        }
+    });
 });
-})
+
+
 
 function setImportantStyle(element, property, value) {
     element.each(function() {
@@ -1224,7 +1235,8 @@ $('#contextMenu').hide()
         $('#hidemainmobile').hide();
         $('#thisisthefinalcode').show();
         $('#results21aaa').show();
-        $('.codechanger').hide();
+        $('.htmlimporter').hide()
+        $('.codechanger').show()
 
         $('img.loading-lazy').each(function () {
             $(this).attr('src', '#');
@@ -4585,7 +4597,8 @@ document.getElementById('convertBtn').addEventListener('click', () => {
             reader.readAsText(file);
         });
     } else {
-        //alert('Please select at least one CSV file.');
+  
+        $('.saveinfo').text('Please select at least one CSV file.')
     }
 
     function updateProgress(processedFiles, totalFiles) {
@@ -4838,6 +4851,7 @@ function findNext() {
 
         if (searchResults.length === 0) {
            // alert('Text not found');
+           
             return;
         }
     }
@@ -4936,6 +4950,11 @@ document.querySelectorAll('.unique-box').forEach(box => {
                 //$('.unique-box').hide()
                 $('#importstart').click()
                 bringbackthehomebutton()
+                break;
+
+                case 'box12u':
+                    $('#googleDocImporterModal').show();
+                    $('.unique-box').hide()
                 break;
             case 'box4u':
                 $('#pluginsandtools').click()

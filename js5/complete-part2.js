@@ -566,7 +566,8 @@ element.style.display = 'none';
 
                     request.onerror = function (event) {
                         console.error("IndexedDB error: ", event.target.errorCode);
-                       // alert('Error: Unable to access IndexedDB.');
+                      
+                       $('.saveinfo').text('Error: Unable to access IndexedDB.')
                     };
 
                     request.onsuccess = function (event) {
@@ -578,7 +579,8 @@ element.style.display = 'none';
                         getRequest.onerror = function (event) {
                             console.error("Error retrieving data from IndexedDB: ", event.target
                                 .errorCode);
-                         //   alert('Error: Unable to retrieve data from IndexedDB.');
+                      
+                         $('.saveinfo').text('Error: Unable to retrieve data from IndexedDB.')
                         };
 
                         getRequest.onsuccess = function (event) {
@@ -587,7 +589,8 @@ element.style.display = 'none';
                                 .content); // Assuming the HTML content is stored in the 'htmlContent' field
                             } else {
                                 console.error("No data found for the selected version.");
-                               // alert('Error: No content found for the selected version.');
+                               
+                               $('.saveinfo').text('Error: No content found for the selected version.')
                             }
                         };
                     };
@@ -718,6 +721,7 @@ element.style.display = 'none';
 
         function hideModal() {
             $('#uniqueModal').hide();
+            $('#googleDocImporterModal').hide()
             if (parent && parent.document) {
         // Hide the element with id 'headerstart' in the parent document
         var headerElement = parent.document.getElementById('headerstart');
@@ -824,3 +828,160 @@ $('#loadstartmenu').on('click' , function() {
         }
     });
 
+
+
+
+//--- Google Doc Importer
+
+function replaceSmartQuotes(docHtml) {
+    return docHtml.replace(/’/g, "'");
+}
+
+
+function processHeaders(docHtml) {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = docHtml;
+
+    // Process h2 elements
+    const h2Elements = tempDiv.querySelectorAll('h2');
+    h2Elements.forEach(h2 => {
+        h2.removeAttribute('id'); // Remove ID attribute
+        h2.classList.add('t-h4-style', 'c-blue'); // Add classes
+        h2.setAttribute('style', 'color:#034694 !important'); // Add inline style
+    });
+
+    // Process h3 elements
+    const h3Elements = tempDiv.querySelectorAll('h3');
+    h3Elements.forEach(h3 => {
+        h3.removeAttribute('id'); // Remove ID attribute
+        h3.classList.add('t-h6-style', 'c-blue'); // Add classes
+        h3.setAttribute('style', 'color:#034694 !important'); // Add inline style
+    });
+
+    return tempDiv.innerHTML;
+}
+
+
+    function addClassesToHeaders(docHtml) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = docHtml;
+    
+        // Add classes to h2 elements
+        const h2Elements = tempDiv.querySelectorAll('h2');
+        h2Elements.forEach(h2 => {
+            h2.classList.add('t-h4-style', 'c-blue' , 'in910');
+        });
+    
+        // Add classes to h3 elements
+        const h3Elements = tempDiv.querySelectorAll('h3');
+        h3Elements.forEach(h3 => {
+            h3.classList.add('t-h6-style', 'c-blue' , 'in910');
+        });
+    
+        return tempDiv.innerHTML;
+    }
+
+
+
+    function cleanGoogleDocUrls(docHtml) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = docHtml;
+    
+        // Select all anchor tags with href attributes
+        const links = tempDiv.querySelectorAll('a[href]');
+        
+        links.forEach(link => {
+            let href = link.getAttribute('href');
+            const prefix = 'https://www.google.com/url?q=https://www.pcrichard.com';
+            
+            if (href.startsWith(prefix)) {
+                // Remove the prefix and everything after '&' if it exists
+                href = href.slice(prefix.length).split('&')[0];
+                link.setAttribute('href', href);
+            }
+        });
+    
+        return tempDiv.innerHTML;
+    }
+
+
+
+    async function fetchGoogleDocContent(docUrl) {
+        try {
+            const exportUrl = docUrl.replace('/edit', '/export?format=html');
+            const response = await fetch(exportUrl);
+            if (!response.ok) throw new Error('Failed to fetch the Google Doc content.');
+            const docHtml = await response.text();
+    
+            return docHtml;
+        } catch (error) {
+            console.error('Error fetching Google Doc content:', error);
+            return null;
+        }
+    }
+
+    document.getElementById('import-google-doc').addEventListener('click', async function() {
+        const googleDocUrl = document.getElementById('google-doc-url-input').value;
+        const content = await fetchGoogleDocContent(googleDocUrl);
+        if (content) {
+            // Clean up the Google-specific URLs
+            let cleanedContent = cleanGoogleDocUrls(content);
+            
+            // Replace smart quotes
+            cleanedContent = replaceSmartQuotes(cleanedContent);
+            
+            // Process headers to add classes, remove IDs, and set inline styles
+            cleanedContent = processHeaders(cleanedContent);
+            
+            const docParser = new DOMParser();
+            const doc = docParser.parseFromString(cleanedContent, 'text/html');
+    
+            // Append the cleaned and styled content to your DOM element
+            document.getElementById('pullthecode3').innerHTML += doc.body.innerHTML;
+    
+            // Update your preview, if necessary
+            debouncedUpdateMobilePreview();
+            $('#googleDocImporterModal').hide()
+            $('#uniqueModal').hide()
+        } else {
+            console.log('Failed to Fetch Google Doc')
+            $('.saveinfo').text('Failed to Fetch Google Doc')
+        }
+    });
+
+
+    document.getElementById('import-google-doc2').addEventListener('click', async function() {
+        const googleDocUrl = document.getElementById('google-doc-url-input2').value;
+        const content = await fetchGoogleDocContent(googleDocUrl);
+        if (content) {
+            // Clean up the Google-specific URLs
+            let cleanedContent = cleanGoogleDocUrls(content);
+            
+            // Replace smart quotes
+            cleanedContent = replaceSmartQuotes(cleanedContent);
+            
+            // Process headers to add classes, remove IDs, and set inline styles
+            cleanedContent = processHeaders(cleanedContent);
+            
+            const docParser = new DOMParser();
+            const doc = docParser.parseFromString(cleanedContent, 'text/html');
+    
+            // Append the cleaned and styled content to your DOM element
+            document.getElementById('pullthecode3').innerHTML += doc.body.innerHTML;
+    
+            // Update your preview, if necessary
+            debouncedUpdateMobilePreview();
+            $('#googleDocImporterModal').hide()
+            $('#uniqueModal').hide()
+        } else {
+            console.log('Failed to Fetch Google Doc')
+        }
+    });
+
+
+
+
+    $('.close-modalgoogle').on('click' , function() {
+        $('#googleDocImporterModal').hide()
+        $('.unique-box ').show()
+    })
