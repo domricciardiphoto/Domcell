@@ -7,10 +7,8 @@
     <title>Contact Builder 7</title>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script
-    src="https://code.jquery.com/ui/1.14.0-beta.2/jquery-ui.js"
-    integrity="sha256-jP1AFhfuTBpw8WvRteYETbagFOoXaDO5DJIuc5JvzG4="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.0-beta.2/jquery-ui.js"
+        integrity="sha256-jP1AFhfuTBpw8WvRteYETbagFOoXaDO5DJIuc5JvzG4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
 
 
@@ -25,20 +23,15 @@
     <link rel="stylesheet" href="css/listbuilder.css">
 
 
- 
- 
+
+
 
 
     <style>
+        #getexistingcontent {
+            display: none;
+        }
 
-
-
-
-
-#getexistingcontent {
-    display: none;
-}
-        
         body {
             user-select: none;
             background-color: rgb(37, 37, 37);
@@ -156,16 +149,17 @@
             display: block;
         }
 
-        .outsideplugins , .outsideplugins2 {
+        .outsideplugins,
+        .outsideplugins2 {
             border: 1px solid #ccc;
-    background-color: transparent;
-    padding: 5px;
-    margin-bottom: 0px;
-    font-size: 0.8rem;
-    color: white;
-    border-right: 0px;
-    border-left: 0;
-    border-bottom: 0;
+            background-color: transparent;
+            padding: 5px;
+            margin-bottom: 0px;
+            font-size: 0.8rem;
+            color: white;
+            border-right: 0px;
+            border-left: 0;
+            border-bottom: 0;
         }
 
         .htmlimporter,
@@ -187,17 +181,17 @@
         #explorer .indent,
         #explorer2 .indent {
             cursor: pointer;
-    font-size: 0.7rem;
-    padding: 1px;
-    padding-left: 7px;
-    padding-right: 7px;
-    max-width: fit-content;
-    min-width: auto;
-    margin-bottom: 6px;
-    border-bottom: 1px solid #0014a1;
-    border-radius: 12px;
-    -webkit-box-shadow: inset 0 0 1px 1px #757575;
-    box-shadow: inset 0 0 1px 1px #757575;
+            font-size: 0.7rem;
+            padding: 1px;
+            padding-left: 7px;
+            padding-right: 7px;
+            max-width: fit-content;
+            min-width: auto;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #0014a1;
+            border-radius: 12px;
+            -webkit-box-shadow: inset 0 0 1px 1px #757575;
+            box-shadow: inset 0 0 1px 1px #757575;
         }
 
         #sliderLabel[contenteditable="true"] {
@@ -211,11 +205,11 @@
 
         .indentselected {
             border: 2px solid red !important;
-    border-radius: 16px;
-    padding-left: 13px;
-    height: 30px;
-    line-height: 30px;
-    background-color: black;
+            border-radius: 16px;
+            padding-left: 13px;
+            height: 30px;
+            line-height: 30px;
+            background-color: black;
 
         }
 
@@ -346,33 +340,33 @@
 
 
     <style>
-#driveContents {
-    font-family: 'Arial', sans-serif;
-    background: transparent;
-    padding: 1%;
-    padding-top: 0px;
-    border-bottom: 1px solid #f7f7f7;
-    width: 98%;
+        #driveContents {
+            font-family: 'Arial', sans-serif;
+            background: transparent;
+            padding: 1%;
+            padding-top: 0px;
+            border-bottom: 1px solid #f7f7f7;
+            width: 98%;
 
-}
+        }
 
-.width33cg {
-    float: left;
-    box-sizing: border-box;
-    max-height: 350px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: 24%;
-    margin-right: 1%;
-    margin-top: 2%;
-    border: 1px solid #f7f7f7;
-    padding: 2%;
-    padding-top: 1%;
-    border-radius: 5px;
-    -webkit-box-shadow: inset 0 0 10px 5px #000000;
-    box-shadow: inset 0 0 10px 5px #000000;
-    background-size: cover;
-}
+        .width33cg {
+            float: left;
+            box-sizing: border-box;
+            max-height: 350px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 24%;
+            margin-right: 1%;
+            margin-top: 2%;
+            border: 1px solid #f7f7f7;
+            padding: 2%;
+            padding-top: 1%;
+            border-radius: 5px;
+            -webkit-box-shadow: inset 0 0 10px 5px #000000;
+            box-shadow: inset 0 0 10px 5px #000000;
+            background-size: cover;
+        }
 
         .width33cg ul li a {
             text-decoration: none;
@@ -512,12 +506,12 @@
         }
 
 
-      .modal-content , #customModal-internal {
+        .modal-content,
+        #customModal-internal {
             background-image: url(assets/photo-placeholder-5.jpg) !important;
             background-size: cover;
-            
-        }
 
+        }
     </style>
 
 
@@ -682,40 +676,41 @@
             padding-left: 5px;
             padding-right: 5px;
             background-color: red;
-    
+
 
             cursor: pointer;
         }
 
         .load-btn {
-    float: right;
-    padding: 3px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: #fff;
-    padding-left: 6px;
-    padding-right: 6px;
-}
+            float: right;
+            padding: 3px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            padding-left: 6px;
+            padding-right: 6px;
+        }
 
 
-#versionsList li {
-    text-align: left;
-    border: 1px solid #666;
-    width: 100%;
-    padding: 3px;
-    padding-left: 21px;
-    background-color: transparent;
-    list-style: none;
-    margin-bottom: 5px;
-    font-size: 0.7rem;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    margin-left: -10%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    
-}
+        #versionsList li {
+            text-align: left;
+            border: 1px solid #666;
+            width: 100%;
+            padding: 3px;
+            padding-left: 21px;
+            background-color: transparent;
+            list-style: none;
+            margin-bottom: 5px;
+            font-size: 0.7rem;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-left: -10%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+        }
+
         .fr-box {
             float: left;
             margin-bottom: 10px;
@@ -736,17 +731,17 @@
         #results21aaa {
             display: none;
             width: 75.7%;
-    min-height: 300px;
-    float: left;
-    padding: 22px;
-    margin-left: 9%;
-    margin-top: 2%;
-    color: #fff;
-    max-height: 550px;
-    overflow-y: auto;
-    font-size: 0.85rem;
-    border: 1px solid #FFF;
-    border-radius: 13px;
+            min-height: 300px;
+            float: left;
+            padding: 22px;
+            margin-left: 9%;
+            margin-top: 2%;
+            color: #fff;
+            max-height: 550px;
+            overflow-y: auto;
+            font-size: 0.85rem;
+            border: 1px solid #FFF;
+            border-radius: 13px;
         }
 
 
@@ -758,124 +753,126 @@
 
 
     <style>
-     .unique-modal {
-    display: block; /* Show the modal by default */
-    position: fixed;
-    z-index: 999999999999999999999999999;
-    left: 0;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-    background-image: url(assets/photo-placeholder-5.jpg);
-    background-size: cover;
-    display: none;
-}
+        .unique-modal {
+            display: block;
+            /* Show the modal by default */
+            position: fixed;
+            z-index: 999999999999999999999999999;
+            left: 0;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            background-image: url(assets/photo-placeholder-5.jpg);
+            background-size: cover;
+            display: none;
+        }
 
-.unique-modal-content {
+        .unique-modal-content {
 
-    margin: 12% auto;
-    padding: 10px;
-    width: 1100px;
-    height: 400px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-  
-  
-}
-
-.unique-box {
-    width: 170px;
-    height: 170px;
-    margin: 5px;
-    cursor: pointer;
-    box-sizing: border-box;
-    background-image: url(assets/photo-placeholder-5-dark.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    color: #fff;
-    padding: 1%;
-    text-align: center;
-    font-size: 0.875rem;
-    display: none;
-}
-
-.unique-box img {
-    width: 75%;
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-bottom: -3%;
-    transition: transform 0.5s ease;
- 
-}
+            margin: 12% auto;
+            padding: 10px;
+            width: 1100px;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
 
 
+        }
 
-.unique-box:hover img {
-    transform: scale(1.1);
-}
+        .unique-box {
+            width: 170px;
+            height: 170px;
+            margin: 5px;
+            cursor: pointer;
+            box-sizing: border-box;
+            background-image: url(assets/photo-placeholder-5-dark.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            color: #fff;
+            padding: 1%;
+            text-align: center;
+            font-size: 0.875rem;
+            display: none;
+        }
 
-.unique-box-animate:hover img {
-    transform: rotate(360deg);
-}
+        .unique-box img {
+            width: 75%;
+            margin-right: 5%;
+            margin-left: 5%;
+            margin-bottom: -3%;
+            transition: transform 0.5s ease;
 
-.unique-box-animate3:hover img {
-    transform: rotate(-360deg);
-}
+        }
 
-.unique-box:hover {
-    border: 2px solid #6e6e6e;
-    -webkit-box-shadow: 5px 5px 50px 5px #d0d0d0;
-box-shadow: 5px 5px 50px 5px #d0d0d0;
-background-image: url(assets/photo-placeholder-5.jpg);
 
-}
 
-#importstart {
-    display: none;
-}
+        .unique-box:hover img {
+            transform: scale(1.1);
+        }
 
-.closemodalbutton {
-    top:0px;
-    left: 0px;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    background-color: #f2f2f2;
-    color: #000;
-    text-align: center;
-    line-height: 40px;
-    font-size: 1.2rem;
-    font-weight: bolder;
-    cursor: pointer;
-    border-radius: 0px 0px 10px 0px;
-}
+        .unique-box-animate:hover img {
+            transform: rotate(360deg);
+        }
 
-.closeapllicationbutton {
-    top:0px;
-    right: 0px;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    color: #000;
-    text-align: center;
-    line-height: 40px;
-    font-size: 1.2rem;
-    font-weight: bolder;
-    cursor: pointer;
-    border-radius: 0px 0px 0px 10px;
-    background-color: #f2f2f2;
+        .unique-box-animate3:hover img {
+            transform: rotate(-360deg);
+        }
 
-}
-.closeapllicationbutton img {
-    width: 60%;
-    margin-left: 10%;
-    margin-top: 14%;
-}
+        .unique-box:hover {
+            border: 2px solid #6e6e6e;
+            -webkit-box-shadow: 5px 5px 50px 5px #d0d0d0;
+            box-shadow: 5px 5px 50px 5px #d0d0d0;
+            background-image: url(assets/photo-placeholder-5.jpg);
+
+        }
+
+        #importstart {
+            display: none;
+        }
+
+        .closemodalbutton {
+            top: 0px;
+            left: 0px;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            background-color: #f2f2f2;
+            color: #000;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            cursor: pointer;
+            border-radius: 0px 0px 10px 0px;
+        }
+
+        .closeapllicationbutton {
+            top: 0px;
+            right: 0px;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            color: #000;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            cursor: pointer;
+            border-radius: 0px 0px 0px 10px;
+            background-color: #f2f2f2;
+
+        }
+
+        .closeapllicationbutton img {
+            width: 60%;
+            margin-left: 10%;
+            margin-top: 14%;
+        }
     </style>
 
 
@@ -883,48 +880,44 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
 
-<style>
-
-@media (min-width: 769px) {
-    .article-details-page .alignright {
-        float: right;
-        margin: 0 0 1.25rem 1.25rem;
-    }
-}
-
-
-
-.bottomclassviewers {
-    width: 72%;
-    margin-top: -41%;
-    margin-left: 1.5%;
-    position: absolute;
-    bottom: 6px;
-}
-
-
-@media (max-width: 1091px) {
-    #resizable-div {
-    width: 71%;
-}
-}
-
-@media (max-width: 1071px) {
-    #resizable-div {
-    width: 70%;
-}
-}
-
-
-@media (max-width: 1368px) {
-    #fullinterface {
-        zoom: 0.9;
-}
-}
+    <style>
+        @media (min-width: 769px) {
+            .article-details-page .alignright {
+                float: right;
+                margin: 0 0 1.25rem 1.25rem;
+            }
+        }
 
 
 
-</style>
+        .bottomclassviewers {
+            width: 72%;
+            margin-top: -41%;
+            margin-left: 1.5%;
+            position: absolute;
+            bottom: 6px;
+        }
+
+
+        @media (max-width: 1091px) {
+            #resizable-div {
+                width: 71%;
+            }
+        }
+
+        @media (max-width: 1071px) {
+            #resizable-div {
+                width: 70%;
+            }
+        }
+
+
+        @media (max-width: 1368px) {
+            #fullinterface {
+                zoom: 0.9;
+            }
+        }
+    </style>
 
 
 
@@ -958,20 +951,22 @@ background-image: url(assets/photo-placeholder-5.jpg);
     <div id="uniqueModal" class="unique-modal">
         <div class="closemodalbutton">X</div>
         <div class="closeapllicationbutton"><img src="assets/home-black.png" alt="Home"></div>
-        <div id="inspire" style="position: fixed; right: 10px; bottom: 50px; color: #fff; font-size: 0.875rem; text-align: center; width: 100%;">  </div>
+        <div id="inspire"
+            style="position: fixed; right: 10px; bottom: 50px; color: #fff; font-size: 0.875rem; text-align: center; width: 100%;">
+        </div>
         <div class="unique-modal-content">
-            <div class="unique-box unique-box-animate2" id="box1u" >
+            <div class="unique-box unique-box-animate2" id="box1u">
                 <img src="assets/newproject.png" alt="New Project">
                 New Blank Project
             </div>
             <div class="unique-box " id="box2u">
                 <img src="assets/updateproject.png" alt="Updating Exisitng Code ">
-                Update Exisitng Code 
+                Update Exisitng Code
             </div>
 
             <div class="unique-box " id="box7u">
                 <img src="assets/wordproject.png" alt="Updating Exisitng Code ">
-                 Load Word Content
+                Load Word Content
             </div>
 
             <div class="unique-box unique-box-animate" id="box3u">
@@ -986,170 +981,182 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
             <div class="unique-box unique-box-animate3" id="box8u">
                 <img src="assets/versonproject.png" alt=" Saved Versions">
-               Saved Versions
+                Saved Versions
             </div>
 
-          <div class="width100c" style="margin-top: 5px; margin-bottom: 5px;">
+            <div class="width100c" style="margin-top: 5px; margin-bottom: 5px;">
 
-            <button id="importstart" class="unselectable-text" accept=".txt" style="background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; text-align: center; width: 96%; margin-left: 2%;">Click to Load
-                Workspace <span style="color: #f0cd97;">↓</span></button>
+                <button id="importstart" class="unselectable-text" accept=".txt"
+                    style="background-color: #007BFF; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; text-align: center; width: 96%; margin-left: 2%;">Click
+                    to Load
+                    Workspace <span style="color: #f0cd97;">↓</span></button>
 
-          </div>
+            </div>
 
-          <div class="unique-box" id="box9u">
-            <img src="assets/fetch.png" alt="Store Banner Schedular">
-            Content Fetch
-        </div>
+            <div class="unique-box" id="box9u">
+                <img src="assets/fetch.png" alt="Store Banner Schedular">
+                Content Fetch
+            </div>
 
             <div class="unique-box" id="box4u">
                 <img src="assets/dateproject.png" alt="Store Banner Schedular">
                 Store Banners
             </div>
 
-            
+
 
             <div class="unique-box" id="box6u">
                 <img src="assets/templeteproject.png" alt="Templetes">
-               Code Templetes
+                Code Templetes
             </div>
 
-            <div class="unique-box" id="box5u" >
+            <div class="unique-box" id="box5u">
                 <img src="assets/videproject.png" alt=" Video Player">
                 Video Player
             </div>
 
-            <div class="unique-box" id="box10u" >
+            <div class="unique-box" id="box10u">
                 <img src="assets/schema.png" alt="Page Schema Creator">
-               Schema Creator
+                Schema Creator
             </div>
-            
-            <div class="unique-box" id="box11u" >
+
+            <div class="unique-box" id="box11u">
                 <img src="assets/code-editor.png" alt="Page Schema Creator">
-              Code Editor
+                Code Editor
             </div>
-            
-          
+
+
         </div>
     </div>
 
-<style>
-    #fetchinternalcontent {
-        min-height: 400px; max-width: 590px; background-image: url(assets/fetch-black3.png) !important; margin: 10% auto;
-    }
-</style>
+    <style>
+        #fetchinternalcontent {
+            min-height: 400px;
+            max-width: 590px;
+            background-image: url(assets/fetch-black3.png) !important;
+            margin: 10% auto;
+        }
+    </style>
 
 
-    <div id="fetchmyid" class="modal" style="z-index: 9999999999999999999999999999999999999999999;    background-color: rgba(0, 0, 0, 0.7);">
+    <div id="fetchmyid" class="modal"
+        style="z-index: 9999999999999999999999999999999999999999999;    background-color: rgba(0, 0, 0, 0.7);">
 
 
 
         <div id="fetchinternalcontent" class="modal-content">
             <span class="close">&times;</span>
-<span style="font-size: 1.2rem;">Content Fetch</span><br>
-<span  style="font-size: 0.7rem;">Load Content Directly From PCR</span>
+            <span style="font-size: 1.2rem;">Content Fetch</span><br>
+            <span style="font-size: 0.7rem;">Load Content Directly From PCR</span>
 
 
-<style>
-    #result {
-        display: none;
-    }
-    .myfetcher {
-        display: none; 
-    }
+            <style>
+                #result {
+                    display: none;
+                }
 
-    .showmyfetch {
-    width: 30.5%;
-    float: left;
-    min-height: 30px;
-    text-align: center;
-    border: 1px solid #fff;
-    line-height: 30px;
-    margin-right: 2%;
-    font-size: 0.8rem;
-    border-radius: 13px;
-    cursor: pointer;
-    text-shadow: 11px 8px 20px #000;
-    -webkit-box-shadow: inset 0 0 10px 5px #757575;
-    box-shadow: inset 0 0 10px 5px #757575;
-}
+                .myfetcher {
+                    display: none;
+                }
 
-#fetchme1 {
-    display: block;
-}
+                .showmyfetch {
+                    width: 30.5%;
+                    float: left;
+                    min-height: 30px;
+                    text-align: center;
+                    border: 1px solid #fff;
+                    line-height: 30px;
+                    margin-right: 2%;
+                    font-size: 0.8rem;
+                    border-radius: 13px;
+                    cursor: pointer;
+                    text-shadow: 11px 8px 20px #000;
+                    -webkit-box-shadow: inset 0 0 10px 5px #757575;
+                    box-shadow: inset 0 0 10px 5px #757575;
+                }
 
-.width33c {
-    width: 31% !important;
-    position: relative;
-    float: left;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
-}
+                #fetchme1 {
+                    display: block;
+                }
 
-.width100c {
-    text-align: inherit;
-}
+                .width33c {
+                    width: 31% !important;
+                    position: relative;
+                    float: left;
+                    padding-left: 0.5%;
+                    padding-right: 0.5%;
+                }
+
+                .width100c {
+                    text-align: inherit;
+                }
+            </style>
+
+            <div style="width: 100%; margin-top: 30px;">
 
 
-</style>
+                <div class="showmyfetch" openfetch="#fetchme1" backimage="3"
+                    style="color: yellow; border-color: yellow; opacity: 0.5;">Content Assets</div>
+                <div class="showmyfetch" openfetch="#fetchme3" backimage="2">Overview Content</div>
+                <div class="showmyfetch" openfetch="#fetchme2" backimage="4">Blog Content</div>
+                <div class="width100c"
+                    style="margin-bottom: 20px; font-size: 0.7rem; text-align: center; margin-top: 10px;">Put in full
+                    url such as:<span style="color: yellow;">
+                        https://www.pcrichard.com/apartment-size-refrigerators/</span></div>
+            </div>
 
-<div style="width: 100%; margin-top: 30px;">
+            <div id="fetchme1" class="width100c myfetcher" style="margin-top: 10px;  ">
 
-   
-    <div class="showmyfetch" openfetch="#fetchme1" backimage="3" style="color: yellow; border-color: yellow; opacity: 0.5;">Content Assets</div>
-    <div class="showmyfetch" openfetch="#fetchme3" backimage="2" >Overview Content</div>
-    <div class="showmyfetch" openfetch="#fetchme2" backimage="4" >Blog Content</div>
-    <div class="width100c" style="margin-bottom: 20px; font-size: 0.7rem; text-align: center; margin-top: 10px;">Put in full url such as:<span style="color: yellow;"> https://www.pcrichard.com/apartment-size-refrigerators/</span></div>
-</div>
 
-        <div id="fetchme1" class="width100c myfetcher" style="margin-top: 10px;  ">
-          
-           
-            <form id="scrape-form">
-              <div class="width100c">
-                <label for="url-input">Page URL: </label><br>
-                <input type="text" id="url-input" name="url" style="width: 90%; height: 30px; border-radius: 5px;" required>
-                
-                <select id="replacement-select" name="replacement" required style="margin-top: 10px; width: 91%; margin-left: 0.5%; height: 30px; border-radius: 5px;">
-                    <option selected value="_banner">Select For Page Top Content</option>
-                    <option value="_copy">Select For Page Bottom Content</option>
-                </select>
-              </div>
-                
-                <div class="width100c" style="margin-top: 30px;">
-                    <button type="submit" style="width: 40%;
+                <form id="scrape-form">
+                    <div class="width100c">
+                        <label for="url-input">Page URL: </label><br>
+                        <input type="text" id="url-input" name="url"
+                            style="width: 90%; height: 30px; border-radius: 5px;" required>
+
+                        <select id="replacement-select" name="replacement" required
+                            style="margin-top: 10px; width: 91%; margin-left: 0.5%; height: 30px; border-radius: 5px;">
+                            <option selected value="_banner">Select For Page Top Content</option>
+                            <option value="_copy">Select For Page Bottom Content</option>
+                        </select>
+                    </div>
+
+                    <div class="width100c" style="margin-top: 30px;">
+                        <button type="submit" style="width: 40%;
                     padding: 5px;
                     background-color: #007BFF;
                     color: rgb(255, 255, 255);
                     display: block;
                     text-align: center;
                     float: left;border-radius: 5px;">Retrieve Content ID</button>
-                    <div id="getexistingcontent" style="width: 40%;
+                        <div id="getexistingcontent" style="width: 40%;
                     padding: 5px;
                     background-color: #007BFF;
                     color: rgb(255, 255, 255);
                     display: block;
                     text-align: center;
                     float: right; cursor: pointer; border-radius: 5px;">Load Asset to Workspace</div>
+                    </div>
+                </form>
+                <div class="width100c" style="margin-top: 20px; text-align: center; font-size: 1.2rem;">
+                    <div id="result" contenteditable="true"></div>
                 </div>
-            </form>
-            <div class="width100c" style="margin-top: 20px; text-align: center; font-size: 1.2rem;">
-                <div id="result" contenteditable="true"></div>    
-            </div> 
-            
-        </div>
+
+            </div>
 
 
-        <div  id="fetchme2" class="width100c myfetcher" style="margin-top: 10px;  ">
+            <div id="fetchme2" class="width100c myfetcher" style="margin-top: 10px;  ">
 
-            <form id="scrape-form" style="margin-top: 10px;">
-                <div class="width100c">
-                  <label for="url-input2">Blog URL: </label>
-                  <input type="text" id="url-input2" name="url" required style="width: 90%; height: 30px; margin-top: 10px;">
-                  
-                </div>
-                  
-                  <div class="width100c" style="margin-top: 30px;">
-                      <div id="getexistingcontent2" style="
+                <form id="scrape-form" style="margin-top: 10px;">
+                    <div class="width100c">
+                        <label for="url-input2">Blog URL: </label>
+                        <input type="text" id="url-input2" name="url" required
+                            style="width: 90%; height: 30px; margin-top: 10px;">
+
+                    </div>
+
+                    <div class="width100c" style="margin-top: 30px;">
+                        <div id="getexistingcontent2" style="
                           width: 90%;
     padding: 5px;
     background-color: #007BFF;
@@ -1162,23 +1169,23 @@ background-image: url(assets/photo-placeholder-5.jpg);
     margin-top: -10px;
     margin-left: 4%;
 ">Load Blog Content to Workspace</div>
-                  </div>
-              </form>
+                    </div>
+                </form>
 
-        </div>
+            </div>
 
-        <div  id="fetchme3" class="width100c myfetcher" style="margin-top: -18px; ">
+            <div id="fetchme3" class="width100c myfetcher" style="margin-top: -18px; ">
 
-            <form id="scrape-form3">
-                <div class="width100c" style="margin-top: 30px;">
-                    <label for="url-input3">Overview Content URL: </label>
-                    <input type="text" id="url-input3" name="url" required style="    width: 85%;
+                <form id="scrape-form3">
+                    <div class="width100c" style="margin-top: 30px;">
+                        <label for="url-input3">Overview Content URL: </label>
+                        <input type="text" id="url-input3" name="url" required style="    width: 85%;
                     margin-top: 10px;
                     height: 30px;">
-                </div>
-                <div class="width100c" style="margin-top: 30px;">
-                    <div class="width100c" style="margin-top: 10px;">
-                        <div id="getexistingcontent3" style="    width: 85%;
+                    </div>
+                    <div class="width100c" style="margin-top: 30px;">
+                        <div class="width100c" style="margin-top: 10px;">
+                            <div id="getexistingcontent3" style="    width: 85%;
                         padding: 5px;
                         background-color: #007BFF;
                         color: rgb(255, 255, 255);
@@ -1190,17 +1197,17 @@ background-image: url(assets/photo-placeholder-5.jpg);
                         margin-top: -24px;
                         margin-left: 7%;
                      ">Load Product Content to Workspace</div>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
 
 
 
 
         </div>
-      
-      
+
+
     </div>
 
 
@@ -1438,12 +1445,9 @@ background-image: url(assets/photo-placeholder-5.jpg);
             transition: background 0.3s ease, transform 0.3s ease;
         }
 
-        #codeloaderpcrview  #pullthecode3 .topofpagecontent {
-         background-color: transparent !important;
+        #codeloaderpcrview #pullthecode3 .topofpagecontent {
+            background-color: transparent !important;
         }
-       
-
-
     </style>
 
 
@@ -1539,17 +1543,15 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
         .viewbuttonsclass {
             background-color: #007BFF;
-    color: #fff;
-    padding: 8px 8px;
-    cursor: pointer;
-    margin: 1% 3% 1% 0px;
-    transition: background-color 0.2s ease;
-    width: 45.5%;
-    font-size: 0.8rem;
-    border-radius: 8px;
-}
-
-
+            color: #fff;
+            padding: 8px 8px;
+            cursor: pointer;
+            margin: 1% 3% 1% 0px;
+            transition: background-color 0.2s ease;
+            width: 45.5%;
+            font-size: 0.8rem;
+            border-radius: 8px;
+        }
     </style>
 
 
@@ -1562,8 +1564,40 @@ background-image: url(assets/photo-placeholder-5.jpg);
         </div>
     </div>
 
-    <div id="googleDocImporterModal"  style="display: none; width: auto; padding: 10px; position: relative;">
-      
+
+    <div id="googleDocImporterModal3" style="display: none; width: auto; padding: 10px; position: relative;">
+
+        <div class="modal-content" style="min-height: 120px;">
+            <span class="close-modalgoogle" style="
+        text-align: center;
+    padding: 5px;
+    float: right;
+    margin-bottom: 32px;
+    border-radius: 30px;
+    width: 22px;
+    background-color: #fff;
+    color: #333;
+    font-size: 1.5rem; cursor: pointer;">&times;</span>
+            <div id="googledoctitle" style="text-align: center; margin-top: 30px;"></div>
+            <input type="text" id="google-doc-url-input3" placeholder="Enter Google Doc URL"
+                style="width: 92%; padding: 10px; margin-bottom: 10px; display: none;">
+
+            <div class="width100c">
+                <button id="import-google-doc3" style="padding: 10px 20px; border-radius: 5px;">View File</button>
+                <button id="export-google-doc3" style="padding: 10px 20px; border-radius: 5px;"><a style="text-decoration: none; color: #000;"
+                        id="downloadlinkgoogle" class="outsidelink" href="#">Export to Computer</a></button>
+            </div>
+
+
+            <div id="import-result3" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+
+
+
+    <div id="googleDocImporterModal" style="display: none; width: auto; padding: 10px; position: relative;">
+
         <div class="modal-content">
             <span class="close-modalgoogle" style="
         text-align: center;
@@ -1576,16 +1610,17 @@ background-image: url(assets/photo-placeholder-5.jpg);
     color: #333;
     font-size: 1.5rem; cursor: pointer;">&times;</span>
             <span class="unselectable-text" style="color: #fff !important; font-size: 1.2rem;">Import Google Doc</span>
-            <input type="text" id="google-doc-url-input2" placeholder="Enter Google Doc URL" style="width: 92%; padding: 10px; margin-bottom: 10px;">
+            <input type="text" id="google-doc-url-input2" placeholder="Enter Google Doc URL"
+                style="width: 92%; padding: 10px; margin-bottom: 10px;">
             <button id="import-google-doc2" style="padding: 10px 20px; border-radius: 5px;">Import</button>
             <div id="import-result" style="margin-top: 20px;"></div>
         </div>
     </div>
-    
 
 
-    <div id="myModalcontentviewers" class="modal" style="display: none" >
-      
+
+    <div id="myModalcontentviewers" class="modal" style="display: none">
+
         <div class="modal-content" style="    background-color: transparent;
         margin: 15% auto;
         padding: 20px;
@@ -1605,19 +1640,21 @@ background-image: url(assets/photo-placeholder-5.jpg);
             color: #fff;
             cursor: pointer;">X</div>
             <div class="width100c" style="float: none; min-height: 44px;">
-       <button class="openthematrix viewbuttonsclass"  mymatrix="mymatrix-dark" >Dark View</button>
-       <button id="ExplorerView" class="openthematrix viewbuttonsclass"  mymatrix="mymatrix-hmobile">Explorer View</button>
-       
-    </div>
-    <div class="width100c" style="float: none;">
-        <button class="openthematrix viewbuttonsclass" mymatrix="mymatrix3">Code View</button>
-       <!--<button id="DesktopView" class="openthematrix viewbuttonsclass" mymatrix="mymatrix-review">Desktop View</button>-->
-     
-       
-       <button id="codeviewmyviewer" class="openthematrix viewbuttonsclass" mymatrix="mymatrix-codeview">All Panels</button>
-       </div>
+                <button class="openthematrix viewbuttonsclass" mymatrix="mymatrix-dark">Dark View</button>
+                <button id="ExplorerView" class="openthematrix viewbuttonsclass" mymatrix="mymatrix-hmobile">Explorer
+                    View</button>
 
-     
+            </div>
+            <div class="width100c" style="float: none;">
+                <button class="openthematrix viewbuttonsclass" mymatrix="mymatrix3">Code View</button>
+                <!--<button id="DesktopView" class="openthematrix viewbuttonsclass" mymatrix="mymatrix-review">Desktop View</button>-->
+
+
+                <button id="codeviewmyviewer" class="openthematrix viewbuttonsclass" mymatrix="mymatrix-codeview">All
+                    Panels</button>
+            </div>
+
+
 
 
         </div>
@@ -1683,7 +1720,9 @@ background-image: url(assets/photo-placeholder-5.jpg);
         .customModal,
         #urlModal,
         #myModalcontent,
-        #myModalcontentviewers,#googleDocImporterModal,
+        #myModalcontentviewers,
+        #googleDocImporterModal,
+        #googleDocImporterModal3,
         #customModalhtag {
             z-index: 99999999999999;
             position: absolute;
@@ -1776,7 +1815,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
 
-            
+
         </div>
     </div>
 
@@ -1785,7 +1824,7 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
     <div id="fullinterface" class="prod100 interface">
 
-       
+
 
 
         <div class="promo50" id="programming">
@@ -1848,8 +1887,6 @@ background-image: url(assets/photo-placeholder-5.jpg);
                     padding-top: .5%;
                     padding-bottom: .5%;
                 }
-
-             
             </style>
 
 
@@ -1914,8 +1951,6 @@ background-image: url(assets/photo-placeholder-5.jpg);
                 #mobilepreview2 .width50c2 {
                     width: var(--width33c4-width) !important
                 }
-
-
             </style>
 
 
@@ -2020,94 +2055,90 @@ background-image: url(assets/photo-placeholder-5.jpg);
 
 
                 .clampscript {
-    background-color: #ff0000 !important;
-    color: #ff0000;
-}
+                    background-color: #ff0000 !important;
+                    color: #ff0000;
+                }
 
 
-#mobilepreview2 .clampscript {
-    display: none;
-}
+                #mobilepreview2 .clampscript {
+                    display: none;
+                }
             </style>
 
 
 
 
-<style>
-    #pullthecode3 {
-        width: 100%;
-        transform: scale(1);
-        transition: transform 0.3s, width 0.3s;
-        transform-origin: top left;
-    }
-
-
-
-    
-.wp-block-image {
-    margin: 1.875rem auto;
-}
- .alignright {
-    float: right;
-        margin: 0 0 1.25rem 1.25rem;
-        padding: 0;
- }
-
- .alignleft {
-    float: left;
-    margin: 0 1.25rem 1.25rem 0;
-    padding: 0;
- }
-
- .alignright img ,.alignleft img {
-    vertical-align: middle;
-    max-width: 100%;
-    height: auto;
-    display: block;
- }
+            <style>
+                #pullthecode3 {
+                    width: 100%;
+                    transform: scale(1);
+                    transition: transform 0.3s, width 0.3s;
+                    transform-origin: top left;
+                }
 
 
 
 
-</style>
+                .wp-block-image {
+                    margin: 1.875rem auto;
+                }
+
+                .alignright {
+                    float: right;
+                    margin: 0 0 1.25rem 1.25rem;
+                    padding: 0;
+                }
+
+                .alignleft {
+                    float: left;
+                    margin: 0 1.25rem 1.25rem 0;
+                    padding: 0;
+                }
+
+                .alignright img,
+                .alignleft img {
+                    vertical-align: middle;
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            </style>
 
 
 
-<style>
-    #pullthecode3 h2 {
-        color: #333 !important;
-    }
-img.size-medium {
-width: unset !important;
-padding: 0px;
-margin: 0px;
-}
+            <style>
+                #pullthecode3 h2 {
+                    color: #333 !important;
+                }
 
-img.alignleft {
-float: left !important;
-width: unset !important;
-}
+                img.size-medium {
+                    width: unset !important;
+                    padding: 0px;
+                    margin: 0px;
+                }
 
-
-</style>
+                img.alignleft {
+                    float: left !important;
+                    width: unset !important;
+                }
+            </style>
 
 
             <div class="newtopmenu" style="float: left; width: 100%; position: relative;">
 
 
-                
+
 
                 <div id="overviewmenud">
 
                     <div class="width100c" style="width: 331px; float: left;">
 
-                        <div id="loadstartmenu" class="unselectable-text letbutton21" 
-                        style="    width: 8% !important;
+                        <div id="loadstartmenu" class="unselectable-text letbutton21" style="    width: 8% !important;
                         height: 30px;
                         padding: 0px;
                         margin: 2px;
-                        margin-right: 11px; cursor: pointer;"><img style="width: 100%;"
-                            src="assets/homescreen.png" /></div>
+                        margin-right: 11px; cursor: pointer;"><img style="width: 100%;" src="assets/homescreen.png" />
+                        </div>
                         <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Import"
                             style="width: 13% !important;height: 30px;padding: 0px;"><img style="width: 56%;"
                                 src="assets/iconimport-w.png" /></div>
@@ -2115,8 +2146,8 @@ width: unset !important;
                             whatbox="Layout" style="width: 13% !important;height: 30px;padding: 0px;"><img
                                 style="width: 60%;cursor: pointer;" src="assets/iconrows2025-w.png" /></div>
                         <div class="unselectable-text thetopbox mytoolsboxtop2 letbutton21" whatbox="Tools"
-                            style="width: 13% !important;height: 30px;padding: 0px; cursor: pointer;"><img style="width: 60%;"
-                                src="assets/compicon3.png" /></div>
+                            style="width: 13% !important;height: 30px;padding: 0px; cursor: pointer;"><img
+                                style="width: 60%;" src="assets/compicon3.png" /></div>
                         <div class="unselectable-text thetopbox mytoolsboxtop3 letbutton21" whatbox="Rows"
                             style="width: 13% !important;height: 30px;padding: 0px;display: none;cursor: pointer;"><img
                                 style="width: 60%;" src="assets/iconmodify.png" /></div>
@@ -2127,9 +2158,9 @@ width: unset !important;
                             style="width: 13% !important;height: 30px;padding: 0px; display: none; " whatbox="Blog">
                             <img style="width: 60%; margin-left: 18%;cursor: pointer;" src="assets/iconblog.png" />
                         </div>
-                   
 
-                    
+
+
 
                         <div class="width33c" style="width: 13% !important;">
                             <img id="savetomemory"
@@ -2138,8 +2169,8 @@ width: unset !important;
                         </div>
 
                         <script>
-          
-                          </script>
+
+                        </script>
 
 
 
@@ -2148,21 +2179,22 @@ width: unset !important;
                 </div>
                 <div class="width20c" style=" float: left; width: 17%; margin-top: -20px;">
 
-<style>
-    .myrestbutt:hover , .letbutton21:hover {
-        opacity: 0.7;
-    }
-</style>
+                    <style>
+                        .myrestbutt:hover,
+                        .letbutton21:hover {
+                            opacity: 0.7;
+                        }
+                    </style>
 
-<div class="width50c" >
-    <img  class="myrestbutt" id="clearandrestartbuttonrefresh"
-        style="width: 65% !important;  max-width: 30px; float: left; cursor: pointer; "
-        src="assets/restart4.png" title="Refresh without Losing Work" />
-</div>
+                    <div class="width50c">
+                        <img class="myrestbutt" id="clearandrestartbuttonrefresh"
+                            style="width: 65% !important;  max-width: 30px; float: left; cursor: pointer; "
+                            src="assets/restart4.png" title="Refresh without Losing Work" />
+                    </div>
 
 
 
-                    <div class="width50c" >
+                    <div class="width50c">
                         <img class="myrestbutt" id="clearandrestartbutton"
                             style="width: 65% !important;  max-width: 30px; float: left; cursor: pointer; "
                             src="assets/restart3.png" title="Refresh and Clear All" />
@@ -2170,7 +2202,7 @@ width: unset !important;
 
 
 
-                  
+
 
 
 
@@ -2188,7 +2220,7 @@ width: unset !important;
 
             <div id="Importer" class="width100c openclose" openclose="htmlimporter" style="display: none;">
 
-               
+
 
                 <div class="width100c unselectable-text" style="margin-left: -3%;">
                     <span class="myindicator">+</span>
@@ -2196,7 +2228,7 @@ width: unset !important;
                 </div>
             </div>
 
-            
+
 
             <div id="explorerpanel" class="width100c" style="    margin-left: 0%;
             width: 96.5%;
@@ -2243,8 +2275,7 @@ width: unset !important;
                 <div openclose="myrowbuilder" class="width100c stage1  myrowbuilder"
                     style="padding-left: 2.5%; padding-top:10px">
 
-                    <div class="width100c"
-                        style=" width:88%;margin-top:5px;margin-bottom:5px"></div>
+                    <div class="width100c" style=" width:88%;margin-top:5px;margin-bottom:5px"></div>
 
 
 
@@ -2278,11 +2309,11 @@ width: unset !important;
 
 
                         <div class="width50c">
-                            <div class="width100c"
-                                style="margin-top:5px; width:88%;">
-                              
+                            <div class="width100c" style="margin-top:5px; width:88%;">
+
                                 <div class="width100c">
-                                    <label for="sliderValue_row"><span style="color: lightblue;">Row Margin Top: </span><span id="sliderValue4_row">0</span>px</label>
+                                    <label for="sliderValue_row"><span style="color: lightblue;">Row Margin Top:
+                                        </span><span id="sliderValue4_row">0</span>px</label>
                                     <input type="range" id="sliderValue_row" name="sliderValue_row" min="1" max="100"
                                         value="0" oninput="updateSliderValue_row(this.value)">
                                 </div>
@@ -2322,10 +2353,11 @@ width: unset !important;
 
 
                             <div class="width50c">
-                              
+
 
                                 <div class="width100c">
-                                    <label for="rangeSlider"><span style="color: lightblue;"> Row Border Radius </span><span id="sliderValue4">0</span>px</label>
+                                    <label for="rangeSlider"><span style="color: lightblue;"> Row Border Radius
+                                        </span><span id="sliderValue4">0</span>px</label>
                                     <input type="range" id="rangeSlider4" name="rangeSlider3" min="1" max="100"
                                         value="0" oninput="updateSliderValue4(this.value)">
                                 </div>
@@ -2376,9 +2408,10 @@ width: unset !important;
                                 </select>
                             </div>
                             <div class="width50c" style="display: none;">
-                               
+
                                 <div class="width100c">
-                                    <label for="rangeSlider"> <span style="color: lightblue;font-size:0.8rem;">Line Height</span> <span id="sliderValue">23</span>px</label>
+                                    <label for="rangeSlider"> <span style="color: lightblue;font-size:0.8rem;">Line
+                                            Height</span> <span id="sliderValue">23</span>px</label>
                                     <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="100" value="23"
                                         oninput="updateSliderValue(this.value)">
                                 </div>
@@ -2457,9 +2490,10 @@ width: unset !important;
 
 
                     <div class="width50c" style="margin-top:5px;width: 46%;   margin-left: 5px;">
-                        
+
                         <div class="width100c">
-                            <label for="fontSlider"><span style=" color: yellow;font-size:0.8rem;">Font Size</span> <span id="sliderValue66">0</span>em</label>
+                            <label for="fontSlider"><span style=" color: yellow;font-size:0.8rem;">Font Size</span>
+                                <span id="sliderValue66">0</span>em</label>
                             <input type="range" id="fontSlider" name="fontSlider" min="0" max="3" step="0.1" value="0"
                                 oninput="updateSliderValue66(this.value)">
                         </div>
@@ -2468,9 +2502,10 @@ width: unset !important;
 
 
                     <div class="width50c" style="margin-top:5px;width: 46%;   margin-left: 5px;">
-                        
+
                         <div class="width100c">
-                            <label for="widthSlider"><span style=" color: yellow;font-size:0.8rem;">Comp Width</span> <span id="sliderValue33">100</span>%</label>
+                            <label for="widthSlider"><span style=" color: yellow;font-size:0.8rem;">Comp Width</span>
+                                <span id="sliderValue33">100</span>%</label>
                             <input type="range" id="widthSlider" name="widthSlider" min="1" max="100" value="100"
                                 oninput="updateSliderValue33(this.value)">
                         </div>
@@ -2478,37 +2513,41 @@ width: unset !important;
 
 
                     <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
-                       
+
                         <div class="width100c">
-                            <label for="widthSlider00a"><span style=" color: yellow;font-size:0.8rem;">Comp Padding</span> <span id="sliderValue99">0</span>px</label>
+                            <label for="widthSlider00a"><span style=" color: yellow;font-size:0.8rem;">Comp
+                                    Padding</span> <span id="sliderValue99">0</span>px</label>
                             <input type="range" id="widthSlider00a" name="widthSlider00a" min="1" max="200" value="0"
                                 oninput="updateSliderValue99(this.value)">
                         </div>
                     </div>
 
                     <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
-                        
+
                         <div class="width100c">
-                            <label for="widthSlider00b"><span style=" color: yellow;font-size:0.8rem;">Line Height</span> <span id="sliderValue00">0</span>px</label>
+                            <label for="widthSlider00b"><span style=" color: yellow;font-size:0.8rem;">Line
+                                    Height</span> <span id="sliderValue00">0</span>px</label>
                             <input type="range" id="widthSlider00b" name="widthSlider00b" min="0" max="100" value="10"
                                 oninput="updateSliderValue00(this.value)">
                         </div>
                     </div>
 
                     <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
-                        
+
                         <div class="width100c">
-                            <label for="widthSlider00c"><span style=" color: yellow;font-size:0.8rem;">Border Radius</span> <span id="sliderValue11">0</span>px</label>
+                            <label for="widthSlider00c"><span style=" color: yellow;font-size:0.8rem;">Border
+                                    Radius</span> <span id="sliderValue11">0</span>px</label>
                             <input type="range" id="widthSlider00c" name="widthSlider00c" min="0" max="50" value="0"
                                 oninput="updateSliderValue11(this.value)">
                         </div>
                     </div>
 
                     <div class="width50c" style="margin-top:5px;width: 48%;   margin-left: -10px; float: right;">
-                       
+
                         <div class="width100c">
-                            <label class="slider-label" for="rangeSlider"> <span style=" color: yellow;font-size:0.8rem;">Margin Top</span> <span class="slider-control"
-                                    id="sliderValue2">0</span>px</label>
+                            <label class="slider-label" for="rangeSlider"> <span
+                                    style=" color: yellow;font-size:0.8rem;">Margin Top</span> <span
+                                    class="slider-control" id="sliderValue2">0</span>px</label>
                             <input type="range" id="rangeSlider" name="rangeSlider" min="1" max="200" value="0"
                                 oninput="updateSliderValue2(this.value)">
                         </div>
@@ -2641,30 +2680,31 @@ width: unset !important;
                 }
 
                 .export-btn {
-    float: right;
-    padding: 3px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    cursor: pointer;
-    font-size: 0.7rem;
-}
+                    float: right;
+                    padding: 3px;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    cursor: pointer;
+                    font-size: 0.7rem;
+                }
             </style>
 
             <div class="width100c toolboxlayoutoptions unselectable-text htmlimporter"
                 style="width: 85%; margin-left: 4%; margin-top: 5px;">
 
                 <div class="width100c" style="margin-bottom: 15px; margin-top: -20px;">
-                   <span style="font-size: 0.8rem;"> (Import Google Doc from URL)</span>
-                <input type="text" id="google-doc-url-input" placeholder="Enter Google Doc URL" style="margin-top: 5px;">
-                <div id="import-google-doc" style="background-color: #007BFF;
+                    <span style="font-size: 0.8rem;"> (Import Google Doc from URL)</span>
+                    <input type="text" id="google-doc-url-input" placeholder="Enter Google Doc URL"
+                        style="margin-top: 5px;">
+                    <div id="import-google-doc" style="background-color: #007BFF;
                 color: #fff;
                 border: none;
                 border-radius: 5px;
                 width: auto;
                 text-align: center;
                 line-height: 31px;
-                margin-bottom: 20px;">Import Google Doc</div> 
-            </div>
+                margin-bottom: 20px;">Import Google Doc</div>
+                </div>
                 <div class="width100c"
                     style="margin-bottom: 15px; margin-top: -20px; font-size: 0.9rem; margin-bottom: 2px;">Import :
                     (.docx , .txt , .html)</div>
@@ -2788,7 +2828,7 @@ width: unset !important;
 
 
                 <div class="width100c  part1" style="width: 89%; margin-left: -1.5%; padding: 10px; border: 1px solid #000;-webkit-box-shadow:inset 0 0 7px 3px #0A0A0A;
-                box-shadow:inset 0 0 7px 3px #0A0A0A;">
+                box-shadow:inset 0 0 7px 3px #0A0A0A; ">
 
                     <div class="width50c">
 
@@ -3076,7 +3116,7 @@ width: unset !important;
                         <div class="dropsection draggable ui-widget-content unselectable-text"
                             size="width75c width50c2  liveelement" pale="75">75% D 100% M</div>
 
-                            
+
 
 
                         <div class="width100c" style="margin-top: 10px;  padding-top: 3px;">
@@ -3156,51 +3196,44 @@ width: unset !important;
 
                     <div class="width100c internalbuttons" style="display: block; ">
 
-                        <button class="secondlauyout unselectable-text" id="addrow1x1">100%
+                        <button class="secondlauyout unselectable-text" style="width: 24%;" id="addrow1x1">100%
                             Layout</button>
-                        <button class="secondlauyout unselectable-text" id="addrow2x2">50/50
+                        <button class="secondlauyout unselectable-text"  style="width: 24%;" id="addrow2x2">50/50
                             Layout</button>
+
+                            <button class="secondlauyout unselectable-text" style="width: 24%;" id="addrow2x8">20/80
+                                Layout</button>
+
+                                <button class="secondlauyout unselectable-text" style="width: 24%;" id="addrow4x6">40/60
+                                    Layout</button>
+        
 
                     </div>
 
 
                     <div class="width100c internalbuttons" style="display: block;">
 
-                        <button class="secondlauyout unselectable-text" id="addrow2x8">20/80
-                            Layout</button>
-                        <button class="secondlauyout unselectable-text" id="addrow4x6">40/60
-                            Layout</button>
+                        
+                       
+                            <button class="secondlauyout unselectable-text" style="width: 24%;" id="addrow4x6a">60/40
+                                Layout</button>
+    
+                            <button class="secondlauyout unselectable-text" style="width: 24%;" id="addrow2x7">25/75
+                                Layout</button>
+
+                                <button class="secondlauyout unselectable-text" style="width: 24%;" id="addrow3x3">33% Layout
+                                    -(3)</button>
+
+                                    <button class="secondlauyout unselectable-text"  style="width: 24%;" id="addrow4x4">25% Layout
+                                        -(4)</button>
+    
 
                     </div>
 
 
 
 
-
-
-                    <div class="width100c internalbuttons" style="display: block;">
-
-                        <button class="secondlauyout unselectable-text" id="addrow4x6a">60/40
-                            Layout</button>
-
-                        <button class="secondlauyout unselectable-text" id="addrow2x7">25/75
-                            Layout</button>
-
-                    </div>
-
-
-
-
-
-
-                    <div class="width100c internalbuttons" style="display: block;">
-
-
-                        <button class="secondlauyout unselectable-text" id="addrow3x3">33% Layout
-                            -(3)</button>
-                        <button class="secondlauyout unselectable-text" id="addrow4x4">25% Layout
-                            -(4)</button>
-                    </div>
+            
 
 
 
@@ -3295,9 +3328,9 @@ width: unset !important;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
                         ">
-                            Top of Page Content
-                        </button>
-                       
+                                Top of Page Content
+                            </button>
+
 
 
                         </div>
@@ -3755,11 +3788,14 @@ width: unset !important;
                     </div>
 
                     <duv class="width100c" style="margin-top: -10px; margin-bottom: 10px;">
-                        <button class="whattypeofimage unselectable-text"  style="font-size: 0.8rem;" openimagebuilder="productimage">Product
+                        <button class="whattypeofimage unselectable-text" style="font-size: 0.8rem;"
+                            openimagebuilder="productimage">Product
                             Images</button>
-                        <button class="whattypeofimage unselectable-text"  style="font-size: 0.8rem;" openimagebuilder="promoimage">Promo
+                        <button class="whattypeofimage unselectable-text" style="font-size: 0.8rem;"
+                            openimagebuilder="promoimage">Promo
                             Images</button>
-                        <button class="whattypeofimage unselectable-text" style="font-size: 0.8rem;" openimagebuilder="wrapimage">Text Wrap /
+                        <button class="whattypeofimage unselectable-text" style="font-size: 0.8rem;"
+                            openimagebuilder="wrapimage">Text Wrap /
                             Image</button>
                     </duv>
 
@@ -3961,83 +3997,89 @@ width: unset !important;
                             </div>
 
                             <div class="width100c" style="margin-bottom: 10px;">
-                                
 
 
 
 
 
-                              
 
 
-<div class="width100c" style="    padding-bottom: 5px;
+
+
+                                <div class="width100c" style="    padding-bottom: 5px;
 padding-left: 7px;
 padding-top: 10px;
 margin-top: 0px;
 ">
 
-<div class="width100c">
+                                    <div class="width100c">
 
-<div class="width80c">
+                                        <div class="width80c">
 
- <div class="width100c">
-    <div class="width40c" id="hideforblog" style="display: none;">
-        <label for="wrapimageselector">Image &nbsp;</label>
-        <select title="Image Selector" name="wrapimageselector" id="wrapimageselector" style="width: auto;
+                                            <div class="width100c">
+                                                <div class="width40c" id="hideforblog" style="display: none;">
+                                                    <label for="wrapimageselector">Image &nbsp;</label>
+                                                    <select title="Image Selector" name="wrapimageselector"
+                                                        id="wrapimageselector" style="width: auto;
         margin-right: 2%;">
-    
-            <option selected value="Z_">Image 1</option>
-            <option value="AZ1_">Image 2</option>
-            <option value="AZ10_">Image 3</option>
-            <option value="AZ11_">Image 4</option>
-            <option value="AZ12_">Image 5</option>
-            <option value="AZ2_">Image 6</option>
-            <option value="AZ3_">Image 7</option>
-            <option value="AZ4_">Image 8</option>
-            <option value="AZ5_">Image 9</option>
-            <option value="AZ6_">Image 10</option>
-            <option value="AZ7_">Image 11</option>
-            <option value="AZ8_">Image 12</option>
-            <option value="AZ9_">Image 13</option>        
-            <option value="AZ13_">Image 14</option>
-            <option value="AZ14_">Image 15</option>
-            <option value="AZ15_">Image 16</option>
-            <option value="">Guide</option>
-        </select>
-        <input type="text" id="wraparoundproductnumber" placeholder="Enter Product Number"
-        style=" width: 50%; margin-bottom: 10px;">
-       
-    </div>
-                               
-    <div class="width60c">
-    
-           <label for="reverseimage">Image Position</label>
-            <select title="Reverse Layout" name="reverseimage" id="reverseimage">
-                <option  disabled selected>Select Side</option>
-                <option value="no">Image First</option>
-                <option value="yes">Image Second</option>
-            </select>
-    
-    </div>
-    
- </div>
 
-  <div class="width100c" style="margin-top: 7px;">
-    <label for="wraparoundfilename" >Img Filename / Product # &nbsp;</label>
-    <input type="text" id="wraparoundfilename" placeholder="Image Filename or Product #"
-    style=" width: 92%; margin-bottom: 10px;">
+                                                        <option selected value="Z_">Image 1</option>
+                                                        <option value="AZ1_">Image 2</option>
+                                                        <option value="AZ10_">Image 3</option>
+                                                        <option value="AZ11_">Image 4</option>
+                                                        <option value="AZ12_">Image 5</option>
+                                                        <option value="AZ2_">Image 6</option>
+                                                        <option value="AZ3_">Image 7</option>
+                                                        <option value="AZ4_">Image 8</option>
+                                                        <option value="AZ5_">Image 9</option>
+                                                        <option value="AZ6_">Image 10</option>
+                                                        <option value="AZ7_">Image 11</option>
+                                                        <option value="AZ8_">Image 12</option>
+                                                        <option value="AZ9_">Image 13</option>
+                                                        <option value="AZ13_">Image 14</option>
+                                                        <option value="AZ14_">Image 15</option>
+                                                        <option value="AZ15_">Image 16</option>
+                                                        <option value="">Guide</option>
+                                                    </select>
+                                                    <input type="text" id="wraparoundproductnumber"
+                                                        placeholder="Enter Product Number"
+                                                        style=" width: 50%; margin-bottom: 10px;">
 
-  </div>
-    <input type="text" id="wraparoundalt" placeholder="Image Alt Tag" style=" width: 120%; ">  
-</div>
+                                                </div>
 
-<div class="width20c">
-    <img id="wrapselectimagepreview"  src="assets/img.png" alt="" style="width: 76% !important; display: none;">
-</div>
-</div>
+                                                <div class="width60c">
 
-<div class="width100c">
-    <button id="wraparoundsubmit" style="    padding: 5px 5px;
+                                                    <label for="reverseimage">Image Position</label>
+                                                    <select title="Reverse Layout" name="reverseimage"
+                                                        id="reverseimage">
+                                                        <option disabled selected>Select Side</option>
+                                                        <option value="no">Image First</option>
+                                                        <option value="yes">Image Second</option>
+                                                    </select>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="width100c" style="margin-top: 7px;">
+                                                <label for="wraparoundfilename">Img Filename / Product # &nbsp;</label>
+                                                <input type="text" id="wraparoundfilename"
+                                                    placeholder="Image Filename or Product #"
+                                                    style=" width: 92%; margin-bottom: 10px;">
+
+                                            </div>
+                                            <input type="text" id="wraparoundalt" placeholder="Image Alt Tag"
+                                                style=" width: 120%; ">
+                                        </div>
+
+                                        <div class="width20c">
+                                            <img id="wrapselectimagepreview" src="assets/img.png" alt=""
+                                                style="width: 76% !important; display: none;">
+                                        </div>
+                                    </div>
+
+                                    <div class="width100c">
+                                        <button id="wraparoundsubmit" style="    padding: 5px 5px;
     border: none;
     background-color: #007BFF;
     color: white;
@@ -4048,13 +4090,13 @@ margin-top: 0px;
     margin-top: 12px;
     margin-bottom: 10px;
     font-size: 0.875rem;" type="submit">Submit Component</button>
-</div>
+                                    </div>
 
 
 
-</div>
+                                </div>
 
-                                
+
 
                                 <div id="blogproductlist" class="width100c">
                                     <div class="width100c unselectable-text" style="margin-bottom: 5px;"><span
@@ -4167,7 +4209,7 @@ margin-top: 0px;
                                             <span>Image 15</span>
                                         </div>
 
-                                        <div class="promo16c" >
+                                        <div class="promo16c">
                                             <img class="showthepreviewimage2"
                                                 src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/RF18A5101SR.jpg"
                                                 num="15" prefix="">
@@ -4486,7 +4528,7 @@ margin-top: 0px;
                     </div>
                 </div>
 
-                
+
                 <div id="schema21" class="width100c openclose" openclose="schema">
                     <div class="width100c unselectable-text" style="margin-left: -3%;">
                         <span class="myindicator" style="font-size: 0.8rem;">+</span>
@@ -4500,41 +4542,45 @@ margin-top: 0px;
                     <div class="width100c">
                         <div class="width50c" style="width: auto; padding-right: 10px;">Schema Type</div>
                         <div class="width50c">
-<style>
-    .custom-schema-selector {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
+                            <style>
+                                .custom-schema-selector {
+                                    width: 100%;
+                                    padding: 10px;
+                                    border-radius: 5px;
+                                    border: 1px solid #ccc;
+                                    font-size: 16px;
+                                    background-color: #f9f9f9;
+                                    transition: border-color 0.3s, box-shadow 0.3s;
+                                }
 
-.custom-schema-selector:focus {
-    border-color: #66afe9;
-    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
-}
+                                .custom-schema-selector:focus {
+                                    border-color: #66afe9;
+                                    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+                                }
 
-.custom-schema-selector option {
-    padding: 4px !important;
-    background-color: #fff;
-    font-size: 16px !important;
-}
-</style>
+                                .custom-schema-selector option {
+                                    padding: 4px !important;
+                                    background-color: #fff;
+                                    font-size: 16px !important;
+                                }
+                            </style>
 
-                            <select id="schemaTypeSelector" class="custom-schema-selector"  onchange="setSchemaType(this.value)">
+                            <select id="schemaTypeSelector" class="custom-schema-selector"
+                                onchange="setSchemaType(this.value)">
                                 <option value="article">Article / Blog Schema</option>
                                 <option value="faq">F.A.Q. Schema</option>
                             </select>
                         </div>
                     </div>
                     <form id="schemaform">
-                    <span>Page Title</span>
-                    <input id="schemapagetitle" type="text" style="width: 97%; margin-bottom: 15px; height: 30px; padding-left: 5px;" placeholder="Page title here..." required>
-                    <span>Page URL</span>
-                    <input id="schemapageurla" type="text" style="width: 97%; height: 25px; padding-left: 5px;" placeholder="Page URL here... (inlucde https://www.pcrichard.com)" required>
-                    <button style="    width: 99%;
+                        <span>Page Title</span>
+                        <input id="schemapagetitle" type="text"
+                            style="width: 97%; margin-bottom: 15px; height: 30px; padding-left: 5px;"
+                            placeholder="Page title here..." required>
+                        <span>Page URL</span>
+                        <input id="schemapageurla" type="text" style="width: 97%; height: 25px; padding-left: 5px;"
+                            placeholder="Page URL here... (inlucde https://www.pcrichard.com)" required>
+                        <button style="    width: 99%;
                     padding: 5px 5px;
                     border: none;
                     background-color: #007BFF;
@@ -4552,11 +4598,11 @@ margin-top: 0px;
 
 
 
-<style>
-    .schemalayer {
-    background-color: orange !important;
-}
-</style>
+                    <style>
+                        .schemalayer {
+                            background-color: orange !important;
+                        }
+                    </style>
 
 
 
@@ -4834,18 +4880,26 @@ margin-top: 0px;
 
 
 
-            <div class="width100c toolboxhide codechanger"
-                style="margin-top: 0px;  padding: 5px; width: 96.5%; padding-bottom: 5px;-webkit-box-shadow: 0 -3px 10px 5px #000000;
-box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
+            <div class="width100c  codechanger" style="margin-top: 0px;z-index: 99999999;  padding: 5px; width: 96.5%; padding-bottom: 5px;-webkit-box-shadow: 0 -3px 10px 5px #000000;
+box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;    position: fixed;
+    bottom: 0px;
+    left: 0;
+    max-width: 25%;background-image: url(assets/photo-placeholder-5.jpg);">
                 <div class="width100c unselectable-text" style="margin-bottom: 5px; padding-left: 15px; width: 96%;">
 
-                    <div class="width60c " style="font-size: 90% !important; line-height: 40px;">
+                    <div id="minicoder"  style="position: absolute;
+                    top: -13px;
+                    right: 4px;
+                    color: #fff;
+                    font-size: 2rem; cursor: pointer;">-</div>
+
+                    <div class="width60c minicoder" style="font-size: 90% !important; line-height: 40px;">
                         HTML
 
                         Editor
                         and Copy Correction
                     </div>
-                    <div class="width40c">
+                    <div class="width40c minicoder">
 
                         <button id="EditandSubmitAL" class="unselectable-text"
                             style="float: right; margin-right: 8%; margin-top: 5px; padding-left: 6px; padding-right: 6px; font-size: 0.8rem;">
@@ -4860,7 +4914,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
 
 
 
-                <textarea name="myhtmleditor" id="myhtmleditor" class="codechanger" cols="30" rows="8"
+                <textarea name="myhtmleditor" id="myhtmleditor" class="codechanger minicoder" cols="30" rows="8"
                     placeholder="Click on a Component to Edit the HTML"></textarea>
 
 
@@ -4883,20 +4937,21 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
                     <div id="viewchange" class="width30c advanced-Buttons" style=" color: #fff !important; width: 12%">
                         <img src="assets/binoculars.png" style="width: 30%; margin-top: 2%;" title="Layout Viewer">
                     </div>
-  
 
-                  
+
+
                     <div id="reverse" class="width30c advanced-Buttons" style=" color: #fff !important; width: 13%">
                         <img src="assets/arrowsinterface.png" style="width: 33%;" title="Reverse Interface">
                     </div>
 
 
 
-                  <div id="hidemytabs" class="width30c advanced-Buttons" style=" color: #fff !important; width: 13%">
+                    <div id="hidemytabs" class="width30c advanced-Buttons" style=" color: #fff !important; width: 13%">
                         <img src="assets/hidetabs.png" style="width: 33%;" title="Hide Tabs">
                     </div>
 
-                    <div id="openNotebookWindow" class="width30c advanced-Buttons" style=" color: #fff !important; width: 13%">
+                    <div id="openNotebookWindow" class="width30c advanced-Buttons"
+                        style=" color: #fff !important; width: 13%">
                         <img src="assets/notebook.png" style="width: 33%;" title="Fetch Content from PCR">
                     </div>
 
@@ -4905,7 +4960,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
                     </div>
 
 
-              
+
 
                 </div>
 
@@ -4913,7 +4968,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
 
             </div>
 
-          
+
         </div>
 
 
@@ -4923,7 +4978,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
         <div class="promo50" id="resizable-div">
 
 
-          
+
 
 
             <div class="width100c" style="margin-bottom: 0px;   width: 96%; margin-left: 4%;">
@@ -4938,7 +4993,9 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
 
                         </select>
 
-                       <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2" style="margin-left: 0.05%;background-color: transparent !important;max-width: 22px;"><img src="assets/homehouse.png" alt="Home" style="
+                        <div id="firstmatrix" class="openthematrix openthematrixopen" mymatrix="mymatrix2"
+                            style="margin-left: 0.05%;background-color: transparent !important;max-width: 22px;"><img
+                                src="assets/homehouse.png" alt="Home" style="
     width: 102%;
 "></div>
 
@@ -4974,10 +5031,10 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
 
 
 
-                      
 
 
-<div class="openthematrix" mymatrix="mymatrix6"
+
+                        <div class="openthematrix" mymatrix="mymatrix6"
                             style="color: #fff;font-size: 0.55rem;text-decoration: underline;">
                             <strong>Templetes</strong></div>
 
@@ -5029,8 +5086,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
                     Click Templete Files to Download to Your Computer</div>
                 <div class="width100c" style="margin-top: 0px;">
                     <div id="driveContents"></div>
-                    <div class="width100c"><button onclick="listAllDriveFiles()"
-                            style="padding: 5px 5px;
+                    <div class="width100c"><button onclick="listAllDriveFiles()" style="padding: 5px 5px;
                             border: none;
                             background-color: #007BFF;
                             color: white;
@@ -5049,35 +5105,33 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
 
             <div id="mymatrix9" class="width100c closethematrix" style="width: 94%; margin-left: 4%; margin-top: -2%;">
                 <div class="width100c" style="margin-top: 10px;">
-                    <div class="width33cg" style="width: auto; margin-right: 10px; border: 0px; padding: 0px;"><button class="outsideplugins2" 
-                        ><img src="assets/loadproject.png" style="width: 34%; max-width: 40px; " alt="Go Back"></button></div>
+                    <div class="width33cg" style="width: auto; margin-right: 10px; border: 0px; padding: 0px;"><button
+                            class="outsideplugins2"><img src="assets/loadproject.png"
+                                style="width: 34%; max-width: 40px; " alt="Go Back"></button></div>
 
                     <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
-    border: 0px;"><button class="outsideplugins"
-                            whaturl="bannersheduler-v2.html">Store Banner Schedular ></button></div>
+    border: 0px;"><button class="outsideplugins" whaturl="bannersheduler-v2.html">Store Banner Schedular ></button>
+                    </div>
 
                     <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
-    border: 0px;"><button class="outsideplugins"
-                            whaturl="roundmenu-beta.html">Rounded Menu`s ></button></div>
+    border: 0px;"><button class="outsideplugins" whaturl="roundmenu-beta.html">Rounded Menu`s ></button></div>
 
                     <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
-    border: 0px;"><button class="outsideplugins"
-                            whaturl="schemabuilder-comp.html">HTML Schema  ></button></div>
-
-                            <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
-    border: 0px;"><button class="outsideplugins"
-                                whaturl="badgebuilder.html">Badge`s ></button></div>
+    border: 0px;"><button class="outsideplugins" whaturl="schemabuilder-comp.html">HTML Schema ></button></div>
 
                     <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
-    border: 0px;"><button class="outsideplugins"
-                            whaturl="https://www.story321.org/">AI Story Generator ></button></div>
+    border: 0px;"><button class="outsideplugins" whaturl="badgebuilder.html">Badge`s ></button></div>
+
+                    <div class="width33cg" style="width: auto; margin-right: 10px;    padding: 0px;
+    border: 0px;"><button class="outsideplugins" whaturl="https://www.story321.org/">AI Story Generator ></button>
+                    </div>
 
 
 
 
 
                 </div>
-                <div class="width100c" >
+                <div class="width100c">
                     <iframe id="outslidepluginsout" width="100%" height="900" src="nothing.html"
                         title="Google Documents" allowfullscreen></iframe>
                 </div>
@@ -5086,7 +5140,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
 
 
 
-          
+
 
 
 
@@ -5471,7 +5525,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
                             <div id="colorDisplay"
                                 style="width: 50%; height: 50px; border: 1px solid #490505; float: left; border: 1px solid #fff;">
                             </div>
-                          
+
                         </div>
 
 
@@ -5539,18 +5593,18 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
 
 
             </div>
-          
+
 
             <div id="pullthecode2" contenteditable="true" class="width50c layout2" style="border-radius: 0px 10px 10px; -webkit-box-shadow:inset 0 0 0px 3px #BDBDBD;
             box-shadow:inset 0 0 5px 5px #BDBDBD;">
-       
+
 
 
                 <div class="width100c">
-              
-                
 
-                 
+
+
+
 
                     <div id="pullthecode3"
                         class="informationcontent layoutbuilder layoutop2 experience-component experience-pcrs_assets-markup">
@@ -5574,11 +5628,11 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
 
                 </div>
 
-               
 
 
-                
-                
+
+
+
                 <div id="explorer2" class="width100c explorerd" style="max-height: 746px;
                     padding-left: 5% !important;
                     padding-top: 5% !important;
@@ -5592,7 +5646,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
 
             <div id="mymatrix1" class="width100c closethematrix" style="width: 96%; margin-left: 4%; margin-top: 0px;">
 
-            <div id="charactercount" style="float: left;
+                <div id="charactercount" style="float: left;
                 width: 40.6%;
                 padding-top: 6px;
                 padding-bottom: 6px;
@@ -5616,7 +5670,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
                 margin-right: 1%;">Export Final Code to File</button>
 
 
-<button id="openSalesforceWindow" style="    margin-top: 5px;
+                <button id="openSalesforceWindow" style="    margin-top: 5px;
                 padding-top: 8px;
                 border-radius: 6px;
                 padding-bottom: 5px;
@@ -5632,7 +5686,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
 
 
 
-<button id="openEffectusWindow" style="    margin-top: 5px;
+                <button id="openEffectusWindow" style="    margin-top: 5px;
                 padding-top: 8px;
                 border-radius: 6px;
                 padding-bottom: 5px;
@@ -5645,7 +5699,7 @@ box-shadow: 0 -3px 5px 5px #000000; margin-top: 7px;">
                 float: right;
                 margin-right: 1%;">Effectus PIM</button>
 
-<button id="finalcodeNotebook" style="    margin-top: 5px;
+                <button id="finalcodeNotebook" style="    margin-top: 5px;
 padding-top: 8px;
 border-radius: 6px;
 padding-bottom: 5px;
@@ -5683,7 +5737,7 @@ margin-right: 1%;">Notebook</button>
 
 
 
-                    
+
                 </div>
 
 
@@ -5718,7 +5772,8 @@ margin-right: 1%;">Notebook</button>
                 </div>
 
 
-                <textarea name="beautycode" id="beautycode" cols="30" rows="10" style="background-size: cover;"></textarea>
+                <textarea name="beautycode" id="beautycode" cols="30" rows="10"
+                    style="background-size: cover;"></textarea>
 
 
             </div>
@@ -5769,7 +5824,7 @@ margin-right: 1%;">Notebook</button>
     <div id="mymatrix4" class="width100c closethematrix">
         <div class="width100c">
             <div class="width100c" style="margin-left: 10%; max-width: 1560px;">
-                <button class="morebutt" id="pcrdesktopview" >Desktop
+                <button class="morebutt" id="pcrdesktopview">Desktop
                     View</button>
                 <button class="morebutt" id="pcrtabletview">Tablet View</button>
                 <button class="morebutt" id="pcrmobileview">Mobile View</button>
@@ -5778,8 +5833,8 @@ margin-right: 1%;">Notebook</button>
             </div>
         </div>
 
-      
-      
+
+
     </div>
 
 
@@ -5828,8 +5883,8 @@ margin-right: 1%;">Notebook</button>
 
 
 
-<script src="js5/complete.js"></script>
-<script src="js5/complete-part2.js"></script>
-
+    <script src="js5/complete.js"></script>
+    <script src="js5/complete-part2.js"></script>
+    <script src="js5/githubIntegration.js"></script>
 
 </body>

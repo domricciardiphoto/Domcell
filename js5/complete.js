@@ -985,7 +985,7 @@ $('.thetopbox').on('click', function () {
     if (whichboxtoopen === 'Tools') {
 
 
-        $('#myhtmleditor').show()
+        //$('#myhtmleditor').show()
         $('.internalscroller').show()
         $('.toolboxhide').show()
         $('.toolboxlayoutoptions').hide()
@@ -1003,7 +1003,7 @@ $('.thetopbox').on('click', function () {
     }
     if (whichboxtoopen == 'Rows') {
         $('#layoutbuilder-oc2').css('display', 'none')
-        $('#myhtmleditor').show()
+       // $('#myhtmleditor').show()
         $('.internalscroller').show()
         $('.titlebuilder-oc').hide()
         $('.imagebuilder').hide()
@@ -1032,17 +1032,17 @@ $('.thetopbox').on('click', function () {
         $('.blogbuilder').hide()
         $('#explorerpanel').hide()
         $('#layoutbuilder-oc').hide()
-        $('.codechanger').show()
+       // $('.codechanger').show()
 
     }
     if (whichboxtoopen == 'Layout') {
 
         $('#layoutbuilder-oc2').css('display', 'block')
-        $('#myhtmleditor').hide()
+        //$('#myhtmleditor').hide()
         $('.internalscroller').hide()
         $('.toolboxhide').hide()
         $('.toolboxlayoutoptions').show()
-        $('.layoutbuilder-oc').show()
+       // $('.layoutbuilder-oc').show()
         $('#layoutbuilder-oc').show()
         $('#Importer').hide()
         $('.htmlimporter').hide()
@@ -1051,7 +1051,7 @@ $('.thetopbox').on('click', function () {
     }
     if (whichboxtoopen == 'Blog') {
         $('#layoutbuilder-oc2').css('display', 'none')
-        $('#myhtmleditor').hide()
+        //$('#myhtmleditor').hide()
         $('.internalscroller').hide()
         $('.toolboxhide').hide()
         $('.toolboxlayoutoptions').hide()
@@ -1073,7 +1073,7 @@ $('.thetopbox').on('click', function () {
         $('.layoutbuilder-oc').hide()
         $('#layoutbuilder-oc').hide()
         $('#explorerpanel').show()
-        $('#myhtmleditor').show()
+        //$('#myhtmleditor').show()
         $('.toolboxhide').show()
     }
 
@@ -1163,7 +1163,7 @@ $('#contextMenu').hide()
         $programming.show();
         $explorer2.parent('div').show();
         $explorer2.css('max-height', $(document).height() / 1.9).show();
-        $('.codechanger').show();
+        //$('.codechanger').show();
         $('#explorer2').animate({'max-height' : $(window).height() / 2.1})
         $('#pullthecode2').animate({'max-height' : $(window).height() / 1.075})
         $('#pullthecode2').animate({'min-height' : $(window).height() / 1.075})
@@ -1237,7 +1237,7 @@ $('#contextMenu').hide()
         $('#thisisthefinalcode').show();
         $('#results21aaa').show();
         $('.htmlimporter').hide()
-        $('.codechanger').show()
+       // $('.codechanger').show()
 
         $('img.loading-lazy').each(function () {
             $(this).attr('src', '#');
@@ -3016,6 +3016,7 @@ async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91')
 
     for (let file of allFiles) {
         $('a.googledrive').on('click', function (e) {
+          
             
             e.preventDefault();
    
@@ -3046,7 +3047,7 @@ async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91')
         let displayName = file.name.replace('.txt', ''); // Example display name modification
         // Append each file link to the output HTML
         output +=
-            `<li><a title="Download the file of - ${displayName} -" style="color:#fff" class="googledrive" href="https://drive.google.com/uc?export=download&id=${file.id}"  return false" download="${file.name}">${displayName} &#8595;</a></li>`;
+            `<li><div title="Download the file of - ${displayName} -" style="color:#333; font-size:0.76rem" class="googledrive" mygoogledoc="https://drive.google.com/uc?export=download&id=${file.id}"  return false" download="${file.name}">${displayName} &#8595;</div></li>`;
 
         previousFirstLetter =
             currentFirstLetter; // Update the letter tracker for the next iteration
@@ -3061,6 +3062,38 @@ async function listAllDriveFiles(folderId = '10VO7M5g_oRnzaZDNSp0zLmL382O5Tn91')
 
     // Display the output HTML
     document.getElementById('driveContents').innerHTML = output;
+
+
+    $('.googledrive').on('click', function() {
+        // Get the Google Doc URL from the attribute
+        var mygoogledoc = $(this).attr('mygoogledoc');
+         var thegoogletitle = $(this).text()
+        // Replace the 'uc?export=download&id=' part with 'file/d/' and add '/view' at the end
+       importgoogledoc = mygoogledoc.replace('uc?export=download&id=', 'file/d/') + '/view';
+       exportgoogledoc = mygoogledoc
+        // Show the modal
+        $('#googleDocImporterModal3').show();
+        $('#google-doc-url-input3').val(importgoogledoc)
+        $('#downloadlinkgoogle').attr('href' , exportgoogledoc)
+        $('#googledoctitle').text('Templete ' +thegoogletitle)
+
+    });
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
 }
 
 // Initial call to list files
@@ -5070,20 +5103,65 @@ function getPosition() {
             const store = transaction.objectStore(storeName);
             const request = store.get("layout");
 
-            request.onsuccess = event => resolve(event.target.result ? event.target.result.position : null);
-            request.onerror = event => reject(event.target.error);
+            request.onsuccess = event => {
+                const result = event.target.result ? event.target.result.position : null;
+                if (result === 'programming-first') {
+                   
+                    $('.codechanger').css('right', '').css('left', '0');
+                    $('#minicoder').css('left', '').css('right', '4');
+                } else {
+                    $('.codechanger').css('left', '').css('right', '0');
+                    $('#minicoder').css('right', '').css('left', '0');
+                }
+                resolve(result);
+            };
+
+            request.onerror = event => {
+                alert("Error retrieving position: " + event.target.error); // Alert the error if it occurs
+                reject(event.target.error);
+            };
         });
     });
 }
+
+
 $('#reverse').on('click', function () {
     let position;
+    
+    // Toggle #programming and #resizable-div positions
     if ($('#programming').next().is('#resizable-div')) {
         $('#resizable-div').insertBefore('#programming');
         position = "resizable-div-first";
+        
+        // Toggle CSS for the .codechanger element
+        $('.codechanger').css({
+            'left': '',
+            'right': '0'
+        });
+        
+        // Toggle CSS for the #minicoder element
+        $('#minicoder').css({
+            'right': '',
+            'left': '0'
+        });
+        
     } else {
         $('#programming').insertBefore('#resizable-div');
         position = "programming-first";
+        
+        // Toggle CSS for the .codechanger element
+        $('.codechanger').css({
+            'right': '',
+            'left': '0'
+        });
+        
+        // Toggle CSS for the #minicoder element
+        $('#minicoder').css({
+            'left': '',
+            'right': '0'  // Assuming this should be '0' for consistency
+        });
     }
+
     savePosition(position);
 });
 
@@ -5096,6 +5174,7 @@ $(document).ready(function () {
         }
     });
 });
+
 
 
 $('#viewchange').on('click' , function() {

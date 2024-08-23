@@ -983,5 +983,37 @@ function processHeaders(docHtml) {
 
     $('.close-modalgoogle').on('click' , function() {
         $('#googleDocImporterModal').hide()
+        $('#googleDocImporterModal3').hide()
         $('.unique-box ').show()
     })
+
+
+
+    $('#import-google-doc3').on('click', function() {
+        document.querySelector('button[mymatrix="mymatrix3"]').click();
+        const googleDocUrl = document.getElementById('google-doc-url-input3').value;
+        
+        // Extract the file ID from the Google Drive URL
+        const fileIdMatch = googleDocUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+        if (!fileIdMatch) {
+            console.error('Invalid Google Drive URL.');
+            return;
+        }
+        const fileId = fileIdMatch[1];
+        
+        // Construct the Google Drive view link
+        const viewUrl = `https://drive.google.com/file/d/${fileId}/view`;
+    
+        // Open the Google Drive link in a new browser tab
+        window.open(viewUrl, '_blank');
+    });
+
+    $('#minicoder').on('click', function() {
+        if ($('#minicoder').text() === '-') {
+            $('.minicoder').hide()
+            $('#minicoder').text('+').css('color' , 'yellow');
+        } else {
+            $('.minicoder').show()
+            $('#minicoder').text('-').css('color' , '#fff');
+        }
+    });

@@ -91,15 +91,15 @@ input:focus, select:focus {
                 <div class="info">
                     <label for="startmonth">Choose Month:</label>
                     <select name="startmonth" id="startmonth">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
                         <option value="10">10</option>
                         <option value="11">11</option>
                         <option value="12">12</option>
@@ -143,15 +143,15 @@ input:focus, select:focus {
                 <div class="info">
                     <label for="endmonth">Choose Month:</label>
                     <select name="endmonth" id="endmonth">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
                         <option value="10">10</option>
                         <option value="11">11</option>
                         <option value="12">12</option>
@@ -212,8 +212,8 @@ input:focus, select:focus {
         </div>
         <div class="codebase">
             &lt;script&gt;
-            var startdate_dr = new Date(<span id="startyearval">'2024</span>-<span id="startmonthval">4</span>-<span id="startdayval">27</span>');
-            var enddate_dr = new Date(<span id="startyearval">'2024</span>-<span id="endmonthval">5</span>-<span id="enddayval">07</span>');
+            var startdate_dr = new Date(<span id="startyearval">'2024</span>-<span id="startmonthval">04</span>-<span id="startdayval">27</span>');
+            var enddate_dr = new Date(<span id="startyearval">'2024</span>-<span id="endmonthval">05</span>-<span id="enddayval">07</span>');
             var today_dr = new Date();
             var mobileimaged = '<span id="mobileimageval">fordham_clearance_mobileV1_750x430.jpg?$staticlink$</span>';
             var desktopimaged = '<span id="dekstopimageval">fordham_clearance_desktopV1_1600x160.jpg?$staticlink$</span>'; 
@@ -272,6 +272,74 @@ input:focus, select:focus {
                 $('#elementval').text($(this).val())
             })
         })
+
+
+
+
+
+// Get the current date
+const currentDate = new Date();
+
+// Get the month as a two-digit string
+const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+
+// Get the day as a two-digit string
+const day = String(currentDate.getDate()).padStart(2, '0');
+
+// Calculate the end day (current day + 2) with rollover logic
+let endDay = currentDate.getDate() + 2;
+const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+// If the end day exceeds the days in the current month, reset to the start of the next month
+if (endDay > daysInMonth) {
+    endDay = endDay - daysInMonth;
+}
+
+// Format the end day as a two-digit string
+const endDayFormatted = String(endDay).padStart(2, '0');
+
+// Function to update select and span elements
+function updateSelectAndSpan(selectId, spanId, value) {
+    const selectElement = document.getElementById(selectId);
+    if (selectElement) {
+        const optionToSelect = selectElement.querySelector(`option[value="${value}"]`);
+        if (optionToSelect) {
+            optionToSelect.selected = true;
+            selectElement.dispatchEvent(new Event('change'));
+            
+            const spanElement = document.getElementById(spanId);
+            if (spanElement) {
+                spanElement.textContent = value;
+            }
+        }
+    }
+}
+
+// Update startmonth and startday
+updateSelectAndSpan('startmonth', 'startmonthval', month);
+updateSelectAndSpan('startday', 'startdayval', day);
+
+// Update endmonth and endday with the new calculated endDay
+updateSelectAndSpan('endmonth', 'endmonthval', month);
+updateSelectAndSpan('endday', 'enddayval', endDayFormatted);
+
+console.log(`Month: ${month}, Day: ${day}, End Day: ${endDayFormatted}`);
+
+
+  
+
+
+
+
+
+
+
+
+
     </script>
+
+
+
+
 </body>
 </html>
