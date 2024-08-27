@@ -22,7 +22,7 @@
 </div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
   <div class="width100c liveelement in910 layoutpale layoutpale100 hideonlyondesktop">
-    <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:right;"><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ9_LRFLC2706S.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ9_LRFLC2706S.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="LG 36in. French Door Refrigerator, model LRFLC2706S, side angle view of pull-out freezer, fully stacked"> </div>
+    <div style="flex: 0 1 auto; max-width:50%;padding: 3%;float:right;"><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ9_LRFLC2706S.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ9_LRFLC2706S.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="LG 36in. French Door Refrigerator, model LRFLC2706S, side angle view of pull-out freezer, fully stacked"> </div>
     <div style="align-items: flex-start;">
       <div style="flex: 1 1 auto" class="">
         <h3 class=""><strong class="">Large Pull Out Freezers</strong></h3>
@@ -63,7 +63,7 @@
 </div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
   <div class="width100c liveelement in910 layoutpale layoutpale100 hideonlyondesktop">
-    <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:right;"><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ9_RF32CG5400SR.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ9_RF32CG5400SR.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="Samsung 36in. French Door Refrigerator, model RF32CG5400SR, external ice dispenser in use"> </div>
+    <div style="flex: 0 1 auto; max-width:50%;padding: 3%;float:right;"><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ9_RF32CG5400SR.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ9_RF32CG5400SR.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="Samsung 36in. French Door Refrigerator, model RF32CG5400SR, external ice dispenser in use"> </div>
     <div style="align-items: flex-start;">
       <div style="flex: 1 1 auto">
         <h3 class=""><strong class="">Extra Features</strong></h3>
@@ -82,7 +82,7 @@
 </div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyondesktop ui-sortable-handle" style="">
   <div class="width100c liveelement in910 layoutpale layoutpale100">
-    <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:left;" class=""><img id="nomar" class="loading-lazy promoimg21" style="margin-left: 6%;" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" alt="Sub-Zero 48in. Built-In French Door Refrigerator, model CL4850UFDIDO, lifestyle image of refrigerator installed in kitchen with white panels"></div>
+    <div style="flex: 0 1 auto; max-width:50%;padding: 3%;float:left;" class=""><img id="nomar" class="loading-lazy promoimg21 explorerselected" style="margin-left: 6%;" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" alt="Sub-Zero 48in. Built-In French Door Refrigerator, model CL4850UFDIDO, lifestyle image of refrigerator installed in kitchen with white panels"></div>
     <div style="align-items: flex-start;">
       <div style="flex: 1 1 auto" class="">
         <h3 class=""><strong class="">Beautiful Design</strong></h3>
@@ -112,8 +112,8 @@
     <div class="width100c liveelement in910 layoutpale layoutpale100"><strong><a href="/samsung-french-door-refrigerators/" class="">Samsung French door refrigerators</a></strong>
       also tend to be popular, with plenty of models available as a Samsung smart fridge. You'll find features like the Family Hub, which is a display that hooks up to WiFi. This allows you to create virtual to-do lists for the family, stream music or videos, and so much more.<br><br></div>
   </div>
-  <div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable onblock">
-    <div class="width100c liveelement in910 layoutpale layoutpale100"><a class="" href="https://www.pcrichard.com/whirlpool-french-door-refrigerators/"></a><a class="" href="/whirlpool-french-door-refrigerators/"><img class="loading-lazy promoimg21 in910 explorerselected" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/Whirlpool_fridge_gray.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/Whirlpool_fridge_gray.jpg" alt="Whirlpool French door refrigerator with logo overlay"></a></div>
+  <div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable">
+    <div class="width100c liveelement in910 layoutpale layoutpale100"><a class="" href="https://www.pcrichard.com/whirlpool-french-door-refrigerators/"></a><a class="" href="/whirlpool-french-door-refrigerators/"><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/Whirlpool_fridge_gray.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/Whirlpool_fridge_gray.jpg" alt="Whirlpool French door refrigerator with logo overlay"></a></div>
     <div class="width100c liveelement in910 layoutpale layoutpale100"><strong><a href="/whirlpool-french-door-refrigerators/" class="">Whirlpool French door refrigerators</a></strong> are also very reliable. Many of these refrigerators come with extra drawers to give you even more options to store your food, not to mention they can come in a number of unique colors to complement your kitchen's style.<br><br></div>
   </div>
 </div>
