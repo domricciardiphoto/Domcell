@@ -41,15 +41,13 @@
   </div>
 </div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyondesktop ui-sortable-handle" style="">
-  <div class="width100c liveelement in910 layoutpale layoutpale100">
-    <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:left;" class=""><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ2_LRFLC2706S.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ2_LRFLC2706S.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="LG 36in. French Door Refrigerator, model LRFLC2706S, side angle view of front"> </div>
+  <div class="width100c liveelement in910 layoutpale layoutpale100">  <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:left;padding: 5%;padding-left:0px;margin-left:-7px" class=""><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ2_LRFLC2706S.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ2_LRFLC2706S.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="LG 36in. French Door Refrigerator, model LRFLC2706S, side angle view of front"> </div>
     <div style="align-items: flex-start;">
       <div style="flex: 1 1 auto">
         <h3 class=""><strong class="">Two Doors</strong></h3>
-        As Pat demonstrates below, nearly every French door refrigerator comes with two large doors that have a small swing radius. This means that you can easily fit this fridge in a spot with limited depth, since the fridge doesn’t need a lot of space to swing open. That’s why you'll find a number of <a href="/counter-depth-french-door-refrigerators/" class="">counter-depth French door refrigerators</a> out there, since they are built to sit more in line with your cabinets. Of course, behind these two doors is a ton of fridge space. You’ll have access to multiple shelves where you can store all of your groceries, and the convenient two door setup allows you to open one door and access one side of the fridge, or both doors to access the whole thing at once.
+        As Pat demonstrates below, nearly every French door refrigerator comes with two large doors that have a small swing radius. This means that you can easily fit this fridge in a spot with limited depth, since the fridge doesn't need a lot of space to swing open. That's why you'll find a number of <a href="/counter-depth-french-door-refrigerators/" class="">counter-depth French door refrigerators</a> out there, since they are built to sit more in line with your cabinets. Of course, behind these two doors is a ton of fridge space. You'll have access to multiple shelves where you can store all of your groceries, and the convenient two door setup allows you to open one door and access one side of the fridge, or both doors to access the whole thing at once.
       </div>
-    </div>
-  </div>
+    </div></div>
 </div>
 <div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;"></div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyonmobile ui-sortable-handle" style="">
@@ -81,15 +79,13 @@
   </div>
 </div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyondesktop ui-sortable-handle" style="">
-  <div class="width100c liveelement in910 layoutpale layoutpale100">
-    <div style="flex: 0 1 auto; max-width:50%;padding: 3%;float:left;" class=""><img id="nomar" class="loading-lazy promoimg21 explorerselected" style="margin-left: 6%;" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" alt="Sub-Zero 48in. Built-In French Door Refrigerator, model CL4850UFDIDO, lifestyle image of refrigerator installed in kitchen with white panels"></div>
+  <div class="width100c liveelement in910 layoutpale layoutpale100"><div style="flex: 0 1 auto; max-width:50%;padding: 5%;float:left;padding-left:0px;margin-left:-7px" class=""><img id="nomar" class="loading-lazy promoimg21" style="margin-left: 6%;" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" alt="Sub-Zero 48in. Built-In French Door Refrigerator, model CL4850UFDIDO, lifestyle image of refrigerator installed in kitchen with white panels"></div>
     <div style="align-items: flex-start;">
       <div style="flex: 1 1 auto" class="">
         <h3 class=""><strong class="">Beautiful Design</strong></h3>
         Of course, these refrigerators are also incredibly stylish and sleek. The signature long handles you'll find on every one of these refrigerators offers a sense of elegance to your kitchen, while the variety of finishes and colors you can get them in helps them blend into your kitchen. If you want a sleek, stainless steel finish, a classic white finish, or even something a little less common, then it should be easy to find.
       </div>
-    </div>
-  </div>
+    </div></div>
 </div>
 <div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;"></div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
