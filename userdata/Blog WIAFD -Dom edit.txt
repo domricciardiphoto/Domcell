@@ -73,7 +73,7 @@
   </div>
 </div>
 <div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;"></div>
-<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyonmobile ui-sortable-handle explorerselected onblock" style="">
+<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyonmobile ui-sortable-handle" style="">
   <div class="width25c width50c2 liveelement in910 layoutpale layoutpale25"><img id="nomar" class="loading-lazy promoimg21" style="margin-left: 6%;" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" alt="Sub-Zero 48in. Built-In French Door Refrigerator, model CL4850UFDIDO, lifestyle image of refrigerator installed in kitchen with white panels"></div>
   <div class="width60c width50c2 liveelement in910 layoutpale layoutpale60" style="max-width: 95%; margin-left: 2.5%;">
     <h3 class=""><strong>Beautiful Design</strong></h3>
@@ -81,7 +81,7 @@
   </div>
 </div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyondesktop ui-sortable-handle" style="">
-  <div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent3384"><strong>Beautiful Design</strong></h3></div></div><div class="width100c liveelement in910 layoutpale layoutpale100"><div style="flex: 0 1 auto; max-width:50%;padding: 3%;float:left; padding-left: 0px;" class=""><img id="nomar" class="loading-lazy promoimg21" style="margin-left: 0%;" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" alt="Sub-Zero 48in. Built-In French Door Refrigerator, model CL4850UFDIDO, lifestyle image of refrigerator installed in kitchen with white panels"></div>
+  <div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent3384"><strong>Beautiful Design</strong></h3></div></div><div class="width100c liveelement in910 layoutpale layoutpale100">  <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:left;padding: 5%;padding-left:0px;margin-left:-7px" class=""><img id="nomar" class="loading-lazy promoimg21" style="margin-left: 0%;" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw4003f028/pim-content/AZ1_CL4850UFDIDO-promo.jpg" alt="Sub-Zero 48in. Built-In French Door Refrigerator, model CL4850UFDIDO, lifestyle image of refrigerator installed in kitchen with white panels"></div>
     <div style="align-items: flex-start;">
       <div style="flex: 1 1 auto" class="">
         
