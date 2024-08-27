@@ -8,7 +8,7 @@
 </div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle">
     <div class="width100c liveelement in910 layoutpale layoutpale100">
-        <p id="ptag6593">
+        <p id="ptag6593" class="">
             <a href="/french-door-refrigerators/" aria-label="French door refrigerators">French door refrigerators</a> have become a very popular style that
             you can find in many kitchens across the country. But what makes these <a href="/refrigerators/" aria-label="refrigerators">refrigerators</a> stand out among the rest? Read on to find out all about French
             door refrigerators and what they can do for your kitchen, and watch our very own Pat Dehner as he guides you
@@ -204,17 +204,17 @@
             <br>
         </div>
     </div>
-    <div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable">
+    <div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable onblock">
         <div class="width100c liveelement in910 layoutpale layoutpale100">
             <a href="https://www.pcrichard.com/samsung-french-door-refrigerators/" aria-label="Samsung Refrigerators">
                 <img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/samsung_fridge_gray.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/samsung_fridge_gray.jpg" alt="Samsung French door refrigerator, white, with brand logo overlay">
             </a>
         </div>
-        <div class="width100c liveelement in910 layoutpale layoutpale100">
+        <div class="width100c liveelement in910 layoutpale layoutpale100 explorerselected interedit">
             <strong>
                 <a href="/samsung-french-door-refrigerators/" aria-label="Samsung French door refrigerators">Samsung French door refrigerators</a>
             </strong>
-            also tend to be popular, with plenty of models available as a Samsung smart fridge. You'll find features
+            also tend to be popular, with plenty of models available as a <a href="/samsung/smart-refrigerators/">Samsung smart fridge</a>. You'll find features
             like the Family Hub, which is a display that hooks up to WiFi. This allows you to create virtual to-do lists
             for the family, stream music or videos, and so much more.<br>
             <br>
