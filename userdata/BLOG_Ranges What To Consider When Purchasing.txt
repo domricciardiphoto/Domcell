@@ -1,10 +1,10 @@
-<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle onblock" style=""><div class="width100c liveelement in910 layoutpale layoutpale100 explorerselected"><div class="pd-header-tag width100c"><h2 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent5858">Not sure where to start? We've got you covered</h2></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h2 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent5858">Not sure where to start? We've got you covered</h2></div></div></div><div class="width100c layoutpale layoutpale100 droppable ui-droppable ui-sortable-handle customspacer" style="min-height: 15px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
   <div class="width100c liveelement in910 layoutpale layoutpale100">There are a few things you should keep in mind when selecting a new <a href="https://www.pcrichard.com/ranges/" class="">Range</a>.&nbsp;</div>
-</div>
+</div><div class="width100c layoutpale layoutpale100 droppable ui-droppable ui-sortable-handle explorerselected onblock customspacer" style="min-height: 15px;"></div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
   <div class="width100c liveelement in910 layoutpale layoutpale100">
     <div class="pd-header-tag width100c">
-      <h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent8861"><strong>Range Sizes</strong></h3>
+      <h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent8861"><strong class="">Range Sizes</strong></h3>
     </div>
   </div>
 </div>
@@ -29,7 +29,7 @@
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
   <div class="width100c liveelement in910 layoutpale layoutpale100">
     <div class="pd-header-tag width100c">
-      <h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent9323"><strong>Fuel Types</strong></h3>
+      <h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent9323"><strong class="">Fuel Types</strong></h3>
     </div>
   </div>
 </div>
@@ -62,7 +62,7 @@
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
   <div class="width100c liveelement in910 layoutpale layoutpale100">
     <div class="pd-header-tag width100c">
-      <h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent6385"><strong>Color / Finish</strong></h3>
+      <h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent6385"><strong class="">Color / Finish</strong></h3>
     </div>
   </div>
 </div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100" style="margin-top: 1px;"><div style="flex: 0 1 auto; max-width:50%;padding: 3%;float:right;"><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ19_LSGL6335F.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/AZ19_LSGL6335F.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="LG Instaview Gas Range model LSGL6335F, lifestyle image in kitchen, oven window showing turkey, bread rolls, and apples cooking">   </div><div style="align-items: flex-start;"><div style="flex: 1 1 auto"><p class="">Next is the color. Most ranges today are available in white. However, some brands may offer additional colors like black, bisque, gray, and of course, the most popular, stainless steel.<br><br> Ranges are available with several door types. Basic ovens will have a solid door, usually the same color as the rest of the range. <br><br>Having a window allows you to check the status of food as it's cooking, without having to open the door letting all the heat out. The larger the window, the easier it is to keep track of how your food is progressing. </p></div></div></div></div>
@@ -71,7 +71,7 @@
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
   <div class="width100c liveelement in910 layoutpale layoutpale100">
     <div class="pd-header-tag width100c">
-      <h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent3603"><strong>Installation Type</strong></h3>
+      <h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent3603"><strong class="">Installation Type</strong></h3>
     </div>
   </div>
 </div>
@@ -84,7 +84,7 @@
 </div>
 <p class="ui-sortable-handle" style="">
 												</p>
-												<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent7243"><strong>Popular Features</strong></h3></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100">Other popular features with ranges today include:</div></div><h2 class="ui-sortable-handle" style=""><br></h2>
+												<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent7243"><strong class="">Popular Features</strong></h3></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100">Other popular features with ranges today include:</div></div><h2 class="ui-sortable-handle" style=""><br></h2>
 										
 									
 								
@@ -147,7 +147,7 @@ When you've got a griddle on your range, you'll have the versatility and the spa
 											</div>
 										</div>
 										<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50">
-											<strong>Ranges with Grills</strong>
+											<strong class="">Ranges with Grills</strong>
 											<br>
 Looking to grill over an open flame in the comfort of your own kitchen? A range with a built-in grill is the answer!
 </div>
@@ -168,14 +168,14 @@ Looking to grill over an open flame in the comfort of your own kitchen? A range 
 See for yourself how next-level technology can make every cooking task easier.
 </div>
 												</div>
-											</div><div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent8542"><strong>Watch this video for additional tips for purchasing a Range</strong></h3></div></div></div><div class="width100c ui-sortable-handle" style=""><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><video aria-label="Video Player" class="videoPlayer" controls="" poster="https://d2vxgxvhgubbj8.cloudfront.net/thumbnails/7106/1165016737_1_Flv_1280x720_thumb_10.jpg" tabindex="0">
-                <source src="https://d2vxgxvhgubbj8.cloudfront.net/videos/7106/1165016737_1_liveclicker.mp4" type="video/mp4">
-                <track kind="captions" label="English" src="https://d2vxgxvhgubbj8.cloudfront.net/subs/7106/" srclang="en">
+											</div><div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent8542"><strong class="">Watch this video for additional tips for purchasing a Range</strong></h3></div></div></div><div class="width100c ui-sortable-handle" style=""><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><video aria-label="Video Player" class="videoPlayer" controls="" poster="https://d2vxgxvhgubbj8.cloudfront.net/thumbnails/7106/1165016737_1_Flv_1280x720_thumb_10.jpg" tabindex="0">
+                <source src="https://d2vxgxvhgubbj8.cloudfront.net/videos/7106/1165016737_1_liveclicker.mp4" type="video/mp4" class="">
+                <track kind="captions" label="English" src="https://d2vxgxvhgubbj8.cloudfront.net/subs/7106/" srclang="en" class="">
                 Your browser does not support the video tag.
             </video>
-            <script type="application/ld+json">
+            <script type="application/ld+json" class="">
                 {"@context":"https://schema.org","@type":"VideoObject","name":"Ranges: What To Consider When Purchasing","description":"If you're in the beginning stages of shopping for a new range, this video from P.C. Richard & Son will give you the information you need.","thumbnailUrl":"https://d2vxgxvhgubbj8.cloudfront.net/thumbnails/7106/1165016737_1_Flv_1280x720_thumb_10.jpg","uploadDate":"2024-08-29T14:51:00-04:00","duration":"PT2M","contentUrl":"https://d2vxgxvhgubbj8.cloudfront.net/videos/7106/1165016737_1_liveclicker.mp4","embedUrl":"https://d2vxgxvhgubbj8.cloudfront.net/videos/7106/1165016737_1_liveclicker.mp4","publisher":{"@type":"Organization","name":"P.C. Richard & Son","logo":{"@type":"ImageObject","url":"https://www.pcrichard.com/images/pim-content/pcrmainlogo.png"}}}
-            </script></div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100" style="margin-top: 66px;">Shop <a href="/on-sale-ranges/" aria-label="stoves on sale" class=""><strong>stoves on sale</strong></a> for the <strong>best selectio</strong>n and <strong>lowest prices</strong>!</div></div></div><div class="width100c layoutpale layoutpale100 liverow onblock schemalayer"><script type="application/ld+json">{
+            </script></div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100" style="margin-top: 66px;">Shop <a href="/on-sale-ranges/" aria-label="stoves on sale" class=""><strong>stoves on sale</strong></a> for the <strong>best selectio</strong>n and <strong>lowest prices</strong>!</div></div></div><div class="width100c layoutpale layoutpale100 liverow schemalayer ui-sortable-handle" style=""><script type="application/ld+json" class="">{
   "@context": "https://schema.org",
   "@type": "Article",
   "mainEntityOfPage": {
@@ -278,4 +278,4 @@ See for yourself how next-level technology can make every cooking task easier.
       "text": "Watch this video for additional tips for purchasing a Range"
     }
   ]
-}</script></div>
+}</script></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"></div>
