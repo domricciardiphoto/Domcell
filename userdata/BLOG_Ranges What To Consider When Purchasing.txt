@@ -84,7 +84,7 @@
 </div>
 <p class="ui-sortable-handle" style="">
 												</p>
-												<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent7243"><strong class="">Popular Features</strong></h3></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100">Other popular features with ranges today include:</div></div><h2 class="ui-sortable-handle" style=""><br></h2>
+												<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent7243"><strong class="">Popular Features</strong></h3></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100">Other popular features with ranges today include:</div></div>
 										
 									
 								
