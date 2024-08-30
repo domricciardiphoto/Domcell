@@ -2,4 +2,3 @@ node_modules
 dist
 *.exe
 231.js
-/userdata/
