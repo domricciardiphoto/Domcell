@@ -127,7 +127,7 @@ function createMainWindow() {
 
   win = new BrowserWindow({
     // Basic window settings
-    title: 'Domcell 10.1 ',
+    title: 'Domcell 10.2 ',
     icon: path.join(__dirname, 'assets', 'icons', 'app-icon.png'),
     show: false, // Start hidden until ready
 
@@ -138,7 +138,6 @@ function createMainWindow() {
     titleBarOverlay: true,
     allowRunningInsecureContent: false,
     navigateOnDragDrop: true,
-
     // Window size and position
     width: initialState.width || DEFAULT_WIDTH,
     height: initialState.height || DEFAULT_HEIGHT,
@@ -214,10 +213,7 @@ function sendFeatureRequest() {
   shell.openExternal(`mailto:dom.ricciardi@pcrichard.com?Subject=Feature Request For Domcell ${ver}&body=I am Using App Version ${ver}`);
 }
 
-// Function to open the GitHub page
-function openGithubPage() {
-  shell.openExternal('https://github.com/domricciardiphoto/Domcell');
-}
+
 
 // App ready event
 app.on('ready', () => {
@@ -306,10 +302,7 @@ const menu = [
         label: "Feature Request",
         click: sendFeatureRequest
       },
-      {
-        label: 'Domcell on Github',
-        click: openGithubPage
-      }, {
+       {
         label: 'About Domcell',
         click: createAboutWindow,
       }

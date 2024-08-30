@@ -1149,7 +1149,7 @@
             border: 1px solid #fff;
             color: #fff;
             padding: 5px;
-            border-radius: 10px 0px 10px 0px;
+            border-radius:5px 5px 5px 5px;
             font-size: 90%;
         }
 
@@ -1645,7 +1645,7 @@
         }
         
         #myhtmleditor {
-            width: 94%; min-width: 94%; background-color: #000; color: #fff; margin-left: 2%; margin-bottom: 5px; min-height: 200px; max-width: 94%; max-height: 400px;  
+            width: 94%; min-width: 94%; background-color: #000; color: #fff; margin-left: 2%; margin-bottom: 5px; min-height: 190px; max-width: 94%; max-height: 800px;  
         }
         
         #editmode {
@@ -1859,6 +1859,8 @@ border-radius: 10px;
     padding: 10px;
     cursor: pointer;
   }
+
+ 
   
   /* Style for the popup itself */
   .popup {

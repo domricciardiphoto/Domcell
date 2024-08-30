@@ -56,7 +56,7 @@ const openDB = () => {
         };
 
         request.onerror = function (event) {
-            console.error("Database error:", event.target.errorCode);
+            $('.terminal').append("Database error:", event.target.errorCode);
             reject(event.target.errorCode);
         };
     });
@@ -79,7 +79,7 @@ async function openNotebookDB() {
         };
 
         request.onerror = function (event) {
-            console.error('Database error:', event.target.errorCode);
+            $('.terminal').append('Database error:', event.target.errorCode);
             reject(event.target.errorCode);
         };
     });
@@ -94,7 +94,7 @@ const saveNotes = (tab) => {
     const request = store.put(notes, tab);
 
     request.onerror = function (event) {
-        console.error("Failed to save notes:", event.target.errorCode);
+        $('.terminal').append("Failed to save notes:", event.target.errorCode);
     };
 };
 
@@ -110,7 +110,7 @@ const loadNotes = (tab) => {
     };
 
     request.onerror = function (event) {
-        console.error("Failed to load notes for tab:", tab, event.target.errorCode);
+        $('.terminal').append("Failed to load notes for tab:", tab, event.target.errorCode);
     };
 };
 
@@ -123,7 +123,7 @@ const saveTabList = () => {
     const request = store.put(tabList, tabListKey);
 
     request.onerror = function (event) {
-        console.error("Failed to save tab list:", event.target.errorCode);
+        $('.terminal').append("Failed to save tab list:", event.target.errorCode);
     };
 };
 
@@ -141,7 +141,7 @@ const loadTabList = () => {
     };
 
     request.onerror = function (event) {
-        console.error("Failed to load tab list:", event.target.errorCode);
+        $('.terminal').append("Failed to load tab list:", event.target.errorCode);
     };
 };
 
@@ -153,7 +153,7 @@ const saveTheme = (theme) => {
     const request = store.put(theme, themeKey);
 
     request.onerror = function (event) {
-        console.error("Failed to save theme:", event.target.errorCode);
+        $('.terminal').append("Failed to save theme:", event.target.errorCode);
     };
 };
 
@@ -172,7 +172,7 @@ const loadTheme = () => {
     };
 
     request.onerror = function (event) {
-        console.error("Failed to load theme:", event.target.errorCode);
+        $('.terminal').append("Failed to load theme:", event.target.errorCode);
     };
 };
 
@@ -188,12 +188,12 @@ async function saveNotebookContent(content) {
         const request = store.put({ id: 'savedContent', htmlContent: content });  // Save using 'savedContent' key
 
         request.onsuccess = function () {
-            // // console.log(('Content successfully saved to DomcellDB.');
+             $('.terminal').append('Content successfully saved to DomcellDB.');
             resolve();
         };
 
         request.onerror = function (event) {
-            console.error('Failed to save content:', event.target.errorCode);
+            $('.terminal').append('Failed to save content:', event.target.errorCode);
             reject(event.target.errorCode);
         };
     });
@@ -204,7 +204,7 @@ function loadFromDatabase() {
     const request = indexedDB.open('DomcellDB');
 
     request.onerror = function(event) {
-        console.error("Database error:", event.target.errorCode);
+        $('.terminal').append("Database error:", event.target.errorCode);
     };
 
     request.onsuccess = function(event) {
@@ -225,7 +225,7 @@ function loadFromDatabase() {
         };
 
         getRequest.onerror = function(event) {
-            console.error("Error fetching data:", event.target.errorCode);
+            $('.terminal').append("Error fetching data:", event.target.errorCode);
         };
     };
 }
@@ -327,7 +327,7 @@ const initialize = async () => {
         loadFontSize();
         loadFromDatabase();
     } catch (error) {
-        console.error("Failed to initialize database:", error);
+        $('.terminal').append("Failed to initialize database:", error);
     }
 };
 
@@ -439,7 +439,7 @@ function importLivePage() {
     const request = indexedDB.open(notebookDbName);
 
     request.onerror = function (event) {
-        console.error("Database error:", event.target.errorCode);
+        $('.terminal').append("Database error:", event.target.errorCode);
     };
 
     request.onsuccess = function (event) {
@@ -463,7 +463,7 @@ function importLivePage() {
         };
 
         getRequest.onerror = function (event) {
-            console.error("Error fetching data:", event.target.errorCode);
+            $('.terminal').append("Error fetching data:", event.target.errorCode);
         };
     };
 }
@@ -481,12 +481,12 @@ document.getElementById('fileInput').addEventListener('change', function (event)
         };
 
         reader.onerror = function (e) {
-            console.error("Error reading file:", e.target.error);
+            $('.terminal').append("Error reading file:", e.target.error);
         };
 
         reader.readAsText(file);
     } else {
-        console.warn("No file selected.");
+         $('.terminal').append("No file selected.");
     }
 });
 
@@ -513,9 +513,9 @@ editor.on('change', async function (instance) {
     synchronizePreview();
     try {
         await saveNotebookContent(content);
-        // console.log(('Content saved to IndexedDB.');
+         $('.terminal').append('Content saved to IndexedDB.');
     } catch (error) {
-        console.error('Failed to save content:', error);
+        $('.terminal').append('Failed to save content:', error);
     }
 });
 
@@ -669,7 +669,7 @@ function highlightElementCode(element) {
         editor.focus();
         editor.refresh();
     } else {
-        console.warn("Element HTML not found in CodeMirror content.");
+         $('.terminal').append("Element HTML not found in content.");
     }
 }
 
@@ -697,7 +697,7 @@ function synchronizeSelection() {
             editor.focus();
             editor.refresh();
         } else {
-            console.warn("Normalized text not found in CodeMirror content.");
+            $('.terminal').append("Normalized text not found in content.");
         }
     } else {
         console.warn("No text selected.");

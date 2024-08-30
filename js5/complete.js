@@ -189,13 +189,13 @@ var runExplorerDebounced = debounce(function() {
 
     function exploreElements(element, depth = 0, parentContainer = explorer) {
         if (!element) {
-            console.error('Invalid element provided to exploreElements');
+            $('.status').append('Invalid element provided to exploreElements'+'<br>');
             return;
         }
 
         let elements = element.children;
         if (!elements || elements.length === 0) {
-            console.info('No children found for element:', element);
+            $('.status').append('No children found for element:', element+'<br>');
             return;
         }
 
@@ -396,7 +396,7 @@ function releaseMemory() {
     if (window.intervalId) clearInterval(window.intervalId);
     if (window.timeoutId) clearTimeout(window.timeoutId);
 
-    console.log('Memory released');
+    $('.status').append('Memory released'+'<br>');
 
     if (Array.isArray(window.largeArray)) window.largeArray.length = 0;
     if (typeof window.largeObject === 'object') {
@@ -797,7 +797,6 @@ function cleartextarea() {
 }
 
 function main() {
-    console.log('function ran');
    // runexplorer()
     const observerCallback = function(mutationsList, observer) {
         for (let mutation of mutationsList) {
@@ -899,9 +898,9 @@ function paragraphfunctions() {
         $('#yescopyBtn99').on('click', function () {
             var textToCopy = $('.interedit').children('p').text();
             navigator.clipboard.writeText(textToCopy).then(function () {
-                console.log('Text copied to clipboard');
+                $('.status').append('Text copied to clipboard'+'<br>');
             }).catch(function (error) {
-                console.error('Error copying text: ', error);
+                $('.status').append('Error copying text: ', error+'<br>');
             });
             document.getElementById("myModalcontent").style.display = "none";
         })
@@ -1139,7 +1138,7 @@ $('#contextMenu').hide()
             handleMatrix7();
             break;
         default:
-            console.warn("Unknown matrix:", whatmatrix);
+            $('.status').append("Unknown matrix:", whatmatrix+'<br>');
     }
 
     function handleMatrix2() {
@@ -1147,7 +1146,7 @@ $('#contextMenu').hide()
         $('#codeloaderpcrview .width50c2').each(function() {
             this.style.removeProperty('width');
         });
-        $('#mobilepreview2').show().animate({'min-height' : $(document).height() / 2.288})
+        $('#mobilepreview2').show().animate({'min-height' : '43vh'})
         $('img.loading-lazy').each(function () {
             $(this).attr('src', $(this).attr('data-src'));
         });
@@ -1162,9 +1161,9 @@ $('#contextMenu').hide()
         $('.stage2, #pullthecode2').show();
         $programming.show();
         $explorer2.parent('div').show();
-        $explorer2.css('max-height', $(document).height() / 1.9).show();
+        $explorer2.css('max-height', '47vh').show();
         //$('.codechanger').show();
-        $('#explorer2').animate({'max-height' : $(window).height() / 2.1})
+        $('#explorer2').animate({'max-height' : '47vh'})
         $('#pullthecode2').animate({'max-height' : $(window).height() / 1.075})
         $('#pullthecode2').animate({'min-height' : $(window).height() / 1.075})
     }
@@ -1216,14 +1215,50 @@ $('#contextMenu').hide()
         $mymatrix6.hide();
     }
 
+
+
+
+
+    function updatePCRichardLinks() {
+        var divfinal = document.getElementById('findthecode2');
+
+        // Get the content of the div
+        var contentfinal = divfinal.innerHTML;
+    
+        // Replace all instances of 'https://www.pcrichard.com' with an empty string, leaving the path after it
+        contentfinal = contentfinal.replace(/https:\/\/www\.pcrichard\.com/g, '');
+    
+        // Replace all incorrectly spelled domain (if present) 'https://www.pcricahard.com'
+        contentfinal = contentfinal.replace(/https:\/\/www\.pcricahard\.com/g, '');
+    
+        // Update the content of the div
+        divfinal.innerHTML = contentfinal;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     function handleMatrix1() {
+        $mymatrix6.hide();
+        $explorer2.hide();
+        $sidetoolset.hide();
+        $('.colorlegend').hide();
+        $('#hidemainmobile').hide();
+        $('.htmlimporter').hide()
         $resizableDiv.clearQueue().animate({ 'width': '71%' }, 200, function () {
             $programming.show();
         });
-        $mymatrix6.hide();
-        $explorer2.hide();
-        $mymatrix3.removeClass('bottomclassviewers').hide();
-        $sidetoolset.hide();
+       
+        $mymatrix3.removeClass('bottomclassviewers').hide();   
         $mymatrix1.show();
         var element = document.getElementById("pullthecode3");
         if (element) {
@@ -1232,11 +1267,10 @@ $('#contextMenu').hide()
         }
 
         $('.stage2, #pullthecode2, #mobilepreview2').hide();
-        $('.colorlegend').hide();
-        $('#hidemainmobile').hide();
+     
         $('#thisisthefinalcode').show();
         $('#results21aaa').show();
-        $('.htmlimporter').hide()
+        
        // $('.codechanger').show()
 
         $('img.loading-lazy').each(function () {
@@ -1258,7 +1292,7 @@ $('#contextMenu').hide()
             'ui-droppable', 'layoutbuilder', 'sortable', 'layoutop2', 'layoutpale100',
             'layoutpale30', 'layoutpale20', 'layoutpale33', 'onblock', 'interedit', 'edit-mode', 'explorerselected',
             'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw0d66f82d/',
-            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle', 'unselectable-text', 'experience-component', 'experience-pcrs_assets-markup','cursor: grab;','topofpagecontent',
+            'promoimg21', 'ui--disabled', 'style=""', 'ui--handle ', 'ui- ui--handle', 'unselectable-text', 'experience-component', 'experience-pcrs_assets-markup','topofpagecontent',
             'https://staging-na01-pcrichard.demandware.net', 'programoverflow', '/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/dw3744730c/', 'https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/dw543ecf73'
         ];
 
@@ -1278,6 +1312,37 @@ $('#contextMenu').hide()
         $('#findthecode2').html(finalcheck.replaceAll('α', 'a').replaceAll('×', 'x').replaceAll('–', '-').replaceAll('’', "'").replaceAll('class="width100c     ui-', 'class="width100c').replaceAll('&times;', 'x').replaceAll('&alpha;', 'a').replaceAll('&reg;', '<span class="myregd"></span>').replaceAll('&trade;', '<span class="mytraded"></span>').replaceAll('&mdash;', '--').replaceAll('&ndash;', '-').replaceAll('™', '<span class="mytraded"></span>').replaceAll('®', '<span class="myregd"></span>').replaceAll('°', '&deg;'));
 
         checkADACompliance();
+       
+
+        var divfinal = document.getElementById('findthecode2');
+
+        // Get the HTML content of the div
+        var contentfinal = divfinal.innerHTML;
+        
+        // Remove 'cursor: grab;' from style attributes
+        contentfinal = contentfinal.replace(/style="[^"]*cursor:\s*grab;[^"]*"/g, function(style) {
+            return style.replace(/cursor:\s*grab;\s*/g, '');
+        });
+        
+        // Remove empty class="" attributes
+        contentfinal = contentfinal.replace(/class=""/g, '');
+        
+        // Remove empty style="" attributes
+        contentfinal = contentfinal.replace(/style=""/g, '');
+        
+        // Remove the 'ui--handle' class from class attributes
+        contentfinal = contentfinal.replace(/class="([^"]*)\bui--handle\b([^"]*)"/g, function(match, p1, p2) {
+            // Reconstruct the class attribute without 'ui--handle'
+            var newClass = (p1 + p2).trim();
+            return newClass ? `class="${newClass}"` : ''; // Remove the class attribute if empty
+        });
+        
+        // Replace all occurrences of 'https://www.pcrichard.com' in href attributes with just the path
+        contentfinal = contentfinal.replace(/href="https:\/\/www\.pcrichard\.com(\/[^"]*)"/g, 'href="$1"');
+        
+        // Update the HTML content of the div
+        divfinal.innerHTML = contentfinal;
+        updatePCRichardLinks();
     }
 
     function handleMatrix6() {
@@ -1315,9 +1380,11 @@ $('#contextMenu').hide()
         $programming.show();
         $explorer2.parent('div').show();
         $mymatrix3.hide();
+   
     }
 
     function handleMatrix3() {
+        
         $('#mobilepreview2').css('min-height' , $(window).height()  /2).css('max-height' , '300')
         $('#explorer2').css('min-height' , $(window).height()  /3.5).css('max-height' , $(window).height()  /3.5)
         var html = $('#pullthecode3').html();
@@ -1359,6 +1426,7 @@ $('#mobilepreview2').css('opacity' , '1')
 
         $explorer2.clearQueue().animate({ 'max-height': $(window).height() / 2.1 }, 400);
         $beautycode.clearQueue().animate({ 'width': '90%' }, 400).animate({ 'margin-left': '5%' }, 400);
+       
     }
 
     function handleMatrixReview() {
@@ -1638,8 +1706,43 @@ function updateSliderValuecomp(value) {
     document.getElementById('sliderValuecomp1').textContent = value;
 }
 
+
+function clearAppDatabaseGithub() {
+    const dbName = 'AppDatabaseGithub';
+
+    const request = indexedDB.open(dbName);
+
+    request.onsuccess = function(event) {
+        const db = event.target.result;
+        const transaction = db.transaction(db.objectStoreNames, 'readwrite');
+
+        transaction.oncomplete = function() {
+             $('.status').append('All object stores cleared successfully.');
+        };
+
+        transaction.onerror = function(event) {
+            $('.status').append('Transaction failed: ', event.target.errorCode);
+        };
+
+        // Iterate through all object stores and clear each one
+        for (let storeName of db.objectStoreNames) {
+            const objectStore = transaction.objectStore(storeName);
+            objectStore.clear().onsuccess = function() {
+                 $('.status').append(`Object store "${storeName}" cleared.`);
+            };
+        }
+    };
+
+    request.onerror = function(event) {
+         $('.status').append('Database open failed: ', event.target.errorCode);
+    };
+}
+
+
+
 $('#versionList').on('change' , function() {
    $('#revertVersionBtn').click()
+   clearAppDatabaseGithub();
 })
 
 
@@ -1994,10 +2097,10 @@ function setupModalInteractions() {
         var textToCopy = $('.interedit').children('p').text();
         navigator.clipboard.writeText(textToCopy)
             .then(function () {
-                // console.log(('Text copied to clipboard');
+                 $('.status').append('Text copied to clipboard'+'<br>');
             })
             .catch(function (error) {
-                console.error('Error copying text: ', error);
+                $('.status').append('Error copying text: ', error+'<br>');
             });
         $("#myModalcontent").hide();
     });
@@ -2180,9 +2283,9 @@ $('#linkmaker').click(function () {
     var whatsthelink = $('#whatsthelink').val();
 
     if (outsidelink === 0) {
-        var anchor = '<a href="' + whatsthelink + '">' + selectedText + '</a>';
+        var anchor = '<a href="' + whatsthelink + '" aria-label="'+selectedText+'">' + selectedText + '</a>';
     } else {
-        var anchor = '<a href="' + whatsthelink + '" target="_blank">' + selectedText + '</a>';
+        var anchor = '<a href="' + whatsthelink + '" aria-label="'+selectedText+'" target="_blank">' + selectedText + '</a>';
     }
 
     var range = selection.getRangeAt(0);
@@ -2232,17 +2335,17 @@ $('#linkmakerimg').click(function () {
     // Get the element with the class 'explorerselected'
     var explorerSelectedElement = document.querySelector('.explorerselected');
     if (!explorerSelectedElement) {
-        // console.log(('No element with class "explorerselected" found');
+         $('.status').append('No element with class "explorerselected" found'+'<br>');
         return; // Exit if no such element
     }
 
     // Store the HTML content of the selected element
     var selectedHTML = explorerSelectedElement.outerHTML;
-    // console.log(('Selected HTML: ', selectedHTML);
+     $('.status').append('Selected HTML: ', selectedHTML+'<br>');
 
     // Get the link to create from the input field
     var whatsthelink = $('#whatsthelink3').val();
-    // console.log(('Link to create: ', whatsthelink);
+     $('.status').append('Link to create: ', whatsthelink+'<br>');
 
     // Create the anchor node
     var anchorNode = document.createElement('a');
@@ -2250,19 +2353,19 @@ $('#linkmakerimg').click(function () {
     if (outsidelink3 !== 0) {
         anchorNode.target = '_blank';
     }
-    // console.log(('Anchor node created');
+     $('.status').append('Anchor node created'+'<br>');
 
     // Set the inner HTML of the anchor node to the selected HTML
     anchorNode.innerHTML = selectedHTML;
-    // console.log(('Anchor node after setting inner HTML: ', anchorNode.outerHTML);
+     $('.status').append('Anchor node after setting inner HTML: ', anchorNode.outerHTML+'<br>');
 
     // Replace the original selected element with the new anchor node
     explorerSelectedElement.replaceWith(anchorNode);
-    // console.log(('Original element replaced with anchor node');
+     $('.status').append('Original element replaced with anchor node'+'<br>');
 
     // Update the hidden input with the new HTML
     $('#beautycode').val($('#pullthecode3').html());
-    // console.log(('Code updated in hidden input');
+     $('.status').append('Code updated in hidden input'+'<br>');
 });
 
 
@@ -2283,14 +2386,16 @@ $('#linkmaker3').click(function () {
     // Create the anchor node
     var anchorNode = document.createElement('a');
     anchorNode.href = whatsthelink;
+
     if (outsidelink3 !== 0) {
         anchorNode.target = '_blank';
     }
 
     // Extract the contents of the range and append to the anchor node
     var content = range.extractContents();
+    var selectedText = content.textContent || content.innerText || "";
     anchorNode.appendChild(content);
-
+    anchorNode.setAttribute('aria-label', selectedText);
     // Insert the anchor node back into the range
     range.insertNode(anchorNode);
 
@@ -2663,9 +2768,10 @@ function gotothelinkfunction(wheretogo) {
 $('#submitUrl').click(function () {
 
     var url = $('#imageUrl').val(); // Get URL from input field
+    currentImagealt = $(currentImage).attr('alt')
     if (url && url !== "http://") {
         if (currentImage.parent('a').length === 0) {
-            currentImage.wrap('<a class="" href="' + url + '"></a>');
+            currentImage.wrap('<a class="" href="' + url + '" aria-label="'+currentImagealt+'"></a>');
         } else {
             currentImage.parent('a').attr('href', url);
         }
@@ -2842,7 +2948,7 @@ $(function () {
                     updateSliderValue3(value);
                     break;
                 default:
-                    // console.log(("Unhandled slider ID");
+                     $('.status').append("Unhandled slider ID"+'<br>');
             }
         }
     });
@@ -2919,6 +3025,18 @@ function updateSliderValue4spacer(value) {
     updateMobilePreview()
 }
 
+function fontsizesliderSliderRow(value) {
+    // Update the displayed font size
+    document.getElementById('fontsizesliderSliderRow').textContent = parseFloat(value).toFixed(1);
+    
+    // Update the font size of elements with class 'onblock'
+    $('.onblock').css('font-size', value + 'rem');
+    
+    // Call your function to update the mobile preview
+    updateMobilePreview();
+}
+
+
 
 function updateSliderValue_row(value) {
     document.getElementById('sliderValue4_row').textContent = value;
@@ -2941,9 +3059,9 @@ $('.selectall').on('click', function () {
         // Copy the selected text to the clipboard
         var successful = document.execCommand('copy');
         var msg = successful ? 'successful' : 'unsuccessful';
-        // console.log(('Copy command was ' + msg);
+         $('.status').append('Copy command was ' + msg+'<br>');
     } catch (err) {
-        // console.log(('Oops, unable to copy');
+         $('.status').append('Oops, unable to copy'+'<br>');
     }
 
 });
@@ -3455,7 +3573,7 @@ function imagefunctions() {
     $('#noBtn').click(function(event) {
         event.preventDefault();
 
-        // console.log(('currently broken')
+        // $('.status').append(('currently broken')
 
         $('#myModal').hide();
     });
@@ -3565,11 +3683,11 @@ $('#wrapImage').click(function () {
 });
 
 $('#submitUrl').click(function () {
-
+    currentImagealt = $(currentImage).attr('alt')
     var url = $('#imageUrl').val(); // Get URL from input field
     if (url && url !== "http://") {
         if (currentImage.parent('a').length === 0) {
-            currentImage.wrap('<a class="" href="' + url + '"></a>');
+            currentImage.wrap('<a class="" href="' + url + '" aria-label="'+currentImagealt+'"></a>');
         } else {
             currentImage.parent('a').attr('href', url);
         }
@@ -3732,7 +3850,7 @@ $('#wraparoundsubmit').on('click', function () {
 
     if (wrapcatalogselect === 'product') {
 selectaproductwrapimage = $('#wrapimageselector').val()
-        wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' + imagefloat + ';'
+        wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 3%;float:' + imagefloat + ';'
         wrapfullimage =
             'https://www.pcrichard.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/dwc11aa0e8/images/hires/' +selectaproductwrapimage+wrapimagefilename+'.jpg?sw=400&amp;sh=400&amp;sm=fit'
           
@@ -3744,7 +3862,7 @@ selectaproductwrapimage = $('#wrapimageselector').val()
         wrapimagefilename2 =
             'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/promo/' +
             wrapimagefilename + '?sw=400&amp;sh=400&amp;sm=fit'
-        wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' + imagefloat + ';'
+        wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 3%;float:' + imagefloat + ';'
         $('.interedit').html('<div style="' + wrapimagestyle +
             '"><img class="loading-lazy promoimg21 in910" alt="' + wrapimagealt +
             '" src="' + wrapimagefilename2 + '" data-src="' + wrapimagefilename2 +
@@ -3757,7 +3875,7 @@ selectaproductwrapimage = $('#wrapimageselector').val()
         wrapimagefilename2 =
             'https://staging-na01-pcrichard.demandware.net/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images/blog/' +
             wrapimagefilename + '?sw=400&amp;sh=400&amp;sm=fit'
-        wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' + imagefloat + ';'
+        wrapimagestyle = 'flex: 0 1 auto; max-width:50%;padding: 3%;float:' + imagefloat + ';'
         $('.interedit').html('<div style="' + wrapimagestyle +
             '"><img class="loading-lazy promoimg21 in910" alt="' + wrapimagealt +
             '" src="' + wrapimagefilename2 + '" data-src="' + wrapimagefilename2 +
@@ -3824,11 +3942,11 @@ $('#wraparoundproductnumber').on('input', function () {
         if ($('#reverseimage').val() === 'yes') {
             imagefloat = 'right'
         } else {
-            imagefloat = 'left'
+            imagefloat = 'left; padding: 5%;padding-left:0px;margin-left:-7px'
         }
 
         $('.interedit').html(
-            ' <div style="flex: 0 1 auto; max-width:50%;padding: 0.5%;float:' +
+            ' <div style="flex: 0 1 auto; max-width:50%;padding: 3%;float:' +
             imagefloat + ';"><img  alt="' +
             $('#wraparoundalt').val() + '"' + 'src="' + $(this).attr('src') +
             '"' + '/> </div></div>' +
@@ -3840,6 +3958,10 @@ $('#wraparoundproductnumber').on('input', function () {
     })
 
 })
+
+
+
+
 
 
 
@@ -3946,11 +4068,12 @@ function postimg() {
 
     // Submit URL button click
     $('#submitUrl').click(function () {
+        currentImagealt = $(currentImage).attr('alt')
         const url = $('#imageUrl').val(); // Get URL from input field
         if (url && url !== "http://") {
             if (currentImage) {
                 if (currentImage.parent('a').length === 0) {
-                    currentImage.wrap('<a href="' + url + '"></a>');
+                    currentImage.wrap('<a href="' + url + '" aria-label="'+currentImagealt+'"></a>');
                 } else {
                     currentImage.parent('a').attr('href', url);
                 }
@@ -3984,13 +4107,14 @@ function pushtomobile() {
 $('#import' ).on('click', function () {
     $('#pullthecode2').children('div').children('.informationcontent').html('')
     $('#fileInput').click();
-
+    clearAppDatabaseGithub();
 })
 
 $('#importstart' ).on('click', function () {
     $('#pullthecode2').children('div').children('.informationcontent').html('')
     $('#fileInput').click();
     $('#uniqueModal').fadeOut()
+    clearAppDatabaseGithub();
 })
 
 $('#fileInput').change(function (event) {
@@ -4205,7 +4329,7 @@ paragraphfunctions()
                     displayConvertedContent(result.value); // Display the converted HTML
                 })
                 .catch(function (err) {
-                    console.log(err);
+                    $('.status').append(err+'<br>');
                 });
         };
         reader.readAsArrayBuffer(file);
@@ -4333,7 +4457,7 @@ function clearIndexedDB() {
     var request = indexedDB.open(dbName, 1);
 
     request.onerror = function(event) {
-        console.error("Database error: " + event.target.errorCode);
+        $('.status').append("Database error: " + event.target.errorCode+'<br>');
     };
 
     request.onupgradeneeded = function(event) {
@@ -4356,13 +4480,13 @@ function clearIndexedDB() {
 
         clearRequest.onsuccess = function() {
             // Data cleared successfully
-            // console.log(("IndexedDB data cleared successfully.");
+             $('.status').append("IndexedDB data cleared successfully."+'<br>');
             window.clearAndRestartClicked = true;
             location.reload();  // Reload the page to reset everything after clearing the data
         };
 
         clearRequest.onerror = function(event) {
-            console.error("Clear operation failed: ", event.target.errorCode);
+            $('.status').append("Clear operation failed: ", event.target.errorCode+'<br>');
         };
     };
 }
@@ -4400,7 +4524,7 @@ $(document).ready(function() {
         };
 
         request.onerror = function(event) {
-            console.error('Error opening IndexedDB:', event.target.errorCode);
+            $('.status').append('Error opening IndexedDB:', event.target.errorCode+'<br>');
            
         };
     }
@@ -4413,11 +4537,11 @@ $(document).ready(function() {
         const request = store.put({ id: 'savedContent', htmlContent: content });
 
         request.onsuccess = function() {
-           // console.log('Content saved to IndexedDB successfully!');
+            $('.status').append('Content saved to memory successfully!'+'<br>');
         };
 
         request.onerror = function(event) {
-            console.error('Error saving content to IndexedDB:', event.target.errorCode);
+            $('.status').append('Error saving content to memory:', event.target.errorCode+'<br>');
         };
     }
 
@@ -4429,7 +4553,7 @@ $(document).ready(function() {
         if (element && element.innerHTML.trim() === '') {
             $('.unique-modal').fadeIn();
         } else if (!element) {
-            console.error("Element with ID 'pullthecode3' not found.");
+            $('.status').append("Element with ID 'pullthecode3' not found."+'<br>');
         }
     }
 
@@ -4483,7 +4607,7 @@ $(document).ready(function() {
         };
 
         request.onerror = function(event) {
-            console.error('Error loading content from IndexedDB:', event.target.errorCode);
+            $('.status').append('Error loading content from IndexedDB:', event.target.errorCode+'<br>');
         };
 
      
@@ -4534,9 +4658,50 @@ $(document).ready(function() {
 */
    
 
+
+
+
+function clearIndexedDBAndRestart() {
+    const request = indexedDB.open('AppDatabase', 1);
+
+    request.onsuccess = (event) => {
+        const db = event.target.result;
+        const transaction = db.transaction(['currentFile'], 'readwrite');
+        const store = transaction.objectStore('currentFile');
+
+        // Clear the store
+        const clearRequest = store.clear();
+
+        clearRequest.onsuccess = () => {
+            $('.status').append('IndexedDB memory cleared successfully.'+'<br>');
+            // Reset application state
+            currentFileName = '';
+            currentFileSha = '';
+            document.getElementById('currentFile').textContent = 'No file selected';
+            document.getElementById('pullthecode3').innerHTML = '';  // Clear the content display
+
+            // Optional: Reload the page to restart the app
+            location.reload();  // Uncomment if you want to reload the page
+        };
+
+        clearRequest.onerror = (event) => {
+            $('.status').append('Error clearing IndexedDB memory:', event.target.errorCode+'<br>');
+        };
+    };
+
+    request.onerror = (event) => {
+        $('.status').append('Error opening IndexedDB:', event.target.errorCode+'<br>');
+    };
+}
+
+
+
     // Clear storage and restart application
     $('#clearandrestartbutton').click(function() {
-        clearIndexedDB(); // Call the function to clear IndexedDB
+        clearIndexedDB();
+        clearAppDatabaseGithub()
+        clearIndexedDBAndRestart() // Call the function to clear IndexedDB
+
        // $('#clearVersionsBtn').click()
     });
 
@@ -4618,13 +4783,13 @@ document.getElementById('convertBtn').addEventListener('click', () => {
                     downloadVttFile(vttContent, file.name.replace('.csv', '') + filenameSuffix + '.vtt');
                     convertedCount++;
                 } catch (error) {
-                    console.error("Conversion failed for file:", file.name, error);
+                    $('.status').append("Conversion failed for file:", file.name, error+'<br>');
                     failedCount++;
                 }
                 updateProgress(index + 1, totalFiles);
             };
             reader.onerror = () => {
-                console.error("Failed to read file:", file.name);
+                $('.status').append("Failed to read file:", file.name+'<br>');
                 failedCount++;
                 updateProgress(index + 1, totalFiles);
             };
@@ -4689,7 +4854,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('fileInputList');
 
     function initializeListAmountOptions() {
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= 20; i++) {
             let option = new Option(`${i} Item${i > 1 ? 's' : ''}`, i);
             listAmountSelect.add(option);
         }
@@ -4791,8 +4956,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function adjustMaxHeight() {
-    $('#pullthecode2').css('max-height', $(window).height() - 70);
-    $('#explorer2').css('max-height', $(window).height() - 570);
+    $('#pullthecode2').css('max-height', '91vh');
+    $('#pullthecode2').css('min-height', '91vh');
+    $('#explorer2').css('max-height', '47vh');
     $('.internalscroller').css('max-height', $(window).height() - 435);
 }
 
@@ -4884,7 +5050,7 @@ function findNext() {
         }
 
         if (searchResults.length === 0) {
-           // alert('Text not found');
+   
            
             return;
         }
@@ -5044,9 +5210,16 @@ document.querySelectorAll('.unique-box').forEach(box => {
                     $('.unique-box ').fadeOut()
                     bringbackthehomebutton()
                  break;
+                 case 'box13u':
+                    //$('div.openthematrix[mymatrix="mymatrix6"]').click()
+                    //$('#showVersionsBtn').click()
+                    $('#fetchgithubModal').show()
+                    $('.unique-box ').fadeOut()
+                    bringbackthehomebutton()
+                 break;
 
             default:
-                console.log('Unknown box clicked');
+                $('.status').append('Unknown box clicked'+'<br>');
         }
        
     });
@@ -5117,7 +5290,8 @@ function getPosition() {
             };
 
             request.onerror = event => {
-                alert("Error retrieving position: " + event.target.error); // Alert the error if it occurs
+
+               $('.status').append("Error retrieving position: " + event.target.error)
                 reject(event.target.error);
             };
         });
@@ -5189,6 +5363,17 @@ $('#fecthID').on('click' , function() {
     $('#fetchmyid').show()
 })
 
+$('#fecthgithub').on('click' , function() {
+    $('#fetchgithubModal').show()
+    //listFilesInUserdata();
+})
+
+$('#closegithub').on('click' , function() {
+    $('#fetchgithubModal').fadeOut()
+    $('.unique-box').show()
+
+})
+
 $('#fetchmyid .close').on('click', function() {
     $('#fetchmyid').hide()
 })
@@ -5209,7 +5394,7 @@ request.onsuccess = function(event) {
 };
 
 request.onerror = function(event) {
-    console.error('Database error:', event.target.errorCode);
+    $('.status').append('Database error:', event.target.errorCode+'<br>');
 };
 
 function savePositions(elements) {
@@ -5242,7 +5427,7 @@ function loadPositions() {
     };
 
     request.onerror = function(event) {
-        console.error('Database error:', event.target.errorCode);
+        $('.status').append('Database error:', event.target.errorCode+'<br>');
     };
 }
 

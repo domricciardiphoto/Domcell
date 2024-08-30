@@ -376,7 +376,7 @@ element.style.display = 'none';
 
 
 
-       // console.log(myschedule);
+        $('.status').append(myschedule+'<br>');
         $('#pullthecode3').append(myschedule)
 
     });
@@ -419,7 +419,7 @@ element.style.display = 'none';
                 };
 
                 request.onerror = (event) => {
-                    console.error('Database error:', event.target.errorCode);
+                    $('.status').append('Database error:', event.target.errorCode+'<br>');
                 };
             }
 
@@ -448,7 +448,7 @@ element.style.display = 'none';
                 };
 
                 request.onerror = (event) => {
-                    console.error('Save version error:', event.target.errorCode);
+                    $('.status').append('Save version error:', event.target.errorCode+'<br>');
                 };
             }
 
@@ -464,7 +464,7 @@ element.style.display = 'none';
                 };
 
                 request.onerror = (event) => {
-                    console.error('Get versions error:', event.target.errorCode);
+                    $('.status').append('Get versions error:', event.target.errorCode+'<br>');
                 };
             }
 
@@ -517,6 +517,7 @@ element.style.display = 'none';
                     $('#versionList option[value="' + myversionloadnum + '"]').prop('selected', true).trigger('change');
                    $('#uniqueModal').fadeOut()
                    $('#versionsModal').hide()
+                   clearAppDatabaseGithub();  
                 })
             }
 
@@ -532,7 +533,7 @@ element.style.display = 'none';
                 };
 
                 request.onerror = (event) => {
-                    console.error('Delete version error:', event.target.errorCode);
+                    $('.status').append('Delete version error:', event.target.errorCode+'<br>');
                 };
             }
 
@@ -548,7 +549,7 @@ element.style.display = 'none';
                 };
 
                 request.onerror = (event) => {
-                    console.error('Revert version error:', event.target.errorCode);
+                    $('.status').append('Revert version error:', event.target.errorCode+'<br>');
                 };
 
                 $('#beautycode').val($('#pullthecode3').html())
@@ -565,7 +566,7 @@ element.style.display = 'none';
                     var request = indexedDB.open(dbName);
 
                     request.onerror = function (event) {
-                        console.error("IndexedDB error: ", event.target.errorCode);
+                        $('.status').append("IndexedDB error: ", event.target.errorCode+'<br>');
                       
                        $('.saveinfo').text('Error: Unable to access IndexedDB.')
                     };
@@ -577,8 +578,8 @@ element.style.display = 'none';
                         var getRequest = objectStore.get(selectedVersionKey);
 
                         getRequest.onerror = function (event) {
-                            console.error("Error retrieving data from IndexedDB: ", event.target
-                                .errorCode);
+                            $('.status').append("Error retrieving data from IndexedDB: ", event.target
+                                .errorCode+'<br>');
                       
                          $('.saveinfo').text('Error: Unable to retrieve data from IndexedDB.')
                         };
@@ -588,7 +589,7 @@ element.style.display = 'none';
                                 callback(getRequest.result
                                 .content); // Assuming the HTML content is stored in the 'htmlContent' field
                             } else {
-                                console.error("No data found for the selected version.");
+                                $('.status').append("No data found for the selected version."+'<br>');
                                
                                $('.saveinfo').text('Error: No content found for the selected version.')
                             }
@@ -667,7 +668,7 @@ element.style.display = 'none';
                 };
 
                 request.onerror = (event) => {
-                    console.error('Clear versions error:', event.target.errorCode);
+                    $('.status').append('Clear versions error:', event.target.errorCode+'<br>');
                 };
             });
 
@@ -732,9 +733,9 @@ element.style.display = 'none';
         }
 
         window.addEventListener('message', function (event) {
-            console.log('Message received in embedded content:', event.data);
+            $('.status').append('Message received in embedded content:', event.data+'<br>');
             if (event.data.action === 'showModal') {
-                console.log('Received showModal message');
+                $('.status').append('Received showModal message'+'<br>');
                 showModal();
             }
         });
@@ -802,7 +803,7 @@ $('#loadstartmenu').on('click' , function() {
 
     $('#openNotebookWindow').on('click', function() {
         // Open a new window with the specified URL and dimensions
-        window.open('notebook-window.html', 'NotebookWindow', 'width=1100,height=768');
+        window.open('notebook-window.html', 'NotebookWindow', 'width=1250,height=768');
 
     });
 
@@ -915,7 +916,7 @@ function processHeaders(docHtml) {
     
             return docHtml;
         } catch (error) {
-            console.error('Error fetching Google Doc content:', error);
+            $('.status').append('Error fetching Google Doc content:', error+'<br>');
             return null;
         }
     }
@@ -943,8 +944,9 @@ function processHeaders(docHtml) {
             debouncedUpdateMobilePreview();
             $('#googleDocImporterModal').hide()
             $('#uniqueModal').hide()
+            clearAppDatabaseGithub();
         } else {
-            console.log('Failed to Fetch Google Doc')
+            $('.status').append('Failed to Fetch Google Doc'+'<br>')
             $('.saveinfo').text('Failed to Fetch Google Doc')
         }
     });
@@ -974,7 +976,7 @@ function processHeaders(docHtml) {
             $('#googleDocImporterModal').hide()
             $('#uniqueModal').hide()
         } else {
-            console.log('Failed to Fetch Google Doc')
+            $('.status').append('Failed to Fetch Google Doc'+'<br>')
         }
     });
 
@@ -996,7 +998,7 @@ function processHeaders(docHtml) {
         // Extract the file ID from the Google Drive URL
         const fileIdMatch = googleDocUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
         if (!fileIdMatch) {
-            console.error('Invalid Google Drive URL.');
+            $('.status').append('Invalid Google Drive URL.'+'<br>');
             return;
         }
         const fileId = fileIdMatch[1];
@@ -1019,3 +1021,77 @@ function processHeaders(docHtml) {
     });
 
     //-------------------------------------------------------------------------------------------------------------
+
+   $('#closenewFileModal').on('click' , function() {
+    $('#newFileModal').hide()
+    $('.unique-modal').hide()
+   })
+    
+   $('.terminalbutton').on('click', function() {$('.terminal').slideToggle();});
+
+   $('.statusbutton').on('click', function() {
+    $('.status2').slideToggle();
+   });
+
+$('.topmenu3').on('click', function () {
+    $('.topmenu3').removeClass('active')
+    $(this).addClass('active')
+
+})
+
+$('#RefreshMobile').on('click' , function() {
+   $('#mobilepreview2').html($('#pullthecode3').html()) 
+})
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.showalttitle');
+    const popup = document.createElement('div');
+    popup.classList.add('alt-popup');
+    document.body.appendChild(popup);
+
+    images.forEach(image => {
+        image.addEventListener('mouseenter', function(event) {
+            const altText = event.target.alt;
+            if (altText) {
+                popup.textContent = altText;
+                popup.style.display = 'block';
+                const rect = event.target.getBoundingClientRect();
+                popup.style.left = rect.left + window.scrollX + 'px';
+                popup.style.top = rect.bottom + window.scrollY + 'px';
+            }
+        });
+
+        image.addEventListener('mouseleave', function() {
+            popup.style.display = 'none';
+        });
+
+        image.addEventListener('mousemove', function(event) {
+            popup.style.left = event.pageX + 'px';
+            popup.style.top = event.pageY + 'px';
+        });
+    });
+});
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    

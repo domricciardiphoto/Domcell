@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Designer Pro 7</title>
+    <title>Content Designer Pro 7.3</title>
 
 <style>
 /* Basic reset for styling */
@@ -155,9 +155,14 @@ color: red;
         <div class="nav-bar">
             <!-- Home Button -->
             <div class="home-button" id="home-buttonstart">
-               <img id="clicktogoback" src="assets/home.png" alt="Home" style="cursor: pointer;">
+               <img id="clicktogoback" src="assets/home.png" alt="Home" style="cursor: pointer; float: left;">
                
-                <button class="toggle-button" onclick="toggleEmbedSource()" style="background-color:transparent; border: none; width: 25%; cursor: pointer;"><img src="assets/html.png" style="width: 33%;" title="Code Editor"></button>
+                <button class="toggle-button" onclick="toggleEmbedSource()" style="background-color:transparent; border: none; width: 25%; margin-left: 10px; max-width: 50px; cursor: pointer; float: left;"><img src="assets/html.png" style="width: 100%;" title="Code Editor"></button>
+
+                <img class="myrestbutt" id="clearandrestartbuttonrefresh" style="width: 65% !important;  max-width: 25px; margin-left: 10px; float: left;  cursor: pointer; display: none; " src="assets/restart4.png" title="Refresh without Losing Work">
+
+                <img class="myrestbutt" id="clearandrestartbutton" style="width: 65% !important;  max-width: 25px;  margin-left: 10px; float: left; cursor: pointer; display: none; " src="assets/restart3.png" title="Refresh and Clear All">
+
             </div>
             
 
@@ -229,12 +234,42 @@ function clearIndexedDB() {
 
 
 
+function clearAppDatabaseGithub() {
+    const dbName = 'AppDatabaseGithub';
 
+    const request = indexedDB.open(dbName);
+
+    request.onsuccess = function(event) {
+        const db = event.target.result;
+        const transaction = db.transaction(db.objectStoreNames, 'readwrite');
+
+        transaction.oncomplete = function() {
+            console.log('All object stores cleared successfully.');
+        };
+
+        transaction.onerror = function(event) {
+            console.error('Transaction failed: ', event.target.errorCode);
+        };
+
+        // Iterate through all object stores and clear each one
+        for (let storeName of db.objectStoreNames) {
+            const objectStore = transaction.objectStore(storeName);
+            objectStore.clear().onsuccess = function() {
+                console.log(`Object store "${storeName}" cleared.`);
+            };
+        }
+    };
+
+    request.onerror = function(event) {
+        console.error('Database open failed: ', event.target.errorCode);
+    };
+}
 
 
 
 function addTab2() {
     clearIndexedDB()
+    clearAppDatabaseGithub()
     const numTabs = document.querySelectorAll('.tab').length + 1;
 
 // Create new tab

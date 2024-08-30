@@ -271,7 +271,7 @@ const confirmAddTab = () => {
         saveTabList();
         hideModal();
     } else {
-        alert("Invalid or duplicate tab name.");
+        $('terminal').append('Invalid or duplicate tab name.')
     }
 };
 
@@ -474,7 +474,7 @@ function confirmSaveFile() {
     const content = editor.getValue();
 
     if (!fileName) {
-        alert('Please enter a file name.');
+        $('terminal').append('Please enter a file name.')
         return;
     }
 
