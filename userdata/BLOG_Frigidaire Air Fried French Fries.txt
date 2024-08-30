@@ -1,0 +1,108 @@
+
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h2 class="t-h4-style in910 explorerselected onblock" style="color:#333 !important" id="ocinsertcontent5040">Try Out This Delicious Air Fry Recipe From Frigidaire</h2></div></div></div><div class="width100c hideonlyonmobile"><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width75c width50c2 liveelement in910 layoutpale layoutpale75" style="max-width: 75%; margin-left: 12.5%; margin-top: 9px;"><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-fries-feat.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-fries-feat.jpg" alt="Air Fried French Fries"></div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><h3 style="margin-bottom: 5px;" class=""><strong>INGREDIENTS:</strong></h3><ul class="in910"><li>1.5 lbs. (24oz) Russet Potatoes (approximately 3-5 large)</li><li>1 Tbsp. Corn Starch</li><li>1.5 Tsp. Salt</li><li>1 Tsp. Pepper</li><li>1 Tbsp. Vegetable Oil</li><li>Cold Water (for soaking)</li><li>Cooking Spray</li></ul></div></div></div><div class="width100c hideonlyondesktop"><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width75c width50c2 liveelement in910 layoutpale layoutpale75"><img class="loading-lazy promoimg21 in910 " src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-fries-feat.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-fries-feat.jpg" alt="Air Fried French Fries"></div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><h3 style="margin-bottom: 5px;" class=""><strong>INGREDIENTS:</strong></h3><ul class="in910"><li>1.5 lbs. (24oz) Russet Potatoes (approximately 3-5 large)</li><li>1 Tbsp. Corn Starch</li><li>1.5 Tsp. Salt</li><li>1 Tsp. Pepper</li><li>1 Tbsp. Vegetable Oil</li><li>Cold Water (for soaking)</li><li>Cooking Spray</li></ul></div></div></div><div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer" style="min-height: 15px;"></div><br><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent9930"><strong>HOW TO MAKE:</strong></h3></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><ol class="in910"><li>In small bowl mix salt, pepper and corn starch and set aside.</li><li>Fill large bowl with cold water. Peel whole potatoes with peeler and place into water. Soak for a minimum of 30 minutes and max of 1 hour.</li><li>Fill second large bowl with cold water.</li><li>Remove whole potatoes from water, one at a time and use french fry cutter OR sharp knife to cut each potato. Discard the small partial pieces. Place fries (cut potato) in second large bowl of cold water.</li><li>Soak for at least 30 minutes and no more than 1 hour.</li><li>For a drip pan, cover cooking sheet with foil. Top foil with parchment paper. Fold foil edges over parchment paper.</li><li>Place in lowest rack position of oven to catch dripping while cooking.</li><li>Remove fries from water and dry well.</li><li>Preheat oven to 350ø using Air Fry mode. Once preheated, cook fries for 10 minutes.</li><li>Fill bowl with cold water.</li><li>Remove pan of fries and leave oven on. Reset oven to 425ø using Use Air Fry mode.</li><li>Place partially cooked fries into cold water. Once cooled remove fries from water and place on paper towel lined pan. Pat dry.</li><li>Place dried fries in zip lock bag then add vegetable oil. Toss fries in bag until thoroughly coated.</li><li>Sprinkle 1 teaspoon of corn starch mixture in bag and shake well to coat each french fry. Repeat this step until all of corn starch mixture is added and french fries are thoroughly coated.</li><li>Spray dark baking sheet or Frigidaire ReadyCook Air Fry Tray with cooking spray. Place fries on pan in single layer. Once oven is preheated, place pan of fries in preheated oven and cook for 15-25 minutes at 425ø.</li><li>Once cooking is complete remove fries from oven. Serve hot.</li></ol></div></div><div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer" style="min-height: 15px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100">Ready to bring the convenience of air frying into your kitchen? We make it easy to find a <a href="/frigidaire/built-in-air-fryer-ranges/" aria-label="Frigidaire range with air fryer">Frigidaire range with air fryer</a>. Browse our entire selection of <a href="/built-in-air-fryer-ranges/" aria-label="ranges with air fryers">ranges with air fryers</a> now!</div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"></div><div class="width100c layoutpale layoutpale100 liverow schemalayer"><script type="application/ld+json" class="">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.pcrichard.com/frigidaire-air-fried-french-fries/Blog-11476.html"
+  },
+  "headline": "Frigidaire Air Fried French Fries",
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Try Out This Delicious Air Fry Recipe From Frigidaire"
+    },
+    {
+      "type": "image",
+      "src": "https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-fries-feat.jpg",
+      "alt": "Air Fried French Fries"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "INGREDIENTS:"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "type": "listItem",
+          "text": "1.5 lbs. (24oz) Russet Potatoes (approximately 3-5 large)"
+        },
+        {
+          "type": "listItem",
+          "text": "1 Tbsp. Corn Starch"
+        },
+        {
+          "type": "listItem",
+          "text": "1.5 Tsp. Salt"
+        },
+        {
+          "type": "listItem",
+          "text": "1 Tsp. Pepper"
+        },
+        {
+          "type": "listItem",
+          "text": "1 Tbsp. Vegetable Oil"
+        },
+        {
+          "type": "listItem",
+          "text": "Cold Water (for soaking)"
+        },
+        {
+          "type": "listItem",
+          "text": "Cooking Spray"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-fries-feat.jpg",
+      "alt": "Air Fried French Fries"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "INGREDIENTS:"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "type": "listItem",
+          "text": "1.5 lbs. (24oz) Russet Potatoes (approximately 3-5 large)"
+        },
+        {
+          "type": "listItem",
+          "text": "1 Tbsp. Corn Starch"
+        },
+        {
+          "type": "listItem",
+          "text": "1.5 Tsp. Salt"
+        },
+        {
+          "type": "listItem",
+          "text": "1 Tsp. Pepper"
+        },
+        {
+          "type": "listItem",
+          "text": "1 Tbsp. Vegetable Oil"
+        },
+        {
+          "type": "listItem",
+          "text": "Cold Water (for soaking)"
+        },
+        {
+          "type": "listItem",
+          "text": "Cooking Spray"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "HOW TO MAKE:"
+    }
+  ]
+}</script></div>
