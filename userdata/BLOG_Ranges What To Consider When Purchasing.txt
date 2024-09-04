@@ -1,4 +1,4 @@
-<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h2 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent5858">Not sure where to start? We've got you covered</h2></div></div></div><div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle onblock" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h2 class="t-h4-style in910 explorerselected" style="color:#333 !important" id="ocinsertcontent5858">Not sure where to start? We've got you covered</h2></div></div></div><div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
   <div class="width100c liveelement in910 layoutpale layoutpale100">There are a few things you should keep in mind when selecting a new <a href="https://www.pcrichard.com/ranges/" class="">Range</a>.&nbsp;</div>
 </div><div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;"></div>
 <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
@@ -38,7 +38,7 @@
 
     Most <a href="https://www.pcrichard.com/gas-ranges/">Gas Ranges</a> today are designed for natural gas, but most of these can also be converted to work with LP gas. Today's ranges are also available in <a href="https://www.pcrichard.com/dual-fuel-ranges/" class="">Dual Fuel</a>. Dual fuel utilizes both gas and <a href="https://www.pcrichard.com/electric-ranges/">electric</a>. The benefit of a dual fuel range is that you have the great control of the gas cooking surface on the top, and an electric oven that provides consistent temperature control.&nbsp;</div>
 </div>
-<div class="width100c ui-sortable-handle hideonlyonmobile explorerselected onblock" style="">
+<div class="width100c ui-sortable-handle hideonlyonmobile" style="">
   <div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable">
     <div class="program100c liveelement in910 layoutpale layoutpale100" style="text-align: center;"><strong class="">Gas Range</strong></div>
     
