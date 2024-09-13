@@ -1,0 +1,11 @@
+
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h2 class="t-h4-style in910" style="color:#034694 !important" id="ocinsertcontent5038">Sub-Zero 36in. Classic Refrigerator - CL3650R/S Series</h2></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><p id="ptag6566">This model is constructed with a left-hand door swing. For a right-hand door swing, order CL3650RSPR.</p></div></div><div class="width100c"><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable explorerselected onblock"><div class="width75c width50c2 liveelement in910 layoutpale interedit layoutpale75" style="max-width: 75%; margin-left: 12.5%;"></div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><strong>Split Climate™</strong> intelligent cooling system revolutionizes Sub-Zero’s already-superior preservation capabilities, keeping food even fresher for longer<br><br>
+
+<strong>ClearSight™</strong> LED lighting system fully illuminates the interior and reduces shadows<br><br>
+
+<strong>Sleek stainless accents</strong> trim the interior, matching the sophistication of the exterior<br><br>
+
+<strong>Touch control panel</strong> is conveniently located for easy access at the tap of a finger<br><br>
+
+<strong>Night Mode</strong> optimizes the interior lighting based on the detected ambient light, reducing the brightness by 90% in dim environments<br><br>
+</div></div></div>
