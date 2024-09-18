@@ -1,0 +1,124 @@
+
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h2 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent8486">Try Out This Delicious Air Fry Recipe From Frigidaire</h2></div></div></div><div class="width100c hideonlyonmobile ui-sortable-handle" style=""><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width75c width50c2 liveelement in910 layoutpale layoutpale75" style="max-width: 75%; margin-left: 12.5%; margin-top: 10px;"><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-sprouts-feat.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-sprouts-feat.jpg" alt="Halved cooked brussel sprouts"></div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><h3 style="margin-bottom: 5px;"><strong>INGREDIENTS:</strong></h3><ul class="in910"><li>5 cups brussel sprouts</li><li>1/4 cup olive oil</li><li>1/4 cup soy</li><li>3/4 teaspoon truffle dust</li><li>1/2 teaspoon pepper</li><li>3/4 teaspoon corn starch</li><li>1 teaspoon garlic salt</li><li>1 cup Panko bread crumbs</li><li>Cooking spray</li></ul></div></div></div><div class="width100c hideonlyondesktop ui-sortable-handle" style=""><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width75c width50c2 liveelement in910 layoutpale layoutpale75" style="max-width: 100%; margin-left: 0%; margin-top: 1px;"><img class="loading-lazy promoimg21 in910" src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-sprouts-feat.jpg" data-src="https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-sprouts-feat.jpg" alt="Halved cooked brussel sprouts"></div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><h3 style="margin-bottom: 5px;"><strong>INGREDIENTS:</strong></h3><ul class="in910"><li>5 cups brussel sprouts</li><li>1/4 cup olive oil</li><li>1/4 cup soy</li><li>3/4 teaspoon truffle dust</li><li>1/2 teaspoon pepper</li><li>3/4 teaspoon corn starch</li><li>1 teaspoon garlic salt</li><li>1 cup Panko bread crumbs</li><li>Cooking spray</li></ul></div></div></div><div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent3156"><strong>DIRECTIONS</strong></h3></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><ol class="in910"><li>Preheat oven to 425 degrees Fahrenheit using Air Fry mode.</li><li>Fill a bowl with cold water. Use it to wash and trim the brussel sprouts.</li><li>Remove sprouts from water. Use knife and cutting board to slice and quarter sprouts, then place them in a plastic bag.</li><li>Pour all remaining ingredients EXCEPT Panko bread crumbs into the bag. Gently toss until the sprouts are evenly covered.</li><li>Evenly spray a dark baking sheet or a Frigidaire ReadyCook Air Fry Tray with non-stick cooking spray.</li><li>Just before putting the sprouts onto the pan, add Panko to bag and toss to coat.</li><li>Evenly layer sprouts on tray, making sure there is no overlapping.</li><li>Place pan on the center rack in the preheated oven and cook 10 to 12 minutes. Serve hot, and enjoy!</li></ol></div></div><div class="width100c layoutpale layoutpale100 droppable ui-droppable ui-sortable-handle customspacer" style="min-height: 15px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100">Ready to bring the convenience of air frying into your kitchen? We make it easy to find a <a href="/frigidaire/built-in-air-fryer-ranges/" aria-label="Frigidaire range with air fryer">Frigidaire range with air fryer</a>. Browse our entire selection of <a href="/built-in-air-fryer-ranges/" aria-label="ranges with air fryers">ranges with air fryers</a> now!</div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"></div><div class="width100c layoutpale layoutpale100 liverow schemalayer explorerselected onblock"><script type="application/ld+json" class="">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.pcrichard.com/frigidaire-air-fried-brussel-sprouts/Blog-11467.html"
+  },
+  "headline": "Frigidaire Air Fried Brussel Sprouts",
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Try Out This Delicious Air Fry Recipe From Frigidaire"
+    },
+    {
+      "type": "image",
+      "src": "https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-sprouts-feat.jpg",
+      "alt": "Halved cooked brussel sprouts"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "INGREDIENTS:"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "type": "listItem",
+          "text": "5 cups brussel sprouts"
+        },
+        {
+          "type": "listItem",
+          "text": "1/4 cup olive oil"
+        },
+        {
+          "type": "listItem",
+          "text": "1/4 cup soy"
+        },
+        {
+          "type": "listItem",
+          "text": "3/4 teaspoon truffle dust"
+        },
+        {
+          "type": "listItem",
+          "text": "1/2 teaspoon pepper"
+        },
+        {
+          "type": "listItem",
+          "text": "3/4 teaspoon corn starch"
+        },
+        {
+          "type": "listItem",
+          "text": "1 teaspoon garlic salt"
+        },
+        {
+          "type": "listItem",
+          "text": "1 cup Panko bread crumbs"
+        },
+        {
+          "type": "listItem",
+          "text": "Cooking spray"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://www.pcrichard.com/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/images//blog/airfry-sprouts-feat.jpg",
+      "alt": "Halved cooked brussel sprouts"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "INGREDIENTS:"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "type": "listItem",
+          "text": "5 cups brussel sprouts"
+        },
+        {
+          "type": "listItem",
+          "text": "1/4 cup olive oil"
+        },
+        {
+          "type": "listItem",
+          "text": "1/4 cup soy"
+        },
+        {
+          "type": "listItem",
+          "text": "3/4 teaspoon truffle dust"
+        },
+        {
+          "type": "listItem",
+          "text": "1/2 teaspoon pepper"
+        },
+        {
+          "type": "listItem",
+          "text": "3/4 teaspoon corn starch"
+        },
+        {
+          "type": "listItem",
+          "text": "1 teaspoon garlic salt"
+        },
+        {
+          "type": "listItem",
+          "text": "1 cup Panko bread crumbs"
+        },
+        {
+          "type": "listItem",
+          "text": "Cooking spray"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "DIRECTIONS"
+    }
+  ]
+}</script></div>
