@@ -1,0 +1,200 @@
+
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+<div class="width100c liveelement in910 layoutpale layoutpale100">
+	<div class="pd-header-tag width100c">
+		<h2 class="t-h4-style in910" style="color:#034694 !important" id="ocinsertcontent6042">AirPods 4 with Active Noise Cancellation - White</h2>
+	</div>
+</div>
+</div>
+<div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;">
+</div>
+<br class="ui-sortable-handle" style="">
+	<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+		<div class="width100c liveelement in910 layoutpale layoutpale100">
+			<div class="pd-header-tag width100c">
+				<h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent7249">
+					<strong class="">Iconic. Now supersonic. <br>
+					<br>
+Now available with Active Noise Cancellation.
+The next evolution in sound, comfort, and noise control.<br>
+					<br>
+Iconic design. Incredible comfort.<br>
+					<br>
+					</strong>
+				</h3>
+			</div>
+		</div>
+	</div>
+	<div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;">
+	</div>
+	<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+		<div class="width100c liveelement in910 layoutpale layoutpale100">AirPods 4 with Active Noise Cancellation—featuring a totally transformed audio experience with Adaptive Audio and Transparency mode, and an updated fit for all-day comfort.</div>
+	</div>
+	<div class="width100c layoutpale layoutpale100 droppable ui-droppable ui-sortable-handle customspacer" style="min-height: 15px;">
+	</div>
+	<div class="width100c ui-sortable-handle" style="">
+		<div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable">
+			<div class="width100c liveelement in910 layoutpale layoutpale100">
+				<div class="width100c">
+				</div>
+				<div class="width100c">
+					<img class="loading-lazy promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ2_MXP93LL-A.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ2_MXP93LL-A.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="Apple AirPods 4 with Active Noise Cancellation, model MXP93LL/A, active noise cancellation">
+					</div>
+				</div>
+			</div>
+			<div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable">
+				<div class="width100c liveelement in910 layoutpale layoutpale100">
+					<div class="width100c">
+						<img class="loading-lazy promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ3_MXP93LL-A.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ3_MXP93LL-A.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="Apple AirPods 4 with Active Noise Cancellation, model MXP93LL/A, redesigned for all-day comfort">
+						</div>
+					</div>
+				</div>
+				<div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable">
+					<div class="width100c liveelement in910 layoutpale layoutpale100">
+						<div class="width100c">
+							<img class="loading-lazy promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ4_MXP93LL-A.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ4_MXP93LL-A.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="Apple AirPods 4 with Active Noise Cancellation, model MXP93LL/A, personalized spatial audio">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;">
+				</div>
+				<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+					<div class="width100c liveelement in910 layoutpale layoutpale100">
+						<div class="pd-header-tag width100c">
+							<h3 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent3281">
+								<strong>Features:</strong>
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="width100c ui-sortable-handle" style="">
+					<div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable">
+						<div class="width80c width50c2 liveelement in910 layoutpale layoutpale25">
+							<strong>REBUILT FOR COMFORT</strong>
+							<br>AirPods 4 have been redesigned for exceptional all-day comfort and greater stability. With a refined contour, shorter stem, and quick-press controls for music or calls.<br>
+							<br>
+								<strong>ACTIVE NOISE CANCELLATION</strong>
+								<br>AirPods 4 with Active Noise Cancellation help reduce outside noise before it reaches your ears, so you can immerse yourself in what you’re listening to.<br>
+								<br>
+									<strong>HEAR THE WORLD AROUND YOU</strong>
+									<br>The powerful H2 chip comes to AirPods 4. Adaptive Audio seamlessly blends Active Noise Cancellation and Transparency mode—which lets you comfortably hear and interact with the world around you exactly as it sounds—to provide the best listening experience in any environment. And when you’re speaking with someone nearby, Conversation Awareness automatically lowers the volume of what’s playing.<br>
+									<br>
+										<strong>IMPROVED SOUND AND CALL QUALITY</strong>
+										<br>Voice Isolation improves the quality of calls in loud conditions. Using advanced computational audio, it reduces background noise while isolating and clarifying the sound of your voice for whoever you’re speaking to.<br>
+										<br>
+										</div>
+									</div>
+									<div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable">
+										<div class="width80c width50c2 liveelement in910 layoutpale layoutpale25">
+											<strong>MAGICAL EXPERIENCE</strong>
+											<br>Just say “Siri” or “Hey Siri” to play a song, make a call, or check your schedule. And with Siri Interactions, now you can respond to Siri by simply nodding your head yes or shaking your head no. Pair AirPods 4 by simply placing them near your device and tapping Connect on your screen. Easily share a song or show between two sets of AirPods. A skin-detecting sensor knows to play audio only when you’re wearing AirPods and pauses when you take them off. And you can track down your AirPods and Charging Case with the Find My app.
+PERSONALIZED SPATIAL AUDIO—Personalized Spatial Audio with dynamic head tracking places sound all around you, creating a theater-like listening experience for music, TV shows, movies, games, and more.<br>
+											<br>
+												<strong>REDESIGNED CASE</strong>
+												<br>The Charging Case is the smallest in the industry with wireless charging. Charge with an Apple Watch charger, USB-C Charge Cable, or Qi-certified charger.<br>
+												<br>
+													<strong>LONG BATTERY LIFE</strong>
+													<br>With Active Noise Cancellation enabled, get up to 4 hours of listening time on a single charge and up to 20 hours using the case. And you can get up to 30 hours of total listening time without Active Noise Cancellation enabled.<br>
+													<br>
+														<strong>DUST, SWEAT, AND WATER RESISTANT</strong>
+														<br>AirPods 4 and the Charging Case are rated IP54 dust, sweat, and water resistant, so they’ll withstand rain and heavy workouts.<br>
+														<br>
+														</div>
+													</div>
+												</div>
+												<div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;">
+												</div>
+												<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyonmobile ui-sortable-handle" style="">
+													<div class="width33c liveelement in910 layoutpale layoutpale33" style="max-width: 69%; margin-left: 15.5%;">
+														<div class="width100c">
+															<img class="loading-lazy promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ8_MXP93LL-A.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ8_MXP93LL-A.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="Apple AirPods 4 with Active Noise Cancellation, model MXP93LL/A, what's in the box">
+															</div>
+														</div>
+														<div class="program50c liveelement in910 layoutpale layoutpale50 explorerselected interedit" style="max-width: 97%; margin-left: 1.5%; margin-top: 39px;">
+															<ul class="in910">
+																<li class="">AirPods&nbsp;4 with Active Noise Cancellation</li>
+																<li class="">Charging Case (USB-C) with speaker</li>
+																<li class="">Documentation</li>
+																<li class="">(USB-C Charge Cable sold separately)</li>
+															</ul>
+														</div>
+													</div>
+													<div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 14px;">
+													</div>
+													<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyondesktop ui-sortable-handle" style="">
+														<div class="program50c liveelement in910 layoutpale layoutpale50">
+															<div class="width100c">
+																<img class="loading-lazy promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ8_MXP93LL-A.jpg?sw=400&amp;sh=400&amp;sm=fit" data-src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ8_MXP93LL-A.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="Apple AirPods 4 with Active Noise Cancellation, model MXP93LL/A, what's in the box">
+																</div>
+															</div>
+															<div class="program50c liveelement in910 layoutpale layoutpale50">
+																<ul class="in910">
+																	<li class="">AirPods&nbsp;4 with Active Noise Cancellation</li>
+																	<li class="">Charging Case (USB-C) with speaker</li>
+																	<li class="">Documentation</li>
+																	<li class="">(USB-C Charge Cable sold separately)</li>
+																</ul>
+															</div>
+														</div>
+														<div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable-handle" style="min-height: 15px;">
+														</div>
+														<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+															<div class="width100c liveelement in910 layoutpale layoutpale100">
+																<sup>
+																	<sub class="">1. Device performance and noise control features like Active Noise Cancellation, Adaptive Audio, and Transparency can be affected by debris or earwax buildup. Clean the device regularly to maintain performance and full feature functionality. Refer to support.apple.com/102672 for AirPods 4 cleaning instructions.</sub>
+																</sup>
+																<br>
+																	<br>
+																		<sup>
+																			<sub>2. Feature available only on AirPods 4 with Active Noise Cancellation.</sub>
+																		</sup>
+																		<br>
+																			<br>
+																				<sup>
+																					<sub>3. Available on compatible devices running iOS 18, iPadOS 18, or macOS Sequoia and later when paired with AirPods 4, AirPods 4 with Active Noise Cancellation, or AirPods Pro 2 with the latest firmware.</sub>
+																				</sup>
+																				<br>
+																					<br>
+																						<sup>
+																							<sub>4. Siri and activating with just “Siri” may not be available in all languages or in all areas, and features may vary by area. Compatible device and internet access required. Cellular data charges may apply. Activating with just “Siri” is not available on AirPods with the H1 headphone chip and Intel-based Mac computers. Devices must support and have the latest operating system software.</sub>
+																						</sup>
+																						<br>
+																							<br>
+																								<sup>
+																									<sub>5. Requires a compatible Apple device running the latest operating system software.</sub>
+																								</sup>
+																								<br>
+																									<br>
+																										<sup>
+																											<sub>6. Find My functionality requires iOS 18 or later.</sub>
+																										</sup>
+																										<br>
+																											<br>
+																												<sup>
+																													<sub>7. Spatial Audio works with compatible content in supported apps. iPhone with TrueDepth camera required to create personalized profile.</sub>
+																												</sup>
+																												<br>
+																													<br>
+																														<sup>
+																															<sub>8. AirPods 4 with Active Noise Cancellation support wireless charging, which requires a Qi‑certified wireless charger. AirPods 4 with Active Noise Cancellation charging case also works with the Apple Watch charger or USB-C connector.Charging requires a compatible USB-C charger.</sub>
+																														</sup>
+																														<br>
+																															<br>
+																																<sup>
+																																	<sub>9. Testing conducted by Apple in July and August 2024 using preproduction AirPods 4 (Active Noise Cancellation) with Wireless Charging Case paired with preproduction iPhone 16 Pro Max units, all with prerelease software. The playlist consisted of 358 unique audio tracks purchased from the iTunes Store (256-Kbps AAC encoding). Volume was set to 50%; Spatial Audio, Conversation Awareness, and Noise Control were all off. With Noise Control set to Active Noise Cancellation, listening time was up to 4 hours. Testing consisted of full AirPods battery discharge while playing audio until the first AirPod stopped playback. Battery life depends on device settings, environment, usage, and many other factors.</sub>
+																																</sup>
+																																<br>
+																																	<br>
+																																		<sup>
+																																			<sub>10. Testing conducted by Apple in July and August 2024 using preproduction AirPods 4 (Active Noise Cancellation) with Wireless Charging Case paired with preproduction iPhone 16 Pro Max units, all with prerelease software. The playlist consisted of 358 unique audio tracks purchased from the iTunes Store (256-Kbps AAC encoding). Volume was set to 50%; Spatial Audio, Conversation Awareness, and Noise Control were all off. With Noise Control set to Active Noise Cancellation, listening time was up to 20 hours. Testing consisted of full AirPods battery discharge while playing audio until the first AirPod stopped playback. The drained AirPods were charged to 100 percent, then audio playback was resumed until the first AirPod stopped playback. This cycle was repeated until both the AirPods and charging case were fully discharged. Battery life depends on device settings, environment, usage, and many other factors.</sub>
+																																		</sup>
+																																		<br>
+																																			<br>
+																																				<sup>
+																																					<sub>11. AirPods 4 with Active Noise Cancellation are dust, sweat, and water resistant for non-water sports and exercise. Products including charging case were tested under controlled laboratory conditions and have a rating of IP54 under IEC standard 60529. Dust, sweat, and water resistance are not permanent conditions and resistance might decrease as a result of normal wear. Do not attempt to charge when wet; refer to https://support.apple.com/kb/HT210711 for cleaning and drying instructions.</sub>
+																																				</sup>
+																																				<br>
+																																					<br>
+																																					</div>
+																																				</div>
