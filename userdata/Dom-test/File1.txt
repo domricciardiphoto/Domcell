@@ -1,1 +1,0 @@
-<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"></div><div class="width100c layoutpale layoutpale100 liverow droppable onblock ui-droppable"></div>
