@@ -1,0 +1,25 @@
+
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100 explorerselected interedit">this is the script to put an ON SALE Bubble up top when they are all categories.&nbsp; this script goes in the _copy asset</div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable">              <script>
+                        document.addEventListener("DOMContentLoaded", function (){var bubbleLinks=document.querySelectorAll(".bubble_l_c a.pcrRoundedLinkd"); bubbleLinks.forEach(function (link){link.addEventListener("click", function (){var itemName=link.querySelector(".itemrounded").textContent; window.dataLayer=window.dataLayer || []; window.dataLayer.push({event: "bubble_link_click", event_name: "bubble_link_click", click_text: itemName,});});});});
+                        </script><script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var container = document.querySelector('.swiper-wrapper.min-gutters');
+        var newSlide = `
+            <div class="swiper-slide col-4 col-md-2 col-lg-auto" role="group" aria-label="1 / 1" style="width: 190px;">
+                <!--Brought in by bottom content asset-->
+                <div class="category-item">
+                    <div class="category-tile">
+                        <img class="img-fluid" src="pim-content/tvs-sale_160x160.jpg?$staticlink$" alt="TVs On Sale">
+                    </div>
+                    <div class="category-name">
+                        TVs On Sale
+                    </div>
+                    <a class="stretched-link" href="/on-sale-tvs/" title="Shop the TVs On Sale category">
+                        <span class="sr-only">TVs On Sale</span>
+                    </a>
+                </div>
+            </div>
+        `;
+        container.insertAdjacentHTML('afterbegin', newSlide);
+    });
+    </script></div>
