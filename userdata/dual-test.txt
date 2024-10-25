@@ -1,0 +1,5 @@
+
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100">
+            <script type="application/ld+json">
+                {"@context":"https://schema.org","@type":"VideoObject","name":"","description":"","thumbnailUrl":"https://d2vxgxvhgubbj8.cloudfront.net/thumbnails/7106/","uploadDate":"2024-10-25T00:30:42-04:00","duration":"PT2M","contentUrl":"https://d2vxgxvhgubbj8.cloudfront.net/videos/7106/","embedUrl":"https://d2vxgxvhgubbj8.cloudfront.net/videos/7106/","publisher":{"@type":"Organization","name":"P.C. Richard & Son","logo":{"@type":"ImageObject","url":"https://www.pcrichard.com/images/pim-content/pcrmainlogo.png"}}}
+            </script></div></div>
