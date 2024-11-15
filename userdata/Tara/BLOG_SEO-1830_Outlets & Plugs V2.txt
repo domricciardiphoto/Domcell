@@ -1,0 +1,147 @@
+<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyonmobile ui-sortable ui-sortable-disabled ui-sortable-handle" style="">
+  <div class="width40c width50c2 liveelement in910 layoutpale layoutpale40 ui-sortable ui-sortable-disabled">
+    <img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/plug-in-types-how-to-guide-2.jpg" alt="Plug-In Types How-To Guide">
+  </div>
+  <div class="width50c width50c2 liveelement in910 layoutpale layoutpale50 ui-sortable ui-sortable-disabled" style="max-width: 93%; margin-left: 3.5%; margin-top: 10px;">Matching appliances and electronics to the correct power source is an understandable concern. Nobody wants to purchase a new appliance and bring it home only to find the plug and socket do not match. <br class="">
+    <br class="">
+
+    Understanding your home's plug types and electrical needs can be a little confusing, so eliminate that stress by learning more about the different options you may find in your home.
+  </div>
+</div>
+<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyondesktop ui-sortable ui-sortable-disabled ui-sortable-handle" style="">
+  <div class="width40c width50c2 liveelement in910 layoutpale layoutpale40 ui-sortable ui-sortable-disabled"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/plug-in-types-how-to-guide-2.jpg" alt="Plug-In Types How-To Guide"></div>
+  <div class="width50c width50c2 liveelement in910 layoutpale layoutpale50 ui-sortable ui-sortable-disabled" style="max-width: 98%; margin-left: 1%;">Matching appliances and electronics to the correct power source is an understandable concern. Nobody wants to purchase a new appliance and bring it home only to find the plug and socket do not match.<br class="">
+    <br class="">
+
+    Understanding your home's plug types and electrical needs can be a little confusing, so eliminate that stress by learning more about the different options you may find in your home.
+  </div>
+</div>
+<div class="width100c layoutpale layoutpale100 droppable ui-droppable customspacer ui-sortable ui-sortable-disabled ui-sortable-handle" style="min-height: 15px;">
+</div>
+<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable ui-sortable-disabled ui-sortable-handle" style="">
+  <div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled">
+    <div class="pd-header-tag width100c">
+      <h2 class="t-h4-style in910" style="color:#333 !important" id="ocinsertcontent4941">110 volts vs. 220 volts</h2>
+    </div>
+  </div>
+</div>
+<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable ui-sortable-disabled ui-sortable-handle" style="">
+  <div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled">
+    <p id="ptag5671" class="">These are the 2 distinct types of power sources you will find in your home. The important difference is the amount of potential energy, or voltage, the socket is able to supply to the device plugged into it. <br><br>
+
+      The most common electrical outlet in any home is a 110 volt. Sometimes you may hear 110 volt plugs referred to as 120 volt. Do not be confused by this; think of them as one and the same.<br><br>
+
+      There are a few variations of the <strong>110 volt outlet</strong> based on the size of the breaker associated with the circuit, which is measured in Amps. The 2 most common variations are <strong>15 Amp</strong> and <strong>20 Amp</strong>.<br><br></p>
+  </div></div><div class="width100c ui-sortable-handle" style=""><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable ui-sortable ui-sortable-disabled"><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled" style=""><div class="pd-header-tag width100c"><h3 class="t-h5-style in910" style="color: rgb(51, 51, 51) !important; text-align: center;" id="ocinsertcontent4374"><strong>110 Volt 15 Amp</strong></h3></div></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50 ui-sortable ui-sortable-disabled"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/15-amp-110-volt-how-to-guide-2.jpg" alt="15 amp 110 Volt How-To Guide"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50 ui-sortable ui-sortable-disabled"><div class="program100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled">The most basic is the 110 volt 15 amp outlet. This is suitable for the majority of your electronic needs, such as TVs, microwaves, and small air conditioners.</div></div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable ui-sortable ui-sortable-disabled"><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled" style=""><div class="pd-header-tag width100c"><h3 class="t-h5-style in910" style="color: rgb(51, 51, 51) !important; text-align: center;" id="ocinsertcontent7442"><strong>110 Volt 20 Amp</strong></h3></div></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50 ui-sortable ui-sortable-disabled"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/20-amp-110-volt-how-to-guide-2.jpg" alt="20 amp 110 Volt How-To Guide"></div><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50 ui-sortable ui-sortable-disabled">A horizontal pin is an obvious indicator that this type of outlet is required. You can plug in a smaller device that does not need 20 amps because it still offers the 2 vertical inputs. If your appliance strictly needs 20 amps to power it, the horizontal pin will prevent you from plugging it into an incompatible 15 Amp socket. Small dryers and <a href="/washers/" aria-label="washers" class="">washers</a> often use this socket.</div></div></div><div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style="min-height: 25px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable ui-sortable-disabled ui-sortable-handle" style="position: relative; left: 0px; top: 0px;"><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled">With the increased electrical demands of larger appliances, such as <a href="/electric-ranges/" aria-label="electric ranges" class="">electric ranges</a>, the power supply is doubled by combining 2 circuits and creating a 220 volt outlet. Simply stated, this supplies more power. Just like with 110 volt, 220 volt devices may alternatively be referred to as 230 or 240 volt.<br class=""><br class="">
+
+Like the 110 volt outlet, there are a few variations of the <strong class="">220 volt</strong> outlet based on the size of the breaker and measured in Amps. However, in this case there are 3 common variations: <strong class="">15 Amp</strong>, <strong class="">20 Amp</strong> and <strong class="">30 Amp</strong>.<br class=""><br class=""></div></div><div class="width100c layoutpale layoutpale100 customspacer ui-sortable ui-sortable-disabled ui-sortable-handle" style="min-height: 15px;"></div><div class="width100c liverow dcellscroller ui-sortable-handle" style=""><div class="packscrolleroverflow" style="scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.5) transparent;"><div class="dcell3pack desktopak"><div class="width100c hideonlyondesktop"><div class="droppable layoutpale layoutpale33 liverow packscroller ui-droppable width33c ui-sortable ui-sortable-disabled"><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled"><div class="pd-header-tag width100c"><h3 class="t-h5-style in910" style="color: rgb(51, 51, 51) !important; text-align: center;" id="ocinsertcontent1864"><strong>220 Volt 15 Amp</strong></h3></div></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60 ui-sortable ui-sortable-disabled"><img class="promoimg21 in910 explorerselected onblock" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/15-amp-220-volt-how-to-guide-2.jpg" alt="15 Amp 220 Volt How-To Guide" style=""></div><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled" style="">More powerful appliances increase the demand on your electrical system. Power is doubled to keep up, and therefore 220 Volt plugs are used. These are larger plugs than normal 110 Volt, and it would be impossible to confuse the two. Washers, dryers, and commercial-sized air conditioners commonly use this plug.</div></div><div class="droppable layoutpale layoutpale33 liverow packscroller ui-droppable width33c ui-sortable ui-sortable-disabled"><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled"><div class="pd-header-tag width100c"><h3 class="t-h5-style in910" style="color: rgb(51, 51, 51) !important; text-align: center;" id="ocinsertcontent4524"><strong class="" style="text-align: center;">220 Volt 20 Amp</strong></h3></div></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60 ui-sortable ui-sortable-disabled"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/20-amp-220-volt-how-to-guide-2.jpg" alt="20 Amp 220 Volt How-To Guide"></div><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled" style="">If your appliance demands a larger 20 Amp circuit, you will need this socket in your home. You may plug in smaller 15 Amp appliances to this socket but not vice-versa. The vertical pin on the appliance's plug will prevent that.</div></div><div class="droppable layoutpale layoutpale33 liverow packscroller ui-droppable width33c ui-sortable ui-sortable-disabled"><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled"><div class="pd-header-tag width100c"><h3 class="t-h5-style in910" style="color: rgb(51, 51, 51) !important; text-align: center;" id="ocinsertcontent7468"><strong>220 Volt 30 Amp</strong></h3></div></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60 ui-sortable ui-sortable-disabled"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/30-amp-220-volt-how-to-guide-2.jpg" alt="30 Amp 220 Volt How-To Guide"></div><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled" style="">This is a very large plug with a dedicated circuit that is meant for appliances that demand the highest electricity, such as a range or split unit air conditioner. This socket looks similar to the 220 volt 15 Amp socket but is larger and is mounted by itself with no option to plug in additional appliances.</div></div></div><div class="width100c hideonlyonmobile"><div class="droppable layoutpale layoutpale33 liverow packscroller ui-droppable width33c ui-sortable ui-sortable-disabled"><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled"><div class="pd-header-tag width100c"><h3 class="t-h5-style in910" style="color: rgb(51, 51, 51) !important; text-align: center;" id="ocinsertcontent1864"><strong>220 Volt 15 Amp</strong></h3></div></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60 ui-sortable ui-sortable-disabled" style="max-width: 60%; margin-left: 20%;"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/15-amp-220-volt-how-to-guide-2.jpg" alt="15 Amp 220 Volt How-To Guide" style=""></div><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled" style="">More powerful appliances increase the demand on your electrical system. Power is doubled to keep up, and therefore 220 Volt plugs are used. These are larger plugs than normal 110 Volt, and it would be impossible to confuse the two. Washers, dryers, and commercial-sized air conditioners commonly use this plug.</div></div><div class="droppable layoutpale layoutpale33 liverow packscroller ui-droppable width33c ui-sortable ui-sortable-disabled"><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled"><div class="pd-header-tag width100c"><h3 class="t-h5-style in910" style="color: rgb(51, 51, 51) !important; text-align: center;" id="ocinsertcontent4524"><strong class="" style="text-align: center;">220 Volt 20 Amp</strong></h3></div></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60 ui-sortable ui-sortable-disabled" style="max-width: 60%; margin-left: 20%;"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/20-amp-220-volt-how-to-guide-2.jpg" alt="20 Amp 220 Volt How-To Guide"></div><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled" style="">If your appliance demands a larger 20 Amp circuit, you will need this socket in your home. You may plug in smaller 15 Amp appliances to this socket but not vice-versa. The vertical pin on the appliance's plug will prevent that.</div></div><div class="droppable layoutpale layoutpale33 liverow packscroller ui-droppable width33c ui-sortable ui-sortable-disabled"><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled"><div class="pd-header-tag width100c"><h3 class="t-h5-style in910" style="color: rgb(51, 51, 51) !important; text-align: center;" id="ocinsertcontent7468"><strong>220 Volt 30 Amp</strong></h3></div></div><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60 ui-sortable ui-sortable-disabled" style="max-width: 60%; margin-left: 20%;"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/30-amp-220-volt-how-to-guide-2.jpg" alt="30 Amp 220 Volt How-To Guide"></div><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled" style="">This is a very large plug with a dedicated circuit that is meant for appliances that demand the highest electricity, such as a range or split unit air conditioner. This socket looks similar to the 220 volt 15 Amp socket but is larger and is mounted by itself with no option to plug in additional appliances.</div></div></div></div></div></div><div class="width100c layoutpale layoutpale100 customspacer ui-sortable ui-sortable-disabled ui-sortable-handle" style="min-height: 15px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable ui-sortable-disabled ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100 ui-sortable ui-sortable-disabled">As you can see, each of the various outlet types has a distinctly different look that needs to match the plug on your new appliances or electronics. It's designed this way to make it extremely difficult to use an outlet that is incompatible with your appliance. To be sure you get it right, check your existing outlets before you make a new purchase. Take a photo of the outlet you intend to use and then refer to it as you shop!
+</div></div><div class="width100c layoutpale layoutpale100 customspacer ui-sortable ui-sortable-disabled ui-sortable-handle" style="min-height: 15px;"></div><div class="width100c layoutpale layoutpale100 liverow onblock schemalayer"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.pcrichard.com/get-it-right-the-first-time-a-how-to-guide-for-matching-power-outlets-plugs/Blog-6947.html"
+  },
+  "headline": "Get It Right the First Time: A How-To Guide for Matching Power Outlets & Plugs",
+  "content": [
+    {
+      "type": "image",
+      "src": "https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/plug-in-types-how-to-guide-2.jpg",
+      "alt": "Plug-In Types How-To Guide"
+    },
+    {
+      "type": "image",
+      "src": "https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/plug-in-types-how-to-guide-2.jpg",
+      "alt": "Plug-In Types How-To Guide"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "110 volts vs. 220 volts"
+    },
+    {
+      "type": "paragraph",
+      "text": "These are the 2 distinct types of power sources you will find in your home. The important difference is the amount of potential energy, or voltage, the socket is able to supply to the device plugged into it. The most common electrical outlet in any home is a 110 volt. Sometimes you may hear 110 volt plugs referred to as 120 volt. Do not be confused by this; think of them as one and the same. There are a few variations of the 110 volt outlet based on the size of the breaker associated with the circuit, which is measured in Amps. The 2 most common variations are 15 Amp and 20 Amp."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "110 Volt 15 Amp"
+    },
+    {
+      "type": "image",
+      "src": "https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/15-amp-110-volt-how-to-guide-2.jpg",
+      "alt": "15 amp 110 Volt How-To Guide"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "110 Volt 20 Amp"
+    },
+    {
+      "type": "image",
+      "src": "https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/20-amp-110-volt-how-to-guide-2.jpg",
+      "alt": "20 amp 110 Volt How-To Guide"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "220 Volt 15 Amp"
+    },
+    {
+      "type": "image",
+      "src": "https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/15-amp-220-volt-how-to-guide-2.jpg",
+      "alt": "15 Amp 220 Volt How-To Guide"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "220 Volt 20 Amp"
+    },
+    {
+      "type": "image",
+      "src": "https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/20-amp-220-volt-how-to-guide-2.jpg",
+      "alt": "20 Amp 220 Volt How-To Guide"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "220 Volt 30 Amp"
+    },
+    {
+      "type": "image",
+      "src": "https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/30-amp-220-volt-how-to-guide-2.jpg",
+      "alt": "30 Amp 220 Volt How-To Guide"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "220 Volt 15 Amp"
+    },
+    {
+      "type": "image",
+      "src": "https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/15-amp-220-volt-how-to-guide-2.jpg",
+      "alt": "15 Amp 220 Volt How-To Guide"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "220 Volt 20 Amp"
+    },
+    {
+      "type": "image",
+      "src": "https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/20-amp-220-volt-how-to-guide-2.jpg",
+      "alt": "20 Amp 220 Volt How-To Guide"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "220 Volt 30 Amp"
+    },
+    {
+      "type": "image",
+      "src": "https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/30-amp-220-volt-how-to-guide-2.jpg",
+      "alt": "30 Amp 220 Volt How-To Guide"
+    }
+  ]
+}</script></div>
