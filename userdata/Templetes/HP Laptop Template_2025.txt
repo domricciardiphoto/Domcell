@@ -1,0 +1,45 @@
+
+
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h3 class="t-h5-style in910" style="color:#034694 !important" id="ocinsertcontent2068"><b class="">HP Laptop 14-DQ0075NR</b></h3></div></div></div><div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style="min-height: 10px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h4 class="t-h5-style in910" style="color:#034694 !important" id="ocinsertcontent1428">Features:</h4></div></div></div><div class="width100c ui-sortable-handle" style=""><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><h5 class="t-h5-style"><strong>Take it anywhere. See more.</strong></h5>With its thin and light design, 6.5 mm microedge bezel display, with its 78% screen to
+body ratio[1] – take this PC anywhere and
+see and do more.<br><br></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><h5 class="t-h5-style"><strong>Reliable performance for every day</strong></h5>Powerful enough for your busiest days, this
+PC features an Intel® processor[2] and
+reliable flash-based storage at a great value.<br><br></div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><h5 class="t-h5-style"><strong>Powered up and productive. All day long.</strong></h5>With a long battery life[3] and fast-charge
+technology, this laptop lets you work, watch,
+and stay connected all day. Integrated
+precision touchpad with multi-touch
+support speeds up both navigation and
+productivity.<br><br></div></div></div><div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style="min-height: 31px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><h4 class="t-h5-style in910" style="color:#034694 !important" id="ocinsertcontent2596">Additional Features:</h4></div></div></div><div class="width100c"><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><div class="width100c"></div><div class="width100c"><img class="promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_14-DQ0075NR.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="HP Laptop model 14-DQ0075NR, front-facing view"></div></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><h5 class="t-h5-style"><strong>Get a fresh perspective</strong></h5>From a rejuvenated Start menu, to new ways to
+connect to your favorite people, news, games, and
+content—Windows 11 is the place to think, express,
+and create in a natural way.
+[4]<br><br>
+
+
+<h5 class="t-h5-style"><strong>Quad-core Intel® Pentium® Silver processor</strong></h5>The perfect combination of performance, power consumption, and value helps your device handle multitasking smoothly and reliably with four processing cores to divide up the work.
+[5]<br><br>
+
+
+<h5 class="t-h5-style"><strong>Brilliant BrightView panel</strong></h5>Perfect for an ideal indoor experience, get a bright, clear picture for all your videos, photos, and documents.
+<br><br>
+</div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25 explorerselected interedit"><div class="width100c"></div><div class="width100c"><img class="promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ3_14-DQ0075NR.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="HP Laptop model 14-DQ0075NR, half closed showing back of the laptop with HP logo"></div></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><h5 class="t-h5-style"><strong class="">HP Fast Charge</strong></h5>When your laptop is low on power, no one has time to wait hours to recharge. Power down your device and go from 0 to 50% charge in approximately 45 minutes.
+[6]<br><br>
+
+<h5 class="t-h5-style"><strong>64 GB eMMC storage</strong></h5>An embedded Multimedia Card provides reliable flash-based storage at a great value. And without the moving parts of a traditional hard drive, there’s a lower chance of failure and damage.<br><br>
+
+<h5 class="t-h5-style"><strong>Wi-Fi 5 (1x1) &amp; Bluetooth® 4.2 (802.11a/b/g/n/ac)</strong></h5>Stay connected to Wi-Fi and to Bluetooth® accessories with wireless technology[7]<br><br>
+</div></div></div><div class="width100c layoutpale layoutpale100 customspacer" style="min-height: 16px;"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100" style="font-size: 10px !important; line-height: normal;">1 Screen is measured by active screen area. 
+footnote<br><br>
+
+2 Intel, the Intel Logo, Intel Inside, Intel Core, and Core Inside are trademarks of Intel Corporation or its subsidiaries in the U.S. and/or other countries. 
+footnote<br><br>
+
+3 Windows 10/ MM14 battery life will vary depending on various factors including product model, configuration, loaded applications, features, use, wireless functionality, and power management settings. The maximum capacity of the battery will naturally decrease with time and usage. See https://bapco.com/products/mobilemark-2014/ for additional details. <br><br>
+
+4 Not all features are available in all editions or versions of Windows. Systems may require upgraded and/or separately purchased hardware, drivers, software or BIOS update to take full advantage of Windows functionality. Windows is automatically updated and enabled. High speed internet and Microsoft account required. ISP fees may apply and additional requirements may apply over time for updates. See http://www.windows.com. <br><br>
+
+5 Multi-core is designed to improve performance of certain software products. Not all customers or software applications will necessarily benefit from use of this technology. Performance and clock frequency will vary depending on application workload and your hardware and software configurations. Intel’s numbering, branding and/or naming is not a measurement of higher performance. Internet service required and not included. 4K content required to view full 4K images. Graphics output may be limited based on the maximum resolution of the display.<br><br> 
+
+6 Recharges your battery up to 50% within 45 minutes when the system is off (using "shut down" command). Recommended for use with the HP adapter provided with the notebook, not recommended with a smaller capacity battery charger. After charging has reached 50% capacity, charging speed will return to normal speed. Charging time may vary +/-10% due to System tolerance. Available on select HP products. See http://store.hp.com for a full list of product features. <br><br>
+
+7 Wireless access point and Internet service required. Availability of public wireless access points limited. The specifications for the 802.11ac WLAN are draft specifications and are not final. If the final specifications differ from the draft specifications, it may affect the ability of the laptop to communicate with other 802.11ac WLAN devices. Bluetooth® is a trademark owned by its proprietor and used by HP Inc. under license. Wireless access point and internet service required and sold separately. Availability of public wireless access points limited. Wi-Fi 5 (802.11ac) is backwards compatible with prior Wi-Fi 5 specs.<br><br> </div></div><div class="width100c layoutpale layoutpale100 customspacer" style="min-height: 20px;"></div>
