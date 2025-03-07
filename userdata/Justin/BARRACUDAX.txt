@@ -1,0 +1,27 @@
+
+
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100 importedContent">
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><div class="pd-header-tag width100c"><h4 class=""> <strong class="">RAZER BARRACUDA X</strong> </h4></div></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width100c liveelement in910 layoutpale layoutpale100"><div class="pd-header-tag width100c"><div class="pd-header-tag width100c"><h5 class="t-h5-style c-blue" style="color:#034694 !important">Features:</h5></div></div></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyonmobile"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50" style="max-width: 50%; margin-left: 25%;"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/Barracuda-X-MAIN.jpg" alt=" RAZER BARRACUDA X Wireless Multi-platform Gaming and Mobile Headset"></div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable hideonlyondesktop"><div class="width50c width50c2 liveelement in910 layoutpale layoutpale50"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/Barracuda-X-MAIN.jpg" alt=" RAZER BARRACUDA X Wireless Multi-platform Gaming and Mobile Headset"></div></div><div class="width100c layoutpale layoutpale100 customspacer" style="min-height: 21px;"></div><div class="width100c"><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><div class="pd-header-tag width100c"><h5 class="t-h5-style t-h4-style explorerselected onblock" style="color: rgb(3, 70, 148);">Razer™ SmartSwitch Dual Wireless</h5></div><i>to quick toggle between Razer HyperSpeed Wireless and Bluetooth</i><br>
+For greater convenience, the headset can instantly switch between high-speed 2.4GHz or Bluetooth mode for seamless audio as you hop between using your PC/console and phone respectively.<br><br>
+
+<div class="pd-header-tag width100c"><h5 class="t-h5-style t-h4-style" style="color: rgb(3, 70, 148);">250g Ergonomic Design</h5></div> <i>for All-day Comfort Both Indoors and Out</i><br>
+Built for gaming marathons yet portable enough for daily commutes, its lightweight build is complemented by breathable memory foam ear cushions and swiveling earcups for a snug, comfortable fit.<br><br>
+
+<div class="pd-header-tag width100c"><h5 class="t-h5-style t-h4-style" style="color: rgb(3, 70, 148);">Razer™ TriForce 40mm Drivers</h5></div> <i>for High-end Audio Performance</i><br>
+Our patented 3-part driver design pushes out exceptional highs, mids and lows that doesn’t muddy, providing deeper gaming immersion and a more dynamic listening experience for music and videos.<br><br>
+</div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><div class="pd-header-tag width100c"><h5 class="t-h5-style t-h4-style" style="color: rgb(3, 70, 148);">Detachable Razer™ HyperClear Cardioid Mic</h5></div> <i>for Crystal-clear Voice Capture When Needed</i><br>
+While the mic is tuned to suppress background noise for enhanced voice capture during gaming, it can also be easily removed to make the headset more travel-friendly for mobile use.<br><br>
+
+<div class="pd-header-tag width100c"><h5 class="t-h5-style t-h4-style" style="color: rgb(3, 70, 148);">On-Headset Controls</h5></div> <i>for Greater Convenience</i><br>
+Enjoy effortless control over your music, videos, and call with easily accessible buttons located underneath the Razer Barracuda X’s earcups. <br>
+<i>On/Off (long press) <br>
+Pairing (press and hold) <br>
+Next Track (double tap) <br> 
+Last Track (triple tap) <br>
+Play / Pause (tap)<br>
+Pick Up / Stop Call (when there is a call, tap)</i><br><br>
+
+<div class="pd-header-tag width100c"><h5 class="t-h5-style t-h4-style" style="color: rgb(3, 70, 148);">50 Hours Battery Life with Type-C Charging</h5></div><i>for All-day Use</i><br>
+With enough juice to power you through a full day of gaming and commuting, the Razer Barracuda X is designed with an endurance that matches its versatility.<br><br>
+
+</div></div></div></div></div>
