@@ -1,0 +1,81 @@
+
+
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="cursor: grab;">
+<div class="width100c liveelement in910 layoutpale layoutpale100">
+	<div class="pd-header-tag width100c">
+		<h2 class="t-h5-style in910" style="color:#034694 !important" id="ocinsertcontent3581">Authors Listing Page</h2>
+	</div>
+</div>
+</div>
+<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="cursor: grab;">
+	<div class="width100c liveelement in910 layoutpale layoutpale100">
+		<p id="ptag5385" style="font-size:null !important; color:null !important; " class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit dom is great esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div><div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle explorerselected onblock" style="min-height: 22px; cursor: grab;">
+		</div>
+<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="float: unset; max-width: 50% !important; margin-left: auto !important; margin-right: auto !important; cursor: grab;">
+	<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50">
+		<div class="width100c">
+			<img class="promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_NX60A6511SS.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="ddfghdfg">
+			</div>
+		</div>
+		<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50">
+			<div class="width100c">
+				<img class="promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_NX60A6511SS.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="ddfghdfg">
+				</div>
+			</div>
+			<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50" style="text-align: center;">
+				<p id="ptag9852" style="text-align: center;" class="">
+					<span style="color:#034694">First Name</span>
+				</p>
+				<p id="ptag2567" style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+			</div>
+			<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50" style="text-align: center;">
+				<p id="ptag5062" style="text-align: center;">
+					<span style="color:#034694">First Name</span>
+				</p>
+				<p id="ptag1203" style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+			</div>
+		</div>
+		<div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle explorerselected onblock" style="min-height: 22px; cursor: grab;">
+		</div>
+		<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="float: none; max-width: 50% !important; margin-left: auto !important; margin-right: auto !important; cursor: grab;" "="">
+			<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50">
+				<div class="width100c">
+					<img class="promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_NX60A6511SS.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="ddfghdfg">
+					</div>
+				</div>
+				<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50">
+					<div class="width100c">
+						<img class="promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_NX60A6511SS.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="ddfghdfg" style="">
+						</div>
+					</div>
+					<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50" style="text-align: center;">
+						<p id="ptag9852" style="text-align: center;" class="">
+							<span style="color:#034694">First Name</span>
+						</p>
+						<p id="ptag2567" style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+					</div>
+					<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50" style="text-align: center;">
+						<p id="ptag5062" style="text-align: center;" class="">
+							<span style="color:#034694">First Name</span>
+						</p>
+						<p id="ptag1203" style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+					</div>
+				</div>
+				<div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style="min-height: 22px; cursor: grab;">
+				</div>
+				<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="cursor: grab;">
+					<div class="width100c liveelement in910 layoutpale layoutpale100" style="text-align: center;">
+						<div class="pd-header-tag width100c" style="text-align: center; line-height: 116%;">
+							<h2 class="t-h5-style in910" style="color:#034694 !important; margin-bottom: 0px !important;" id="ocinsertcontent9902">P.C. Richard and Son Editorial Policy</h2>
+						</div>
+					</div>
+				</div>
+				<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="cursor: grab;">
+					<div class="width100c liveelement in910 layoutpale layoutpale100">
+						<p id="ptag4201" style="font-size:null !important; color:null !important; ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit dom is great esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+				<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="cursor: grab;">
+				</div>
