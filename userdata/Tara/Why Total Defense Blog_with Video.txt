@@ -1,0 +1,39 @@
+
+                    <link href="/on/demandware.static/-/Sites-pcrichard-master-articles-catalog/default/pim-content/occontent2024-v7d.css" rel="stylesheet">
+                        
+
+
+
+
+
+                    
+                    <div class="totalinternalcontent">
+                    
+
+
+                <div class="width100c">
+
+                    <div id="pullthecode3" class="informationcontent    ">
+
+                    <div class="width100c    "><div class="width100c  in910   importedContent"><div class="width100c    "><div class="width100c in910"><div style="flex: 0 1 auto; max-width:50%;padding: 3%;float:right;" class=""><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/why-antivirus-feat.jpg" alt="" role="presentation"></div><div style="align-items: flex-start;"><div style="flex: 1 1 auto"><p></p></div></div><p>Though the internet is the single most important tool humanity has at its disposal today, browsing the web can be a risky activity for those who are unprotected. Bad actors can be lurking on any site you visit, ready to jump you with annoying or even potentially dangerous viruses that can leave your information exposed. That's why Total Defense antivirus software is here to help you surf the web safely. Read on to find out more about the kinds of dangers you face online, and how Total Defense provides top-of-the-line protection from all threats.</p>
+
+<h2 class="t-h4-style" style="color: rgb(3, 70, 148);">Why is Antivirus Software Necessary?</h2>
+
+<p>Total Defense antivirus software offers strong defense against the many dangers you could potentially face online. The most prominent things you might stumble upon are malware and viruses. Though these can come in many forms, they can all cause harm typically by stealing your information, or damaging your <a href="/laptops/">laptop </a>or PC to the point where it may be borderline unusable. Phishing attacks are also very common, mostly in the form of malicious emails with the intent of having you reveal sensitive information. They can come in the form of phony work emails, or even fake messages about family members. You might also find yourself exposed by a data breach, where access is gained to your personal information through a variety of nefarious means. Any of these unfortunate things can happen to anyone, and even the most seasoned internet expert can fall victim to a clever phishing scam.</p>
+
+<h2 class="t-h4-style" style="color: rgb(3, 70, 148);">How Does Total Defense Antivirus Software Help?</h2>
+
+<p class="">With all of the aforementioned threats online in mind, Total Defense antivirus software offers a variety of services to help you stay safe. For viruses and malware, Total Defense will constantly scan for and block these harmful programs from ever making it onto your <a href="/computers-tablets/">computer</a>, ensuring that you'll stay safe and secure from even the most robust virus. For phishing attacks, Total Defense can identify these threats and help you avoid them to ensure that you don't give up valuable information to a malicious party. For data breaches, Total Defense is able to prevent unauthorized access to your information by various techniques that will vary depending on the type of breach. You can consider Total Defense your own personal internet security detail.</p></div></div><div class="width100c    "><div class="width100c  in910   "><p>Total Defense antivirus software can save you from a lot of trouble online. We hope this blog has helped you educate yourself on the many dangers you can face on the web and how Total Defense can help. Stay safe, and happy browsing!</p></div></div></div></div></div>
+                </div>
+
+            
+                    </div>
+                    
+                <div class="width100c layoutpale layoutpale100 customspacer"></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable"><div class="width60c width50c2 liveelement in910 layoutpale layoutpale60" style="float: none; margin-left: auto; margin-right: auto;"><video aria-label="Video Player" class="videoPlayer" controls="" poster="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/WhyTotalDefense.jpg" tabindex="0">
+                <source src="https://static.pcrichard.com/docs/videos/PCR_883_Why_Total_Defense.mp4" type="video/mp4">
+                <track kind="captions" label="English" src="https://d2vxgxvhgubbj8.cloudfront.net/subs/7106/PCR_883_Why_Total_Defense.vtt" srclang="en">
+                Your browser does not support the video tag.
+            </video>
+            <script type="application/ld+json">
+                {"@context":"https://schema.org","@type":"VideoObject","name":"Why Total Defense","description":"Why Total Defense Product Video","thumbnailUrl":"https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/WhyTotalDefense.jpg","uploadDate":"2025-03-12T11:59:50-04:00","duration":"PT2M","contentUrl":"https://static.pcrichard.com/docs/videos/PCR_883_Why_Total_Defense.mp4","embedUrl":"https://static.pcrichard.com/docs/videos/PCR_883_Why_Total_Defense.mp4","publisher":{"@type":"Organization","name":"P.C. Richard & Son","logo":{"@type":"ImageObject","url":"https://www.pcrichard.com/images/pim-content/pcrmainlogo.png"}}}
+            </script></div></div><div class="width100c layoutpale layoutpale100 customspacer" style="min-height: 20px;"></div>
