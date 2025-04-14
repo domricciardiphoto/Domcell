@@ -1,0 +1,34 @@
+
+
+                    <div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style=""></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle explorerselected onblock" style=""><div class="width20c width50c2 liveelement in910 layoutpale layoutpale20"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/emptyperson-d.jpg" alt=" Catherine Quinn" style="padding-left: 15% !important; padding-right: 5% !important;">
+    <ul aria-label="Facts about Cathrine" class="in910" style="list-style-type: none;">
+        <li><strong class=""><span style="color:#034694">Position</span></strong></li>
+        <li class=""><span style="color:rgb(138, 138, 138)">Buyer</span></li>
+        <li class=""><strong class=""><span style="color:#034694">Education</span></strong></li>
+        <li class=""><span style="color:rgb(138, 138, 138)" class="">Bachelors of Business Admin, Bachelors of Business
+                Marketing
+                <br>CUNY Baruch</span></li>
+        <li class=""><strong><span style="color:#034694">Areas of Expertise</span></strong></li>
+        <li class=""><span style="color:rgb(138, 138, 138)">Appliances</span></li>
+        <li class=""><span style="color:rgb(138, 138, 138)">Electronics</span></li>
+        <li class=""><span style="color:rgb(138, 138, 138)">Energy Efficiency</span></li>
+    </ul>
+</div>
+<div class="width60c width50c2 liveelement in910 layoutpale layoutpale60" style="padding-left: 10px !important; padding-right: 10px !important;">
+    <div class="pd-header-tag width100c">
+        <h2 class="t-h5-style in910" style="color:#034694 !important" id="ocinsertcontent4267">Catherine Quinn </h2>
+        <div><br></div>
+    </div>
+    <p id="ptag5494" style="font-size:null !important; color:null !important; " class="">They say experience is the best
+        teacher, and Catherine Quinn is proof! <br>Catherine is our buyer for
+        appliances as well as heating and cooling. She began her career as a sales associate with a background in
+        electronics, but the ubiquity of appliances eventually won her attention. She joined the P.C. Richard &amp;
+        Son team as an assistant buyer, and now over two decades later, she credits her experience with the
+        evolution of appliances over the years as the main source of her expertise. She believes innovations in
+        energy efficiency will continue to be a top priority for consumers in the near future, and looks forward
+        to what the future holds for new innovations in appliances across the board</p>
+    <p id="ptag5686" style="font-size:null !important; color:null !important; " class="">When she’s not in the office,
+        <br>Catherine can be found tackling a CrossFit circuit, hiking through the
+        wilderness, or playing beach volleyball. A lifelong New Yorker, she can also be found rooting for the
+        Mets and the Jets.</p>
+</div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><img class="promoimg21 in910 " src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/authorspacer.png" alt="" role="presentation"></div></div>
