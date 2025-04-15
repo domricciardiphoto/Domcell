@@ -1,34 +1,62 @@
 
 
-                    <div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style=""></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle explorerselected onblock" style=""><div class="width20c width50c2 liveelement in910 layoutpale layoutpale20"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/emptyperson-d.jpg" alt=" Catherine Quinn" style="padding-left: 15% !important; padding-right: 5% !important;">
+                    <div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style=""></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width20c width50c2 liveelement in910 layoutpale layoutpale20"><img class="promoimg21 in910" src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/emptyperson-d.jpg" alt=" Catherine Quinn" style="padding-left: 15% !important; padding-right: 5% !important;">
     <ul aria-label="Facts about Cathrine" class="in910" style="list-style-type: none;">
         <li><strong class=""><span style="color:#034694">Position</span></strong></li>
-        <li class=""><span style="color:rgb(138, 138, 138)">Buyer</span></li>
+        <li class=""><span style="color:rgb(138, 138, 138)" class="">Copywriter</span></li>
         <li class=""><strong class=""><span style="color:#034694">Education</span></strong></li>
-        <li class=""><span style="color:rgb(138, 138, 138)" class="">Bachelors of Business Admin, Bachelors of Business
-                Marketing
-                <br>CUNY Baruch</span></li>
+        <li class=""><span style="color:rgb(138, 138, 138)" class="">Waiting on Info</span></li>
         <li class=""><strong><span style="color:#034694">Areas of Expertise</span></strong></li>
-        <li class=""><span style="color:rgb(138, 138, 138)">Appliances</span></li>
-        <li class=""><span style="color:rgb(138, 138, 138)">Electronics</span></li>
-        <li class=""><span style="color:rgb(138, 138, 138)">Energy Efficiency</span></li>
+        <li class=""><span style="color:rgb(138, 138, 138)" class="">Waiting on Info</span></li>
+        <li class=""><span style="color:rgb(138, 138, 138)" class="">Waiting on Info</span></li>
+        <li class=""><span style="color:rgb(138, 138, 138)" class="">Waiting on Info</span></li>
     </ul>
 </div>
-<div class="width60c width50c2 liveelement in910 layoutpale layoutpale60" style="padding-left: 10px !important; padding-right: 10px !important;">
+<div class="width60c width50c2 liveelement in910 layoutpale layoutpale60 explorerselected interedit" style="padding-left: 10px !important; padding-right: 10px !important;">
     <div class="pd-header-tag width100c">
-        <h2 class="t-h5-style in910" style="color:#034694 !important" id="ocinsertcontent4267">Catherine Quinn </h2>
+        <h2 class="t-h5-style in910" style="color:#034694 !important" id="ocinsertcontent4267">Michael Morelli</h2>
         <div><br></div>
     </div>
-    <p id="ptag5494" style="font-size:null !important; color:null !important; " class="">They say experience is the best
-        teacher, and Catherine Quinn is proof! <br>Catherine is our buyer for
-        appliances as well as heating and cooling. She began her career as a sales associate with a background in
-        electronics, but the ubiquity of appliances eventually won her attention. She joined the P.C. Richard &amp;
-        Son team as an assistant buyer, and now over two decades later, she credits her experience with the
-        evolution of appliances over the years as the main source of her expertise. She believes innovations in
-        energy efficiency will continue to be a top priority for consumers in the near future, and looks forward
-        to what the future holds for new innovations in appliances across the board</p>
-    <p id="ptag5686" style="font-size:null !important; color:null !important; " class="">When she’s not in the office,
-        <br>Catherine can be found tackling a CrossFit circuit, hiking through the
-        wilderness, or playing beach volleyball. A lifelong New Yorker, she can also be found rooting for the
-        Mets and the Jets.</p>
-</div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style=""><div class="width100c liveelement in910 layoutpale layoutpale100"><img class="promoimg21 in910 " src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/authorspacer.png" alt="" role="presentation"></div></div>
+    <p id="ptag5494" style="font-size:null !important; color:null !important; " class="">Michael Morelli is one of our SEO copywriters, and has only recently begun his career
+with P.C. Richard &amp; Son. He developed a passion for writing as early as high school,
+and once he made it to Sacred Heart University he was able to leverage his writing
+skills to get himself a degree in English with a minor in writing. Soon after he landed a
+part time SEO job, where he learned the basics of the craft, before he found his way
+onto the P.C.R team. His approach to writing SEO blog content revolves around a
+combination of making the content entertaining, and utilizing a rich variety of keywords
+to make something that is both fun to read, and drives search volume. He looks forward
+to continuing his career at P.C.R and wants to learn even more about SEO along the
+way.</p>
+    <p id="ptag5686" style="font-size:null !important; color:null !important; " class="">When he’s not at work, Mike is frequently gaming, hanging out with his girlfriend,
+exercising at the gym, and working on his creative novel. He also enjoys rooting for his
+favorite League of Legends Esports team FlyQuest.</p>
+<hr>
+<div class="pd-header-tag width100c"><h2 class="t-h5-style in910" style="color:#000 !important" id="ocinsertcontent2139"></h2></div><div class="pd-header-tag width100c"><h2 class="t-h5-style in910" style="color:#000 !important; font-size:medium !important;" id="ocinsertcontent4638">What is your specific area of expertise, and how long have you been in the field?</h2></div><p id="ptag1886" style="font-size:null !important; color:null !important; ">I am an SEO copywriter and I’ve been working in the field since roughly the start of 2022 when I
+started doing SEO as a part-time job. I started full time at PCR in 2022.</p><div class="pd-header-tag width100c"><h2 class="t-h5-style in910" style="color:#000 !important; font-size:medium !important;" id="ocinsertcontent8817">How did you first become interested in writing? What path has your career taken that’s brought you here?</h2></div><p id="ptag2514" style="font-size:null !important; color:null !important; " class="">I’ve been interested in writing creatively since I was in early high school. I really enjoyed coming
+up with and writing silly short stories about me and my friends and did try to write a serious sci-
+fi novel back then, though it definitely needs a lot of work since I wrote it when I was kid haha. I
+became interested in writing professionally in college. While there I was an English major and
+took a writing minor, so I learned a lot about writing both creatively and professionally and was
+given a number of opportunities to write serious academic papers about fun topics. Ultimately,
+since I had started working with a startup marketing company part-time I learned a bit about
+SEO writing and it matched up perfectly with a time when I was learning how to write in many
+different ways. I enjoyed the part-time work and was able to take the knowledge I gained from
+it to get a position here at PCR right out of college.</p><div class="pd-header-tag width100c"><h2 class="t-h5-style in910" style="color:#000 !important; font-size:medium !important;" id="ocinsertcontent5358">In your opinion, what’s the most important element for a blog article?</h2></div><p id="ptag2919" style="font-size:null !important; color:null !important; ">In terms of trying to get eyes on it, the keywords are always extremely important. Though, once
+the eyes are on it you need to make sure the blog is worth reading. Therefore, I feel that
+keeping the blog relatable and entertaining, while still being informative, is important to retain
+a reader.</p><div class="pd-header-tag width100c"><h2 class="t-h5-style in910" style="color:#000 !important; font-size:medium !important;" id="ocinsertcontent5916">Have you ever received any awards or other recognition for your writing?</h2></div><p id="ptag5146" style="font-size:null !important; color:null !important; ">In college, I received a 2nd place award for my capstone paper about the way OCD, a mental
+illness that I struggle with, is represented in popular media. It mainly compared two different
+films (The Aviator/As Good as it Gets) where OCD is a prominent plot point and examined how
+they present it while also sprinkling in my own experiences. Though I can’t specifically
+remember what the award was called, I believe it was a competition, and I know it took
+submissions from across the entire campus and I’m near positive I got 2nd.</p><div class="pd-header-tag width100c"><h2 class="t-h5-style in910" style="color:#000 !important; font-size:medium !important;" id="ocinsertcontent4227">How long have you been with P.C. Richard &amp; Son? Have you lived in the New York metro area your whole life?</h2></div><p id="ptag8687" style="font-size:null !important; color:null !important; ">I’ve been with PCR since August 2022, and I have lived in Lindenhurst for my entire life.</p><div class="pd-header-tag width100c"><h2 class="t-h5-style in910" style="color:#000 !important; font-size:medium !important;" id="ocinsertcontent1195">What do you most like to do for fun?</h2></div><p id="ptag5598" style="font-size:null !important; color:null !important; ">I play a lot of video and tabletop games. I’ve been playing video games since I was a little kid on
+my Nintendo, and I got into card games at a young age as well. I recently got into playing board
+games with my friends and my girlfriend and it’s become a very fun hobby. I am also a huge comic and movie fan. There are few things I enjoy more than curling up on the couch with my girlfriend and watching a great movie or TV show. I also love a good night out at the local
+breweries.</p><div class="pd-header-tag width100c"><h2 class="t-h5-style in910" style="color:#000 !important; font-size:medium !important;" id="ocinsertcontent6048">Which hobby have you had the longest?</h2></div><p id="ptag5049" style="font-size:null !important; color:null !important; ">Definitely gaming. To add to what I said above, I was gaming as far back as I can remember with
+some of my favorite and first games being older Pokémon games.</p><div class="pd-header-tag width100c"><h2 class="t-h5-style in910" style="color:#000 !important; font-size:medium !important;" id="ocinsertcontent2699">Do you follow any sports? Any favorite teams or players?</h2></div><p id="ptag6274" style="font-size:null !important; color:null !important; ">To stay on brand with everything else I’ve said, I don’t follow any live sports, but I do watch
+Esports. I follow professional League of Legends closely, and my favorite team is called
+FlyQuest, a North American team.</p><div class="pd-header-tag width100c"><h2 class="t-h5-style in910" style="color:#000 !important; font-size:medium !important;" id="ocinsertcontent5038">Do you have your sights set on any long-term goals or accomplishments, career- wise or personal?</h2></div><p id="ptag5031" style="font-size:null !important; color:null !important; ">Professionally I think I’m still finding my footing and right now I’m just trying to learn as much
+as I can about SEO writing and marketing in general. In terms of my personal life, I would truly
+love to finish a novel I’ve been writing for a long time someday. It’s always been a dream of
+mine. I’d also like to get married and start a family within a few years.</p>
+</div></div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="position: relative; left: 0px; top: 0px;"><div class="width100c liveelement in910 layoutpale layoutpale100"><img class="promoimg21 in910 " src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/authorspacer.png" alt="" role="presentation"></div></div>
