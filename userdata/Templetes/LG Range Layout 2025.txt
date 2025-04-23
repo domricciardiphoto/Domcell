@@ -1,0 +1,180 @@
+
+
+                    <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+<div class="width100c liveelement in910 layoutpale layoutpale100" style="font-size: 19px !important; line-height: normal;">
+	<div class="pd-header-tag width100c">
+		<h4 class="t-h5-style in910" style="color:#034694 !important" id="ocinsertcontent4885">LG 6.3 cu. ft. Electric Freestanding Range with ProBake Convection® and Air Fry</h4>
+	</div>
+</div>
+</div>
+<div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style="min-height: 16px;">
+</div>
+<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+	<div class="width100c liveelement in910 layoutpale layoutpale100">Why buy yet another gadget that takes up counter space? This LG range with built-in Air Fry delivers crispy flavor fast with no preheating and makes enough to feed a crowd—from zucchini fries to hot wings. Main dishes also shine, thanks to ProBake Convection® that distributes heat to all areas of the oven for even baking on multiple racks at the same time.. When cooking is done, cleanup is quick and easy, with the 10-minute EasyClean® cycle that helps keep your oven looking like new.</div>
+</div>
+<div class="width100c ui-sortable-handle" style="">
+	<div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable">
+		<div class="width100c liveelement in910 layoutpale layoutpale100">
+			
+			<img class="promoimg21 in910 " src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/LREN6323YE-Knobs-2.png" alt="" role="presentation"></div>
+		</div>
+		<div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable">
+			<div class="width100c liveelement in910 layoutpale layoutpale100">
+				
+				<img class="promoimg21 in910 " src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/LREN6323YE-Edge-to-Edge-Range-Cooktop-Lifestyle-2.png" alt="" role="presentation"></div>
+			</div>
+			<div class="width33c width50c2 layoutpale layoutpale33 liverow droppable ui-droppable">
+				<div class="width100c liveelement in910 layoutpale layoutpale100">
+				<img class="promoimg21 in910 " src="https://sfccstg.pcrichard.com/on/demandware.static/-/Library-Sites-PCRichardSharedLibrary/default/pim-content/LREN6323YE-Oven-Interior-2.png" alt="" role="presentation"></div>
+			</div>
+		</div>
+		<div class="width100c layoutpale layoutpale100 customspacer explorerselected onblock ui-sortable-handle" style="min-height: 10px;">
+		</div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="line-height: normal; font-size: 18px !important;">
+			<div class="width100c liveelement in910 layoutpale layoutpale100" style="font-size: 20px !important; line-height: normal;">
+				<div class="pd-header-tag width100c" style="font-size: 18px !important; line-height: normal;">
+					<h5 class="t-h5-style in910" style="color: rgb(3, 70, 148) !important; font-size: 18px !important; line-height: normal;" id="ocinsertcontent9906">Key Features:</h5>
+				</div>
+			</div>
+		</div>
+		<div class="width100c layoutpale layoutpale100 customspacer explorerselected onblock ui-sortable-handle" style="min-height: 10px;">
+		</div>
+		<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+			<div class="width100c liveelement in910 layoutpale layoutpale100">
+				<h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+					<span style="color:#000" class="">ThinQ® Smart Technology</span>
+				</h6>
+				<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+					<span style="color:#393736" class="">
+						<i class="">A Smarter Home Starts with the LG ThinQ® App
+</i>
+					</span>
+				</h6>The ThinQ app offers control and convenience for smart LG appliances to help you simplify life. Manage and monitor your range remotely, send it cooking instructions with ThinQ Recipe or scan-to-cook*, connect with Google or Alexa voice assistants, and access Smart Diagnosis, customer support, and much more.<br>
+				<sup>
+					<b>Disclaimer:</b>
+					<i>*Participating products may vary. Refer to the ThinQ® app for details.</i>
+				</sup>
+				<br><br><br>
+						<h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+							<span style="color:#000" class="">Large Capacity (6.3 cu. ft.) Electric Single Ovens</span>
+						</h6>
+						<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+							<span style="color:#393736" class="">
+								<i class="">Room for the Turkey and Sides as Well.
+</i>
+							</span>
+						</h6>Whether you’re baking large batches of cookies or a 20-lb turkey and the sides for the holidays, this spacious 6.3 cu. ft. oven can fit it all. <br><br><br>
+							<h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+								<span style="color:#000" class="">Edge-to-Edge Glass-Ceramic Cooktop Surface</span>
+							</h6>
+							<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 10px">
+								<span style="color:#393736" class="">
+									<i class="">Edge-to-Edge Glass-Ceramic Cooktop Surface
+</i>
+								</span>
+							</h6>Whether you’re baking large batches of cookies or a 20-lb turkey and the sides for the holidays, this spacious 6.3 cu. ft. oven can fit it all. <br><br><br>
+								<h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+									<span style="color:#000" class="">Premium Handle Design</span>
+								</h6>
+								<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+									<span style="color:#393736" class="">
+										<i class="">Designed with Style in Mind
+</i>
+									</span>
+								</h6>This new style takes your kitchen to the next level with a fresh, contemporary look. Our new bar handle design is slightly contoured to comfortably fit your hand. <br><br><br>
+									<h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+										<span style="color:#000" class="">2 Dual Cooktop Elements – (1) 6/9", (1) 9/12"</span>
+									</h6>
+									<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+										<span style="color:#393736" class="">
+											<i class="">More Cookware Options.
+</i>
+										</span>
+									</h6>LG offers versatile elements that fit different sized cookware for convenience – even your largest sauté pan. <br><br><br>
+										<h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+											<span style="color:#000" class="">ProBake Convection®</span>
+										</h6>
+										<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+											<span style="color:#393736" class="">
+												<i class="">Get Superior Results with ProBake Convection®</i>
+											</span>
+										</h6>LG ProBake Convection® brings pro technology home with a combined two-speed fan and ultra-powerful rear heating element. The oven mode automatically selects the lower speed for delicate baking or the higher speed for air frying and roasting. The result is faster preheating, quicker cooking and more even baking on multiple racks at the same time. And with no bottom heating element, cleaning up baked-on spills and splatters is much easier.* <br>
+										<sup>
+											<b>Disclaimer:</b>
+											<i>*As compared to conventional LG ovens</i>
+										</sup>
+										<br>
+											<br>
+
+<br>
+												<h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+													<span style="color:#000" class="">Air Fry Setting</span>
+												</h6>
+												<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+													<span style="color:#393736" class="">
+														<i class="">Crispy Flavor to Feed a Crowd</i>
+													</span>
+												</h6>Air Fry delivers crispy flavor fast with no preheating and makes enough to feed a crowd, with no need to buy yet another gadget that takes up counter space. Just press Air Fry to prepare favorite snacks like French fries, hot wings and more. High temperatures and the convection fan work together to deliver the flavor and crunch you crave without the oil—or the guilt.<br><br><br>
+													<h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+														<span style="color:#000" class="">WideView™ Window</span>
+													</h6>
+													<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+														<span style="color:#393736" class="">
+															<i class="">See What's Cooking.</i>
+														</span>
+													</h6>The best view in the kitchen! This super-sized window allows you to easily check the progress of a meal no matter where it’s placed in the oven.<br>
+												</div>
+											</div>
+											<div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style="min-height: 20px;">
+											</div><div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="position: relative; left: 0px; top: 0px;"><div class="width100c liveelement in910 layoutpale layoutpale100"><hr style="height:2px;border-width:0;color:gray;background-color:gray; width: 90%; margin-bottom: 25px"></div></div>
+											<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable ui-sortable-handle" style="">
+												<div class="width100c liveelement in910 layoutpale layoutpale100" style="font-size: 25px !important; line-height: normal;">
+													<div class="pd-header-tag width100c">
+														<h5 class="t-h5-style in910" style="color: rgb(3, 70, 148) !important; font-size: 18px !important; line-height: normal;" id="ocinsertcontent4128">Additional Features:</h5>
+													</div>
+												</div>
+											</div><div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style="min-height: 10px;">
+		</div><div class="width100c ui-sortable-handle" style=""><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+														<span style="color:#000" class="">Smooth Press Controls</span>
+													</h6>
+													<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+														<span style="color:#393736" class="">
+															<i class="">Sleek, Intuitive Controls</i>
+														</span>
+													</h6>The intuitive Smooth Press controls delivers sleek style and easy operation, with just a press of your finger. Plus, the smooth surface easily wipes clean for a design that is as practical as it is stylish.<br><br><br></div><div class="width80c liveelement in910 layoutpale layoutpale80"><h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+														<span style="color:#000" class="">Storage Drawer</span>
+													</h6>
+													<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+														<span style="color:#393736" class="">
+															<i class="">Eliminate Kitchen Clutter.</i>
+														</span>
+													</h6>Even with the huge capacity oven above, LG still found a way to maintain the handy storage drawer below. It’s a convenient, stylish way to store all your kitchen necessities and stay organized.<br><br><br></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+														<span style="color:#000" class="">Brilliant Blue Interior</span>
+													</h6>
+													<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+														<span style="color:#393736" class="">
+															<i class="">Brilliant Blue Interior</i>
+														</span>
+													</h6>An outstanding oven should meet your needs and look beautiful doing it. Our blue, porcelain-enamel interior provides a distinctive look while offering easy visibility inside the oven.<br><br><br></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+														<span style="color:#000" class="">Hood &amp; OTR Microwave Sync</span>
+													</h6>
+													<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+														<span style="color:#393736" class="">
+															<i class="">Sync with Smart LG Hoods and Over-the-Range Microwaves</i>
+														</span>
+													</h6>For a seamless cooking experience, sync with your smart LG Hood or Over-the-Range Microwave via the ThinQ® app. This feature automatically activates the Hood or Microwave's fan and light when the cooktop burners are in use and deactivates them when the burners are turned off.<br><br><br></div></div><div class="width50c width50c2 layoutpale layoutpale50 liverow droppable ui-droppable"><div class="width80c liveelement in910 layoutpale layoutpale80"><h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+														<span style="color:#000" class="">EasyClean® + Self Clean</span>
+													</h6>
+													<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+														<span style="color:#393736" class="">
+															<i class="">Speed Clean Your Oven with our 10-Minute EasyClean® Cycle</i>
+														</span>
+													</h6>Keep your oven looking like new with the fastest oven-cleaning feature in the industry.* Simply spray the oven with water and select the EasyClean® cycle. This 10-minute cycle lifts soils without chemicals or high-heat thanks to our specially formulated porcelain-enamel interior. Then, easily wipe away the leftover residue.** For the occasional deep clean, use our standard Self Clean feature.<br>
+<sup><b>Disclaimer:</b><i>*Based on Marketplace Survey, August 2023.<br>
+**Heavy build-up may require additional manual effort or use of the Self Clean feature.</i></sup><br><br><br></div><div class="width80c width50c2 liveelement in910 layoutpale layoutpale25"><h6 class="t-h5-style" style="font-size: 17px !important; line-height: normal; padding-bottom: 2px">
+														<span style="color:#000" class="">ENERGY STAR® Certified</span>
+													</h6>
+													<h6 class="t-h5-style" style="font-size: 15px !important; line-height: normal; padding-bottom: 5px">
+														<span style="color:#393736" class="">
+															<i class="">Save Money. Save Energy.</i>
+														</span>
+													</h6>Products that earn the ENERGY STAR label meet strict energy-efficiency specifications set by the U.S. EPA, helping you save energy and money while protecting our climate by making choices that count for a clean energy future. <br><br><br></div></div></div><div class="width100c layoutpale layoutpale100 customspacer ui-sortable-handle" style="min-height: 20px;"></div>
