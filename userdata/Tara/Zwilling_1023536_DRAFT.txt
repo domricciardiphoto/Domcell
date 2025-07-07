@@ -1,0 +1,79 @@
+
+
+                    
+      <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable">
+<h4 class="" style="font-size: 25px !important; line-height: normal;">Zwilling Thermal Carafe Drip Coffee Maker Silver</h4>
+<div class="width100c liveelement in910 layoutpale layoutpale100">
+	<p>The ZWILLING ENFINIGY Thermal Carafe keeps coffee hot for hours, without burning it, so you can enjoy pure coffee flavor any time of the day. The thermal carafe's double-walled, stainless-steel body maintains the temperature of your beverage, while the outside remains comfortably cool to the touch.</p>
+</div>
+<div class="width100c liveelement in910 layoutpale layoutpale100">
+	<p>This thoughtfully designed 10-cup capacity drip coffee maker ensures the ideal time and temperature setting for brewing the highest-quality coffee. It features a powerful shower head that moistens coffee grounds thoroughly and evenly, a pre-programmed blooming function that develops a smoother, less sour-flavored coffee, and a high-temperature, corrosion-resistant stainless-steel boiler, superior to copper and aluminum boilers, that will never alter the flavor of brewing water. This sleekly designed coffee maker is available in black or silver.</p>
+</div>
+<div class="width100c liveelement in910 layoutpale layoutpale100">
+	<p>Purchase our corrosion-resistant, reusable Size 4 filter to use with our Thermal Coffee Maker. It is made from 18/10 stainless steel with a single mesh layer that fits snugly into all our drip coffee makers. It Features a hinged handle for effortless removal from the coffee maker and a handle tab for easy disposal of coffee grounds over the trash can, this sustainable filter won't clog, does not alter the flavour of coffee, and can be cleaned in the dishwasher.</p>
+</div>
+<div class="width100c liveelement in910 layoutpale layoutpale100">
+	<p class="">The innovative ZWILLING family of coffee electrics delivers full bodied, smooth tasting brews for coffee lovers with discerning tastes.</p>
+</div>
+<div class="width100c layoutpale layoutpale100 customspacer" style="min-height: 26px;">
+</div>Features:
+<ul class="in910">
+	<li>Dimensions (WxHxD): 12.80 Inches x 13.70 Inches x 6.02 Inches</li>
+	<li>10-cup capacity thermal carafe available in silver or black</li>
+	<li>Double-walled, insulated, stainless-steel thermal carafe maintains the temperature of coffee, while remaining cool to the touch on the outside</li>
+	<li>Unique Stainless-Steel Boiler: Highly corrosion resistant and won't alter the taste of brew water, as compared to copper and aluminum boilers.</li>
+	<li>Extra-wide carafe opening for easy interior cleaning</li>
+	<li>Wide stainless-steel shower head for even coffee ground moistening, a key first step in the blooming process to extract maximum flavor from coffee grounds</li>
+	<li>Pre-programmed blooming function – releases carbon dioxide from coffee grounds for a smoother, less sour taste</li>
+	<li>Timer function that lets you set when you want your coffee to start brewing</li>
+	<li>Cleaning alert function notifies you when it's time to descale your coffee maker</li>
+	<li class="">Awarded the prestigious SCA Golden Cup Standard, the Specialty Coffee Association's highest prize for quality brewers. <br>
+</li>
+</ul>
+<div class="width100c layoutpale layoutpale100 customspacer" style="min-height: 26px;">
+</div>
+	<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50 explorerselected interedit">
+		<div class="width100c liveelement in910 layoutpale layoutpale100">
+			<p class="">
+				<strong class="">
+					</strong></p><h6 class="t-h5-style"><strong class="">
+						<span style="color: rgb(0, 0, 0); font-size: 19px !important; line-height: normal;" class="">ENFINIGY COFFEE WORLD:</span>
+					</strong></h6><strong class="">
+				</strong>Bring the coffeehouse home. ZWILLING Enfinigy coffee products bring barista-quality coffee to the home kitchen. From grinding beans to frothing milk, the coffee products help you create smooth, richly flavored coffee drinks. Each coffee electric boasts a sleek, elegant design that perfectly complements the entire ZWILLING Enfinigy suite of products.<p></p>
+			</div>
+			<div class="width100c liveelement in910 layoutpale layoutpale100">
+				<p class="">
+					<strong class="">
+						</strong></p><h6 class="t-h5-style"><strong class="">
+							<span style="color: rgb(0, 0, 0); font-size: 19px !important; line-height: normal;" class="">UNIQUE STAINLESS-STEEL BOILER:</span>
+						</strong></h6><strong class="">
+					</strong> The highly corrosion-resistant stainless-steel boiler won't alter the taste of brew water, ensuring all you taste is pure coffee flavour.<p></p>
+				
+				<div class="width100c liveelement in910 layoutpale layoutpale100">
+					<strong class="">
+					</strong>
+					<h6 class="t-h5-style">
+						<strong class="">
+							<span style="color: rgb(0, 0, 0); font-size: 19px !important; line-height: normal;" class="">SMOOTH HAND-BREWED FLAVOR:</span>
+						</strong>
+					</h6> The blooming function gently pre-brews coffee, releasing carbon dioxide from the grounds before brewing begins for a smoother, less sour taste.<p>
+				</p>
+			</div>
+			<div class="width100c liveelement in910 layoutpale layoutpale100">
+				<strong class="">
+				</strong>
+				<h6 class="t-h5-style">
+					<strong class="">
+						<span style="color: rgb(0, 0, 0); font-size: 19px !important; line-height: normal;" class="">INSULATED, DOUBLE-WALLED CARAFE:</span>
+					</strong>
+				</h6>Keeps coffee hot for hours, without burning it, while the outside of the stainless-steel carafe stays comfortably cool to the touch.<p>
+			</p>
+		</div>
+	</div>
+	<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50">
+		<div class="width100c">
+			<img class="promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/AZ4_1023536.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="" role="presentation">
+			</div>
+		</div>
+	</div>
+</div>
