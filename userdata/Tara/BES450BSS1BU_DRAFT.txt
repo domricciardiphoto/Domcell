@@ -1,0 +1,59 @@
+
+
+                    
+      <div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable">
+<h4 class="" style="font-size: 25px !important; line-height: normal;">Breville The Bambino Espresso Machine - Brushed Stainless Steel</h4>
+<div class="width100c layoutpale layoutpale100 customspacer" style="min-height: 10px;">
+</div>
+
+
+<div class="width100c liveelement in910 layoutpale layoutpale100">
+	<p>The Bambino Espresso Machine - Brushed Stainless Steel</p>
+</div>
+<div class="width100c layoutpale layoutpale100 customspacer" style="min-height: 10px;">
+</div>
+
+<h5 class="" style="font-size: 22px !important; line-height: normal;">Features:</h5>
+<ul class="in910">
+	<li>
+		<strong>Dimensions (WxHxD)</strong>: 7.70 Inches x 12.20 Inches x 12.60 Inches</li>
+		<li>
+			<strong class="">Experience third wave specialty coffee at home, made possible by the 4 keys formula: </strong>Our espresso machines are designed to use the right dose of freshly ground beans, ensure precise temperature control, optimal water pressure and create true microfoam milk essential for latte art. You're only a touch away from getting the 4 keys formula used by professional cafe machines.</li>
+			<li class="">
+				<strong>ThermoJet® heating system:</strong> Innovative ThermoJet® heating system achieves the optimum extraction temperature in 3 seconds. Ready to make your best coffee without the wait. Uses up to 32% less energy annually compared to a Thermoblock heating system. *Disclaimer: Based on internal benchmark testing as of November 2022. </li>
+				<li>
+					<strong>54 mm portafilter delivers full flavor with dual and single wall filters</strong>: Full bodied coffee with rich and complex flavors is created using the ideal dose of 18g of freshly ground beans delivered by a professional style 54mm portafilter. </li>
+					<li>
+						<strong>Low pressure pre-infusion followed by 9 bar extraction</strong>: An opulent, creamy and caramel colored espresso starts with low pressure pre-infusions, followed by a high pressure (9 bar) extraction process delivered via our 15 bar Italian pump.</li>
+					</ul>
+<div class="width100c layoutpale layoutpale100 customspacer" style="min-height: 15px;">
+</div>
+
+
+					<div class="width100c layoutpale layoutpale100 liverow droppable ui-droppable">
+						<div class="width50c width50c2 liveelement in910 layoutpale layoutpale50">
+							<div class="width100c">
+								<img class="promoimg21 in910" src="https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BFXM_PRD/on/demandware.static/-/Sites-pcrichard-master-product-catalog/default/images/hires/Z_BES450BSS1BU.jpg?sw=400&amp;sh=400&amp;sm=fit" alt="" role="presentation">
+								</div>
+							</div>
+							<div class="width50c  width50c2 liveelement in910 layoutpale  layoutpale50">
+								<div class="width100c liveelement in910 layoutpale layoutpale100">
+									<p class="explorerselected onblock">
+									<strong>Manual hand-crafted microfoam</strong>: Our powerful steam wands are designed to quickly turn milk into smooth microfoam with a delicious silky texture, ready for pouring latte art.</p>
+								</div>
+								<div class="width100c liveelement in910 layoutpale layoutpale100">
+									<p>
+									<strong>Simple interface with volumetric shot control</strong>: Convenient one-touch 1 &amp; 2 shot volumetric control, steam and hot water.</p>
+								</div>
+								<div class="width100c liveelement in910 layoutpale layoutpale100">
+									<p>
+									<strong>Compact footprint for all countertops</strong>: Big in performance, yet small in size the Bambino will feel at home in any kitchen.</p>
+								</div>
+								<div class="width100c liveelement in910 layoutpale layoutpale100">
+									<p>
+									<strong>Easy step-by-step 3D interactive setup</strong>: If an instruction booklet isn't your thing, we've partnered with BILT® Intelligent Instructions for a seamless and interactive product setup. Download the free app to assist in making the best third wave specialty coffee from the get go.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+   
